@@ -1,4 +1,9 @@
-# ARIANE DataSpace Connector
+# Interoperability of Skills Frameworks Building Block - ISF BB
+
+- PTX project name : Ariane 
+- Contractor : MindMatcher
+
+## Install
 
 * Install (first time): 
 `pnpm install` 
