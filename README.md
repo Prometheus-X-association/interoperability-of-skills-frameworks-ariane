@@ -3,7 +3,6 @@
 - PTX project name : Ariane 
 - Contractor : MindMatcher
 
-<<<<<<< HEAD
 ## Install
 
 * Install (first time): 
@@ -111,11 +110,3 @@ node devSetup.js
 pnpm remove graphql
 pnpm add ../../../ismene/packages/rdfx-graphql/node_modules/graphql
 ```
-=======
-To run the program :
-- run $docker build --pull --rm -f "dockerfile" -t ariane:latest "." :
-- then go to the URL specified in the logs (should be 127.0.0.1:8080)
-
-This container can be deployed on any host, given relevant port adjustements
-
->>>>>>> 9bc259b (added instructions to README.md)
