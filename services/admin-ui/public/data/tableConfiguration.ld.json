@@ -1,0 +1,597 @@
+{
+  "@context": {
+    "id": "@id",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "dcat": "http://www.w3.org/ns/dcat",
+    "esco": "http://data.europa.eu/esco/model#",
+    "sch": "http://schema.org/",
+    "name": "rdfs:label",
+    "description": "rdfs:comment",
+    "models": "rdfs:isDefinedBy",
+    "type": "rdf:type",
+    "dataSources": "dcat:distribution",
+    "propertyPath": "rdfs:range",
+    "table": "sch:Table",
+    "columns": "sch:hasPart",
+    "sortable": "sch:isSortable",
+    "filterable": "sch:isFilterable",
+    "dataPath": "sch:contentUrl",
+    "weight": "sch:weight"
+  },
+  "@id": "http://example.com/myModelConfiguration",
+  "@type": "sch:CreativeWork",
+  "name": "Model Configuration",
+  "description": "Configuration for displaying a page of a model",
+  "graph": [
+    {
+      "@id": "http://example.com/myModelConfiguration/user",
+      "@type": "dcat:DataCatalog",
+      "model": "user",
+      "name": "User",
+      "plural": "users",
+      "description": "mms:User",
+      "dataSources": [
+        {
+          "type": "@id",
+          "name": "id"
+        },
+        {
+          "name": "availableFrom",
+          "type": "mms:availableFrom",
+          "propertyPath": "value"
+        },
+        {
+          "name": "personalData",
+          "type": "mms:PersonalDataWallet",
+          "propertyPath": [
+            {
+              "type": "@id",
+              "name": "id"
+            },
+            {
+              "type": "mms:given",
+              "name": "given",
+              "propertyPath": "value"
+            },
+            {
+              "type": "mms:family",
+              "name": "family",
+              "propertyPath": "value"
+            },
+            {
+              "type": "mms:email",
+              "name": "email",
+              "propertyPath": "value"
+            }
+          ]
+        }
+      ],
+      "table": {
+        "type": "sch:Table",
+        "name": "Model Data Table",
+        "description": "Table displaying the model data",
+        "columns": [
+          {
+            "name": "id",
+            "label": "ID",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "id",
+            "weight": 1
+          },
+          {
+            "name": "given",
+            "label": "Given name",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "personalData.0.given.0.value",
+            "weight": 2
+          },
+          {
+            "name": "family",
+            "label": "Family name",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "personalData.0.family.0.value",
+            "weight": 3
+          },
+          {
+            "name": "email",
+            "label": "Email",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "personalData.0.email.0.value",
+            "weight": 4
+          },
+          {
+            "name": "availableFrom",
+            "label": "Available From",
+            "sortable": true,
+            "filterable": true,
+            "dataType": "date",
+            "dataPath": "availableFrom.0.value",
+            "weight": 5
+          },
+          {
+            "name": "memberOf",
+            "label": "Member of",
+            "sortable": true,
+            "filterable": true,
+            "dataType": "array",
+            "dataPath": "memberOf->prefLabel.0.value",
+            "weight": 6
+          }
+        ]
+      }
+    },
+    {
+      "@id": "http://example.com/myModelConfiguration/personalDataWallet",
+      "@type": "dcat:DataCatalog",
+      "model": "personalDataWallet",
+      "name": "PersonalDataWallet",
+      "plural": "personalDataWallets",
+      "description": "mms:PersonalDataWallet",
+      "dataSources": [
+        {
+          "type": "@id",
+          "name": "id"
+        },
+        {
+          "name": "given",
+          "type": "mms:given",
+          "propertyPath": "value"
+        },
+        {
+          "name": "family",
+          "type": "mms:family",
+          "propertyPath": "value"
+        },
+        {
+          "name": "email",
+          "type": "mms:email",
+          "propertyPath": "value"
+        }
+      ],
+      "table": {
+        "type": "sch:Table",
+        "name": "Model Data Table",
+        "description": "Table displaying the model data",
+        "columns": [
+          {
+            "name": "id",
+            "label": "ID",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "id",
+            "weight": 1
+          },
+          {
+            "name": "given",
+            "label": "Given name",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "given.0.value",
+            "weight": 2
+          },
+          {
+            "name": "family",
+            "label": "Family name",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "family.0.value",
+            "weight": 3
+          },
+          {
+            "name": "email",
+            "label": "Email",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "email.0.value",
+            "weight": 4
+          }
+        ]
+      }
+    },
+    {
+      "@id": "http://example.com/myModelConfiguration/company",
+      "@type": "dcat:DataCatalog",
+      "model": "company",
+      "name": "Company",
+      "plural": "companies",
+      "description": "mms:Company",
+      "dataSources": [
+        {
+          "type": "@id",
+          "name": "id"
+        },
+        {
+          "name": "companyName",
+          "type": "mms:companyName",
+          "propertyPath": "value"
+        },
+        {
+          "name": "companyUrl",
+          "type": "mms:companyUrl",
+          "propertyPath": "value"
+        },
+        {
+          "name": "companyCode",
+          "type": "mms:companyCode",
+          "propertyPath": "value"
+        },
+        {
+          "name": "companyHubspotId",
+          "type": "mms:companyHubspotId",
+          "propertyPath": "value"
+        },
+        {
+          "name": "logo",
+          "type": "mms:logo",
+          "propertyPath": "value"
+        },
+        {
+          "name": "description",
+          "type": "mms:description",
+          "propertyPath": "value"
+        },
+        {
+          "name": "companyLanguages",
+          "type": "mms:companyLanguages",
+          "propertyPath": "value"
+        },
+        {
+          "name": "defaultLanguage",
+          "type": "mms:defaultLanguage",
+          "propertyPath": "value"
+        },
+        {
+          "name": "primaryColor",
+          "type": "mms:primaryColor",
+          "propertyPath": "value"
+        },
+        {
+          "name": "secondaryColor",
+          "type": "mms:secondaryColor",
+          "propertyPath": "value"
+        },
+        {
+          "name": "allowSelfAssessment",
+          "type": "mms:allowSelfAssessment",
+          "propertyPath": "value"
+        },
+        {
+          "name": "allowManagerValidation",
+          "type": "mms:allowManagerValidation",
+          "propertyPath": "value"
+        },
+        {
+          "name": "enabledEndUserInterface",
+          "type": "mms:enabledEndUserInterface",
+          "propertyPath": "value"
+        },
+        {
+          "name": "enabledCareerPathTrainingProposal",
+          "type": "mms:enabledCareerPathTrainingProposal",
+          "propertyPath": "value"
+        },
+        {
+          "name": "enabledInternalTraining",
+          "type": "mms:enabledInternalTraining",
+          "propertyPath": "value"
+        },
+        {
+          "name": "enabledExternalTraining",
+          "type": "mms:enabledExternalTraining",
+          "propertyPath": "value"
+        },
+        {
+          "name": "enabledMentoring",
+          "type": "mms:enabledMentoring",
+          "propertyPath": "value"
+        },
+        {
+          "name": "services",
+          "type": "mms:services",
+          "propertyPath": [
+            {
+              "type": "@id",
+              "name": "id"
+            },
+            {
+              "type": "mms:name",
+              "name": "name",
+              "propertyPath": "value"
+            }
+          ]
+        }
+      ],
+      "table": {
+        "type": "sch:Table",
+        "name": "Model Data Table",
+        "description": "Table displaying the model data",
+        "columns": [
+          {
+            "name": "id",
+            "label": "ID",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "id",
+            "weight": 1
+          },
+          {
+            "name": "companyName",
+            "label": "Name",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "companyName.0.value",
+            "weight": 2
+          },
+          {
+            "name": "companyUrl",
+            "label": "Url",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "companyUrl.0.value",
+            "weight": 2
+          },
+          {
+            "name": "companyCode",
+            "label": "Code",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "companyCode.0.value",
+            "weight": 2
+          },
+          {
+            "name": "companyHubspotId",
+            "label": "Hubspot Id",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "companyHubspotId.0.value",
+            "weight": 2
+          }
+        ]
+      }
+    },
+    {
+      "@id": "http://example.com/myModelConfiguration/job",
+      "@type": "dcat:DataCatalog",
+      "model": "job",
+      "name": "Job",
+      "plural": "jobs",
+      "description": "rome:onto/Employment/Job",
+      "dataSources": [
+        {
+          "type": "@id",
+          "name": "id"
+        },
+        {
+          "name": "jobTitle",
+          "type": "mms:jobTitle",
+          "propertyPath": "value"
+        },
+        {
+          "name": "description",
+          "type": "mms:description",
+          "propertyPath": "value"
+        },
+        {
+          "name": "logo",
+          "type": "mms:logo",
+          "propertyPath": "value"
+        },
+        {
+          "name": "jobSalaryRange",
+          "type": "mms:jobSalaryRange",
+          "propertyPath": [
+            {
+              "type": "@id",
+              "name": "id"
+            },
+            {
+              "type": "mms:rangeMin",
+              "name": "rangeMin",
+              "propertyPath": "value"
+            },
+            {
+              "type": "mms:rangeMax",
+              "name": "rangeMax",
+              "propertyPath": "value"
+            }
+          ]
+        }
+      ],
+      "table": {
+        "type": "sch:Table",
+        "name": "Model Data Table",
+        "description": "Table displaying the model data",
+        "columns": [
+          {
+            "name": "id",
+            "label": "ID",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "id",
+            "weight": 1
+          },
+          {
+            "name": "jobTitle",
+            "label": "Title",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "jobTitle.0.value",
+            "weight": 2
+          },
+          {
+            "name": "logo",
+            "label": "Logo",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "logo.0.value",
+            "weight": 2
+          },
+          {
+            "name": "salaryMin",
+            "label": "Salary Min",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "jobSalaryRange.0.rangeMin.0.value",
+            "weight": 2
+          },
+          {
+            "name": "salaryMax",
+            "label": "Salary Max",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "jobSalaryRange.0.rangeMax.0.value",
+            "weight": 2
+          }
+        ]
+      }
+    },
+    {
+      "@id": "http://example.com/myModelConfiguration/skill",
+      "@type": "dcat:DataCatalog",
+      "model": "skill",
+      "name": "Skill",
+      "plural": "skills",
+      "description": "rome:onto/Skill",
+      "dataSources": [
+        {
+          "type": "@id",
+          "name": "id"
+        },
+        {
+          "name": "prefLabel",
+          "type": "skos:prefLabel",
+          "propertyPath": "value"
+        },
+        {
+          "name": "description",
+          "type": "mms:description",
+          "propertyPath": "value"
+        },
+        {
+          "name": "skillType",
+          "type": "mms:skillType",
+          "propertyPath": "value"
+        },
+        {
+          "name": "skillTypeLabel",
+          "type": "mms:skillTypeLabel",
+          "propertyPath": "value"
+        },
+        {
+          "name": "company",
+          "type": "mms:company",
+          "propertyPath": [
+            {
+              "type": "@id",
+              "name": "id"
+            },
+            {
+              "type": "mms:companyName",
+              "name": "companyName",
+              "propertyPath": "value"
+            },
+            {
+              "type": "mms:companyCode",
+              "name": "companyCode",
+              "propertyPath": "value"
+            }
+          ]
+        }
+      ],
+      "table": {
+        "type": "sch:Table",
+        "name": "Model Data Table",
+        "description": "Table displaying the model data",
+        "columns": [
+          {
+            "name": "id",
+            "label": "ID",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "id",
+            "weight": 1
+          },
+          {
+            "name": "prefLabel",
+            "label": "Title",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "prefLabel.0.value",
+            "weight": 2
+          },
+          {
+            "name": "description",
+            "label": "Description",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "description.0.value",
+            "weight": 2
+          },
+          {
+            "name": "skillType",
+            "label": "Skill Type",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "skillTypeLabel.0.value",
+            "weight": 2
+          },
+          {
+            "name": "companyName",
+            "label": "Company Name",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "company.0.companyName.0.value",
+            "weight": 2
+          }
+        ]
+      }
+    },
+    {
+      "@id": "http://example.com/myModelConfiguration/service",
+      "@type": "dcat:DataCatalog",
+      "model": "service",
+      "name": "Service",
+      "plural": "services",
+      "description": "mms:Service",
+      "dataSources": [
+        {
+          "type": "@id",
+          "name": "id"
+        },
+        {
+          "name": "name",
+          "type": "mms:name",
+          "propertyPath": "value"
+        }
+      ],
+      "table": {
+        "type": "sch:Table",
+        "name": "Model Data Table",
+        "description": "Table displaying the model data",
+        "columns": [
+          {
+            "name": "id",
+            "label": "ID",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "id",
+            "weight": 1
+          },
+          {
+            "name": "name",
+            "label": "Name",
+            "sortable": true,
+            "filterable": true,
+            "dataPath": "name.0.value",
+            "weight": 2
+          }
+        ]
+      }
+    }
+  ]
+}

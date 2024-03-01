@@ -1,0 +1,25 @@
+{
+  "name": "deploy-website",
+  "version": "1.0.0",
+  "description": "Deploy jobsong instance.",
+  "type": "module",
+  "author": "Florent André <fa@mindmatcher.org>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@mmorg/fsutils": "^1.0.8",
+    "chalk": "2.4.0",
+    "escape-string-regexp": "^5.0.0",
+    "execa": "^7.1.1",
+    "inquirer": "^9.2.8",
+    "lodash.mergewith": "^4.6.2",
+    "nanoid": "^5.0.1",
+    "object-hash": "^3.0.0",
+    "package-json": "^8.1.1",
+    "read-pkg": "^8.1.0",
+    "yaml": "^2.3.1"
+  },
+  "devDependencies": {
+    "node-fetch": "^3.3.2",
+    "open": "^9.1.0"
+  }
+}

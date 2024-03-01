@@ -1,0 +1,30 @@
+name: name of your environment config version eg"Local config version"
+port: XXXX
+elastic:
+  url: https://your-elasticsearch-url
+  apiKey: your-api-key
+  engineName: your-engine-name
+  indexUrl: https://your-index-url
+  indexApiKey: your-index-api-key
+keycloak:
+  base_url: https://your-keycloak-base-url
+  realm: your-realm
+  admin:
+    username: your-admin-username
+    password: your-admin-password
+    client_id: your-client-id
+    client_secret: your-client-secret
+  account:
+    client_id: your-account-client-id
+    client_secret: your-account-client-secret
+addviseo:
+  auth:
+    login: your-login
+    token: your-token
+  passwordSalt: your-password-salt
+userApp:
+  url: http://localhost:3034
+mission_data_source:
+  url: https://your-data-source-url
+  username: your-username
+  password: your-password

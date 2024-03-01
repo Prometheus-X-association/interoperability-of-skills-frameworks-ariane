@@ -1,0 +1,91 @@
+{
+  "name": "admin-ui",
+  "version": "1.0.0",
+  "description": "Admin UI based on Rdfx-Refine",
+  "main": "src/index.js",
+  "browser": {
+    "path": false
+  },
+  "scripts": {
+    "dev:profile": "vite",
+    "start": "vite",
+    "build": "vite build --base ./",
+    "preview": "vite preview",
+    "refine": "refine",
+    "generate:graphql": "graphql-codegen"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "2.0.19",
+    "@chakra-ui/react": "link:../../../ismene/packages/rdfx-refine/node_modules/@chakra-ui/react",
+    "@chakra-ui/system": "2.5.8",
+    "@choc-ui/chakra-autocomplete": "link:../../../ismene/packages/rdfx-refine/node_modules/@choc-ui/chakra-autocomplete",
+    "@emotion/react": "link:../../../ismene/packages/rdfx-refine/node_modules/@emotion/react",
+    "@emotion/styled": "link:../../../ismene/packages/rdfx-refine/node_modules/@emotion/styled",
+    "@hookform/resolvers": "^3.3.4",
+    "@mantine/core": "^7.5.2",
+    "@mantine/form": "^7.5.2",
+    "@mantine/hooks": "^7.5.2",
+    "@mantine/notifications": "^7.5.2",
+    "@mmorg/ds_mindmatcher": "link:../../../ds_mindmatcher",
+    "@mmorg/rdfx-refine": "link:../../../ismene/packages/rdfx-refine",
+    "@refinedev/chakra-ui": "link:../../../ismene/packages/rdfx-refine/node_modules/@refinedev/chakra-ui",
+    "@refinedev/cli": "link:../../../ismene/packages/rdfx-refine/node_modules/@refinedev/cli",
+    "@refinedev/core": "link:../../../ismene/packages/rdfx-refine/node_modules/@refinedev/core",
+    "@refinedev/graphql": "link:../../../ismene/packages/rdfx-refine/node_modules/@refinedev/graphql",
+    "@refinedev/inferencer": "link:../../../ismene/packages/rdfx-refine/node_modules/@refinedev/inferencer",
+    "@refinedev/kbar": "link:../../../ismene/packages/rdfx-refine/node_modules/@refinedev/kbar",
+    "@refinedev/react-hook-form": "link:../../../ismene/packages/rdfx-refine/node_modules/@refinedev/react-hook-form",
+    "@refinedev/react-router-v6": "link:../../../ismene/packages/rdfx-refine/node_modules/@refinedev/react-router-v6",
+    "@refinedev/react-table": "link:../../../ismene/packages/rdfx-refine/node_modules/@refinedev/react-table",
+    "@refinedev/simple-rest": "link:../../../ismene/packages/rdfx-refine/node_modules/@refinedev/simple-rest",
+    "@tabler/icons": "1.119.0",
+    "@tanstack/react-table": "link:../../../ismene/packages/rdfx-refine/node_modules/@tanstack/react-table",
+    "final-ontology": "workspace:*",
+    "gql-query-builder": "^3.8.0",
+    "nanoid": "^5.0.1",
+    "react": "link:../../../ismene/packages/rdfx-refine/node_modules/react",
+    "react-dom": "link:../../../ismene/packages/rdfx-refine/node_modules/react-dom",
+    "react-hook-form": "^7.50.1",
+    "react-router-dom": "link:../../../ismene/packages/rdfx-refine/node_modules/react-router-dom",
+    "uuid": "9.0.0",
+    "yup": "^1.3.3"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "@types/node": "20.4.8",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "18.0.0",
+    "@types/uuid": "9.0.2",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "prettier": "^3.2.4",
+    "prettier-eslint": "^16.2.0",
+    "ts-loader": "9.4.2",
+    "typescript": "^5.3.3",
+    "vite": "^4.4.5",
+    "vite-plugin-svgr": "^3.2.0",
+    "vite-tsconfig-paths": "^4.2.0",
+    "web-vitals": "1.1.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
