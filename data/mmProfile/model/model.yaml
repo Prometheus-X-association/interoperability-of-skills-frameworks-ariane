@@ -1,0 +1,132 @@
+# @TODO: move this file to the folder's root
+
+# One idea is to allow removal of prefix in key on json-ld (to make it more readable)
+# But this need a more robust function to parse the case. A proto-implementation is available in `packages/rdfx-graphql/src/rdfx-graph/getGraph.js`
+# This will give declarations like :
+# triple:
+#   User:
+#     memberOf: skos:Collection
+
+triple:
+  mms:User:
+    mms:personalData: mms:PersonalDataWallet
+    mms:role: xsd:string
+    mms:directManager: mms:User
+    mms:joinTime: xsd:date
+    mms:creationTime: xsd:date
+    mms:status: xsd:string
+    mms:activationToken: xsd:string
+    mms:company: mms:Company
+    mmm:keycloakId: xsd:string
+
+  mms:PersonalDataWallet:
+    mms:given: xsd:string
+    mms:family: xsd:string
+    mms:email: xsd:string
+    mms:gender: xsd:string
+    mms:birthday: xsd:date
+    mms:location: mms:Address
+    mms:personalDataOf: mms:User
+
+  mms:Address:
+    owl:sameAs: [mnx:Address, hrrdf:AddressType]
+    mms:geolocation: mm:geoDataType
+    mms:city: xsd:string
+    mms:state: xsd:string
+    mms:country: xsd:string
+    mms:postalcode: xsd:string
+    mms:addressOf: mms:PersonalDataWallet
+
+  mms:Company:
+    mms:companyName: xsd:string
+    mms:companyUrl: xsd:string
+    mms:companyCode: xsd:string
+    mms:companyHubspotId: xsd:string
+    mms:logo: xsd:string
+    mms:description: xsd:string
+    mms:status: xsd:string
+    mms:companyAdmins: mms:User
+    mms:companyLanguages: xsd:string
+    mms:defaultLanguage: xsd:string
+    mms:location: mms:Address
+    mms:primaryColor: xsd:string
+    mms:secondaryColor: xsd:string
+    mms:services: mms:Service
+    mms:allowSelfAssessment: xsd:string
+    mms:allowManagerValidation: xsd:string
+    mms:enabledEndUserInterface: xsd:string
+    mms:enabledCareerPathTrainingProposal: xsd:string
+    mms:enabledInternalTraining: xsd:string
+    mms:enabledExternalTraining: xsd:string
+    mms:enabledMentoring: xsd:string
+
+  mms:SalaryRange:
+    mms:rangeMin: xsd:integer
+    mms:rangeMax: xsd:integer
+
+  mms:Training:
+    mms:trainingTitle: xsd:string
+    mms:description: xsd:string
+    mms:logo: xsd:string
+    mms:trainingSkills: rome:onto/Skill
+    mms:trainingCompany: mms:Company
+    mms:trainingStatus: xsd:string
+    mms:trainingStartDate: xsd:date
+    mms:trainingEndDate: xsd:date
+    mms:trainingLocation: mms:Address
+    mms:trainingDuration: xsd:string
+    mms:trainingType: xsd:string
+    mms:trainingTarget: xsd:string
+    mms:trainingFormat: xsd:string
+    mms:trainingLanguage: xsd:string
+    mms:trainingLevel: xsd:string
+    mms:requiredSkill: rome:onto/Skill
+
+  mms:Enrolment:
+    mms:training: mms:Training
+    mms:enrolmentOf: mms:User
+    mms:enrolmentDate: xsd:date
+    mms:enrolmentStatus: xsd:string
+    mms:enrolmentComment: xsd:string
+    mms:selfComment: xsd:string
+    mms:mentorComment: xsd:string
+    mms:enrolmentScore: xsd:string
+
+  mms:Mentorship:
+    mms:mentor: mms:User
+    mms:mentee: mms:User
+    mms:mentorshipStartDate: xsd:date
+    mms:mentorshipEndDate: xsd:date
+    mms:mentorshipStatus: xsd:string
+    mms:mentorshipType: xsd:string
+    mms:requiredSkill: rome:onto/Skill
+    mms:description: xsd:string
+
+  mms:Evaluation:
+    mms:evaluationOf: mms:User
+    mms:evaluatedBy: mms:User
+    mms:evaluationDate: xsd:date
+    mms:evaluationScore: xsd:string
+    mms:evaluationComment: xsd:string
+    mms:evaluationOn: xsd:string
+    mms:evaluationStatus: xsd:string
+    mms:evaluationTarget: [rome:onto/Skill, rome:onto/Employment/Job, mms:Training]
+
+  mms:Service:
+    mms:name: xsd:string
+
+  #  Override
+  rome:onto/Skill:
+    mms:description: xsd:string
+    mms:skillType: xsd:string
+    # Currently skill type is hardcoded, therefore we should store its label along for reference
+    mms:skillTypeLabel: xsd:string
+    mms:company: mms:Company
+
+  rome:onto/Employment/Job:
+    mms:jobTitle: xsd:string
+    mms:description: xsd:string
+    mms:logo: xsd:string
+    mms:jobSalaryRange: mms:SalaryRange
+    mms:requiredSkill: rome:onto/Skill
+    mms:company: mms:Company
