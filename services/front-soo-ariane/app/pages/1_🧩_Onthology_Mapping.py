@@ -3,7 +3,7 @@ from streamlit_extras.colored_header import colored_header
 import json
 
 
-# Initialization
+################################### INITIALISATION, ONTHOLOGY AND USE CASES #############################################################
 
 def getReferentiel():
     st.session_state.ontology = json.load(open("app/ressources/smart.json"))["SmartOntology"]
@@ -12,19 +12,19 @@ def getGaming():
     initialize_session()
     st.session_state["edTechID"] = "gamingTest"
     st.session_state.fieldList = ["Experience Name",  "Date", "Associated Soft Skill Block", "User ID", "Results"]
-    return None
+    
 
 def getJobsong():
     initialize_session()
     st.session_state["edTechID"] = "Jobsong"
     st.session_state.fieldList = ["Experience Id","Experience Label","Associated Hard Skills","Suggested Missions","Liked Missons"]
-    return None
+    
 
 def getInokufu():
     initialize_session()
     st.session_state["edTechID"] = "Inokufu"
     st.session_state.fieldList = ["Nom","Url","Image","Keywords","Date"]
-    return None
+    
 
 def parseFile():
     initialize_session()
@@ -40,14 +40,13 @@ def parseFile():
 def initialize_session():
     st.cache_data.clear()
     st.cache_resource.clear()
-    """Initialise ou réinitialise les variables de session."""
     keys = [ "submitted", "submitted2", "propertyForm", "mappingForm","download",
         "experiences", "competencys", "choices", "skillblocks","profiles","rules","mapped"]
     for key in keys:
         st.session_state[key] = False if key in ["submitted", "download","submitted2", "propertyForm", "mappingForm"] else []
     getReferentiel()
     
-# Affichage des infos
+################################### ONTHOLOGY SCHEMA + SIDEBAR #############################################################
 
 def displaySidebar():
     with st.sidebar:
@@ -72,7 +71,6 @@ def displaySidebar():
 
 
 def create_sidebar_buttons():
-    """Crée les boutons dans la barre latérale."""
     a, b = st.columns(2)
     st.sidebar.file_uploader("Choose a JSON file", type='json', label_visibility="collapsed", key="file",accept_multiple_files=False,)
 
@@ -87,14 +85,13 @@ def create_sidebar_buttons():
 
 
 def display_schema():
-    """Affiche le schéma de l'ontologie."""
     with st.expander("Schéma", expanded=False):
         colored_header("ARIANE pivot ontology", "", color_name="red-70")
         st.image("app/ressources/ontologyVisualization2.png", use_column_width=True)
 
-# Creation d'objets
+################################### OBJECT CREATION #############################################################
 
-
+# "Create Object" form
 def createObjects():
     st.header("Create your objects",divider="red")
     c,h = st.columns([1,2])
@@ -114,6 +111,8 @@ def create_item_form():
         object_count = len(st.session_state.competencys) + len(st.session_state.experiences) + len(st.session_state.choices) + len(st.session_state.skillblocks) + len(st.session_state.profiles)
         st.text_input("Name your Object", f"{st.session_state.edTechID} - Object {object_count}", help="Name your Object", key="objectName")
         if st.form_submit_button("Confirm", use_container_width=True) : st.session_state.submitted = True
+
+# Handle each specific object type
 
 def handle_item_submission():
     with st.form("property match"):
@@ -195,8 +194,8 @@ def handle_profile_submission():
         st.session_state.submitted = False
         st.rerun()
 
-
-           
+# Display created items
+         
 def display_existing_items():
     item_types = {
         "Experience": st.session_state.experiences,
@@ -224,8 +223,10 @@ def display_item(item_type, item, index):
         items.pop(index)
         st.rerun()
 
-# Matching
+################################### FIELD MAPPING #############################################################
 
+
+# Create matching form
 def matchingTool():
     colored_header("Mapping",description="Map all your fields to their relevant object and property",color_name="red-70")
     if len(st.session_state.experiences)+len(st.session_state.profiles)>0:
@@ -257,6 +258,8 @@ def createMatchingForm(field):
     else:
         p.selectbox("Propriété",[],key=f"property4{field}",label_visibility="collapsed")
 
+# Create rules from mappings
+
 def createRules():
     for field in st.session_state.fieldList:
         if field not in st.session_state.mapped:
@@ -266,6 +269,7 @@ def createRules():
                 st.session_state.mapped.append(field)
     st.rerun()
 
+# Display rules
 
 def displayRules():
     for i,rule in enumerate(st.session_state.rules):
@@ -277,10 +281,11 @@ def displayRules():
             del st.session_state.mapped[i]
             st.rerun()
 
+################################### APP LOGIC #############################################################
 
-def ontologyMatching2():
-    """Logique principale de l'outil de matching d'ontologie."""
-    st.title("Outil de Mapping d'Ontologie")
+def ontologyMapping():
+    st.set_page_config(layout='wide')
+    st.title("Onthology Mapping Tool")
     if "submitted" not in st.session_state:
         getGaming()
     getReferentiel()
@@ -293,10 +298,5 @@ def ontologyMatching2():
         matchingTool()
 
 
-
-# Définissez ici les autres fonctions nécessaires pour réduire la duplication de code.
-
 if __name__ == "__main__":
-    st.set_page_config(layout='wide')
-    st.title("Outil de Matching d'Ontologie")
-    ontologyMatching2()
+    ontologyMapping()

@@ -5,8 +5,38 @@ import random
 import pandas as pd
 
 
+################################### INITIALIZATION AND USE CASE #############################################################
 
-def displayGraphG():
+def initialization():
+    st.session_state.GEN = json.load(open("app/data/GEN/transformed_referentielGEN.json","rb"))
+    st.session_state.matching = pd.read_csv("app/data/GEN/GEN_ROME.csv")
+    st.session_state.defs = json.load(open("app/data/ROME/descriptionsROME.json","r"))
+    st.session_state.selectSpot = json.load(open("app/data/GEN/selectSpot.json"))
+    st.session_state.ROMEnames = json.load(open("app/data/ROME/ROME_names.json")) 
+    st.session_state["confiance"] = 0
+    st.session_state.currentSpot = [1,1,1]
+    st.session_state.rules = []
+
+################################### DISPLAY SIDEBAR #############################################################
+
+
+def displaySidebar():
+    with st.sidebar:
+        st.header("Use Cases",divider="red")
+        st.button("GEN Framework",use_container_width=True)
+        st.header("Data Provider",divider="red")
+        st.info("GEN")
+        st.header("Targeted Framework",divider="red")
+        l,r = st.columns(2)
+        l.button("ROME Framework",use_container_width=True)
+        r.button("ESCO Framework",use_container_width=True)
+        st.header("Automatic Validation",divider="red")
+        st.slider("Automatic Validation Treshold",0,99,90,1,key="seuil")
+        
+        
+################################### DISPLAY USER FRAMEWORK #############################################################
+
+def displayFramework():
     d,m,p = st.columns(3)
     description = st.container()
     indices =list(st.session_state.currentSpot)
@@ -19,23 +49,10 @@ def displayGraphG():
         colored_header(occupation,"",color_name="blue-30")
         st.info(f'The "{occupation}" is a- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie gravida turpis sit amet pellentesque. Aliquam suscipit posuere egestas. Quisque ac sapien eros. Sed gravida dictum dui ut condimentum. Integer accumsan turpis ut nulla iaculis pulvinar. Donec efficitur, odio quis dignissim consequat, urna magna mattis tellus, vel rutrum ipsum sem ac odio. Donec diam nibh, placerat ut risus a, lobortis blandit risus. Vestibulum ac mattis enim, sed sollicitudin justo. Duis eget pretium libero. Phasellus facilisis velit vel odio molestie, ut interdum nisi facilisis.')
 
-def displayName(x):
-    if x != "No filter":
-        return x + " - " + st.session_state.ROMEnames[x]
-    return x
+################################### DISPLAY TARGET FRAMEWORK SUGGESTIONS #############################################################
 
-def displayGraphD():
-    css='''
-    <style>
-        [class="st-emotion-cache-keje6w e1f1d6gn2"] {
-            overflow-y: scroll;
-            overflow-x: hidden;
-            max-height: 50rem;
-        }
-    </style>
-    '''
+def displayAllSuggestions():
 
-    st.markdown(css,unsafe_allow_html=True)
     df = st.session_state.matching.loc[st.session_state.matching["Libelle GEN"] == st.session_state.occupation["prefLabel"][0]["@value"],["V","Code ROME","Libelle ROME","score"]].sort_values(by='score', ascending=False)
     df['column_name'] = pd.Categorical(df['V'], categories=['Oui', 'Na', 'Non'], ordered=True)
     df= df.sort_values('column_name')
@@ -62,65 +79,53 @@ def displayGraphD():
             df = df[df["Code ROME"].str.startswith(filter)]
         if len(df) == 0:
             st.warning("No matches for selected filters")
-        with st.container():
+        with st.container(height=500):
             for rank,row in df.iterrows():
-                try:
-                    description = st.session_state.defs[row["Libelle ROME"]]
-                except:
-                    description = "No description available"
+                displaySuggestion(rank,row)
                 
-                if row["V"] == "Oui": 
-                    st.subheader(f'{row["score"]} % | {row["Code ROME"]} - {row["Libelle ROME"]}',divider="green")
-                    with st.expander("Description"):
-                        st.info(description)
+def displaySuggestion(rank,row):
+        try:
+            description = st.session_state.defs[row["Libelle ROME"]]
+        except:
+            description = "No description available"
+        
+        if row["V"] == "Oui": 
+            st.subheader(f'{row["score"]} % | {row["Code ROME"]} - {row["Libelle ROME"]}',divider="green")
+            with st.expander("Description"):
+                st.info(description)
 
-                    if st.button("Unmatch",use_container_width=True,key=f"{rank}submit"): 
-                        st.session_state.matching.loc[rank,"V"] = "Non"
-                        st.rerun()
-                    
-                elif row["V"] == "Non" :  
-                    st.subheader(f'{row["score"]} % | {row["Code ROME"]} - {row["Libelle ROME"]}',divider="red")
-                    with st.expander("Description"):
-                        st.info(description)
+            if st.button("Unmatch",use_container_width=True,key=f"{rank}submit"): 
+                st.session_state.matching.loc[rank,"V"] = "Non"
+                st.rerun()
+            
+        elif row["V"] == "Non" :  
+            st.subheader(f'{row["score"]} % | {row["Code ROME"]} - {row["Libelle ROME"]}',divider="red")
+            with st.expander("Description"):
+                st.info(description)
 
-                    if st.button("Match",use_container_width=True,key=f"{rank}submit"): 
-                        st.session_state.matching.loc[rank,"V"] = "Oui"
-                        st.rerun()
-                
-                else:
-                    st.subheader(f'{row["score"]} % | {row["Code ROME"]} - {row["Libelle ROME"]}',divider="orange")
-                    with st.expander("Description"):
-                        st.info(description)
-                    l,r = st.columns(2)
-                    
-                    if l.button("Match",use_container_width=True,key=f"{rank}lsubmit"): 
-                        st.session_state.matching.loc[rank,"V"] = "Oui"
-                        st.rerun()
-                    if r.button("Unmatch",use_container_width=True,key=f"{rank}rsubmit"): 
-                        st.session_state.matching.loc[rank,"V"] = "Non"
-                        st.rerun()
+            if st.button("Match",use_container_width=True,key=f"{rank}submit"): 
+                st.session_state.matching.loc[rank,"V"] = "Oui"
+                st.rerun()
+        
+        else:
+            st.subheader(f'{row["score"]} % | {row["Code ROME"]} - {row["Libelle ROME"]}',divider="orange")
+            with st.expander("Description"):
+                st.info(description)
+            l,r = st.columns(2)
+            
+            if l.button("Match",use_container_width=True,key=f"{rank}lsubmit"): 
+                st.session_state.matching.loc[rank,"V"] = "Oui"
+                st.rerun()
+            if r.button("Unmatch",use_container_width=True,key=f"{rank}rsubmit"): 
+                st.session_state.matching.loc[rank,"V"] = "Non"
+                st.rerun()
 
             
-
-
-
-def displaySidebar():
-    with st.sidebar:
-        st.header("Use Cases",divider="red")
-        st.button("GEN Framework",use_container_width=True)
-        st.header("Data Provider",divider="red")
-        st.info("GEN")
-        st.header("Targeted Framework",divider="red")
-        l,r = st.columns(2)
-        l.button("ROME Framework",use_container_width=True)
-        r.button("ESCO Framework",use_container_width=True)
-        st.header("Automatic Validation",divider="red")
-        st.slider("Automatic Validation Treshold",0,99,90,1,key="seuil")
-        
+################################### DISPLAY MATCHINGS #############################################################
 
 
 def displayMatching():
-    st.header("Progression",divider="red")
+    colored_header("Progression","",color_name="red-70")
     st.session_state.bools = [ (st.session_state.matching["V"] == "Oui") | (st.session_state.matching["score"] > st.session_state.seuil),
                                 (st.session_state.matching["score"] > 2*st.session_state.seuil/3),
                                 (st.session_state.matching["score"] > st.session_state.seuil/3),
@@ -137,19 +142,20 @@ def displayMatching():
             f"Items with a suggested mapping above {2*st.session_state.seuil//0.3/10}%",
             f"Items with a suggested mapping above {st.session_state.seuil//0.3/10}%",
                 f"Items with a suggested mapping above {0}%"]
-    for i in range(4):
-        colored_header(names[i],description=desc[i],color_name=f"{colors[i]}-70")
-        if st.button(f"Access ({values[i]})",use_container_width=True,key=f'button{i}'): st.session_state["confiance"] = i 
+    with st.container(height=700):
+        for i in range(4):
+            colored_header(names[i],description=desc[i],color_name=f"{colors[i]}-70")
+            if st.button(f"Access ({values[i]})",use_container_width=True,key=f'button{i}'): st.session_state["confiance"] = i 
 
 
 def displayMatches():
-    with st.expander("Occupations",expanded=True):
-        colors = ["green","yellow","orange","red"]
-        names = ["Validated",
-                 "Automatic Validation",
-                 "Manual Evaluation",
-                 "Rejected"]
-        colored_header(names[st.session_state.confiance],"",color_name=f"{colors[st.session_state.confiance]}-70")
+    colors = ["green","yellow","orange","red"]
+    names = ["Validated",
+                "Automatic Validation",
+                "Manual Evaluation",
+                "Rejected"]
+    colored_header(names[st.session_state.confiance],"",color_name=f"{colors[st.session_state.confiance]}-70")
+    with st.container(height=700):
         df = st.session_state.matching[st.session_state.matching["Libelle GEN"].isin( st.session_state.groups[st.session_state.confiance]) ].sort_values(by='Libelle GEN', ascending=True).sort_values(by="score",ascending=False).drop_duplicates(subset="Libelle GEN")
         for rank,row in df.iterrows():
             b,g,s = st.columns([1,3,1])
@@ -171,24 +177,22 @@ def displayMatches():
                     else:
                         st.warning("VA")
                 else:
-                    st.metric("Best Mapping",row["score"])
+                    st.metric("Best Mapping",f'{row["score"]} %')
 
 
+################################### UTILS #############################################################
 
 
-def initialization():
-    st.session_state.GEN = json.load(open("app/data/GEN/transformed_referentielGEN.json","rb"))
-    st.session_state.matching = pd.read_csv("app/data/GEN/GEN_ROME.csv")
-    st.session_state.defs = json.load(open("app/data/ROME/descriptionsROME.json","r"))
-    st.session_state.selectSpot = json.load(open("app/data/GEN/selectSpot.json"))
-    st.session_state.ROMEnames = json.load(open("app/data/ROME/ROME_names.json")) 
-    st.session_state["confiance"] = 0
-    st.session_state.currentSpot = [1,1,1]
-    st.session_state.rules = []
+def displayName(x):
+    if x != "No filter":
+        return x + " - " + st.session_state.ROMEnames[x]
+    return x
 
-def referentialMatching():
+################################### APP LOGIC #############################################################
 
-
+def frameworkMapping():
+    st.set_page_config(page_title="matching tool",layout="wide")
+    st.title("Framework Mapping Tool")
     if st.sidebar.button("Reset",use_container_width=True) or "GEN" not in st.session_state:
         with st.spinner("Loading Frameworks"):
             initialization()
@@ -202,12 +206,10 @@ def referentialMatching():
         displayMatches()
     with col1:
         st.header("GEN Framework",divider="red")
-        displayGraphG()
+        displayFramework()
     with col2:
         st.header("ROME Framework",divider="red")
-        displayGraphD()
+        displayAllSuggestions()
 
 if __name__ == "__main__":
-    st.set_page_config(page_title="matching tool",layout="wide")
-    st.title("Outil de Matching de Référentiel")
-    referentialMatching()
+    frameworkMapping()

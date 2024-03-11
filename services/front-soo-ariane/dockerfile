@@ -10,14 +10,12 @@ COPY requirements.txt /requirements.txt
 RUN pip install --no-cache-dir -r /requirements.txt
 
 # Copy the contents of the repository into the container
-COPY . /app
-WORKDIR /app
+COPY /app /app
 
-# Configure Streamlit settings
-RUN printf "[server]\nenableCORS = false\n" > .streamlit/config.toml
+RUN mkdir -p .streamlit && printf "[server]\nenableCORS = false\n" > .streamlit/config.toml
 
 # Expose port
 ENV PORT 8080
 
 # Run streamlit app
-CMD ["streamlit", "run", "main.py", "--server.port", "8080"]
+CMD ["streamlit", "run", "app/🏠_Home.py", "--server.port", "8080"]
