@@ -18,6 +18,12 @@ triple:
     mms:activationToken: xsd:string
     mms:company: mms:Company
     mmm:keycloakId: xsd:string
+    mms:hasExperience: soo:Experience
+    mms:likesExperience: soo:Experience
+    mms:suggestedExperience: soo:Experience
+    mms:hasKnowledge: soo:Knowledge
+    mms:hasHardSkill: soo:HardSkill
+    mms:hasSoftSkill: soo:SoftSkill
 
   mms:PersonalDataWallet:
     mms:given: xsd:string
@@ -34,7 +40,7 @@ triple:
     mms:city: xsd:string
     mms:state: xsd:string
     mms:country: xsd:string
-    mms:postalcode: xsd:string
+    mms:postcode: xsd:string
     mms:addressOf: mms:PersonalDataWallet
 
   mms:Company:
@@ -130,3 +136,100 @@ triple:
     mms:jobSalaryRange: mms:SalaryRange
     mms:requiredSkill: rome:onto/Skill
     mms:company: mms:Company
+
+  mms:EducationalResource:
+    mms:title: xsd:string
+    mms:date: xsd:dateTime
+    mms:keywords: xsd:string
+    mms:picture: xsd:string
+    mms:url: xsd:string
+    mms:description: xsd:string
+
+    # Definition for new Classes based on the Smart Orientation Ontology (SOO:namespace prefix)
+  soo:Experience:
+    soo:hasSkill: soo:Skill
+    soo:relatedToChoice: soo:IndividualChoice
+    soo:type: xsd:string
+    soo:description: xsd:string
+    soo:occurrenceDate: xsd:date
+    soo:partOfSeries: soo:ExperienceSeries
+    soo:experienceName: xsd:string
+    soo:associatedSkillBlock: xsd:string
+    soo:result: xsd:string
+    soo:experienceOf: soo:User
+    soo:id: xsd:integer
+    soo:label: xsd:string
+    soo:hasHardSkill: soo:HardSkill
+    soo:hasSoftSkill: soo:SoftSkill
+    soo:suggestedExperience: soo:Experience
+    soo:likedExperience: soo:Experience
+    soo:hasKnowledge: soo:Knowledge
+
+
+  soo:HardSkill:
+    soo:name: xsd:string
+    soo:id: xsd:string
+    soo:label: xsd:string
+    soo:belongsToKnowledge: soo:Knowledge
+
+  soo:SoftSkill:
+    soo:name: xsd:string
+    soo:id: xsd:string
+    soo:label: xsd:string
+    soo:belongsToKnowledge: soo:Knowledge
+
+  soo:Skill:
+    soo:resultFromExperience: soo:Experience
+    soo:skillType: xsd:string
+    soo:skillLevel: xsd:string
+    soo:name: xsd:string
+
+  soo:Knowledge:
+    soo:id: xsd:string
+    soo:label: xsd:string
+
+  soo:IndividualChoice:
+    soo:choiceInExperience: soo:Experience
+    soo:choiceReason: xsd:string
+    soo:choiceOutcome: xsd:string
+
+    # Linking the profile and orientation process
+  soo:User:
+    soo:hasProfile: soo:Profile
+    soo:hasOrientation: soo:Orientation
+    soo:hasExperience: soo:Experience
+    soo:likesExperience: soo:Experience
+    soo:suggestedExperience: soo:Experience
+
+  soo:Profile:
+    soo:containsExperiences: soo:Experience
+    soo:containsSkills: soo:Skill
+    soo:reflectsChoices: soo:IndividualChoice
+    soo:reflectsSkillBlocks: soo:SkillBlock
+
+  soo:Orientation:
+    soo:suggestsExperience: soo:Experience
+    soo:basedOnCriteria: soo:Criteria
+    soo:expectsSkills: soo:Skill
+    soo:basedOnSkillBlock: soo:SkillBlock
+
+  soo:Criteria:
+    soo:criteriaType: xsd:string
+    soo:relatedToSkill: soo:Skill
+    soo:relatedToChoice: soo:IndividualChoice
+    soo:relatedToSkillBlock: soo:SkillBlock
+
+    # Experience Series as a chain of Experiences
+  soo:ExperienceSeries:
+    soo:previousExperience: soo:Experience
+    soo:nextExperience: soo:Experience
+    soo:seriesPath: xsd:string
+
+  # Additional definitions to connect experiences to skill development
+  soo:SkillDevelopment:
+    soo:experience: soo:Experience
+    soo:developedSkill: soo:Skill
+    soo:validationStatus: xsd:string  # Validated, Not Validated
+
+
+
