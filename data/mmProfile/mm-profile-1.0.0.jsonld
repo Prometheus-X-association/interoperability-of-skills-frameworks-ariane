@@ -180,6 +180,78 @@
       ]
     },
     {
+      "id": "mms:hasExperience",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:User"
+      ],
+      "range": [
+        "soo:Experience"
+      ]
+    },
+    {
+      "id": "mms:likesExperience",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:User"
+      ],
+      "range": [
+        "soo:Experience"
+      ]
+    },
+    {
+      "id": "mms:suggestedExperience",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:User"
+      ],
+      "range": [
+        "soo:Experience"
+      ]
+    },
+    {
+      "id": "mms:hasKnowledge",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:User"
+      ],
+      "range": [
+        "soo:Knowledge"
+      ]
+    },
+    {
+      "id": "mms:hasHardSkill",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:User"
+      ],
+      "range": [
+        "soo:HardSkill"
+      ]
+    },
+    {
+      "id": "mms:hasSoftSkill",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:User"
+      ],
+      "range": [
+        "soo:SoftSkill"
+      ]
+    },
+    {
       "id": "mms:PersonalDataWallet",
       "type": [
         "rdfs:Class",
@@ -338,7 +410,7 @@
       ]
     },
     {
-      "id": "mms:postalcode",
+      "id": "mms:postcode",
       "type": [
         "rdf:Property"
       ],
@@ -443,7 +515,8 @@
         "mms:Training",
         "mms:Mentorship",
         "rome:onto/Skill",
-        "rome:onto/Employment/Job"
+        "rome:onto/Employment/Job",
+        "mms:EducationalResource"
       ],
       "range": [
         "xsd:string"
@@ -1179,6 +1252,721 @@
       ],
       "range": [
         "mms:SalaryRange"
+      ]
+    },
+    {
+      "id": "mms:EducationalResource",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "mms:title",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:EducationalResource"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:date",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:EducationalResource"
+      ],
+      "range": [
+        "xsd:dateTime"
+      ]
+    },
+    {
+      "id": "mms:keywords",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:EducationalResource"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:picture",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:EducationalResource"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:url",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:EducationalResource"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:Experience",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "soo:hasSkill",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "soo:Skill"
+      ]
+    },
+    {
+      "id": "soo:relatedToChoice",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience",
+        "soo:Criteria"
+      ],
+      "range": [
+        "soo:IndividualChoice"
+      ]
+    },
+    {
+      "id": "soo:type",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:description",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:occurrenceDate",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "xsd:date"
+      ]
+    },
+    {
+      "id": "soo:partOfSeries",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "soo:ExperienceSeries"
+      ]
+    },
+    {
+      "id": "soo:experienceName",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:associatedSkillBlock",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:result",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:experienceOf",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "soo:User"
+      ]
+    },
+    {
+      "id": "soo:id",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience",
+        "soo:HardSkill",
+        "soo:SoftSkill",
+        "soo:Knowledge"
+      ],
+      "range": [
+        "xsd:integer",
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:label",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience",
+        "soo:HardSkill",
+        "soo:SoftSkill",
+        "soo:Knowledge"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:hasHardSkill",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "soo:HardSkill"
+      ]
+    },
+    {
+      "id": "soo:hasSoftSkill",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "soo:SoftSkill"
+      ]
+    },
+    {
+      "id": "soo:suggestedExperience",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience",
+        "soo:User"
+      ],
+      "range": [
+        "soo:Experience"
+      ]
+    },
+    {
+      "id": "soo:likedExperience",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "soo:Experience"
+      ]
+    },
+    {
+      "id": "soo:hasKnowledge",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "soo:Knowledge"
+      ]
+    },
+    {
+      "id": "soo:HardSkill",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "soo:name",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:HardSkill",
+        "soo:SoftSkill",
+        "soo:Skill"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:belongsToKnowledge",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:HardSkill",
+        "soo:SoftSkill"
+      ],
+      "range": [
+        "soo:Knowledge"
+      ]
+    },
+    {
+      "id": "soo:SoftSkill",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "soo:Skill",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "soo:resultFromExperience",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Skill"
+      ],
+      "range": [
+        "soo:Experience"
+      ]
+    },
+    {
+      "id": "soo:skillType",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Skill"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:skillLevel",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Skill"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:Knowledge",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "soo:IndividualChoice",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "soo:choiceInExperience",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:IndividualChoice"
+      ],
+      "range": [
+        "soo:Experience"
+      ]
+    },
+    {
+      "id": "soo:choiceReason",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:IndividualChoice"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:choiceOutcome",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:IndividualChoice"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:User",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "soo:hasProfile",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:User"
+      ],
+      "range": [
+        "soo:Profile"
+      ]
+    },
+    {
+      "id": "soo:hasOrientation",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:User"
+      ],
+      "range": [
+        "soo:Orientation"
+      ]
+    },
+    {
+      "id": "soo:hasExperience",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:User"
+      ],
+      "range": [
+        "soo:Experience"
+      ]
+    },
+    {
+      "id": "soo:likesExperience",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:User"
+      ],
+      "range": [
+        "soo:Experience"
+      ]
+    },
+    {
+      "id": "soo:Profile",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "soo:containsExperiences",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Profile"
+      ],
+      "range": [
+        "soo:Experience"
+      ]
+    },
+    {
+      "id": "soo:containsSkills",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Profile"
+      ],
+      "range": [
+        "soo:Skill"
+      ]
+    },
+    {
+      "id": "soo:reflectsChoices",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Profile"
+      ],
+      "range": [
+        "soo:IndividualChoice"
+      ]
+    },
+    {
+      "id": "soo:reflectsSkillBlocks",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Profile"
+      ],
+      "range": [
+        "soo:SkillBlock"
+      ]
+    },
+    {
+      "id": "soo:Orientation",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "soo:suggestsExperience",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Orientation"
+      ],
+      "range": [
+        "soo:Experience"
+      ]
+    },
+    {
+      "id": "soo:basedOnCriteria",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Orientation"
+      ],
+      "range": [
+        "soo:Criteria"
+      ]
+    },
+    {
+      "id": "soo:expectsSkills",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Orientation"
+      ],
+      "range": [
+        "soo:Skill"
+      ]
+    },
+    {
+      "id": "soo:basedOnSkillBlock",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Orientation"
+      ],
+      "range": [
+        "soo:SkillBlock"
+      ]
+    },
+    {
+      "id": "soo:Criteria",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "soo:criteriaType",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Criteria"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:relatedToSkill",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Criteria"
+      ],
+      "range": [
+        "soo:Skill"
+      ]
+    },
+    {
+      "id": "soo:relatedToSkillBlock",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Criteria"
+      ],
+      "range": [
+        "soo:SkillBlock"
+      ]
+    },
+    {
+      "id": "soo:ExperienceSeries",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "soo:previousExperience",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:ExperienceSeries"
+      ],
+      "range": [
+        "soo:Experience"
+      ]
+    },
+    {
+      "id": "soo:nextExperience",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:ExperienceSeries"
+      ],
+      "range": [
+        "soo:Experience"
+      ]
+    },
+    {
+      "id": "soo:seriesPath",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:ExperienceSeries"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:SkillDevelopment",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "soo:experience",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:SkillDevelopment"
+      ],
+      "range": [
+        "soo:Experience"
+      ]
+    },
+    {
+      "id": "soo:developedSkill",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:SkillDevelopment"
+      ],
+      "range": [
+        "soo:Skill"
+      ]
+    },
+    {
+      "id": "soo:validationStatus",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:SkillDevelopment"
+      ],
+      "range": [
+        "xsd:string"
       ]
     },
     {
