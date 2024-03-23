@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "profile-api",
   "version": "1.0.0",
   "description": "example of queries",
@@ -18,15 +19,42 @@
       "../../data-model/finalOntology/*.ld.json"
     ]
   },
+=======
+  "name": "data-mapping",
+  "version": "1.0.0",
+  "description": "Transformation of json file to json-ld ones.",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "vn": "vite-node",
+    "build": "vite build",
+    "test": "vitest",
+  },
+  "nodemonConfig": {},
+>>>>>>> a895c4f (moving file from ontology folder to a  one and this mapping feature is more a service or a package that a data-model)
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "graphql-request": "^7.0.1",
     "inquirer": "^9.2.23"
+=======
+  },
+  "devDependencies": {
+    "@liuli-util/vite-plugin-node": "^0.8.1",
+    "@mmorg/fsutils": "^1.1.3",
+    "vite": "^4.4.9",
+    "vite-node": "^1.3.1",
+    "vitest": "^1.3.1"
+>>>>>>> a895c4f (moving file from ontology folder to a  one and this mapping feature is more a service or a package that a data-model)
   },
   "engineStrict": true,
   "engines": {
     "node": ">=18.0.0"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a895c4f (moving file from ontology folder to a  one and this mapping feature is more a service or a package that a data-model)
