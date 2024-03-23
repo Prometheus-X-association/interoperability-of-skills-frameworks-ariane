@@ -28,7 +28,7 @@
   "scripts": {
     "vn": "vite-node",
     "build": "vite build",
-    "test": "vitest",
+    "test": "vitest"
   },
   "nodemonConfig": {},
 >>>>>>> a895c4f (moving file from ontology folder to a  one and this mapping feature is more a service or a package that a data-model)
