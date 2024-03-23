@@ -7,7 +7,7 @@
   "scripts": {
     "vn": "vite-node",
     "build": "vite build",
-    "test": "vitest",
+    "test": "vitest"
   },
   "nodemonConfig": {},
   "keywords": [],
