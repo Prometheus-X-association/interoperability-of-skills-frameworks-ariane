@@ -17,20 +17,20 @@ const mappingRules = {
         "Results": { "@type": "xsd:string", "@id": "soo:results" }
     },
     "jobPosting": {
-        "Job ID": { "@type": "xsd:integer", "@id": "jpo:jobID" },
-        "Job Title": { "@type": "xsd:string", "@id": "jpo:jobTitle" },
-        "Technical Skills": { "@type": "xsd:string", "@id": "jpo:technicalSkills" },
-        "Human Skills": { "@type": "xsd:string", "@id": "jpo:humanSkills" },
-        "Next Career Steps": { "@type": "xsd:string", "@id": "jpo:nextCareerSteps" }
+        "Job ID": { "@type": "xsd:integer", "@id": "soo:jobID" },
+        "Job Title": { "@type": "xsd:string", "@id": "soo:jobTitle" },
+        "Technical Skills": { "@type": "xsd:string", "@id": "soo:technicalSkills" },
+        "Human Skills": { "@type": "xsd:string", "@id": "soo:humanSkills" },
+        "Next Career Steps": { "@type": "xsd:string", "@id": "soo:nextCareerSteps" }
     },
     "userExperience": {
-        "Experience Ids": { "@type": "xsd:integer", "@id": "ue:experienceIds" },
-        "Experience Labels": { "@type": "xsd:string", "@id": "ue:experienceLabels" },
-        "Associated Hard Skills": { "@type": "xsd:string", "@id": "ue:associatedHardSkills" },
-        "Associated Soft Skills": { "@type": "xsd:string", "@id": "ue:associatedSoftSkills" },
-        "Suggested Experiences": { "@type": "xsd:string", "@id": "ue:suggestedExperiences" },
-        "Liked Experiences": { "@type": "xsd:string", "@id": "ue:likedExperiences" },
-        "Account": { "@type": "xsd:string", "@id": "ue:account" }
+        "Experience Ids": { "@type": "xsd:integer", "@id": "soo:experienceIds" },
+        "Experience Labels": { "@type": "xsd:string", "@id": "soo:experienceLabels" },
+        "Associated Hard Skills": { "@type": "xsd:string", "@id": "soo:associatedHardSkills" },
+        "Associated Soft Skills": { "@type": "xsd:string", "@id": "soo:associatedSoftSkills" },
+        "Suggested Experiences": { "@type": "xsd:string", "@id": "soo:suggestedExperiences" },
+        "Liked Experiences": { "@type": "xsd:string", "@id": "soo:likedExperiences" },
+        "Account": { "@type": "xsd:string", "@id": "soo:account" }
     }
 };
 

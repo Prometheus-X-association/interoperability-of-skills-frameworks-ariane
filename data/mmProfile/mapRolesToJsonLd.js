@@ -1,6 +1,5 @@
 import fs from 'fs';
 
-// Updated to handle the complex nested structure of job roles
 const mappingRules = {
     "role": {
         "Knowledges": { "@type": "xsd:string", "@id": "role:knowledge" },
@@ -40,7 +39,7 @@ function ontoTermTransform(inputData, mappingRules) {
     });
 
     // Define the JSON-LD context
-    // Adjust the path to the ontology file as necessary
+    // path to the ontology file as necessary
     const ontologyPath = './mm-profile-1.0.0.jsonld';
     const context = readJson(ontologyPath)['@context'];
 
