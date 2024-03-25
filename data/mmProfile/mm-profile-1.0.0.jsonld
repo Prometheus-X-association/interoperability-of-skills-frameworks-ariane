@@ -1970,6 +1970,85 @@
       ]
     },
     {
+      "id": "soo:JobPosting",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "soo:jobID",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:JobPosting"
+      ],
+      "range": [
+        "xsd:integer"
+      ]
+    },
+    {
+      "id": "soo:jobTitle",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:JobPosting"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:technicalSkills",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:JobPosting"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:humanSkills",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:JobPosting"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:nextCareerSteps",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:JobPosting"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:company",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:JobPosting"
+      ],
+      "range": [
+        "mms:Company"
+      ]
+    },
+    {
       "id": "mms:Ontology",
       "type": [
         "owl:Ontology"
