@@ -1,133 +1,72 @@
 import fs from 'fs';
 
-// schema to align with input JSON structure
-const schema = {
-    "Role": {
-        "@type": "Role",
-        "properties": {
-            "name": "name", // Direct mapping for role names
-            "knowledges": {
-                "@id": "Knowledges" // Mapping to the array of knowledge IDs
-            },
-            "hardSkills": {
-                "@id": "Hard Skills" // Mapping to the array of skill IDs
-            }
-        }
+// Updated to handle the complex nested structure of job roles
+const mappingRules = {
+    "role": {
+        "Knowledges": { "@type": "xsd:string", "@id": "role:knowledge" },
+        "Hard Skills": { "@type": "xsd:string", "@id": "role:hardSkill" }
     }
 };
 
-// Function to read and parse JSON file
+// Function to map values to JSON-LD format
+function mapValuesToJSONLD(value, rule) {
+    // Handling arrays of values for Knowledges and Hard Skills
+    return value.map(item => ({ "@value": item, "@type": rule["@type"] }));
+}
+
+// Function to apply mapping rules to a role based on the details and rules
+function applyMappingForRole(role, details, rules) {
+    // Applying mapping to Knowledges and Hard Skills within each role
+    let mappedDetails = {};
+    for (const detailKey in details) {
+        const rule = rules[detailKey];
+        if (rule) {
+            mappedDetails[rule["@id"]] = mapValuesToJSONLD(details[detailKey], rule);
+        }
+    }
+    // Constructing the JSON-LD object for each role
+    return {
+        "@type": "role:JobRole",
+        "role:name": role,
+        ...mappedDetails
+    };
+}
+
+// Function to transform the input data to JSON-LD format based on the mapping rules
+function ontoTermTransform(inputData, mappingRules) {
+    // Transforming the input data to JSON-LD format based on the mapping rules
+    const transformedData = Object.keys(inputData).map(role => {
+        return applyMappingForRole(role, inputData[role], mappingRules["role"]);
+    });
+
+    // Define the JSON-LD context
+    // Adjust the path to the ontology file as necessary
+    const ontologyPath = './mm-profile-1.0.0.jsonld';
+    const context = readJson(ontologyPath)['@context'];
+
+    return {
+        "@context": context,
+        "graph": transformedData
+    };
+}
+
+// readJson function to read a JSON file
 function readJson(filePath) {
     const fileData = fs.readFileSync(filePath, 'utf8');
     return JSON.parse(fileData);
 }
 
-// Validate if the input is an array and log error if not
-function validateArray(items, key) {
-    if (!Array.isArray(items)) {
-        console.error(`Error: Key '${key}' is not an array.`, items);
-        return false;
-    }
-    return true;
+// main function to read the input JSON, transform it to JSON-LD, and save the output
+function main() {
+    const inputJsonPath = './input.json'; // Adjust this path as necessary
+    const inputData = JSON.parse(fs.readFileSync(inputJsonPath, 'utf8'));
+
+    const outputData = ontoTermTransform(inputData, mappingRules);
+
+    const outputPath = './output.jsonld'; // The path where the output will be saved
+    fs.writeFileSync(outputPath, JSON.stringify(outputData, null, 2));
+    console.log(`The JSON-LD data has been saved to ${outputPath}`);
 }
 
-// Map array items to the JSON-LD structure using the specified property ("@id")
-function mapArrayItemsToJsonLd(items, property) {
-    return items.map(item => ({ [property]: item }));
-}
-
-// Map each role to the JSON-LD format according to the schema
-function mapRoleToJSONLD(role, details, schema) {
-    const roleJsonLd = { "@type": schema.Role["@type"], "name": role };
-
-    for (const prop in schema.Role.properties) {
-        const schemaProperty = schema.Role.properties[prop];
-        if (prop === "name") continue; // Skip name as it's already set
-
-        const key = schemaProperty["@id"];
-        const items = details[key];
-
-        if (!validateArray(items, key)) {
-            roleJsonLd[prop] = [];
-            continue;
-        }
-
-        roleJsonLd[prop] = mapArrayItemsToJsonLd(items, "@id");
-    }
-
-    return roleJsonLd;
-}
-
-// Main function to convert input JSON to JSON-LD
-function mapRolesToJsonLd(inputJsonPath) {
-    const inputData = readJson(inputJsonPath);
-    const ontologyPath = './mm-profile-1.0.0.jsonld';
-    const context = readJson(ontologyPath)['@context'];
-
-    const rolesJsonLd = Object.entries(inputData).map(([role, details]) =>
-        mapRoleToJSONLD(role, details, schema));
-
-    return {
-        "@context": context,
-        "@graph": rolesJsonLd
-    };
-}
-
-// Usage
-const inputJson = './input.json';
-const mappedJsonLd = mapRolesToJsonLd(inputJson);
-const jsonLdString = JSON.stringify(mappedJsonLd, null, 2);
-const outputPath = './output.jsonld';
-fs.writeFileSync(outputPath, jsonLdString);
-console.log(`The JSON-LD data has been saved to ${outputPath}`);
-
-// import fs from 'fs';
-//
-// const inputJson = './input.json'
-// function mapRolesToJsonLd(inputJson) {
-//         function readJson(filePath) {
-//         const fileData = fs.readFileSync(filePath, 'utf8');
-//         return JSON.parse(fileData); // parse JSON string to JSON object
-//     }
-//     const inputData = readJson(inputJson)
-//
-//     const ontologyPath = './mm-profile-1.0.0.jsonld'
-//
-//     const context = readJson(ontologyPath)['@context']
-//
-//     console.log(context);
-//
-//     const outputJsonLd = {
-//         "@context":
-//             context,
-//         "@graph": []
-//     };
-//
-//     Object.entries(inputData).forEach(([role, details]) => {
-//         const roleEntity = {
-//             "@type": "Role",
-//             "name": role,
-//             "knowledges": details["Knowledges"].map(knowledge => ({
-//                 "@id": knowledge
-//             })),
-//             "hardSkills": details["Hard Skills"].map(skill => ({
-//                 "@id": skill
-//             }))
-//         };
-//
-//         outputJsonLd["@graph"].push(roleEntity);
-//     });
-//
-//     return outputJsonLd;
-// }
-//
-// const mappedJsonLd = mapRolesToJsonLd(inputJson);
-// //console.log(JSON.stringify(mappedJsonLd, null, 2));
-//
-// const jsonLdString = JSON.stringify(mappedJsonLd, null, 2);
-//
-// const outputPath = './output.jsonld';
-//
-// fs.writeFileSync(outputPath, jsonLdString);
-//
-// console.log(`The JSON-LD data has been saved to ${outputPath}`);
+// Execute the main function
+main();

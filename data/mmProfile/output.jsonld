@@ -56,2760 +56,1062 @@
       "@container": "@set"
     }
   },
-  "@graph": [
+  "graph": [
     {
-      "@type": "soo:Experience",
-      "soo:id": [
+      "jpo:jobID": {
+        "@id": "jpo:jobID",
+        "@value": 101,
+        "@type": "xsd:integer"
+      },
+      "jpo:jobTitle": {
+        "@id": "jpo:jobTitle",
+        "@value": "Advanced Data Scientist",
+        "@type": "xsd:string"
+      },
+      "jpo:technicalSkills": [
         {
-          "@value": 1
+          "@value": "Deep Learning",
+          "@type": "xsd:string"
         },
         {
-          "@value": 2
+          "@value": "Big Data Analysis",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Cloud Computing",
+          "@type": "xsd:string"
         }
       ],
-      "soo:experienceName": [
+      "jpo:humanSkills": [
         {
-          "@value": "Data Analysis Internship"
+          "@value": "Strategic Thinking",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Junior Data Scientist"
+          "@value": "Innovation",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Communication",
+          "@type": "xsd:string"
         }
       ],
-      "soo:hasHardSkill": [
+      "jpo:nextCareerSteps": [
         {
-          "@value": "Python"
+          "@value": "Chief Data Officer",
+          "@type": "xsd:string"
         },
         {
-          "@value": "SQL"
-        },
-        {
-          "@value": "Machine Learning"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Analytical Thinking"
-        },
-        {
-          "@value": "Communication"
-        },
-        {
-          "@value": "Problem-Solving"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Senior Data Analyst"
-        },
-        {
-          "@value": "Data Science Consultant"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Business Intelligence Analyst"
-        },
-        {
-          "@value": "Research Scientist"
+          "@value": "AI Research Director",
+          "@type": "xsd:string"
         }
       ]
     },
     {
-      "@type": "soo:Experience",
-      "soo:id": [
+      "soo:experienceName": {
+        "@id": "soo:experienceName",
+        "@value": "Data Science Project",
+        "@type": "xsd:string"
+      },
+      "soo:userID": {
+        "@id": "soo:userID",
+        "@value": "jane.doe@example.com",
+        "@type": "xsd:string"
+      },
+      "soo:date": {
+        "@id": "soo:date",
+        "@value": "2023-08-15",
+        "@type": "xsd:date"
+      },
+      "soo:associatedSoftSkillBlock": {
+        "@id": "soo:associatedSoftSkillBlock",
+        "@value": "Data Visualization",
+        "@type": "xsd:string"
+      },
+      "soo:results": {
+        "@id": "soo:results",
+        "@value": "Completed",
+        "@type": "xsd:string"
+      }
+    },
+    {
+      "mms:title": {
+        "@id": "mms:title",
+        "@value": "Introduction to Cloud Computing",
+        "@type": "xsd:string"
+      },
+      "mms:date": {
+        "@id": "mms:date",
+        "@value": "2022-09-01",
+        "@type": "xsd:dateTime"
+      },
+      "mms:keywords": {
+        "@id": "mms:keywords",
+        "@value": "Cloud, AWS, Azure",
+        "@type": "xsd:string"
+      },
+      "mms:picture": {
+        "@id": "mms:picture",
+        "@value": "https://example.com/cloud-computing.jpg",
+        "@type": "xsd:string"
+      },
+      "mms:url": {
+        "@id": "mms:url",
+        "@value": "https://online-learning.example.com/cloud-computing",
+        "@type": "xsd:string"
+      }
+    },
+    {
+      "ue:experienceIds": [
         {
-          "@value": 3
+          "@value": 7,
+          "@type": "xsd:integer"
+        },
+        {
+          "@value": 8,
+          "@type": "xsd:integer"
         }
       ],
-      "soo:experienceName": [
+      "ue:experienceLabels": [
         {
-          "@value": "Project Management Role"
+          "@value": "Junior Cloud Engineer",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Cloud Associate",
+          "@type": "xsd:string"
         }
       ],
-      "soo:hasHardSkill": [
+      "ue:associatedHardSkills": [
         {
-          "@value": "Agile Methodologies"
+          "@value": "AWS Certification",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Budget Management"
+          "@value": "Network Security",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Risk Assessment"
+          "@value": "Linux",
+          "@type": "xsd:string"
         }
       ],
-      "soo:hasSoftSkill": [
+      "ue:associatedSoftSkills": [
         {
-          "@value": "Leadership"
+          "@value": "Teamwork",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Decision Making"
-        },
-        {
-          "@value": "Time Management"
+          "@value": "Adaptability",
+          "@type": "xsd:string"
         }
       ],
-      "soo:suggestedExperience": [
+      "ue:suggestedExperiences": [
         {
-          "@value": "Senior Project Manager"
+          "@value": "Cloud Architect",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Program Director"
+          "@value": "DevOps Engineer",
+          "@type": "xsd:string"
         }
       ],
-      "soo:likedExperience": [
+      "ue:likedExperiences": [
         {
-          "@value": "Operations Manager"
+          "@value": "Systems Administrator",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Product Manager"
+          "@value": "Network Engineer",
+          "@type": "xsd:string"
+        }
+      ],
+      "ue:account": {
+        "@id": "ue:account",
+        "@value": "john.doe@example.net",
+        "@type": "xsd:string"
+      }
+    },
+    {},
+    {
+      "jpo:jobID": {
+        "@id": "jpo:jobID",
+        "@value": 101,
+        "@type": "xsd:integer"
+      },
+      "jpo:jobTitle": {
+        "@id": "jpo:jobTitle",
+        "@value": "Advanced Data Scientist",
+        "@type": "xsd:string"
+      },
+      "jpo:technicalSkills": [
+        {
+          "@value": "Deep Learning",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Big Data Analysis",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Cloud Computing",
+          "@type": "xsd:string"
+        }
+      ],
+      "jpo:humanSkills": [
+        {
+          "@value": "Strategic Thinking",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Innovation",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Communication",
+          "@type": "xsd:string"
+        }
+      ],
+      "jpo:nextCareerSteps": [
+        {
+          "@value": "Chief Data Officer",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "AI Research Director",
+          "@type": "xsd:string"
         }
       ]
     },
     {
-      "@type": "soo:Experience",
-      "soo:id": [
+      "soo:experienceName": {
+        "@id": "soo:experienceName",
+        "@value": "Data Science Project",
+        "@type": "xsd:string"
+      },
+      "soo:userID": {
+        "@id": "soo:userID",
+        "@value": "jane.doe@example.com",
+        "@type": "xsd:string"
+      },
+      "soo:date": {
+        "@id": "soo:date",
+        "@value": "2023-08-15",
+        "@type": "xsd:date"
+      },
+      "soo:associatedSoftSkillBlock": {
+        "@id": "soo:associatedSoftSkillBlock",
+        "@value": "Data Visualization",
+        "@type": "xsd:string"
+      },
+      "soo:results": {
+        "@id": "soo:results",
+        "@value": "Completed",
+        "@type": "xsd:string"
+      }
+    },
+    {
+      "mms:title": {
+        "@id": "mms:title",
+        "@value": "Introduction to Cloud Computing",
+        "@type": "xsd:string"
+      },
+      "mms:date": {
+        "@id": "mms:date",
+        "@value": "2022-09-01",
+        "@type": "xsd:dateTime"
+      },
+      "mms:keywords": {
+        "@id": "mms:keywords",
+        "@value": "Cloud, AWS, Azure",
+        "@type": "xsd:string"
+      },
+      "mms:picture": {
+        "@id": "mms:picture",
+        "@value": "https://example.com/cloud-computing.jpg",
+        "@type": "xsd:string"
+      },
+      "mms:url": {
+        "@id": "mms:url",
+        "@value": "https://online-learning.example.com/cloud-computing",
+        "@type": "xsd:string"
+      }
+    },
+    {
+      "ue:experienceIds": [
         {
-          "@value": 4
+          "@value": 7,
+          "@type": "xsd:integer"
         },
         {
-          "@value": 5
+          "@value": 8,
+          "@type": "xsd:integer"
         }
       ],
-      "soo:experienceName": [
+      "ue:experienceLabels": [
         {
-          "@value": "Software Engineering Internship"
+          "@value": "Junior Cloud Engineer",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Full Stack Developer"
+          "@value": "Cloud Associate",
+          "@type": "xsd:string"
         }
       ],
-      "soo:hasHardSkill": [
+      "ue:associatedHardSkills": [
         {
-          "@value": "JavaScript"
+          "@value": "AWS Certification",
+          "@type": "xsd:string"
         },
         {
-          "@value": "React"
+          "@value": "Network Security",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Node.js"
+          "@value": "Linux",
+          "@type": "xsd:string"
         }
       ],
-      "soo:hasSoftSkill": [
+      "ue:associatedSoftSkills": [
         {
-          "@value": "Creativity"
+          "@value": "Teamwork",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Team Collaboration"
-        },
-        {
-          "@value": "Attention to Detail"
+          "@value": "Adaptability",
+          "@type": "xsd:string"
         }
       ],
-      "soo:suggestedExperience": [
+      "ue:suggestedExperiences": [
         {
-          "@value": "Lead Software Engineer"
+          "@value": "Cloud Architect",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Technical Architect"
+          "@value": "DevOps Engineer",
+          "@type": "xsd:string"
         }
       ],
-      "soo:likedExperience": [
+      "ue:likedExperiences": [
         {
-          "@value": "UI/UX Designer"
+          "@value": "Systems Administrator",
+          "@type": "xsd:string"
         },
         {
-          "@value": "DevOps Engineer"
+          "@value": "Network Engineer",
+          "@type": "xsd:string"
+        }
+      ],
+      "ue:account": {
+        "@id": "ue:account",
+        "@value": "john.doe@example.net",
+        "@type": "xsd:string"
+      }
+    },
+    {},
+    {
+      "jpo:jobID": {
+        "@id": "jpo:jobID",
+        "@value": 101,
+        "@type": "xsd:integer"
+      },
+      "jpo:jobTitle": {
+        "@id": "jpo:jobTitle",
+        "@value": "Advanced Data Scientist",
+        "@type": "xsd:string"
+      },
+      "jpo:technicalSkills": [
+        {
+          "@value": "Deep Learning",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Big Data Analysis",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Cloud Computing",
+          "@type": "xsd:string"
+        }
+      ],
+      "jpo:humanSkills": [
+        {
+          "@value": "Strategic Thinking",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Innovation",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Communication",
+          "@type": "xsd:string"
+        }
+      ],
+      "jpo:nextCareerSteps": [
+        {
+          "@value": "Chief Data Officer",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "AI Research Director",
+          "@type": "xsd:string"
         }
       ]
     },
     {
-      "@type": "soo:Experience",
-      "soo:id": [
+      "soo:experienceName": {
+        "@id": "soo:experienceName",
+        "@value": "Data Science Project",
+        "@type": "xsd:string"
+      },
+      "soo:userID": {
+        "@id": "soo:userID",
+        "@value": "jane.doe@example.com",
+        "@type": "xsd:string"
+      },
+      "soo:date": {
+        "@id": "soo:date",
+        "@value": "2023-08-15",
+        "@type": "xsd:date"
+      },
+      "soo:associatedSoftSkillBlock": {
+        "@id": "soo:associatedSoftSkillBlock",
+        "@value": "Data Visualization",
+        "@type": "xsd:string"
+      },
+      "soo:results": {
+        "@id": "soo:results",
+        "@value": "Completed",
+        "@type": "xsd:string"
+      }
+    },
+    {
+      "mms:title": {
+        "@id": "mms:title",
+        "@value": "Introduction to Cloud Computing",
+        "@type": "xsd:string"
+      },
+      "mms:date": {
+        "@id": "mms:date",
+        "@value": "2022-09-01",
+        "@type": "xsd:dateTime"
+      },
+      "mms:keywords": {
+        "@id": "mms:keywords",
+        "@value": "Cloud, AWS, Azure",
+        "@type": "xsd:string"
+      },
+      "mms:picture": {
+        "@id": "mms:picture",
+        "@value": "https://example.com/cloud-computing.jpg",
+        "@type": "xsd:string"
+      },
+      "mms:url": {
+        "@id": "mms:url",
+        "@value": "https://online-learning.example.com/cloud-computing",
+        "@type": "xsd:string"
+      }
+    },
+    {
+      "ue:experienceIds": [
         {
-          "@value": 4
+          "@value": 7,
+          "@type": "xsd:integer"
         },
         {
-          "@value": 5
+          "@value": 8,
+          "@type": "xsd:integer"
         }
       ],
-      "soo:experienceName": [
+      "ue:experienceLabels": [
         {
-          "@value": "Experience Label 4"
+          "@value": "Junior Cloud Engineer",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Experience Label 5"
+          "@value": "Cloud Associate",
+          "@type": "xsd:string"
         }
       ],
-      "soo:hasHardSkill": [
+      "ue:associatedHardSkills": [
         {
-          "@value": "Skill 4"
+          "@value": "AWS Certification",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Skill 5"
+          "@value": "Network Security",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Skill 6"
+          "@value": "Linux",
+          "@type": "xsd:string"
         }
       ],
-      "soo:hasSoftSkill": [
+      "ue:associatedSoftSkills": [
         {
-          "@value": "Soft Skill 4"
+          "@value": "Teamwork",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Soft Skill 5"
-        },
-        {
-          "@value": "Soft Skill 6"
+          "@value": "Adaptability",
+          "@type": "xsd:string"
         }
       ],
-      "soo:suggestedExperience": [
+      "ue:suggestedExperiences": [
         {
-          "@value": "Job Title 7"
+          "@value": "Cloud Architect",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Job Title 8"
+          "@value": "DevOps Engineer",
+          "@type": "xsd:string"
         }
       ],
-      "soo:likedExperience": [
+      "ue:likedExperiences": [
         {
-          "@value": "Job Title 9"
+          "@value": "Systems Administrator",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Job Title 10"
+          "@value": "Network Engineer",
+          "@type": "xsd:string"
+        }
+      ],
+      "ue:account": {
+        "@id": "ue:account",
+        "@value": "john.doe@example.net",
+        "@type": "xsd:string"
+      }
+    },
+    {},
+    {
+      "jpo:jobID": {
+        "@id": "jpo:jobID",
+        "@value": 101,
+        "@type": "xsd:integer"
+      },
+      "jpo:jobTitle": {
+        "@id": "jpo:jobTitle",
+        "@value": "Advanced Data Scientist",
+        "@type": "xsd:string"
+      },
+      "jpo:technicalSkills": [
+        {
+          "@value": "Deep Learning",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Big Data Analysis",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Cloud Computing",
+          "@type": "xsd:string"
+        }
+      ],
+      "jpo:humanSkills": [
+        {
+          "@value": "Strategic Thinking",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Innovation",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Communication",
+          "@type": "xsd:string"
+        }
+      ],
+      "jpo:nextCareerSteps": [
+        {
+          "@value": "Chief Data Officer",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "AI Research Director",
+          "@type": "xsd:string"
         }
       ]
     },
     {
-      "@type": "soo:Experience",
-      "soo:id": [
+      "soo:experienceName": {
+        "@id": "soo:experienceName",
+        "@value": "Data Science Project",
+        "@type": "xsd:string"
+      },
+      "soo:userID": {
+        "@id": "soo:userID",
+        "@value": "jane.doe@example.com",
+        "@type": "xsd:string"
+      },
+      "soo:date": {
+        "@id": "soo:date",
+        "@value": "2023-08-15",
+        "@type": "xsd:date"
+      },
+      "soo:associatedSoftSkillBlock": {
+        "@id": "soo:associatedSoftSkillBlock",
+        "@value": "Data Visualization",
+        "@type": "xsd:string"
+      },
+      "soo:results": {
+        "@id": "soo:results",
+        "@value": "Completed",
+        "@type": "xsd:string"
+      }
+    },
+    {
+      "mms:title": {
+        "@id": "mms:title",
+        "@value": "Introduction to Cloud Computing",
+        "@type": "xsd:string"
+      },
+      "mms:date": {
+        "@id": "mms:date",
+        "@value": "2022-09-01",
+        "@type": "xsd:dateTime"
+      },
+      "mms:keywords": {
+        "@id": "mms:keywords",
+        "@value": "Cloud, AWS, Azure",
+        "@type": "xsd:string"
+      },
+      "mms:picture": {
+        "@id": "mms:picture",
+        "@value": "https://example.com/cloud-computing.jpg",
+        "@type": "xsd:string"
+      },
+      "mms:url": {
+        "@id": "mms:url",
+        "@value": "https://online-learning.example.com/cloud-computing",
+        "@type": "xsd:string"
+      }
+    },
+    {
+      "ue:experienceIds": [
         {
-          "@value": 5
+          "@value": 7,
+          "@type": "xsd:integer"
         },
         {
-          "@value": 6
+          "@value": 8,
+          "@type": "xsd:integer"
         }
       ],
-      "soo:experienceName": [
+      "ue:experienceLabels": [
         {
-          "@value": "Experience Label 5"
+          "@value": "Junior Cloud Engineer",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Experience Label 6"
+          "@value": "Cloud Associate",
+          "@type": "xsd:string"
         }
       ],
-      "soo:hasHardSkill": [
+      "ue:associatedHardSkills": [
         {
-          "@value": "Skill 5"
+          "@value": "AWS Certification",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Skill 6"
+          "@value": "Network Security",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Skill 7"
+          "@value": "Linux",
+          "@type": "xsd:string"
         }
       ],
-      "soo:hasSoftSkill": [
+      "ue:associatedSoftSkills": [
         {
-          "@value": "Soft Skill 5"
+          "@value": "Teamwork",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Soft Skill 6"
-        },
-        {
-          "@value": "Soft Skill 7"
+          "@value": "Adaptability",
+          "@type": "xsd:string"
         }
       ],
-      "soo:suggestedExperience": [
+      "ue:suggestedExperiences": [
         {
-          "@value": "Job Title 8"
+          "@value": "Cloud Architect",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Job Title 9"
+          "@value": "DevOps Engineer",
+          "@type": "xsd:string"
         }
       ],
-      "soo:likedExperience": [
+      "ue:likedExperiences": [
         {
-          "@value": "Job Title 10"
+          "@value": "Systems Administrator",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Job Title 11"
+          "@value": "Network Engineer",
+          "@type": "xsd:string"
+        }
+      ],
+      "ue:account": {
+        "@id": "ue:account",
+        "@value": "john.doe@example.net",
+        "@type": "xsd:string"
+      }
+    },
+    {},
+    {
+      "jpo:jobID": {
+        "@id": "jpo:jobID",
+        "@value": 101,
+        "@type": "xsd:integer"
+      },
+      "jpo:jobTitle": {
+        "@id": "jpo:jobTitle",
+        "@value": "Advanced Data Scientist",
+        "@type": "xsd:string"
+      },
+      "jpo:technicalSkills": [
+        {
+          "@value": "Deep Learning",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Big Data Analysis",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Cloud Computing",
+          "@type": "xsd:string"
+        }
+      ],
+      "jpo:humanSkills": [
+        {
+          "@value": "Strategic Thinking",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Innovation",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Communication",
+          "@type": "xsd:string"
+        }
+      ],
+      "jpo:nextCareerSteps": [
+        {
+          "@value": "Chief Data Officer",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "AI Research Director",
+          "@type": "xsd:string"
         }
       ]
     },
     {
-      "@type": "soo:Experience",
-      "soo:id": [
+      "soo:experienceName": {
+        "@id": "soo:experienceName",
+        "@value": "Data Science Project",
+        "@type": "xsd:string"
+      },
+      "soo:userID": {
+        "@id": "soo:userID",
+        "@value": "jane.doe@example.com",
+        "@type": "xsd:string"
+      },
+      "soo:date": {
+        "@id": "soo:date",
+        "@value": "2023-08-15",
+        "@type": "xsd:date"
+      },
+      "soo:associatedSoftSkillBlock": {
+        "@id": "soo:associatedSoftSkillBlock",
+        "@value": "Data Visualization",
+        "@type": "xsd:string"
+      },
+      "soo:results": {
+        "@id": "soo:results",
+        "@value": "Completed",
+        "@type": "xsd:string"
+      }
+    },
+    {
+      "mms:title": {
+        "@id": "mms:title",
+        "@value": "Introduction to Cloud Computing",
+        "@type": "xsd:string"
+      },
+      "mms:date": {
+        "@id": "mms:date",
+        "@value": "2022-09-01",
+        "@type": "xsd:dateTime"
+      },
+      "mms:keywords": {
+        "@id": "mms:keywords",
+        "@value": "Cloud, AWS, Azure",
+        "@type": "xsd:string"
+      },
+      "mms:picture": {
+        "@id": "mms:picture",
+        "@value": "https://example.com/cloud-computing.jpg",
+        "@type": "xsd:string"
+      },
+      "mms:url": {
+        "@id": "mms:url",
+        "@value": "https://online-learning.example.com/cloud-computing",
+        "@type": "xsd:string"
+      }
+    },
+    {
+      "ue:experienceIds": [
         {
-          "@value": 6
+          "@value": 7,
+          "@type": "xsd:integer"
+        },
+        {
+          "@value": 8,
+          "@type": "xsd:integer"
         }
       ],
-      "soo:experienceName": [
+      "ue:experienceLabels": [
         {
-          "@value": "Experience Label 6"
+          "@value": "Junior Cloud Engineer",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Cloud Associate",
+          "@type": "xsd:string"
         }
       ],
-      "soo:hasHardSkill": [
+      "ue:associatedHardSkills": [
         {
-          "@value": "Skill 6"
+          "@value": "AWS Certification",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Skill 7"
+          "@value": "Network Security",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Skill 8"
+          "@value": "Linux",
+          "@type": "xsd:string"
         }
       ],
-      "soo:hasSoftSkill": [
+      "ue:associatedSoftSkills": [
         {
-          "@value": "Soft Skill 6"
+          "@value": "Teamwork",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Soft Skill 7"
-        },
-        {
-          "@value": "Soft Skill 8"
+          "@value": "Adaptability",
+          "@type": "xsd:string"
         }
       ],
-      "soo:suggestedExperience": [
+      "ue:suggestedExperiences": [
         {
-          "@value": "Job Title 9"
+          "@value": "Cloud Architect",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Job Title 10"
+          "@value": "DevOps Engineer",
+          "@type": "xsd:string"
         }
       ],
-      "soo:likedExperience": [
+      "ue:likedExperiences": [
         {
-          "@value": "Job Title 11"
+          "@value": "Systems Administrator",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Job Title 12"
+          "@value": "Network Engineer",
+          "@type": "xsd:string"
+        }
+      ],
+      "ue:account": {
+        "@id": "ue:account",
+        "@value": "john.doe@example.net",
+        "@type": "xsd:string"
+      }
+    },
+    {},
+    {
+      "jpo:jobID": {
+        "@id": "jpo:jobID",
+        "@value": 101,
+        "@type": "xsd:integer"
+      },
+      "jpo:jobTitle": {
+        "@id": "jpo:jobTitle",
+        "@value": "Advanced Data Scientist",
+        "@type": "xsd:string"
+      },
+      "jpo:technicalSkills": [
+        {
+          "@value": "Deep Learning",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Big Data Analysis",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Cloud Computing",
+          "@type": "xsd:string"
+        }
+      ],
+      "jpo:humanSkills": [
+        {
+          "@value": "Strategic Thinking",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Innovation",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Communication",
+          "@type": "xsd:string"
+        }
+      ],
+      "jpo:nextCareerSteps": [
+        {
+          "@value": "Chief Data Officer",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "AI Research Director",
+          "@type": "xsd:string"
         }
       ]
     },
     {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 7
-        },
-        {
-          "@value": 8
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 7"
-        },
-        {
-          "@value": "Experience Label 8"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 7"
-        },
-        {
-          "@value": "Skill 8"
-        },
-        {
-          "@value": "Skill 9"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 7"
-        },
-        {
-          "@value": "Soft Skill 8"
-        },
-        {
-          "@value": "Soft Skill 9"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 10"
-        },
-        {
-          "@value": "Job Title 11"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 12"
-        },
-        {
-          "@value": "Job Title 13"
-        }
-      ]
+      "soo:experienceName": {
+        "@id": "soo:experienceName",
+        "@value": "Data Science Project",
+        "@type": "xsd:string"
+      },
+      "soo:userID": {
+        "@id": "soo:userID",
+        "@value": "jane.doe@example.com",
+        "@type": "xsd:string"
+      },
+      "soo:date": {
+        "@id": "soo:date",
+        "@value": "2023-08-15",
+        "@type": "xsd:date"
+      },
+      "soo:associatedSoftSkillBlock": {
+        "@id": "soo:associatedSoftSkillBlock",
+        "@value": "Data Visualization",
+        "@type": "xsd:string"
+      },
+      "soo:results": {
+        "@id": "soo:results",
+        "@value": "Completed",
+        "@type": "xsd:string"
+      }
     },
     {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 8
-        },
-        {
-          "@value": 9
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 8"
-        },
-        {
-          "@value": "Experience Label 9"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 8"
-        },
-        {
-          "@value": "Skill 9"
-        },
-        {
-          "@value": "Skill 10"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 8"
-        },
-        {
-          "@value": "Soft Skill 9"
-        },
-        {
-          "@value": "Soft Skill 10"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 11"
-        },
-        {
-          "@value": "Job Title 12"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 13"
-        },
-        {
-          "@value": "Job Title 14"
-        }
-      ]
+      "mms:title": {
+        "@id": "mms:title",
+        "@value": "Introduction to Cloud Computing",
+        "@type": "xsd:string"
+      },
+      "mms:date": {
+        "@id": "mms:date",
+        "@value": "2022-09-01",
+        "@type": "xsd:dateTime"
+      },
+      "mms:keywords": {
+        "@id": "mms:keywords",
+        "@value": "Cloud, AWS, Azure",
+        "@type": "xsd:string"
+      },
+      "mms:picture": {
+        "@id": "mms:picture",
+        "@value": "https://example.com/cloud-computing.jpg",
+        "@type": "xsd:string"
+      },
+      "mms:url": {
+        "@id": "mms:url",
+        "@value": "https://online-learning.example.com/cloud-computing",
+        "@type": "xsd:string"
+      }
     },
     {
-      "@type": "soo:Experience",
-      "soo:id": [
+      "ue:experienceIds": [
         {
-          "@value": 9
+          "@value": 7,
+          "@type": "xsd:integer"
+        },
+        {
+          "@value": 8,
+          "@type": "xsd:integer"
         }
       ],
-      "soo:experienceName": [
+      "ue:experienceLabels": [
         {
-          "@value": "Experience Label 9"
+          "@value": "Junior Cloud Engineer",
+          "@type": "xsd:string"
+        },
+        {
+          "@value": "Cloud Associate",
+          "@type": "xsd:string"
         }
       ],
-      "soo:hasHardSkill": [
+      "ue:associatedHardSkills": [
         {
-          "@value": "Skill 9"
+          "@value": "AWS Certification",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Skill 10"
+          "@value": "Network Security",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Skill 11"
+          "@value": "Linux",
+          "@type": "xsd:string"
         }
       ],
-      "soo:hasSoftSkill": [
+      "ue:associatedSoftSkills": [
         {
-          "@value": "Soft Skill 9"
+          "@value": "Teamwork",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Soft Skill 10"
-        },
-        {
-          "@value": "Soft Skill 11"
+          "@value": "Adaptability",
+          "@type": "xsd:string"
         }
       ],
-      "soo:suggestedExperience": [
+      "ue:suggestedExperiences": [
         {
-          "@value": "Job Title 12"
+          "@value": "Cloud Architect",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Job Title 13"
+          "@value": "DevOps Engineer",
+          "@type": "xsd:string"
         }
       ],
-      "soo:likedExperience": [
+      "ue:likedExperiences": [
         {
-          "@value": "Job Title 14"
+          "@value": "Systems Administrator",
+          "@type": "xsd:string"
         },
         {
-          "@value": "Job Title 15"
+          "@value": "Network Engineer",
+          "@type": "xsd:string"
         }
-      ]
+      ],
+      "ue:account": {
+        "@id": "ue:account",
+        "@value": "john.doe@example.net",
+        "@type": "xsd:string"
+      }
     },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 10
-        },
-        {
-          "@value": 11
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 10"
-        },
-        {
-          "@value": "Experience Label 11"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 10"
-        },
-        {
-          "@value": "Skill 11"
-        },
-        {
-          "@value": "Skill 12"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 10"
-        },
-        {
-          "@value": "Soft Skill 11"
-        },
-        {
-          "@value": "Soft Skill 12"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 13"
-        },
-        {
-          "@value": "Job Title 14"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 15"
-        },
-        {
-          "@value": "Job Title 16"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 11
-        },
-        {
-          "@value": 12
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 11"
-        },
-        {
-          "@value": "Experience Label 12"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 11"
-        },
-        {
-          "@value": "Skill 12"
-        },
-        {
-          "@value": "Skill 13"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 11"
-        },
-        {
-          "@value": "Soft Skill 12"
-        },
-        {
-          "@value": "Soft Skill 13"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 14"
-        },
-        {
-          "@value": "Job Title 15"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 16"
-        },
-        {
-          "@value": "Job Title 17"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 12
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 12"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 12"
-        },
-        {
-          "@value": "Skill 13"
-        },
-        {
-          "@value": "Skill 14"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 12"
-        },
-        {
-          "@value": "Soft Skill 13"
-        },
-        {
-          "@value": "Soft Skill 14"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 15"
-        },
-        {
-          "@value": "Job Title 16"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 17"
-        },
-        {
-          "@value": "Job Title 18"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 13
-        },
-        {
-          "@value": 14
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 13"
-        },
-        {
-          "@value": "Experience Label 14"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 13"
-        },
-        {
-          "@value": "Skill 14"
-        },
-        {
-          "@value": "Skill 15"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 13"
-        },
-        {
-          "@value": "Soft Skill 14"
-        },
-        {
-          "@value": "Soft Skill 15"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 16"
-        },
-        {
-          "@value": "Job Title 17"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 18"
-        },
-        {
-          "@value": "Job Title 19"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 14
-        },
-        {
-          "@value": 15
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 14"
-        },
-        {
-          "@value": "Experience Label 15"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 14"
-        },
-        {
-          "@value": "Skill 15"
-        },
-        {
-          "@value": "Skill 16"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 14"
-        },
-        {
-          "@value": "Soft Skill 15"
-        },
-        {
-          "@value": "Soft Skill 16"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 17"
-        },
-        {
-          "@value": "Job Title 18"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 19"
-        },
-        {
-          "@value": "Job Title 20"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 15
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 15"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 15"
-        },
-        {
-          "@value": "Skill 16"
-        },
-        {
-          "@value": "Skill 17"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 15"
-        },
-        {
-          "@value": "Soft Skill 16"
-        },
-        {
-          "@value": "Soft Skill 17"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 18"
-        },
-        {
-          "@value": "Job Title 19"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 20"
-        },
-        {
-          "@value": "Job Title 21"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 16
-        },
-        {
-          "@value": 17
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 16"
-        },
-        {
-          "@value": "Experience Label 17"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 16"
-        },
-        {
-          "@value": "Skill 17"
-        },
-        {
-          "@value": "Skill 18"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 16"
-        },
-        {
-          "@value": "Soft Skill 17"
-        },
-        {
-          "@value": "Soft Skill 18"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 19"
-        },
-        {
-          "@value": "Job Title 20"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 21"
-        },
-        {
-          "@value": "Job Title 22"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 17
-        },
-        {
-          "@value": 18
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 17"
-        },
-        {
-          "@value": "Experience Label 18"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 17"
-        },
-        {
-          "@value": "Skill 18"
-        },
-        {
-          "@value": "Skill 19"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 17"
-        },
-        {
-          "@value": "Soft Skill 18"
-        },
-        {
-          "@value": "Soft Skill 19"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 20"
-        },
-        {
-          "@value": "Job Title 21"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 22"
-        },
-        {
-          "@value": "Job Title 23"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 18
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 18"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 18"
-        },
-        {
-          "@value": "Skill 19"
-        },
-        {
-          "@value": "Skill 20"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 18"
-        },
-        {
-          "@value": "Soft Skill 19"
-        },
-        {
-          "@value": "Soft Skill 20"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 21"
-        },
-        {
-          "@value": "Job Title 22"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 23"
-        },
-        {
-          "@value": "Job Title 24"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 19
-        },
-        {
-          "@value": 20
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 19"
-        },
-        {
-          "@value": "Experience Label 20"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 19"
-        },
-        {
-          "@value": "Skill 20"
-        },
-        {
-          "@value": "Skill 21"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 19"
-        },
-        {
-          "@value": "Soft Skill 20"
-        },
-        {
-          "@value": "Soft Skill 21"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 22"
-        },
-        {
-          "@value": "Job Title 23"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 24"
-        },
-        {
-          "@value": "Job Title 25"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 20
-        },
-        {
-          "@value": 21
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 20"
-        },
-        {
-          "@value": "Experience Label 21"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 20"
-        },
-        {
-          "@value": "Skill 21"
-        },
-        {
-          "@value": "Skill 22"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 20"
-        },
-        {
-          "@value": "Soft Skill 21"
-        },
-        {
-          "@value": "Soft Skill 22"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 23"
-        },
-        {
-          "@value": "Job Title 24"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 25"
-        },
-        {
-          "@value": "Job Title 26"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 21
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 21"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 21"
-        },
-        {
-          "@value": "Skill 22"
-        },
-        {
-          "@value": "Skill 23"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 21"
-        },
-        {
-          "@value": "Soft Skill 22"
-        },
-        {
-          "@value": "Soft Skill 23"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 24"
-        },
-        {
-          "@value": "Job Title 25"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 26"
-        },
-        {
-          "@value": "Job Title 27"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 22
-        },
-        {
-          "@value": 23
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 22"
-        },
-        {
-          "@value": "Experience Label 23"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 22"
-        },
-        {
-          "@value": "Skill 23"
-        },
-        {
-          "@value": "Skill 24"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 22"
-        },
-        {
-          "@value": "Soft Skill 23"
-        },
-        {
-          "@value": "Soft Skill 24"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 25"
-        },
-        {
-          "@value": "Job Title 26"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 27"
-        },
-        {
-          "@value": "Job Title 28"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 23
-        },
-        {
-          "@value": 24
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 23"
-        },
-        {
-          "@value": "Experience Label 24"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 23"
-        },
-        {
-          "@value": "Skill 24"
-        },
-        {
-          "@value": "Skill 25"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 23"
-        },
-        {
-          "@value": "Soft Skill 24"
-        },
-        {
-          "@value": "Soft Skill 25"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 26"
-        },
-        {
-          "@value": "Job Title 27"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 28"
-        },
-        {
-          "@value": "Job Title 29"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 24
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 24"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 24"
-        },
-        {
-          "@value": "Skill 25"
-        },
-        {
-          "@value": "Skill 26"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 24"
-        },
-        {
-          "@value": "Soft Skill 25"
-        },
-        {
-          "@value": "Soft Skill 26"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 27"
-        },
-        {
-          "@value": "Job Title 28"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 29"
-        },
-        {
-          "@value": "Job Title 30"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 25
-        },
-        {
-          "@value": 26
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 25"
-        },
-        {
-          "@value": "Experience Label 26"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 25"
-        },
-        {
-          "@value": "Skill 26"
-        },
-        {
-          "@value": "Skill 27"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 25"
-        },
-        {
-          "@value": "Soft Skill 26"
-        },
-        {
-          "@value": "Soft Skill 27"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 28"
-        },
-        {
-          "@value": "Job Title 29"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 30"
-        },
-        {
-          "@value": "Job Title 31"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 26
-        },
-        {
-          "@value": 27
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 26"
-        },
-        {
-          "@value": "Experience Label 27"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 26"
-        },
-        {
-          "@value": "Skill 27"
-        },
-        {
-          "@value": "Skill 28"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 26"
-        },
-        {
-          "@value": "Soft Skill 27"
-        },
-        {
-          "@value": "Soft Skill 28"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 29"
-        },
-        {
-          "@value": "Job Title 30"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 31"
-        },
-        {
-          "@value": "Job Title 32"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 27
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 27"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 27"
-        },
-        {
-          "@value": "Skill 28"
-        },
-        {
-          "@value": "Skill 29"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 27"
-        },
-        {
-          "@value": "Soft Skill 28"
-        },
-        {
-          "@value": "Soft Skill 29"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 30"
-        },
-        {
-          "@value": "Job Title 31"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 32"
-        },
-        {
-          "@value": "Job Title 33"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 28
-        },
-        {
-          "@value": 29
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 28"
-        },
-        {
-          "@value": "Experience Label 29"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 28"
-        },
-        {
-          "@value": "Skill 29"
-        },
-        {
-          "@value": "Skill 30"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 28"
-        },
-        {
-          "@value": "Soft Skill 29"
-        },
-        {
-          "@value": "Soft Skill 30"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 31"
-        },
-        {
-          "@value": "Job Title 32"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 33"
-        },
-        {
-          "@value": "Job Title 34"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 29
-        },
-        {
-          "@value": 30
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 29"
-        },
-        {
-          "@value": "Experience Label 30"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 29"
-        },
-        {
-          "@value": "Skill 30"
-        },
-        {
-          "@value": "Skill 31"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 29"
-        },
-        {
-          "@value": "Soft Skill 30"
-        },
-        {
-          "@value": "Soft Skill 31"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 32"
-        },
-        {
-          "@value": "Job Title 33"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 34"
-        },
-        {
-          "@value": "Job Title 35"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 30
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 30"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 30"
-        },
-        {
-          "@value": "Skill 31"
-        },
-        {
-          "@value": "Skill 32"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 30"
-        },
-        {
-          "@value": "Soft Skill 31"
-        },
-        {
-          "@value": "Soft Skill 32"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 33"
-        },
-        {
-          "@value": "Job Title 34"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 35"
-        },
-        {
-          "@value": "Job Title 36"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 31
-        },
-        {
-          "@value": 32
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 31"
-        },
-        {
-          "@value": "Experience Label 32"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 31"
-        },
-        {
-          "@value": "Skill 32"
-        },
-        {
-          "@value": "Skill 33"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 31"
-        },
-        {
-          "@value": "Soft Skill 32"
-        },
-        {
-          "@value": "Soft Skill 33"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 34"
-        },
-        {
-          "@value": "Job Title 35"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 36"
-        },
-        {
-          "@value": "Job Title 37"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 32
-        },
-        {
-          "@value": 33
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 32"
-        },
-        {
-          "@value": "Experience Label 33"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 32"
-        },
-        {
-          "@value": "Skill 33"
-        },
-        {
-          "@value": "Skill 34"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 32"
-        },
-        {
-          "@value": "Soft Skill 33"
-        },
-        {
-          "@value": "Soft Skill 34"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 35"
-        },
-        {
-          "@value": "Job Title 36"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 37"
-        },
-        {
-          "@value": "Job Title 38"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 33
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 33"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 33"
-        },
-        {
-          "@value": "Skill 34"
-        },
-        {
-          "@value": "Skill 35"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 33"
-        },
-        {
-          "@value": "Soft Skill 34"
-        },
-        {
-          "@value": "Soft Skill 35"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 36"
-        },
-        {
-          "@value": "Job Title 37"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 38"
-        },
-        {
-          "@value": "Job Title 39"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 34
-        },
-        {
-          "@value": 35
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 34"
-        },
-        {
-          "@value": "Experience Label 35"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 34"
-        },
-        {
-          "@value": "Skill 35"
-        },
-        {
-          "@value": "Skill 36"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 34"
-        },
-        {
-          "@value": "Soft Skill 35"
-        },
-        {
-          "@value": "Soft Skill 36"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 37"
-        },
-        {
-          "@value": "Job Title 38"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 39"
-        },
-        {
-          "@value": "Job Title 40"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 35
-        },
-        {
-          "@value": 36
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 35"
-        },
-        {
-          "@value": "Experience Label 36"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 35"
-        },
-        {
-          "@value": "Skill 36"
-        },
-        {
-          "@value": "Skill 37"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 35"
-        },
-        {
-          "@value": "Soft Skill 36"
-        },
-        {
-          "@value": "Soft Skill 37"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 38"
-        },
-        {
-          "@value": "Job Title 39"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 40"
-        },
-        {
-          "@value": "Job Title 41"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 36
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 36"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 36"
-        },
-        {
-          "@value": "Skill 37"
-        },
-        {
-          "@value": "Skill 38"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 36"
-        },
-        {
-          "@value": "Soft Skill 37"
-        },
-        {
-          "@value": "Soft Skill 38"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 39"
-        },
-        {
-          "@value": "Job Title 40"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 41"
-        },
-        {
-          "@value": "Job Title 42"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 37
-        },
-        {
-          "@value": 38
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 37"
-        },
-        {
-          "@value": "Experience Label 38"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 37"
-        },
-        {
-          "@value": "Skill 38"
-        },
-        {
-          "@value": "Skill 39"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 37"
-        },
-        {
-          "@value": "Soft Skill 38"
-        },
-        {
-          "@value": "Soft Skill 39"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 40"
-        },
-        {
-          "@value": "Job Title 41"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 42"
-        },
-        {
-          "@value": "Job Title 43"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 38
-        },
-        {
-          "@value": 39
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 38"
-        },
-        {
-          "@value": "Experience Label 39"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 38"
-        },
-        {
-          "@value": "Skill 39"
-        },
-        {
-          "@value": "Skill 40"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 38"
-        },
-        {
-          "@value": "Soft Skill 39"
-        },
-        {
-          "@value": "Soft Skill 40"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 41"
-        },
-        {
-          "@value": "Job Title 42"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 43"
-        },
-        {
-          "@value": "Job Title 44"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 39
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 39"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 39"
-        },
-        {
-          "@value": "Skill 40"
-        },
-        {
-          "@value": "Skill 41"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 39"
-        },
-        {
-          "@value": "Soft Skill 40"
-        },
-        {
-          "@value": "Soft Skill 41"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 42"
-        },
-        {
-          "@value": "Job Title 43"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 44"
-        },
-        {
-          "@value": "Job Title 45"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 40
-        },
-        {
-          "@value": 41
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 40"
-        },
-        {
-          "@value": "Experience Label 41"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 40"
-        },
-        {
-          "@value": "Skill 41"
-        },
-        {
-          "@value": "Skill 42"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 40"
-        },
-        {
-          "@value": "Soft Skill 41"
-        },
-        {
-          "@value": "Soft Skill 42"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 43"
-        },
-        {
-          "@value": "Job Title 44"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 45"
-        },
-        {
-          "@value": "Job Title 46"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 41
-        },
-        {
-          "@value": 42
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 41"
-        },
-        {
-          "@value": "Experience Label 42"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 41"
-        },
-        {
-          "@value": "Skill 42"
-        },
-        {
-          "@value": "Skill 43"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 41"
-        },
-        {
-          "@value": "Soft Skill 42"
-        },
-        {
-          "@value": "Soft Skill 43"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 44"
-        },
-        {
-          "@value": "Job Title 45"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 46"
-        },
-        {
-          "@value": "Job Title 47"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 42
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 42"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 42"
-        },
-        {
-          "@value": "Skill 43"
-        },
-        {
-          "@value": "Skill 44"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 42"
-        },
-        {
-          "@value": "Soft Skill 43"
-        },
-        {
-          "@value": "Soft Skill 44"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 45"
-        },
-        {
-          "@value": "Job Title 46"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 47"
-        },
-        {
-          "@value": "Job Title 48"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 43
-        },
-        {
-          "@value": 44
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 43"
-        },
-        {
-          "@value": "Experience Label 44"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 43"
-        },
-        {
-          "@value": "Skill 44"
-        },
-        {
-          "@value": "Skill 45"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 43"
-        },
-        {
-          "@value": "Soft Skill 44"
-        },
-        {
-          "@value": "Soft Skill 45"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 46"
-        },
-        {
-          "@value": "Job Title 47"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 48"
-        },
-        {
-          "@value": "Job Title 49"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 44
-        },
-        {
-          "@value": 45
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 44"
-        },
-        {
-          "@value": "Experience Label 45"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 44"
-        },
-        {
-          "@value": "Skill 45"
-        },
-        {
-          "@value": "Skill 46"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 44"
-        },
-        {
-          "@value": "Soft Skill 45"
-        },
-        {
-          "@value": "Soft Skill 46"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 47"
-        },
-        {
-          "@value": "Job Title 48"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 49"
-        },
-        {
-          "@value": "Job Title 50"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 45
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 45"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 45"
-        },
-        {
-          "@value": "Skill 46"
-        },
-        {
-          "@value": "Skill 47"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 45"
-        },
-        {
-          "@value": "Soft Skill 46"
-        },
-        {
-          "@value": "Soft Skill 47"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 48"
-        },
-        {
-          "@value": "Job Title 49"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 50"
-        },
-        {
-          "@value": "Job Title 51"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 46
-        },
-        {
-          "@value": 47
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 46"
-        },
-        {
-          "@value": "Experience Label 47"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 46"
-        },
-        {
-          "@value": "Skill 47"
-        },
-        {
-          "@value": "Skill 48"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 46"
-        },
-        {
-          "@value": "Soft Skill 47"
-        },
-        {
-          "@value": "Soft Skill 48"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 49"
-        },
-        {
-          "@value": "Job Title 50"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 51"
-        },
-        {
-          "@value": "Job Title 52"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 47
-        },
-        {
-          "@value": 48
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 47"
-        },
-        {
-          "@value": "Experience Label 48"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 47"
-        },
-        {
-          "@value": "Skill 48"
-        },
-        {
-          "@value": "Skill 49"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 47"
-        },
-        {
-          "@value": "Soft Skill 48"
-        },
-        {
-          "@value": "Soft Skill 49"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 50"
-        },
-        {
-          "@value": "Job Title 51"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 52"
-        },
-        {
-          "@value": "Job Title 53"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 48
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 48"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 48"
-        },
-        {
-          "@value": "Skill 49"
-        },
-        {
-          "@value": "Skill 50"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 48"
-        },
-        {
-          "@value": "Soft Skill 49"
-        },
-        {
-          "@value": "Soft Skill 50"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 51"
-        },
-        {
-          "@value": "Job Title 52"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 53"
-        },
-        {
-          "@value": "Job Title 54"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 49
-        },
-        {
-          "@value": 50
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 49"
-        },
-        {
-          "@value": "Experience Label 50"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 49"
-        },
-        {
-          "@value": "Skill 50"
-        },
-        {
-          "@value": "Skill 51"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 49"
-        },
-        {
-          "@value": "Soft Skill 50"
-        },
-        {
-          "@value": "Soft Skill 51"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 52"
-        },
-        {
-          "@value": "Job Title 53"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 54"
-        },
-        {
-          "@value": "Job Title 55"
-        }
-      ]
-    },
-    {
-      "@type": "soo:Experience",
-      "soo:id": [
-        {
-          "@value": 50
-        },
-        {
-          "@value": 51
-        }
-      ],
-      "soo:experienceName": [
-        {
-          "@value": "Experience Label 50"
-        },
-        {
-          "@value": "Experience Label 51"
-        }
-      ],
-      "soo:hasHardSkill": [
-        {
-          "@value": "Skill 50"
-        },
-        {
-          "@value": "Skill 51"
-        },
-        {
-          "@value": "Skill 52"
-        }
-      ],
-      "soo:hasSoftSkill": [
-        {
-          "@value": "Soft Skill 50"
-        },
-        {
-          "@value": "Soft Skill 51"
-        },
-        {
-          "@value": "Soft Skill 52"
-        }
-      ],
-      "soo:suggestedExperience": [
-        {
-          "@value": "Job Title 53"
-        },
-        {
-          "@value": "Job Title 54"
-        }
-      ],
-      "soo:likedExperience": [
-        {
-          "@value": "Job Title 55"
-        },
-        {
-          "@value": "Job Title 56"
-        }
-      ]
-    }
+    {}
   ]
 }

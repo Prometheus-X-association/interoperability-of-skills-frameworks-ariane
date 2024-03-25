@@ -231,5 +231,15 @@ triple:
     soo:developedSkill: soo:Skill
     soo:validationStatus: xsd:string  # Validated, Not Validated
 
+  soo:JobPosting:
+    soo:jobID: xsd:integer
+    soo:jobTitle: xsd:string
+    soo:technicalSkills: xsd:string
+    soo:humanSkills: xsd:string
+    soo:nextCareerSteps: xsd:string
+    soo:company: mms:Company
+
+
+
 
 
