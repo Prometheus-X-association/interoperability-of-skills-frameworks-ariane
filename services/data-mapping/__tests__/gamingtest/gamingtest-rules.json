@@ -14,18 +14,18 @@
       "id": "mmr:rule-1",
       "sourcePath": "Experience Name",
       "targetClass": "soo:Experience",
-      "targetProperty": "soo:Label",
+      "targetProperty": "soo:Label", #pourquoi une majuscule sur une propriété ?
       "targetLang": "en",
       "targetFunction": "fno:asIs_WithLang"
     },
     {
       "id": "mmr:rule-2",
       "sourcePath": "User ID",
-      "targetClass": "soo:Profile",
+      "targetClass": "soo:Profile", #pourquoi n'utilise-t-on pas plutôt shema.org/person ?
       "targetProperty": "email",
       "generateId": "true",
       "relationTo": "soo:Experience",
-      "relationName": "soo:containsExperience",
+      "relationName": "soo:containsExperience", #Pourquoi pas soo:experience ? permet de limiter le nombre de classes
       "relationNameInverse": "soo:hasProfile"
     },
 
@@ -40,13 +40,13 @@
     {
       "id": "mmr:rule-4",
       "sourcePath": "Associated Soft Skill Block",
-      "targetClass": "soo:Skill",
+      "targetClass": "soo:Skill",# tout à fait pour le fait de n'avoir qu'une classe Skill, il faudra juste rajouter un type "skill block" en propriété
       "generateId": "true",
       "targetFunction": "fno:search-for-mapping-with-source",
       
       "relationTo": "soo:Experience",
-      "relationName": "soo:resultFromExperience",
-      "relationNameInverse": "soo:hasSkill"
+      "relationName": "soo:resultFromExperience", #Pourquoi pas soo:experience ? permet de limiter le nombre de classes
+      "relationNameInverse": "soo:hasSkill" #Pourquoi pas soo:skill ? permet de limiter le nombre de classes
     },
 
     {
