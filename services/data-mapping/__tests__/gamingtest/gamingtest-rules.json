@@ -40,7 +40,7 @@
     {
       "id": "mmr:rule-4",
       "sourcePath": "Associated Soft Skill Block",
-      "targetClass": "soo:Skill",
+      "targetClass": "soo:Skill",# tout à fait pour le fait de n'avoir qu'une classe Skill, il faudra juste rajouter un type "skill block" en propriété
       "generateId": "true",
       "targetFunction": "fno:search-for-mapping-with-source", 
       "relationTo": "soo:Experience",
