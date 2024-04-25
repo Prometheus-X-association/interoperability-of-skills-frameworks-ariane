@@ -8,22 +8,123 @@
 #     memberOf: skos:Collection
 
 triple:
-  mms:User:
-    mms:personalData: mms:PersonalDataWallet
-    mms:role: xsd:string
-    mms:directManager: mms:User
-    mms:joinTime: xsd:date
-    mms:creationTime: xsd:date
-    mms:status: xsd:string
-    mms:activationToken: xsd:string
+
+  soo:Experience:
+    soo:label: xsd:string #@TODO: langstring
+    mms:description: xsd:string #@TODO: langstring
+    soo:experienceType: xsd:string #@TODO: skos:Concept-experience-type
+    soo:dateFrom: xsd:date
+    soo:dateTo: xsd:date
+    soo:result: xsd:string # @TODO: skos:Concept-status
+    soo:validatedBy: xsd:string #@TODO: model personID, organisationID, testID, ... 
+    soo:profile: soo:Profile
+
+    # @TODO: check if theses properties are relevant:
+    soo:hasSkill: soo:Skill
+    soo:relatedToChoice: soo:IndividualChoice
+    mms:type: xsd:string
+    soo:occurrenceDate: xsd:date
+    soo:partOfSeries: soo:ExperienceSeries
+    soo:experienceName: xsd:string
+    soo:associatedSkillBlock: xsd:string
+    soo:experienceOf: soo:User
+    soo:hasHardSkill: soo:HardSkill
+    soo:hasSoftSkill: soo:SoftSkill
+    soo:suggestedExperience: soo:Experience
+    soo:likedExperience: soo:Experience
+    soo:hasKnowledge: soo:Knowledge
+
+  soo:IndividualChoice:
+    soo:polarity: xsd:string #@TODO: skos-concept-polarity
+    soo:about: soo:Experience 
+    soo:profile: soo:Profile
+    # @TODO: check if there properties are relevant: 
+    soo:choiceInExperience: soo:Experience
+    soo:choiceReason: xsd:string
+    soo:choiceOutcome: xsd:string
+  
+  
+  soo:HardSkill:
+    mms:name: xsd:string
+    soo:label: xsd:string
+    soo:belongsToKnowledge: soo:Knowledge
+
+  soo:SoftSkill:
+    mms:name: xsd:string
+    soo:label: xsd:string
+    soo:belongsToKnowledge: soo:Knowledge
+
+  soo:Skill:
+    mms:name: xsd:string
+    soo:resultFromExperience: soo:Experience
+    soo:skillType: xsd:string
+    soo:skillLevel: xsd:string
+
+  soo:Knowledge:
+    soo:label: xsd:string
+
+  
+
+  soo:User:
+    soo:hasProfile: soo:Profile
+    soo:hasOrientation: soo:Orientation
+    soo:hasExperience: soo:Experience
+    soo:likesExperience: soo:Experience
+    soo:suggestedExperience: soo:Experience
+
+  soo:Profile:
+    soo:containsExperiences: soo:Experience
+    soo:containsSkills: soo:Skill
+    soo:reflectsChoices: soo:IndividualChoice
+    soo:reflectsSkillBlocks: soo:SkillBlock
+
+  soo:Orientation:
+    soo:suggestsExperience: soo:Experience
+    soo:basedOnCriteria: soo:Criteria
+    soo:expectsSkills: soo:Skill
+    soo:basedOnSkillBlock: soo:SkillBlock
+
+  soo:Criteria:
+    soo:criteriaType: xsd:string
+    soo:relatedToSkill: soo:Skill
+    soo:relatedToChoice: soo:IndividualChoice
+    soo:relatedToSkillBlock: soo:SkillBlock
+
+  soo:ExperienceSeries:
+    soo:previousExperience: soo:Experience
+    soo:nextExperience: soo:Experience
+    soo:seriesPath: xsd:string
+
+  soo:SkillDevelopment:
+    soo:experience: soo:Experience
+    soo:developedSkill: soo:Skill
+    soo:validationStatus: xsd:string  # Validated, Not Validated
+
+  soo:JobPosting:
+    soo:jobID: xsd:integer
+    mms:jobTitle: xsd:string # @TODO: should be only title
+    soo:technicalSkills: xsd:string # @TODO: is this pertinent ? 
+    soo:humanSkills: xsd:string # @TODO: is this pertinent ? 
+    soo:nextCareerSteps: xsd:string
     mms:company: mms:Company
-    mmm:keycloakId: xsd:string
-    mms:hasExperience: soo:Experience
-    mms:likesExperience: soo:Experience
-    mms:suggestedExperience: soo:Experience
-    mms:hasKnowledge: soo:Knowledge
-    mms:hasHardSkill: soo:HardSkill
-    mms:hasSoftSkill: soo:SoftSkill
+
+# from jobsong, check if usefull
+  # mms:User:
+  #   mms:personalData: mms:PersonalDataWallet
+  #   mms:role: xsd:string
+  #   mms:directManager: mms:User
+  #   mms:joinTime: xsd:date
+  #   mms:creationTime: xsd:date
+  #   mms:status: xsd:string
+  #   mms:activationToken: xsd:string
+  #   mms:company: mms:Company
+  #   mmm:keycloakId: xsd:string
+  #   mms:hasExperience: soo:Experience
+  #   mms:likesExperience: soo:Experience
+  #   mms:suggestedExperience: soo:Experience
+  #   mms:hasKnowledge: soo:Knowledge
+  #   mms:hasHardSkill: soo:HardSkill
+  #   mms:hasSoftSkill: soo:SoftSkill
 
   mms:PersonalDataWallet:
     mms:given: xsd:string
@@ -42,6 +143,12 @@ triple:
     mms:country: xsd:string
     mms:postcode: xsd:string
     mms:addressOf: mms:PersonalDataWallet
+    mms:pointLocation: mms:Point
+
+  mms:Point:
+    rdf:type: "http://www.opengis.net/ont/geosparql#Point"
+    # mms:type: xsd:string
+    mms:coordinates: xsd:string
 
   mms:Company:
     mms:companyName: xsd:string
@@ -121,13 +228,13 @@ triple:
   mms:Service:
     mms:name: xsd:string
 
-  #  Override
-  rome:onto/Skill:
-    mms:description: xsd:string
-    mms:skillType: xsd:string
-    # Currently skill type is hardcoded, therefore we should store its label along for reference
-    mms:skillTypeLabel: xsd:string
-    mms:company: mms:Company
+  # name conflict with soo:Skill
+  # rome:onto/Skill:
+  #   mms:description: xsd:string
+  #   mms:skillType: xsd:string
+  #   # Currently skill type is hardcoded, therefore we should store its label along for reference
+  #   mms:skillTypeLabel: xsd:string
+  #   mms:company: mms:Company
 
   rome:onto/Employment/Job:
     mms:jobTitle: xsd:string
@@ -137,6 +244,7 @@ triple:
     mms:requiredSkill: rome:onto/Skill
     mms:company: mms:Company
 
+## From Harish for Inokufu, check if valid 
   mms:EducationalResource:
     mms:title: xsd:string
     mms:date: xsd:dateTime
@@ -145,101 +253,128 @@ triple:
     mms:url: xsd:string
     mms:description: xsd:string
 
-    # Definition for new Classes based on the Smart Orientation Ontology (SOO:namespace prefix)
-  soo:Experience:
-    soo:hasSkill: soo:Skill
-    soo:relatedToChoice: soo:IndividualChoice
-    soo:type: xsd:string
-    soo:description: xsd:string
-    soo:occurrenceDate: xsd:date
-    soo:partOfSeries: soo:ExperienceSeries
-    soo:experienceName: xsd:string
-    soo:associatedSkillBlock: xsd:string
-    soo:result: xsd:string
-    soo:experienceOf: soo:User
-    soo:id: xsd:integer
-    soo:label: xsd:string
-    soo:hasHardSkill: soo:HardSkill
-    soo:hasSoftSkill: soo:SoftSkill
-    soo:suggestedExperience: soo:Experience
-    soo:likedExperience: soo:Experience
-    soo:hasKnowledge: soo:Knowledge
+  mms:TrainingContent:
+    mms:id: xsd:string
+    mms:codeForma: mms:CodeForma
+    mms:title: xsd:string
+    mms:codeRome: mms:CodeRome
+    mms:dcList: mms:DCList
+    mms:age: mms:Age
+    mms:learningTime: mms:LearningTime
+    mms:url: xsd:string
+    mms:lOSearchTagList: mms:LOSearchTagList
+    mms:langue: xsd:string
+    mms:LOTypeList: xsd:string
+    mms:LOBloomList: xsd:string
+    mms:LOProvider: xsd:string
+    mms:lieuDeFormation: mms:LieuDeFormation
+    mms:note: xsd:float
+    mms:learnWordCount: xsd:integer
+    mms:LOLevel: xsd:float
+    mms:description: xsd:string
+    mms:publisher: mms:Publisher+
+    mms:PriceSpecification: mms:PriceSpecification
+    mms:baseCodeForma: xsd:string
+    mms:minCodeForma: xsd:string
+    mms:maxCodeForma: xsd:string
 
 
-  soo:HardSkill:
-    soo:name: xsd:string
-    soo:id: xsd:string
-    soo:label: xsd:string
-    soo:belongsToKnowledge: soo:Knowledge
+  mms:LOSearchTagList:
+    mms:strict: xsd:string
+    mms:extended: xsd:string
 
-  soo:SoftSkill:
-    soo:name: xsd:string
-    soo:id: xsd:string
-    soo:label: xsd:string
-    soo:belongsToKnowledge: soo:Knowledge
+  # mms:CodeForma:
+  #   mms:base: xsd:string
+  #   mms:min: xsd:string
+  #   mms:max: xsd:string
 
-  soo:Skill:
-    soo:resultFromExperience: soo:Experience
-    soo:skillType: xsd:string
-    soo:skillLevel: xsd:string
-    soo:name: xsd:string
+  # mms:CodeRome:
+  #   mms:max: xsd:string
 
-  soo:Knowledge:
-    soo:id: xsd:string
-    soo:label: xsd:string
+  # mms:DCList:
+  #   mms:base: xsd:string
+  #   mms:min: xsd:string
+  #   mms:max: xsd:string
+  #   mms:source: xsd:string
 
-  soo:IndividualChoice:
-    soo:choiceInExperience: soo:Experience
-    soo:choiceReason: xsd:string
-    soo:choiceOutcome: xsd:string
+  mms:Age:
+    mms:min: xsd:integer
+    mms:max: xsd:integer
 
-    # Linking the profile and orientation process
-  soo:User:
-    soo:hasProfile: soo:Profile
-    soo:hasOrientation: soo:Orientation
-    soo:hasExperience: soo:Experience
-    soo:likesExperience: soo:Experience
-    soo:suggestedExperience: soo:Experience
+  mms:Title:
+    mms:base: xsd:string
+    mms:tokenized: xsd:string
 
-  soo:Profile:
-    soo:containsExperiences: soo:Experience
-    soo:containsSkills: soo:Skill
-    soo:reflectsChoices: soo:IndividualChoice
-    soo:reflectsSkillBlocks: soo:SkillBlock
+  mms:LearningTime:
+    mms:min: xsd:integer
+    mms:index: xsd:float
+    mms:value: xsd:integer
+    mms:unit: xsd:string
 
-  soo:Orientation:
-    soo:suggestsExperience: soo:Experience
-    soo:basedOnCriteria: soo:Criteria
-    soo:expectsSkills: soo:Skill
-    soo:basedOnSkillBlock: soo:SkillBlock
+  mms:LieuDeFormation:
+    mms:text: xsd:string
+    mms:address: mms:Address
+    mms:pointLocation: mms:Point
 
-  soo:Criteria:
-    soo:criteriaType: xsd:string
-    soo:relatedToSkill: soo:Skill
-    soo:relatedToChoice: soo:IndividualChoice
-    soo:relatedToSkillBlock: soo:SkillBlock
+  mms:Publisher:
+    mms:name: xsd:string
 
-    # Experience Series as a chain of Experiences
-  soo:ExperienceSeries:
-    soo:previousExperience: soo:Experience
-    soo:nextExperience: soo:Experience
-    soo:seriesPath: xsd:string
+  mms:PriceSpecification:
+    mms:price-free: xsd:boolean
+    mms:context: xsd:string
+    mms:type: xsd:string
 
-  # Additional definitions to connect experiences to skill development
-  soo:SkillDevelopment:
-    soo:experience: soo:Experience
-    soo:developedSkill: soo:Skill
-    soo:validationStatus: xsd:string  # Validated, Not Validated
+  mms:LHEO:
+    mms:domaineFormationCode: xsd:string
+    mms:intituleFormation: xsd:string
+    mms:objectifFormation: xsd:string
+    mms:resultatsAttendus: xsd:string
+    mms:contenuFormation: xsd:string
+    mms:certifiante: xsd:boolean
+    mms:parcoursFormation: xsd:string
+    mms:niveauEntreeCode: xsd:string
+    mms:niveauSortieCode: xsd:string
+    # mms:actionFormation: mms:TrainingAction
+    mms:organismeFormationResponsable: mms:TrainingOrganisation
 
-  soo:JobPosting:
-    soo:jobID: xsd:integer
-    soo:jobTitle: xsd:string
-    soo:technicalSkills: xsd:string
-    soo:humanSkills: xsd:string
-    soo:nextCareerSteps: xsd:string
-    soo:company: mms:Company
+  mms:NodeFR:
+    mms:caracteristiquesFormation: mms:TrainingFeatures
+    mms:institution: mms:Institution
+    mms:offreFormation: mms:TrainingOffer
+    # mms:TrainingAction:
+    mms:rythmeFormation: xsd:string
+    mms:niveauEntreeObligatoire: xsd:boolean
+    mms:modalitesEnseignement: xsd:string
+    mms:lieuFormation: mms:Address
+    mms:urlAction: xsd:string
+    mms:sessionFormation: mms:TrainingSession
+    mms:nombreHeuresCentre: xsd:integer
+    mms:nombreHeuresTotal: xsd:integer
+    mms:organismeFinanceur: mms:FundingOrganisation
 
+  mms:TrainingFeatures:
+    mms:libelle: xsd:string
+    mms:aPourObjectif: xsd:string
+    mms:description: xsd:string
+    mms:dureeHorsEntreprise: xsd:string
 
+  mms:TrainingOffer:
+    mms:niveauSortieCertification: xsd:string
+    mms:parcours: mms:TrainingPath
 
+  mms:TrainingOrganisation:
+    mms:SIRET: xsd:string
+    mms:raisonSociale: xsd:string
 
+  mms:TrainingSession:
+    mms:periodeDebut: xsd:date
+    mms:periodeFin: xsd:date
+    mms:typeCycle: xsd:string
 
+  mms:FundingOrganisation:
+    mms:codeFinanceur: xsd:string
+    mms:programmeFinanceur: xsd:string
+
+  mms:TrainingPath:
+    mms:financeur: xsd:string
+    mms:programmeRef: xsd:string
