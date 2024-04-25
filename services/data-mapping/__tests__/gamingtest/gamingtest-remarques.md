@@ -21,9 +21,13 @@
 
 * Remarques sur la rules `mmr:rule-4`
 <<<<<<< HEAD
+<<<<<<< HEAD
   * définition d'une relation inverse via `relationNameInverse`
 =======
   * !!!!!!!!!!!!!!!!! A faire !!!!!!!!!!!!!!!!! 
+=======
+  * définition d'une relation inverse via `relationNameInverse`
+>>>>>>> d82714d (add some samples)
 
   
 >>>>>>> 75371fa (spec: add tests for gamingtest transformation)

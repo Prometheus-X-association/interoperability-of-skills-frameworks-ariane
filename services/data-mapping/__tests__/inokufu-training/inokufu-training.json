@@ -245,6 +245,7 @@
                     }
                   }
                 ]
+<<<<<<< HEAD
               },
               {
                 "periode": {
@@ -259,6 +260,8 @@
                     }
                   }
                 ]
+=======
+>>>>>>> d82714d (add some samples)
               }
             ],
             "nombre-heures-centre": 450,
