@@ -14,7 +14,7 @@
       "id": "mmr:rule-1",
       "sourcePath": "Experience Name",
       "targetClass": "soo:Experience",
-      "targetProperty": "soo:Label", #pourquoi une majuscule sur une propriété ?
+      "targetProperty": "soo:label",
       "targetLang": "en",
       "targetFunction": "fno:asIs_WithLang"
     },
