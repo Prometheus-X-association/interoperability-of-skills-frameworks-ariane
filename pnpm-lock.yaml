@@ -18437,6 +18437,7 @@ snapshots:
       '@babel/core': 7.24.3
       '@babel/helper-plugin-utils': 7.24.0
       '@babel/helper-skip-transparent-expression-wrappers': 7.22.5
+    dev: true
 
   '@babel/plugin-transform-sticky-regex@7.24.1(@babel/core@7.24.3)':
     dependencies:
