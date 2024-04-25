@@ -10,7 +10,7 @@
   - B/ une basée sur la présence d'une propriété `generateId = true` dans une règle (cf règle `mmr:rule-2`)
 
 * Remarques sur la rules `mmr:rule-4`
-  * !!!!!!!!!!!!!!!!! A faire !!!!!!!!!!!!!!!!! 
+  * définition d'une relation inverse via `relationNameInverse`
 
   
 
