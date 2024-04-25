@@ -21,11 +21,11 @@
     {
       "id": "mmr:rule-2",
       "sourcePath": "User ID",
-      "targetClass": "soo:Profile", #pourquoi n'utilise-t-on pas plutôt shema.org/person ?
+      "targetClass": "soo:Profile",
       "targetProperty": "email",
       "generateId": "true",
       "relationTo": "soo:Experience",
-      "relationName": "soo:containsExperience", #Pourquoi pas soo:experience ? permet de limiter le nombre de classes
+      "relationName": "soo:containsExperience",
       "relationNameInverse": "soo:hasProfile"
     },
 
@@ -40,13 +40,13 @@
     {
       "id": "mmr:rule-4",
       "sourcePath": "Associated Soft Skill Block",
-      "targetClass": "soo:Skill",# tout à fait pour le fait de n'avoir qu'une classe Skill, il faudra juste rajouter un type "skill block" en propriété
+      "targetClass": "soo:Skill",
       "generateId": "true",
       "targetFunction": "fno:search-for-mapping-with-source",
       
       "relationTo": "soo:Experience",
-      "relationName": "soo:resultFromExperience", #Pourquoi pas soo:experience ? permet de limiter le nombre de classes
-      "relationNameInverse": "soo:hasSkill" #Pourquoi pas soo:skill ? permet de limiter le nombre de classes
+      "relationName": "soo:resultFromExperience",
+      "relationNameInverse": "soo:hasSkill"
     },
 
     {
