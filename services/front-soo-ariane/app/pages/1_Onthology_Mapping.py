@@ -261,25 +261,38 @@ def createMatchingForm(field):
 # Create rules from mappings
 
 def createRules():
+    st.session_state.object_list = dict()
+    for objectList in st.session_state.experiences,st.session_state.competencys,st.session_state.choices,st.session_state.skillblocks,st.session_state.profiles:
+        for index,object in enumerate(objectList):
+            st.session_state.object_list[object[1]] = {"type" : object[0],
+                                                                    "language" : object[2]}
+            for number,property in enumerate(object[3:]):
+                if property != "No property":
+                    st.session_state.object_list[object[1]][f"Property {number}"] = property
+
+
     for field in st.session_state.fieldList:
         if field not in st.session_state.mapped:
             if st.session_state[f"object{field}"][1] != "No Mapping":
-                rule = f"'{field}' is associated with the property '{st.session_state[f'property4{field}']}' of the object '{st.session_state[f'object{field}'][1]}'"
+                
+                rule = {"id": f"mmr:rule-{len(st.session_state.rules)}",
+                        "sourcePath": field,
+                        "targetClass": f"soo:{st.session_state[f'object{field}'][0]}",
+                        "targetProperty": st.session_state[f'property4{field}'],
+                        "targetFunction" : "to Implement"}
+
                 st.session_state.rules.append(rule)
                 st.session_state.mapped.append(field)
+                
     st.rerun()
 
 # Display rules
 
 def displayRules():
-    for i,rule in enumerate(st.session_state.rules):
-        l,m,r = st.columns([1,10,1])
-        l.success(f"Rule {i}")
-        m.success(rule)
-        if r.button("🗑️",use_container_width=True,key = f"Rule{i}"): 
-            del st.session_state.rules[i]
-            del st.session_state.mapped[i]
-            st.rerun()
+    st.header("Schema",divider="red")
+    st.code(json.dumps(st.session_state.object_list,indent=3),language="json")
+    st.header("Rules",divider="red")
+    st.code(json.dumps(st.session_state.rules,indent=3),language="json")
 
 ################################### APP LOGIC #############################################################
 
