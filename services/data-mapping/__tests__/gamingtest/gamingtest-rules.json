@@ -16,6 +16,7 @@
       "targetClass": "soo:Experience",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "targetProperty": "skos:prefLabel",
 =======
       "targetProperty": "soo:Label",
@@ -23,6 +24,9 @@
 =======
       "targetProperty": "soo:Label", #pourquoi une majuscule sur une propriété ?
 >>>>>>> 331eb2b (Ajout de commentaires)
+=======
+      "targetProperty": "soo:label",
+>>>>>>> cacd7c1 (fix: restart from main branch)
       "targetLang": "en",
       "targetFunction": "fno:asIs_WithLang"
     },

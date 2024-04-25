@@ -5,17 +5,16 @@ import { readData } from '@mmorg/fsutils'
 import YAML from 'yaml'
 import { readJson, saveJson } from '@mmorg/fsutils'
 import loadWorldGraph from './src/loadWorldGraph.js'
-// import {updateStrategies, updateEntity} from '@mmorg/rdfx-layer'
-// import getApiLabel from '@mmorg/rdfx-graphql/src/rdfx-id/getApiLabel.js'
 import textView from './src/textView.js'
 import parseYamlModels from './rdfx-from-yaml/parseYamlModels.js'
 import { updateStrategies, updateLayers } from "@mmorg/rdfx-layer";
+import contextBuilder from './src/contextBuilder'
 
-const modelFolder = `${__dirname}/model` 
-const otherGraph = [
-  `${modelFolder}/searchedUser.jsonld`,
-  `${modelFolder}/overrides.jsonld`
-]
+// cd data/mmProfile
+// pnpm vn generate.js 
+
+const modelFolder = `${__dirname}/model`
+const otherGraph = []
 // const current_graph = []
 // const graphMap = new Map()
 
@@ -31,19 +30,23 @@ console.log('Generate the mms skills profile ontology')
 
 console.log(model)
 
-const current_ld = parseYamlModels({context, worldGraph}, model)
+const current_ld = parseYamlModels({ context, worldGraph }, model)
 
 // @TODO: put this Ontology entity into a yml file
 current_ld.graph.push(getOntologyEntity())
 
-const loaded = otherGraph.map( path => readJson(path))
+const loaded = otherGraph.map(path => readJson(path))
 
 const aggregated_ld = mergeOntologies(current_ld, ...loaded)
 
 saveJson(aggregated_ld, ontoPath)
 
-
 console.log(textView(aggregated_ld), '===')
+
+// generate the context 
+const ontologyContext = contextBuilder(aggregated_ld)
+console.log(ontologyContext)
+throw new Error('Save the context here')
 
 
 function getOntologyEntity() {
