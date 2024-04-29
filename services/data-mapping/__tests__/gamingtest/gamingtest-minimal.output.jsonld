@@ -62,10 +62,14 @@
       "type": "soo:Profile",
       "email":"zayne.harding@gmail.com",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "experience": "tr:__generated-id-1__"
 =======
       "containsExperience": "tr:__generated-id-1__",
 >>>>>>> 75371fa (spec: add tests for gamingtest transformation)
+=======
+      "containsExperience": "tr:__generated-id-1__"
+>>>>>>> 9ad366b (chore: clean old files)
     },
     {
       "id": "tr:__skill-id-1",
@@ -86,7 +90,7 @@
       "resultFromExperience": "tr:__generated-id-1__",
       "sourceValue": "tr:__source-value-1",
       "mapping": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869",
-      "suggestions": [ "tr:suggg/1", "tr:sugg/2"],
+      "suggestions": [ "tr:sugg/1", "tr:sugg/2"]
     },
     {
       "id": "tr:__source-value-1",
@@ -100,16 +104,21 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "id":"tr:sugg/1",
 =======
       "id":"tr:suggg/1",
 >>>>>>> 75371fa (spec: add tests for gamingtest transformation)
+=======
+      "id":"tr:sugg/1",
+>>>>>>> 9ad366b (chore: clean old files)
       "type": "mms:Suggestion",
       "source": "mm-search",
       "score": 35,
       "mapping": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869" 
     },
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
       "id":"tr:sugg/2",
       "type": "mms:Suggestion",
@@ -119,12 +128,19 @@
     }
 =======
       "id":"tr:suggg/2",
+=======
+      "id":"tr:sugg/2",
+>>>>>>> 9ad366b (chore: clean old files)
       "type": "mms:Suggestion",
       "source": "mm-search",
       "score": 10,
       "mapping": "rome:1234" 
+<<<<<<< HEAD
     },
 >>>>>>> 75371fa (spec: add tests for gamingtest transformation)
+=======
+    }
+>>>>>>> 9ad366b (chore: clean old files)
     
     
 
