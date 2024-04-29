@@ -47,7 +47,7 @@
       "id":"tr:__profile-id-1__",
       "type": "soo:Profile",
       "email":"zayne.harding@gmail.com",
-      "containsExperience": "tr:__generated-id-1__",
+      "containsExperience": "tr:__generated-id-1__"
     },
     {
       "id": "tr:__skill-id-1",
@@ -55,7 +55,7 @@
       "resultFromExperience": "tr:__generated-id-1__",
       "sourceValue": "tr:__source-value-1",
       "mapping": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869",
-      "suggestions": [ "tr:suggg/1", "tr:sugg/2"],
+      "suggestions": [ "tr:sugg/1", "tr:sugg/2"]
     },
     {
       "id": "tr:__source-value-1",
@@ -67,19 +67,19 @@
       "prefLabel": {"@value": "solve problems", "@language": "en"}
     },
     {
-      "id":"tr:suggg/1",
+      "id":"tr:sugg/1",
       "type": "mms:Suggestion",
       "source": "mm-search",
       "score": 35,
       "mapping": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869" 
     },
     {
-      "id":"tr:suggg/2",
+      "id":"tr:sugg/2",
       "type": "mms:Suggestion",
       "source": "mm-search",
       "score": 10,
       "mapping": "rome:1234" 
-    },
+    }
     
     
 
