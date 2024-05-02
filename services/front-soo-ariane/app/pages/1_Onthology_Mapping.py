@@ -41,7 +41,7 @@ def initialize_session():
     st.cache_data.clear()
     st.cache_resource.clear()
     keys = [ "submitted", "submitted2", "propertyForm", "mappingForm","download",
-        "experiences", "competencys", "choices", "skillblocks","profiles","rules","mapped"]
+        "experiences", "competencys", "choices", "profiles","rules","mapped"]
     for key in keys:
         st.session_state[key] = False if key in ["submitted", "download","submitted2", "propertyForm", "mappingForm"] else []
     getReferentiel()
@@ -106,9 +106,9 @@ def create_item_form():
     with st.form("Item type"):
         colored_header("Add a new item:", description="", color_name="red-50")
         l,r = st.columns([3,1])
-        l.selectbox("Select your Object type and language", ["Experience", "Competency", "Choice","Profile","Skill Block"], key="selectedType")
+        l.selectbox("Select your Object type and language", ["Experience", "Competency", "Choice","Profile"], key="selectedType")
         r.selectbox("Select",["EN","DE","FR","ES","IT","RU","TR","UK","PL","RO"],key="language",label_visibility="hidden")
-        object_count = len(st.session_state.competencys) + len(st.session_state.experiences) + len(st.session_state.choices) + len(st.session_state.skillblocks) + len(st.session_state.profiles)
+        object_count = len(st.session_state.competencys) + len(st.session_state.experiences) + len(st.session_state.choices) + len(st.session_state.profiles)
         st.text_input("Name your Object", f"{st.session_state.edTechID} - Object {object_count}", help="Name your Object", key="objectName")
         if st.form_submit_button("Confirm", use_container_width=True) : st.session_state.submitted = True
 
@@ -121,8 +121,7 @@ def handle_item_submission():
             "Experience": handle_experience_submission,
             "Competency": handle_competency_submission,
             "Choice": handle_choice_submission,
-            "Profile": handle_profile_submission,
-            "Skill Block": handle_skillBlock_submission
+            "Profile": handle_profile_submission
         }
         selected_type_handler = item_type_handlers.get(st.session_state.selectedType, lambda: None)
         selected_type_handler()
@@ -155,21 +154,6 @@ def handle_competency_submission():
         r.error("First create an experience")
         st.form_submit_button("Confirm",disabled=True)
 
-def handle_skillBlock_submission():
-    l,r = st.columns(2)
-    l.info("Skill Type")
-    r.selectbox("objectFields",["Hard Skill","Soft Skill","Personality Trait","Mixed"],label_visibility="collapsed",key="selected")
-    l,r = st.columns(2)
-    l.info("Experience")
-    if len(st.session_state.experiences)>0:
-        r.selectbox("objectFields",st.session_state.experiences,format_func=lambda x : x[1],label_visibility="collapsed",key="selected2")
-        if st.form_submit_button("Confirm",use_container_width=True) : 
-            st.session_state.skillblocks.append((st.session_state.selectedType,st.session_state.objectName,st.session_state.language,st.session_state.selected,st.session_state.selected2[1]))
-            st.session_state.submitted = False
-            st.rerun()
-    else:
-        r.error("First create an experience")
-        st.form_submit_button("Confirm",disabled=True)
 
 def handle_choice_submission():
     l,r = st.columns(2)
@@ -201,7 +185,6 @@ def display_existing_items():
         "Experience": st.session_state.experiences,
         "Competency": st.session_state.competencys,
         "Choice": st.session_state.choices,
-        "Skill Block": st.session_state.skillblocks,
         "Profile": st.session_state.profiles
     }
     if len(item_types["Experience"])>0:
@@ -251,7 +234,7 @@ def createPropertyForm():
 def createMatchingForm(field):
     f,o,p = st.columns(3)
     f.info(field)
-    o.selectbox("object",[[0,"No Mapping"]] + st.session_state.experiences + st.session_state.competencys + st.session_state.choices + st.session_state.skillblocks + st.session_state.profiles,label_visibility='collapsed', format_func=lambda x:x[1],key=f"object{field}")
+    o.selectbox("object",[[0,"No Mapping"]] + st.session_state.experiences + st.session_state.competencys + st.session_state.choices + st.session_state.profiles,label_visibility='collapsed', format_func=lambda x:x[1],key=f"object{field}")
     if st.session_state[f"object{field}"][1] != "No Mapping":
         properties = st.session_state.ontology[st.session_state[f"object{field}"][0]]["Properties"]
         p.selectbox("Propriété",properties,key=f"property4{field}",label_visibility="collapsed")
@@ -262,7 +245,7 @@ def createMatchingForm(field):
 
 def createRules():
     st.session_state.object_list = dict()
-    for objectList in st.session_state.experiences,st.session_state.competencys,st.session_state.choices,st.session_state.skillblocks,st.session_state.profiles:
+    for objectList in st.session_state.experiences,st.session_state.competencys,st.session_state.choices,st.session_state.profiles:
         for index,object in enumerate(objectList):
             st.session_state.object_list[object[1]] = {"type" : object[0],
                                                                     "language" : object[2]}
