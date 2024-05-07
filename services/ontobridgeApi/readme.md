@@ -103,10 +103,10 @@ title OntoBridgeAPI Process
 actor DataConsumer
 actor DataProvider
 entity DataSpaceConnector
-entity OntoBridgeAPI
+participant OntoBridgeAPI
 entity InternalEngine
 entity MachineLearning
-entity GraphQL
+participant GraphQL
 database ElasticSearch
 
 DataProvider --> DataSpaceConnector: JSON+Framework Name
