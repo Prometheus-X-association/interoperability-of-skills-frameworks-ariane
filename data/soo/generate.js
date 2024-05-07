@@ -1,40 +1,42 @@
 import { dirname } from 'path'
 import { fileURLToPath } from 'url'
-const __dirname = dirname(fileURLToPath(import.meta.url))
-import { readData } from '@mmorg/fsutils'
+// const __dirname = dirname(fileURLToPath(import.meta.url))
+import fs from 'fs'
 import YAML from 'yaml'
-import { readJson, saveJson } from '@mmorg/fsutils'
+import { readData, readJson, saveJson } from '@mmorg/fsutils'
 import loadWorldGraph from './src/loadWorldGraph.js'
 import textView from './src/textView.js'
 import parseYamlModels from './rdfx-from-yaml/parseYamlModels.js'
 import { updateStrategies, updateLayers } from "@mmorg/rdfx-layer";
 import contextBuilder from './src/contextBuilder'
 
-// cd data/mmProfile
+// cd data/soo
 // pnpm vn generate.js 
+
+const ontoPart = {
+  name: 'onto-soo',
+  version: '1.0.0'
+}
+const ontoPath = `./${ontoPart.name}-${ontoPart.version}.jsonld`
+const ontoContextPath = `./${ontoPart.name}-context-${ontoPart.version}.jsonld`
 
 const modelFolder = `${__dirname}/model`
 const otherGraph = []
-// const current_graph = []
-// const graphMap = new Map()
 
 const worldGraph = loadWorldGraph()
 const model = YAML.parse(readData(`${__dirname}/model/model.yaml`))
 
-const ontoPath = './mm-profile-1.0.0.jsonld'
-
+// load the pre-existing context to get the rdfs properties 
+// @TODO: load a std context from rdf & rdfs (they will be shaped after that)
 const context = readJson(ontoPath)['@context']
 
 
 console.log('Generate the mms skills profile ontology')
 
-console.log(model)
-
 const current_ld = parseYamlModels({ context, worldGraph }, model)
 
 // @TODO: put this Ontology entity into a yml file
 current_ld.graph.push(getOntologyEntity())
-
 const loaded = otherGraph.map(path => readJson(path))
 
 const aggregated_ld = mergeOntologies(current_ld, ...loaded)
@@ -43,10 +45,9 @@ saveJson(aggregated_ld, ontoPath)
 
 console.log(textView(aggregated_ld), '===')
 
-// generate the context 
-const ontologyContext = contextBuilder(aggregated_ld)
-console.log(ontologyContext)
-throw new Error('Save the context here')
+// generate the "implementation context" : the context to use when the ontology is used 
+const implementationContext = contextBuilder(aggregated_ld)
+saveJson({ '@context': implementationContext }, ontoContextPath)
 
 
 function getOntologyEntity() {
@@ -68,7 +69,7 @@ function getOntologyEntity() {
         "@value": "Florent André (mindmatcher.org)"
       }
     ],
-    "description": [
+    "__description": [
       {
         "@language": "fr",
         "@value": "Ontologie pour la description d'un profil de compétences"
