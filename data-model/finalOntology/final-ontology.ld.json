@@ -1,13 +1,17 @@
 {
   "@context": {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "id": "@id",
 >>>>>>> b56e5c4 (fix: rename data folder)
+=======
+>>>>>>> aad829f (fix: update path for new folder)
     "graph": {
       "@id": "@graph",
       "@container": "@set"
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -19,6 +23,10 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
 >>>>>>> b56e5c4 (fix: rename data folder)
+=======
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+>>>>>>> aad829f (fix: update path for new folder)
     "domain": {
       "@id": "rdfs:domain",
       "@type": "@id",
@@ -33,6 +41,7 @@
       "@id": "rdfs:label",
       "@container": "@set"
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     "seeAlso": {
@@ -66,6 +75,8 @@
       "@container": "@set"
     },
 >>>>>>> b56e5c4 (fix: rename data folder)
+=======
+>>>>>>> aad829f (fix: update path for new folder)
     "comment": {
       "@id": "rdfs:comment",
       "@container": "@set"
@@ -85,23 +96,33 @@
       "@container": "@set"
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aad829f (fix: update path for new folder)
     "owl": "http://www.w3.org/2002/07/owl#",
     "inverseOf": {
       "@id": "owl:inverseOf",
       "@type": "@id",
       "@container": "@set"
     },
+<<<<<<< HEAD
 =======
 >>>>>>> b56e5c4 (fix: rename data folder)
+=======
+>>>>>>> aad829f (fix: update path for new folder)
     "disjointWith": {
       "@id": "owl:disjointWith",
       "@type": "@id",
       "@container": "@set"
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     "dct": "http://purl.org/dc/terms/",
 =======
 >>>>>>> b56e5c4 (fix: rename data folder)
+=======
+    "dct": "http://purl.org/dc/terms/",
+>>>>>>> aad829f (fix: update path for new folder)
     "title_dct": {
       "@id": "dct:title",
       "@container": "@set"
@@ -125,6 +146,7 @@
       "@id": "skos:scopeNote",
       "@container": "@set"
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
     "mms": "https://ismene.competencies.be/mms/",
     "rome": "https://competencies.be/rome4/"
@@ -1460,6 +1482,13 @@
     },
     {
 >>>>>>> b56e5c4 (fix: rename data folder)
+=======
+    "mms": "https://ismene.competencies.be/mms/",
+    "rome": "https://competencies.be/rome4/"
+  },
+  "graph": [
+    {
+>>>>>>> aad829f (fix: update path for new folder)
       "id": "rome:Ontology",
       "type": [
         "owl:Ontology"
@@ -1541,6 +1570,9 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aad829f (fix: update path for new folder)
       "id": "skos:member",
       "type": [
         "rdf:Property",
@@ -1602,8 +1634,11 @@
       ]
     },
     {
+<<<<<<< HEAD
 =======
 >>>>>>> b56e5c4 (fix: rename data folder)
+=======
+>>>>>>> aad829f (fix: update path for new folder)
       "id": "rome:onto/WorkContext",
       "type": [
         "rdfs:Class"
@@ -1867,6 +1902,9 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aad829f (fix: update path for new folder)
       "id": "rome:onto/Skill",
       "type": [
         "rdfs:Class"
@@ -1896,8 +1934,11 @@
       ]
     },
     {
+<<<<<<< HEAD
 =======
 >>>>>>> b56e5c4 (fix: rename data folder)
+=======
+>>>>>>> aad829f (fix: update path for new folder)
       "id": "rome:onto/KnowHowDomain",
       "type": [
         "rdfs:Class"
@@ -2078,6 +2119,9 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aad829f (fix: update path for new folder)
       "id": "rome:onto/Employment/Job",
       "type": [
         "rdfs:Class"
@@ -2107,8 +2151,11 @@
       ]
     },
     {
+<<<<<<< HEAD
 =======
 >>>>>>> b56e5c4 (fix: rename data folder)
+=======
+>>>>>>> aad829f (fix: update path for new folder)
       "id": "rome:onto/Employment/Position",
       "type": [
         "rdfs:Class"
@@ -2398,6 +2445,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       "id": "as:companies",
       "type": [
@@ -2429,6 +2477,8 @@
     },
     {
 >>>>>>> b56e5c4 (fix: rename data folder)
+=======
+>>>>>>> aad829f (fix: update path for new folder)
       "id": "as:rome",
       "type": [
         "mms:ApiCollection",
