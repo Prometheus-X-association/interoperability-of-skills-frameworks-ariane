@@ -5,6 +5,7 @@
   "graph": [
     {
       "id": "mmr:rule-0",
+<<<<<<< HEAD
       "sourcePath": "jobCards.id",
       "targetClass": "soo:Experience",
       "targetProperty": "soo:sourceId",
@@ -71,5 +72,22 @@
       "targetFunction": "fno:get-family-value"
     }
 
+=======
+      "sourcePath": "fields.skill.name",
+      "targetClass": "soo:Skill",
+      "targetFunction": "fno:search-for-mapping-with-source", 
+      "generateId": "true"
+    },
+    
+    {
+      "id": "mmr:rule-1",
+      "sourcePath": "fields.skill.description",
+      "targetClass": "soo:Skill",
+      "targetProperty": "soo:description",
+      "targetLang": "fr",
+      "targetFunction": "fno:asIs_WithLang"
+    }
+    
+>>>>>>> 19bb8b6 (feat: start adding other transformation tests)
   ]
 }
