@@ -275,7 +275,6 @@ DataSpaceConnector --> DataConsumer:JSON-LD+Framework Name
 
 - affinage des termes
 - validation de notre compréhension.
-<<<<<<< HEAD
 
 <<<<<<< HEAD
 ## Meeting 07/05/2024
@@ -342,6 +341,7 @@ poetry install
 ```
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 activate OntoBridgeAPI #blue
@@ -367,3 +367,5 @@ DataSpaceConnector --> DataConsumer:JSON+Framework Name
 =======
 >>>>>>> 9bfa9df9c16736b30cde4a643ec33d92c1f5b7c9
 >>>>>>> 92a40de (poetry)
+=======
+>>>>>>> a4bf6ab (fix)
