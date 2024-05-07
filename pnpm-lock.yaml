@@ -36924,7 +36924,11 @@ snapshots:
       vite: 5.2.9(@types/node@18.19.31)(terser@5.27.2)
     transitivePeerDependencies:
       - '@types/node'
-      - rollup
+      - less
+      - lightningcss
+      - sass
+      - stylus
+      - sugarss
       - supports-color
 
   vite-plugin-svgr@3.2.0(rollup@3.29.4)(typescript@5.3.3)(vite@4.4.5(@types/node@20.4.8)(terser@5.27.2)):
