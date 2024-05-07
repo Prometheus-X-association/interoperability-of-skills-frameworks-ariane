@@ -168,6 +168,7 @@ actor DataProvider
 <<<<<<< HEAD
 entity DataSpaceConnector
 participant OntoBridgeAPI
+<<<<<<< HEAD
 entity InternalEngine
 entity MachineLearning
 participant GraphQL
@@ -180,9 +181,11 @@ DataSpaceConnector->OntoBridgeAPI:JSON+Framework Name
 entity DataSpaceConnector
 >>>>>>> 9ea1482 (change pdf)
 entity OntoBridgeAPI
+=======
+>>>>>>> 07d8549 (change workflow)
 entity InternalEngine
 entity MachineLearning
-entity GraphQL
+participant GraphQL
 database ElasticSearch
 
 <<<<<<< HEAD
