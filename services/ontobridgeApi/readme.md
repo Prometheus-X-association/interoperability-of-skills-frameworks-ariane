@@ -158,6 +158,7 @@ title OntoBridgeAPI Process
 actor DataConsumer
 actor DataProvider
 <<<<<<< HEAD
+<<<<<<< HEAD
 entity DataSpaceConnector
 participant OntoBridgeAPI
 entity InternalEngine
@@ -168,14 +169,22 @@ database ElasticSearch
 DataProvider --> DataSpaceConnector: JSON+Framework Name
 DataSpaceConnector->OntoBridgeAPI:JSON+Framework Name
 =======
+=======
+entity DataSpaceConnector
+>>>>>>> 9ea1482 (change pdf)
 entity OntoBridgeAPI
 entity InternalEngine
 entity MachineLearning
 entity GraphQL
 database ElasticSearch
 
+<<<<<<< HEAD
 DataProvider->OntoBridgeAPI:JSON+Framework Name
 >>>>>>> e55a838 (add readme.md)
+=======
+DataProvider --> DataSpaceConnector: JSON+Framework Name
+DataSpaceConnector->OntoBridgeAPI:JSON+Framework Name
+>>>>>>> 9ea1482 (change pdf)
 OntoBridgeAPI-->InternalEngine:JSON
 InternalEngine-->ElasticSearch:DataProvider Document
 ElasticSearch-->InternalEngine:Mapping Rules
@@ -185,6 +194,7 @@ OntoBridgeAPI-->GraphQL:JSON-LD+FrameworkName
 GraphQL-->ElasticSearch:Query
 ElasticSearch-->GraphQL:Result
 GraphQL-->OntoBridgeAPI:JSON-LD with Matched Terms
+<<<<<<< HEAD
 <<<<<<< HEAD
 activate OntoBridgeAPI #blue
 OntoBridgeAPI-->OntoBridgeAPI:**Check if present in Cache**
