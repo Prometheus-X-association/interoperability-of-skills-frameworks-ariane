@@ -129,7 +129,8 @@ deactivate OntoBridgeAPI
 
 OntoBridgeAPI-->GraphQL:Unmatched Vectors
 GraphQL-->OntoBridgeAPI:Nearest Match terms
-OntoBridgeAPI-->OntoBridgeAPI:consolidation Match+MachineLearning
-DataSpaceConnector --> DataConsumer:JSON+Framework Name
+OntoBridgeAPI-->OntoBridgeAPI:JSON-LD consolidation Match+MachineLearning
+OntoBridgeAPI-->DataSpaceConnector:JSON-LD+Framework Name
+DataSpaceConnector --> DataConsumer:JSON-LD+Framework Name
 @enduml
 ```
