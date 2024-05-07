@@ -16,9 +16,6 @@ export default function updateGraphMapFromYaml(graphMap, model, worldGraph){
   
   }
   
-  // console.log(graphMap)
-  
-  // console.log(worldGraph)
   function getOrCreateClass(klassId) {
   
     const inCurrentGraph = graphMap.get(klassId)
