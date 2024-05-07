@@ -218,6 +218,7 @@ GraphQL-->OntoBridgeAPI:Nearest Match terms
 OntoBridgeAPI-->OntoBridgeAPI:JSON-LD consolidation Match+MachineLearning
 OntoBridgeAPI-->DataSpaceConnector:JSON-LD+Framework Name
 DataSpaceConnector --> DataConsumer:JSON-LD+Framework Name
+<<<<<<< HEAD
 @enduml
 ```
 
@@ -298,6 +299,8 @@ OntoBridgeAPI-->GraphQL:Unmatched Vectors
 GraphQL-->OntoBridgeAPI:Nearest Match terms
 OntoBridgeAPI-->OntoBridgeAPI:consolidation Match+MachineLearning
 DataSpaceConnector --> DataConsumer:JSON+Framework Name
+=======
+>>>>>>> 3963364 (fix uml)
 @enduml
 ```
 >>>>>>> e55a838 (add readme.md)
