@@ -9,10 +9,14 @@ import saveIfChanges from './src/saveIfChanges.js';
 import getEngineTargetForProperties from './src/getEngineTargetForProperties.js';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aad829f (fix: update path for new folder)
 // const path_skill = resolvePath(
 //   __dirname,
 //   `../../data/mmProfile/mm-profile-1.0.0.jsonld`
 // );
+<<<<<<< HEAD
 
 // const skillProfileOntology = readJson(path_skill);
 =======
@@ -23,6 +27,10 @@ const path_skill = resolvePath(
 
 const skillProfileOntology = readJson(path_skill);
 >>>>>>> b56e5c4 (fix: rename data folder)
+=======
+
+// const skillProfileOntology = readJson(path_skill);
+>>>>>>> aad829f (fix: update path for new folder)
 
 const extraEnginePath = resolvePath(__dirname, `./extra-engine-1.0.0.jsonld`);
 const extraEngineOntology = readJson(extraEnginePath);
@@ -32,10 +40,14 @@ const groupedApiOntology = readJson(groupedApiPath);
 
 let ontology = mergeOntologies(
 <<<<<<< HEAD
+<<<<<<< HEAD
   // skillProfileOntology,
 =======
   skillProfileOntology,
 >>>>>>> b56e5c4 (fix: rename data folder)
+=======
+  // skillProfileOntology,
+>>>>>>> aad829f (fix: update path for new folder)
   romeOntology,
   extraEngineOntology,
   groupedApiOntology
