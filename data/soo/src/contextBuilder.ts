@@ -14,7 +14,6 @@ export default function contextBuilder(ontology) {
   const properties = graph.filterByType('rdf:Property')
 
   // 1/ Define the basics of the context 
-  console.log(properties)
   const context = {
     id: "@id",
     graph: {
@@ -34,7 +33,6 @@ export default function contextBuilder(ontology) {
     if (!ontologyNs) throw new Error('This Ns has to be defined in the source Ontology: ' + sNs)
     context[sNs] = ontologyNs
   }
-  console.log(propNs)
 
   // 3/ Create the json-ld aliases for the ontology's properties
   for (const prop of properties) {
