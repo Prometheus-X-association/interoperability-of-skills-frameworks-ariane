@@ -44,16 +44,22 @@
       "id": "tr:__generated-id-1__",
       "type": "soo:Experience",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
       "prefLabel": {"@value": "Problem-Solving Puzzle", "@language": "en"},
       "profile": "tr:__profile-id-1__",
       "dateFrom": "2023-06-28",
       "skill": "tr:__skill-id-1__",
+<<<<<<< HEAD
       "result": "Validated"
 =======
       "label": {"@value": "Problem-Solving Puzzle", "@language": "en"},
       "hasProfile": "tr:__profile-id-1__",
       "date": "2023-06-28",
       "hasSkill": "tr:__skill-id-1__",
+=======
+>>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
       "result": "validated"
 >>>>>>> 75371fa (spec: add tests for gamingtest transformation)
     },
@@ -63,6 +69,7 @@
       "email":"zayne.harding@gmail.com",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "experience": "tr:__generated-id-1__"
 =======
       "containsExperience": "tr:__generated-id-1__",
@@ -70,10 +77,14 @@
 =======
       "containsExperience": "tr:__generated-id-1__"
 >>>>>>> 9ad366b (chore: clean old files)
+=======
+      "experience": "tr:__generated-id-1__"
+>>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
     },
     {
       "id": "tr:__skill-id-1",
       "type": "soo:Skill",
+<<<<<<< HEAD
 <<<<<<< HEAD
       "experience": "tr:__generated-id-1__",
       "sourceSkillId": "term:gamingtest/term/55eefc9e28432347635c61fba45b70b5",
@@ -88,9 +99,13 @@
       "memberOf": "term:gamingtest/term"
 =======
       "resultFromExperience": "tr:__generated-id-1__",
+=======
+      "experience": "tr:__generated-id-1__",
+>>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
       "sourceValue": "tr:__source-value-1",
       "mapping": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869",
-      "suggestions": [ "tr:sugg/1", "tr:sugg/2"]
+      "suggestions": [ "tr:sugg/1", "tr:sugg/2"],
+      "skillLevelValue": "Validated"
     },
     {
       "id": "tr:__source-value-1",

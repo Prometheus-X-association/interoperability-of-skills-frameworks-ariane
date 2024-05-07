@@ -7,7 +7,11 @@
     {
       "id": "tr:__generated-id-1__",
       "type": "soo:Skill",
+<<<<<<< HEAD
       "sourceSkillId": "term:jobready/term/be004d6aa747b221399a3bf55415555f",
+=======
+      "sourceValue": "tr:__source-value-1",
+>>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
       "mapping": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869",
       "suggestions": [ "tr:sugg/1", "tr:sugg/2"],
       "description": {"@value": "Faculté de se diriger vers un collectif déjà constitué, d'y trouver une place et d'en devenir un membre légitime", "@language": "fr"}
@@ -15,22 +19,38 @@
     {
       "id": "tr:__generated-id-2__",
       "type": "soo:Skill",
+<<<<<<< HEAD
       "sourceSkillId": "term:jobready/term/f253c906320bbfd165cf18800e3592c9",
+=======
+      "sourceValue": "tr:__source-value-2",
+>>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
       "mapping": "esco:xxxxx",
       "suggestions": [ "tr:sugg/3", "tr:sugg/4"],
       "description": {"@value": "S'investir, orienter son action et nourrir une satisfaction et un enthousiasme vis-à-vis d'une organisation, d'un projet collectif ou d'un objectif personnel", "@language": "fr"}
     },
+<<<<<<< HEAD
     
     {
       "id": "term:jobready/term/be004d6aa747b221399a3bf55415555f",
       "type": "skos:Concept",
       "prefLabel": {"@value": "Intégration au groupe", "@language": "fr"},
       "memberOf": "term:jobready/term"
+=======
+
+    
+    {
+      "id": "tr:__source-value-1",
+      "label": "Intégration au groupe"
+>>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
     },
     {
       "id": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869",
       "type": "esco:Skill",
+<<<<<<< HEAD
       "prefLabel": {"@value": "Intégration", "@language": "fr"}
+=======
+      "prefLabel": {"@value": "solve problems", "@language": "en"}
+>>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
     },
     {
       "id":"tr:sugg/1",
@@ -49,15 +69,24 @@
 
 
     {
+<<<<<<< HEAD
       "id": "term:jobready/term/f253c906320bbfd165cf18800e3592c9",
       "type": "skos:Concept",
       "prefLabel": {"@value": "Motivation et implication", "@language": "fr"},
       "memberOf": "term:jobready/term"
+=======
+      "id": "tr:__source-value-2",
+      "label": "Motivation et implication"
+>>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
     },
     {
       "id": "esco:xxxxxx",
       "type": "esco:Skill",
+<<<<<<< HEAD
       "prefLabel": {"@value": "motivation", "@language": "fr"}
+=======
+      "prefLabel": {"@value": "motivation", "@language": "en"}
+>>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
     },
     {
       "id":"tr:sugg/3",
