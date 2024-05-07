@@ -15,7 +15,7 @@
       "./*",
       "../../../ismene/packages/rdfx-graphql/*",
       "../../../ismene/packages/appSearchUtils/*",
-      "../../data/finalOntology/*.ld.json"
+      "../../data-model/finalOntology/*.ld.json"
     ]
   },
   "keywords": [],

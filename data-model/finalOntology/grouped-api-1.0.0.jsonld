@@ -30,18 +30,6 @@
       "member": ["as:companies", "as:rome"]
     },
     {
-      "id": "as:companies",
-      "type": ["mms:ApiCollection", "skos:Collection"],
-      "label": "companyData",
-      "member": ["as:companyHumanResources", "mms:Company", "mms:SalaryRange", "mms:Training", "mms:Enrolment", "mms:Mentorship", "mms:Evaluation"]
-    },
-    {
-      "id": "as:companyHumanResources",
-      "type": ["mms:ApiCollection", "skos:Collection"],
-      "label": "companyHumanResources",
-      "member": ["mms:User", "mms:PersonalDataWallet"]
-    },
-    {
       "id": "as:rome",
       "type": ["mms:ApiCollection", "skos:Collection"],
       "label": "rome",

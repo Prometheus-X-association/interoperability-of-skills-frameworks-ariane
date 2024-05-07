@@ -8,12 +8,12 @@ import { updateStrategies, updateLayers } from "@mmorg/rdfx-layer";
 import saveIfChanges from './src/saveIfChanges.js';
 import getEngineTargetForProperties from './src/getEngineTargetForProperties.js';
 
-const path_skill = resolvePath(
-  __dirname,
-  `../../data/mmProfile/mm-profile-1.0.0.jsonld`
-);
+// const path_skill = resolvePath(
+//   __dirname,
+//   `../../data/mmProfile/mm-profile-1.0.0.jsonld`
+// );
 
-const skillProfileOntology = readJson(path_skill);
+// const skillProfileOntology = readJson(path_skill);
 
 const extraEnginePath = resolvePath(__dirname, `./extra-engine-1.0.0.jsonld`);
 const extraEngineOntology = readJson(extraEnginePath);
@@ -22,7 +22,7 @@ const groupedApiPath = resolvePath(__dirname, `./grouped-api-1.0.0.jsonld`);
 const groupedApiOntology = readJson(groupedApiPath);
 
 let ontology = mergeOntologies(
-  skillProfileOntology,
+  // skillProfileOntology,
   romeOntology,
   extraEngineOntology,
   groupedApiOntology
