@@ -9,6 +9,7 @@ triple:
 
   soo:Experience:                               # Describe an experience whatever type : professional, educational, etc.
     skos:prefLabel: rdf:langstring              # The preferred label of the experience
+<<<<<<< HEAD
     soo:description: soo:Description             # A short paragraph describing the experience
     soo:experienceType: skos:Concept            # The type of experience : vocational, professional, personal, test de personnalité, etc.
     soo:experienceStatus: skos:Concept          # The experience status : past, ongoing, suggested
@@ -30,6 +31,21 @@ triple:
     soo:skillLevelScale: skos:OrderedCollection
     soo:skillLevelValue: skos:Concept           # The skill level as defined as a value on a scale
     soo:sourceSkillId: skos:Concept             # The dataprovider's unique concept skill
+=======
+    soo:description: rdf:langstring             # A short paragraph describing the experience
+    soo:experienceType: skos:Concept            # The type of experience : vocational, professional, personal, test de personnalité, etc.
+    soo:experienceStatus: skos:Concept          # The experience status : past, ongoing, suggested
+    soo:dateFrom: xsd:date                      # the start date if a time period or the date of occurence
+    soo:dateTo: xsd:date                        # the end date if a time period 
+    
+
+
+  soo:Skill:                                    # Describe the skills attached to an experience
+    soo:experience: soo:Experience              # The experience that provided or is likely to provide the skill
+    soo:category: skos:Concept               # The skill group as defined in skos collections, e.g. hard skills/soft skills
+    soo:skillLevelScale: skos:OrderedCollection
+    soo:skillLevelValue: skos:Concept           # The skill level as defined as a value on a scale
+>>>>>>> b56e5c4 (fix: rename data folder)
 
 
   soo:Polarity:                                 # Polarity express the feeling toward an experience or a skill
@@ -38,6 +54,7 @@ triple:
     soo:polarityValue: skos:Concept             # The polarity defined as a value on a scale
 
 
+<<<<<<< HEAD
   soo:Profile:
     soo:name: xsd:string                        # The name of the profile
     soo:email: xsd:string                       # The email of the profile
@@ -58,6 +75,8 @@ triple:
   soo:SourceDataJson:
     soo:value: rdf:JSON                         # see https://w3c.github.io/rdf-concepts/spec/#section-json
     
+=======
+>>>>>>> b56e5c4 (fix: rename data folder)
 
 
 
