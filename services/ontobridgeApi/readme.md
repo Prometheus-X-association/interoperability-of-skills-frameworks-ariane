@@ -165,6 +165,7 @@ title OntoBridgeAPI Process
 actor DataConsumer
 actor DataProvider
 <<<<<<< HEAD
+<<<<<<< HEAD
 entity DataSpaceConnector
 participant OntoBridgeAPI
 entity InternalEngine
@@ -175,14 +176,22 @@ database ElasticSearch
 DataProvider --> DataSpaceConnector: JSON+Framework Name
 DataSpaceConnector->OntoBridgeAPI:JSON+Framework Name
 =======
+=======
+entity DataSpaceConnector
+>>>>>>> 9ea1482 (change pdf)
 entity OntoBridgeAPI
 entity InternalEngine
 entity MachineLearning
 entity GraphQL
 database ElasticSearch
 
+<<<<<<< HEAD
 DataProvider->OntoBridgeAPI:JSON+Framework Name
 >>>>>>> e55a838 (add readme.md)
+=======
+DataProvider --> DataSpaceConnector: JSON+Framework Name
+DataSpaceConnector->OntoBridgeAPI:JSON+Framework Name
+>>>>>>> 9ea1482 (change pdf)
 OntoBridgeAPI-->InternalEngine:JSON
 InternalEngine-->ElasticSearch:DataProvider Document
 ElasticSearch-->InternalEngine:Mapping Rules
@@ -192,6 +201,7 @@ OntoBridgeAPI-->GraphQL:JSON-LD+FrameworkName
 GraphQL-->ElasticSearch:Query
 ElasticSearch-->GraphQL:Result
 GraphQL-->OntoBridgeAPI:JSON-LD with Matched Terms
+<<<<<<< HEAD
 <<<<<<< HEAD
 activate OntoBridgeAPI #blue
 OntoBridgeAPI-->OntoBridgeAPI:**Check if present in Cache**
@@ -272,13 +282,19 @@ Install your python environment dependencies by running:
 poetry install
 ```
 =======
+=======
+activate OntoBridgeAPI #blue
+OntoBridgeAPI-->OntoBridgeAPI:**Check if present in Cache**
+>>>>>>> 9ea1482 (change pdf)
 OntoBridgeAPI-->MachineLearning:Unmatched Terms
 MachineLearning-->OntoBridgeAPI:List of Unmatched Vectors
+OntoBridgeAPI-->GraphQL:flush cache
+deactivate OntoBridgeAPI
+
 OntoBridgeAPI-->GraphQL:Unmatched Vectors
 GraphQL-->OntoBridgeAPI:Nearest Match terms
 OntoBridgeAPI-->OntoBridgeAPI:consolidation Match+MachineLearning
-OntoBridgeAPI->DataConsumer:
-note over DataProvider,DataConsumer:**To be defined**
+DataSpaceConnector --> DataConsumer:JSON+Framework Name
 @enduml
 ```
 >>>>>>> e55a838 (add readme.md)
