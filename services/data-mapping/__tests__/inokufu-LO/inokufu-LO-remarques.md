@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 * Quels sont les experienceType et experienceStatus de ces learning object ? 
 experienceType = educational
 experienceStatus = suggested (ou rajouter "available" dans la collection de termes)
@@ -18,3 +19,11 @@ Est-ce que dateTime fonctionne si l'on ne met qu'une date ?
 * Fait-on un mapping vers Rome ou Esco sur le titre de la formation ? 
 
 Pourquoi pas, mais c'est surtout sur les formacode et les fiches métiers qu'on pourrait faire un mapping
+=======
+* mappé vers des expériences 
+* title = prefLabel 
+* ==> creation d'un objet description avec des propriétés de type : image,url, text, keywords, standardDescriptionFile, 
+* date = rajouter la propriété refDate
+* rajouter une propriété duration à soo:Experience
+
+>>>>>>> 19bb8b6 (feat: start adding other transformation tests)
