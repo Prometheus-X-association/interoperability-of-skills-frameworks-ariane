@@ -211,6 +211,7 @@ GraphQL-->OntoBridgeAPI:Nearest Match terms
 OntoBridgeAPI-->OntoBridgeAPI:JSON-LD consolidation Match+MachineLearning
 OntoBridgeAPI-->DataSpaceConnector:JSON-LD+Framework Name
 DataSpaceConnector --> DataConsumer:JSON-LD+Framework Name
+<<<<<<< HEAD
 @enduml
 ```
 
