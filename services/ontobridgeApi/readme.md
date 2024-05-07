@@ -102,13 +102,15 @@ title OntoBridgeAPI Process
 
 actor DataConsumer
 actor DataProvider
+entity DataSpaceConnector
 entity OntoBridgeAPI
 entity InternalEngine
 entity MachineLearning
 entity GraphQL
 database ElasticSearch
 
-DataProvider->OntoBridgeAPI:JSON+Framework Name
+DataProvider --> DataSpaceConnector: JSON+Framework Name
+DataSpaceConnector->OntoBridgeAPI:JSON+Framework Name
 OntoBridgeAPI-->InternalEngine:JSON
 InternalEngine-->ElasticSearch:DataProvider Document
 ElasticSearch-->InternalEngine:Mapping Rules
@@ -118,12 +120,16 @@ OntoBridgeAPI-->GraphQL:JSON-LD+FrameworkName
 GraphQL-->ElasticSearch:Query
 ElasticSearch-->GraphQL:Result
 GraphQL-->OntoBridgeAPI:JSON-LD with Matched Terms
+activate OntoBridgeAPI #blue
+OntoBridgeAPI-->OntoBridgeAPI:**Check if present in Cache**
 OntoBridgeAPI-->MachineLearning:Unmatched Terms
 MachineLearning-->OntoBridgeAPI:List of Unmatched Vectors
+OntoBridgeAPI-->GraphQL:flush cache
+deactivate OntoBridgeAPI
+
 OntoBridgeAPI-->GraphQL:Unmatched Vectors
 GraphQL-->OntoBridgeAPI:Nearest Match terms
 OntoBridgeAPI-->OntoBridgeAPI:consolidation Match+MachineLearning
-OntoBridgeAPI->DataConsumer:
-note over DataProvider,DataConsumer:**To be defined**
+DataSpaceConnector --> DataConsumer:JSON+Framework Name
 @enduml
 ```
