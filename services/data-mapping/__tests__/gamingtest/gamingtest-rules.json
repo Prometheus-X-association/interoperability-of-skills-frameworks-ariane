@@ -17,6 +17,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "targetProperty": "skos:prefLabel",
 =======
       "targetProperty": "soo:Label",
@@ -27,6 +28,9 @@
 =======
       "targetProperty": "soo:label",
 >>>>>>> cacd7c1 (fix: restart from main branch)
+=======
+      "targetProperty": "soo:prefLabel",
+>>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
       "targetLang": "en",
       "targetFunction": "fno:asIs_WithLang"
     },
@@ -36,6 +40,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
       "targetClass": "soo:Profile",
+<<<<<<< HEAD
 <<<<<<< HEAD
       "targetProperty": "soo:email",
       "generateId": "true",
@@ -55,6 +60,13 @@
       "relationName": "soo:containsExperience",
       "relationNameInverse": "soo:hasProfile"
 >>>>>>> 75371fa (spec: add tests for gamingtest transformation)
+=======
+      "targetProperty": "soo:email",
+      "generateId": "true",
+      "relationTo": "soo:Experience",
+      "relationName": "soo:experience",
+      "relationNameInverse": "soo:profile"
+>>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
     },
 
     {
@@ -62,10 +74,14 @@
       "sourcePath": "Date",
       "targetClass": "soo:Experience",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "targetProperty": "soo:dateFrom",
 =======
       "targetProperty": "date",
 >>>>>>> 75371fa (spec: add tests for gamingtest transformation)
+=======
+      "targetProperty": "dateFrom",
+>>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
       "targetFunction": "fno:date-to-xsd"
     },
 
@@ -74,6 +90,7 @@
       "sourcePath": "Associated Soft Skill Block",
       "targetClass": "soo:Skill",
       "generateId": "true",
+<<<<<<< HEAD
 <<<<<<< HEAD
       "targetFunction": "fno:search-for-mapping-with-source", 
       "relationTo": "soo:Experience",
@@ -96,11 +113,18 @@
       "relationName": "soo:resultFromExperience",
       "relationNameInverse": "soo:hasSkill"
 >>>>>>> 008736c (fix: remove comments)
+=======
+      "targetFunction": "fno:search-for-mapping-with-source", 
+      "relationTo": "soo:Experience",
+      "relationName": "soo:experience",
+      "relationNameInverse": "soo:skill"
+>>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
     },
 
     {
       "id": "mmr:rule-5",
       "sourcePath": "Results",
+<<<<<<< HEAD
 <<<<<<< HEAD
       "targetClass": "soo:Skill",
       "targetProperty": "soo:skillLevelValue",
@@ -108,6 +132,10 @@
       "targetClass": "soo:Experience",
       "targetProperty": "result",
 >>>>>>> 75371fa (spec: add tests for gamingtest transformation)
+=======
+      "targetClass": "soo:Skill",
+      "targetProperty": "soo:skillLevelValue",
+>>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
       "targetFunction": "fno:as-is"
     }
 
