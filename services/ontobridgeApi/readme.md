@@ -1,4 +1,6 @@
-# Meeting 23/04/2024
+# Minutes
+
+## Meeting 23/04/2024
 
 - Rencontre avec Florent André (CTO MindMatcher)
 - Suite RGPD, possiblité de récupérer ces informations d'experience professionel d'un fournisseur de service
@@ -9,11 +11,13 @@
   - Posssibilité d'interroger une base GraphQL (en API) pour la mise en correspondance vers des frameworks pivot (ROME, RNCP, ESCO)
 - Démonstration d'un outils de génération de transformation d'onthologie fait en StreamLit
 
-# Meeting 26/04/2024
+## Meeting 26/04/2024
 
 - Rencontre avec Pierre Jacquin et Barthélémy Durette de la société MindMatcher
 - Barthélémy travaille sur les ontologies et présentation des connaissances
-- Pierre travaille sur l'alogo de trading
+- Pierre travaille sur l'algo de machine learning
+
+La notion de DataSpace est l'espace qui permet de récupérer les données.
 
 ## Les frameworks
 
@@ -81,18 +85,19 @@ Dans cette étape, le DataProvider doit fournir la transformation (grace à l'in
 Des appels GraphQL permettront la transformation des données vers un framework cible (passé en paramètre) telle que l'a demandé le DataConsumer.
 Dans le cas ou les appels graphQL ne permettrait pas de passer par du Training Enhancement.
 
-**à préciser** La notion de DataSpace (Ariane?) a été évoqué.
-
-## Training Enhancement
+## Term Matching Enhancement
 
 C'est la partie que développe Pierre. Il est envisagé de faire un vecteur de 1024 bit/characters pour représenter le texte. Ce vecteur peut ensuite être envoyé directement à graphql pour faire une recherhe de distance entre mot (par projection, ou methode "cosinus").
 
 Par ailleurs, il est aussi possible de récuperer les choix du dataprovider en terme de mapping.
 
+## Training Enhancement
+
+idée de dire que quand une formation arrive on y rajoute les compétences. Enrichissement des données
+
 # Meeting 29/04/2024
 
 Noua avons accès au répository gitlab [MindMatcher](https://gitlab.com/mmorg/bupm).
-Notre
 
 [OntoBridgeAPI Process](https://sequencediagram.org/)
 
@@ -134,3 +139,15 @@ OntoBridgeAPI-->DataSpaceConnector:JSON-LD+Framework Name
 DataSpaceConnector --> DataConsumer:JSON-LD+Framework Name
 @enduml
 ```
+
+## Meeting 07/05/2024
+
+### présentation de Gitlab
+
+- 4 Epics
+- Issues et tasks attachés
+
+### Présentation du présent document
+
+- affinage des termes
+- validation de notre compréhension.
