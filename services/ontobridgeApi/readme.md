@@ -2,6 +2,10 @@
 
 ## Meeting 23/04/2024
 
+# Minutes
+
+## Meeting 23/04/2024
+
 - Rencontre avec Florent André (CTO MindMatcher)
 - Suite RGPD, possiblité de récupérer ces informations d'experience professionel d'un fournisseur de service
   - ex: Linkedin à Malt
@@ -148,7 +152,7 @@ DataSpaceConnector --> DataConsumer:JSON-LD+Framework Name
 
 - affinage des termes
 - validation de notre compréhension.
-<<<<<<< HEAD
+  <<<<<<< HEAD
 
 #### Poetry
 
@@ -183,5 +187,19 @@ Install your python environment by running:
 ```bash
 poetry install
 ```
+
 =======
->>>>>>> 9bfa9df9c16736b30cde4a643ec33d92c1f5b7c9
+
+> > > > > > > 9bfa9df9c16736b30cde4a643ec33d92c1f5b7c9
+
+## Meeting 07/05/2024
+
+### présentation de Gitlab
+
+- 4 Epics
+- Issues et tasks attachés
+
+### Présentation du présent document
+
+- affinage des termes
+- validation de notre compréhension.
