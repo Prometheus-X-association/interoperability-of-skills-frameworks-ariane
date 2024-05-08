@@ -13,7 +13,7 @@
 
 - Rencontre avec Pierre Jacquin et Barthélémy Durette de la société MindMatcher
 - Barthélémy travaille sur les ontologies et présentation des connaissances
-- Pierre travaille sur l'alogo de trading
+- Pierre travaille sur l'alogo de
 
 ## Les frameworks
 
@@ -44,34 +44,31 @@ Ici, nous avons une base de données Elacticsearch qui est interrogeable par Gra
 GraphQL et Elasticsearch sont paramètré sur la base de ce model modèle.
 
 ```yaml
-ns: 
+ns:
   skos: http://www.w3.org/2004/02/skos/core#
   soo: https://competencies.be/soo/
 import:
-  - 
+  -
 triple:
+  #######SOO DATAMODEL##########
 
-#######SOO DATAMODEL##########
+  soo:Experience: # Describe an experience whatever type : professional, educational, etc.
+    skos:prefLabel: rdf:langstring # The preferred label of the experience
+    soo:description: rdf:langstring # A short paragraph describing the experience
+    soo:experienceType: skos:Concept # The type of experience : vocational, professional, personal, etc.
+    soo:experienceStatus: skos:Concept # The experience status : past, ongoing, suggested
+    soo:dateFrom: xsd:date # the start date if a time period or the date of occurence
+    soo:dateTo: xsd:date # the end date if a time period
 
-  soo:Experience:                               # Describe an experience whatever type : professional, educational, etc.
-    skos:prefLabel: rdf:langstring              # The preferred label of the experience
-    soo:description: rdf:langstring             # A short paragraph describing the experience
-    soo:experienceType: skos:Concept            # The type of experience : vocational, professional, personal, etc.
-    soo:experienceStatus: skos:Concept          # The experience status : past, ongoing, suggested
-    soo:dateFrom: xsd:date                      # the start date if a time period or the date of occurence
-    soo:dateTo: xsd:date                        # the end date if a time period 
+  soo:Skill: # Describe the skills attached to an experience
+    soo:experience: soo:Experience # The experience that provided or is likely to provide the skill
+    soo:skillFamily: skos:Concept # The skill group as defined in skos collections, e.g. hard skills/soft skills
+    soo:skillLevel: soo:SkillLevel # The skill level as defined as a value on a scale
 
-
-  soo:Skill:                                    # Describe the skills attached to an experience
-    soo:experience: soo:Experience              # The experience that provided or is likely to provide the skill
-    soo:skillFamily: skos:Concept               # The skill group as defined in skos collections, e.g. hard skills/soft skills
-    soo:skillLevel: soo:SkillLevel              # The skill level as defined as a value on a scale
-
-
-  soo:Polarity:                                 # Polarity express the feeling toward an experience or a skill
-    soo:experience: soo:Experience              # The experience which individual polarity is given
+  soo:Polarity: # Polarity express the feeling toward an experience or a skill
+    soo:experience: soo:Experience # The experience which individual polarity is given
     soo:polarityScale: skos:OrderedCollection
-    soo:polarityValue: skos:Concept             # The polarity defined as a value on a scale
+    soo:polarityValue: skos:Concept # The polarity defined as a value on a scale
 ```
 
 ## Principe de transformation ontologique et lexical
@@ -133,4 +130,38 @@ OntoBridgeAPI-->OntoBridgeAPI:JSON-LD consolidation Match+MachineLearning
 OntoBridgeAPI-->DataSpaceConnector:JSON-LD+Framework Name
 DataSpaceConnector --> DataConsumer:JSON-LD+Framework Name
 @enduml
+```
+
+#### Poetry
+
+We use [Poetry](https://python-poetry.org/) 1.1.11 to manage dependencies and packaging.
+If you've never used poetry, install it with **(For Powershell users, you can check the poetry installation instructions [here](https://python-poetry.org/docs/))**:
+
+```bash
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | POETRY_VERSION=1.1.11 python -
+```
+
+If you had installed poetry before, please ensure you have the correct poetry version (1.1.11) installed in your environment:
+
+```bash
+poetry self update 1.1.11 # If `poetry --version` is not 1.1.11
+```
+
+Enable poetry to install the venv at the root of your project dir
+
+```bash
+poetry config virtualenvs.in-project true
+```
+
+You also need poetry to use your ~3.11 python version. You can check which python poetry is using `poetry env info`.
+And if you don't see the right python version please run
+
+```bash
+poetry env use /path/to/Python311/python.exe
+```
+
+Install your python environment by running:
+
+```bash
+poetry install
 ```
