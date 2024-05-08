@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Minutes
 
 ## Meeting 23/04/2024
@@ -9,6 +10,11 @@
 =======
 # Meeting 23/04/2024
 >>>>>>> e55a838 (add readme.md)
+=======
+# Minutes
+
+## Meeting 23/04/2024
+>>>>>>> ddf6741 (poetry)
 
 - Rencontre avec Florent André (CTO MindMatcher)
 - Suite RGPD, possiblité de récupérer ces informations d'experience professionel d'un fournisseur de service
@@ -19,6 +25,7 @@
   - Posssibilité d'interroger une base GraphQL (en API) pour la mise en correspondance vers des frameworks pivot (ROME, RNCP, ESCO)
 - Démonstration d'un outils de génération de transformation d'onthologie fait en StreamLit
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 ## Meeting 26/04/2024
 
@@ -38,6 +45,15 @@ La notion de DataSpace est l'espace qui permet de récupérer les données.
 =======
 - Pierre travaille sur l'alogo de
 >>>>>>> dcefa9a (poetry)
+=======
+## Meeting 26/04/2024
+
+- Rencontre avec Pierre Jacquin et Barthélémy Durette de la société MindMatcher
+- Barthélémy travaille sur les ontologies et présentation des connaissances
+- Pierre travaille sur l'algo de machine learning
+
+La notion de DataSpace est l'espace qui permet de récupérer les données.
+>>>>>>> ddf6741 (poetry)
 
 ## Les frameworks
 
@@ -139,22 +155,30 @@ Des appels GraphQL permettront la transformation des données vers un framework 
 Dans le cas ou les appels graphQL ne permettrait pas de passer par du Training Enhancement.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## Term Matching Enhancement
 =======
 **à préciser** La notion de DataSpace (Ariane?) a été évoqué.
 
 ## Training Enhancement
 >>>>>>> e55a838 (add readme.md)
+=======
+## Term Matching Enhancement
+>>>>>>> ddf6741 (poetry)
 
 C'est la partie que développe Pierre. Il est envisagé de faire un vecteur de 1024 bit/characters pour représenter le texte. Ce vecteur peut ensuite être envoyé directement à graphql pour faire une recherhe de distance entre mot (par projection, ou methode "cosinus").
 
 Par ailleurs, il est aussi possible de récuperer les choix du dataprovider en terme de mapping.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ddf6741 (poetry)
 ## Training Enhancement
 
 idée de dire que quand une formation arrive on y rajoute les compétences. Enrichissement des données
 
+<<<<<<< HEAD
 # Meeting 29/04/2024
 
 Noua avons accès au répository gitlab [MindMatcher](https://gitlab.com/mmorg/bupm).
@@ -164,6 +188,11 @@ Noua avons accès au répository gitlab [MindMatcher](https://gitlab.com/mmorg/b
 Noua avons accès au répository gitlab [MindMatcher](https://gitlab.com/mmorg/bupm).
 Notre
 >>>>>>> e55a838 (add readme.md)
+=======
+# Meeting 29/04/2024
+
+Noua avons accès au répository gitlab [MindMatcher](https://gitlab.com/mmorg/bupm).
+>>>>>>> ddf6741 (poetry)
 
 [OntoBridgeAPI Process](https://sequencediagram.org/)
 
@@ -232,6 +261,9 @@ DataSpaceConnector --> DataConsumer:JSON-LD+Framework Name
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ddf6741 (poetry)
 ## Meeting 07/05/2024
 
 ### présentation de Gitlab
@@ -244,6 +276,7 @@ DataSpaceConnector --> DataConsumer:JSON-LD+Framework Name
 - affinage des termes
 - validation de notre compréhension.
 
+<<<<<<< HEAD
 ## Meeting 07/05/2024
 
 ### présentation de Gitlab
@@ -258,6 +291,8 @@ DataSpaceConnector --> DataConsumer:JSON-LD+Framework Name
 
 =======
 >>>>>>> dcefa9a (poetry)
+=======
+>>>>>>> ddf6741 (poetry)
 #### Poetry
 
 We use [Poetry](https://python-poetry.org/) 1.1.11 to manage dependencies and packaging.
