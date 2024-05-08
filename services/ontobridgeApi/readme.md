@@ -25,8 +25,12 @@ La notion de DataSpace est l'espace qui permet de récupérer les données.
 
 - Rencontre avec Pierre Jacquin et Barthélémy Durette de la société MindMatcher
 - Barthélémy travaille sur les ontologies et présentation des connaissances
+<<<<<<< HEAD
 - Pierre travaille sur l'alogo de trading
 >>>>>>> e55a838 (add readme.md)
+=======
+- Pierre travaille sur l'alogo de
+>>>>>>> dcefa9a (poetry)
 
 ## Les frameworks
 
@@ -58,6 +62,7 @@ GraphQL et Elasticsearch sont paramètré sur la base de ce model modèle.
 
 ```yaml
 <<<<<<< HEAD
+<<<<<<< HEAD
 ns:
   skos: http://www.w3.org/2004/02/skos/core#
   soo: https://competencies.be/soo/
@@ -85,34 +90,38 @@ triple:
     soo:polarityValue: skos:Concept # The polarity defined as a value on a scale
 =======
 ns: 
+=======
+ns:
+>>>>>>> dcefa9a (poetry)
   skos: http://www.w3.org/2004/02/skos/core#
   soo: https://competencies.be/soo/
 import:
-  - 
+  -
 triple:
+  #######SOO DATAMODEL##########
 
-#######SOO DATAMODEL##########
+  soo:Experience: # Describe an experience whatever type : professional, educational, etc.
+    skos:prefLabel: rdf:langstring # The preferred label of the experience
+    soo:description: rdf:langstring # A short paragraph describing the experience
+    soo:experienceType: skos:Concept # The type of experience : vocational, professional, personal, etc.
+    soo:experienceStatus: skos:Concept # The experience status : past, ongoing, suggested
+    soo:dateFrom: xsd:date # the start date if a time period or the date of occurence
+    soo:dateTo: xsd:date # the end date if a time period
 
-  soo:Experience:                               # Describe an experience whatever type : professional, educational, etc.
-    skos:prefLabel: rdf:langstring              # The preferred label of the experience
-    soo:description: rdf:langstring             # A short paragraph describing the experience
-    soo:experienceType: skos:Concept            # The type of experience : vocational, professional, personal, etc.
-    soo:experienceStatus: skos:Concept          # The experience status : past, ongoing, suggested
-    soo:dateFrom: xsd:date                      # the start date if a time period or the date of occurence
-    soo:dateTo: xsd:date                        # the end date if a time period 
+  soo:Skill: # Describe the skills attached to an experience
+    soo:experience: soo:Experience # The experience that provided or is likely to provide the skill
+    soo:skillFamily: skos:Concept # The skill group as defined in skos collections, e.g. hard skills/soft skills
+    soo:skillLevel: soo:SkillLevel # The skill level as defined as a value on a scale
 
-
-  soo:Skill:                                    # Describe the skills attached to an experience
-    soo:experience: soo:Experience              # The experience that provided or is likely to provide the skill
-    soo:skillFamily: skos:Concept               # The skill group as defined in skos collections, e.g. hard skills/soft skills
-    soo:skillLevel: soo:SkillLevel              # The skill level as defined as a value on a scale
-
-
-  soo:Polarity:                                 # Polarity express the feeling toward an experience or a skill
-    soo:experience: soo:Experience              # The experience which individual polarity is given
+  soo:Polarity: # Polarity express the feeling toward an experience or a skill
+    soo:experience: soo:Experience # The experience which individual polarity is given
     soo:polarityScale: skos:OrderedCollection
+<<<<<<< HEAD
     soo:polarityValue: skos:Concept             # The polarity defined as a value on a scale
 >>>>>>> e55a838 (add readme.md)
+=======
+    soo:polarityValue: skos:Concept # The polarity defined as a value on a scale
+>>>>>>> dcefa9a (poetry)
 ```
 
 ## Principe de transformation ontologique et lexical
@@ -215,6 +224,7 @@ DataSpaceConnector --> DataConsumer:JSON-LD+Framework Name
 @enduml
 ```
 
+<<<<<<< HEAD
 ## Meeting 07/05/2024
 
 ### présentation de Gitlab
@@ -242,6 +252,8 @@ DataSpaceConnector --> DataConsumer:JSON-LD+Framework Name
 - validation de notre compréhension.
 >>>>>>> 609beb6 (poetry)
 
+=======
+>>>>>>> dcefa9a (poetry)
 #### Poetry
 
 We use [Poetry](https://python-poetry.org/) 1.1.11 to manage dependencies and packaging.
@@ -257,12 +269,15 @@ If you had installed poetry before, please ensure you have the correct poetry ve
 poetry self update 1.1.11 # If `poetry --version` is not 1.1.11
 ```
 
+<<<<<<< HEAD
 Move to `ontobridgeApi` directory
 
 ```bash
 cd .\services\ontobridgeApi
 ```
 
+=======
+>>>>>>> dcefa9a (poetry)
 Enable poetry to install the venv at the root of your project dir
 
 ```bash
@@ -276,10 +291,15 @@ And if you don't see the right python version please run
 poetry env use /path/to/Python311/python.exe
 ```
 
+<<<<<<< HEAD
 Install your python environment dependencies by running:
+=======
+Install your python environment by running:
+>>>>>>> dcefa9a (poetry)
 
 ```bash
 poetry install
 ```
+<<<<<<< HEAD
 =======
 >>>>>>> 9bfa9df9c16736b30cde4a643ec33d92c1f5b7c9
