@@ -275,6 +275,7 @@ DataSpaceConnector --> DataConsumer:JSON-LD+Framework Name
 
 - affinage des termes
 - validation de notre compréhension.
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 ## Meeting 07/05/2024
@@ -340,6 +341,7 @@ Install your python environment by running:
 poetry install
 ```
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 activate OntoBridgeAPI #blue
@@ -361,3 +363,7 @@ DataSpaceConnector --> DataConsumer:JSON+Framework Name
 >>>>>>> e55a838 (add readme.md)
 =======
 >>>>>>> dcefa9a (poetry)
+=======
+=======
+>>>>>>> 9bfa9df9c16736b30cde4a643ec33d92c1f5b7c9
+>>>>>>> 92a40de (poetry)
