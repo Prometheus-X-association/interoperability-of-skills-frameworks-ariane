@@ -152,7 +152,18 @@ DataSpaceConnector --> DataConsumer:JSON-LD+Framework Name
 
 - affinage des termes
 - validation de notre compréhension.
-  <<<<<<< HEAD
+
+## Meeting 07/05/2024
+
+### présentation de Gitlab
+
+- 4 Epics
+- Issues et tasks attachés
+
+### Présentation du présent document
+
+- affinage des termes
+- validation de notre compréhension.
 
 #### Poetry
 
@@ -187,19 +198,3 @@ Install your python environment by running:
 ```bash
 poetry install
 ```
-
-=======
-
-> > > > > > > 9bfa9df9c16736b30cde4a643ec33d92c1f5b7c9
-
-## Meeting 07/05/2024
-
-### présentation de Gitlab
-
-- 4 Epics
-- Issues et tasks attachés
-
-### Présentation du présent document
-
-- affinage des termes
-- validation de notre compréhension.
