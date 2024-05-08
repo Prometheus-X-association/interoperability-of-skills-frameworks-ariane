@@ -275,6 +275,21 @@ DataSpaceConnector --> DataConsumer:JSON-LD+Framework Name
 
 - affinage des termes
 - validation de notre compréhension.
+<<<<<<< HEAD
+=======
+
+## Meeting 07/05/2024
+
+### présentation de Gitlab
+
+- 4 Epics
+- Issues et tasks attachés
+
+### Présentation du présent document
+
+- affinage des termes
+- validation de notre compréhension.
+>>>>>>> 609beb6 (poetry)
 
 <<<<<<< HEAD
 ## Meeting 07/05/2024
