@@ -180,6 +180,12 @@ If you had installed poetry before, please ensure you have the correct poetry ve
 poetry self update 1.1.11 # If `poetry --version` is not 1.1.11
 ```
 
+Move to `ontobridgeApi` directory
+
+```bash
+cd .\services\ontobridgeApi
+```
+
 Enable poetry to install the venv at the root of your project dir
 
 ```bash
@@ -193,7 +199,7 @@ And if you don't see the right python version please run
 poetry env use /path/to/Python311/python.exe
 ```
 
-Install your python environment by running:
+Install your python environment dependencies by running:
 
 ```bash
 poetry install
