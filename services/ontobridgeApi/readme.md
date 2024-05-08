@@ -367,6 +367,7 @@ poetry install
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 activate OntoBridgeAPI #blue
@@ -394,3 +395,7 @@ DataSpaceConnector --> DataConsumer:JSON+Framework Name
 >>>>>>> 92a40de (poetry)
 =======
 >>>>>>> a4bf6ab (fix)
+=======
+=======
+>>>>>>> 9bfa9df9c16736b30cde4a643ec33d92c1f5b7c9
+>>>>>>> aeebf76 (poetry)
