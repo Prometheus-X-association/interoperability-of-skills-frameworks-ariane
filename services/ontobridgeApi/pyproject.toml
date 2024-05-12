@@ -2,6 +2,7 @@
 name = "ontobridgeapi"
 version = "0.1.0"
 <<<<<<< HEAD
+<<<<<<< HEAD
 description = "API to transform documents into universal ontology"
 authors = ["Hugo Victor"]
 
@@ -34,10 +35,26 @@ requests-toolbelt = "^1.0.0"
 beautifulsoup4 = "^4.12.3"
 =======
 description = "api to transform documents into universal ontology"
+=======
+description = "API to transform documents into universal ontology"
+>>>>>>> 2abe167 (fast api)
 authors = ["Hugo Victor"]
+
+packages = [
+    { include="api", from="." },
+]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+fastapi = "^0.111.0"
+uvicorn = "^0.29.0"
+fastapi-utils = "^0.6.0"
+alembic = "^1.13.1"
+redis = "^5.0.4"
+psycopg2-binary = "^2.9.9"
+asyncpg = "^0.29.0"
+pydantic = "<2.0.0"
+black = "^24.4.2"
 
 >>>>>>> dcefa9a (poetry)
 [tool.poetry.dev-dependencies]
@@ -45,6 +62,7 @@ python = "^3.11"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 [tool.poetry.scripts]
@@ -54,3 +72,8 @@ dev = "api.main:start_dev"
 line-length = 128
 =======
 >>>>>>> dcefa9a (poetry)
+=======
+
+[tool.poetry.scripts]
+dev = "api.main:start_dev"
+>>>>>>> 2abe167 (fast api)

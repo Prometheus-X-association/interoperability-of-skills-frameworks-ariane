@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 # allow to load the .env file as a singleton for environment variables
+=======
+>>>>>>> 2abe167 (fast api)
 from enum import auto
 from functools import lru_cache
 from fastapi_utils.enums import StrEnum
@@ -22,8 +25,11 @@ class Settings(APISettings):
     redis_port: int
     redis_password: str = None
     redis_db: int
+<<<<<<< HEAD
     embedding_url: str
     graphql_url: str
+=======
+>>>>>>> 2abe167 (fast api)
 
 
 @lru_cache()
