@@ -10,6 +10,7 @@
             "request": "launch",
             "module": "uvicorn",
             "args": [
+<<<<<<< HEAD
                 "api.main:app",
                 "--host",
                 "0.0.0.0",
@@ -23,6 +24,12 @@
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}\\services\\ontobridgeApi",
             "justMyCode": true
+=======
+                "main:app",
+                "--reload"
+            ],
+            "jinja": true
+>>>>>>> 2abe167 (fast api)
         }
     ]
 }
