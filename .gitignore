@@ -4,3 +4,7 @@ node_modules/
 __pycache__/
  # Here comes the Devil(s) ;)
 .DS_Store
+.venv/
+
+
+
