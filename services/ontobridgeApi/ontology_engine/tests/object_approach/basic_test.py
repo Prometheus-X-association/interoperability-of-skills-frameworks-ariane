@@ -10,6 +10,7 @@ from ontology_engine.tests.object_approach.profile import Profile
 from ontology_engine.tests.object_approach.experience import Experience
 from ontology_engine.tests.object_approach.pref_label import PrefLabel
 from ontology_engine.tests.object_approach.rule import Rule
+from ontology_engine.tests.object_approach.rule_engine import RuleEngine
 from ontology_engine.tests.object_approach.skill import Skill
 from ontology_engine.tests.object_approach.tools import ordered, toJsonLD
 
@@ -100,8 +101,20 @@ def test_serialisation():
     print('--------------------------------------')
     assert ordered(json_result) == ordered(expected_output)
        
-     
+def test_apply_rules(get_gamingtest_rules, get_gamingtest_minimal):
+    ruleEngine = RuleEngine(get_gamingtest_rules)
+    
+    serialisation = ruleEngine.generate(get_gamingtest_minimal[0])
 
+    json_result = json.dumps(serialisation, sort_keys=True)
+
+    expected_data = get_gamingtest('gamingtest-minimal-structure.output.jsonld')
+    expected_output = json.dumps(expected_data, sort_keys=True)
+    print('--------------------------------------')
+    print(ordered(json_result))
+    print('VS')
+    print(ordered(expected_output))
+    print('--------------------------------------')
     
     
     
