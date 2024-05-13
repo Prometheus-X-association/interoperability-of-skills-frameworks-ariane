@@ -1,0 +1,35 @@
+ns: 
+  skos: http://www.w3.org/2004/02/skos/core#
+  soo: https://competencies.be/soo/
+import:
+  - 
+triple:
+
+#######SOO DATAMODEL##########
+
+  soo:Experience:                               # Describe an experience whatever type : professional, educational, etc.
+    skos:prefLabel: rdf:langstring              # The preferred label of the experience
+    soo:description: rdf:langstring             # A short paragraph describing the experience
+    soo:experienceType: skos:Concept            # The type of experience : vocational, professional, personal, test de personnalité, etc.
+    soo:experienceStatus: skos:Concept          # The experience status : past, ongoing, suggested
+    soo:dateFrom: xsd:date                      # the start date if a time period or the date of occurence
+    soo:dateTo: xsd:date                        # the end date if a time period 
+    
+
+
+  soo:Skill:                                    # Describe the skills attached to an experience
+    soo:experience: soo:Experience              # The experience that provided or is likely to provide the skill
+    soo:category: skos:Concept               # The skill group as defined in skos collections, e.g. hard skills/soft skills
+    soo:skillLevelScale: skos:OrderedCollection
+    soo:skillLevelValue: skos:Concept           # The skill level as defined as a value on a scale
+
+
+  soo:Polarity:                                 # Polarity express the feeling toward an experience or a skill
+    soo:experience: soo:Experience              # The experience which individual polarity is given
+    soo:polarityScale: skos:OrderedCollection
+    soo:polarityValue: skos:Concept             # The polarity defined as a value on a scale
+
+
+
+
+

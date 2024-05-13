@@ -1,0 +1,92 @@
+{
+  "@context": {
+    "id": "@id",
+    "graph": {
+      "@id": "@graph",
+      "@container": "@set"
+    },
+    "type": {
+      "@id": "@type",
+      "@container": "@set"
+    },
+    "tr": "https://competencies.be/mindmatcher/translator",
+    "mms": "https://competencies.be/mindmatcher/schema",
+    "date": {
+      "@id": "mms:date",
+      "@type": "xsd:dateTime"
+    },
+    "keywords": {
+      "@id": "mms:keywords",
+      "@type": "xsd:string"
+    },
+    "picture": {
+      "@id": "mms:picture",
+      "@type": "xsd:string"
+    },
+    "title": {
+      "@id": "mms:title",
+      "@type": "xsd:string"
+    },
+    "url": {
+      "@id": "mms:url",
+      "@type": "xsd:string"
+    }
+  },
+  "graph": [
+    {
+      "id": "tr:__generated-id-1__",
+      "type": "soo:Experience",
+      "label": {
+        "@value": "Problem-Solving Puzzle",
+        "@language": "en"
+      },
+      "hasProfile": "tr:__profile-id-1__",
+      "date": "2023-06-28",
+      "hasSkill": "tr:__skill-id-1__",
+      "result": "validated"
+    },
+    {
+      "id": "tr:__profile-id-1__",
+      "type": "soo:Profile",
+      "email": "zayne.harding@gmail.com",
+      "containsExperience": "tr:__generated-id-1__"
+    },
+    {
+      "id": "tr:__skill-id-1",
+      "type": "soo:Skill",
+      "resultFromExperience": "tr:__generated-id-1__",
+      "sourceValue": "tr:__source-value-1",
+      "mapping": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869",
+      "suggestions": [
+        "tr:sugg/1",
+        "tr:sugg/2"
+      ]
+    },
+    {
+      "id": "tr:__source-value-1",
+      "label": "Problem-Solving"
+    },
+    {
+      "id": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869",
+      "type": "esco:Skill",
+      "prefLabel": {
+        "@value": "solve problems",
+        "@language": "en"
+      }
+    },
+    {
+      "id": "tr:sugg/1",
+      "type": "mms:Suggestion",
+      "source": "mm-search",
+      "score": 35,
+      "mapping": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869"
+    },
+    {
+      "id": "tr:sugg/2",
+      "type": "mms:Suggestion",
+      "source": "mm-search",
+      "score": 10,
+      "mapping": "rome:1234"
+    }
+  ]
+}
