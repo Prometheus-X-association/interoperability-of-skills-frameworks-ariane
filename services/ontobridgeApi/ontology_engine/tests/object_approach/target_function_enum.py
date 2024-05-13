@@ -9,4 +9,4 @@ class TargetFunctionEnum(enum):
     search__for__mapping__with__source = 5
 
     def __str__(self):
-            return f'fno:{self.name.replace('__', '-')}'
+        return f'fno:{self.name.replace("__", "-")}'
