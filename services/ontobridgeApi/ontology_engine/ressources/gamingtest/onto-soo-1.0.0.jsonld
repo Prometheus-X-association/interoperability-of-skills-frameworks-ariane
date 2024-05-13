@@ -1,0 +1,215 @@
+{
+  "@context": {
+    "graph": {
+      "@id": "@graph",
+      "@container": "@set"
+    },
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "domain": {
+      "@id": "rdfs:domain",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "range": {
+      "@id": "rdfs:range",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "soo": "https://competencies.be/soo/"
+  },
+  "graph": [
+    {
+      "id": "soo:Experience",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "skos:prefLabel",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "rdf:langstring"
+      ]
+    },
+    {
+      "id": "soo:description",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "rdf:langstring"
+      ]
+    },
+    {
+      "id": "soo:experienceType",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "skos:Concept"
+      ]
+    },
+    {
+      "id": "soo:experienceStatus",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "skos:Concept"
+      ]
+    },
+    {
+      "id": "soo:dateFrom",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "xsd:date"
+      ]
+    },
+    {
+      "id": "soo:dateTo",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "xsd:date"
+      ]
+    },
+    {
+      "id": "soo:Skill",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "soo:experience",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Skill",
+        "soo:Polarity"
+      ],
+      "range": [
+        "soo:Experience"
+      ]
+    },
+    {
+      "id": "soo:category",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Skill"
+      ],
+      "range": [
+        "skos:Concept"
+      ]
+    },
+    {
+      "id": "soo:skillLevelScale",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Skill"
+      ],
+      "range": [
+        "skos:OrderedCollection"
+      ]
+    },
+    {
+      "id": "soo:skillLevelValue",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Skill"
+      ],
+      "range": [
+        "skos:Concept"
+      ]
+    },
+    {
+      "id": "soo:Polarity",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "soo:polarityScale",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Polarity"
+      ],
+      "range": [
+        "skos:OrderedCollection"
+      ]
+    },
+    {
+      "id": "soo:polarityValue",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Polarity"
+      ],
+      "range": [
+        "skos:Concept"
+      ]
+    },
+    {
+      "id": "mms:Ontology",
+      "type": [
+        "owl:Ontology"
+      ],
+      "title": [
+        {
+          "@language": "en",
+          "@value": "Ontologie for Competencies & Skills Profiles"
+        }
+      ],
+      "contributor": [],
+      "creator": [
+        {
+          "@language": "fr",
+          "@value": "Florent André (mindmatcher.org)"
+        }
+      ],
+      "__description": [
+        {
+          "@language": "fr",
+          "@value": "Ontologie pour la description d'un profil de compétences"
+        }
+      ],
+      "imports": []
+    }
+  ]
+}
