@@ -1,7 +1,10 @@
 {
     "python.testing.pytestArgs": [
-        ".", 
-        "--capture=sys"
+        ".",
+        "--capture=no",
+        "-v",
+        "-rs",
+        "-s"
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true
