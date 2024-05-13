@@ -28,7 +28,7 @@ def get_gamingtest_rules() -> List[Rule]:
     ressourcesDirectory = Path(__file__).parent.parent.parent
     ressourcesDirectory = os.path.join(ressourcesDirectory, 'ressources')
     gamingtestDirectory = os.path.join(ressourcesDirectory, 'gamingtest')
-    gamingtestRuleTest = os.path.join(gamingtestDirectory, 'gamingtest-rules-structure.json')
+    gamingtestRuleTest = os.path.join(gamingtestDirectory, 'gamingtest-rules.json')
     
     with open(gamingtestRuleTest) as f:
         data = json.load(f)
@@ -115,7 +115,7 @@ def test_apply_rules(get_gamingtest_rules, get_gamingtest_minimal):
     print('VS')
     print(ordered(expected_output))
     print('--------------------------------------')
-    
+    assert ordered(json_result) == ordered(expected_output)
     
     
     
