@@ -50,6 +50,7 @@ class ontologies:
     @router.get("/get_mapping_rules")
     async def get_mapping_rules(
 <<<<<<< HEAD
+<<<<<<< HEAD
         self,
         provider_name: str = Query(..., description="Name of the data provider"),
         document_type: Optional[str] = Query(None, description="the document type "),
@@ -102,20 +103,34 @@ class ontologies:
         return onto_service.say_hello(name)
 =======
         data_provider: DataProviderDTO, version: Optional[str] = Query(None)
+=======
+        self,
+        document_type: str = Query(..., description="document type"),
+        provider_name: str = Query(..., description="Name of the data provider"),
+        version: Optional[str] = Query(None, description="Version of the rules"),
+>>>>>>> 260d5c9 (fast api)
     ) -> dict:  # instantiate redis_client by dependency injection
-        return {}
+        data_provider = DataProviderDTO(name=provider_name, document_type=document_type)
+        return data_provider
 
     @router.post("/get_jsonld_from_mapping_rules")
     async def get_jsonld_from_mapping_rules(
-        mapping_rules: str, data_source: dict, version: Optional[str] = Query(None)
+        self,
+        mapping_rules: dict,
+        json_source: dict,
+        version: Optional[str] = Query(None),
     ) -> dict:  # instantiate redis_client by dependency injection
         return {}
 
     @router.get("/get_jsonld_from_provider")
     async def get_jsonld_from_provider(
-        data_provider: DataProviderDTO, version: Optional[str] = Query(None)
+        self,
+        document_type: str = Query(..., description="document type"),
+        provider_name: str = Query(..., description="Name of the data provider"),
+        version: Optional[str] = Query(None, description="Version of the rules"),
     ) -> dict:  # instantiate redis_client by dependency injection
-        return {}
+        data_provider = DataProviderDTO(name=provider_name, document_type=document_type)
+        return data_provider
 
     @router.get("/helloworld/{date}")
     async def get_hello_world(self, date: str) -> str:
