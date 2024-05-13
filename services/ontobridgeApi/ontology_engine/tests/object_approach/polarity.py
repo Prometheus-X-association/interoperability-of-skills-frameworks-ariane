@@ -3,3 +3,4 @@ class Polarity:
         self.experience : str = ''
         self.polarityScale : str = ''
         self.polarityValue : str = ''
+        self.type : str = ''
