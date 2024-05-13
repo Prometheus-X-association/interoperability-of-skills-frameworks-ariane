@@ -2,6 +2,11 @@
 
 - [Ontology Engine](#ontology-engine)
   - [Follow up](#follow-up)
+  - [Rules implementation remarks](#rules-implementation-remarks)
+    - [Date Vs DateFrom](#date-vs-datefrom)
+    - [as-IS function imply lowercase](#as-is-function-imply-lowercase)
+    - [gamingtest-rules-structure inconsistent with gamingtest-rules](#gamingtest-rules-structure-inconsistent-with-gamingtest-rules)
+    - [No way to know the correct language for this rules](#no-way-to-know-the-correct-language-for-this-rules)
   - [Description](#description)
   - [Environment](#environment)
     - [Libraries](#libraries)
@@ -17,7 +22,53 @@
 
 Date | description | author
 --- | --- | ---
+13/05/2007 | Add rules implementation remarks to be discuss | Y. Le Razer
 08/05/2007 | create the present document and the directory ontology_engine | Y. Le Razer
+
+## Rules implementation remarks
+
+### Date Vs DateFrom
+
+```json 
+      "id": "mmr:rule-3",
+      "sourcePath": "Date", --> should be dateFrom (or defaulted)
+      "targetClass": "soo:Experience",
+      "targetProperty": "dateFrom",
+      "targetFunction": "fno:date-to-xsd"
+```
+
+### as-IS function imply lowercase
+
+```Python
+if rule.targetFunction == "fno:as-is":
+  currentInstance[rule.targetProperty] = str(document[rule.sourcePath]).lower()
+  continue
+```
+
+### gamingtest-rules-structure inconsistent with gamingtest-rules
+
+Rules in the gamingtest-rules-structure are not coherent with the one of gamingtest-rules. (can't remember why)
+I used the gamingtest-rules.
+
+### No way to know the correct language for this rules
+
+```json
+      "id": "mmr:rule-4",
+      "sourcePath": "Associated Soft Skill Block",
+      "targetClass": "soo:Skill",
+      "generateId": "true",
+      "targetFunction": "fno:search-for-mapping-with-source",
+      "relationTo": "soo:Experience",
+      "relationName": "soo:resultFromExperience",
+      "relationNameInverse": "soo:hasSkill"
+```
+
+```Python
+if rule.targetFunction == "fno:search-for-mapping-with-source":
+    currentInstance['prefLabel'] = {}
+    currentInstance['prefLabel']['@value'] = document[rule.sourcePath]
+    currentInstance['prefLabel']['@language'] = 'en'
+```
 
 ## Description
 
@@ -62,3 +113,6 @@ We use the [pyyaml](https://pypi.org/project/PyYAML/) library : ```pip install p
 ## References
 
 - [Python Naming Convention](https://github.com/naming-convention/naming-convention-guides/tree/master/python)
+
+
+Rules
