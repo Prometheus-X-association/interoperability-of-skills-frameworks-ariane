@@ -1,15 +1,21 @@
 {
     "python.testing.pytestArgs": [
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8c8c72c (add first test.)
         ".",
         "--capture=no",
         "-v",
         "-rs",
         "-s"
+<<<<<<< HEAD
 =======
         ".", 
         "--capture=sys"
 >>>>>>> 3c64b5f (add ontology engine structure)
+=======
+>>>>>>> 8c8c72c (add first test.)
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true
