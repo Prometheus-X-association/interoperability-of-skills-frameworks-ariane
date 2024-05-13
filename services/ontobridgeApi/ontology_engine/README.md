@@ -6,7 +6,7 @@
     - [Date Vs DateFrom](#date-vs-datefrom)
     - [as-IS function imply lowercase](#as-is-function-imply-lowercase)
     - [gamingtest-rules-structure inconsistent with gamingtest-rules](#gamingtest-rules-structure-inconsistent-with-gamingtest-rules)
-    - [No way to know the correct language for this rules](#no-way-to-know-the-correct-language-for-this-rules)
+    - [No way to know the correct language for this rule](#no-way-to-know-the-correct-language-for-this-rule)
   - [Description](#description)
   - [Environment](#environment)
     - [Libraries](#libraries)
@@ -50,7 +50,7 @@ if rule.targetFunction == "fno:as-is":
 Rules in the gamingtest-rules-structure are not coherent with the one of gamingtest-rules. (can't remember why)
 I used the gamingtest-rules.
 
-### No way to know the correct language for this rules
+### No way to know the correct language for this rule
 
 ```json
       "id": "mmr:rule-4",
