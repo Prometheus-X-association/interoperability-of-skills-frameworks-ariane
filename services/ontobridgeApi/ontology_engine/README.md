@@ -29,7 +29,7 @@ Date | description | author
 
 ### Date Vs DateFrom
 
-```json 
+```json
       "id": "mmr:rule-3",
       "sourcePath": "Date", --> should be dateFrom (or defaulted)
       "targetClass": "soo:Experience",
@@ -38,6 +38,8 @@ Date | description | author
 ```
 
 ### as-IS function imply lowercase
+
+"Results": "Validated" / "result": "validated"
 
 ```Python
 if rule.targetFunction == "fno:as-is":
