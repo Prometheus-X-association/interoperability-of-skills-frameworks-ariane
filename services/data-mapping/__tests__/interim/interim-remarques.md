@@ -1,2 +1,5 @@
 - Présence de champs nestés (représentés aaa.vvv)
-- Présence de 2 objets expérience différents (past and suggested)
+- Présence de 3 objets expérience différents (pastExperience, Certifications, suggestedExperiences)
+    - Comment préciser le type de chaque expérience dans les rules (Création d'objets ?)
+    - Quels champs d'expériences créer ou ignorer (nom de l'entreprise, adresse ...)?
+    - Qu'est ce que cela implique pour les objets reliés (profile <-> experience) ?
