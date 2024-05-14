@@ -1,0 +1,28 @@
+{
+    "@context": {
+        "todo": "define_the_rules_context"
+    },
+    "graph": [
+        {
+            "champs": [
+                "name",
+                "email",
+                "address",
+                "pastExperience.role",
+                "pastExperience.company",
+                "pastExperience.dateStart",
+                "pastExperience.dateEnd",
+                "certifications.name",
+                "certifications.institution",
+                "certifications.year",
+                "suggestedExperiences.title",
+                "suggestedExperiences.description",
+                "suggestedExperiences.company",
+                "suggestedExperiences.dateStart",
+                "suggestedExperiences.location",
+                "suggestedExperiences.contractType",
+                "openToInterim"
+            ]
+        }
+    ]
+}
