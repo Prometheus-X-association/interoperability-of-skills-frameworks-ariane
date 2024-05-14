@@ -1,0 +1,2 @@
+- Présence de champs nestés (représentés aaa.vvv)
+- Présence de 2 objets expérience différents (past and suggested)
