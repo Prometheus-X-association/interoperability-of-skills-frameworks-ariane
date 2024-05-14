@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 - Question sur le fichier structure: il n'y a pour l'instant que la valeur `openToInterim` qui donne lieu à une transformation sous forme de référentiel. Mais c'est une valeur numérique et rattachée au profil et non à une expérience. Comment traite-t-on ce cas: 
     - au niveau du fichier de structure ?
     - au niveau du rattachement de la propriété à l'expérience ? (voir question ci-dessous)
@@ -67,3 +68,7 @@ example de règles:
 * Ajout de la propriété suivante pour le traitement des dates : `"targetFunctionParam": "fno:year-only"`
     - 2 options pour le traitement de la diversité des dates: a) des fonctions particulières pour chaque format d'entrées ou b) une seule fonction avec des paramètres différents en fonction du format d'entrée. 
         
+=======
+- Présence de champs nestés (représentés aaa.vvv)
+- Présence de 2 objets expérience différents (past and suggested)
+>>>>>>> 9d23288 (Renamed Proman to interim)
