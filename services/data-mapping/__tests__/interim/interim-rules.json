@@ -4,6 +4,7 @@
     },
     "graph": [
         {
+<<<<<<< HEAD
         "id": "mmr:rule-0",
         "generateId": "true",
         "sourcePath": "name",
@@ -232,5 +233,27 @@
         "targetValue": "term:experience/status/suggested"
       }
 
+=======
+            "champs": [
+                "name",
+                "email",
+                "address",
+                "pastExperience.role",
+                "pastExperience.company",
+                "pastExperience.dateStart",
+                "pastExperience.dateEnd",
+                "certifications.name",
+                "certifications.institution",
+                "certifications.year",
+                "suggestedExperiences.title",
+                "suggestedExperiences.description",
+                "suggestedExperiences.company",
+                "suggestedExperiences.dateStart",
+                "suggestedExperiences.location",
+                "suggestedExperiences.contractType",
+                "openToInterim"
+            ]
+        }
+>>>>>>> 9d23288 (Renamed Proman to interim)
     ]
 }
