@@ -6,7 +6,8 @@ services:
     image: jobsong-dev
     build:
       # @TODO: make it as variables. The dockerfile path should be calculated 
-      context: ../../_ops/_temp/deploy_asset/app/
+      # context: ${DOCKER_CONTEXT}
+      context: ../_temp/deploy_asset/fake-app/
       dockerfile: ../../../../_ops/container/Dockerfile
       target: ${T}
       args:
