@@ -1,8 +1,13 @@
 {
   "@context": {
+<<<<<<< HEAD
     "@todo": "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
   },
   
+=======
+    
+  },
+>>>>>>> 153238d (fix: update interim mapping and outpout)
   "graph": [
     {
       "id": "tr:__generated-id-1__",
@@ -10,8 +15,12 @@
       "name": "Alice Smith",
       "email": "alice.smith@example.com",
       "address": "address",
+<<<<<<< HEAD
       "experience": ["tr:__xp-1__", "tr:__xp-2__", "tr:__xp-3__","tr:__xp-4__","tr:__xp-5__","tr:__xp-6__"],
       "polarity": "tr:__polarity-1__"
+=======
+      "experience": ["tr:__xp-1__", "tr:__xp-2__", "tr:__xp-3__","tr:__xp-4__","tr:__xp-5__","tr:__xp-6__"]
+>>>>>>> 153238d (fix: update interim mapping and outpout)
     },
     {
       "id": "tr:__xp-1__",
@@ -19,9 +28,13 @@
       "prefLabel": {"@value": "Software Engineer", "@language":"en"},
       "company": "Tech Corp",
       "dateFrom": "2017-06-01",
+<<<<<<< HEAD
       "dateTo": "2019-08-01",
       "experienceType": "term:experience/type/professional",
       "experienceStatus": "term:experience/type/past"
+=======
+      "dateTo": "2019-08-01"
+>>>>>>> 153238d (fix: update interim mapping and outpout)
     },
     {
       "id": "tr:__xp-2__",
@@ -29,9 +42,13 @@
       "prefLabel": {"@value": "Lead Engineer", "@language":"en"},
       "company": "Innovate Ltd",
       "dateFrom": "2019-09-01",
+<<<<<<< HEAD
       "dateTo": "2023-01-01",
       "experienceType": "term:experience/type/professional",
       "experienceStatus": "term:experience/type/past"
+=======
+      "dateTo": "2023-01-01"
+>>>>>>> 153238d (fix: update interim mapping and outpout)
     },
 
     {
@@ -58,9 +75,13 @@
       "company": "Tech Innovators",
       "dateFrom": "2023-03-01",
       "location": "Boston, USA",
+<<<<<<< HEAD
       "contractType": "Full-Time",
       "experienceType": "term:experience/type/professional",
       "experienceStatus": "term:experience/type/suggested"
+=======
+      "contractType": "Full-Time"
+>>>>>>> 153238d (fix: update interim mapping and outpout)
     },
     {
       "id": "tr:__xp-6__",
@@ -70,9 +91,13 @@
       "company": "Creative Solutions",
       "dateFrom": "2024-02-01",
       "location": "Seattle, USA",
+<<<<<<< HEAD
       "contractType": "Contract",
       "experienceType": "term:experience/type/professional",
       "experienceStatus": "term:experience/type/suggested"
+=======
+      "contractType": "Contract"
+>>>>>>> 153238d (fix: update interim mapping and outpout)
     },
 
 
@@ -80,6 +105,7 @@
       "id": "tr:__polarity-1__",
       "type": "soo:Polarity",
       "polarityScale": "term:interim/polarity/scale/1",
+<<<<<<< HEAD
       "polarityValue": "term:interim/polarity/value/1"
     },
     {
@@ -90,6 +116,13 @@
     {
       "id": "term:interim/polarity/value/1", 
       "prefLabel": [{"@value": "0", "@language": "en"}],
+=======
+      "polarityValue": "term/interim/polarity/value/1"
+    },
+    {
+      "id": "term/interim/polarity/value/1", 
+      "prefLabel": {"@value": "0", "@language": "en"},
+>>>>>>> 153238d (fix: update interim mapping and outpout)
       "notation": 0
     }
 

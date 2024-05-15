@@ -17,16 +17,26 @@
         "relationNameInverse": "soo:profile"
 =======
         "id": "mmr:rule-0",
+        "generateId": "true",
         "sourcePath": "name",
         "targetClass": "soo:Profile",
+<<<<<<< HEAD
         "targetProperty": "soo:name"
 >>>>>>> a2dfae7 (First draft of rules)
+=======
+        "targetProperty": "soo:name",
+        "targetFunction": "fno:asIs",
+        "relationTo": "soo:Experience",
+        "relationName": "soo:experience",
+        "relationNameInverse": "soo:profile"
+>>>>>>> 153238d (fix: update interim mapping and outpout)
       },
       {
         "id": "mmr:rule-1",
         "sourcePath": "email",
         "targetClass": "soo:Profile",
         "targetProperty": "soo:email",
+<<<<<<< HEAD
 <<<<<<< HEAD
         "targetFunction": "fno:asIs"
 =======
@@ -35,11 +45,15 @@
         "relationName": "soo:experience",
         "relationNameInverse": "soo:profile"
 >>>>>>> a2dfae7 (First draft of rules)
+=======
+        "targetFunction": "fno:asIs"
+>>>>>>> 153238d (fix: update interim mapping and outpout)
       },
       {
         "id": "mmr:rule-2",
         "sourcePath": "address",
         "targetClass": "soo:Profile",
+<<<<<<< HEAD
 <<<<<<< HEAD
         "targetProperty": "soo:adress",
         "targetFunction": "fno:asIs"
@@ -53,20 +67,30 @@
         "targetProperty": "skos:prefLabel",
 =======
         "targetProperty": "soo:adress"
+=======
+        "targetProperty": "soo:adress",
+        "targetFunction": "fno:asIs"
+>>>>>>> 153238d (fix: update interim mapping and outpout)
       },
+
+
       {
         "id": "mmr:rule-3",
-        "sourcePath": "pastExperience.role",
-        "targetClass": "soo:Experience-1",
-        "targetProperty": "soo:prefLabel",
         "generateId": "true",
+<<<<<<< HEAD
 >>>>>>> a2dfae7 (First draft of rules)
+=======
+        "sourcePath": "pastExperience.role",
+        "targetClass": "soo:Experience",
+        "targetProperty": "skos:prefLabel",
+>>>>>>> 153238d (fix: update interim mapping and outpout)
         "targetLang": "en",
         "targetFunction": "fno:asIs_WithLang"
       },
       {
         "id": "mmr:rule-4",
         "sourcePath": "pastExperience.company",
+<<<<<<< HEAD
 <<<<<<< HEAD
         "targetClass": "soo:Experience",
         "targetProperty": "soo:company", 
@@ -83,19 +107,31 @@
         "targetProperty": "soo:company?", 
         "targetLang": "en",
         "targetFunction": "fno:asIs_WithLang"
+=======
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:company", 
+        "targetFunction": "fno:asIs"
+>>>>>>> 153238d (fix: update interim mapping and outpout)
       },
       {
         "id": "mmr:rule-4",
         "sourcePath": "pastExperience.dateStart",
+<<<<<<< HEAD
         "targetClass": "soo:Experience-1",
         "targetProperty": "soo:dateFrom?",
         "targetLang": "en",
         "targetFunction": "fno:asIs_WithLang"
 >>>>>>> a2dfae7 (First draft of rules)
+=======
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:dateFrom",
+        "targetFunction": "fno:date-to-xsd"
+>>>>>>> 153238d (fix: update interim mapping and outpout)
       },
       {
         "id": "mmr:rule-5",
         "sourcePath": "pastExperience.dateEnd",
+<<<<<<< HEAD
 <<<<<<< HEAD
         "targetClass": "soo:Experience",
         "targetProperty": "soo:dateTo",
@@ -158,12 +194,22 @@
         "targetProperty": "soo:dateTo?",
         "targetLang": "en",
         "targetFunction": "fno:asIs_WithLang"
+=======
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:dateTo",
+        "targetFunction": "fno:date-to-xsd"
+>>>>>>> 153238d (fix: update interim mapping and outpout)
       },
+
       {
         "id": "mmr:rule-6",
         "sourcePath": "certifications.name",
+<<<<<<< HEAD
         "targetClass": "soo:Experience-2",
 >>>>>>> a2dfae7 (First draft of rules)
+=======
+        "targetClass": "soo:Experience",
+>>>>>>> 153238d (fix: update interim mapping and outpout)
         "targetProperty": "soo:prefLabel",
         "generateId": "true",
         "targetLang": "en",
@@ -172,6 +218,7 @@
       {
         "id": "mmr:rule-7",
         "sourcePath": "certifications.institution",
+<<<<<<< HEAD
 <<<<<<< HEAD
         "targetClass": "soo:Experience",
         "targetProperty": "soo:company",
@@ -182,15 +229,24 @@
         "targetLang": "en",
         "targetFunction": "fno:asIs_WithLang"
 >>>>>>> a2dfae7 (First draft of rules)
+=======
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:company",
+        "targetFunction": "fno:asIs"
+>>>>>>> 153238d (fix: update interim mapping and outpout)
       },
       {
         "id": "mmr:rule-8",
         "sourcePath": "certifications.year",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 153238d (fix: update interim mapping and outpout)
         "targetClass": "soo:Experience",
         "targetProperty": "soo:dateFrom",
         "targetFunction": "fno:date-to-xsd",
         "targetFunctionParam": "fno:year-only"
+<<<<<<< HEAD
       },
       {
         "id": "mmr:rule-81",
@@ -249,12 +305,20 @@
         "targetProperty": "soo:dateFrom?",
         "targetLang": "en",
         "targetFunction": "fno:asIs_WithLang"
+=======
+>>>>>>> 153238d (fix: update interim mapping and outpout)
       },
+
+
       {
         "id": "mmr:rule-9",
         "sourcePath": "suggestedExperiences.title",
+<<<<<<< HEAD
         "targetClass": "soo:Experience-3",
 >>>>>>> a2dfae7 (First draft of rules)
+=======
+        "targetClass": "soo:Experience",
+>>>>>>> 153238d (fix: update interim mapping and outpout)
         "targetProperty": "soo:prefLabel",
         "generateId": "true",
         "targetLang": "en",
@@ -264,10 +328,14 @@
         "id": "mmr:rule-10",
         "sourcePath": "suggestedExperiences.description",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "targetClass": "soo:Experience",
 =======
         "targetClass": "soo:Experience-3",
 >>>>>>> a2dfae7 (First draft of rules)
+=======
+        "targetClass": "soo:Experience",
+>>>>>>> 153238d (fix: update interim mapping and outpout)
         "targetProperty": "soo:description",
         "targetLang": "en",
         "targetFunction": "fno:asIs_WithLang"
@@ -275,6 +343,7 @@
       {
         "id": "mmr:rule-11",
         "sourcePath": "suggestedExperiences.company",
+<<<<<<< HEAD
 <<<<<<< HEAD
         "targetClass": "soo:Experience",
         "targetProperty": "soo:company",
@@ -285,10 +354,16 @@
         "targetLang": "en",
         "targetFunction": "fno:asIs_WithLang"
 >>>>>>> a2dfae7 (First draft of rules)
+=======
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:company",
+        "targetFunction": "fno:asIs"
+>>>>>>> 153238d (fix: update interim mapping and outpout)
       },
       {
         "id": "mmr:rule-12",
         "sourcePath": "suggestedExperiences.dateStart",
+<<<<<<< HEAD
 <<<<<<< HEAD
         "targetClass": "soo:Experience",
         "targetProperty": "soo:dateFrom",
@@ -299,10 +374,16 @@
         "targetLang": "en",
         "targetFunction": "fno:asIs_WithLang"
 >>>>>>> a2dfae7 (First draft of rules)
+=======
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:dateFrom",
+        "targetFunction": "fno:date-to-xsd"
+>>>>>>> 153238d (fix: update interim mapping and outpout)
       },
       {
         "id": "mmr:rule-13",
         "sourcePath": "suggestedExperiences.location",
+<<<<<<< HEAD
 <<<<<<< HEAD
         "targetClass": "soo:Experience",
         "targetProperty": "soo:location",
@@ -350,22 +431,24 @@
         "targetProperty": "soo:location?",
         "targetLang": "en",
         "targetFunction": "fno:asIs_WithLang"
+=======
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:location",
+        "targetFunction": "fno:asIs"
+>>>>>>> 153238d (fix: update interim mapping and outpout)
       },
       {
         "id": "mmr:rule-14",
         "sourcePath": "certifications.contractType",
-        "targetClass": "soo:Experience-3",
-        "targetProperty": "soo:?",
-        "targetLang": "en",
-        "targetFunction": "fno:asIs_WithLang"
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:contractType",
+        "targetFunction": "fno:asIs"
       },
       {
         "id": "mmr:rule-14",
         "sourcePath": "openToInterim",
         "targetClass": "soo:Polarity",
-        "targetProperty": "soo:Value",
-        "targetLang": "en",
-        "targetFunction": "fno:asIs_WithLang"
+        "targetFunction": "fno:find-or-create-term"
       }
 >>>>>>> a2dfae7 (First draft of rules)
     ]
