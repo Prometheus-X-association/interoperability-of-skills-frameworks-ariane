@@ -5,63 +5,66 @@
     "graph": [
         {
         "id": "mmr:rule-0",
+        "generateId": "true",
         "sourcePath": "name",
         "targetClass": "soo:Profile",
-        "targetProperty": "soo:name"
+        "targetProperty": "soo:name",
+        "targetFunction": "fno:asIs",
+        "relationTo": "soo:Experience",
+        "relationName": "soo:experience",
+        "relationNameInverse": "soo:profile"
       },
       {
         "id": "mmr:rule-1",
         "sourcePath": "email",
         "targetClass": "soo:Profile",
         "targetProperty": "soo:email",
-        "generateId": "true",
-        "relationTo": "soo:Experience-1",
-        "relationName": "soo:experience",
-        "relationNameInverse": "soo:profile"
+        "targetFunction": "fno:asIs"
       },
       {
         "id": "mmr:rule-2",
         "sourcePath": "address",
         "targetClass": "soo:Profile",
-        "targetProperty": "soo:adress"
+        "targetProperty": "soo:adress",
+        "targetFunction": "fno:asIs"
       },
+
+
       {
         "id": "mmr:rule-3",
-        "sourcePath": "pastExperience.role",
-        "targetClass": "soo:Experience-1",
-        "targetProperty": "soo:prefLabel",
         "generateId": "true",
+        "sourcePath": "pastExperience.role",
+        "targetClass": "soo:Experience",
+        "targetProperty": "skos:prefLabel",
         "targetLang": "en",
         "targetFunction": "fno:asIs_WithLang"
       },
       {
         "id": "mmr:rule-4",
         "sourcePath": "pastExperience.company",
-        "targetClass": "soo:Experience-1",
-        "targetProperty": "soo:company?", 
-        "targetLang": "en",
-        "targetFunction": "fno:asIs_WithLang"
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:company", 
+        "targetFunction": "fno:asIs"
       },
       {
         "id": "mmr:rule-4",
         "sourcePath": "pastExperience.dateStart",
-        "targetClass": "soo:Experience-1",
-        "targetProperty": "soo:dateFrom?",
-        "targetLang": "en",
-        "targetFunction": "fno:asIs_WithLang"
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:dateFrom",
+        "targetFunction": "fno:date-to-xsd"
       },
       {
         "id": "mmr:rule-5",
         "sourcePath": "pastExperience.dateEnd",
-        "targetClass": "soo:Experience-1",
-        "targetProperty": "soo:dateTo?",
-        "targetLang": "en",
-        "targetFunction": "fno:asIs_WithLang"
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:dateTo",
+        "targetFunction": "fno:date-to-xsd"
       },
+
       {
         "id": "mmr:rule-6",
         "sourcePath": "certifications.name",
-        "targetClass": "soo:Experience-2",
+        "targetClass": "soo:Experience",
         "targetProperty": "soo:prefLabel",
         "generateId": "true",
         "targetLang": "en",
@@ -70,23 +73,24 @@
       {
         "id": "mmr:rule-7",
         "sourcePath": "certifications.institution",
-        "targetClass": "soo:Experience-2",
-        "targetProperty": "soo:company?",
-        "targetLang": "en",
-        "targetFunction": "fno:asIs_WithLang"
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:company",
+        "targetFunction": "fno:asIs"
       },
       {
         "id": "mmr:rule-8",
         "sourcePath": "certifications.year",
-        "targetClass": "soo:Experience-2",
-        "targetProperty": "soo:dateFrom?",
-        "targetLang": "en",
-        "targetFunction": "fno:asIs_WithLang"
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:dateFrom",
+        "targetFunction": "fno:date-to-xsd",
+        "targetFunctionParam": "fno:year-only"
       },
+
+
       {
         "id": "mmr:rule-9",
         "sourcePath": "suggestedExperiences.title",
-        "targetClass": "soo:Experience-3",
+        "targetClass": "soo:Experience",
         "targetProperty": "soo:prefLabel",
         "generateId": "true",
         "targetLang": "en",
@@ -95,7 +99,7 @@
       {
         "id": "mmr:rule-10",
         "sourcePath": "suggestedExperiences.description",
-        "targetClass": "soo:Experience-3",
+        "targetClass": "soo:Experience",
         "targetProperty": "soo:description",
         "targetLang": "en",
         "targetFunction": "fno:asIs_WithLang"
@@ -103,42 +107,36 @@
       {
         "id": "mmr:rule-11",
         "sourcePath": "suggestedExperiences.company",
-        "targetClass": "soo:Experience-3",
-        "targetProperty": "soo:company?",
-        "targetLang": "en",
-        "targetFunction": "fno:asIs_WithLang"
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:company",
+        "targetFunction": "fno:asIs"
       },
       {
         "id": "mmr:rule-12",
         "sourcePath": "suggestedExperiences.dateStart",
-        "targetClass": "soo:Experience-3",
-        "targetProperty": "soo:dateFrom?",
-        "targetLang": "en",
-        "targetFunction": "fno:asIs_WithLang"
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:dateFrom",
+        "targetFunction": "fno:date-to-xsd"
       },
       {
         "id": "mmr:rule-13",
         "sourcePath": "suggestedExperiences.location",
-        "targetClass": "soo:Experience-3",
-        "targetProperty": "soo:location?",
-        "targetLang": "en",
-        "targetFunction": "fno:asIs_WithLang"
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:location",
+        "targetFunction": "fno:asIs"
       },
       {
         "id": "mmr:rule-14",
         "sourcePath": "certifications.contractType",
-        "targetClass": "soo:Experience-3",
-        "targetProperty": "soo:?",
-        "targetLang": "en",
-        "targetFunction": "fno:asIs_WithLang"
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:contractType",
+        "targetFunction": "fno:asIs"
       },
       {
         "id": "mmr:rule-14",
         "sourcePath": "openToInterim",
         "targetClass": "soo:Polarity",
-        "targetProperty": "soo:Value",
-        "targetLang": "en",
-        "targetFunction": "fno:asIs_WithLang"
+        "targetFunction": "fno:find-or-create-term"
       }
     ]
 }
