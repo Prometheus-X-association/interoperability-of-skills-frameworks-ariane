@@ -1294,6 +1294,7 @@ files = [
 ]
 
 [[package]]
+<<<<<<< HEAD
 name = "inquirer"
 version = "3.2.4"
 description = "Collection of common interactive command line user interfaces, based on Inquirer.js"
@@ -1337,6 +1338,8 @@ files = [
 >>>>>>> 3c64b5f (add ontology engine structure)
 
 [[package]]
+=======
+>>>>>>> 86ca0e6 (implement jobready_2)
 name = "jinja2"
 version = "3.1.4"
 description = "A very fast and expressive template engine."
@@ -1370,6 +1373,7 @@ i18n = ["Babel (>=2.7)"]
 
 [[package]]
 <<<<<<< HEAD
+<<<<<<< HEAD
 name = "jinxed"
 version = "1.2.1"
 description = "Jinxed Terminal Library"
@@ -1395,6 +1399,8 @@ files = [
 ]
 
 [[package]]
+=======
+>>>>>>> 86ca0e6 (implement jobready_2)
 name = "jsonpath-ng"
 version = "1.6.1"
 description = "A final implementation of JSONPath for Python that aims to be standard compliant, including arithmetic and binary comparison operators and providing clear AST for metaprogramming."
@@ -1409,6 +1415,7 @@ files = [
 ply = "*"
 
 [[package]]
+<<<<<<< HEAD
 name = "mako"
 version = "1.3.5"
 description = "A super-fast templating language that borrows the best ideas from the existing templating languages."
@@ -1419,6 +1426,8 @@ files = [
     {file = "Mako-1.3.5.tar.gz", hash = "sha256:48dbc20568c1d276a2698b36d968fa76161bf127194907ea6fc594fa81f943bc"},
 ]
 =======
+=======
+>>>>>>> 86ca0e6 (implement jobready_2)
 name = "mako"
 version = "1.3.3"
 description = "A super-fast templating language that borrows the best ideas from the existing templating languages."
@@ -2394,6 +2403,32 @@ test = ["appdirs (==1.4.4)", "covdefaults (>=2.3)", "pytest (>=7.4.3)", "pytest-
 type = ["mypy (>=1.8)"]
 
 [[package]]
+name = "pluggy"
+version = "1.5.0"
+description = "plugin and hook calling mechanisms for python"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "pluggy-1.5.0-py3-none-any.whl", hash = "sha256:44e1ad92c8ca002de6377e165f3e0f1be63266ab4d554740532335b9d75ea669"},
+    {file = "pluggy-1.5.0.tar.gz", hash = "sha256:2cffa88e94fdc978c4c574f15f9e59b7f4201d439195c3715ca9e2486f1d0cf1"},
+]
+
+[package.extras]
+dev = ["pre-commit", "tox"]
+testing = ["pytest", "pytest-benchmark"]
+
+[[package]]
+name = "ply"
+version = "3.11"
+description = "Python Lex & Yacc"
+optional = false
+python-versions = "*"
+files = [
+    {file = "ply-3.11-py2.py3-none-any.whl", hash = "sha256:096f9b8350b65ebd2fd1346b12452efe5b9607f7482813ffca50c22722a807ce"},
+    {file = "ply-3.11.tar.gz", hash = "sha256:00c7c1aaa88358b9c765b6d3000c6eec0ba42abca5351b095321aef446081da3"},
+]
+
+[[package]]
 name = "psutil"
 version = "5.9.8"
 description = "Cross-platform lib for process and system monitoring in Python."
@@ -2723,14 +2758,24 @@ windows-terminal = ["colorama (>=0.4.6)"]
 
 [[package]]
 <<<<<<< HEAD
+<<<<<<< HEAD
 name = "pytest"
 version = "8.2.2"
+=======
+name = "pytest"
+version = "8.2.0"
+>>>>>>> 86ca0e6 (implement jobready_2)
 description = "pytest: simple powerful testing with Python"
 optional = false
 python-versions = ">=3.8"
 files = [
+<<<<<<< HEAD
     {file = "pytest-8.2.2-py3-none-any.whl", hash = "sha256:c434598117762e2bd304e526244f67bf66bbd7b5d6cf22138be51ff661980343"},
     {file = "pytest-8.2.2.tar.gz", hash = "sha256:de4bb8104e201939ccdc688b27a89a7be2079b22e2bd2b07f806b6ba71117977"},
+=======
+    {file = "pytest-8.2.0-py3-none-any.whl", hash = "sha256:1733f0620f6cda4095bbf0d9ff8022486e91892245bb9e7d5542c018f612f233"},
+    {file = "pytest-8.2.0.tar.gz", hash = "sha256:d507d4482197eac0ba2bae2e9babf0672eb333017bcedaa5fb1a3d42c1174b3f"},
+>>>>>>> 86ca0e6 (implement jobready_2)
 ]
 
 [package.dependencies]
@@ -4887,6 +4932,7 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
+<<<<<<< HEAD
 content-hash = "f83e763060cbc4b8bc1d827c2081c9d0b610eb97f70053d233bf1ebf67e2d4d8"
 <<<<<<< HEAD
 
@@ -4943,3 +4989,6 @@ websockets = []
 >>>>>>> 2abe167 (fast api)
 =======
 >>>>>>> 3c64b5f (add ontology engine structure)
+=======
+content-hash = "3e071ae05e8afd6b293b55d4009219a3dea1b76a8dde4ee1723c098e1f0d31c5"
+>>>>>>> 86ca0e6 (implement jobready_2)
