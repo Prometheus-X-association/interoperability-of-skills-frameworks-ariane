@@ -27,7 +27,7 @@ export async function stoppable(execaFn, message) {
     await execaFn
   } catch (e) {
     console.log(e)
-    if (execaFn.spawnfile === 'docker' && e.exitCode === 130 )  {
+    if (execaFn.spawnfile === 'docker' && (e.exitCode === 130 || e.exitCode === 1) )  {
       await setTimeout(2000)
       console.log('Docker logs should be ended now, continue the deploy')
       return 
