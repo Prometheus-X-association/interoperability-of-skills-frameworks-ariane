@@ -137,6 +137,7 @@
         "targetProperty": "soo:dateTo",
         "targetFunction": "fno:date-to-xsd"
       },
+
       {
         "id": "mmr:rule-51",
         "sourcePath": "pastExperience.role",
@@ -216,6 +217,8 @@
         "targetFunctionParam": "fno:year-only"
 <<<<<<< HEAD
       },
+
+
       {
         "id": "mmr:rule-81",
         "sourcePath": "certifications.contractType",
