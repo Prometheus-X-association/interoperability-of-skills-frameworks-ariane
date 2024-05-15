@@ -1,0 +1,9 @@
+{
+    "comment": "role=dataProvider, orgName=preprod-test-mm",
+    "endpoint": "https://dsp-dprov-dev-crg6fqyj3q-ew.a.run.app",
+    "serviceKey": "USyMyRxLMa3ZKoEMYsO3JLCouc5vg6iIMmhxwv1US2nlDisgov2BBVU43SMWmqBAovuBVvKQ3nXY5Tm87Pcl9NAiiJ7vp76RLURu",
+    "secretKey": "cAQm3B3SMgXMw2nyWsaP3GaCbvsVTek5NJ9cqEYWzhIHAzqvzFQEnnm21maJSleUUF1g5ZFiTlG_3tb4vhgTmO7vyrN2o8iPLpvS",
+    "catalogUri": "https://api.visionstrust.com/v1/",
+    "contractUri": "https://contract.visionstrust.com/",
+    "consentUri": "https://consent.visionstrust.com/v1/"
+}
