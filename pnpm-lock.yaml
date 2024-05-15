@@ -17544,18 +17544,16 @@ snapshots:
 
   vite-node@1.4.0(@types/node@20.4.8)(terser@5.27.2):
     dependencies:
-      cac: 6.7.14
+      '@microsoft/api-extractor': 7.43.0(@types/node@18.19.31)
+      '@rollup/pluginutils': 5.1.0(rollup@4.13.0)
+      '@vue/language-core': 1.8.27(typescript@4.9.4)
       debug: 4.3.4(supports-color@8.1.1)
       pathe: 1.1.2
       picocolors: 1.0.0
       vite: 5.2.9(@types/node@20.4.8)(terser@5.27.2)
     transitivePeerDependencies:
       - '@types/node'
-      - less
-      - lightningcss
-      - sass
-      - stylus
-      - sugarss
+      - rollup
       - supports-color
       - terser
 
