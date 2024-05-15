@@ -13,8 +13,12 @@
       "skill": "tr:__skill-id-1__"
 =======
       "skill": "tr:__skill-id-1__",
+<<<<<<< HEAD
       "result": "validated"
 >>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
+=======
+      "result": "Validated"
+>>>>>>> 4ad4771 (fix: update gaming test rules)
     },
     {
       "id":"tr:__profile-id-1__",
