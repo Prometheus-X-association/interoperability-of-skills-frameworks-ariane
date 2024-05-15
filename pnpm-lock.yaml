@@ -17570,11 +17570,7 @@ snapshots:
       vite: 5.2.9(@types/node@20.4.8)(terser@5.27.2)
     transitivePeerDependencies:
       - '@types/node'
-      - less
-      - lightningcss
-      - sass
-      - stylus
-      - sugarss
+      - rollup
       - supports-color
       - terser
 
