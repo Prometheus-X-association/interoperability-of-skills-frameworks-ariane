@@ -18,6 +18,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "targetProperty": "skos:prefLabel",
 =======
       "targetProperty": "soo:Label",
@@ -31,6 +32,9 @@
 =======
       "targetProperty": "soo:prefLabel",
 >>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
+=======
+      "targetProperty": "skos:prefLabel",
+>>>>>>> 4ad4771 (fix: update gaming test rules)
       "targetLang": "en",
       "targetFunction": "fno:asIs_WithLang"
     },
@@ -75,6 +79,7 @@
       "targetClass": "soo:Experience",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "targetProperty": "soo:dateFrom",
 =======
       "targetProperty": "date",
@@ -82,6 +87,9 @@
 =======
       "targetProperty": "dateFrom",
 >>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
+=======
+      "targetProperty": "soo:dateFrom",
+>>>>>>> 4ad4771 (fix: update gaming test rules)
       "targetFunction": "fno:date-to-xsd"
     },
 
