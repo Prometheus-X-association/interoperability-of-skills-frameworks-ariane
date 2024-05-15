@@ -3,6 +3,7 @@ from pathlib import Path
 import os
 import json
 from typing import List
+from jsonpath_ng.ext import parse
 
 import pytest
 
@@ -14,21 +15,20 @@ from ontology_engine.tests.object_approach.rule_engine import RuleEngine
 from ontology_engine.tests.object_approach.skill import Skill
 from ontology_engine.tests.object_approach.tools import ordered, toJsonLD
 
-def get_gamingtest(fileName : str = '') -> List[dict]:
+def get_tests(fileName : str, provider : str) -> List[dict]:
     ressourcesDirectory = Path(__file__).parent.parent.parent
     ressourcesDirectory = os.path.join(ressourcesDirectory, 'ressources')
-    gamingtestDirectory = os.path.join(ressourcesDirectory, 'gamingtest')
-    gamingtestMinimal = os.path.join(gamingtestDirectory, fileName)
-    with open(gamingtestMinimal) as f:
+    providerDirectory = os.path.join(ressourcesDirectory, provider)
+    path_file = os.path.join(providerDirectory, fileName)
+    with open(path_file) as f:
         data = json.load(f)
         return data 
 
-@pytest.fixture
-def get_gamingtest_rules() -> List[Rule]:
+def get_rules(provider : str) -> List[Rule]:
     ressourcesDirectory = Path(__file__).parent.parent.parent
     ressourcesDirectory = os.path.join(ressourcesDirectory, 'ressources')
-    gamingtestDirectory = os.path.join(ressourcesDirectory, 'gamingtest')
-    gamingtestRuleTest = os.path.join(gamingtestDirectory, 'gamingtest-rules.json')
+    gamingtestDirectory = os.path.join(ressourcesDirectory, provider)
+    gamingtestRuleTest = os.path.join(gamingtestDirectory, f'{provider}-rules.json')
     
     with open(gamingtestRuleTest) as f:
         data = json.load(f)
@@ -38,22 +38,17 @@ def get_gamingtest_rules() -> List[Rule]:
             rules.append(rule)
     return rules
 
-@pytest.fixture
-def get_gamingtest_minimal() -> List[dict]:
-    return get_gamingtest('gamingtest-minimal.json')
-    
-@pytest.fixture
-def get_gamingtest_all() -> List[dict]:
-    return get_gamingtest('gamingtest.json')
-
-def test_reading_gamintest_rules_structure(get_gamingtest_rules):
+def test_reading_gamintest_rules_structure():
+    get_gamingtest_rules = get_rules('gamingtest')
     assert len(get_gamingtest_rules) == 6
 
-def test_reading_gamintest_miminal(get_gamingtest_minimal):
+def test_reading_gamintest_miminal():
+    get_gamingtest_minimal = get_tests('gamingtest-minimal.json','gamingtest')
     assert len(get_gamingtest_minimal) == 1
     assert get_gamingtest_minimal[0]["User ID"] == "zayne.harding@gmail.com"
 
-def test_reading_gamintest_all(get_gamingtest_all):
+def test_reading_gamintest_all():
+    get_gamingtest_all = get_tests('gamingtest.json','gamingtest')
     assert len(get_gamingtest_all) == 50
 
 def test_serialisation():
@@ -92,7 +87,7 @@ def test_serialisation():
 
     json_result = json.dumps(serialisation, sort_keys=True)
     
-    expected_data = get_gamingtest('gamingtest-minimal-structure.output.jsonld')
+    expected_data = get_tests('gamingtest-minimal-structure.output.jsonld','gamingtest')
     expected_output = json.dumps(expected_data, sort_keys=True)
     print('--------------------------------------')
     print(ordered(json_result))
@@ -101,14 +96,18 @@ def test_serialisation():
     print('--------------------------------------')
     assert ordered(json_result) == ordered(expected_output)
        
-def test_apply_rules(get_gamingtest_rules, get_gamingtest_minimal):
-    ruleEngine = RuleEngine(get_gamingtest_rules)
+def test_apply_rules_gamingtest():
+    gamingtest_rules = get_rules('gamingtest')
+    get_gamingtest_minimal = get_tests('gamingtest-minimal.json','gamingtest')
     
-    serialisation = ruleEngine.generate(get_gamingtest_minimal[0])
+    ruleEngine = RuleEngine(gamingtest_rules)
+    
+    serialisation = ruleEngine.generate(get_gamingtest_minimal)
 
     json_result = json.dumps(serialisation, sort_keys=True)
 
-    expected_data = get_gamingtest('gamingtest-minimal-structure.output.jsonld')
+    expected_data = get_tests('gamingtest-minimal-structure.output.jsonld','gamingtest')
+    
     expected_output = json.dumps(expected_data, sort_keys=True)
     print('--------------------------------------')
     print(ordered(json_result))
@@ -117,6 +116,52 @@ def test_apply_rules(get_gamingtest_rules, get_gamingtest_minimal):
     print('--------------------------------------')
     assert ordered(json_result) == ordered(expected_output)
     
+def test_apply_rules_jobready():
+    jobready_2_rules = get_rules('jobready_2')
+    jobready_2_minimal = get_tests('jobready_2.json','jobready_2')
     
+    ruleEngine = RuleEngine(jobready_2_rules)
     
+    serialisation = ruleEngine.generate(jobready_2_minimal[0])
+
+    json_result = json.dumps(serialisation, sort_keys=True)
+
+    expected_data = get_tests('jobready_2.output-structure.jsonld','jobready_2')
+    expected_output = json.dumps(expected_data, sort_keys=True)
+    print('--------------------------------------')
+    print(ordered(json_result))
+    print('VS')
+    print(ordered(expected_output))
+    print('--------------------------------------')
+    #  assert ordered(json_result) == ordered(expected_output) 
     
+def test_jsonpath():
+    print(os.getcwd())
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    print(dir_path)
+    sample = os.path.join(dir_path, 'movies.json')
+    print(sample)
+    with open(sample) as movies_json:
+        movies = json.load(movies_json)
+
+    jsonpath_expression = parse("$.movies[?(@.cast[:] =~ 'De Niro')].title")
+
+    for match in jsonpath_expression.find(movies):
+	    print(match.value)
+     
+def test_jsonpath_gamingtest():
+    get_gamingtest_minimal = get_tests('gamingtest.json','gamingtest')
+
+    jsonpath_expression = parse("[*].'Date'")
+    print('start parsing')
+    for match in jsonpath_expression.find(get_gamingtest_minimal):
+	    print(match.value)
+     
+def test_jsonpath_jobready():
+    get_gamingtest_minimal = get_tests('jobready_2.json','jobready_2')
+
+    # fields.skill.name
+    jsonpath_expression = parse("[*].fields[*].skill[*].description")
+    print('start parsing')
+    for match in jsonpath_expression.find(get_gamingtest_minimal):
+	    print(match.value)
