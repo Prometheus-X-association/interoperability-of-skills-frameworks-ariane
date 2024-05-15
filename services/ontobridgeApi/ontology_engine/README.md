@@ -2,7 +2,9 @@
 
 - [Ontology Engine](#ontology-engine)
   - [Follow up](#follow-up)
-  - [Rules implementation remarks](#rules-implementation-remarks)
+  - [jobready Rules implementation](#jobready-rules-implementation)
+    - [Change in output](#change-in-output)
+  - [gamingtest Rules implementation](#gamingtest-rules-implementation)
     - [Date Vs DateFrom](#date-vs-datefrom)
     - [as-IS function imply lowercase](#as-is-function-imply-lowercase)
     - [gamingtest-rules-structure inconsistent with gamingtest-rules](#gamingtest-rules-structure-inconsistent-with-gamingtest-rules)
@@ -22,10 +24,29 @@
 
 Date | description | author
 --- | --- | ---
-13/05/2007 | Add rules implementation remarks to be discuss | Y. Le Razer
+13/05/2007 | Add rules implementation for jobready | Y. Le Razer
+13/05/2007 | Add rules implementation for gamingtest | Y. Le Razer
 08/05/2007 | create the present document and the directory ontology_engine | Y. Le Razer
 
-## Rules implementation remarks
+## jobready Rules implementation
+
+[exemples](https://gitlab.com/mmorg/bupm/ariane/-/tree/main/services/data-mapping/__tests__/jobready?ref_type=heads)
+
+### Change in output
+
+change the context to match de the context
+
+```json
+"@todo": "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
+```
+
+instead of:
+
+```json
+"@TODO": "define the result context"
+```
+
+## gamingtest Rules implementation
 
 ### Date Vs DateFrom
 
