@@ -15,6 +15,19 @@ from ontology_engine.tests.object_approach.rule_engine import RuleEngine
 from ontology_engine.tests.object_approach.skill import Skill
 from ontology_engine.tests.object_approach.tools import ordered, toJsonLD
 
+def write_result(content, fileName):
+    ressourcesDirectory = Path(__file__).parent
+    ressourcesDirectory = os.path.join(ressourcesDirectory, 'results')
+    if not os.path.exists(ressourcesDirectory):
+        os.makedirs(ressourcesDirectory)
+    file_path = os.path.join(ressourcesDirectory, fileName + '.jsonld')
+    f = open(file_path, "w")
+    f.write(content)
+    f.close()
+
+
+
+
 def get_tests(fileName : str, provider : str) -> List[dict]:
     ressourcesDirectory = Path(__file__).parent.parent.parent
     ressourcesDirectory = os.path.join(ressourcesDirectory, 'ressources')
@@ -114,6 +127,8 @@ def test_apply_rules_gamingtest():
     print('VS')
     print(ordered(expected_output))
     print('--------------------------------------')
+    write_result(json.dumps(serialisation, sort_keys=True,indent=1), f'gamingtest_generated_data')
+    write_result(json.dumps(expected_data, sort_keys=True,indent=1), f'gamingtest_expected_data')
     assert ordered(json_result) == ordered(expected_output)
     
 def test_apply_rules_jobready():
@@ -133,6 +148,9 @@ def test_apply_rules_jobready():
     print('VS')
     print(ordered(expected_output))
     print('--------------------------------------')
+    write_result(json.dumps(serialisation, sort_keys=True,indent=1), f'jobready_2_generated_data')
+    write_result(json.dumps(expected_data, sort_keys=True,indent=1), f'jobready_2_expected_data')
+    
     #  assert ordered(json_result) == ordered(expected_output) 
     
 def test_jsonpath():
@@ -165,3 +183,5 @@ def test_jsonpath_jobready():
     print('start parsing')
     for match in jsonpath_expression.find(get_gamingtest_minimal):
 	    print(match.value)
+
+
