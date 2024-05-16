@@ -1,6 +1,11 @@
 flask
+<<<<<<< HEAD
 transformers
 sentence-transformers
 sentencepiece
 torch
 protobuf 
+=======
+sentence-transformers
+torch
+>>>>>>> ebbf741 (basic embedding API)
