@@ -66,6 +66,11 @@ class RuleEngine():
             documents.append(document)
         return documents
 
+
+    def getFieldName(self, field: str) -> str:
+        return field.replace('soo:has','').replace('soo:','').replace('skos:','')
+
+
     def applyRulesToDocument(self, file : dict):
         
         documents : List[dict]= self.getDocumentsFromFiles(file)
@@ -73,6 +78,7 @@ class RuleEngine():
             for rule in self.rules:
                 if rule.sourcePath in document.keys():
                     currentInstance = self.getInstance(rule.targetClass, index)
+                    target = self.getFieldName(rule.targetProperty)
                 
                     if (rule.targetProperty == 'id' and rule.targetFunction == 'fno:generateId') or rule.generateId == True:
                         currentInstance['id'] = self.generateId(currentInstance)
@@ -82,22 +88,15 @@ class RuleEngine():
                     if rule.targetFunction == 'fno:date-to-xsd':
                         dates = document[rule.sourcePath]
                         date = datetime.strptime(dates, '%Y-%m-%d')
-                        currentInstance[rule.targetProperty] = date.strftime('%Y-%m-%d')
+                        currentInstance[target] = date.strftime('%Y-%m-%d')
                         continue
                     
                     if rule.relationTo != '' and rule.relationName != '' and rule.relationNameInverse != '':
                         currentInstanceTo = self.getInstance(rule.relationTo, index)
-                        currentInstanceTo[rule.relationNameInverse.lower().replace('soo:has','')] = currentInstance['id']
-                        currentInstance[rule.relationTo.lower().replace('soo:','')] = currentInstanceTo['id']
-                        
-                    if rule.targetFunction =="fno:asIs_WithLang" and rule.targetProperty == "soo:label":
-                        currentInstance['prefLabel'] = {}
-                        currentInstance['prefLabel']['@value'] = document[rule.sourcePath]
-                        currentInstance['prefLabel']['@language'] = rule.targetLang
-                        continue
+                        currentInstanceTo[self.getFieldName(rule.relationNameInverse).lower()] = currentInstance['id']
+                        currentInstance[self.getFieldName(rule.relationTo).lower()] = currentInstanceTo['id']
                     
                     if rule.targetFunction =="fno:asIs_WithLang":
-                        target = rule.targetProperty.replace('soo:','')
                         currentInstance[target] = {}
                         currentInstance[target]['@value'] = document[rule.sourcePath]
                         currentInstance[target]['@language'] = rule.targetLang
@@ -108,12 +107,8 @@ class RuleEngine():
                         currentInstance['prefLabel']['@value'] = document[rule.sourcePath]
                         currentInstance['prefLabel']['@language'] = 'en'
                         continue
-                    
-                    if rule.targetFunction == "fno:as-is":
-                        currentInstance[rule.targetProperty] = str(document[rule.sourcePath]).lower()
-                        continue
-                    
-                    currentInstance[rule.targetProperty] = document[rule.sourcePath]
+
+                    currentInstance[target] = document[rule.sourcePath]
                 
 
     def generate(self, document : dict) -> dict:
