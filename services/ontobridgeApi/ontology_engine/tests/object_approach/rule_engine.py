@@ -35,8 +35,8 @@ class RuleEngine():
         self.instances[key] = currentInstance
         return currentInstance
     
-    def getDocumentsFromFiles(self, file: dict) -> List[dict]:
-        documents = []
+    def getDocumentsFromFiles(self, file: dict) -> dict[str, List[dict]]:
+        documentsByDepth : dict[str, List[dict]] = {}
         sourcepaths = []
         depth = 0   
         for rule in self.rules:
@@ -48,7 +48,10 @@ class RuleEngine():
         numberOfDocuments = 0
         filedValues = {}  
         for sourcepath in sourcepaths:
-            #[*].'Date'
+            pathDepth = rule.sourcePath.split('.')
+            if not str(pathDepth) in documentsByDepth.keys():
+                documentsByDepth[pathDepth] = []
+            
             jsonpath = ''
             for source_path_element in sourcepath.split('.'):
                 jsonpath = jsonpath + "[*].'" + source_path_element + "'"
@@ -62,6 +65,7 @@ class RuleEngine():
         for i in range(0, numberOfDocuments):
             document = {}
             for key in filedValues.keys():
+                pathDepth = key.split('.')
                 document[key] = filedValues[key][i]
             documents.append(document)
         return documents
