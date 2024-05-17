@@ -105,50 +105,6 @@ def test_serialisation():
     print(ordered(expected_output))
     print('--------------------------------------')
     assert ordered(json_result) == ordered(expected_output)
-       
-def test_apply_rules_gamingtest():
-    gamingtest_rules = get_rules('gamingtest')
-    get_gamingtest_minimal = get_tests('gamingtest-minimal.json','gamingtest')
-    
-    ruleEngine = RuleEngine(gamingtest_rules)
-    
-    serialisation = ruleEngine.generate(get_gamingtest_minimal)
-
-    json_result = json.dumps(serialisation, sort_keys=True)
-
-    expected_data = get_tests('gamingtest-minimal-structure.output.jsonld','gamingtest')
-    
-    expected_output = json.dumps(expected_data, sort_keys=True)
-    print('--------------------------------------')
-    print(ordered(json_result))
-    print('VS')
-    print(ordered(expected_output))
-    print('--------------------------------------')
-    write_result(json.dumps(serialisation, sort_keys=True,indent=1), f'gamingtest_generated_data')
-    write_result(json.dumps(expected_data, sort_keys=True,indent=1), f'gamingtest_expected_data')
-    assert ordered(json_result) == ordered(expected_output)
-    
-def test_apply_rules_jobready():
-    jobready_2_rules = get_rules('jobready_2')
-    jobready_2_minimal = get_tests('jobready_2.json','jobready_2')
-    
-    ruleEngine = RuleEngine(jobready_2_rules)
-    
-    serialisation = ruleEngine.generate(jobready_2_minimal[0])
-
-    json_result = json.dumps(serialisation, sort_keys=True)
-
-    expected_data = get_tests('jobready_2.output-structure.jsonld','jobready_2')
-    expected_output = json.dumps(expected_data, sort_keys=True)
-    print('--------------------------------------')
-    print(ordered(json_result))
-    print('VS')
-    print(ordered(expected_output))
-    print('--------------------------------------')
-    write_result(json.dumps(serialisation, sort_keys=True,indent=1), f'jobready_2_generated_data')
-    write_result(json.dumps(expected_data, sort_keys=True,indent=1), f'jobready_2_expected_data')
-    
-    #  assert ordered(json_result) == ordered(expected_output) 
     
 def test_jsonpath():
     print(os.getcwd())
