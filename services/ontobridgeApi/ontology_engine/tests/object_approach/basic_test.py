@@ -25,9 +25,6 @@ def write_result(content, fileName):
     f.write(content)
     f.close()
 
-
-
-
 def get_tests(fileName : str, provider : str) -> List[dict]:
     ressourcesDirectory = Path(__file__).parent.parent.parent
     ressourcesDirectory = os.path.join(ressourcesDirectory, 'ressources')
