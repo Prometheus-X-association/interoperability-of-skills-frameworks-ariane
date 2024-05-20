@@ -106,6 +106,7 @@
       "type": "soo:Polarity",
       "polarityScale": "term:interim/polarity/scale/1",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "polarityValue": "term:interim/polarity/value/1"
     },
     {
@@ -118,9 +119,12 @@
       "prefLabel": [{"@value": "0", "@language": "en"}],
 =======
       "polarityValue": "term/interim/polarity/value/1"
+=======
+      "polarityValue": "term:interim/polarity/value/1"
+>>>>>>> db8584a (fix: interim polarity fix)
     },
     {
-      "id": "term/interim/polarity/value/1", 
+      "id": "term:interim/polarity/value/1", 
       "prefLabel": {"@value": "0", "@language": "en"},
 >>>>>>> 153238d (fix: update interim mapping and outpout)
       "notation": 0
