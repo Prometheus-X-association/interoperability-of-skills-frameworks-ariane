@@ -7,6 +7,9 @@ from api import routers
 import os
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7afd4f8 (launcher debug + postman)
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)

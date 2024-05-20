@@ -32,7 +32,8 @@ def ordered(obj):
         return sorted(ordered(x) for x in obj)
     else:
         return obj
-    
+
+
 def clear_dict(d):
     if d is None:
         return None
@@ -42,9 +43,11 @@ def clear_dict(d):
         return d
     else:
         r = dict(
-                filter(lambda x: x[1] is not None,
-                    map(lambda x: (x[0], clear_dict(x[1])),
-                        d.items())))
+            filter(
+                lambda x: x[1] is not None,
+                map(lambda x: (x[0], clear_dict(x[1])), d.items()),
+            )
+        )
         if not bool(r):
             return None
         return r
