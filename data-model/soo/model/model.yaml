@@ -41,10 +41,14 @@ triple:
     soo:company: xsd:string
     soo:location: xsd:string 
     soo:contractType: xsd:string
+    soo:family: soo:Family
+    soo:sourceId: xsd:string
+    soo:polarity: soo:Polarity
+    soo:skill: soo:Skill
 
   soo:Skill:                                    # Describe the skills attached to an experience
     soo:experience: soo:Experience              # The experience that provided or is likely to provide the skill
-    soo:category: skos:Concept               # The skill group as defined in skos collections, e.g. hard skills/soft skills
+    soo:category: skos:Concept                  # The skill group as defined in skos collections, e.g. hard skills/soft skills
     soo:skillLevelScale: skos:OrderedCollection
     soo:skillLevelValue: skos:Concept           # The skill level as defined as a value on a scale
 >>>>>>> b56e5c4 (fix: rename data folder)
@@ -67,11 +71,15 @@ triple:
     soo:address: xsd:string                     # The postal address of the profile
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e73516e (feat: add properties and classes to the model)
   soo:Family:
     skos:prefLabel: rdf:langstring
     skos:memberOf: skos:Collection
     soo:provider: xsd:string
     
+<<<<<<< HEAD
   soo:Description:
     soo:texte: rdf:langstring
     soo:url:  xsd:string
@@ -85,6 +93,9 @@ triple:
 >>>>>>> b56e5c4 (fix: rename data folder)
 =======
 >>>>>>> bf38f12 (fix: update model with new properties)
+=======
+
+>>>>>>> e73516e (feat: add properties and classes to the model)
 
 
 
