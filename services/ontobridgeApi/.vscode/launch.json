@@ -15,6 +15,7 @@
             ],
             "jinja": true
         }
+<<<<<<< HEAD
 ,
         {
             "name": "Python: Poetry Run dev old school",
@@ -47,4 +48,7 @@
         }
     ]
 
+=======
+    ]
+>>>>>>> ca602c0 (adding ontology service)
 }
