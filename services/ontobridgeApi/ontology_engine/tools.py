@@ -32,3 +32,19 @@ def ordered(obj):
         return sorted(ordered(x) for x in obj)
     else:
         return obj
+    
+def clear_dict(d):
+    if d is None:
+        return None
+    elif isinstance(d, list):
+        return list(filter(lambda x: x is not None, map(clear_dict, d)))
+    elif not isinstance(d, dict):
+        return d
+    else:
+        r = dict(
+                filter(lambda x: x[1] is not None,
+                    map(lambda x: (x[0], clear_dict(x[1])),
+                        d.items())))
+        if not bool(r):
+            return None
+        return r
