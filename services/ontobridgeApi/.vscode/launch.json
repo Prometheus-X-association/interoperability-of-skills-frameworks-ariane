@@ -15,5 +15,36 @@
             ],
             "jinja": true
         }
+,
+        {
+            "name": "Python: Poetry Run dev old school",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/api/main.py",
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "justMyCode": true
+        }
+,
+        {
+            "name": "Python: Poetry Run dev Fast Api",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "poetry",
+            "program": "${workspaceFolder}/api/main.py",
+            "args": [
+                "run",
+                "dev"
+              ],
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "cwd":"${workspaceFolder}",
+            "justMyCode": true
+        }
     ]
+
 }

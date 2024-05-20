@@ -6,6 +6,9 @@ from api.config import get_api_settings
 from api import routers
 import os
 
+
+# Set up logging
+logging.basicConfig(level=logging.INFO)
 IS_TESTING = os.environ.get("API_ENVIRONMENT", "development") == "testing"
 logger = logging.getLogger(__name__)
 

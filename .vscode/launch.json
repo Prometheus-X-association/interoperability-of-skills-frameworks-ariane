@@ -10,10 +10,19 @@
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "main:app",
+                "api.main:app",
+                "--host",
+                "0.0.0.0",
+                "--port",
+                "8000",
                 "--reload"
             ],
-            "jinja": true
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}\\services\\ontobridgeApi"
+            },
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}\\services\\ontobridgeApi",
+            "justMyCode": true
         }
     ]
 }

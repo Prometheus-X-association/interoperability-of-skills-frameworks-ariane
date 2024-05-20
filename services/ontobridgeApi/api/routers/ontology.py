@@ -8,6 +8,7 @@ from fastapi.param_functions import Query
 from api.services.ontology_service.ontology_service import OntologyService
 from ontology_engine.rule import Rule
 from ontology_engine.tools import clear_dict
+from api.services.ontology_service.ontology_service_helloworld import HelloWorld_service
 
 router = InferringRouter()
 
@@ -17,7 +18,7 @@ class ontologies:
     def __init__(self) -> None:
         self.ontology_engine = OntologyService()
         pass
-    
+
     """
     session: Session = Depends(get_db)
     async_session: Session = Depends(get_async_db)
@@ -36,7 +37,7 @@ class ontologies:
         for rule in rules:
             dict = rule.__dict__
             for key in dict.copy().keys():
-                if dict[key] == '':
+                if dict[key] == "":
                     del dict[key]
             result.append(dict)
         return result
@@ -45,22 +46,33 @@ class ontologies:
     async def get_jsonld_from_mapping_rules(
         self,
         mapping_rules: dict = Body(..., description="the mapping rules", embed=True),
-        document: list[dict]= Body(..., description="the document", embed=True), 
+        document: list[dict] = Body(..., description="the document", embed=True),
         version: Optional[str] = Query(None),
     ) -> dict:  # instantiate redis_client by dependency injection
-        rules : List[Rule] = []
-        for rule in mapping_rules['graph']:
+        rules: List[Rule] = []
+        for rule in mapping_rules["graph"]:
             currentRule = Rule(**rule)
             rules.append(currentRule)
-        data_provider = self.ontology_engine.generate_mapping_from_rules_provided(document=document,mapping_rules=rules)
+        data_provider = self.ontology_engine.generate_mapping_from_rules_provided(
+            document=document, mapping_rules=rules
+        )
         return data_provider
 
     @router.post("/get_jsonld_from_provider")
     async def get_jsonld_from_provider(
         self,
         provider_name: str = Query(..., description="Name of the data provider"),
-        document_type: list[dict] = Body(..., description="the document", embed=True), 
+        document: list[dict] = Body(..., description="the document", embed=True),
         version: Optional[str] = Query(None, description="Version of the rules"),
     ) -> dict:  # instantiate redis_client by dependency injection
-        data_provider = self.ontology_engine.generate_mapping_from_provider_rules(provider_name,document_type)
+        data_provider = self.ontology_engine.generate_mapping_from_provider_rules(
+            provider_name, document
+        )
         return data_provider
+
+    @router.get("/helloworld")
+    async def get_hello_world(self, name: str) -> str:
+        # Using the redis_client here if needed
+        onto_service = HelloWorld_service()
+        print("yeah")
+        return onto_service.say_hello(name)
