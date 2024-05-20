@@ -70,10 +70,10 @@
       "id": "tr:__polarity-1__",
       "type": "soo:Polarity",
       "polarityScale": "term:interim/polarity/scale/1",
-      "polarityValue": "term/interim/polarity/value/1"
+      "polarityValue": "term:interim/polarity/value/1"
     },
     {
-      "id": "term/interim/polarity/value/1", 
+      "id": "term:interim/polarity/value/1", 
       "prefLabel": {"@value": "0", "@language": "en"},
       "notation": 0
     }
