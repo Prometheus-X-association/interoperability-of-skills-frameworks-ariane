@@ -82,7 +82,8 @@ def test_apply_rules_interim():
         f"{providerName}_expected_data",
     )
     assert ordered(json_result) == ordered(expected_output)
-    
+
+
 def test_apply_rules_jobready():
     providerName = "jobready_2"
 
