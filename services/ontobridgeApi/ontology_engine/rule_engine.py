@@ -2,8 +2,8 @@ from datetime import datetime
 from typing import List
 from jsonpath_ng.ext import parse
 
-from ontology_engine.tests.object_approach.rule import Rule
-from ontology_engine.tests.object_approach.tools import toJsonLD
+from ontology_engine.rule import Rule
+from ontology_engine.tools import toJsonLD
 
 
 class RuleEngine:
