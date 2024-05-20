@@ -11,7 +11,7 @@ from fastapi.param_functions import Query
 from redis import client
 from sqlalchemy.future import select
 from sqlalchemy import func, tuple_
-import os
+from api.services.ontology_service.ontology_service_helloworld import HelloWorld_service
 import json
 import pickle
 import datetime
@@ -57,7 +57,9 @@ class ontologies:
         data_provider = DataProviderDTO(name=provider_name, document_type=document_type)
         return data_provider
 
-    @router.get("/helloworld/{date}")
-    async def get_hello_world(self, date: str) -> str:
+
+    @router.get("/helloworld/{name}")
+    async def get_hello_world(self, name: str) -> str:
         # Using the redis_client here if needed
-        return f"hello {date}"
+        onto_service = HelloWorld_service()
+        return onto_service.say_hello(name)
