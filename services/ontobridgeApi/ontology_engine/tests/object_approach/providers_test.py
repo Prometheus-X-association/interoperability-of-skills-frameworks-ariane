@@ -1,9 +1,7 @@
-from datetime import datetime
 from pathlib import Path
 import os
 import json
 from typing import List
-from jsonpath_ng.ext import parse
 
 import pytest
 
@@ -84,8 +82,7 @@ def test_apply_rules_interim():
         f"{providerName}_expected_data",
     )
     assert ordered(json_result) == ordered(expected_output)
-
-
+    
 def test_apply_rules_jobready():
     providerName = "jobready_2"
 
