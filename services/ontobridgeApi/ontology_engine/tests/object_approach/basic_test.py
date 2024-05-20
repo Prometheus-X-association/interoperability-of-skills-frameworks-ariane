@@ -5,15 +5,13 @@ import json
 from typing import List
 from jsonpath_ng.ext import parse
 
-import pytest
 
 from ontology_engine.tests.object_approach.profile import Profile
 from ontology_engine.tests.object_approach.experience import Experience
 from ontology_engine.tests.object_approach.pref_label import PrefLabel
-from ontology_engine.tests.object_approach.rule import Rule
-from ontology_engine.tests.object_approach.rule_engine import RuleEngine
+from ontology_engine.rule import Rule
 from ontology_engine.tests.object_approach.skill import Skill
-from ontology_engine.tests.object_approach.tools import ordered, toJsonLD
+from ontology_engine.tools import ordered, toJsonLD
 
 def write_result(content, fileName):
     ressourcesDirectory = Path(__file__).parent

@@ -2,8 +2,8 @@ from datetime import datetime
 from typing import List
 from jsonpath_ng.ext import parse
 
-from ontology_engine.tests.object_approach.rule import Rule
-from ontology_engine.tests.object_approach.tools import toJsonLD
+from ontology_engine.rule import Rule
+from ontology_engine.tools import toJsonLD
 
 
 class RuleEngine():
@@ -92,7 +92,7 @@ class RuleEngine():
                         currentInstance[target] = date.strftime('%Y-%m-%d')
                         continue
                     
-                    if rule.relationTo != '' and rule.relationName != '' and rule.relationNameInverse != '':
+                    if rule.relationTo != '' and rule.relationName != '' and rule.relationNameInverse  != '':
                         currentInstanceTo = self.getInstance(rule.relationTo, index)
                         currentInstanceTo[self.getFieldName(rule.relationNameInverse).lower()] = currentInstance['id']
                         currentInstance[self.getFieldName(rule.relationTo).lower()] = currentInstanceTo['id']
@@ -112,16 +112,17 @@ class RuleEngine():
                     currentInstance[target] = document[rule.sourcePath]
                 
 
-    def generate(self, document : dict) -> dict:
+    def generate(self, documents: List[dict]) -> dict:
         serialisation = {}
         todo = {}
         todo['@todo'] = "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
         serialisation['@context'] = todo
         result = []
-        self.applyRulesToDocument(document)
-        for instance in self.instances.values():
-            del instance['__counter__']
-            result.append(instance)
+        for document in documents:
+            self.applyRulesToDocument(document)
+            for instance in self.instances.values():
+                del instance['__counter__']
+                result.append(instance)
         serialisation['graph'] = result
         return serialisation
     
