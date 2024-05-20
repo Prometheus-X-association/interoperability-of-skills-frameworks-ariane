@@ -1,5 +1,6 @@
 import enum
 
+
 class TargetFunctionEnum(enum):
     none = 0
     generateId = 1
