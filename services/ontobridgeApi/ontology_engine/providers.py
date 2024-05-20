@@ -11,28 +11,25 @@ from ontology_engine.rule_engine import RuleEngine
 
 from ontology_engine.tools import ordered, toJsonLD
 
-def getRessourceFolder()-> str: 
+
+def getRessourceFolder() -> str:
     ressourcesDirectory = Path(__file__).parent
-    ressourcesDirectory = os.path.join(ressourcesDirectory, 'ressources')
+    ressourcesDirectory = os.path.join(ressourcesDirectory, "ressources")
     return ressourcesDirectory
 
-def get_rules(provider : str) -> List[Rule]:
+
+def get_rules(provider: str) -> List[Rule]:
     ressourcesDirectory = getRessourceFolder()
     gamingtestDirectory = os.path.join(ressourcesDirectory, provider)
-    gamingtestRuleTest = os.path.join(gamingtestDirectory, f'{provider}-rules.json')
-    
+    gamingtestRuleTest = os.path.join(gamingtestDirectory, f"{provider}-rules.json")
+
     if not os.path.exists(gamingtestRuleTest):
         return []
-    
+
     with open(gamingtestRuleTest) as f:
         data = json.load(f)
-        rules : List[Rule] = []
-        for rule in data['graph']:
+        rules: List[Rule] = []
+        for rule in data["graph"]:
             currentRule = Rule(**rule)
             rules.append(currentRule)
     return rules
-
-
-
-
-

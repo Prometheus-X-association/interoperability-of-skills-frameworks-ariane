@@ -16,6 +16,9 @@
             "jinja": true
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7afd4f8 (launcher debug + postman)
 ,
         {
             "name": "Python: Poetry Run dev old school",
@@ -48,7 +51,10 @@
         }
     ]
 
+<<<<<<< HEAD
 =======
     ]
 >>>>>>> ca602c0 (adding ontology service)
+=======
+>>>>>>> 7afd4f8 (launcher debug + postman)
 }
