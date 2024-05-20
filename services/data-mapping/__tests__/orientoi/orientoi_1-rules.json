@@ -30,7 +30,7 @@
       "id": "mmr:rule-3",
       "sourcePath": "jobCards.name",
       "targetClass": "soo:Experience",
-      "targetProperty": "soo:name",
+      "targetProperty": "skos:prefLabel",
       "targetFunction": "fno:asIs_WithLang",
       "targetLang": "fr"
     },
