@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "d86a741f-d1ed-48ee-aa63-d682556c9381",
+		"name": "api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34866692",
+		"_collection_link": "https://gold-astronaut-338888.postman.co/workspace/ontobridgeApi~f62b9b13-a02d-46e4-81f7-0d86859886db/collection/34866692-d86a741f-d1ed-48ee-aa63-d682556c9381?action=share&source=collection_link&creator=34866692"
+	},
+	"item": [
+		{
+			"name": "hello_onto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/ontologies/helloworld/?name=yannick",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"ontologies",
+						"helloworld",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "yannick"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_jsonld_from_provider",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/rates/helloworld/date=2020-12-31?base=EUR&foreign=USD",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"rates",
+						"helloworld",
+						"date=2020-12-31"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "base",
+							"value": "EUR"
+						},
+						{
+							"key": "foreign",
+							"value": "USD"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

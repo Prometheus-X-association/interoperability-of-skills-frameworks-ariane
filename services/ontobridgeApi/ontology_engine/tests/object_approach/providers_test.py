@@ -19,13 +19,14 @@ def write_result(content, fileName):
     f.close()
 
 
-def get_tests(fileName : str, provider : str) -> List[dict]:
+def get_tests(fileName: str, provider: str) -> List[dict]:
     ressourcesDirectory = getRessourceFolder()
     providerDirectory = os.path.join(ressourcesDirectory, provider)
     path_file = os.path.join(providerDirectory, fileName)
     with open(path_file) as f:
         data = json.load(f)
         return data
+
 
 def test_apply_rules_interim():
     providerName = "interim"
@@ -55,7 +56,8 @@ def test_apply_rules_interim():
         f"{providerName}_expected_data",
     )
     assert ordered(json_result) == ordered(expected_output)
-    
+
+
 def test_apply_rules_jobready():
     providerName = "jobready_2"
 
