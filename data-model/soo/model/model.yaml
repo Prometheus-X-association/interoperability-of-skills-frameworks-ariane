@@ -18,10 +18,14 @@ triple:
     soo:company: xsd:string
     soo:location: xsd:string 
     soo:contractType: xsd:string
+    soo:family: soo:Family
+    soo:sourceId: xsd:string
+    soo:polarity: soo:Polarity
+    soo:skill: soo:Skill
 
   soo:Skill:                                    # Describe the skills attached to an experience
     soo:experience: soo:Experience              # The experience that provided or is likely to provide the skill
-    soo:category: skos:Concept               # The skill group as defined in skos collections, e.g. hard skills/soft skills
+    soo:category: skos:Concept                  # The skill group as defined in skos collections, e.g. hard skills/soft skills
     soo:skillLevelScale: skos:OrderedCollection
     soo:skillLevelValue: skos:Concept           # The skill level as defined as a value on a scale
 
@@ -37,6 +41,12 @@ triple:
     soo:email: xsd:string                       # The email of the profile
     soo:experience: soo:Experience              # The experience(s) associated with the profile
     soo:address: xsd:string                     # The postal address of the profile
+
+  soo:Family:
+    skos:prefLabel: rdf:langstring
+    skos:memberOf: skos:Collection
+    soo:provider: xsd:string
+    
 
 
 
