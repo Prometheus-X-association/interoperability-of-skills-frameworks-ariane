@@ -117,9 +117,15 @@ example de règles:
     
     ```  
 
-    # Remarque générale sur les rules : 
+# Remarque générale sur les rules : 
 
+<<<<<<< HEAD
     * Ajout de la propriété suivante pour le traitement des dates : `"targetFunctionParam": "fno:year-only"`
         - 2 options pour le traitement de la diversité des dates: a) des fonctions particulières pour chaque format d'entrées ou b) une seule fonction avec des paramètres différents en fonction du format d'entrée. 
         
 >>>>>>> 153238d (fix: update interim mapping and outpout)
+=======
+* Ajout de la propriété suivante pour le traitement des dates : `"targetFunctionParam": "fno:year-only"`
+    - 2 options pour le traitement de la diversité des dates: a) des fonctions particulières pour chaque format d'entrées ou b) une seule fonction avec des paramètres différents en fonction du format d'entrée. 
+        
+>>>>>>> db8584a (fix: interim polarity fix)
