@@ -33,6 +33,7 @@
       "sourcePath": "jobCards.name",
       "targetClass": "soo:Experience",
       "targetProperty": "skos:prefLabel",
+<<<<<<< HEAD
       "targetFunction": "fno:asIs_WithLang",
       "targetLang": "fr"
     },
@@ -105,6 +106,8 @@
       "sourcePath": "jobCards.name",
       "targetClass": "soo:Experience",
       "targetProperty": "soo:name",
+=======
+>>>>>>> e6940bd (fix: prefLabel for Experience)
       "targetFunction": "fno:asIs_WithLang",
       "targetLang": "fr"
     },
