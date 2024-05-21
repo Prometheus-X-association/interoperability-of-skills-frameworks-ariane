@@ -9,8 +9,8 @@
       "prefLabel": {"@value": "Problem-Solving Puzzle", "@language": "en"},
       "profile": "tr:__profile-id-1__",
       "dateFrom": "2023-06-28",
-      "skill": "tr:__skill-id-1__"
-      
+      "skill": "tr:__skill-id-1__",
+      "result": "Validated"
     },
     {
       "id":"tr:__profile-id-1__",
@@ -19,11 +19,10 @@
       "experience": "tr:__generated-id-1__"
     },
     {
-      "id": "tr:__skill-id-1__",
+      "id": "tr:__skill-id-1",
       "type": "soo:Skill",
       "experience": "tr:__generated-id-1__",
-      "prefLabel": {"@value": "Problem-Solving", "@language": "en"},
-      "skillLevelValue": "Validated"
+      "prefLabel": {"@value": "Problem-Solving", "@language": "en"}
     }
   ]
 }
