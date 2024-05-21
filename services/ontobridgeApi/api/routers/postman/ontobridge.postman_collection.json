@@ -165,6 +165,135 @@
 							],
 							"cookie": [],
 							"body": "[]"
+						},
+						{
+							"name": "orientoi",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/ontologies/get_mapping_rules?provider_name=orientoi_1&document_type=<string>&version=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ontologies",
+										"get_mapping_rules"
+									],
+									"query": [
+										{
+											"key": "provider_name",
+											"value": "orientoi_1",
+											"description": "(Required) Name of the data provider"
+										},
+										{
+											"key": "document_type",
+											"value": "<string>",
+											"description": "the document type "
+										},
+										{
+											"key": "version",
+											"value": "<string>",
+											"description": "Version of the rules"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "pitango",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/ontologies/get_mapping_rules?provider_name=pitangoo&document_type=<string>&version=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ontologies",
+										"get_mapping_rules"
+									],
+									"query": [
+										{
+											"key": "provider_name",
+											"value": "pitangoo",
+											"description": "(Required) Name of the data provider"
+										},
+										{
+											"key": "document_type",
+											"value": "<string>",
+											"description": "the document type "
+										},
+										{
+											"key": "version",
+											"value": "<string>",
+											"description": "Version of the rules"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "interim",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/ontologies/get_mapping_rules?provider_name=interim&document_type=<string>&version=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ontologies",
+										"get_mapping_rules"
+									],
+									"query": [
+										{
+											"key": "provider_name",
+											"value": "interim",
+											"description": "(Required) Name of the data provider"
+										},
+										{
+											"key": "document_type",
+											"value": "<string>",
+											"description": "the document type "
+										},
+										{
+											"key": "version",
+											"value": "<string>",
+											"description": "Version of the rules"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
 						}
 					]
 				}
