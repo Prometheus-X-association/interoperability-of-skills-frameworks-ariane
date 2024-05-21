@@ -29,6 +29,7 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"mapping_rules\": {\n        \"context\": {\n            \"todo\": \"define_the_rules_context\"\n        },\n        \"graph\": [\n            {\n                \"id\": \"mmr:rule-0\",\n                \"sourcePath\": \"Experience Name\",\n                \"targetClass\": \"soo:Experience\",\n                \"targetProperty\": \"id\",\n                \"targetFunction\": \"fno:generateId\"\n            },\n            {\n                \"id\": \"mmr:rule-1\",\n                \"sourcePath\": \"Experience Name\",\n                \"targetClass\": \"soo:Experience\",\n                \"targetLang\": \"en\",\n                \"targetProperty\": \"skos:prefLabel\",\n                \"targetFunction\": \"fno:asIs_WithLang\",\n                \"generateId\": false\n            }\n        ]\n    },\n    \"document\": [\n        {\n            \"Experience Name\": \"Problem-Solving Puzzle\",\n            \"User ID\": \"zayne.harding@gmail.com\",\n            \"Date\": \"2023-06-28\",\n            \"Associated Soft Skill Block\": \"Problem-Solving\",\n            \"Results\": \"Validated\"\n        }\n    ]\n}",
+<<<<<<< HEAD
 =======
 			"name": "ontologies",
 =======
@@ -52,6 +53,8 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"mapping_rules\": {\n        \"context\": {\n            \"todo\": \"define_the_rules_context\"\n        },\n        \"graph\": [\n            {\n                \"id\": \"mmr:rule-0\",\n                \"sourcePath\": \"Experience Name\",\n                \"targetClass\": \"soo:Experience\",\n                \"targetProperty\": \"id\",\n                \"targetFunction\": \"fno:generateId\"\n            }\n        ]\n    },\n    \"document\": [\n        {\n            \"Experience Name\": \"Problem-Solving Puzzle\",\n            \"User ID\": \"zayne.harding@gmail.com\",\n            \"Date\": \"2023-06-28\",\n            \"Associated Soft Skill Block\": \"Problem-Solving\",\n            \"Results\": \"Validated\"\n        }\n    ]\n}",
+=======
+>>>>>>> 6a972cc (adjust postman)
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -127,7 +130,117 @@
 					},
 					"response": [
 						{
-							"name": "gamingtest",
+							"name": "gamingtest with list of 1 document",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"document\":[\n        {\n            \"Experience Name\": \"Problem-Solving Puzzle\",\n            \"User ID\": \"zayne.harding@gmail.com\",\n            \"Date\": \"2023-06-28\",\n            \"Associated Soft Skill Block\": \"Problem-Solving\",\n            \"Results\": \"Validated\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ontologies/get_jsonld_from_provider?provider_name=gamingtest&version=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ontologies",
+										"get_jsonld_from_provider"
+									],
+									"query": [
+										{
+											"key": "provider_name",
+											"value": "gamingtest",
+											"description": "(Required) Name of the data provider"
+										},
+										{
+											"key": "version",
+											"value": "<string>",
+											"description": "Version of the rules"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"name": "gamingtest with 1 document",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"document\": {\n        \"Experience Name\": \"Problem-Solving Puzzle\",\n        \"User ID\": \"zayne.harding@gmail.com\",\n        \"Date\": \"2023-06-28\",\n        \"Associated Soft Skill Block\": \"Problem-Solving\",\n        \"Results\": \"Validated\"\n    }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ontologies/get_jsonld_from_provider?provider_name=gamingtest&version=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ontologies",
+										"get_jsonld_from_provider"
+									],
+									"query": [
+										{
+											"key": "provider_name",
+											"value": "gamingtest",
+											"description": "(Required) Name of the data provider"
+										},
+										{
+											"key": "version",
+											"value": "<string>",
+											"description": "Version of the rules"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"name": "gamingtest all documents",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
