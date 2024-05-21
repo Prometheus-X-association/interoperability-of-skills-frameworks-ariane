@@ -19,8 +19,8 @@ class RuleEngine:
             template = instance["type"].replace("soo:", "").lower()
             return f"tr:__{template}-id-{instance['__counter__']}__"
 
-    def getInstance(self, targetClass: str, index: int) -> dict:
-        key = f"{targetClass}-{index}"
+    def getInstance(self, targetClass: str, index: int,docIndex : int) -> dict:
+        key = f"{docIndex}-{targetClass}-{index}"
         if not targetClass in self.counters.keys():
             self.counters[targetClass] = 0
         currentInstance = None
@@ -36,28 +36,32 @@ class RuleEngine:
 
     def getDocumentsFromFiles(self, file: dict) -> List[dict]:
         documents = []
-        sourcepaths = []
+        sourcepaths : dict[int, List[str]]= {}
         depth = 0
         for rule in self.rules:
             if not rule.sourcePath in sourcepaths:
-                pathDepth = rule.sourcePath.split(".")
-                depth = max(depth, len(pathDepth))
-                sourcepaths.append(rule.sourcePath)
-
-        numberOfDocuments = 0
-        filedValues = {}
-        for sourcepath in sourcepaths:
-            # [*].'Date'
-            jsonpath = ""
-            for source_path_element in sourcepath.split("."):
-                jsonpath = jsonpath + "[*].'" + source_path_element + "'"
-            jsonPath_expression = parse(jsonpath)
-            matches = jsonPath_expression.find(file)
-            filedValues[sourcepath] = []
-            numberOfDocuments = max(numberOfDocuments, len(matches))
-            for match in matches:
-                filedValues[sourcepath].append(match.value)
-
+                split_path = rule.sourcePath.split(".") 
+                depth_path = len(split_path)
+                if not depth_path in sourcepaths:
+                    sourcepaths[depth_path] = []
+                sourcepaths[depth_path].append(rule.sourcePath)
+        
+        orderDepths = sorted(sourcepaths)
+        for depth in orderDepths:
+            numberOfDocuments = 0
+            filedValues = {}
+            for sourcepath in sourcepaths[depth]:
+                # [*].'Date'
+                jsonpath = ""
+                for source_path_element in sourcepath.split("."):
+                    jsonpath = jsonpath + "[*].'" + source_path_element + "'"
+                jsonPath_expression = parse(jsonpath)
+                matches = jsonPath_expression.find(file)
+                filedValues[sourcepath] = []
+                numberOfDocuments = max(numberOfDocuments, len(matches))
+                for match in matches:
+                    filedValues[sourcepath].append(match.value)
+        
         for i in range(0, numberOfDocuments):
             document = {}
             for key in filedValues.keys():
@@ -68,13 +72,12 @@ class RuleEngine:
     def getFieldName(self, field: str) -> str:
         return field.replace("soo:has", "").replace("soo:", "").replace("skos:", "")
 
-    def applyRulesToDocument(self, file: dict):
-
+    def applyRulesToDocument(self, file: dict, docIndex : int):
         documents: List[dict] = self.getDocumentsFromFiles(file)
         for index, document in enumerate(documents):
             for rule in self.rules:
                 if rule.sourcePath in document.keys():
-                    currentInstance = self.getInstance(rule.targetClass, index)
+                    currentInstance = self.getInstance(rule.targetClass, index, docIndex)
                     target = self.getFieldName(rule.targetProperty)
 
                     if (
@@ -96,7 +99,7 @@ class RuleEngine:
                         and rule.relationName != ""
                         and rule.relationNameInverse != ""
                     ):
-                        currentInstanceTo = self.getInstance(rule.relationTo, index)
+                        currentInstanceTo = self.getInstance(rule.relationTo, index, docIndex)
                         currentInstanceTo[
                             self.getFieldName(rule.relationNameInverse).lower()
                         ] = currentInstance["id"]
@@ -128,10 +131,13 @@ class RuleEngine:
         )
         serialisation["@context"] = todo
         result = []
+        docIndex = 0
         for document in documents:
-            self.applyRulesToDocument(document)
-            for instance in self.instances.values():
-                del instance["__counter__"]
-                result.append(instance)
+            self.applyRulesToDocument(document, docIndex)
+            docIndex = docIndex + 1
+        
+        for instance in self.instances.values():
+            del instance["__counter__"]
+            result.append(instance)
         serialisation["graph"] = result
         return serialisation
