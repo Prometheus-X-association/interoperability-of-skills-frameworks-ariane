@@ -14,7 +14,9 @@ class Rule(BaseModel):
     relationTo: str = ""
     relationName: str = ""
     relationNameInverse: str = ""
-
+    targetValue : str = ""
+    targetFunctionParam :  str = ""
+    
     class Config:
         populate_by_name = True
         arbitrary_types_allowed = True
@@ -33,6 +35,8 @@ class Rule(BaseModel):
         relationTo: str = "",
         relationName: str = "",
         relationNameInverse: str = "",
+        targetValue: str = "",
+        targetFunctionParam :  str = "",
     ) -> None:
         super().__init__(
             id=id,
@@ -45,6 +49,8 @@ class Rule(BaseModel):
             relationTo=relationTo,
             relationName=relationName,
             relationNameInverse=relationNameInverse,
+            targetValue=targetValue,
+            targetFunctionParam= targetFunctionParam
         )
 
     def __str__(self):
