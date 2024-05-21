@@ -46,7 +46,7 @@ def test_apply_rules_interim():
     ruleEngine = RuleEngine(rules)
 
     serialisation = ruleEngine.generate(minimal_output)
-
+ 
     json_result = json.dumps(serialisation, sort_keys=True)
 
     expected_data = get_tests(f"{providerName}.output-structure.jsonld", providerName)
