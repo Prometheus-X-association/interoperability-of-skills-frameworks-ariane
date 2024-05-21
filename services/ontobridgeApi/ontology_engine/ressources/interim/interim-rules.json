@@ -28,8 +28,6 @@
         "targetProperty": "soo:adress",
         "targetFunction": "fno:asIs"
       },
-
-
       {
         "id": "mmr:rule-3",
         "generateId": "true",
