@@ -11,7 +11,6 @@
     "@value": "Problem-Solving Puzzle"
    },
    "profile": "tr:__profile-id-1__",
-   "result": "Validated",
    "skill": "tr:__skill-id-1__",
    "type": "soo:Experience"
   },
@@ -23,11 +22,12 @@
   },
   {
    "experience": "tr:__generated-id-1__",
-   "id": "tr:__skill-id-1",
+   "id": "tr:__skill-id-1__",
    "prefLabel": {
     "@language": "en",
     "@value": "Problem-Solving"
    },
+   "skillLevelValue": "Validated",
    "type": "soo:Skill"
   }
  ]
