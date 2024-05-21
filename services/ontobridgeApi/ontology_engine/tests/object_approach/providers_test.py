@@ -9,9 +9,6 @@ from ontology_engine.tests.object_approach.test_tools import get_tests, write_re
 from ontology_engine.tools import ordered
 
 
-
-
-
 def test_apply_rules_interim():
     providerName = "interim"
 
@@ -21,7 +18,7 @@ def test_apply_rules_interim():
     ruleEngine = RuleEngine(rules)
 
     serialisation = ruleEngine.generate(minimal_output)
-
+ 
     json_result = json.dumps(serialisation, sort_keys=True)
 
     expected_data = get_tests(f"{providerName}.output-structure.jsonld", providerName)

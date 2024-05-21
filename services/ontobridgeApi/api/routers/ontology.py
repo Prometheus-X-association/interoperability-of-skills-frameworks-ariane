@@ -95,6 +95,7 @@ class ontologies:
     async def get_jsonld_from_mapping_rules(
         self,
         mapping_rules: dict = Body(..., description="the mapping rules", embed=True),
+<<<<<<< HEAD
         document: list[dict] | dict = Body(..., description="the document", embed=True),
         version: Optional[str] = Query(None),
     ) -> dict:  # instantiate redis_client by dependency injection
@@ -158,8 +159,13 @@ class ontologies:
         self,
         mapping_rules: dict = Body(..., description="the mapping rules", embed=True),
         document: list[dict] = Body(..., description="the document", embed=True),
+=======
+        document:  list[dict] | dict = Body(..., description="the document", embed=True),
+>>>>>>> ff30346 (allow document to be a document or a list)
         version: Optional[str] = Query(None),
     ) -> dict:  # instantiate redis_client by dependency injection
+        if isinstance(document, dict):
+            document = [ document ]
         rules: List[Rule] = []
         for rule in mapping_rules["graph"]:
             currentRule = Rule(**rule)
@@ -186,9 +192,12 @@ class ontologies:
     async def get_jsonld_from_provider(
         self,
         provider_name: str = Query(..., description="Name of the data provider"),
-        document: list[dict] = Body(..., description="the document", embed=True),
+        document: list[dict] | dict = Body(..., description="the document", embed=True),
         version: Optional[str] = Query(None, description="Version of the rules"),
     ) -> dict:  # instantiate redis_client by dependency injection
+        if isinstance(document, dict):
+            document = [ document ]
+
         data_provider = self.ontology_engine.generate_mapping_from_provider_rules(
             provider_name, document
         )
