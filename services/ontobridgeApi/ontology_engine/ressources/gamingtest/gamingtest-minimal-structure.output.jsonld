@@ -9,8 +9,7 @@
       "prefLabel": {"@value": "Problem-Solving Puzzle", "@language": "en"},
       "profile": "tr:__profile-id-1__",
       "dateFrom": "2023-06-28",
-      "skill": "tr:__skill-id-1__",
-      
+      "skill": "tr:__skill-id-1__"
     },
     {
       "id":"tr:__profile-id-1__",

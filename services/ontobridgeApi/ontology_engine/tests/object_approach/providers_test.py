@@ -5,27 +5,11 @@ from typing import List
 
 from ontology_engine.providers import get_rules, getRessourceFolder
 from ontology_engine.rule_engine import RuleEngine
+from ontology_engine.tests.object_approach.test_tools import get_tests, write_result
 from ontology_engine.tools import ordered
 
 
-def write_result(content, fileName):
-    objectApprochDirectory = Path(__file__).parent
-    objectApprochDirectory = os.path.join(objectApprochDirectory, "results")
-    if not os.path.exists(objectApprochDirectory):
-        os.makedirs(objectApprochDirectory)
-    file_path = os.path.join(objectApprochDirectory, fileName + ".jsonld")
-    f = open(file_path, "w")
-    f.write(content)
-    f.close()
 
-
-def get_tests(fileName: str, provider: str) -> List[dict]:
-    ressourcesDirectory = getRessourceFolder()
-    providerDirectory = os.path.join(ressourcesDirectory, provider)
-    path_file = os.path.join(providerDirectory, fileName)
-    with open(path_file) as f:
-        data = json.load(f)
-        return data
 
 
 def test_apply_rules_interim():
@@ -85,7 +69,7 @@ def test_apply_rules_jobready():
         json.dumps(expected_data, sort_keys=True, indent=1),
         f"{providerName}_expected_data",
     )
-    # assert ordered(json_result) == ordered(expected_output)
+    assert ordered(json_result) == ordered(expected_output)
 
 
 def test_apply_rules_gamingtest():
@@ -117,4 +101,4 @@ def test_apply_rules_gamingtest():
         json.dumps(expected_data, sort_keys=True, indent=1),
         f"{providerName}_expected_data",
     )
-    # assert ordered(json_result) == ordered(expected_output)
+    assert ordered(json_result) == ordered(expected_output)
