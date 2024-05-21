@@ -20,24 +20,7 @@ def getRessourceFolder() -> str:
     return ressourcesDirectory
 
 
-def write_result(content, fileName):
-    objectApprochDirectory = Path(__file__).parent
-    objectApprochDirectory = os.path.join(objectApprochDirectory, "results")
-    if not os.path.exists(objectApprochDirectory):
-        os.makedirs(objectApprochDirectory)
-    file_path = os.path.join(objectApprochDirectory, fileName + ".jsonld")
-    f = open(file_path, "w")
-    f.write(content)
-    f.close()
 
-
-def get_tests(fileName: str, provider: str) -> List[dict]:
-    ressourcesDirectory = getRessourceFolder()
-    providerDirectory = os.path.join(ressourcesDirectory, provider)
-    path_file = os.path.join(providerDirectory, fileName)
-    with open(path_file) as f:
-        data = json.load(f)
-        return data
 
 
 def get_rules(provider: str) -> List[Rule]:
@@ -111,7 +94,7 @@ def test_apply_rules_jobready():
         json.dumps(expected_data, sort_keys=True, indent=1),
         f"{providerName}_expected_data",
     )
-    # assert ordered(json_result) == ordered(expected_output)
+    assert ordered(json_result) == ordered(expected_output)
 
 
 def test_apply_rules_gamingtest():
@@ -143,4 +126,4 @@ def test_apply_rules_gamingtest():
         json.dumps(expected_data, sort_keys=True, indent=1),
         f"{providerName}_expected_data",
     )
-    # assert ordered(json_result) == ordered(expected_output)
+    assert ordered(json_result) == ordered(expected_output)
