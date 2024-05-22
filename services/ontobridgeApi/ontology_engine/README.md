@@ -137,5 +137,3 @@ We use the [pyyaml](https://pypi.org/project/PyYAML/) library : ```pip install p
 
 - [Python Naming Convention](https://github.com/naming-convention/naming-convention-guides/tree/master/python)
 
-
-Rules
