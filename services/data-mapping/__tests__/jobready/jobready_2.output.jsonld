@@ -47,10 +47,14 @@
       "id": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869",
       "type": "esco:Skill",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "prefLabel": {"@value": "Intégration", "@language": "fr"}
 =======
       "prefLabel": {"@value": "solve problems", "@language": "en"}
 >>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
+=======
+      "prefLabel": {"@value": "Intégration", "@language": "fr"}
+>>>>>>> 24c7c8b (fix: #30)
     },
     {
       "id":"tr:sugg/1",
@@ -83,10 +87,14 @@
       "id": "esco:xxxxxx",
       "type": "esco:Skill",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "prefLabel": {"@value": "motivation", "@language": "fr"}
 =======
       "prefLabel": {"@value": "motivation", "@language": "en"}
 >>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
+=======
+      "prefLabel": {"@value": "motivation", "@language": "fr"}
+>>>>>>> 24c7c8b (fix: #30)
     },
     {
       "id":"tr:sugg/3",

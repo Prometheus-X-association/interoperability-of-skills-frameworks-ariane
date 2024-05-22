@@ -1,6 +1,7 @@
 {
   "@context": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@todo": "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
   },
   "graph": [
@@ -14,23 +15,37 @@
     {
       "id": "tr:__generated-id-1__",
 >>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
+=======
+    "@todo": "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
+  },
+  "graph": [
+    {
+      "id": "tr:__skill-id-1__",
+>>>>>>> 24c7c8b (fix: #30)
       "type": "soo:Skill",
       "prefLabel": {"@value": "Intégration au groupe", "@language": "fr"},
       "description": {"@value": "Faculté de se diriger vers un collectif déjà constitué, d'y trouver une place et d'en devenir un membre légitime", "@language": "fr"}
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "id": "tr:__skill-id-2__",
 =======
       "id": "tr:__generated-id-2__",
 >>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
+=======
+      "id": "tr:__skill-id-2__",
+>>>>>>> 24c7c8b (fix: #30)
       "type": "soo:Skill",
       "prefLabel": {"@value": "Motivation et implication", "@language": "fr"},
       "description": {"@value": "S'investir, orienter son action et nourrir une satisfaction et un enthousiasme vis-à-vis d'une organisation, d'un projet collectif ou d'un objectif personnel", "@language": "fr"}
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
+=======
+>>>>>>> 24c7c8b (fix: #30)
   ]
 }
