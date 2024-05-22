@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import List, Optional
 from pydantic import BaseModel, validator
 import pydantic
 
@@ -66,3 +66,5 @@ class Rule(BaseModel):
             relationName : {self.relationName}
             relationNameInverse : {self.relationNameInverse}
         """
+
+    
