@@ -1,6 +1,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 * La propriété "Results" du fichier original est reprise telle-quelle dans skillLevelValue. Sur la version complète des rules, la fonction de récupération du scale et de la value doit être utilisé.  
 
 * Remarque sur la classe "soo:Skill": 
@@ -17,6 +18,9 @@
 >>>>>>> 75371fa (spec: add tests for gamingtest transformation)
 =======
 * La propriété "Results" du fichier original est reprise telle-quelle. Ne doit-elle pas être transformée suivant les concepts de "IndividualChoice" ou "Orientation" ? 
+=======
+* La propriété "Results" du fichier original est reprise telle-quelle dans skillLevelValue. Sur la version complète des rules, la fonction de récupération du scale et de la value doit être utilisé.  
+>>>>>>> 2e09813 (fix: #29)
 
 * Remarque sur la classe "soo:Skill": 
   - 2/ dans cette transformation, la classe Skill s'avère être surtout une classe de transition/traduction entre la donnée d'entrée et les mappings potentiels dans les référentiels cibles. Quelles sont les propriétés que doivent avoir cette classe ? Les valeurs de prefLabel doivent-elles être copiées ? 
