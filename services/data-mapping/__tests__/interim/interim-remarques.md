@@ -75,7 +75,8 @@ example de règles:
 >>>>>>> 9d23288 (Renamed Proman to interim)
 =======
 - Présence de 3 objets expérience différents (pastExperience, Certifications, suggestedExperiences)
-    - Comment préciser le type de chaque expérience dans les rules (Création d'objets ?)
+    - Comment préciser le type de chaque expérience dans les rules (Création d'objets ?) ==> rajouter des règles statiques comme dans : https://gitlab.com/mmorg/bupm/ariane/-/blob/26-create-other-test-transformation-files-and-output/services/data-mapping/__tests__/orientoi/orientoi_1-rules.json?ref_type=heads#L14
+    
     - Quels champs d'expériences créer ou ignorer (nom de l'entreprise, adresse ...)?
     - Qu'est ce que cela implique pour les objets reliés (profile <-> experience) ?
 <<<<<<< HEAD
