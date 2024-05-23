@@ -10,6 +10,7 @@ triple:
   soo:Experience:                               # Describe an experience whatever type : professional, educational, etc.
     skos:prefLabel: rdf:langstring              # The preferred label of the experience
 <<<<<<< HEAD
+<<<<<<< HEAD
     soo:description: soo:Description             # A short paragraph describing the experience
     soo:experienceType: skos:Concept            # The type of experience : vocational, professional, personal, test de personnalité, etc.
     soo:experienceStatus: skos:Concept          # The experience status : past, ongoing, suggested
@@ -33,6 +34,9 @@ triple:
     soo:sourceSkillId: skos:Concept             # The dataprovider's unique concept skill
 =======
     soo:description: rdf:langstring             # A short paragraph describing the experience
+=======
+    soo:description: soo:Description             # A short paragraph describing the experience
+>>>>>>> 67ad011 (ajout de l'objet Description dans la soo)
     soo:experienceType: skos:Concept            # The type of experience : vocational, professional, personal, test de personnalité, etc.
     soo:experienceStatus: skos:Concept          # The experience status : past, ongoing, suggested
     soo:dateFrom: xsd:date                      # The start date if a time period or the date of occurence
@@ -80,6 +84,7 @@ triple:
     soo:provider: xsd:string
     
 <<<<<<< HEAD
+<<<<<<< HEAD
   soo:Description:
     soo:texte: rdf:langstring
     soo:url:  xsd:string
@@ -96,6 +101,14 @@ triple:
 =======
 
 >>>>>>> e73516e (feat: add properties and classes to the model)
+=======
+  soo:Description
+    soo:texte: rdf:langstring
+    soo:url:  xsd.string
+    soo:keywords: rdf:langstring
+    soo:imagePath:  xsd:string
+    
+>>>>>>> 67ad011 (ajout de l'objet Description dans la soo)
 
 
 
