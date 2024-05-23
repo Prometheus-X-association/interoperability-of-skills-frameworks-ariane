@@ -9,7 +9,7 @@ triple:
 
   soo:Experience:                               # Describe an experience whatever type : professional, educational, etc.
     skos:prefLabel: rdf:langstring              # The preferred label of the experience
-    soo:description: rdf:langstring             # A short paragraph describing the experience
+    soo:description: soo:Description             # A short paragraph describing the experience
     soo:experienceType: skos:Concept            # The type of experience : vocational, professional, personal, test de personnalité, etc.
     soo:experienceStatus: skos:Concept          # The experience status : past, ongoing, suggested
     soo:dateFrom: xsd:date                      # The start date if a time period or the date of occurence
@@ -47,7 +47,12 @@ triple:
     skos:memberOf: skos:Collection
     soo:provider: xsd:string
     
-
+  soo:Description
+    soo:texte: rdf:langstring
+    soo:url:  xsd.string
+    soo:keywords: rdf:langstring
+    soo:imagePath:  xsd:string
+    
 
 
 
