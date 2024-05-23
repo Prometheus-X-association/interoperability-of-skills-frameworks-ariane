@@ -85,6 +85,7 @@ triple:
     
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   soo:Description:
     soo:texte: rdf:langstring
     soo:url:  xsd:string
@@ -103,6 +104,9 @@ triple:
 >>>>>>> e73516e (feat: add properties and classes to the model)
 =======
   soo:Description
+=======
+  soo:Description:
+>>>>>>> 0031ae8 (fix : typo)
     soo:texte: rdf:langstring
     soo:url:  xsd.string
     soo:keywords: rdf:langstring
