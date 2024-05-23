@@ -47,7 +47,7 @@ triple:
     skos:memberOf: skos:Collection
     soo:provider: xsd:string
     
-  soo:Description
+  soo:Description:
     soo:texte: rdf:langstring
     soo:url:  xsd.string
     soo:keywords: rdf:langstring
