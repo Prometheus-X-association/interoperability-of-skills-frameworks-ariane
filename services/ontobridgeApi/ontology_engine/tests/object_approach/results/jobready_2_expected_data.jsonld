@@ -10,7 +10,7 @@
    },
    "id": "tr:__skill-id-1__",
    "prefLabel": {
-    "@language": "en",
+    "@language": "fr",
     "@value": "Int\u00c3\u00a9gration au groupe"
    },
    "type": "soo:Skill"
@@ -22,7 +22,7 @@
    },
    "id": "tr:__skill-id-2__",
    "prefLabel": {
-    "@language": "en",
+    "@language": "fr",
     "@value": "Motivation et implication"
    },
    "type": "soo:Skill"
