@@ -49,8 +49,8 @@ def test_reading_gamintest_all():
 
 
 def test_serialisation():
-    providerName = 'gamingtest'
-    
+    providerName = "gamingtest"
+
     experience = Experience()
     experience.id = "tr:__generated-id-1__"
     experience.type = "soo:Experience"
@@ -76,8 +76,10 @@ def test_serialisation():
 
     serialisation = {}
     todo = {}
-    todo["@todo"] = "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
-    
+    todo["@todo"] = (
+        "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
+    )
+
     serialisation["@context"] = todo
     result = []
     result.append(toJsonLD(experience))
@@ -87,7 +89,9 @@ def test_serialisation():
 
     json_result = json.dumps(serialisation, sort_keys=True)
 
-    expected_data = get_tests(f"{providerName}-minimal-structure.output.jsonld", providerName)
+    expected_data = get_tests(
+        f"{providerName}-minimal-structure.output.jsonld", providerName
+    )
     expected_output = json.dumps(expected_data, sort_keys=True)
 
     print("--------------------------------------")
@@ -130,5 +134,3 @@ def test_jsonpath_jobready():
     print("start parsing")
     for match in jsonpath_expression.find(get_gamingtest_minimal):
         print(match.value)
-
-
