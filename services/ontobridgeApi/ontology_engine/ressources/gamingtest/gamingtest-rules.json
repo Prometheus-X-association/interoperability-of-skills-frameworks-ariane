@@ -43,6 +43,7 @@
       "targetClass": "soo:Skill",
       "generateId": "true",
       "targetFunction": "fno:search-for-mapping-with-source", 
+      "targetLang": "en",
       "relationTo": "soo:Experience",
       "relationName": "soo:experience",
       "relationNameInverse": "soo:skill"
