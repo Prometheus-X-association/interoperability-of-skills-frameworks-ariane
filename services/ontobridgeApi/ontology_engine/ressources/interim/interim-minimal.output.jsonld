@@ -17,8 +17,7 @@
       "prefLabel": {"@value": "Software Engineer", "@language":"en"},
       "company": "Tech Corp",
       "dateFrom": "2017-06-01",
-      "dateTo": "2019-08-01",
-      "profile": "tr:__generated-id-1__"
+      "dateTo": "2019-08-01"
     },
     {
       "id": "tr:__xp-2__",
@@ -28,6 +27,7 @@
       "dateFrom": "2019-09-01",
       "dateTo": "2023-01-01"
     },
+
     {
       "id": "tr:__xp-3__",
       "type": "soo:Experience",
@@ -42,6 +42,8 @@
       "company": "Amazon",
       "dateFrom": "2021-01-01"
     },
+
+
     {
       "id": "tr:__xp-5__",
       "type": "soo:Experience",
@@ -62,6 +64,8 @@
       "location": "Seattle, USA",
       "contractType": "Contract"
     },
+
+
     {
       "id": "tr:__polarity-1__",
       "type": "soo:Polarity",
@@ -73,5 +77,6 @@
       "prefLabel": {"@value": "0", "@language": "en"},
       "notation": 0
     }
+
   ]
 }

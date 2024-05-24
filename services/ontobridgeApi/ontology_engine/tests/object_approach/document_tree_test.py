@@ -9,6 +9,28 @@ def test_document_tree_interim():
     rules = get_rules(providerName)
     minimal_output = get_tests(f"{providerName}.json", providerName)
 
-    document_tree = DocumentTreeFactory.GenerateDocumentTree(provider_rules=rules)
+    rules_tree = DocumentTreeFactory.generate_rules_tree(provider_rules=rules)
     print('*--------------------------------------------------*')
-    print(document_tree)
+    print(rules_tree)
+
+
+def test_document_tree_gamingtest():
+    providerName = "gamingtest"
+
+    rules = get_rules(providerName)
+    minimal_output = get_tests(f"{providerName}.json", providerName)
+
+    rules_tree = DocumentTreeFactory.generate_rules_tree(provider_rules=rules)
+    print('*--------------------------------------------------*')
+    print(rules_tree)
+    
+    
+def test_document_tree_jobready_2():
+    providerName = "jobready_2"
+
+    rules = get_rules(providerName)
+    minimal_output = get_tests(f"{providerName}.json", providerName)
+
+    rules_tree = DocumentTreeFactory.generate_rules_tree(provider_rules=rules)
+    print('*--------------------------------------------------*')
+    print(rules_tree)
