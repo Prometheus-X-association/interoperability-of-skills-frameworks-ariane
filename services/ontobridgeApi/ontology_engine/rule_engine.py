@@ -2,6 +2,7 @@ from datetime import datetime
 from typing import List
 from jsonpath_ng.ext import parse
 
+from ontology_engine.document_tree import DocumentTreeFactory, RulesTree, browse_rules_tree
 from ontology_engine.rule import Rule
 from ontology_engine.tools import toJsonLD
 
@@ -11,15 +12,16 @@ class RuleEngine:
         self.rules = rules
         self.counters: dict[str, int] = {}
         self.instances: dict[str, dict] = {}
+        self.rules_tree = DocumentTreeFactory.generate_rules_tree(provider_rules=rules)
 
-    def generateId(self, instance: dict):
+    def generate_id(self, instance: dict):
         if "Experience" in instance["type"]:
             return f"tr:__generated-id-{instance['__counter__']}__"
         else:
             template = instance["type"].replace("soo:", "").lower()
             return f"tr:__{template}-id-{instance['__counter__']}__"
 
-    def getInstance(self, targetClass: str, index: int,docIndex : int) -> dict:
+    def get_instance(self, targetClass: str, index: int, docIndex: int) -> dict:
         key = f"{docIndex}-{targetClass}-{index}"
         if not targetClass in self.counters.keys():
             self.counters[targetClass] = 0
@@ -34,18 +36,18 @@ class RuleEngine:
         self.instances[key] = currentInstance
         return currentInstance
 
-    def getDocumentsFromFiles(self, file: dict) -> List[dict]:
+    def get_documents_from_files(self, file: dict) -> List[dict]:
         documents = []
-        sourcepaths : dict[int, List[str]]= {}
+        sourcepaths: dict[int, List[str]] = {}
         depth = 0
         for rule in self.rules:
             if not rule.sourcePath in sourcepaths:
-                split_path = rule.sourcePath.split(".") 
+                split_path = rule.sourcePath.split(".")
                 depth_path = len(split_path)
                 if not depth_path in sourcepaths:
                     sourcepaths[depth_path] = []
                 sourcepaths[depth_path].append(rule.sourcePath)
-        
+
         orderDepths = sorted(sourcepaths)
         for depth in orderDepths:
             numberOfDocuments = 0
@@ -61,7 +63,7 @@ class RuleEngine:
                 numberOfDocuments = max(numberOfDocuments, len(matches))
                 for match in matches:
                     filedValues[sourcepath].append(match.value)
-        
+
         for i in range(0, numberOfDocuments):
             document = {}
             for key in filedValues.keys():
@@ -69,22 +71,24 @@ class RuleEngine:
             documents.append(document)
         return documents
 
-    def getFieldName(self, field: str) -> str:
+    def get_field_name(self, field: str) -> str:
         return field.replace("soo:has", "").replace("soo:", "").replace("skos:", "")
 
-    def applyRulesToDocument(self, file: dict, docIndex : int):
-        documents: List[dict] = self.getDocumentsFromFiles(file)
+    def apply_rules_to_document(self, file: dict, docIndex: int):
+        documents: List[dict] = self.get_documents_from_files(file)
         for index, document in enumerate(documents):
             for rule in self.rules:
                 if rule.sourcePath in document.keys():
-                    currentInstance = self.getInstance(rule.targetClass, index, docIndex)
-                    target = self.getFieldName(rule.targetProperty)
+                    currentInstance = self.get_instance(
+                        rule.targetClass, index, docIndex
+                    )
+                    target = self.get_field_name(rule.targetProperty)
 
                     if (
                         rule.targetProperty == "id"
                         and rule.targetFunction == "fno:generateId"
                     ) or rule.generateId == True:
-                        currentInstance["id"] = self.generateId(currentInstance)
+                        currentInstance["id"] = self.generate_id(currentInstance)
                         if rule.targetProperty == "id":
                             continue
 
@@ -99,11 +103,13 @@ class RuleEngine:
                         and rule.relationName != ""
                         and rule.relationNameInverse != ""
                     ):
-                        currentInstanceTo = self.getInstance(rule.relationTo, index, docIndex)
+                        currentInstanceTo = self.get_instance(
+                            rule.relationTo, index, docIndex
+                        )
                         currentInstanceTo[
-                            self.getFieldName(rule.relationNameInverse).lower()
+                            self.get_field_name(rule.relationNameInverse).lower()
                         ] = currentInstance["id"]
-                        currentInstance[self.getFieldName(rule.relationTo).lower()] = (
+                        currentInstance[self.get_field_name(rule.relationTo).lower()] = (
                             currentInstanceTo["id"]
                         )
 
@@ -115,15 +121,69 @@ class RuleEngine:
 
                     if rule.targetFunction == "fno:search-for-mapping-with-source":
                         currentInstance["prefLabel"] = {}
-                        currentInstance["prefLabel"]["@value"] = document[
-                            rule.sourcePath
-                        ]
-                        currentInstance["prefLabel"]["@language"] = "en"
+                        currentInstance["prefLabel"]["@value"] = document[rule.sourcePath]
+                        currentInstance["prefLabel"]["@language"] = rule.targetLang
                         continue
 
                     currentInstance[target] = document[rule.sourcePath]
 
-    def generate(self, documents: List[dict]) -> dict:
+    def apply_tree_rules_to_document(self, file: dict, docIndex: int):
+        documents: List[dict] = self.get_documents_from_files(file)
+        for index, document in enumerate(documents):
+            rulesTrees : List[RulesTree]= browse_rules_tree(self.rules_tree)
+            for rules_tree in rulesTrees:
+                for rule in rules_tree.rules:
+                    if rule.sourcePath in document.keys():
+                        currentInstance = self.get_instance(
+                            rule.targetClass, index, docIndex
+                        )
+                        target = self.get_field_name(rule.targetProperty)
+
+                        if (
+                            rule.targetProperty == "id"
+                            and rule.targetFunction == "fno:generateId"
+                        ) or rule.generateId == True:
+                            currentInstance["id"] = self.generate_id(currentInstance)
+                            if rule.targetProperty == "id":
+                                continue
+
+                        if rule.targetFunction == "fno:date-to-xsd":
+                            dates = document[rule.sourcePath]
+                            date = datetime.strptime(dates, "%Y-%m-%d")
+                            currentInstance[target] = date.strftime("%Y-%m-%d")
+                            continue
+
+                        if (
+                            rule.relationTo != ""
+                            and rule.relationName != ""
+                            and rule.relationNameInverse != ""
+                        ):
+                            currentInstanceTo = self.get_instance(
+                                rule.relationTo, index, docIndex
+                            )
+                            currentInstanceTo[
+                                self.get_field_name(rule.relationNameInverse).lower()
+                            ] = currentInstance["id"]
+                            currentInstance[self.get_field_name(rule.relationTo).lower()] = (
+                                currentInstanceTo["id"]
+                            )
+
+                        if rule.targetFunction == "fno:asIs_WithLang":
+                            currentInstance[target] = {}
+                            currentInstance[target]["@value"] = document[rule.sourcePath]
+                            currentInstance[target]["@language"] = rule.targetLang
+                            continue
+
+                        if rule.targetFunction == "fno:search-for-mapping-with-source":
+                            currentInstance["prefLabel"] = {}
+                            currentInstance["prefLabel"]["@value"] = document[rule.sourcePath]
+                            currentInstance["prefLabel"]["@language"] = rule.targetLang
+                            continue
+
+                        currentInstance[target] = document[rule.sourcePath]
+
+
+    def generate(self, documents: List[dict], by_tree : bool = False) -> dict:
         serialisation = {}
         todo = {}
         todo["@todo"] = (
@@ -133,9 +193,12 @@ class RuleEngine:
         result = []
         docIndex = 0
         for document in documents:
-            self.applyRulesToDocument(document, docIndex)
+            if not by_tree:
+                self.apply_rules_to_document(document, docIndex)
+            else:
+                self.apply_tree_rules_to_document(document, docIndex)
             docIndex = docIndex + 1
-        
+
         for instance in self.instances.values():
             del instance["__counter__"]
             result.append(instance)
