@@ -10,8 +10,8 @@ def test_document_tree_interim():
     minimal_output = get_tests(f"{providerName}.json", providerName)
 
     rules_tree = DocumentTreeFactory.generate_rules_tree(provider_rules=rules)
-    print('*--------------------------------------------------*')
-    print(rules_tree)
+    print("*--------------------------------------------------*")
+    print(DocumentTreeFactory.display_rules_tree(rules_tree))
 
 
 def test_document_tree_gamingtest():
@@ -21,10 +21,10 @@ def test_document_tree_gamingtest():
     minimal_output = get_tests(f"{providerName}.json", providerName)
 
     rules_tree = DocumentTreeFactory.generate_rules_tree(provider_rules=rules)
-    print('*--------------------------------------------------*')
-    print(rules_tree)
-    
-    
+    print("*--------------------------------------------------*")
+    print(DocumentTreeFactory.display_rules_tree(rules_tree))
+
+
 def test_document_tree_jobready_2():
     providerName = "jobready_2"
 
@@ -32,5 +32,5 @@ def test_document_tree_jobready_2():
     minimal_output = get_tests(f"{providerName}.json", providerName)
 
     rules_tree = DocumentTreeFactory.generate_rules_tree(provider_rules=rules)
-    print('*--------------------------------------------------*')
-    print(rules_tree)
+    print("*--------------------------------------------------*")
+    print(DocumentTreeFactory.display_rules_tree(rules_tree))
