@@ -2,9 +2,14 @@ from datetime import datetime
 from typing import List
 from jsonpath_ng.ext import parse
 
-from ontology_engine.document_tree import DocumentTreeFactory, RulesTree, browse_rules_tree
+from ontology_engine.document_tree import (
+    DocumentTreeFactory,
+    RulesTree,
+    browse_rules_tree,
+)
 from ontology_engine.rule import Rule
 from ontology_engine.tools import toJsonLD
+from copy import deepcopy
 
 
 class RuleEngine:
@@ -21,8 +26,19 @@ class RuleEngine:
             template = instance["type"].replace("soo:", "").lower()
             return f"tr:__{template}-id-{instance['__counter__']}__"
 
-    def get_instance(self, targetClass: str, index: int, docIndex: int) -> dict:
-        key = f"{docIndex}-{targetClass}-{index}"
+    def check_instance(self, targetClass: str, docIndex: int):
+        key = f"{docIndex}-{targetClass}-"
+        return any([x for x in self.instances if key.lower() in x.lower()])
+        
+    def get_last_instance(self, targetClass: str, docIndex: int):
+        if not self.check_instance(targetClass, docIndex): 
+            return None
+        key = f"{docIndex}-{targetClass}-"
+        keys = [x for x in reversed(self.instances) if key.lower() in x.lower()]
+        return self.instances[keys[0]]
+
+    def get_instance(self, targetClass: str, index: int, docIndex: int, prefix : str = '') -> dict:
+        key = f"{docIndex}-{targetClass}-{index}-{prefix}"
         if not targetClass in self.counters.keys():
             self.counters[targetClass] = 0
         currentInstance = None
@@ -109,9 +125,9 @@ class RuleEngine:
                         currentInstanceTo[
                             self.get_field_name(rule.relationNameInverse).lower()
                         ] = currentInstance["id"]
-                        currentInstance[self.get_field_name(rule.relationTo).lower()] = (
-                            currentInstanceTo["id"]
-                        )
+                        currentInstance[
+                            self.get_field_name(rule.relationTo).lower()
+                        ] = currentInstanceTo["id"]
 
                     if rule.targetFunction == "fno:asIs_WithLang":
                         currentInstance[target] = {}
@@ -121,7 +137,9 @@ class RuleEngine:
 
                     if rule.targetFunction == "fno:search-for-mapping-with-source":
                         currentInstance["prefLabel"] = {}
-                        currentInstance["prefLabel"]["@value"] = document[rule.sourcePath]
+                        currentInstance["prefLabel"]["@value"] = document[
+                            rule.sourcePath
+                        ]
                         currentInstance["prefLabel"]["@language"] = rule.targetLang
                         continue
 
