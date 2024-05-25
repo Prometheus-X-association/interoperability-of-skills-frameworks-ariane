@@ -133,7 +133,7 @@
         "targetFunction": "fno:asIs"
       },
       {
-        "id": "mmr:rule-14",
+        "id": "mmr:rule-15",
         "sourcePath": "openToInterim",
         "targetClass": "soo:Polarity",
         "targetFunction": "fno:find-or-create-term"
