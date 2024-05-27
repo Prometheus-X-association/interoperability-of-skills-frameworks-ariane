@@ -15,8 +15,8 @@
       "sourcePath": "Experience Name",
       "targetClass": "soo:Experience",
       "targetProperty": "skos:prefLabel",
-      "targetLang": "en",
-      "targetFunction": "fno:asIs_WithLang"
+      "targetFunction": "fno:asIs_WithLang",
+      "targetLang": "en"
     },
     {
       "id": "mmr:rule-2",
@@ -40,9 +40,11 @@
     {
       "id": "mmr:rule-4",
       "sourcePath": "Associated Soft Skill Block",
-      "targetClass": "soo:Skill",
       "generateId": "true",
-      "targetFunction": "fno:search-for-mapping-with-source", 
+      "targetClass": "soo:Skill",
+      "targetProperty": "skos:prefLabel",
+      "targetFunction": "fno:asIs_WithLang",
+      "targetLang": "en",
       "relationTo": "soo:Experience",
       "relationName": "soo:experience",
       "relationNameInverse": "soo:skill"
