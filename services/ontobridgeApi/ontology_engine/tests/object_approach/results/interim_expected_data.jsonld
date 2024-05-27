@@ -1,26 +1,42 @@
 {
- "@context": {},
+ "@context": {
+  "@todo": "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
+ },
  "graph": [
   {
-   "address": "address",
+   "address": "456 Oak St, Anytown, USA",
    "email": "alice.smith@example.com",
    "experience": [
-    "tr:__xp-1__",
-    "tr:__xp-2__",
-    "tr:__xp-3__",
-    "tr:__xp-4__",
-    "tr:__xp-5__",
-    "tr:__xp-6__"
+    "tr:__generated-id-1__",
+    "tr:__generated-id-2__",
+    "tr:__generated-id-3__",
+    "tr:__generated-id-4__",
+    "tr:__generated-id-5__",
+    "tr:__generated-id-6__"
    ],
-   "id": "tr:__generated-id-1__",
+   "id": "tr:__profile-id-1__",
    "name": "Alice Smith",
    "type": "soo:Profile"
+  },
+  {
+   "id": "tr:__polarity-id-1__",
+   "polarityScale": "term:interim/polarity/scale/1",
+   "polarityValue": "term:interim/polarity/value/1",
+   "type": "soo:Polarity"
+  },
+  {
+   "id": "term:interim/polarity/value/1",
+   "notation": 0,
+   "prefLabel": {
+    "@language": "en",
+    "@value": "0"
+   }
   },
   {
    "company": "Tech Corp",
    "dateFrom": "2017-06-01",
    "dateTo": "2019-08-01",
-   "id": "tr:__xp-1__",
+   "id": "tr:__generated-id-1__",
    "prefLabel": {
     "@language": "en",
     "@value": "Software Engineer"
@@ -31,7 +47,7 @@
    "company": "Innovate Ltd",
    "dateFrom": "2019-09-01",
    "dateTo": "2023-01-01",
-   "id": "tr:__xp-2__",
+   "id": "tr:__generated-id-2__",
    "prefLabel": {
     "@language": "en",
     "@value": "Lead Engineer"
@@ -41,7 +57,7 @@
   {
    "company": "Scrum Alliance",
    "dateFrom": "2018-01-01",
-   "id": "tr:__xp-3__",
+   "id": "tr:__generated-id-3__",
    "prefLabel": {
     "@language": "en",
     "@value": "Certified Scrum Master"
@@ -51,7 +67,7 @@
   {
    "company": "Amazon",
    "dateFrom": "2021-01-01",
-   "id": "tr:__xp-4__",
+   "id": "tr:__generated-id-4__",
    "prefLabel": {
     "@language": "en",
     "@value": "AWS Certified Solutions Architect"
@@ -66,7 +82,7 @@
     "@language": "en",
     "@value": "Managing a team of software engineers"
    },
-   "id": "tr:__xp-5__",
+   "id": "tr:__generated-id-5__",
    "location": "Boston, USA",
    "prefLabel": {
     "@language": "en",
@@ -82,27 +98,13 @@
     "@language": "en",
     "@value": "Overseeing product development"
    },
-   "id": "tr:__xp-6__",
+   "id": "tr:__generated-id-6__",
    "location": "Seattle, USA",
    "prefLabel": {
     "@language": "en",
     "@value": "Product Owner"
    },
    "type": "soo:Experience"
-  },
-  {
-   "id": "tr:__polarity-1__",
-   "polarityScale": "term:interim/polarity/scale/1",
-   "polarityValue": "term:interim/polarity/value/1",
-   "type": "soo:Polarity"
-  },
-  {
-   "id": "term:interim/polarity/value/1",
-   "notation": 0,
-   "prefLabel": {
-    "@language": "en",
-    "@value": "0"
-   }
   }
  ]
 }
