@@ -4,15 +4,34 @@
  },
  "graph": [
   {
-   "adress": "456 Oak St, Anytown, USA",
+   "address": "456 Oak St, Anytown, USA",
    "email": "alice.smith@example.com",
+   "experience": [
+    "tr:__generated-id-1__",
+    "tr:__generated-id-2__",
+    "tr:__generated-id-3__",
+    "tr:__generated-id-4__",
+    "tr:__generated-id-5__",
+    "tr:__generated-id-6__"
+   ],
    "id": "tr:__profile-id-1__",
    "name": "Alice Smith",
    "type": "soo:Profile"
   },
   {
    "id": "tr:__polarity-id-1__",
+   "polarityScale": "term:interim/polarity/scale/1",
+   "polarityValue": "term:interim/polarity/value/1",
    "type": "soo:Polarity"
+  },
+  {
+   "id": "term:interim/polarity/value/1",
+   "notation": 0,
+   "prefLabel": {
+    "@language": "en",
+    "@value": "0"
+   },
+   "type": "soo:Term"
   },
   {
    "company": "Tech Corp",
@@ -38,7 +57,7 @@
   },
   {
    "company": "Scrum Alliance",
-   "dateFrom": 2018,
+   "dateFrom": "2018-01-01",
    "id": "tr:__generated-id-3__",
    "prefLabel": {
     "@language": "en",
@@ -48,7 +67,7 @@
   },
   {
    "company": "Amazon",
-   "dateFrom": 2021,
+   "dateFrom": "2021-01-01",
    "id": "tr:__generated-id-4__",
    "prefLabel": {
     "@language": "en",
@@ -58,6 +77,7 @@
   },
   {
    "company": "Tech Innovators",
+   "contractType": "Full-Time",
    "dateFrom": "2023-03-01",
    "description": {
     "@language": "en",
@@ -73,6 +93,7 @@
   },
   {
    "company": "Creative Solutions",
+   "contractType": "Contract",
    "dateFrom": "2024-02-01",
    "description": {
     "@language": "en",
