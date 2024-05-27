@@ -148,24 +148,26 @@ class RuleEngine:
     def fill_with_document(self, file: dict) -> None:
         self.rules_tree.matches=[]
         self.rules_tree.matches.append(file)
-        rules = browse_rules_tree(self.rules_tree)
+        rules_trees = browse_rules_tree(self.rules_tree)
         i = 0
-        for rule in rules: 
-            if rule.depth == 0:
+        for rules_tree in rules_trees: 
+            if rules_tree.depth == 0:
                 continue
 
             # add matches in file to rule.
-            jsonpath = "[*].'" + rule.name + "'"
+            jsonpath = "[*].'" + rules_tree.name + "'"
             jsonPath_expression = parse(jsonpath)
-            rule.matches= []    
-            for match in rule.parent.matches:
+            rules_tree.matches= [] 
+            
+            for match in rules_tree.parent.matches:
                 current_matches = jsonPath_expression.find(match)
                 for current_match in current_matches:
-                    rule.matches.append(current_match.value)
+                    rules_tree.matches.append(current_match.value)
         
 
     def generate_instances_by_tree(self, filed_rules_tree: RulesTree, docIndex : int) -> None:
         rules_trees = browse_rules_tree(filed_rules_tree)
+        lag_rules = []
         for  rule_tree in rules_trees:
             if rule_tree.depth == 0:
                 continue
@@ -175,9 +177,10 @@ class RuleEngine:
                 prefix = ''
             else: 
                 prefix = rule_tree.parent.name
-            for rule in rule_tree.rules:         
+            for rule in rule_tree.rules:
                 for  index, match in enumerate(rule_tree.matches):
                     currentInstance = self.get_instance(rule.targetClass, index, docIndex, prefix)
+                    
                     target = self.get_field_name(rule.targetProperty)
                     if (
                         rule.targetProperty == "id"
@@ -187,19 +190,41 @@ class RuleEngine:
                         if rule.targetProperty == "id":
                             continue
                     
+                    for lag_rule in lag_rules:
+                        currentInstanceFrom = self.get_last_instance(lag_rule.relationNameInverse, docIndex)
+                        if currentInstanceFrom['type'] != currentInstance['type'] and currentInstance['type'] == lag_rule.relationTo:
+                            if not currentInstanceFrom == None:
+                                if self.get_field_name(lag_rule.relationTo).lower() in currentInstanceFrom:
+                                    if isinstance(currentInstanceFrom[self.get_field_name(lag_rule.relationTo).lower()], str):
+                                        prevRef = str(currentInstanceFrom[self.get_field_name(lag_rule.relationTo).lower()])
+                                        currentInstanceFrom[self.get_field_name(lag_rule.relationTo).lower()] = []
+                                        currentInstanceFrom[self.get_field_name(lag_rule.relationTo).lower()].append(prevRef)
+                                    if not currentInstance["id"] in currentInstanceFrom[self.get_field_name(lag_rule.relationTo).lower()]:
+                                        currentInstanceFrom[self.get_field_name(lag_rule.relationTo).lower()].append(currentInstance["id"])
+                                else: 
+                                    currentInstanceFrom[self.get_field_name(lag_rule.relationTo).lower()] = currentInstance["id"]
+                    
                     if rule.targetFunction ==  "fno:find-or-create-term":
                         currentInstance["id"] = self.generate_id(currentInstance)
+                        currentInstance["polarityScale"] = "term:interim/polarity/scale/1"
+                        currentInstance["polarityValue"] = "term:interim/polarity/value/1"
+                        current_term_Instance = self.get_instance('soo:Term', 0, 0, prefix)
+                        current_term_Instance['id'] = "term:interim/polarity/value/1"
+                        current_term_Instance['notation'] = match
+                        current_term_Instance['prefLabel'] = {}
+                        current_term_Instance['prefLabel']["@value"] = str(match)
+                        current_term_Instance['prefLabel']["@language"] = 'en'
                         continue
                     
                     if rule.targetFunction == "fno:date-to-xsd":
                         dates = match
                         if rule.targetFunctionParam == "fno:year-only":
-                            currentInstance[target] = match
-                            continue
+                            date = datetime.strptime(f'{match}-01-01', "%Y-%m-%d")
+
                         else:
                             date = datetime.strptime(dates, "%Y-%m-%d")
-                            currentInstance[target] = date.strftime("%Y-%m-%d")
-                            continue
+                        currentInstance[target] = date.strftime("%Y-%m-%d")
+                        continue
 
                     if (
                         rule.relationTo != ""
@@ -216,6 +241,10 @@ class RuleEngine:
                             else: 
                                 currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()] = currentInstance["id"]
                             currentInstance[self.get_field_name(rule.relationTo).lower()] = currentInstanceTo["id"]
+                        else: 
+                            lag_rules.append(rule)
+                            pass
+                            
 
                     if rule.targetFunction == "fno:asIs_WithLang":
                         currentInstance[target] = {}
@@ -236,7 +265,7 @@ class RuleEngine:
         self.fill_with_document(file)
         self.generate_instances_by_tree(self.rules_tree, docIndex)
 
-    def generate(self, documents: List[dict], by_tree: bool = False) -> dict:
+    def generate(self, documents: List[dict], by_tree: bool = True) -> dict:
         serialisation = {}
         todo = {}
         todo["@todo"] = (

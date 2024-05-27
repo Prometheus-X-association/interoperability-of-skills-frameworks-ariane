@@ -2,6 +2,10 @@
 
 - [Ontology Engine](#ontology-engine)
   - [Follow up](#follow-up)
+  - [interim Rules implementation](#interim-rules-implementation)
+    - [Changes in rules](#changes-in-rules)
+    - [Note on implementation](#note-on-implementation)
+    - [Changes in minimal output](#changes-in-minimal-output)
   - [jobready Rules implementation](#jobready-rules-implementation)
     - [Change in output](#change-in-output)
   - [gamingtest Rules implementation](#gamingtest-rules-implementation)
@@ -24,9 +28,34 @@
 
 Date | description | author
 --- | --- | ---
+27/05/2007 | Add Tree Rules based engine, move gamingtest, Jobready and implement for interim | Y. Le Razer
 13/05/2007 | Add rules implementation for jobready | Y. Le Razer
 13/05/2007 | Add rules implementation for gamingtest | Y. Le Razer
 08/05/2007 | create the present document and the directory ontology_engine | Y. Le Razer
+
+## interim Rules implementation
+
+[exemples](https://gitlab.com/mmorg/bupm/ariane/-/tree/26-create-other-test-transformation-files-and-output/services/data-mapping/__tests__/interim?ref_type=heads)
+
+### Changes in rules
+
+- "relationNameInverse": "soo:profile" to "relationNameInverse": "soo:Profile"
+- "targetProperty": "soo:adress", To "targetProperty": "soo:address",
+- rules-id unicity corection: "id": "mmr:rule-5" instead of  "id": "mmr:rule-4", (already assign)
+- "sourcePath": "certifications.contractType", to "sourcePath": "suggestedExperiences.contractType",
+- move profile section to help comparison
+
+### Note on implementation
+
+"fno:find-or-create-term" raises question in term of implementation. (to be discuss)
+
+### Changes in minimal output
+
+- id changed to match other provider : profile key is tr:__profile-id-1__, experience is tr:__generated-id-1__
+
+
+
+
 
 ## jobready Rules implementation
 
