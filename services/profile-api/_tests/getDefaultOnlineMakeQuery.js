@@ -9,7 +9,7 @@ import { getResolverCallback } from "../src/getResolverCallback.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ontology = readJson(
-  resolve(__dirname, "../../../data/finalOntology/final-ontology.ld.json")
+  resolve(__dirname, "../../../data-model/finalOntology/final-ontology.ld.json")
 );
 
 const loadExtraResolver = async (extraResolverDefs) => {
