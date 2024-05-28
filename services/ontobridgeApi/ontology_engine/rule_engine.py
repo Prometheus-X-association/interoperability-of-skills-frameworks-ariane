@@ -29,15 +29,17 @@ class RuleEngine:
     def check_instance(self, targetClass: str, docIndex: int):
         key = f"{docIndex}-{targetClass}-"
         return any([x for x in self.instances if key.lower() in x.lower()])
-        
+
     def get_last_instance(self, targetClass: str, docIndex: int):
-        if not self.check_instance(targetClass, docIndex): 
+        if not self.check_instance(targetClass, docIndex):
             return None
         key = f"{docIndex}-{targetClass}-"
         keys = [x for x in reversed(self.instances) if key.lower() in x.lower()]
         return self.instances[keys[0]]
 
-    def get_instance(self, targetClass: str, index: int, docIndex: int, prefix : str = '') -> dict:
+    def get_instance(
+        self, targetClass: str, index: int, docIndex: int, prefix: str = ""
+    ) -> dict:
         key = f"{docIndex}-{targetClass}-{index}-{prefix}"
         if not targetClass in self.counters.keys():
             self.counters[targetClass] = 0
