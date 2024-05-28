@@ -21,6 +21,7 @@ class Settings(APISettings):
     redis_port: int
     redis_password: str = None
     redis_db: int
+    embedding_url: str
 
 
 @lru_cache()

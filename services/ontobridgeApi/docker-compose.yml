@@ -3,7 +3,8 @@ services:
   redis:
     image: redis
     ports:
-      - "6380:6380"
+      - "6379:6379"
+
   postgres:
     image: postgres
     ports:
@@ -12,7 +13,6 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: mypassword
       POSTGRES_DB: ontobridge
-      PGDATA: /data/postgres
     volumes:
       - postgres:/data/postgres
 
@@ -22,9 +22,20 @@ services:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: admin
     ports:
-      - "5051:80"
+      - "5050:80"
     depends_on:
       - postgres
+
+  flask-app:
+    build:
+      context: ../embeddings
+      dockerfile: Dockerfile
+    image: embedding:latest
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres
+      - redis
 
 volumes:
   postgres:
