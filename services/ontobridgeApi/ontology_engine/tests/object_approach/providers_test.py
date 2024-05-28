@@ -130,6 +130,7 @@ def test_apply_tree_rules_gamingtest():
     )
     assert ordered(json_result) == ordered(expected_output)
 
+
 def test_apply_tree_rules_gamingtest_all():
     providerName = "gamingtest"
 
@@ -213,13 +214,14 @@ def test_apply_tree_rules_interim():
     print("--------------------------------------")
     write_result(
         json.dumps(serialisation, sort_keys=True, indent=1),
-        f"{providerName}_generated_data",  
+        f"{providerName}_generated_data",
     )
     write_result(
         json.dumps(expected_data, sort_keys=True, indent=1),
         f"{providerName}_expected_data",
     )
     # assert ordered(json_result) == ordered(expected_output)
+
 
 def test_apply_tree_rules_orientoi():
     providerName = "orientoi_1"
@@ -242,14 +244,15 @@ def test_apply_tree_rules_orientoi():
     print("--------------------------------------")
     write_result(
         json.dumps(serialisation, sort_keys=True, indent=1),
-        f"{providerName}_generated_data",  
+        f"{providerName}_generated_data",
     )
     write_result(
         json.dumps(expected_data, sort_keys=True, indent=1),
         f"{providerName}_expected_data",
     )
     # assert ordered(json_result) == ordered(expected_output)
-    
+
+
 def test_apply_tree_rules_pitangoo():
     providerName = "PITANGOO"
 
@@ -271,7 +274,7 @@ def test_apply_tree_rules_pitangoo():
     print("--------------------------------------")
     write_result(
         json.dumps(serialisation, sort_keys=True, indent=1),
-        f"{providerName}_generated_data",  
+        f"{providerName}_generated_data",
     )
     write_result(
         json.dumps(expected_data, sort_keys=True, indent=1),
