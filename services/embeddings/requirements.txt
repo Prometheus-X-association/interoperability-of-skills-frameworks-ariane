@@ -1,11 +1,20 @@
 flask
 <<<<<<< HEAD
+<<<<<<< HEAD
 transformers
 sentence-transformers
 sentencepiece
 torch
 protobuf 
 =======
+=======
+transformers
+>>>>>>> 8044f9d (embedding endpoint)
 sentence-transformers
+sentencepiece
 torch
+<<<<<<< HEAD
 >>>>>>> ebbf741 (basic embedding API)
+=======
+protobuf 
+>>>>>>> 8044f9d (embedding endpoint)

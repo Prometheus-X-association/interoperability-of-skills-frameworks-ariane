@@ -24,6 +24,7 @@ black = "^24.4.2"
 jsonpath-ng = "^1.6.1"
 pytest = "^8.2.0"
 <<<<<<< HEAD
+<<<<<<< HEAD
 requests = "^2.32.2"
 sentence-transformers = "^3.0.0"
 torch = "^2.3.0"
@@ -31,6 +32,9 @@ protobuf = "^5.27.0"
 sentencepiece = "^0.2.0"
 =======
 >>>>>>> 86ca0e6 (implement jobready_2)
+=======
+requests = "^2.32.2"
+>>>>>>> 8044f9d (embedding endpoint)
 
 gql = "^3.5.0"
 inquirer = "^3.2.4"

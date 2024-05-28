@@ -34,4 +34,10 @@ class DataProvider(Base):
 
 
 class EmbeddingPayload(APIModel):
+<<<<<<< HEAD
     sentences: list[str] = Field(..., example=["Bonjour, comment ça va?"], description="List of texts to embed")
+=======
+    sentences: list[str] = Field(
+        ..., example=["Bonjour, comment ça va?"], description="List of texts to embed"
+    )
+>>>>>>> 8044f9d (embedding endpoint)

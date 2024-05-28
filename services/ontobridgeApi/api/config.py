@@ -26,10 +26,14 @@ class Settings(APISettings):
     redis_password: str = None
     redis_db: int
 <<<<<<< HEAD
+<<<<<<< HEAD
     embedding_url: str
     graphql_url: str
 =======
 >>>>>>> 2abe167 (fast api)
+=======
+    embedding_url: str
+>>>>>>> 8044f9d (embedding endpoint)
 
 
 @lru_cache()

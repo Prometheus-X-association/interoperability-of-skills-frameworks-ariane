@@ -54,7 +54,7 @@ class RulesTree:
                 child.children = {}
                 self.children[path] = child
                 child.rules = []
-            if child.name == path_array[len(path_array) -1]:
+            if child.name == path_array[len(path_array) - 1]:
                 child.rules.append(rule)
             path_array.remove(path)
             if not len(path_array) == 0:
