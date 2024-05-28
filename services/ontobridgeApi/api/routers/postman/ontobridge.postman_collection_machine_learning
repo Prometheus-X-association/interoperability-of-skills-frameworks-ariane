@@ -1,0 +1,385 @@
+{
+	"info": {
+		"_postman_id": "bb06b88a-f60d-42a2-9f70-8c1e23948814",
+		"name": "ontobridge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34866692",
+		"_collection_link": "https://gold-astronaut-338888.postman.co/workspace/ontobridgeApi~f62b9b13-a02d-46e4-81f7-0d86859886db/collection/34866692-bb06b88a-f60d-42a2-9f70-8c1e23948814?action=share&source=collection_link&creator=34866692"
+	},
+	"item": [
+		{
+			"name": "ontologies",
+			"item": [
+				{
+					"name": "Ontologies.Get Mapping Rules",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/ontologies/get_mapping_rules?provider_name=gamingtest&document_type=<string>&version=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ontologies",
+								"get_mapping_rules"
+							],
+							"query": [
+								{
+									"key": "provider_name",
+									"value": "gamingtest",
+									"description": "(Required) Name of the data provider"
+								},
+								{
+									"key": "document_type",
+									"value": "<string>",
+									"description": "the document type "
+								},
+								{
+									"key": "version",
+									"value": "<string>",
+									"description": "Version of the rules"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "gamingtest",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/ontologies/get_mapping_rules?provider_name=gamingtest&document_type=<string>&version=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ontologies",
+										"get_mapping_rules"
+									],
+									"query": [
+										{
+											"key": "provider_name",
+											"value": "gamingtest",
+											"description": "(Required) Name of the data provider"
+										},
+										{
+											"key": "document_type",
+											"value": "<string>",
+											"description": "the document type "
+										},
+										{
+											"key": "version",
+											"value": "<string>",
+											"description": "Version of the rules"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						},
+						{
+							"name": "jobready_2",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/ontologies/get_mapping_rules?provider_name=jobready_2&document_type=<string>&version=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ontologies",
+										"get_mapping_rules"
+									],
+									"query": [
+										{
+											"key": "provider_name",
+											"value": "jobready_2",
+											"description": "(Required) Name of the data provider"
+										},
+										{
+											"key": "document_type",
+											"value": "<string>",
+											"description": "the document type "
+										},
+										{
+											"key": "version",
+											"value": "<string>",
+											"description": "Version of the rules"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						}
+					]
+				},
+				{
+					"name": "Ontologies.Get Jsonld From Mapping Rules",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mapping_rules\": {\n        \"context\": {\n            \"todo\": \"define_the_rules_context\"\n        },\n        \"graph\": [\n            {\n                \"id\": \"mmr:rule-0\",\n                \"sourcePath\": \"Experience Name\",\n                \"targetClass\": \"soo:Experience\",\n                \"targetProperty\": \"id\",\n                \"targetFunction\": \"fno:generateId\"\n            }\n        ]\n    },\n    \"document\": [\n        {\n            \"Experience Name\": \"Problem-Solving Puzzle\",\n            \"User ID\": \"zayne.harding@gmail.com\",\n            \"Date\": \"2023-06-28\",\n            \"Associated Soft Skill Block\": \"Problem-Solving\",\n            \"Results\": \"Validated\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ontologies/get_jsonld_from_mapping_rules?version=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ontologies",
+								"get_jsonld_from_mapping_rules"
+							],
+							"query": [
+								{
+									"key": "version",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ontologies.Get Jsonld From Provider",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"document\":[\n        {\n            \"Experience Name\": \"Problem-Solving Puzzle\",\n            \"User ID\": \"zayne.harding@gmail.com\",\n            \"Date\": \"2023-06-28\",\n            \"Associated Soft Skill Block\": \"Problem-Solving\",\n            \"Results\": \"Validated\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ontologies/get_jsonld_from_provider?provider_name=<string>&version=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ontologies",
+								"get_jsonld_from_provider"
+							],
+							"query": [
+								{
+									"key": "provider_name",
+									"value": "<string>",
+									"description": "(Required) Name of the data provider"
+								},
+								{
+									"key": "version",
+									"value": "<string>",
+									"description": "Version of the rules"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "gamingtest",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"document\":[\n        {\n            \"Experience Name\": \"Problem-Solving Puzzle\",\n            \"User ID\": \"zayne.harding@gmail.com\",\n            \"Date\": \"2023-06-28\",\n            \"Associated Soft Skill Block\": \"Problem-Solving\",\n            \"Results\": \"Validated\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ontologies/get_jsonld_from_provider?provider_name=gamingtest&version=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ontologies",
+										"get_jsonld_from_provider"
+									],
+									"query": [
+										{
+											"key": "provider_name",
+											"value": "gamingtest",
+											"description": "(Required) Name of the data provider"
+										},
+										{
+											"key": "version",
+											"value": "<string>",
+											"description": "Version of the rules"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"name": "jobready_2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"document\": [\n        {\n            \"fields\": [\n                {\n                    \"context\": [\n                        \"Engagement\"\n                    ],\n                    \"level\": 0,\n                    \"skill\": {\n                        \"description\": \"Faculté de se diriger vers un collectif déjà constitué, d'y trouver une place et d'en devenir un membre légitime\",\n                        \"name\": \"Intégration au groupe\"\n                    }\n                },\n                {\n                    \"context\": [\n                        \"Engagement\"\n                    ],\n                    \"level\": 0,\n                    \"skill\": {\n                        \"description\": \"S'investir, orienter son action et nourrir une satisfaction et un enthousiasme vis-à-vis d'une organisation, d'un projet collectif ou d'un objectif personnel\",\n                        \"name\": \"Motivation et implication\"\n                    }\n                }\n            ],\n            \"name\": \"Badges\",\n            \"table\": \"badges\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ontologies/get_jsonld_from_provider?provider_name=jobready_2&version=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ontologies",
+										"get_jsonld_from_provider"
+									],
+									"query": [
+										{
+											"key": "provider_name",
+											"value": "jobready_2",
+											"description": "(Required) Name of the data provider"
+										},
+										{
+											"key": "version",
+											"value": "<string>",
+											"description": "Version of the rules"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "machine_learning",
+			"item": [
+				{
+					"name": "get_embedding_vector",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"embedding\": {\r\n    \"sentences\": [\r\n      \"Bonjour, comment ça va?\"\r\n    ]\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/machine_learning/get_embedding_vectors_from_sentences"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}
