@@ -21,6 +21,6 @@ def get_tests(fileName: str, provider: str) -> List[dict]:
     ressourcesDirectory = getRessourceFolder()
     providerDirectory = os.path.join(ressourcesDirectory, provider)
     path_file = os.path.join(providerDirectory, fileName)
-    with open(path_file) as f:
+    with open(path_file, encoding="utf8") as f:
         data = json.load(f)
         return data
