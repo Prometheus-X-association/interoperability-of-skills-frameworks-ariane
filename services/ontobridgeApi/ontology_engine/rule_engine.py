@@ -247,11 +247,15 @@ class RuleEngine:
                         currentInstance["prefLabel"]["@language"] = rule.targetLang
                         continue
 
+                    if rule.targetValue != "":
+                        currentInstance[target] = rule.targetValue                        
+                        continue
+                    
                     currentInstance[target] = match
         pass
 
-    def apply_tree_rules_to_document(self, file: dict, docIndex: int):
-        self.fill_with_document(file)
+    def apply_tree_rules_to_document(self, document: dict, docIndex: int):
+        self.fill_with_document(document)
         self.generate_instances_by_tree(self.rules_tree, docIndex)
 
     def generate(self, documents: List[dict], by_tree: bool = True) -> dict:
