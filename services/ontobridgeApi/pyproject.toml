@@ -80,6 +80,7 @@ dev = "api.main:start_dev"
 
 [tool.black]
 line-length = 128
+<<<<<<< HEAD
 =======
 >>>>>>> dcefa9a (poetry)
 =======
@@ -87,3 +88,5 @@ line-length = 128
 [tool.poetry.scripts]
 dev = "api.main:start_dev"
 >>>>>>> 2abe167 (fast api)
+=======
+>>>>>>> 354c9de (change line length in black 88 -> 128)

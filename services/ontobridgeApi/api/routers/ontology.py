@@ -107,6 +107,7 @@ class ontologies:
             currentRule = Rule(**rule)
             rules.append(currentRule)
         data_provider = self.ontology_engine.generate_mapping_from_rules_provided(document=document, mapping_rules=rules)
+<<<<<<< HEAD
         return data_provider
 
     @router.post("/get_jsonld_from_provider")
@@ -177,6 +178,8 @@ class ontologies:
         data_provider = self.ontology_engine.generate_mapping_from_rules_provided(
             document=document, mapping_rules=rules
         )
+=======
+>>>>>>> 354c9de (change line length in black 88 -> 128)
         return data_provider
 
 <<<<<<< HEAD
@@ -202,9 +205,7 @@ class ontologies:
         if isinstance(document, dict):
             document = [document]
 
-        data_provider = self.ontology_engine.generate_mapping_from_provider_rules(
-            provider_name, document
-        )
+        data_provider = self.ontology_engine.generate_mapping_from_provider_rules(provider_name, document)
         return data_provider
 <<<<<<< HEAD
 >>>>>>> ca602c0 (adding ontology service)
