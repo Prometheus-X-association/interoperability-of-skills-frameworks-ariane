@@ -37,9 +37,7 @@ class RuleEngine:
         keys = [x for x in reversed(self.instances) if key.lower() in x.lower()]
         return self.instances[keys[0]]
 
-    def get_instance(
-        self, targetClass: str, index: int, docIndex: int, prefix: str = ""
-    ) -> dict:
+    def get_instance(self, targetClass: str, index: int, docIndex: int, prefix: str = "") -> dict:
         key = f"{docIndex}-{targetClass}-{index}-{prefix}"
         if not targetClass in self.counters.keys():
             self.counters[targetClass] = 0
@@ -97,15 +95,10 @@ class RuleEngine:
         for index, document in enumerate(documents):
             for rule in self.rules:
                 if rule.sourcePath in document.keys():
-                    currentInstance = self.get_instance(
-                        rule.targetClass, index, docIndex
-                    )
+                    currentInstance = self.get_instance(rule.targetClass, index, docIndex)
                     target = self.get_field_name(rule.targetProperty)
 
-                    if (
-                        rule.targetProperty == "id"
-                        and rule.targetFunction == "fno:generateId"
-                    ) or rule.generateId == True:
+                    if (rule.targetProperty == "id" and rule.targetFunction == "fno:generateId") or rule.generateId == True:
                         currentInstance["id"] = self.generate_id(currentInstance)
                         if rule.targetProperty == "id":
                             continue
@@ -116,20 +109,10 @@ class RuleEngine:
                         currentInstance[target] = date.strftime("%Y-%m-%d")
                         continue
 
-                    if (
-                        rule.relationTo != ""
-                        and rule.relationName != ""
-                        and rule.relationNameInverse != ""
-                    ):
-                        currentInstanceTo = self.get_instance(
-                            rule.relationTo, index, docIndex
-                        )
-                        currentInstanceTo[
-                            self.get_field_name(rule.relationNameInverse).lower()
-                        ] = currentInstance["id"]
-                        currentInstance[
-                            self.get_field_name(rule.relationTo).lower()
-                        ] = currentInstanceTo["id"]
+                    if rule.relationTo != "" and rule.relationName != "" and rule.relationNameInverse != "":
+                        currentInstanceTo = self.get_instance(rule.relationTo, index, docIndex)
+                        currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()] = currentInstance["id"]
+                        currentInstance[self.get_field_name(rule.relationTo).lower()] = currentInstanceTo["id"]
 
                     if rule.targetFunction == "fno:asIs_WithLang":
                         currentInstance[target] = {}
@@ -139,9 +122,7 @@ class RuleEngine:
 
                     if rule.targetFunction == "fno:search-for-mapping-with-source":
                         currentInstance["prefLabel"] = {}
-                        currentInstance["prefLabel"]["@value"] = document[
-                            rule.sourcePath
-                        ]
+                        currentInstance["prefLabel"]["@value"] = document[rule.sourcePath]
                         currentInstance["prefLabel"]["@language"] = rule.targetLang
                         continue
 
