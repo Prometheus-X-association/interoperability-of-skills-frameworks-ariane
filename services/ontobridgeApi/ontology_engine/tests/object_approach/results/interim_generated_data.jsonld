@@ -37,6 +37,7 @@
    "company": "Tech Corp",
    "dateFrom": "2017-06-01",
    "dateTo": "2019-08-01",
+   "experienceStatus": "past",
    "id": "tr:__generated-id-1__",
    "prefLabel": {
     "@language": "en",
@@ -48,6 +49,7 @@
    "company": "Innovate Ltd",
    "dateFrom": "2019-09-01",
    "dateTo": "2023-01-01",
+   "experienceStatus": "past",
    "id": "tr:__generated-id-2__",
    "prefLabel": {
     "@language": "en",
@@ -58,6 +60,7 @@
   {
    "company": "Scrum Alliance",
    "dateFrom": "2018-01-01",
+   "experienceStatus": "certif",
    "id": "tr:__generated-id-3__",
    "prefLabel": {
     "@language": "en",
@@ -68,6 +71,7 @@
   {
    "company": "Amazon",
    "dateFrom": "2021-01-01",
+   "experienceStatus": "certif",
    "id": "tr:__generated-id-4__",
    "prefLabel": {
     "@language": "en",
