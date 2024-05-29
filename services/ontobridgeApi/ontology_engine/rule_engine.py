@@ -9,7 +9,7 @@ from ontology_engine.document_tree import (
 )
 from ontology_engine.rule import Rule
 from ontology_engine.tools import toJsonLD
-from copy import deepcopy
+from copy import copy, deepcopy
 
 
 class RuleEngine:
@@ -17,7 +17,7 @@ class RuleEngine:
         self.rules = rules
         self.counters: dict[str, int] = {}
         self.instances: dict[str, dict] = {}
-        self.rules_tree = DocumentTreeFactory.generate_rules_tree(provider_rules=rules)
+        self.rules_tree : RulesTree = None
 
     def generate_id(self, instance: dict):
         if "Experience" in instance["type"]:

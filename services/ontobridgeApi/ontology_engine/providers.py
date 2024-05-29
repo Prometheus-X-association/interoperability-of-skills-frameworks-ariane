@@ -26,7 +26,7 @@ def get_rules(provider: str) -> List[Rule]:
     if not os.path.exists(gamingtestRuleTest):
         return []
 
-    with open(gamingtestRuleTest) as f:
+    with open(gamingtestRuleTest, encoding="utf8") as f:
         data = json.load(f)
         rules: List[Rule] = []
         for rule in data["graph"]:
