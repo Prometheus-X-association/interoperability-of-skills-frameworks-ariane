@@ -35,9 +35,13 @@ class DataProvider(Base):
 
 class EmbeddingPayload(APIModel):
 <<<<<<< HEAD
+<<<<<<< HEAD
     sentences: list[str] = Field(..., example=["Bonjour, comment ça va?"], description="List of texts to embed")
 =======
     sentences: list[str] = Field(
         ..., example=["Bonjour, comment ça va?"], description="List of texts to embed"
     )
 >>>>>>> 8044f9d (embedding endpoint)
+=======
+    sentences: list[str] = Field(..., example=["Bonjour, comment ça va?"], description="List of texts to embed")
+>>>>>>> 354c9de (change line length in black 88 -> 128)

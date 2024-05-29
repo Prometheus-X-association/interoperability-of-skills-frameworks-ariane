@@ -23,6 +23,7 @@ SessionLocal: Session = sessionmaker(autocommit=False, autoflush=False, bind=eng
 
 async_engine = create_async_engine(get_database_url("postgresql+asyncpg"))
 <<<<<<< HEAD
+<<<<<<< HEAD
 async_session: Session = sessionmaker(async_engine, expire_on_commit=False, class_=AsyncSession)
 
 redisCLient = redis.Redis(host=settings.redis_host, port=settings.redis_port, db=settings.redis_db)
@@ -35,6 +36,11 @@ redisCLient = redis.Redis(
     host=settings.redis_host, port=settings.redis_port, db=settings.redis_db
 )
 >>>>>>> 2abe167 (fast api)
+=======
+async_session: Session = sessionmaker(async_engine, expire_on_commit=False, class_=AsyncSession)
+
+redisCLient = redis.Redis(host=settings.redis_host, port=settings.redis_port, db=settings.redis_db)
+>>>>>>> 354c9de (change line length in black 88 -> 128)
 
 Base = declarative_base()
 

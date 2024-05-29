@@ -106,6 +106,7 @@ class embeddings:
     async def get_knn_from_elasticsearch_for_embedding(
         self,
 <<<<<<< HEAD
+<<<<<<< HEAD
         embedding: EmbeddingPayload = Body(..., description="the text to match", embed=True),
     ) -> dict:  # instantiate redis_client by dependency injection
         embedding_vector = embeddings_service.get_vector_from_flask(embedding.sentences)
@@ -113,6 +114,9 @@ class embeddings:
         embedding: EmbeddingPayload = Body(
             ..., description="the text to match", embed=True
         ),
+=======
+        embedding: EmbeddingPayload = Body(..., description="the text to match", embed=True),
+>>>>>>> 354c9de (change line length in black 88 -> 128)
     ) -> dict:  # instantiate redis_client by dependency injection
 <<<<<<< HEAD
         service = EmbeddingService()
@@ -128,12 +132,16 @@ class embeddings:
     async def get_knn_from_elasticsearch_for_vector(
         self,
 <<<<<<< HEAD
+<<<<<<< HEAD
         embedding_vector: dict = Body(..., description="the vector to match", embed=True),
 =======
         embedding_vector: dict = Body(
             ..., description="the vector to match", embed=True
         ),
 >>>>>>> 8044f9d (embedding endpoint)
+=======
+        embedding_vector: dict = Body(..., description="the vector to match", embed=True),
+>>>>>>> 354c9de (change line length in black 88 -> 128)
     ) -> dict:  # instantiate redis_client by dependency injection
         # knn match=graphql(embedding_vector)
         return "knn match"
