@@ -43,6 +43,13 @@
         "id": "mmr:rule-4",
         "sourcePath": "pastExperience.company",
         "targetClass": "soo:Experience",
+        "targetProperty": "soo:experienceStatus",
+        "targetValue": "past"
+      },
+      {
+        "id": "mmr:rule-4",
+        "sourcePath": "pastExperience.company",
+        "targetClass": "soo:Experience",
         "targetProperty": "soo:company", 
         "targetFunction": "fno:asIs"
       },
@@ -60,7 +67,6 @@
         "targetProperty": "soo:dateTo",
         "targetFunction": "fno:date-to-xsd"
       },
-
       {
         "id": "mmr:rule-7",
         "sourcePath": "certifications.name",
@@ -69,6 +75,13 @@
         "generateId": "true",
         "targetLang": "en",
         "targetFunction": "fno:asIs_WithLang"
+      },
+      {
+        "id": "mmr:rule-4",
+        "sourcePath": "certifications.name",
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:experienceStatus",
+        "targetValue": "certif"
       },
       {
         "id": "mmr:rule-8",
