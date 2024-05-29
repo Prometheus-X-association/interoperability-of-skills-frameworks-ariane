@@ -26,9 +26,7 @@ class embeddings:
     @router.post("/get_embedding_vectors_from_sentences")
     async def get_embedding_vector_from_sentences(
         self,
-        embedding: EmbeddingPayload = Body(
-            ..., description="the text to transform", embed=True
-        ),
+        embedding: EmbeddingPayload = Body(..., description="the text to transform", embed=True),
     ) -> dict:  # instantiate redis_client by dependency injection
         service = EmbeddingService()
         result = service.get_vector(embedding.sentences)
@@ -37,9 +35,7 @@ class embeddings:
     @router.post("/get_knn_from_elasticsearch_for_embedding")
     async def get_knn_from_elasticsearch_for_embedding(
         self,
-        embedding: EmbeddingPayload = Body(
-            ..., description="the text to match", embed=True
-        ),
+        embedding: EmbeddingPayload = Body(..., description="the text to match", embed=True),
     ) -> dict:  # instantiate redis_client by dependency injection
         service = EmbeddingService()
         embedding_vector = service.get_vector(embedding.sentences)
@@ -49,9 +45,7 @@ class embeddings:
     @router.post("/get_knn_from_elasticsearch_for_vector")
     async def get_knn_from_elasticsearch_for_vector(
         self,
-        embedding_vector: dict = Body(
-            ..., description="the vector to match", embed=True
-        ),
+        embedding_vector: dict = Body(..., description="the vector to match", embed=True),
     ) -> dict:  # instantiate redis_client by dependency injection
         # knn match=graphql(embedding_vector)
         return "knn match"

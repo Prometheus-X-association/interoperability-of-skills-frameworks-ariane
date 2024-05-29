@@ -18,13 +18,9 @@ engine = create_engine(get_database_url("postgresql"), pool_size=10, max_overflo
 SessionLocal: Session = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 async_engine = create_async_engine(get_database_url("postgresql+asyncpg"))
-async_session: Session = sessionmaker(
-    async_engine, expire_on_commit=False, class_=AsyncSession
-)
+async_session: Session = sessionmaker(async_engine, expire_on_commit=False, class_=AsyncSession)
 
-redisCLient = redis.Redis(
-    host=settings.redis_host, port=settings.redis_port, db=settings.redis_db
-)
+redisCLient = redis.Redis(host=settings.redis_host, port=settings.redis_port, db=settings.redis_db)
 
 Base = declarative_base()
 

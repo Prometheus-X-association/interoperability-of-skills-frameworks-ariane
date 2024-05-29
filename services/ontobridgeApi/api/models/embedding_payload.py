@@ -34,6 +34,4 @@ class DataProvider(Base):
 
 
 class EmbeddingPayload(APIModel):
-    sentences: list[str] = Field(
-        ..., example=["Bonjour, comment ça va?"], description="List of texts to embed"
-    )
+    sentences: list[str] = Field(..., example=["Bonjour, comment ça va?"], description="List of texts to embed")
