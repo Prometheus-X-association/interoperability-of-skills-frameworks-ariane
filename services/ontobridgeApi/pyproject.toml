@@ -35,3 +35,6 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 dev = "api.main:start_dev"
+
+[tool.black]
+line-length = 128
