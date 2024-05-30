@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 from fastapi import Body, HTTPException
 =======
 from fastapi import Body
 >>>>>>> 8044f9d (embedding endpoint)
+=======
+from fastapi import Body, HTTPException
+>>>>>>> e23b4cb (machine learning local service)
 from fastapi_utils.cbv import cbv
 from fastapi_utils.inferring_router import InferringRouter
 from api.models.data_provider import *
@@ -16,19 +20,26 @@ embeddings_service = EmbeddingService()
 =======
 
 from api.services.ontology_service.ontology_service import OntologyService
-from api.services.machine_learning_engine.embeddings_service import EmbeddingService
+from api.services.machine_learning_service.embeddings_service import EmbeddingService
 
 router = InferringRouter()
+<<<<<<< HEAD
 >>>>>>> 8044f9d (embedding endpoint)
+=======
+embeddings_service = EmbeddingService()
+>>>>>>> e23b4cb (machine learning local service)
 
 
 @cbv(router)
 class embeddings:
     def __init__(self) -> None:
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         self.ontology_engine = OntologyService()
 >>>>>>> 8044f9d (embedding endpoint)
+=======
+>>>>>>> e23b4cb (machine learning local service)
         pass
 
     """
@@ -38,14 +49,24 @@ class embeddings:
     """
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     @router.post("/get_embedding_vectors_from_sentences_from_flask")
     async def get_embedding_vector_from_sentences_from_flask(
         self,
         embedding: EmbeddingPayload = Body(..., description="the text to transform", embed=True),
+=======
+    @router.post("/get_embedding_vectors_from_sentences_from_flask")
+    async def get_embedding_vector_from_sentences_from_flask(
+        self,
+        embedding: EmbeddingPayload = Body(
+            ..., description="the text to transform", embed=True
+        ),
+>>>>>>> e23b4cb (machine learning local service)
     ) -> dict:  # instantiate redis_client by dependency injection
         result = embeddings_service.get_vector_from_flask(embedding.sentences)
         return result
 
+<<<<<<< HEAD
     @router.post("/get_embedding_vectors_from_sentences")
     async def get_embedding_vector_from_sentences(
         self,
@@ -58,6 +79,8 @@ class embeddings:
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
 =======
+=======
+>>>>>>> e23b4cb (machine learning local service)
     @router.post("/get_embedding_vectors_from_sentences")
     async def get_embedding_vector_from_sentences(
         self,
@@ -65,10 +88,19 @@ class embeddings:
             ..., description="the text to transform", embed=True
         ),
     ) -> dict:  # instantiate redis_client by dependency injection
+<<<<<<< HEAD
         service = EmbeddingService()
         result = service.get_vector(embedding.sentences)
         return result
 >>>>>>> 8044f9d (embedding endpoint)
+=======
+        # Check if the request was successful
+        try:
+            result = embeddings_service.get_vector(embedding.sentences)
+            return result
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=str(e))
+>>>>>>> e23b4cb (machine learning local service)
 
     @router.post("/get_knn_from_elasticsearch_for_embedding")
     async def get_knn_from_elasticsearch_for_embedding(
@@ -82,9 +114,13 @@ class embeddings:
             ..., description="the text to match", embed=True
         ),
     ) -> dict:  # instantiate redis_client by dependency injection
+<<<<<<< HEAD
         service = EmbeddingService()
         embedding_vector = service.get_vector(embedding.sentences)
 >>>>>>> 8044f9d (embedding endpoint)
+=======
+        embedding_vector = embeddings_service.get_vector_from_flask(embedding.sentences)
+>>>>>>> e23b4cb (machine learning local service)
         # knn match=graphql(embedding_vector)
         return "knn match"
 
