@@ -55,9 +55,7 @@ class ontologies:
         for rule in mapping_rules["graph"]:
             currentRule = Rule(**rule)
             rules.append(currentRule)
-        data_provider = self.ontology_engine.generate_mapping_from_rules_provided(
-            document=document, mapping_rules=rules
-        )
+        data_provider = self.ontology_engine.generate_mapping_from_rules_provided(document=document, mapping_rules=rules)
         return data_provider
 
     @router.post("/get_jsonld_from_provider")
@@ -70,9 +68,7 @@ class ontologies:
         if isinstance(document, dict):
             document = [document]
 
-        data_provider = self.ontology_engine.generate_mapping_from_provider_rules(
-            provider_name, document
-        )
+        data_provider = self.ontology_engine.generate_mapping_from_provider_rules(provider_name, document)
         return data_provider
 
     @router.get("/helloworld")

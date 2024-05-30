@@ -9,7 +9,7 @@ from ontology_engine.document_tree import (
 )
 from ontology_engine.rule import Rule
 from ontology_engine.tools import toJsonLD
-from copy import deepcopy
+from copy import copy, deepcopy
 
 
 class RuleEngine:
@@ -17,7 +17,7 @@ class RuleEngine:
         self.rules = rules
         self.counters: dict[str, int] = {}
         self.instances: dict[str, dict] = {}
-        self.rules_tree = DocumentTreeFactory.generate_rules_tree(provider_rules=rules)
+        self.rules_tree : RulesTree = None
 
     def generate_id(self, instance: dict):
         if "Experience" in instance["type"]:
@@ -37,9 +37,7 @@ class RuleEngine:
         keys = [x for x in reversed(self.instances) if key.lower() in x.lower()]
         return self.instances[keys[0]]
 
-    def get_instance(
-        self, targetClass: str, index: int, docIndex: int, prefix: str = ""
-    ) -> dict:
+    def get_instance(self, targetClass: str, index: int, docIndex: int, prefix: str = "") -> dict:
         key = f"{docIndex}-{targetClass}-{index}-{prefix}"
         if not targetClass in self.counters.keys():
             self.counters[targetClass] = 0
@@ -97,15 +95,10 @@ class RuleEngine:
         for index, document in enumerate(documents):
             for rule in self.rules:
                 if rule.sourcePath in document.keys():
-                    currentInstance = self.get_instance(
-                        rule.targetClass, index, docIndex
-                    )
+                    currentInstance = self.get_instance(rule.targetClass, index, docIndex)
                     target = self.get_field_name(rule.targetProperty)
 
-                    if (
-                        rule.targetProperty == "id"
-                        and rule.targetFunction == "fno:generateId"
-                    ) or rule.generateId == True:
+                    if (rule.targetProperty == "id" and rule.targetFunction == "fno:generateId") or rule.generateId == True:
                         currentInstance["id"] = self.generate_id(currentInstance)
                         if rule.targetProperty == "id":
                             continue
@@ -116,20 +109,10 @@ class RuleEngine:
                         currentInstance[target] = date.strftime("%Y-%m-%d")
                         continue
 
-                    if (
-                        rule.relationTo != ""
-                        and rule.relationName != ""
-                        and rule.relationNameInverse != ""
-                    ):
-                        currentInstanceTo = self.get_instance(
-                            rule.relationTo, index, docIndex
-                        )
-                        currentInstanceTo[
-                            self.get_field_name(rule.relationNameInverse).lower()
-                        ] = currentInstance["id"]
-                        currentInstance[
-                            self.get_field_name(rule.relationTo).lower()
-                        ] = currentInstanceTo["id"]
+                    if rule.relationTo != "" and rule.relationName != "" and rule.relationNameInverse != "":
+                        currentInstanceTo = self.get_instance(rule.relationTo, index, docIndex)
+                        currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()] = currentInstance["id"]
+                        currentInstance[self.get_field_name(rule.relationTo).lower()] = currentInstanceTo["id"]
 
                     if rule.targetFunction == "fno:asIs_WithLang":
                         currentInstance[target] = {}
@@ -139,9 +122,7 @@ class RuleEngine:
 
                     if rule.targetFunction == "fno:search-for-mapping-with-source":
                         currentInstance["prefLabel"] = {}
-                        currentInstance["prefLabel"]["@value"] = document[
-                            rule.sourcePath
-                        ]
+                        currentInstance["prefLabel"]["@value"] = document[rule.sourcePath]
                         currentInstance["prefLabel"]["@language"] = rule.targetLang
                         continue
 
@@ -166,9 +147,7 @@ class RuleEngine:
                 for current_match in current_matches:
                     rules_tree.matches.append(current_match.value)
 
-    def generate_instances_by_tree(
-        self, filed_rules_tree: RulesTree, docIndex: int
-    ) -> None:
+    def generate_instances_by_tree(self, filed_rules_tree: RulesTree, docIndex: int) -> None:
         rules_trees = browse_rules_tree(filed_rules_tree)
         lag_rules = []
         for rule_tree in rules_trees:
@@ -182,86 +161,46 @@ class RuleEngine:
                 prefix = rule_tree.parent.name
             for rule in rule_tree.rules:
                 for index, match in enumerate(rule_tree.matches):
-                    currentInstance = self.get_instance(
-                        rule.targetClass, index, docIndex, prefix
-                    )
+                    currentInstance = self.get_instance(rule.targetClass, index, docIndex, prefix)
 
                     target = self.get_field_name(rule.targetProperty)
-                    if (
-                        rule.targetProperty == "id"
-                        and rule.targetFunction == "fno:generateId"
-                    ) or rule.generateId == True:
+                    if (rule.targetProperty == "id" and rule.targetFunction == "fno:generateId") or rule.generateId == True:
                         currentInstance["id"] = self.generate_id(currentInstance)
                         if rule.targetProperty == "id":
                             continue
 
                     for lag_rule in lag_rules:
-                        currentInstanceFrom = self.get_last_instance(
-                            lag_rule.relationNameInverse, docIndex
-                        )
+                        currentInstanceFrom = self.get_last_instance(lag_rule.relationNameInverse, docIndex)
                         if (
                             currentInstanceFrom["type"] != currentInstance["type"]
                             and currentInstance["type"] == lag_rule.relationTo
                         ):
                             if not currentInstanceFrom == None:
-                                if (
-                                    self.get_field_name(lag_rule.relationTo).lower()
-                                    in currentInstanceFrom
-                                ):
+                                if self.get_field_name(lag_rule.relationTo).lower() in currentInstanceFrom:
                                     if isinstance(
-                                        currentInstanceFrom[
-                                            self.get_field_name(
-                                                lag_rule.relationTo
-                                            ).lower()
-                                        ],
+                                        currentInstanceFrom[self.get_field_name(lag_rule.relationTo).lower()],
                                         str,
                                     ):
-                                        prevRef = str(
-                                            currentInstanceFrom[
-                                                self.get_field_name(
-                                                    lag_rule.relationTo
-                                                ).lower()
-                                            ]
-                                        )
-                                        currentInstanceFrom[
-                                            self.get_field_name(
-                                                lag_rule.relationTo
-                                            ).lower()
-                                        ] = []
-                                        currentInstanceFrom[
-                                            self.get_field_name(
-                                                lag_rule.relationTo
-                                            ).lower()
-                                        ].append(prevRef)
+                                        prevRef = str(currentInstanceFrom[self.get_field_name(lag_rule.relationTo).lower()])
+                                        currentInstanceFrom[self.get_field_name(lag_rule.relationTo).lower()] = []
+                                        currentInstanceFrom[self.get_field_name(lag_rule.relationTo).lower()].append(prevRef)
                                     if (
                                         not currentInstance["id"]
-                                        in currentInstanceFrom[
-                                            self.get_field_name(
-                                                lag_rule.relationTo
-                                            ).lower()
-                                        ]
+                                        in currentInstanceFrom[self.get_field_name(lag_rule.relationTo).lower()]
                                     ):
-                                        currentInstanceFrom[
-                                            self.get_field_name(
-                                                lag_rule.relationTo
-                                            ).lower()
-                                        ].append(currentInstance["id"])
+                                        currentInstanceFrom[self.get_field_name(lag_rule.relationTo).lower()].append(
+                                            currentInstance["id"]
+                                        )
                                 else:
-                                    currentInstanceFrom[
-                                        self.get_field_name(lag_rule.relationTo).lower()
-                                    ] = currentInstance["id"]
+                                    currentInstanceFrom[self.get_field_name(lag_rule.relationTo).lower()] = currentInstance[
+                                        "id"
+                                    ]
 
                     if rule.targetFunction == "fno:find-or-create-term":
                         currentInstance["id"] = self.generate_id(currentInstance)
-                        currentInstance["polarityScale"] = (
-                            "term:interim/polarity/scale/1"
-                        )
-                        currentInstance["polarityValue"] = (
-                            "term:interim/polarity/value/1"
-                        )
-                        current_term_Instance = self.get_instance(
-                            "soo:Term", 0, 0, prefix
-                        )
+                        currentInstance["polarityScale"] = "term:interim/polarity/scale/1"
+                        currentInstance["polarityValue"] = "term:interim/polarity/value/1"
+                        current_term_Instance = self.get_instance("soo:Term", 0, 0, prefix)
                         current_term_Instance["id"] = "term:interim/polarity/value/1"
                         current_term_Instance["notation"] = match
                         current_term_Instance["prefLabel"] = {}
@@ -279,48 +218,19 @@ class RuleEngine:
                         currentInstance[target] = date.strftime("%Y-%m-%d")
                         continue
 
-                    if (
-                        rule.relationTo != ""
-                        and rule.relationName != ""
-                        and rule.relationNameInverse != ""
-                    ):
-                        currentInstanceTo = self.get_last_instance(
-                            rule.relationTo, docIndex
-                        )
+                    if rule.relationTo != "" and rule.relationName != "" and rule.relationNameInverse != "":
+                        currentInstanceTo = self.get_last_instance(rule.relationTo, docIndex)
                         if not currentInstanceTo == None:
-                            if (
-                                self.get_field_name(rule.relationNameInverse).lower()
-                                in currentInstanceTo
-                            ):
-                                prevRef = currentInstanceTo[
-                                    self.get_field_name(
-                                        rule.relationNameInverse
-                                    ).lower()
-                                ]
-                                currentInstanceTo[
-                                    self.get_field_name(
-                                        rule.relationNameInverse
-                                    ).lower()
-                                ] = []
-                                currentInstanceTo[
-                                    self.get_field_name(
-                                        rule.relationNameInverse
-                                    ).lower()
-                                ].append(prevRef)
-                                currentInstanceTo[
-                                    self.get_field_name(
-                                        rule.relationNameInverse
-                                    ).lower()
-                                ].append(currentInstance["id"])
+                            if self.get_field_name(rule.relationNameInverse).lower() in currentInstanceTo:
+                                prevRef = currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()]
+                                currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()] = []
+                                currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()].append(prevRef)
+                                currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()].append(
+                                    currentInstance["id"]
+                                )
                             else:
-                                currentInstanceTo[
-                                    self.get_field_name(
-                                        rule.relationNameInverse
-                                    ).lower()
-                                ] = currentInstance["id"]
-                            currentInstance[
-                                self.get_field_name(rule.relationTo).lower()
-                            ] = currentInstanceTo["id"]
+                                currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()] = currentInstance["id"]
+                            currentInstance[self.get_field_name(rule.relationTo).lower()] = currentInstanceTo["id"]
                         else:
                             lag_rules.append(rule)
                             pass
@@ -337,14 +247,22 @@ class RuleEngine:
                         currentInstance["prefLabel"]["@language"] = rule.targetLang
                         continue
 
+                    if rule.targetValue != "":
+                        currentInstance[target] = rule.targetValue                        
+                        continue
+                    
                     currentInstance[target] = match
         pass
 
-    def apply_tree_rules_to_document(self, file: dict, docIndex: int):
-        self.fill_with_document(file)
+    def apply_tree_rules_to_document(self, document: dict, docIndex: int):
+        
+        self.fill_with_document(document)
         self.generate_instances_by_tree(self.rules_tree, docIndex)
 
     def generate(self, documents: List[dict], by_tree: bool = True) -> dict:
+        rules = deepcopy(self.rules)
+        self.rules_tree = DocumentTreeFactory.generate_rules_tree(provider_rules=rules)
+        
         serialisation = {}
         todo = {}
         todo["@todo"] = (
