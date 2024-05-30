@@ -22,6 +22,10 @@ black = "^24.4.2"
 jsonpath-ng = "^1.6.1"
 pytest = "^8.2.0"
 requests = "^2.32.2"
+sentence-transformers = "^3.0.0"
+torch = "^2.3.0"
+protobuf = "^5.27.0"
+sentencepiece = "^0.2.0"
 
 [tool.poetry.dev-dependencies]
 
