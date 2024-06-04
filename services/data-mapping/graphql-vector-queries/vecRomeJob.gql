@@ -6,10 +6,14 @@ query VECRomeJob($queryVector: [Float]) {
         type
         prefLabel {
           value
+<<<<<<< HEAD
         } 
         _met {
           score
         } 
+=======
+        }  
+>>>>>>> eb33230 (feat: add first set of vector queries)
       }
     }
   }

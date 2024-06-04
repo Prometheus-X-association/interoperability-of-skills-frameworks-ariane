@@ -6,9 +6,12 @@ query VECEscoJob($queryVector: [Float]) {
       prefLabel {
         value
       }
+<<<<<<< HEAD
       _met {
         score
       }
+=======
+>>>>>>> eb33230 (feat: add first set of vector queries)
     }
   }
 }
