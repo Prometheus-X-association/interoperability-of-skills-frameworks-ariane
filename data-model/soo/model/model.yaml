@@ -22,6 +22,7 @@ triple:
     soo:sourceId: xsd:string
     soo:polarity: soo:Polarity
     soo:skill: soo:Skill
+    soo:sourceDataValue: soo:SourceDataJson
 
   soo:Skill:                                    # Describe the skills attached to an experience
     soo:experience: soo:Experience              # The experience that provided or is likely to provide the skill
@@ -49,9 +50,12 @@ triple:
     
   soo:Description:
     soo:texte: rdf:langstring
-    soo:url:  xsd.string
+    soo:url:  xsd:string
     soo:keywords: rdf:langstring
     soo:imagePath:  xsd:string
+
+  soo:SourceDataJson:
+    soo:value: rdf:JSON                         # see https://w3c.github.io/rdf-concepts/spec/#section-json
     
 
 
