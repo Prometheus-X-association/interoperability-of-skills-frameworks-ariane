@@ -1,0 +1,11 @@
+query VECEscoJob($queryVector: [Float]) {
+  esco(queryVector: $queryVector) {
+    Occupation {
+      id
+      type
+      prefLabel {
+        value
+      }
+    }
+  }
+}
