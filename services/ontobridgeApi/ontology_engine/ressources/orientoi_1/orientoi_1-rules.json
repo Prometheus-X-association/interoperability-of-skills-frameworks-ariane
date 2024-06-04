@@ -59,7 +59,8 @@
       "targetFunction": "fno:get-polarity-value",
       "relationTo": "soo:Experience",
       "relationName": "soo:experience",
-      "relationNameInverse": "soo:polarity"
+      "relationNameInverse": "soo:polarity",
+      "generateId": "true"
     },
 
     {
