@@ -25,6 +25,7 @@ triple:
     soo:polarity: soo:Polarity
     soo:skill: soo:Skill
     soo:sourceDataValue: soo:SourceDataJson
+<<<<<<< HEAD
 
   soo:Skill:                                    # Describe the skills attached to an experience
     soo:experience: soo:Experience              # The experience that provided or is likely to provide the skill
@@ -49,6 +50,8 @@ triple:
     soo:sourceId: xsd:string
     soo:polarity: soo:Polarity
     soo:skill: soo:Skill
+=======
+>>>>>>> 86b4e88 (feat: add sourceDataValue property to experience)
 
   soo:Skill:                                    # Describe the skills attached to an experience
     soo:experience: soo:Experience              # The experience that provided or is likely to provide the skill
@@ -89,6 +92,7 @@ triple:
   soo:Description:
     soo:texte: rdf:langstring
     soo:url:  xsd:string
+<<<<<<< HEAD
     soo:keywords: rdf:langstring
     soo:imagePath:  xsd:string
 
@@ -109,8 +113,13 @@ triple:
 >>>>>>> 0031ae8 (fix : typo)
     soo:texte: rdf:langstring
     soo:url:  xsd.string
+=======
+>>>>>>> 86b4e88 (feat: add sourceDataValue property to experience)
     soo:keywords: rdf:langstring
     soo:imagePath:  xsd:string
+
+  soo:SourceDataJson:
+    soo:value: rdf:JSON                         # see https://w3c.github.io/rdf-concepts/spec/#section-json
     
 >>>>>>> 67ad011 (ajout de l'objet Description dans la soo)
 
