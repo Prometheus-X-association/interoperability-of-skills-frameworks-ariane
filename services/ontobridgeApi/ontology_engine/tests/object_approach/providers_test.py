@@ -171,7 +171,7 @@ def test_apply_tree_rules_interim():
 
     json_result = json.dumps(serialisation, sort_keys=True)
 
-    expected_data = get_tests(f"{providerName}-minimal.output.jsonld", providerName)
+    expected_data = get_tests(f"{providerName}-minimal.structure.output.jsonld", providerName)
     expected_output = json.dumps(expected_data, sort_keys=True)
     print("--------------------------------------")
     print(ordered(json_result))
