@@ -1602,8 +1602,12 @@
 =======
 		},
 		{
+<<<<<<< HEAD
 			"name": "QraphQL - Vector Search",
 >>>>>>> 08a7945 (add qraph ql sample to postman)
+=======
+			"name": "QraphQL - VECRomeJob",
+>>>>>>> 0263d9d (add all calls)
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -1630,6 +1634,9 @@
 			},
 			"response": []
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0263d9d (add all calls)
 		},
 		{
 			"name": "QraphQL - VECRomeSkill",
@@ -1714,6 +1721,7 @@
 				}
 			},
 			"response": []
+<<<<<<< HEAD
 =======
 			"name": "Ontologies.Get Jsonld From Provider",
 			"request": {
@@ -1878,6 +1886,8 @@
 >>>>>>> 0ce6da5 (change name of postman calls)
 =======
 >>>>>>> 08a7945 (add qraph ql sample to postman)
+=======
+>>>>>>> 0263d9d (add all calls)
 		}
 	],
 	"variable": [
