@@ -59,6 +59,21 @@
         "targetProperty": "soo:dateTo",
         "targetFunction": "fno:date-to-xsd"
       },
+      {
+        "id": "mmr:rule-51",
+        "sourcePath": "pastExperience.role",
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:experienceType",
+        "targetValue": "term:experience/type/professional"
+      },
+      {
+        "id": "mmr:rule-52",
+        "sourcePath": "pastExperience.role",
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:experienceStatus",
+        "targetValue": "term:experience/status/past"
+      },
+
 
       {
         "id": "mmr:rule-51",
@@ -100,6 +115,20 @@
         "targetFunction": "fno:date-to-xsd",
         "targetFunctionParam": "fno:year-only"
       },
+      {
+        "id": "mmr:rule-81",
+        "sourcePath": "certifications.contractType",
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:contractType",
+        "targetFunction": "fno:asIs"
+      },
+      {
+        "id": "mmr:rule-82",
+        "sourcePath": "openToInterim",
+        "targetClass": "soo:Polarity",
+        "targetFunction": "fno:find-or-create-term"
+      },
+
 
 
       {
