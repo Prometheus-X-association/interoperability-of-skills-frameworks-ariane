@@ -246,6 +246,9 @@
                   }
                 ]
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6242c56 (feat: add inokufu training parsing)
               },
               {
                 "periode": {
@@ -260,8 +263,11 @@
                     }
                   }
                 ]
+<<<<<<< HEAD
 =======
 >>>>>>> d82714d (add some samples)
+=======
+>>>>>>> 6242c56 (feat: add inokufu training parsing)
               }
             ],
             "nombre-heures-centre": 450,
