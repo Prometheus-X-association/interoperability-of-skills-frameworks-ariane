@@ -10,7 +10,7 @@
       "email": "alice.smith@example.com",
       "address": "address",
       "experience": ["tr:__xp-1__", "tr:__xp-2__", "tr:__xp-3__","tr:__xp-4__","tr:__xp-5__","tr:__xp-6__"],
-      "polarity": "tr:__polarity-1__"
+      "polarity": {"@value": "0", "@language":"en"}
     },
     {
       "id": "tr:__xp-1__",
@@ -72,20 +72,7 @@
       "contractType": "Contract",
       "experienceType": "term:experience/type/professional",
       "experienceStatus": "term:experience/type/suggested"
-    },
-
-
-    {
-      "id": "tr:__polarity-1__",
-      "type": "soo:Polarity",
-      "polarityScale": "term:interim/polarity/scale/1",
-      "polarityValue": "term:interim/polarity/value/1"
-    },
-    {
-      "id": "term:interim/polarity/value/1", 
-      "prefLabel": {"@value": "0", "@language": "en"},
-      "notation": 0
     }
-
+    
   ]
 }
