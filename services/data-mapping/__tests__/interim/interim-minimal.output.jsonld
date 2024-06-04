@@ -16,11 +16,16 @@
       "email": "alice.smith@example.com",
       "address": "address",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "experience": ["tr:__xp-1__", "tr:__xp-2__", "tr:__xp-3__","tr:__xp-4__","tr:__xp-5__","tr:__xp-6__"],
       "polarity": "tr:__polarity-1__"
 =======
       "experience": ["tr:__xp-1__", "tr:__xp-2__", "tr:__xp-3__","tr:__xp-4__","tr:__xp-5__","tr:__xp-6__"]
 >>>>>>> 153238d (fix: update interim mapping and outpout)
+=======
+      "experience": ["tr:__xp-1__", "tr:__xp-2__", "tr:__xp-3__","tr:__xp-4__","tr:__xp-5__","tr:__xp-6__"],
+      "polarity": "tr:__polarity-1__"
+>>>>>>> b88cefe (fix: update interim output & rules. Create a .structure. file)
     },
     {
       "id": "tr:__xp-1__",
@@ -29,12 +34,18 @@
       "company": "Tech Corp",
       "dateFrom": "2017-06-01",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "dateTo": "2019-08-01",
       "experienceType": "term:experience/type/professional",
       "experienceStatus": "term:experience/type/past"
 =======
       "dateTo": "2019-08-01"
 >>>>>>> 153238d (fix: update interim mapping and outpout)
+=======
+      "dateTo": "2019-08-01",
+      "experienceType": "term:experience/type/professional",
+      "experienceStatus": "term:experience/type/past"
+>>>>>>> b88cefe (fix: update interim output & rules. Create a .structure. file)
     },
     {
       "id": "tr:__xp-2__",
@@ -43,12 +54,18 @@
       "company": "Innovate Ltd",
       "dateFrom": "2019-09-01",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "dateTo": "2023-01-01",
       "experienceType": "term:experience/type/professional",
       "experienceStatus": "term:experience/type/past"
 =======
       "dateTo": "2023-01-01"
 >>>>>>> 153238d (fix: update interim mapping and outpout)
+=======
+      "dateTo": "2023-01-01",
+      "experienceType": "term:experience/type/professional",
+      "experienceStatus": "term:experience/type/past"
+>>>>>>> b88cefe (fix: update interim output & rules. Create a .structure. file)
     },
 
     {
@@ -76,12 +93,18 @@
       "dateFrom": "2023-03-01",
       "location": "Boston, USA",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "contractType": "Full-Time",
       "experienceType": "term:experience/type/professional",
       "experienceStatus": "term:experience/type/suggested"
 =======
       "contractType": "Full-Time"
 >>>>>>> 153238d (fix: update interim mapping and outpout)
+=======
+      "contractType": "Full-Time",
+      "experienceType": "term:experience/type/professional",
+      "experienceStatus": "term:experience/type/suggested"
+>>>>>>> b88cefe (fix: update interim output & rules. Create a .structure. file)
     },
     {
       "id": "tr:__xp-6__",
@@ -92,12 +115,18 @@
       "dateFrom": "2024-02-01",
       "location": "Seattle, USA",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "contractType": "Contract",
       "experienceType": "term:experience/type/professional",
       "experienceStatus": "term:experience/type/suggested"
 =======
       "contractType": "Contract"
 >>>>>>> 153238d (fix: update interim mapping and outpout)
+=======
+      "contractType": "Contract",
+      "experienceType": "term:experience/type/professional",
+      "experienceStatus": "term:experience/type/suggested"
+>>>>>>> b88cefe (fix: update interim output & rules. Create a .structure. file)
     },
 
 

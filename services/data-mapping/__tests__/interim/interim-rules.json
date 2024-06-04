@@ -328,6 +328,7 @@
       {
         "id": "mmr:rule-15",
         "sourcePath": "jobCards.id",
+<<<<<<< HEAD
         "targetClass": "soo:Experience",
         "targetProperty": "soo:experienceType",
         "targetValue": "term:experience/type/professional"
@@ -376,16 +377,23 @@
       {
         "id": "mmr:rule-14",
         "sourcePath": "certifications.contractType",
+=======
+>>>>>>> b88cefe (fix: update interim output & rules. Create a .structure. file)
         "targetClass": "soo:Experience",
-        "targetProperty": "soo:contractType",
-        "targetFunction": "fno:asIs"
+        "targetProperty": "soo:experienceType",
+        "targetValue": "term:experience/type/professional"
       },
       {
-        "id": "mmr:rule-14",
-        "sourcePath": "openToInterim",
-        "targetClass": "soo:Polarity",
-        "targetFunction": "fno:find-or-create-term"
+        "id": "mmr:rule-16",
+        "sourcePath": "pastExperience.role",
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:experienceStatus",
+        "targetValue": "term:experience/status/suggested"
       }
+<<<<<<< HEAD
 >>>>>>> a2dfae7 (First draft of rules)
+=======
+
+>>>>>>> b88cefe (fix: update interim output & rules. Create a .structure. file)
     ]
 }
