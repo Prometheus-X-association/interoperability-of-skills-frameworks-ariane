@@ -140,20 +140,29 @@
     {
       "id": "term:orientoi/polarity/value/2", 
 <<<<<<< HEAD
+<<<<<<< HEAD
       "type": "skos:Concept",
       "prefLabel": {"@value": "ça me correspond", "@language": "fr"},
 =======
       "prefLabel": {"@value": "ça me correspond", "@language": "en"},
 >>>>>>> 13b4f7e (feat: first version of orientoi)
+=======
+      "type": "skos:Concept",
+      "prefLabel": {"@value": "ça me correspond", "@language": "fr"},
+>>>>>>> 73303d2 (fix: add structure output for orientoi)
       "notation": "ça me correspond"
     },
 
     {
       "id": "term:orientoi/family/222",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "type": "skos:Concept",
 =======
 >>>>>>> 13b4f7e (feat: first version of orientoi)
+=======
+      "type": "skos:Concept",
+>>>>>>> 73303d2 (fix: add structure output for orientoi)
       "prefLabel": {"@value": "Secteur d''activité" , "@language": "fr"},
       "memberOf": "term:orientoi/collection"
     }
