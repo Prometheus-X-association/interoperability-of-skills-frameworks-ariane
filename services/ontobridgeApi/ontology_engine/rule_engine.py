@@ -170,10 +170,11 @@ class RuleEngine:
                             continue
 
                     for lag_rule in lag_rules:
-                        currentInstanceFrom = self.get_last_instance(lag_rule.relationNameInverse, docIndex)
+                        currentInstanceFrom = self.get_last_instance(lag_rule.relationNameInverse, docIndex, index)
                         if (
-                            currentInstanceFrom["type"] != currentInstance["type"]
-                            and currentInstance["type"] == lag_rule.relationTo
+                            currentInstanceFrom != None and 
+                            currentInstanceFrom["type"] != currentInstance["type"] and 
+                            currentInstance["type"] == lag_rule.relationTo
                         ):
                             if not currentInstanceFrom == None:
                                 if self.get_field_name(lag_rule.relationTo).lower() in currentInstanceFrom:
