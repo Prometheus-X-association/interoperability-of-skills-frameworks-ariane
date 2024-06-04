@@ -26,14 +26,14 @@ class RuleEngine:
             template = instance["type"].replace("soo:", "").lower()
             return f"tr:__{template}-id-{instance['__counter__']}__"
 
-    def check_instance(self, targetClass: str, docIndex: int):
-        key = f"{docIndex}-{targetClass}-"
+    def check_instance(self, targetClass: str, docIndex: int, index: int):
+        key = f"{docIndex}-{targetClass}-{index}"
         return any([x for x in self.instances if key.lower() in x.lower()])
 
-    def get_last_instance(self, targetClass: str, docIndex: int):
-        if not self.check_instance(targetClass, docIndex):
+    def get_last_instance(self, targetClass: str, docIndex: int, index: int):
+        if not self.check_instance(targetClass, docIndex, index):
             return None
-        key = f"{docIndex}-{targetClass}-"
+        key = f"{docIndex}-{targetClass}-{index}"
         keys = [x for x in reversed(self.instances) if key.lower() in x.lower()]
         return self.instances[keys[0]]
 
