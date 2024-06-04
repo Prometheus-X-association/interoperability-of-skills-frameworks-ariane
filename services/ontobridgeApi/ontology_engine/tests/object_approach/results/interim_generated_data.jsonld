@@ -8,11 +8,8 @@
    "email": "alice.smith@example.com",
    "experience": [
     "tr:__generated-id-1__",
-    "tr:__generated-id-2__",
     "tr:__generated-id-3__",
-    "tr:__generated-id-4__",
-    "tr:__generated-id-5__",
-    "tr:__generated-id-6__"
+    "tr:__generated-id-5__"
    ],
    "id": "tr:__profile-id-1__",
    "name": "Alice Smith",
