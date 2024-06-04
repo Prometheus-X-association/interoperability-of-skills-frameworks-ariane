@@ -1,6 +1,7 @@
 {
   "@context": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@todo": "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
   },
   
@@ -15,7 +16,11 @@
 =======
     "@TODO": "define the result context"
 
+=======
+    "@todo": "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
+>>>>>>> 8252ab9 (fix: update contexts to all)
   },
+  
   "graph": [
     {
       "id": "tr:__experience-1__",

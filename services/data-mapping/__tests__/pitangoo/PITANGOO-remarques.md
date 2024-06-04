@@ -1,6 +1,9 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8252ab9 (fix: update contexts to all)
 * Question: faut-il faire un mapping des valeurs des skills ? 
 
 # Remarques générales :
