@@ -1,11 +1,12 @@
 {
   "@context": {
-    "@TODO": "define the result context"
-
+    "@todo": "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
   },
+  
   "graph": [
     {
       "id": "tr:__experience-1__",
+      "type": "soo:Experience",
       "experienceType": "term:experience/type/personalityTest",
       "experienceStatus": "term:experience/type/past",
       "prefLabel": {"@value": "Mes centres d intérêt", "@language": "fr"},
@@ -15,6 +16,7 @@
     
     {
       "id": "tr:__skill-1__",
+      "type": "soo:Skill",
       "category": "term:skills/category/riasec",
       "experience": "tr:__experience-1__",
       "prefLabel": {"@value": "ARTISTIQUE" , "@language": "fr"},
@@ -23,6 +25,7 @@
     },
     {
       "id": "term:PITANGOO/skill/level/0.6", 
+      "type": "skos:Concept",
       "prefLabel": {"@value": "0.6", "@language": "en"},
       "notation": 0.6
     },
@@ -30,6 +33,7 @@
 
     {
       "id": "tr:__skill-2__",
+      "type": "soo:Skill",
       "category": "term:skills/category/riasec",
       "experience": "tr:__experience-1__",
       "prefLabel": {"@value": "RÉALISTE" , "@language": "fr"},
@@ -38,6 +42,7 @@
     },
     {
       "id": "term:PITANGOO/skill/level/0.8", 
+      "type": "skos:Concept",
       "prefLabel": {"@value": "0.8", "@language": "en"},
       "notation": 0.8
     },
@@ -45,6 +50,7 @@
 
     {
       "id": "tr:__skill-3__",
+      "type": "soo:Skill",
       "category": "term:skills/category/riasec",
       "experience": "tr:__experience-1__",
       "prefLabel": {"@value": "ENTREPRENEUR" , "@language": "fr"},
