@@ -29,7 +29,6 @@
         "targetFunction": "fno:asIs"
       },
 
-
       {
         "id": "mmr:rule-3",
         "generateId": "true",
@@ -47,7 +46,7 @@
         "targetFunction": "fno:asIs"
       },
       {
-        "id": "mmr:rule-4",
+        "id": "mmr:rule-41",
         "sourcePath": "pastExperience.dateStart",
         "targetClass": "soo:Experience",
         "targetProperty": "soo:dateFrom",
@@ -60,6 +59,21 @@
         "targetProperty": "soo:dateTo",
         "targetFunction": "fno:date-to-xsd"
       },
+      {
+        "id": "mmr:rule-51",
+        "sourcePath": "pastExperience.role",
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:experienceType",
+        "targetValue": "term:experience/type/professional"
+      },
+      {
+        "id": "mmr:rule-52",
+        "sourcePath": "pastExperience.role",
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:experienceStatus",
+        "targetValue": "term:experience/status/past"
+      },
+
 
       {
         "id": "mmr:rule-6",
@@ -85,6 +99,20 @@
         "targetFunction": "fno:date-to-xsd",
         "targetFunctionParam": "fno:year-only"
       },
+      {
+        "id": "mmr:rule-81",
+        "sourcePath": "certifications.contractType",
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:contractType",
+        "targetFunction": "fno:asIs"
+      },
+      {
+        "id": "mmr:rule-82",
+        "sourcePath": "openToInterim",
+        "targetClass": "soo:Polarity",
+        "targetFunction": "fno:find-or-create-term"
+      },
+
 
 
       {
@@ -126,17 +154,19 @@
         "targetFunction": "fno:asIs"
       },
       {
-        "id": "mmr:rule-14",
-        "sourcePath": "certifications.contractType",
+        "id": "mmr:rule-15",
+        "sourcePath": "jobCards.id",
         "targetClass": "soo:Experience",
-        "targetProperty": "soo:contractType",
-        "targetFunction": "fno:asIs"
+        "targetProperty": "soo:experienceType",
+        "targetValue": "term:experience/type/professional"
       },
       {
-        "id": "mmr:rule-14",
-        "sourcePath": "openToInterim",
-        "targetClass": "soo:Polarity",
-        "targetFunction": "fno:find-or-create-term"
+        "id": "mmr:rule-16",
+        "sourcePath": "pastExperience.role",
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:experienceStatus",
+        "targetValue": "term:experience/status/suggested"
       }
+
     ]
 }
