@@ -771,6 +771,7 @@
 				}
 			]
 <<<<<<< HEAD
+<<<<<<< HEAD
 		},
 		{
 			"name": "Ontologies.Get Jsonld From Mapping Rules",
@@ -1598,6 +1599,11 @@
 		{
 <<<<<<< HEAD
 			"name": "QraphQL - VECRomeJob",
+=======
+		},
+		{
+			"name": "QraphQL - Vector Search",
+>>>>>>> 08a7945 (add qraph ql sample to postman)
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -1623,6 +1629,7 @@
 				}
 			},
 			"response": []
+<<<<<<< HEAD
 		},
 		{
 			"name": "QraphQL - VECRomeSkill",
@@ -1869,6 +1876,8 @@
 >>>>>>> cc375fe (add ontobridge postman)
 =======
 >>>>>>> 0ce6da5 (change name of postman calls)
+=======
+>>>>>>> 08a7945 (add qraph ql sample to postman)
 		}
 	],
 	"variable": [
