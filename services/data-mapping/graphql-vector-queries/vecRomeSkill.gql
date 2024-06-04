@@ -1,0 +1,16 @@
+query VECRomeSkill($queryVector: [Float]) {
+  rome {
+    skills(queryVector: $queryVector) {
+      Skill_rome {
+        id
+        type
+        prefLabel {
+          value
+        }
+        _met {
+          score
+        }
+      }
+    }
+  }
+}
