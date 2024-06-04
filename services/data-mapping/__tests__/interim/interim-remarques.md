@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b88cefe (fix: update interim output & rules. Create a .structure. file)
 - Question sur le fichier structure: il n'y a pour l'instant que la valeur `openToInterim` qui donne lieu à une transformation sous forme de référentiel. Mais c'est une valeur numérique et rattachée au profil et non à une expérience. Comment traite-t-on ce cas: 
     - au niveau du fichier de structure ?
     - au niveau du rattachement de la propriété à l'expérience ? (voir question ci-dessous)
@@ -32,6 +35,7 @@ example de règles:
 - Ne proposons nous pas de matching pour les Expériences issues des valeurs de l'interim ? 
 
 
+<<<<<<< HEAD
 
 - sur la propriété `.openToInterim` & `soo:Polarity`: 
     - 0/ la polarité est un bon moyen de modéliser cette information ?
@@ -82,12 +86,9 @@ example de règles:
 <<<<<<< HEAD
 >>>>>>> a2dfae7 (First draft of rules)
 =======
+=======
+>>>>>>> b88cefe (fix: update interim output & rules. Create a .structure. file)
 
-- propriétées ajoutées à soo:Expérience: 
-    - soo:company: xsd:string
-    - soo:location: xsd:string 
-    - soo:contractType: xsd:string ==> doit-on ajouter ça ? Sous forme de string ou de référentiel ? 
-    
 - sur la propriété `.openToInterim` & `soo:Polarity`: 
     - 0/ la polarité est un bon moyen de modéliser cette information ?
     - 1/ la polarité n'est pas liée à une experience, mais à un profil. est-ce un problème ? 
