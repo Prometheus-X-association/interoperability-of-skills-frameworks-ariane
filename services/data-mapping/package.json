@@ -1,8 +1,11 @@
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 104fada (feat: add script example for find-or-create-term function)
+=======
+>>>>>>> 794feca (feat: add script example for find-or-create-term function)
   "name": "profile-api",
   "version": "1.0.0",
   "description": "example of queries",
@@ -23,6 +26,7 @@
     ]
   },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   "name": "data-mapping",
   "version": "1.0.0",
@@ -38,10 +42,13 @@
 >>>>>>> a895c4f (moving file from ontology folder to a  one and this mapping feature is more a service or a package that a data-model)
 =======
 >>>>>>> 104fada (feat: add script example for find-or-create-term function)
+=======
+>>>>>>> 794feca (feat: add script example for find-or-create-term function)
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     "graphql-request": "^7.0.1",
@@ -59,11 +66,16 @@
     "graphql-request": "^7.0.1",
     "inquirer": "^9.2.23"
 >>>>>>> 104fada (feat: add script example for find-or-create-term function)
+=======
+    "graphql-request": "^7.0.1",
+    "inquirer": "^9.2.23"
+>>>>>>> 794feca (feat: add script example for find-or-create-term function)
   },
   "engineStrict": true,
   "engines": {
     "node": ">=18.0.0"
   }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 }
@@ -73,3 +85,6 @@
 =======
 }
 >>>>>>> 104fada (feat: add script example for find-or-create-term function)
+=======
+}
+>>>>>>> 794feca (feat: add script example for find-or-create-term function)
