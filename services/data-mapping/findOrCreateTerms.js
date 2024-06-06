@@ -60,6 +60,10 @@ if(await iValidate('Do you want to remove the Concept ?')){
   if(await iValidate('Do you want to delete the Collection ?')){
     const deleted = await deleteCollection(collectionId)
     console.log('Collection deleted:', deleted)
+<<<<<<< HEAD
+=======
+    throw new Error('restart here')
+>>>>>>> 104fada (feat: add script example for find-or-create-term function)
   }
 }
 
