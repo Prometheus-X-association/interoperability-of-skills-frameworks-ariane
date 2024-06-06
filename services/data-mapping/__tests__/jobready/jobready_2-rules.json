@@ -8,6 +8,7 @@
       "sourcePath": "fields.skill.name",
       "targetClass": "soo:Skill",
       "targetFunction": "fno:search-for-mapping-with-source", 
+      "targetLang": "fr",
       "generateId": "true"
     },
     

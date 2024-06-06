@@ -9,7 +9,7 @@ triple:
 
   soo:Experience:                               # Describe an experience whatever type : professional, educational, etc.
     skos:prefLabel: rdf:langstring              # The preferred label of the experience
-    soo:description: rdf:langstring             # A short paragraph describing the experience
+    soo:description: soo:Description             # A short paragraph describing the experience
     soo:experienceType: skos:Concept            # The type of experience : vocational, professional, personal, test de personnalité, etc.
     soo:experienceStatus: skos:Concept          # The experience status : past, ongoing, suggested
     soo:dateFrom: xsd:date                      # The start date if a time period or the date of occurence
@@ -18,10 +18,15 @@ triple:
     soo:company: xsd:string
     soo:location: xsd:string 
     soo:contractType: xsd:string
+    soo:family: soo:Family
+    soo:sourceId: xsd:string
+    soo:polarity: soo:Polarity
+    soo:skill: soo:Skill
+    soo:sourceDataValue: soo:SourceDataJson
 
   soo:Skill:                                    # Describe the skills attached to an experience
     soo:experience: soo:Experience              # The experience that provided or is likely to provide the skill
-    soo:category: skos:Concept               # The skill group as defined in skos collections, e.g. hard skills/soft skills
+    soo:category: skos:Concept                  # The skill group as defined in skos collections, e.g. hard skills/soft skills
     soo:skillLevelScale: skos:OrderedCollection
     soo:skillLevelValue: skos:Concept           # The skill level as defined as a value on a scale
 
@@ -38,6 +43,20 @@ triple:
     soo:experience: soo:Experience              # The experience(s) associated with the profile
     soo:address: xsd:string                     # The postal address of the profile
 
+  soo:Family:
+    skos:prefLabel: rdf:langstring
+    skos:memberOf: skos:Collection
+    soo:provider: xsd:string
+    
+  soo:Description:
+    soo:texte: rdf:langstring
+    soo:url:  xsd:string
+    soo:keywords: rdf:langstring
+    soo:imagePath:  xsd:string
+
+  soo:SourceDataJson:
+    soo:value: rdf:JSON                         # see https://w3c.github.io/rdf-concepts/spec/#section-json
+    
 
 
 

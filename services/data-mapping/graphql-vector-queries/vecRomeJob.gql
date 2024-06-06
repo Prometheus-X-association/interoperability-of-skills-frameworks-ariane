@@ -1,0 +1,13 @@
+query VECRomeJob($queryVector: [Float]) {
+  rome(queryVector: $queryVector) {
+    employment {
+      Position {
+        id
+        type
+        prefLabel {
+          value
+        }  
+      }
+    }
+  }
+}
