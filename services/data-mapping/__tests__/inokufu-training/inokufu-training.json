@@ -245,6 +245,20 @@
                     }
                   }
                 ]
+              },
+              {
+                "periode": {
+                  "debut": "20231009",
+                  "fin": "20240531"
+                },
+                "cycle": [
+                  {
+                    "type-cycle": {
+                      "value": "0",
+                      "info": "Formation initiale"
+                    }
+                  }
+                ]
               }
             ],
             "nombre-heures-centre": 450,

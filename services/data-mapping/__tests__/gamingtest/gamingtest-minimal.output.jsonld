@@ -1,38 +1,8 @@
 {
   "@context": {
-    "id": "@id",
-    "graph": {
-      "@id": "@graph",
-      "@container": "@set"
-    },
-    "type": {
-      "@id": "@type",
-      "@container": "@set"
-    },
-    "tr": "https://competencies.be/mindmatcher/translator",
-    "mms": "https://competencies.be/mindmatcher/schema",
-    "date": {
-      "@id": "mms:date",
-      "@type": "xsd:dateTime"
-    },
-    "keywords": {
-      "@id": "mms:keywords",
-      "@type": "xsd:string"
-    },
-    "picture": {
-      "@id": "mms:picture",
-      "@type": "xsd:string"
-    },
-    "title": {
-      "@id": "mms:title",
-      "@type": "xsd:string"
-    },
-    "url": {
-      "@id": "mms:url",
-      "@type": "xsd:string"
-    }
-
+    "@todo": "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
   },
+  
   "graph": [
     {
       "id": "tr:__generated-id-1__",

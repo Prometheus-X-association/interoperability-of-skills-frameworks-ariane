@@ -29,7 +29,7 @@
     {
       "id": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869",
       "type": "esco:Skill",
-      "prefLabel": {"@value": "solve problems", "@language": "en"}
+      "prefLabel": {"@value": "Intégration", "@language": "fr"}
     },
     {
       "id":"tr:sugg/1",
@@ -54,7 +54,7 @@
     {
       "id": "esco:xxxxxx",
       "type": "esco:Skill",
-      "prefLabel": {"@value": "motivation", "@language": "en"}
+      "prefLabel": {"@value": "motivation", "@language": "fr"}
     },
     {
       "id":"tr:sugg/3",

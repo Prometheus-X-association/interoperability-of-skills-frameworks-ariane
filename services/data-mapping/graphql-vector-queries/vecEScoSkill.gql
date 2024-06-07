@@ -1,0 +1,11 @@
+query VECEscoSkill($queryVector: [Float]) {
+  esco(queryVector: $queryVector) {
+    Skill {
+      id
+      type
+      prefLabel {
+        value
+      }
+    }
+  }
+}
