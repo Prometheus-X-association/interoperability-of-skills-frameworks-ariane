@@ -194,7 +194,7 @@ def test_apply_tree_rules_interim():
     minimal_output = get_tests(f"{providerName}-minimal.json", providerName)
 
     ruleEngine = RuleEngine(rules)
-    
+
     serialisation = ruleEngine.generate(minimal_output, by_tree=True)
 
     json_result = json.dumps(serialisation, sort_keys=True)
@@ -228,9 +228,6 @@ def test_apply_tree_rules_orientoi():
     serialisation = ruleEngine.generate(minimal_output, by_tree=True)
 
     json_result = json.dumps(serialisation, sort_keys=True)
-
-
-
 
     expected_data = get_tests(f"{providerName}-minimal.output.jsonld", providerName)
     expected_output = json.dumps(expected_data, sort_keys=True)

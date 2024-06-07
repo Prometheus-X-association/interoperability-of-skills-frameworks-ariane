@@ -17,7 +17,7 @@ class RuleEngine:
         self.rules = rules
         self.counters: dict[str, int] = {}
         self.instances: dict[str, dict] = {}
-        self.rules_tree : RulesTree = None
+        self.rules_tree: RulesTree = None
 
     def generate_id(self, instance: dict):
         if "Experience" in instance["type"]:
