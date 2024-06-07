@@ -19,6 +19,7 @@ def get_app():
     app = FastAPI(**settings.fastapi_kwargs)
     app.include_router(routers.ontology.router, prefix="/ontologies")
     app.include_router(routers.machine_learning.router, prefix="/machine_learning")
+    app.include_router(routers.term_matching.router, prefix="/term_matchings")
     return app
 
 
