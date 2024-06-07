@@ -12,8 +12,6 @@ class Embeddings:
         self.model.to(self.device)
 
     def embed_texts(self, sentences: list[list[str]]) -> list[list[str]]:
-        embeddings = self.model.encode(
-            sentences, convert_to_tensor=True, device=self.device
-        )
+        embeddings = self.model.encode(sentences, convert_to_tensor=True, device=self.device)
         embeddings_vector = embeddings.cpu().numpy().tolist()
         return embeddings_vector

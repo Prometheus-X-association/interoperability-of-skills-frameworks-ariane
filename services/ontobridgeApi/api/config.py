@@ -22,6 +22,7 @@ class Settings(APISettings):
     redis_password: str = None
     redis_db: int
     embedding_url: str
+    graphql_url: str
 
 
 @lru_cache()
