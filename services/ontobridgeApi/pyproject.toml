@@ -40,6 +40,7 @@ requests = "^2.32.2"
 >>>>>>> e23b4cb (machine learning local service)
 
 gql = "^3.5.0"
+<<<<<<< HEAD
 inquirer = "^3.2.4"
 requests-toolbelt = "^1.0.0"
 beautifulsoup4 = "^4.12.3"
@@ -67,6 +68,8 @@ pydantic = "<2.0.0"
 black = "^24.4.2"
 
 >>>>>>> dcefa9a (poetry)
+=======
+>>>>>>> 81c1026 (term matching service)
 [tool.poetry.dev-dependencies]
 
 [build-system]

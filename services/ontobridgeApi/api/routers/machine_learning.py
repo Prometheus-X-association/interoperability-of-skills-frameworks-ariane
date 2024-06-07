@@ -13,6 +13,7 @@ from api.models.data_provider import *
 from api.models.embedding_payload import EmbeddingPayload
 from fastapi.param_functions import Query
 <<<<<<< HEAD
+<<<<<<< HEAD
 from api.services.machine_learning_service.embedding_service import EmbeddingService
 
 router = InferringRouter()
@@ -20,6 +21,8 @@ embeddings_service = EmbeddingService()
 =======
 
 from api.services.ontology_service.ontology_service import OntologyService
+=======
+>>>>>>> 81c1026 (term matching service)
 from api.services.machine_learning_service.embeddings_service import EmbeddingService
 
 router = InferringRouter()
@@ -58,10 +61,14 @@ class embeddings:
     @router.post("/get_embedding_vectors_from_sentences_from_flask")
     async def get_embedding_vector_from_sentences_from_flask(
         self,
+<<<<<<< HEAD
         embedding: EmbeddingPayload = Body(
             ..., description="the text to transform", embed=True
         ),
 >>>>>>> e23b4cb (machine learning local service)
+=======
+        embedding: EmbeddingPayload = Body(..., description="the text to transform", embed=True),
+>>>>>>> 81c1026 (term matching service)
     ) -> dict:  # instantiate redis_client by dependency injection
         result = embeddings_service.get_vector_from_flask(embedding.sentences)
         return result

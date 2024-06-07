@@ -29,11 +29,14 @@ class Settings(APISettings):
 <<<<<<< HEAD
     embedding_url: str
     graphql_url: str
+<<<<<<< HEAD
 =======
 >>>>>>> 2abe167 (fast api)
 =======
     embedding_url: str
 >>>>>>> 8044f9d (embedding endpoint)
+=======
+>>>>>>> 81c1026 (term matching service)
 
 
 @lru_cache()

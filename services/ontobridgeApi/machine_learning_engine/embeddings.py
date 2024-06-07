@@ -31,11 +31,15 @@ class Embeddings:
 
     def embed_texts(self, sentences: list[list[str]]) -> list[list[str]]:
 <<<<<<< HEAD
+<<<<<<< HEAD
         embeddings = self.model.encode(sentences, convert_to_tensor=True, device=self.device)
 =======
         embeddings = self.model.encode(
             sentences, convert_to_tensor=True, device=self.device
         )
 >>>>>>> e23b4cb (machine learning local service)
+=======
+        embeddings = self.model.encode(sentences, convert_to_tensor=True, device=self.device)
+>>>>>>> 81c1026 (term matching service)
         embeddings_vector = embeddings.cpu().numpy().tolist()
         return embeddings_vector
