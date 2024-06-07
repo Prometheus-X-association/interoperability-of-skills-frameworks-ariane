@@ -6,6 +6,9 @@ query VECEscoSkill($queryVector: [Float]) {
       prefLabel {
         value
       }
+      _met {
+        score
+      }
     }
   }
 }
