@@ -4,37 +4,34 @@
  },
  "graph": [
   {
-   "address": "456 Oak St, Anytown, USA",
+   "adress": "456 Oak St, Anytown, USA",
    "email": "alice.smith@example.com",
    "experience": [
     "tr:__generated-id-1__",
+    "tr:__generated-id-2__",
     "tr:__generated-id-3__",
-    "tr:__generated-id-5__"
+    "tr:__generated-id-4__",
+    "tr:__generated-id-5__",
+    "tr:__generated-id-6__"
    ],
    "id": "tr:__profile-id-1__",
    "name": "Alice Smith",
    "type": "soo:Profile"
   },
   {
-   "id": "tr:__polarity-id-1__",
-   "polarityScale": "term:interim/polarity/scale/1",
-   "polarityValue": "term:interim/polarity/value/1",
-   "type": "soo:Polarity"
-  },
-  {
-   "id": "term:interim/polarity/value/1",
-   "notation": 0,
-   "prefLabel": {
+   "Polarity": {
     "@language": "en",
     "@value": "0"
    },
-   "type": "soo:Term"
+   "id": "tr:__polarity-id-1__",
+   "type": "soo:Polarity"
   },
   {
    "company": "Tech Corp",
    "dateFrom": "2017-06-01",
    "dateTo": "2019-08-01",
-   "experienceStatus": "past",
+   "experienceStatus": "term:experience/status/suggested",
+   "experienceType": "term:experience/type/professional",
    "id": "tr:__generated-id-1__",
    "prefLabel": {
     "@language": "en",
@@ -46,7 +43,8 @@
    "company": "Innovate Ltd",
    "dateFrom": "2019-09-01",
    "dateTo": "2023-01-01",
-   "experienceStatus": "past",
+   "experienceStatus": "term:experience/status/suggested",
+   "experienceType": "term:experience/type/professional",
    "id": "tr:__generated-id-2__",
    "prefLabel": {
     "@language": "en",
@@ -57,7 +55,6 @@
   {
    "company": "Scrum Alliance",
    "dateFrom": "2018-01-01",
-   "experienceStatus": "certif",
    "id": "tr:__generated-id-3__",
    "prefLabel": {
     "@language": "en",
@@ -68,7 +65,6 @@
   {
    "company": "Amazon",
    "dateFrom": "2021-01-01",
-   "experienceStatus": "certif",
    "id": "tr:__generated-id-4__",
    "prefLabel": {
     "@language": "en",
@@ -78,7 +74,6 @@
   },
   {
    "company": "Tech Innovators",
-   "contractType": "Full-Time",
    "dateFrom": "2023-03-01",
    "description": {
     "@language": "en",
@@ -94,7 +89,6 @@
   },
   {
    "company": "Creative Solutions",
-   "contractType": "Contract",
    "dateFrom": "2024-02-01",
    "description": {
     "@language": "en",

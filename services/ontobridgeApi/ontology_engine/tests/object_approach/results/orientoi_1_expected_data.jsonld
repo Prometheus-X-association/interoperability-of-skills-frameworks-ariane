@@ -1,6 +1,6 @@
 {
  "@context": {
-  "@TODO": "define the result context"
+  "@todo": "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
  },
  "graph": [
   {
@@ -121,9 +121,10 @@
    "id": "term:orientoi/polarity/value/2",
    "notation": "\u00e7a me correspond",
    "prefLabel": {
-    "@language": "en",
+    "@language": "fr",
     "@value": "\u00e7a me correspond"
-   }
+   },
+   "type": "skos:Concept"
   },
   {
    "id": "term:orientoi/family/222",
@@ -131,7 +132,8 @@
    "prefLabel": {
     "@language": "fr",
     "@value": "Secteur d''activit\u00e9"
-   }
+   },
+   "type": "skos:Concept"
   }
  ]
 }

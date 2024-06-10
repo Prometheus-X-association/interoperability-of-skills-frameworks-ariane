@@ -1,47 +1,47 @@
 {
   "@context": {
-    "@todo": "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
+    
   },
   "graph": [
     {
-      "id": "tr:__profile-id-1__",
+      "id": "tr:__generated-id-1__",
       "type": "soo:Profile",
       "name": "Alice Smith",
       "email": "alice.smith@example.com",
-      "address": "456 Oak St, Anytown, USA",
-      "experience": ["tr:__generated-id-1__", "tr:__generated-id-2__", "tr:__generated-id-3__","tr:__generated-id-4__","tr:__generated-id-5__","tr:__generated-id-6__"],
+      "address": "address",
+      "experience": ["tr:__xp-1__", "tr:__xp-2__", "tr:__xp-3__","tr:__xp-4__","tr:__xp-5__","tr:__xp-6__"],
       "polarity": {"@value": "0", "@language":"en"}
     },
     {
-      "id": "tr:__generated-id-1__",
+      "id": "tr:__xp-1__",
       "type": "soo:Experience",
       "prefLabel": {"@value": "Software Engineer", "@language":"en"},
       "company": "Tech Corp",
       "dateFrom": "2017-06-01",
       "dateTo": "2019-08-01",
       "experienceType": "term:experience/type/professional",
-      "experienceStatus": "term:experience/status/past"
+      "experienceStatus": "term:experience/type/past"
     },
     {
-      "id": "tr:__generated-id-2__",
+      "id": "tr:__xp-2__",
       "type": "soo:Experience",
       "prefLabel": {"@value": "Lead Engineer", "@language":"en"},
       "company": "Innovate Ltd",
       "dateFrom": "2019-09-01",
       "dateTo": "2023-01-01",
       "experienceType": "term:experience/type/professional",
-      "experienceStatus": "term:experience/status/past"
+      "experienceStatus": "term:experience/type/past"
     },
 
     {
-      "id": "tr:__generated-id-3__",
+      "id": "tr:__xp-3__",
       "type": "soo:Experience",
       "prefLabel": {"@value": "Certified Scrum Master", "@language":"en"},
       "company": "Scrum Alliance",
       "dateFrom": "2018-01-01"
     },
     {
-      "id": "tr:__generated-id-4__",
+      "id": "tr:__xp-4__",
       "type": "soo:Experience",
       "prefLabel": {"@value": "AWS Certified Solutions Architect", "@language":"en"},
       "company": "Amazon",
@@ -50,7 +50,7 @@
 
 
     {
-      "id": "tr:__generated-id-5__",
+      "id": "tr:__xp-5__",
       "type": "soo:Experience",
       "prefLabel": {"@value": "Engineering Manager", "@language":"en"},
       "description": {"@value": "Managing a team of software engineers", "@language":"en"},
@@ -59,10 +59,10 @@
       "location": "Boston, USA",
       "contractType": "Full-Time",
       "experienceType": "term:experience/type/professional",
-      "experienceStatus": "term:experience/status/suggested"
+      "experienceStatus": "term:experience/type/suggested"
     },
     {
-      "id": "tr:__generated-id-6__",
+      "id": "tr:__xp-6__",
       "type": "soo:Experience",
       "prefLabel": {"@value": "Product Owner", "@language":"en"},
       "description": {"@value": "Overseeing product development", "@language":"en"},
@@ -71,7 +71,7 @@
       "location": "Seattle, USA",
       "contractType": "Contract",
       "experienceType": "term:experience/type/professional",
-      "experienceStatus": "term:experience/status/suggested"
+      "experienceStatus": "term:experience/type/suggested"
     }
     
   ]
