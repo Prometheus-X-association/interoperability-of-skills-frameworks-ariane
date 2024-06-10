@@ -27,13 +27,19 @@ class RuleEngine:
             return f"tr:__{template}-id-{instance['__counter__']}__"
 
     def check_instance(self, targetClass: str, docIndex: int, index: int):
-        key = f"{docIndex}-{targetClass}-{index}"
+        if index == -1:
+            key = f"{docIndex}-{targetClass}"
+        else: 
+            key = f"{docIndex}-{targetClass}-{index}"
         return any([x for x in self.instances if key.lower() in x.lower()])
 
     def get_last_instance(self, targetClass: str, docIndex: int, index: int):
         if not self.check_instance(targetClass, docIndex, index):
             return None
-        key = f"{docIndex}-{targetClass}-{index}"
+        if index == -1:
+            key = f"{docIndex}-{targetClass}"
+        else: 
+            key = f"{docIndex}-{targetClass}-{index}"
         keys = [x for x in reversed(self.instances) if key.lower() in x.lower()]
         return self.instances[keys[0]]
 
@@ -170,7 +176,7 @@ class RuleEngine:
                             continue
 
                     for lag_rule in lag_rules:
-                        currentInstanceFrom = self.get_last_instance(lag_rule.relationNameInverse, docIndex, index)
+                        currentInstanceFrom = self.get_last_instance(lag_rule.relationNameInverse, docIndex, -1)
                         if (
                             currentInstanceFrom != None and 
                             currentInstanceFrom["type"] != currentInstance["type"] and 
@@ -197,17 +203,27 @@ class RuleEngine:
                                         "id"
                                     ]
 
+                    # if rule.targetFunction == "fno:find-or-create-term":
+                    #     currentInstance["id"] = self.generate_id(currentInstance)
+                    #     currentInstance["polarityScale"] = "term:interim/polarity/scale/1"
+                    #     currentInstance["polarityValue"] = "term:interim/polarity/value/1"
+                    #     current_term_Instance = self.get_instance("soo:Term", 0, 0, prefix)
+                    #     current_term_Instance["id"] = "term:interim/polarity/value/1"
+                    #     current_term_Instance["notation"] = match
+                    #     current_term_Instance["prefLabel"] = {}
+                    #     current_term_Instance["prefLabel"]["@value"] = str(match)
+                    #     current_term_Instance["prefLabel"]["@language"] = "en"
+                    #     continue
+                    
                     if rule.targetFunction == "fno:find-or-create-term":
                         currentInstance["id"] = self.generate_id(currentInstance)
-                        currentInstance["polarityScale"] = "term:interim/polarity/scale/1"
-                        currentInstance["polarityValue"] = "term:interim/polarity/value/1"
-                        current_term_Instance = self.get_instance("soo:Term", 0, 0, prefix)
-                        current_term_Instance["id"] = "term:interim/polarity/value/1"
-                        current_term_Instance["notation"] = match
-                        current_term_Instance["prefLabel"] = {}
-                        current_term_Instance["prefLabel"]["@value"] = str(match)
-                        current_term_Instance["prefLabel"]["@language"] = "en"
+                        fieldName = self.get_field_name(rule.targetClass)
+                        currentInstance[fieldName] = {}
+                        currentInstance[fieldName]["@value"] = str(match)
+                        currentInstance[fieldName]["@language"] = "en"
                         continue
+                    
+                    
 
                     if rule.targetFunction == "fno:date-to-xsd":
                         dates = match
@@ -239,13 +255,13 @@ class RuleEngine:
                     if rule.targetFunction == "fno:asIs_WithLang":
                         currentInstance[target] = {}
                         currentInstance[target]["@value"] = match
-                        currentInstance[target]["@language"] = rule.targetLang
+                        currentInstance[target]["@language"] = rule.targetLang if  rule.targetLang != '' else 'en'
                         continue
 
                     if rule.targetFunction == "fno:search-for-mapping-with-source":
                         currentInstance["prefLabel"] = {}
                         currentInstance["prefLabel"]["@value"] = match
-                        currentInstance["prefLabel"]["@language"] = rule.targetLang
+                        currentInstance["prefLabel"]["@language"] = rule.targetLang if rule.targetLang != '' else 'en'
                         continue
 
                     if rule.targetValue != "":

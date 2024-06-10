@@ -12,15 +12,30 @@ from ontology_engine.rule_engine import RuleEngine
 from ontology_engine.tools import ordered, toJsonLD
 
 
+
+def get_provider_folder(provider) -> str:
+    if provider == 'jobready_2':
+        providerFolder = 'jobready'
+    elif provider == 'orientoi_1':
+        providerFolder = 'orientoi'
+    else:
+        providerFolder = provider
+    return providerFolder
+
+
 def getRessourceFolder() -> str:
     ressourcesDirectory = Path(__file__).parent
     ressourcesDirectory = os.path.join(ressourcesDirectory, "ressources")
+    ressourcesDirectory = os.path.join(ressourcesDirectory, "__26__")
     return ressourcesDirectory
 
 
 def get_rules(provider: str) -> List[Rule]:
     ressourcesDirectory = getRessourceFolder()
-    gamingtestDirectory = os.path.join(ressourcesDirectory, provider)
+    providerFolder = get_provider_folder(provider)
+    
+    gamingtestDirectory = os.path.join(ressourcesDirectory, providerFolder)
+    
     gamingtestRuleTest = os.path.join(gamingtestDirectory, f"{provider}-rules.json")
 
     if not os.path.exists(gamingtestRuleTest):
