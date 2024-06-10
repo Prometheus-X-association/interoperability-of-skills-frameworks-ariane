@@ -25,7 +25,7 @@
         "id": "mmr:rule-2",
         "sourcePath": "address",
         "targetClass": "soo:Profile",
-        "targetProperty": "soo:address",
+        "targetProperty": "soo:adress",
         "targetFunction": "fno:asIs"
       },
 
@@ -100,11 +100,21 @@
         "targetFunctionParam": "fno:year-only"
       },
       {
+        "id": "mmr:rule-81",
+        "sourcePath": "certifications.contractType",
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:contractType",
+        "targetFunction": "fno:asIs"
+      },
+      {
         "id": "mmr:rule-82",
         "sourcePath": "openToInterim",
         "targetClass": "soo:Polarity",
         "targetFunction": "fno:find-or-create-term"
       },
+
+
+
       {
         "id": "mmr:rule-9",
         "sourcePath": "suggestedExperiences.title",
@@ -145,24 +155,18 @@
       },
       {
         "id": "mmr:rule-15",
-        "sourcePath": "suggestedExperiences.title",
+        "sourcePath": "jobCards.id",
         "targetClass": "soo:Experience",
         "targetProperty": "soo:experienceType",
         "targetValue": "term:experience/type/professional"
       },
       {
         "id": "mmr:rule-16",
-        "sourcePath": "suggestedExperiences.title",
+        "sourcePath": "pastExperience.role",
         "targetClass": "soo:Experience",
         "targetProperty": "soo:experienceStatus",
         "targetValue": "term:experience/status/suggested"
-      },
-      {
-        "id": "mmr:rule-81",
-        "sourcePath": "suggestedExperiences.contractType",
-        "targetClass": "soo:Experience",
-        "targetProperty": "soo:contractType",
-        "targetFunction": "fno:asIs"
       }
+
     ]
 }
