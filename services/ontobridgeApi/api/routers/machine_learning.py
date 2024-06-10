@@ -4,8 +4,6 @@ from fastapi_utils.inferring_router import InferringRouter
 from api.models.data_provider import *
 from api.models.embedding_payload import EmbeddingPayload
 from fastapi.param_functions import Query
-
-from api.services.ontology_service.ontology_service import OntologyService
 from api.services.machine_learning_service.embeddings_service import EmbeddingService
 
 router = InferringRouter()
@@ -26,9 +24,7 @@ class embeddings:
     @router.post("/get_embedding_vectors_from_sentences_from_flask")
     async def get_embedding_vector_from_sentences_from_flask(
         self,
-        embedding: EmbeddingPayload = Body(
-            ..., description="the text to transform", embed=True
-        ),
+        embedding: EmbeddingPayload = Body(..., description="the text to transform", embed=True),
     ) -> dict:  # instantiate redis_client by dependency injection
         result = embeddings_service.get_vector_from_flask(embedding.sentences)
         return result

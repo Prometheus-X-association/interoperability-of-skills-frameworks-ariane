@@ -27,6 +27,7 @@ torch = "^2.3.0"
 protobuf = "^5.27.0"
 sentencepiece = "^0.2.0"
 
+gql = "^3.5.0"
 [tool.poetry.dev-dependencies]
 
 [build-system]
