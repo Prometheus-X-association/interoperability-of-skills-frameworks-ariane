@@ -23,14 +23,16 @@
       "id": "tr:__skill-id-1",
       "type": "soo:Skill",
       "experience": "tr:__generated-id-1__",
-      "sourceValue": "tr:__source-value-1",
+      "sourceSkillId": "tr:__source-value-1",
       "mapping": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869",
       "suggestions": [ "tr:sugg/1", "tr:sugg/2"],
       "skillLevelValue": "Validated"
     },
     {
-      "id": "tr:__source-value-1",
-      "label": "Problem-Solving"
+      "id": "term:gamingtest/term/55eefc9e28432347635c61fba45b70b5",
+      "type": "skos:Concept",
+      "prefLabel": {"@value":"Problem-Solving", "@language": "en"},
+      "memberOf": "term:gamingtest/term"
     },
     {
       "id": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869",
