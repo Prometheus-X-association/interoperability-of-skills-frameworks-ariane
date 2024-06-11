@@ -83,8 +83,13 @@
       "polarityValue": "term:interim/polarity/value/1"
     },
     {
+      "id": "term:interim/polarity/scale/1",
+      "type": "skos:Collection",
+      "prefLabel": [{"@value": "Interim collection for openToInterim", "@language": "en"}]
+    },
+    {
       "id": "term:interim/polarity/value/1", 
-      "prefLabel": {"@value": "0", "@language": "en"},
+      "prefLabel": [{"@value": "0", "@language": "en"}],
       "notation": 0
     }
 
