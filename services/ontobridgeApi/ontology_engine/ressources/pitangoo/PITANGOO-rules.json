@@ -33,11 +33,9 @@
       "targetFunction": "fno:asIs_WithLang",
       "targetLang": "fr"
     },
-
-
     {
       "id": "mmr:rule-4",
-      "sourcePath": "mission.tendencies.name",
+      "sourcePath": "missions.tendencies.name",
       "targetClass": "soo:Skill",
       "generateId": "true",
       "targetProperty": "soo:category",
@@ -49,7 +47,7 @@
 
     {
       "id": "mmr:rule-5",
-      "sourcePath": "mission.tendencies.name",
+      "sourcePath": "missions.tendencies.name",
       "targetClass": "soo:Skill",
       "targetProperty": "skos:prefLabel",
       "targetFunction": "fno:asIs_WithLang",
@@ -58,7 +56,7 @@
 
     {
       "id": "mmr:rule-6",
-      "sourcePath": "mission.tendencies.score",
+      "sourcePath": "missions.tendencies.score",
       "targetClass": "soo:Skill",
       "targetFunction": "fno:skill-value-to-scale"
     }

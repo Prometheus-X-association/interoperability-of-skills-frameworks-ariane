@@ -21,6 +21,12 @@
    "type": "soo:Profile"
   },
   {
+   "__matching__": {
+    "path": "prefLabel.@value",
+    "subtype": "job",
+    "type": "rome",
+    "value": "Problem-Solving"
+   },
    "experience": "tr:__generated-id-1__",
    "id": "tr:__skill-id-1__",
    "prefLabel": {
