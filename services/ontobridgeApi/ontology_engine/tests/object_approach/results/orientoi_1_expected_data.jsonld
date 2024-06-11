@@ -22,7 +22,8 @@
    "suggestions": [
     "tr:sugg/1",
     "tr:sugg/2"
-   ]
+   ],
+   "type": "soo:Experience"
   },
   {
    "id": "esco:adc6dc11-3376-xxxx",
@@ -58,7 +59,8 @@
    "prefLabel": {
     "@language": "en",
     "@value": "Je ne sais pas"
-   }
+   },
+   "type": "skos:Concept"
   },
   {
    "id": "term:orientoi/family/111",
@@ -66,7 +68,8 @@
    "prefLabel": {
     "@language": "fr",
     "@value": "M\u00e9tier"
-   }
+   },
+   "type": "skos:Concept"
   },
   {
    "description": {
@@ -87,7 +90,8 @@
    "suggestions": [
     "tr:sugg/3",
     "tr:sugg/4"
-   ]
+   ],
+   "type": "soo:Experience"
   },
   {
    "id": "esco:adc6dc11-3376-yyyyyy",
