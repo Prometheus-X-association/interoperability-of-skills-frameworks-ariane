@@ -8,9 +8,9 @@
       "type": "soo:Profile",
       "name": "Alice Smith",
       "email": "alice.smith@example.com",
-      "address": "address",
+      "address": "456 Oak St, Anytown, USA",
       "experience": ["tr:__xp-1__", "tr:__xp-2__", "tr:__xp-3__","tr:__xp-4__","tr:__xp-5__","tr:__xp-6__"],
-      "__term__" :{ "outputType": "polarity", "type" : "openToInterim", "provider" : "interim", "value" : "0", "@language":"en"}
+      "polarity": {"@value": "0", "@language":"en"}
     },
     {
       "id": "tr:__xp-1__",
