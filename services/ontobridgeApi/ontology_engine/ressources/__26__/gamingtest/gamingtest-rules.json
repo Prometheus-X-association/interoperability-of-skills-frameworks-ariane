@@ -55,5 +55,7 @@
       "targetProperty": "soo:skillLevelValue",
       "targetFunction": "fno:as-is"
     }
+
+    
   ]
 }

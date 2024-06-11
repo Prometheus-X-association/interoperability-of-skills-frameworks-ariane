@@ -22,10 +22,7 @@
       "skillLevelValue": "Validated",
       "type": "soo:Skill",
       "experience": "tr:__generated-id-1__",
-      "prefLabel": {"@value": "Problem-Solving", "@language": "en"}, 
-      "__matching__" :{ "path": "prefLabel.@value", "type" : "rome", "subtype" : "job", "value" : "Problem-Solving"}
+      "prefLabel": {"@value": "Problem-Solving", "@language": "en"}
     }
   ]
 }
-
-
