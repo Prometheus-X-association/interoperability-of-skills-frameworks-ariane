@@ -130,6 +130,7 @@
 
     {
       "id": "mmr:rule-6",
+      "generateId": "true",
       "sourcePath": "jobCards.positionnement",
       "targetClass": "soo:Polarity",
       "targetProperty": "soo:polarity",

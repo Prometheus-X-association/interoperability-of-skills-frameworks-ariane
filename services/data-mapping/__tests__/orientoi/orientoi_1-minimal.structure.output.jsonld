@@ -7,9 +7,13 @@
     {
       "id": "tr:__experience-1__",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "type": "soo:Experience",
 =======
 >>>>>>> 73303d2 (fix: add structure output for orientoi)
+=======
+      "type": "soo:Experience",
+>>>>>>> a7d879f (fix: update orientoi)
       "sourceId": "0ede4405-fb88-4cac-a501-603916c1484a",
       "experienceType": "term:experience/type/professional",
       "experienceStatus": "term:experience/type/suggested",
@@ -23,9 +27,13 @@
     {
       "id": "tr:__experience-2__",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "type": "soo:Experience",
 =======
 >>>>>>> 73303d2 (fix: add structure output for orientoi)
+=======
+      "type": "soo:Experience",
+>>>>>>> a7d879f (fix: update orientoi)
       "sourceId": "1535e1c6-37e8-11e8-8177-782bcb695311",
       "experienceType": "term:experience/type/professional",
       "experienceStatus": "term:experience/type/suggested",

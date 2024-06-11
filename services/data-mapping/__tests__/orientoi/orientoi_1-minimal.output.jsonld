@@ -9,6 +9,7 @@
     {
       "id": "tr:__experience-1__",
       "type": "soo:Experience",
+<<<<<<< HEAD
       "sourceId": "0ede4405-fb88-4cac-a501-603916c1484a",
       "experienceType": "term:experience/type/professional",
       "experienceStatus": "term:experience/type/suggested",
@@ -24,6 +25,8 @@
   "graph": [
     {
       "id": "tr:__experience-1__",
+=======
+>>>>>>> a7d879f (fix: update orientoi)
       "sourceId": "0ede4405-fb88-4cac-a501-603916c1484a",
       "experienceType": "term:experience/type/professional",
       "experienceStatus": "term:experience/type/suggested",
@@ -70,9 +73,13 @@
     {
       "id": "term:orientoi/polarity/value/1", 
 <<<<<<< HEAD
+<<<<<<< HEAD
       "type": "skos:Concept",
 =======
 >>>>>>> 13b4f7e (feat: first version of orientoi)
+=======
+      "type": "skos:Concept",
+>>>>>>> a7d879f (fix: update orientoi)
       "prefLabel": {"@value": "Je ne sais pas", "@language": "en"},
       "notation": "Je ne sais pas"
     },
@@ -80,9 +87,13 @@
     {
       "id": "term:orientoi/family/111",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "type": "skos:Concept",
 =======
 >>>>>>> 13b4f7e (feat: first version of orientoi)
+=======
+      "type": "skos:Concept",
+>>>>>>> a7d879f (fix: update orientoi)
       "prefLabel": {"@value": "Métier" , "@language": "fr"},
       "memberOf": "term:orientoi/collection"
     },
@@ -93,6 +104,9 @@
     {
       "id": "tr:__experience-2__",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a7d879f (fix: update orientoi)
       "type": "soo:Experience",
       "sourceId": "1535e1c6-37e8-11e8-8177-782bcb695311",
       "experienceType": "term:experience/type/professional",
