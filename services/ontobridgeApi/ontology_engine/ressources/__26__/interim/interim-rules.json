@@ -112,9 +112,6 @@
         "targetClass": "soo:Polarity",
         "targetFunction": "fno:find-or-create-term"
       },
-
-
-
       {
         "id": "mmr:rule-9",
         "sourcePath": "suggestedExperiences.title",
