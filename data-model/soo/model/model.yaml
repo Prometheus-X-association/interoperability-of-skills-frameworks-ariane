@@ -33,6 +33,7 @@ triple:
     soo:skillLevelScale: skos:OrderedCollection
     soo:skillLevelValue: skos:Concept           # The skill level as defined as a value on a scale
     soo:sourceSkillId: skos:Concept             # The dataprovider's unique concept skill
+<<<<<<< HEAD
 =======
     soo:description: rdf:langstring             # A short paragraph describing the experience
 =======
@@ -59,6 +60,8 @@ triple:
     soo:skillLevelScale: skos:OrderedCollection
     soo:skillLevelValue: skos:Concept           # The skill level as defined as a value on a scale
 >>>>>>> b56e5c4 (fix: rename data folder)
+=======
+>>>>>>> 87ad5d0 (fix: update the model for sourceSkillId)
 
 
   soo:Polarity:                                 # Polarity express the feeling toward an experience or a skill
