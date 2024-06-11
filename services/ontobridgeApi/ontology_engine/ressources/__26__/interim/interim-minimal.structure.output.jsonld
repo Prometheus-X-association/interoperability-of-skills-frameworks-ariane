@@ -10,7 +10,7 @@
       "email": "alice.smith@example.com",
       "address": "address",
       "experience": ["tr:__xp-1__", "tr:__xp-2__", "tr:__xp-3__","tr:__xp-4__","tr:__xp-5__","tr:__xp-6__"],
-      "polarity": {"@value": "0", "@language":"en"}
+      "__term__" :{ "outputType": "polarity", "type" : "openToInterim", "provider" : "interim", "value" : "0", "@language":"en"}
     },
     {
       "id": "tr:__xp-1__",

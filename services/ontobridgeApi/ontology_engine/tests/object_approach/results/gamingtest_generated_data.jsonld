@@ -21,12 +21,15 @@
    "type": "soo:Profile"
   },
   {
+   "__matching__": {
+    "framework": "esco",
+    "language": "en",
+    "provider": "gamingtest",
+    "sourceValue": "Problem-Solving",
+    "subtype": "skill"
+   },
    "experience": "tr:__generated-id-1__",
    "id": "tr:__skill-id-1__",
-   "prefLabel": {
-    "@language": "en",
-    "@value": "Problem-Solving"
-   },
    "skillLevelValue": "Validated",
    "type": "soo:Skill"
   }
