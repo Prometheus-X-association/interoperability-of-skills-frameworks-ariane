@@ -150,6 +150,7 @@
       "prefLabel": [{"@value": "Interim collection for openToInterim", "@language": "en"}]
     },
     {
+<<<<<<< HEAD
       "id": "term:interim/polarity/value/1", 
       "prefLabel": [{"@value": "0", "@language": "en"}],
 =======
@@ -162,6 +163,10 @@
       "id": "term:interim/polarity/value/1", 
       "prefLabel": {"@value": "0", "@language": "en"},
 >>>>>>> 153238d (fix: update interim mapping and outpout)
+=======
+      "id": "term:interim/polarity/value/1", 
+      "prefLabel": [{"@value": "0", "@language": "en"}],
+>>>>>>> 6dc15f4 (fix: update interim)
       "notation": 0
     }
 
