@@ -13,11 +13,12 @@ from copy import copy, deepcopy
 
 
 class RuleEngine:
-    def __init__(self, rules: List[Rule]) -> None:
+    def __init__(self, rules: List[Rule], provider : str) -> None:
         self.rules = rules
         self.counters: dict[str, int] = {}
         self.instances: dict[str, dict] = {}
         self.rules_tree: RulesTree = None
+        self.provider : str = provider
 
     def generate_id(self, instance: dict):
         if "Experience" in instance["type"]:
@@ -214,16 +215,6 @@ class RuleEngine:
                     #     current_term_Instance["prefLabel"]["@value"] = str(match)
                     #     current_term_Instance["prefLabel"]["@language"] = "en"
                     #     continue
-                    
-                    if rule.targetFunction == "fno:find-or-create-term":
-                        currentInstance["id"] = self.generate_id(currentInstance)
-                        fieldName = self.get_field_name(rule.targetClass)
-                        currentInstance[fieldName] = {}
-                        currentInstance[fieldName]["@value"] = str(match)
-                        currentInstance[fieldName]["@language"] = "en"
-                        continue
-                    
-                    
 
                     if rule.targetFunction == "fno:date-to-xsd":
                         dates = match
@@ -236,15 +227,14 @@ class RuleEngine:
                         continue
 
                     if rule.relationTo != "" and rule.relationName != "" and rule.relationNameInverse != "":
-                        currentInstanceTo = self.get_last_instance(rule.relationTo, docIndex, index)
+                        currentInstanceTo = self.get_last_instance(rule.relationTo, docIndex, -1)
                         if not currentInstanceTo == None:
                             if self.get_field_name(rule.relationNameInverse).lower() in currentInstanceTo:
-                                prevRef = currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()]
-                                currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()] = []
-                                currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()].append(prevRef)
-                                currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()].append(
-                                    currentInstance["id"]
-                                )
+                                if isinstance(currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()], str):
+                                    prevRef = currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()]
+                                    currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()] = []
+                                    currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()].append(prevRef)
+                                currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()].append(currentInstance["id"])
                             else:
                                 currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()] = currentInstance["id"]
                             currentInstance[self.get_field_name(rule.relationTo).lower()] = currentInstanceTo["id"]
@@ -259,16 +249,50 @@ class RuleEngine:
                         continue
 
                     if rule.targetFunction == "fno:search-for-mapping-with-source":
-                        currentInstance["prefLabel"] = {}
-                        currentInstance["prefLabel"]["@value"] = match
-                        currentInstance["prefLabel"]["@language"] = rule.targetLang if rule.targetLang != '' else 'en'
+                        # "__matching__" :{ "path": "prefLabel.@value", "type" : "rome", "subtype" : "job", "value" : "Problem-Solving", "provider" : "interim"}
+                        currentInstance["__matching__"] = {}
+                        currentInstance["__matching__"]['sourceValue'] = match
+                        currentInstance["__matching__"]['provider'] = self.provider
+                        currentInstance["__matching__"]['framework'] = 'esco'
+                        
+                        if 'skill' in str.lower(currentInstance["type"]):
+                            currentInstance["__matching__"]['subtype'] = 'skill'
+                        else: 
+                            currentInstance["__matching__"]['subtype'] = 'job'
+                        currentInstance["__matching__"]['language'] = rule.targetLang if rule.targetLang != '' else 'en'
                         continue
+                    
+                    if rule.targetFunction == "fno:get-polarity-value":
+                        continue
+                    
+                    if rule.targetFunction == "fno:get-family-value":
+                        continue
+                    
+                    if rule.targetFunction == "fno:skill-value-to-scale":
+                        continue
+                    
+                    if rule.targetFunction == "fno:find-or-create-term":
+                        # "__term__" :{ "outputType": "polarity", "type" : "openToInterim", "provider" : "interim", "value" : "0", "@language":"en"}
+                        # currentInstance["id"] = self.generate_id(currentInstance)
+                        # fieldName = self.get_field_name(rule.targetClass)
+                        # currentInstance[fieldName] = {}
+                        # currentInstance[fieldName]["@value"] = str(match)
+                        # currentInstance[fieldName]["@language"] = "en"
+                        
+                        currentInstance["__term__"] = {}
+                        fieldName = self.get_field_name(rule.targetClass)
+                        currentInstance["__term__"]['value'] = str(match)
+                        currentInstance["__term__"]['scale'] = fieldName
+                        currentInstance["__term__"]['provider'] = self.provider
+                        currentInstance["__term__"]['language'] = rule.targetLang if rule.targetLang != '' else 'en'
+                        continue
+                    
 
                     if rule.targetValue != "":
                         currentInstance[target] = rule.targetValue
                         continue
-
-                    currentInstance[target] = match
+                    if target != '':
+                        currentInstance[target] = match
         pass
 
     def apply_tree_rules_to_document(self, document: dict, docIndex: int):

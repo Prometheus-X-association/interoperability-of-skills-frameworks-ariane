@@ -2,6 +2,13 @@
  "@context": {},
  "graph": [
   {
+   "__term__": {
+    "@language": "en",
+    "outputType": "polarity",
+    "provider": "interim",
+    "type": "openToInterim",
+    "value": "0"
+   },
    "address": "address",
    "email": "alice.smith@example.com",
    "experience": [
@@ -14,10 +21,6 @@
    ],
    "id": "tr:__generated-id-1__",
    "name": "Alice Smith",
-   "polarity": {
-    "@language": "en",
-    "@value": "0"
-   },
    "type": "soo:Profile"
   },
   {
