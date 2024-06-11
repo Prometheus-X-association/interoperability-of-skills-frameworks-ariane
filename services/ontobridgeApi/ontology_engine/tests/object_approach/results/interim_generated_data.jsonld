@@ -19,11 +19,12 @@
    "type": "soo:Profile"
   },
   {
-   "Polarity": {
-    "@language": "en",
-    "@value": "0"
+   "__term__": {
+    "language": "en",
+    "provider": "interim",
+    "scale": "Polarity",
+    "value": "0"
    },
-   "id": "tr:__polarity-id-1__",
    "type": "soo:Polarity"
   },
   {

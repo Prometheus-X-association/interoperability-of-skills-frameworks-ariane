@@ -13,11 +13,12 @@ from copy import copy, deepcopy
 
 
 class RuleEngine:
-    def __init__(self, rules: List[Rule]) -> None:
+    def __init__(self, rules: List[Rule], provider : str) -> None:
         self.rules = rules
         self.counters: dict[str, int] = {}
         self.instances: dict[str, dict] = {}
         self.rules_tree: RulesTree = None
+        self.provider : str = provider
 
     def generate_id(self, instance: dict):
         if "Experience" in instance["type"]:

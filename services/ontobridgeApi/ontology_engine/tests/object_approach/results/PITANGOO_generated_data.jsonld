@@ -4,7 +4,6 @@
  },
  "graph": [
   {
-   "": "Mes centres d int\u00e9r\u00eat",
    "experienceStatus": "term:experience/type/past",
    "experienceType": "term:experience/type/personalityTest",
    "id": "tr:__generated-id-1__",
@@ -12,7 +11,42 @@
     "@language": "fr",
     "@value": "Mes centres d int\u00e9r\u00eat"
    },
+   "skill": [
+    "tr:__skill-id-1__",
+    "tr:__skill-id-2__",
+    "tr:__skill-id-3__"
+   ],
    "type": "soo:Experience"
+  },
+  {
+   "category": "term:skills/category/riasec",
+   "experience": "tr:__generated-id-1__",
+   "id": "tr:__skill-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "ARTISTIQUE"
+   },
+   "type": "soo:Skill"
+  },
+  {
+   "category": "term:skills/category/riasec",
+   "experience": "tr:__generated-id-1__",
+   "id": "tr:__skill-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "R\u00c9ALISTE"
+   },
+   "type": "soo:Skill"
+  },
+  {
+   "category": "term:skills/category/riasec",
+   "experience": "tr:__generated-id-1__",
+   "id": "tr:__skill-id-3__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "ENTREPRENEUR"
+   },
+   "type": "soo:Skill"
   }
  ]
 }
