@@ -98,6 +98,9 @@
 <<<<<<< HEAD
       "experience": "tr:__generated-id-1__",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c339954 (feat: add sourceSkillId for jobready)
       "sourceSkillId": "term:gamingtest/term/55eefc9e28432347635c61fba45b70b5",
       "mapping": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869",
       "suggestions": [ "tr:sugg/1", "tr:sugg/2"],
