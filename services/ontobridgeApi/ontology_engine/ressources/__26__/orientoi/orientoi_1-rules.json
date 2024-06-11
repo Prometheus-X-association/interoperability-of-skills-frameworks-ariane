@@ -53,14 +53,14 @@
 
     {
       "id": "mmr:rule-6",
+      "generateId": "true",
       "sourcePath": "jobCards.positionnement",
       "targetClass": "soo:Polarity",
       "targetProperty": "soo:polarity",
       "targetFunction": "fno:get-polarity-value",
       "relationTo": "soo:Experience",
       "relationName": "soo:experience",
-      "relationNameInverse": "soo:polarity", 
-      "generateId": "true"
+      "relationNameInverse": "soo:polarity"
     },
 
     {
