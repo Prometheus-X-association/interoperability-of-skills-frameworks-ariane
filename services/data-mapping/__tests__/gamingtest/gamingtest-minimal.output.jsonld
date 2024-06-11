@@ -97,6 +97,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
       "experience": "tr:__generated-id-1__",
+<<<<<<< HEAD
       "sourceSkillId": "term:gamingtest/term/55eefc9e28432347635c61fba45b70b5",
       "mapping": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869",
       "suggestions": [ "tr:sugg/1", "tr:sugg/2"],
@@ -113,14 +114,24 @@
       "experience": "tr:__generated-id-1__",
 >>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
       "sourceValue": "tr:__source-value-1",
+=======
+      "sourceSkillId": "tr:__source-value-1",
+>>>>>>> 38c177d (feat: add the sourceSkillId mecanism for gamingtest)
       "mapping": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869",
       "suggestions": [ "tr:sugg/1", "tr:sugg/2"],
       "skillLevelValue": "Validated"
     },
     {
+<<<<<<< HEAD
       "id": "tr:__source-value-1",
       "label": "Problem-Solving"
 >>>>>>> 75371fa (spec: add tests for gamingtest transformation)
+=======
+      "id": "term:gamingtest/term/55eefc9e28432347635c61fba45b70b5",
+      "type": "skos:Concept",
+      "prefLabel": {"@value":"Problem-Solving", "@language": "en"},
+      "memberOf": "term:gamingtest/term"
+>>>>>>> 38c177d (feat: add the sourceSkillId mecanism for gamingtest)
     },
     {
       "id": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869",
