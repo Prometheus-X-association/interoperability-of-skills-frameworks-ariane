@@ -2,14 +2,7 @@
  "@context": {},
  "graph": [
   {
-   "__term__": {
-    "@language": "en",
-    "outputType": "polarity",
-    "provider": "interim",
-    "type": "openToInterim",
-    "value": "0"
-   },
-   "address": "address",
+   "address": "456 Oak St, Anytown, USA",
    "email": "alice.smith@example.com",
    "experience": [
     "tr:__xp-1__",
@@ -21,6 +14,10 @@
    ],
    "id": "tr:__generated-id-1__",
    "name": "Alice Smith",
+   "polarity": {
+    "@language": "en",
+    "@value": "0"
+   },
    "type": "soo:Profile"
   },
   {
