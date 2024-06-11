@@ -29,6 +29,7 @@ triple:
     soo:category: skos:Concept                  # The skill group as defined in skos collections, e.g. hard skills/soft skills
     soo:skillLevelScale: skos:OrderedCollection
     soo:skillLevelValue: skos:Concept           # The skill level as defined as a value on a scale
+    soo:sourceSkillId: skos:Concept             # The dataprovider's unique concept skill
 
 
   soo:Polarity:                                 # Polarity express the feeling toward an experience or a skill
