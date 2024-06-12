@@ -13,4 +13,3 @@ class TermMatchingService:
 
     def get_gql_term_matching(self, provider: str, feature: str, variable: list[float]) -> dict:
         return self.term_matching_engine.get_gql_term_matching(provider, feature, variable)
-
