@@ -41,6 +41,7 @@ requests = "^2.32.2"
 
 gql = "^3.5.0"
 <<<<<<< HEAD
+<<<<<<< HEAD
 inquirer = "^3.2.4"
 requests-toolbelt = "^1.0.0"
 beautifulsoup4 = "^4.12.3"
@@ -70,6 +71,9 @@ black = "^24.4.2"
 >>>>>>> dcefa9a (poetry)
 =======
 >>>>>>> 81c1026 (term matching service)
+=======
+inquirer = "^3.2.4"
+>>>>>>> 7d545e1 (add first implementation)
 [tool.poetry.dev-dependencies]
 
 [build-system]
