@@ -23,3 +23,6 @@ class TermMatching:
         query_function = self.get_query_function(provider, feature)
         gql_variables = {"queryVector": query_vector}
         return self.graphql_engine.get_graphql_result(query_function, gql_variables)
+
+
+    
