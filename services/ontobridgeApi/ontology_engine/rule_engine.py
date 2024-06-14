@@ -269,6 +269,12 @@ class RuleEngine:
                         continue
                     
                     if rule.targetFunction == "fno:skill-value-to-scale":
+                        currentInstance["__term__"] = {}
+                        fieldName = self.get_field_name(rule.targetClass)
+                        currentInstance["__term__"]['value'] = str(match)
+                        currentInstance["__term__"]['scale'] = fieldName
+                        currentInstance["__term__"]['provider'] = self.provider
+                        currentInstance["__term__"]['language'] = rule.targetLang if rule.targetLang != '' else 'en'
                         continue
                     
                     if rule.targetFunction == "fno:find-or-create-term":
@@ -324,5 +330,6 @@ class RuleEngine:
         for instance in self.instances.values():
             del instance["__counter__"]
             result.append(instance)
+            
         serialisation["graph"] = result
         return serialisation
