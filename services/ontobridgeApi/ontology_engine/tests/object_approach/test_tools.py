@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 from typing import List
 
-from ontology_engine.providers import getRessourceFolder
+from ontology_engine.providers import getRessourceFolder, get_provider_folder
 
 
 def write_result(content, fileName):
@@ -19,7 +19,8 @@ def write_result(content, fileName):
 
 def get_tests(fileName: str, provider: str) -> List[dict]:
     ressourcesDirectory = getRessourceFolder()
-    providerDirectory = os.path.join(ressourcesDirectory, provider)
+    providerFolder = get_provider_folder(provider)
+    providerDirectory = os.path.join(ressourcesDirectory, providerFolder)
     path_file = os.path.join(providerDirectory, fileName)
     with open(path_file, encoding="utf8") as f:
         data = json.load(f)

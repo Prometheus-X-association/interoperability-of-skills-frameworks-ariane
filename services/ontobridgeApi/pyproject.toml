@@ -28,6 +28,8 @@ protobuf = "^5.27.0"
 sentencepiece = "^0.2.0"
 
 gql = "^3.5.0"
+inquirer = "^3.2.4"
+requests-toolbelt = "^1.0.0"
 [tool.poetry.dev-dependencies]
 
 [build-system]

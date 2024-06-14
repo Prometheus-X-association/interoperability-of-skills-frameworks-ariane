@@ -12,7 +12,7 @@
         "targetFunction": "fno:asIs",
         "relationTo": "soo:Experience",
         "relationName": "soo:experience",
-        "relationNameInverse": "soo:Profile"
+        "relationNameInverse": "soo:profile"
       },
       {
         "id": "mmr:rule-1",
@@ -29,7 +29,6 @@
         "targetFunction": "fno:asIs"
       },
 
-
       {
         "id": "mmr:rule-3",
         "generateId": "true",
@@ -43,32 +42,41 @@
         "id": "mmr:rule-4",
         "sourcePath": "pastExperience.company",
         "targetClass": "soo:Experience",
-        "targetProperty": "soo:experienceStatus",
-        "targetValue": "past"
-      },
-      {
-        "id": "mmr:rule-4",
-        "sourcePath": "pastExperience.company",
-        "targetClass": "soo:Experience",
         "targetProperty": "soo:company", 
         "targetFunction": "fno:asIs"
       },
       {
-        "id": "mmr:rule-5",
+        "id": "mmr:rule-41",
         "sourcePath": "pastExperience.dateStart",
         "targetClass": "soo:Experience",
         "targetProperty": "soo:dateFrom",
         "targetFunction": "fno:date-to-xsd"
       },
       {
-        "id": "mmr:rule-6",
+        "id": "mmr:rule-5",
         "sourcePath": "pastExperience.dateEnd",
         "targetClass": "soo:Experience",
         "targetProperty": "soo:dateTo",
         "targetFunction": "fno:date-to-xsd"
       },
       {
-        "id": "mmr:rule-7",
+        "id": "mmr:rule-51",
+        "sourcePath": "pastExperience.role",
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:experienceType",
+        "targetValue": "term:experience/type/professional"
+      },
+      {
+        "id": "mmr:rule-52",
+        "sourcePath": "pastExperience.role",
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:experienceStatus",
+        "targetValue": "term:experience/status/past"
+      },
+
+
+      {
+        "id": "mmr:rule-6",
         "sourcePath": "certifications.name",
         "targetClass": "soo:Experience",
         "targetProperty": "soo:prefLabel",
@@ -77,31 +85,28 @@
         "targetFunction": "fno:asIs_WithLang"
       },
       {
-        "id": "mmr:rule-4",
-        "sourcePath": "certifications.name",
-        "targetClass": "soo:Experience",
-        "targetProperty": "soo:experienceStatus",
-        "targetValue": "certif"
-      },
-      {
-        "id": "mmr:rule-8",
+        "id": "mmr:rule-7",
         "sourcePath": "certifications.institution",
         "targetClass": "soo:Experience",
         "targetProperty": "soo:company",
         "targetFunction": "fno:asIs"
       },
       {
-        "id": "mmr:rule-9",
+        "id": "mmr:rule-8",
         "sourcePath": "certifications.year",
         "targetClass": "soo:Experience",
         "targetProperty": "soo:dateFrom",
         "targetFunction": "fno:date-to-xsd",
         "targetFunctionParam": "fno:year-only"
       },
-
-
       {
-        "id": "mmr:rule-10",
+        "id": "mmr:rule-82",
+        "sourcePath": "openToInterim",
+        "targetClass": "soo:Polarity",
+        "targetFunction": "fno:find-or-create-term"
+      },
+      {
+        "id": "mmr:rule-9",
         "sourcePath": "suggestedExperiences.title",
         "targetClass": "soo:Experience",
         "targetProperty": "soo:prefLabel",
@@ -110,7 +115,7 @@
         "targetFunction": "fno:asIs_WithLang"
       },
       {
-        "id": "mmr:rule-11",
+        "id": "mmr:rule-10",
         "sourcePath": "suggestedExperiences.description",
         "targetClass": "soo:Experience",
         "targetProperty": "soo:description",
@@ -118,21 +123,21 @@
         "targetFunction": "fno:asIs_WithLang"
       },
       {
-        "id": "mmr:rule-12",
+        "id": "mmr:rule-11",
         "sourcePath": "suggestedExperiences.company",
         "targetClass": "soo:Experience",
         "targetProperty": "soo:company",
         "targetFunction": "fno:asIs"
       },
       {
-        "id": "mmr:rule-13",
+        "id": "mmr:rule-12",
         "sourcePath": "suggestedExperiences.dateStart",
         "targetClass": "soo:Experience",
         "targetProperty": "soo:dateFrom",
         "targetFunction": "fno:date-to-xsd"
       },
       {
-        "id": "mmr:rule-14",
+        "id": "mmr:rule-13",
         "sourcePath": "suggestedExperiences.location",
         "targetClass": "soo:Experience",
         "targetProperty": "soo:location",
@@ -140,16 +145,24 @@
       },
       {
         "id": "mmr:rule-15",
+        "sourcePath": "suggestedExperiences.title",
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:experienceType",
+        "targetValue": "term:experience/type/professional"
+      },
+      {
+        "id": "mmr:rule-16",
+        "sourcePath": "suggestedExperiences.title",
+        "targetClass": "soo:Experience",
+        "targetProperty": "soo:experienceStatus",
+        "targetValue": "term:experience/status/suggested"
+      },
+      {
+        "id": "mmr:rule-81",
         "sourcePath": "suggestedExperiences.contractType",
         "targetClass": "soo:Experience",
         "targetProperty": "soo:contractType",
         "targetFunction": "fno:asIs"
-      },
-      {
-        "id": "mmr:rule-16",
-        "sourcePath": "openToInterim",
-        "targetClass": "soo:Polarity",
-        "targetFunction": "fno:find-or-create-term"
       }
     ]
 }

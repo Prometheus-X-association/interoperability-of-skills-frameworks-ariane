@@ -1,6 +1,6 @@
 {
  "@context": {
-  "@TODO": "define the result context"
+  "@todo": "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
  },
  "graph": [
   {
@@ -22,7 +22,8 @@
    "suggestions": [
     "tr:sugg/1",
     "tr:sugg/2"
-   ]
+   ],
+   "type": "soo:Experience"
   },
   {
    "id": "esco:adc6dc11-3376-xxxx",
@@ -58,7 +59,8 @@
    "prefLabel": {
     "@language": "en",
     "@value": "Je ne sais pas"
-   }
+   },
+   "type": "skos:Concept"
   },
   {
    "id": "term:orientoi/family/111",
@@ -66,7 +68,8 @@
    "prefLabel": {
     "@language": "fr",
     "@value": "M\u00e9tier"
-   }
+   },
+   "type": "skos:Concept"
   },
   {
    "description": {
@@ -87,7 +90,8 @@
    "suggestions": [
     "tr:sugg/3",
     "tr:sugg/4"
-   ]
+   ],
+   "type": "soo:Experience"
   },
   {
    "id": "esco:adc6dc11-3376-yyyyyy",
@@ -121,9 +125,10 @@
    "id": "term:orientoi/polarity/value/2",
    "notation": "\u00e7a me correspond",
    "prefLabel": {
-    "@language": "en",
+    "@language": "fr",
     "@value": "\u00e7a me correspond"
-   }
+   },
+   "type": "skos:Concept"
   },
   {
    "id": "term:orientoi/family/222",
@@ -131,7 +136,8 @@
    "prefLabel": {
     "@language": "fr",
     "@value": "Secteur d''activit\u00e9"
-   }
+   },
+   "type": "skos:Concept"
   }
  ]
 }
