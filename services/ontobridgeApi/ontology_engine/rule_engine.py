@@ -147,5 +147,6 @@ class RuleEngine:
         for instance in self.instances.values():
             del instance["__counter__"]
             result.append(instance)
+            
         serialisation["graph"] = result
         return serialisation
