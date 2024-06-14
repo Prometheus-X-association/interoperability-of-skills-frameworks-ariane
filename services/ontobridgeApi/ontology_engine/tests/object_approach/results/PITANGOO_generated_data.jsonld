@@ -19,6 +19,12 @@
    "type": "soo:Experience"
   },
   {
+   "__term__": {
+    "language": "en",
+    "provider": "PITANGOO",
+    "scale": "Skill",
+    "value": "0.6"
+   },
    "category": "term:skills/category/riasec",
    "experience": "tr:__generated-id-1__",
    "id": "tr:__skill-id-1__",
@@ -29,6 +35,12 @@
    "type": "soo:Skill"
   },
   {
+   "__term__": {
+    "language": "en",
+    "provider": "PITANGOO",
+    "scale": "Skill",
+    "value": "0.8"
+   },
    "category": "term:skills/category/riasec",
    "experience": "tr:__generated-id-1__",
    "id": "tr:__skill-id-2__",
@@ -39,6 +51,12 @@
    "type": "soo:Skill"
   },
   {
+   "__term__": {
+    "language": "en",
+    "provider": "PITANGOO",
+    "scale": "Skill",
+    "value": "0.6"
+   },
    "category": "term:skills/category/riasec",
    "experience": "tr:__generated-id-1__",
    "id": "tr:__skill-id-3__",
