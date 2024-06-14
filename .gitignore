@@ -7,6 +7,7 @@ __pycache__/
 .DS_Store
 .venv/
 <<<<<<< HEAD
+<<<<<<< HEAD
 **/models_dump/
 models_dump/
 
@@ -16,5 +17,10 @@ services/dataspace-connector
 =======
 
 >>>>>>> 2abe167 (fast api)
+=======
+**/models_dump/
+models_dump/
+
+>>>>>>> 6963a58 (dynamic ml model)
 
 
