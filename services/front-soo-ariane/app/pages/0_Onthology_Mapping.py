@@ -42,10 +42,13 @@ def initialization():
 
 def parseField(item,field, stringPath = ""):
 
-    if type(item[field]) == list:
+    if type(item[field]) == list and len(item[field])>0:
         fieldList = [key for key in item[field][0].keys()]
         for nestedField in fieldList:
-            parseField(item[field][0],nestedField,field)
+            if stringPath == "":
+                parseField(item[field][0],nestedField,field)
+            else:
+                parseField(item[field][0],nestedField,f"{stringPath}.{field}")
     else:
         if stringPath:
             st.session_state.fieldList.append(f"{stringPath}.{field}")
@@ -91,21 +94,16 @@ def fillItemList():
     st.session_state.itemList = [
         {
             "class": "Experience",
-            "name": "Gaming Test",
+            "name": "mission",
             "language": "en",
-            "type": "Test",
+            "type": "Professional",
             "status": "Past"
         },
         {
             "class": "Skill",
-            "name": "Skill Block",
+            "name": "RIASEC_skills",
             "language": "en",
             "type": "Soft Skill"
-        },
-        {
-            "class": "Profile",
-            "name": "User",
-            "language": "en"
         }
         ]
 
@@ -315,7 +313,7 @@ def display_existing_rules():
                     },
                 "graph": st.session_state.mappingList}
     l.code(json.dumps(ruleFile,indent=4)) 
-    r.code(json.dumps(json.load(open("app/data/Gaming/gamingtest-rules.json","r")),indent=4))
+    r.code(json.dumps(json.load(open("app/data/PITANGOO/PITANGOO-rules.json","r")),indent=4))
 
 ########################## APP LOGIC #####################################
 def main():
@@ -332,7 +330,7 @@ if __name__ == "__main__":
         st.set_page_config("Onthology Mapping",layout="centered")
         initialization()
         # file = st.file_uploader("Upload your Json","json",key="file")
-        st.session_state.file = open("app/data/Gaming/gamingtest-minimal.json","r")
+        st.session_state.file = open("app/data/PITANGOO/PITANGOO-minimal.json","r")
         if st.session_state.file:
             parseFile()
             st.rerun()
