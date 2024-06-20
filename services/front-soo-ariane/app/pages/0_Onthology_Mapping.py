@@ -6,21 +6,21 @@ import json
 def initialization():
     st.session_state.edTechID = "edTechID"
     
-    st.session_state.Experience = [("type",["Educational","Professional","Vocational","Test"]),("status",["Past","Ongoing","Suggested"])]
+    st.session_state.Experience = [("type",["educational","professional","vocational","personnality Test"]),("status",["past","ongoing","suggested"])]
     st.session_state.Skill = [("type",["Hard Skill","Soft Skill","Knowledge","Custom"])]
-    st.session_state.Choice = [("type",["Educational","Professional","Vocational"]),("status",["Past","Ongoing","Suggested"])]
+    st.session_state.Choice = [("type",["Educational","Professional","Vocational"]),("status",["past","ongoing","suggested"])]
     st.session_state.Profile = []
     
     st.session_state.ontology = {"Experience":[
                                         "soo:id",
-                                        "soo:label",
+                                        "skos:prefLabel",
                                         "soo:description",
                                         "soo:date",
                                         "soo:result"
                                  ],
                                  "Skill":[
                                         "soo:id",
-                                        "soo:label",
+                                        "skos:prefLabel",
                                         "soo:description",
                                         "soo:skillLevelValue"
                                  ],
@@ -95,68 +95,60 @@ def fillItemList():
         {
             "class": "Experience",
             "name": "mission",
-            "language": "en",
-            "type": "Professional",
-            "status": "Past"
+            "language": "fr",
+            "type": "personnality Test",
+            "status": "past"
         },
         {
             "class": "Skill",
             "name": "RIASEC_skills",
-            "language": "en",
+            "language": "fr",
             "type": "Soft Skill"
         }
         ]
 
 def fillMappings():
     mappings = [
-        {
-            "class": "Experience",
-            "name": "Gaming Test",
-            "language": "en",
-            "type": "Test",
-            "status": "Past"
-        },
-        {
-            "class": "Profile",
-            "name": "User",
-            "language": "en"
-        },
-        {
-            "class": "Experience",
-            "name": "Gaming Test",
-            "language": "en",
-            "type": "Test",
-            "status": "Past"
-        },
-        {
-            "class": "Skill",
-            "name": "Skill Block",
-            "language": "en",
-            "type": "Soft Skill"
-        },
-        {
-            "class": "Experience",
-            "name": "Gaming Test",
-            "language": "en",
-            "type": "Test",
-            "status": "Past"
-        }
-        ]
+                {
+                    "name": "No Mapping"
+                },
+                {
+                    "name": "No Mapping"
+                },
+                {
+                    "class": "Experience",
+                    "name": "mission",
+                    "language": "fr",
+                    "type": "personnality Test",
+                    "status": "past"
+                },
+                {
+                    "class": "Skill",
+                    "name": "RIASEC_skills",
+                    "language": "fr",
+                    "type": "Soft Skill"
+                },
+                {
+                    "class": "Skill",
+                    "name": "RIASEC_skills",
+                    "language": "fr",
+                    "type": "Soft Skill"
+                }
+                ]
     
     properties = [
-        "soo:label",
-        "soo:email",
-        "soo:date",
-        "soo:label",
-        "soo:result"
-        ]
+                None,
+                None,
+                "skos:prefLabel",
+                "skos:prefLabel",
+                "soo:skillLevelValue"
+                ]
     
     st.session_state.mapped = []
     st.session_state.mappingList = []
     
-    st.session_state[f"generateID_Experience Name"] = True
-    st.session_state[f"generateID_User ID"] = True
-    st.session_state[f"generateID_Associated Soft Skill Block"] = True
+    st.session_state[f"generateID_missions.name"] = True
+    st.session_state[f"generateID_missions.tendencies.name"] = True
     
     for field,mapping,property in zip(st.session_state.fieldList,mappings,properties):
         st.session_state[f"object_{field}"] = mapping
@@ -201,7 +193,7 @@ def handle_item_submission():
         for property,values in st.session_state[st.session_state.selectedType]:
             name,value = st.columns(2)
             name.info(property)
-            item[property] = value.selectbox("type",values,label_visibility="collapsed",key=f"{property}_value")
+            item[property] = value.selectbox("type",values,label_visibility="collapsed",format_func=str.capitalize,key=f"{property}_value")
             
         if st.form_submit_button("Create",use_container_width=True):
             st.session_state.itemList.append(item)
@@ -256,10 +248,42 @@ def create_rule(field):
             id_rule = {"id": f"mmr:rule-{len(st.session_state.mappingList)}",
                     "sourcePath": field,
                     "targetClass": f"soo:{st.session_state[f'object_{field}']['class']}",
-                    "targetProperty": "id",
-                    "targetFunction": "fno:generateId"}
-        
+                    "generateId": "true"}
+                    
             st.session_state.mappingList.append(id_rule)
+            
+            type_rule = {
+                            "id": f"mmr:rule-{len(st.session_state.mappingList)}",
+                            "sourcePath": field,
+                            "targetClass": "soo:Experience",
+                            "targetProperty": "soo:experienceType",
+                            "targetValue": f"term:experience/type/{st.session_state[f'object_{field}']['type'].replace(' ','')}"
+                        }
+                    
+            st.session_state.mappingList.append(type_rule)
+            
+            status_rule =  {
+                        "id": f"mmr:rule-{len(st.session_state.mappingList)}",
+                        "sourcePath": field,
+                        "targetClass": "soo:Experience",
+                        "targetProperty": "soo:experienceStatus",
+                        "targetValue": f"term:experience/type/{st.session_state[f'object_{field}']['status']}"
+                    }
+                    
+            st.session_state.mappingList.append(status_rule)
+    if st.session_state[f"generateID_{field}"] and st.session_state[f'object_{field}']['class'] == 'Skill':
+
+        id_rule ={"id": f"mmr:rule-{len(st.session_state.mappingList)}", 
+                        "sourcePath": field,
+                        "targetClass": f"soo:{st.session_state[f'object_{field}']['class']}",
+                        "generateId" : "true",
+                        "targetProperty": "soo:category",
+                        "targetValue" : "term:skills/category/riasec",
+                        "relationTo" : "soo:Experience",
+                        "relationName" : "soo:experience",
+                        "relationNameInverse" : "soo:skill"}
+        st.session_state.mappingList.append(id_rule)
+        
         
     rule = {"id": f"mmr:rule-{len(st.session_state.mappingList)}",
             "sourcePath": field,
@@ -273,19 +297,14 @@ def create_rule(field):
         rule["relationName"] = "soo:containsExperience"
         rule["relationNameInverse"] =  "soo:hasProfile"
     
-    if st.session_state[f"generateID_{field}"] and st.session_state[f'object_{field}']['class'] == 'Skill':
-        rule["generateId"] = "true"
-        rule["targetFunction"] = "fno:search-for-mapping-with-source"
-        rule["relationTo"] = "soo:Experience"
-        rule["relationName"] = "soo:resultFromExperience"
-        rule["relationNameInverse"] = "soo:hasSkill"
+  
         
     if st.session_state[f'property4{field}'] == "soo:result":
-        rule['targetFunction'] = "fno:as-is"
+        rule['targetFunction'] = "fno:skill-value-to-scale"
         
-    if st.session_state[f'property4{field}'] == "soo:label" and st.session_state[f'object_{field}']['class'] == 'Experience':
-        rule[ "targetLang"] = st.session_state[f"object_{field}"]["language"]
+    if st.session_state[f'property4{field}'] == "skos:prefLabel":
         rule['targetFunction'] = rule['targetFunction'] = "fno:asIs_WithLang"
+        rule[ "targetLang"] = st.session_state[f"object_{field}"]["language"]
     
     if st.session_state[f'property4{field}'] == "soo:date":
         rule['targetFunction'] = "fno:date-to-xsd"
@@ -306,7 +325,6 @@ def createMatchingForm(field):
 
 
 def display_existing_rules():
-    
     l,r = st.columns(2)
     ruleFile = {"@context": {
                         "todo": "define_the_rules_context"
