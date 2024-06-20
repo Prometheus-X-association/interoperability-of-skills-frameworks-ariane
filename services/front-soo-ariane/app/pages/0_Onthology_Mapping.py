@@ -8,13 +8,14 @@ def initialization():
     
     st.session_state.Experience = [("type",["educational","professional","vocational","personnality Test"]),("status",["past","ongoing","suggested"])]
     st.session_state.Skill = [("type",["Hard Skill","Soft Skill","Knowledge","Custom"])]
-    st.session_state.Choice = [("type",["Educational","Professional","Vocational"]),("status",["past","ongoing","suggested"])]
+    st.session_state.Polarity = []
     st.session_state.Profile = []
     
     st.session_state.ontology = {"Experience":[
                                         "soo:id",
                                         "skos:prefLabel",
                                         "soo:description",
+                                        "soo:family",
                                         "soo:date",
                                         "soo:result"
                                  ],
@@ -29,9 +30,9 @@ def initialization():
                                         "soo:email",
                                         "soo:name"
                                  ],
-                                 "Choice":[
+                                 "Polarity":[
                                      "soo:id",
-                                     "soo:polarityValue"
+                                     "soo:polarity"
                                  ]}
     st.session_state.itemList = []
     st.session_state.mappingList = []
@@ -92,56 +93,67 @@ def displaySidebar():
 
 def fillItemList():
     st.session_state.itemList = [
-        {
-            "class": "Experience",
-            "name": "mission",
-            "language": "fr",
-            "type": "personnality Test",
-            "status": "past"
-        },
-        {
-            "class": "Skill",
-            "name": "RIASEC_skills",
-            "language": "fr",
-            "type": "Soft Skill"
-        }
-        ]
+                {
+                    "class": "Experience",
+                    "name": "Experience",
+                    "language": "fr",
+                    "type": "professional",
+                    "status": "suggested"
+                },
+                {
+                    "class": "Polarity",
+                    "name": "Polarity",
+                    "language": "fr"
+                }
+                ]
 
 def fillMappings():
     mappings = [
                 {
-                    "name": "No Mapping"
+                    "class": "Experience",
+                    "name": "Experience",
+                    "language": "fr",
+                    "type": "professional",
+                    "status": "suggested"
+                },
+                {
+                    "class": "Experience",
+                    "name": "Experience",
+                    "language": "fr",
+                    "type": "professional",
+                    "status": "suggested"
                 },
                 {
                     "name": "No Mapping"
                 },
                 {
                     "class": "Experience",
-                    "name": "mission",
+                    "name": "Experience",
                     "language": "fr",
-                    "type": "personnality Test",
-                    "status": "past"
+                    "type": "professional",
+                    "status": "suggested"
                 },
                 {
-                    "class": "Skill",
-                    "name": "RIASEC_skills",
-                    "language": "fr",
-                    "type": "Soft Skill"
+                    "class": "Polarity",
+                    "name": "Polarity",
+                    "language": "fr"
                 },
                 {
-                    "class": "Skill",
-                    "name": "RIASEC_skills",
+                    "class": "Experience",
+                    "name": "Experience",
                     "language": "fr",
-                    "type": "Soft Skill"
+                    "type": "professional",
+                    "status": "suggested"
                 }
                 ]
     
     properties = [
-                None,
+                "soo:description",
+                "soo:id",
                 None,
                 "skos:prefLabel",
-                "skos:prefLabel",
-                "soo:skillLevelValue"
+                "soo:polarity",
+                "soo:family"
                 ]
     
     st.session_state.mapped = []
@@ -172,7 +184,7 @@ def create_item_form():
     with st.form("Item type"):
         st.header("Add a new item:", divider="red")
         l,r = st.columns([3,1])
-        l.selectbox("Select your Object type and language", ["Experience", "Skill", "Choice","Profile"], key="selectedType")
+        l.selectbox("Select your Object type and language", ["Experience", "Skill", "Polarity","Profile"], key="selectedType")
         r.selectbox("Select",["en","de","fr","es","it","re","tr","pl","ro"],key="language",label_visibility="hidden")
         st.text_input("Name your Object", placeholder=f"Object Name", help="Name your Object", key="objectName")
         if st.form_submit_button("Confirm", use_container_width=True) : 
@@ -331,7 +343,7 @@ def display_existing_rules():
                     },
                 "graph": st.session_state.mappingList}
     l.code(json.dumps(ruleFile,indent=4)) 
-    r.code(json.dumps(json.load(open("app/data/PITANGOO/PITANGOO-rules.json","r")),indent=4))
+    r.code(json.dumps(json.load(open("app/data/orientoi/orientoi_1-rules.json","r")),indent=4))
 
 ########################## APP LOGIC #####################################
 def main():
@@ -348,7 +360,7 @@ if __name__ == "__main__":
         st.set_page_config("Onthology Mapping",layout="centered")
         initialization()
         # file = st.file_uploader("Upload your Json","json",key="file")
-        st.session_state.file = open("app/data/PITANGOO/PITANGOO-minimal.json","r")
+        st.session_state.file = open("app/data/orientoi/orientoi_1-minimal.json","r")
         if st.session_state.file:
             parseFile()
             st.rerun()
