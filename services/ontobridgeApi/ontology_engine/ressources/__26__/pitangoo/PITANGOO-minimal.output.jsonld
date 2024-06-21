@@ -12,8 +12,6 @@
       "prefLabel": {"@value": "Mes centres d intérêt", "@language": "fr"},
       "skill": ["tr:__skill-1__", "tr:__skill-2__", "tr:__skill-3__"]
     }, 
-
-    
     {
       "id": "tr:__skill-1__",
       "type": "soo:Skill",
@@ -29,8 +27,6 @@
       "prefLabel": {"@value": "0.6", "@language": "en"},
       "notation": 0.6
     },
-
-
     {
       "id": "tr:__skill-2__",
       "type": "soo:Skill",
