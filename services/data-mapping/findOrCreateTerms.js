@@ -60,7 +60,6 @@ if(await iValidate('Do you want to remove the Concept ?')){
   if(await iValidate('Do you want to delete the Collection ?')){
     const deleted = await deleteCollection(collectionId)
     console.log('Collection deleted:', deleted)
-    throw new Error('restart here')
   }
 }
 
