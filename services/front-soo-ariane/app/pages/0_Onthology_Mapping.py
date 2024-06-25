@@ -343,7 +343,7 @@ def display_existing_rules():
                     },
                 "graph": st.session_state.mappingList}
     l.code(json.dumps(ruleFile,indent=4)) 
-    r.code(json.dumps(json.load(open("app/data/orientoi/orientoi_1-rules.json","r")),indent=4))
+    r.code(json.dumps(json.load(open("app/data/interim/interim-rules.json","r")),indent=4))
 
 ########################## APP LOGIC #####################################
 def main():
@@ -360,7 +360,7 @@ if __name__ == "__main__":
         st.set_page_config("Onthology Mapping",layout="centered")
         initialization()
         # file = st.file_uploader("Upload your Json","json",key="file")
-        st.session_state.file = open("app/data/orientoi/orientoi_1-minimal.json","r")
+        st.session_state.file = open("app/data/interim/interim-minimal.json","r")
         if st.session_state.file:
             parseFile()
             st.rerun()
