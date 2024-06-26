@@ -12,6 +12,7 @@ class Embeddings:
         self.modelPath =  f"{cwd}/machine_learning_engine/models_dump/{model_identifier}"
 
         if not os.path.exists(self.modelPath):
+            print("Download the model")
             self.model = SentenceTransformer(model_identifier)
             self.model.save(self.modelPath)
         else:
