@@ -1,6 +1,9 @@
 version: "3.7"
 services:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7fc82b2 (feat: add container for gcp deployment)
   api: 
     build: 
       context: ./
