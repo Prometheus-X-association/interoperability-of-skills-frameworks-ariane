@@ -23,4 +23,4 @@ class TermMatchingService:
                 provider_name =  instance["__term__"]['provider'] # provider 
                 concept = self.term_matching_engine.get_gql_create_or_find_term(provider_name, collection_pref_label,collection_category, concept_pref_label)
         return rdf
-        
+         
