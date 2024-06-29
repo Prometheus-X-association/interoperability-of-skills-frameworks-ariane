@@ -4,19 +4,75 @@
  },
  "graph": [
   {
+   "__matching__": {
+    "framework": "esco",
+    "language": "fr",
+    "provider": "interim",
+    "sourceValue": "Int\u00e9gration au groupe",
+    "subtype": "skill"
+   },
+   "description": {
+    "@language": "fr",
+    "@value": "Facult\u00e9 de se diriger vers un collectif d\u00e9j\u00e0 constitu\u00e9, d'y trouver une place et d'en devenir un membre l\u00e9gitime"
+   },
+   "id": "tr:__skill-id-1__",
+   "type": "soo:Skill"
+  },
+  {
+   "__matching__": {
+    "framework": "esco",
+    "language": "fr",
+    "provider": "interim",
+    "sourceValue": "Motivation et implication",
+    "subtype": "skill"
+   },
+   "description": {
+    "@language": "fr",
+    "@value": "S'investir, orienter son action et nourrir une satisfaction et un enthousiasme vis-\u00e0-vis d'une organisation, d'un projet collectif ou d'un objectif personnel"
+   },
+   "id": "tr:__skill-id-2__",
+   "type": "soo:Skill"
+  },
+  {
+   "dateFrom": "2023-06-28",
+   "id": "tr:__generated-id-1__",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "Problem-Solving Puzzle"
+   },
+   "profile": [
+    "tr:__profile-id-1__",
+    "tr:__profile-id-1__",
+    "tr:__profile-id-1__",
+    "tr:__profile-id-1__"
+   ],
+   "skill": [
+    "tr:__skill-id-3__",
+    "tr:__skill-id-3__",
+    "tr:__skill-id-3__"
+   ],
+   "type": "soo:Experience"
+  },
+  {
    "adress": "456 Oak St, Anytown, USA",
    "email": "alice.smith@example.com",
-   "experience": [
-    "tr:__generated-id-1__",
-    "tr:__generated-id-2__",
-    "tr:__generated-id-3__",
-    "tr:__generated-id-4__",
-    "tr:__generated-id-5__",
-    "tr:__generated-id-6__"
-   ],
+   "experience": "tr:__generated-id-1__",
    "id": "tr:__profile-id-1__",
    "name": "Alice Smith",
    "type": "soo:Profile"
+  },
+  {
+   "__matching__": {
+    "framework": "esco",
+    "language": "en",
+    "provider": "interim",
+    "sourceValue": "Problem-Solving",
+    "subtype": "skill"
+   },
+   "experience": "tr:__generated-id-1__",
+   "id": "tr:__skill-id-3__",
+   "skillLevelValue": "Validated",
+   "type": "soo:Skill"
   },
   {
    "__term__": {
@@ -33,7 +89,7 @@
    "dateTo": "2019-08-01",
    "experienceStatus": "term:experience/status/suggested",
    "experienceType": "term:experience/type/professional",
-   "id": "tr:__generated-id-1__",
+   "id": "tr:__generated-id-2__",
    "prefLabel": {
     "@language": "en",
     "@value": "Software Engineer"
@@ -46,7 +102,7 @@
    "dateTo": "2023-01-01",
    "experienceStatus": "term:experience/status/suggested",
    "experienceType": "term:experience/type/professional",
-   "id": "tr:__generated-id-2__",
+   "id": "tr:__generated-id-3__",
    "prefLabel": {
     "@language": "en",
     "@value": "Lead Engineer"
@@ -56,7 +112,7 @@
   {
    "company": "Scrum Alliance",
    "dateFrom": "2018-01-01",
-   "id": "tr:__generated-id-3__",
+   "id": "tr:__generated-id-4__",
    "prefLabel": {
     "@language": "en",
     "@value": "Certified Scrum Master"
@@ -66,7 +122,7 @@
   {
    "company": "Amazon",
    "dateFrom": "2021-01-01",
-   "id": "tr:__generated-id-4__",
+   "id": "tr:__generated-id-5__",
    "prefLabel": {
     "@language": "en",
     "@value": "AWS Certified Solutions Architect"
@@ -80,7 +136,7 @@
     "@language": "en",
     "@value": "Managing a team of software engineers"
    },
-   "id": "tr:__generated-id-5__",
+   "id": "tr:__generated-id-6__",
    "location": "Boston, USA",
    "prefLabel": {
     "@language": "en",
@@ -95,7 +151,7 @@
     "@language": "en",
     "@value": "Overseeing product development"
    },
-   "id": "tr:__generated-id-6__",
+   "id": "tr:__generated-id-7__",
    "location": "Seattle, USA",
    "prefLabel": {
     "@language": "en",
