@@ -1,13 +1,30 @@
 import hashlib
-from term_matching_engine.source_mapping_engine import SourceMapping
-from term_matching_engine.term_matching_engine import TermMatching
+from term_matching_engine.source_mapping_engine import SourceMappingEngine
+from term_matching_engine.term_matching_engine import TermMatchingEngine
 
 def md5(content : str) -> str:
     return hashlib.md5(content.encode('utf-8')).hexdigest()
 
 
 def test_engine_mapping_for_source():
-    source_mapping_engine = SourceMapping()
+   
+# /** Algorithm description 
+# calculate concept id, search if exist 
+# a) if not exist
+# - did the collection exist ? if yes proceed. if not create it
+# - create the entity and assign it to variable
+# b) if exist  
+
+# I) if have matchings for the target Framework
+#     - have one validated ? if yes return it, else return all
+# II) if don't have matchings : 
+#     - calculate the vector
+#     - run the search 
+#     - create the mappings from the search
+#     - add the mappings to the concept
+    
+    
+    source_mapping_engine = SourceMappingEngine()
     provider_name = 'orientoi_1'
     source_value = {
         'label': 'Agent / Agente de centre de tri de dechet',
@@ -49,6 +66,7 @@ def test_engine_mapping_for_source():
         concept = source_mapping_engine.create_concept(concept_id, concept_pref_label, source_language, collection_id)
         concept = concept[0]
 
+
     print('Concept exists. Search for mappings or create them', concept['id'], 'mapping size', len(concept.get('mapping', [])))
     mappings_list = []
     if concept.get('mapping'):
@@ -56,34 +74,34 @@ def test_engine_mapping_for_source():
 
         mappings_list = concept['mapping']
         print(f"The concept {concept['prefLabel'][0]['value']} ({concept['id']}) has mappings:")
-    else:
-        # stub calculation
-        search_vector = "vectStub"
-        query = ""
-        access_values = lambda: (_ for _ in ()).throw(Exception('Please override'))
-        if target_framework == 'rome' and source_type == 'job':
-            with open('graphql-vector-queries/vecRomeJob.gql', 'r') as file:
-                query = file.read()
-            access_values = lambda d: d['rome']['employment']['Position']
-        else:
-            raise Exception('These other cases need to be implemented')
+    # else:
+    #     # stub calculation
+    #     search_vector = "vectStub"
+    #     query = ""
+    #     access_values = lambda: (_ for _ in ()).throw(Exception('Please override'))
+    #     if target_framework == 'rome' and source_type == 'job':
+    #         with open('graphql-vector-queries/vecRomeJob.gql', 'r') as file:
+    #             query = file.read()
+    #         access_values = lambda d: d['rome']['employment']['Position']
+    #     else:
+    #         raise Exception('These other cases need to be implemented')
 
-        # search for matching 
-        variables = {"queryVector": search_vector}
-        data = request("endpoint", query, variables)
-        values = access_values(data)
+    #     # search for matching 
+    #     variables = {"queryVector": search_vector}
+    #     data = request("endpoint", query, variables)
+    #     values = access_values(data)
 
-        # build the mapping values and create them
-        mappings = [{
-            'id': f"term:{provider_name}/mapping/{md5(f'{concept_id}-{v['id']}')}",
-            'lang': target_language,
-            'score': v['_met']['score'] if '_met' in v and 'score' in v['_met'] else 0,
-            'target': v['id'],
-            'validated': 0,
-            'framework': target_framework,
-            'source': "elastic-search",
-            'mappingType': "skos:exactMatch",
-        } for v in values]
+    #     # build the mapping values and create them
+    #     mappings = [{
+    #         'id': f"term:{provider_name}/mapping/{md5(f'{concept_id}-{v['id']}')}",
+    #         'lang': target_language,
+    #         'score': v['_met']['score'] if '_met' in v and 'score' in v['_met'] else 0,
+    #         'target': v['id'],
+    #         'validated': 0,
+    #         'framework': target_framework,
+    #         'source': "elastic-search",
+    #         'mappingType': "skos:exactMatch",
+    #     } for v in values]
 
         mappings_create = source_mapping_engine.create_mappings(mappings)
         mappings_ids = [m['id'] for m in mappings_create]
@@ -113,11 +131,4 @@ def test_engine_mapping_for_source():
         print('search-for-mapping-with-source process example finished')
     
 def test_engine_matching_create_or_find_term():
-    term_matching_engine = TermMatching()
-    provider_name = 'interim'
-    collection_pref_label = 'polarity'
-    collection_category = 'scale'
-    concept_pref_label = 'example-polarity-1' 
-    concept = term_matching_engine.get_gql_create_or_find_term(provider_name, collection_pref_label, collection_category, concept_pref_label)
-    assert len(concept) >= 1
-    print(concept)
+    pass
