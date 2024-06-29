@@ -1,4 +1,5 @@
 import hashlib
+from api.services.machine_learning_service.embeddings_service import EmbeddingService
 from term_matching_engine.source_mapping_engine import SourceMappingEngine
 from term_matching_engine.term_matching_engine import TermMatchingEngine
 
@@ -25,6 +26,11 @@ def test_engine_mapping_for_source():
     
     
     source_mapping_engine = SourceMappingEngine()
+    embeddings_service = EmbeddingService()
+    term_matching_service = TermMatchingEngine()
+    
+    
+    
     provider_name = 'orientoi_1'
     source_value = {
         'label': 'Agent / Agente de centre de tri de dechet',
@@ -33,6 +39,7 @@ def test_engine_mapping_for_source():
     source_type = 'job'
     source_language = 'fr'
     target_framework = 'rome'
+    
     target_language = source_language
 
     # compatibility with findOrCreateTerm naming
@@ -74,34 +81,38 @@ def test_engine_mapping_for_source():
 
         mappings_list = concept['mapping']
         print(f"The concept {concept['prefLabel'][0]['value']} ({concept['id']}) has mappings:")
-    # else:
-    #     # stub calculation
-    #     search_vector = "vectStub"
-    #     query = ""
-    #     access_values = lambda: (_ for _ in ()).throw(Exception('Please override'))
-    #     if target_framework == 'rome' and source_type == 'job':
-    #         with open('graphql-vector-queries/vecRomeJob.gql', 'r') as file:
-    #             query = file.read()
-    #         access_values = lambda d: d['rome']['employment']['Position']
-    #     else:
-    #         raise Exception('These other cases need to be implemented')
+    else:
+        # stub calculation
+        search_vector = embeddings_service.get_vector(concept_pref_label)
+        term_matching_responses = term_matching_service.get_gql_term_matching(provider_name, source_type, search_vector)
+        
+        query = ""
+        access_values = lambda: (_ for _ in ()).throw(Exception('Please override'))
+        if target_framework == 'rome' and source_type == 'job':
+            access_values = lambda d: d['rome']['employment']['Position']
+        
+        if target_framework == 'rome' and source_type == 'skill':
+            access_values = lambda d: d['rome']['skills']['Skill_rome']
+            
+        if target_framework == 'esco' and source_type == 'skill':
+            access_values = lambda d: d['esco']['Skill']
+        
+        if target_framework == 'esco' and source_type == 'job':
+            access_values = lambda d: d['esco']['Occupation']
+        
+        values = access_values(term_matching_responses)
 
-    #     # search for matching 
-    #     variables = {"queryVector": search_vector}
-    #     data = request("endpoint", query, variables)
-    #     values = access_values(data)
-
-    #     # build the mapping values and create them
-    #     mappings = [{
-    #         'id': f"term:{provider_name}/mapping/{md5(f'{concept_id}-{v['id']}')}",
-    #         'lang': target_language,
-    #         'score': v['_met']['score'] if '_met' in v and 'score' in v['_met'] else 0,
-    #         'target': v['id'],
-    #         'validated': 0,
-    #         'framework': target_framework,
-    #         'source': "elastic-search",
-    #         'mappingType': "skos:exactMatch",
-    #     } for v in values]
+        # build the mapping values and create them
+        mappings = [{
+            'id': f"term:{provider_name}/mapping/{md5(f'{concept_id}-{v['id']}')}",
+            'lang': target_language,
+            'score': v['_met']['score'] if '_met' in v and 'score' in v['_met'] else 0,
+            'target': v['id'],
+            'validated': 0,
+            'framework': target_framework,
+            'source': "elastic-search",
+            'mappingType': "skos:exactMatch",
+        } for v in values]
 
         mappings_create = source_mapping_engine.create_mappings(mappings)
         mappings_ids = [m['id'] for m in mappings_create]
@@ -115,6 +126,8 @@ def test_engine_mapping_for_source():
         collection_category = 'scale'
 
         infos = [{'validated': m['validated'][0], 'score': m['score'][0], 'prefLabel': m['target'][0].get('prefLabel', [{}])[0].get('value')} for m in mappings_list]
+        
+                
         del_map_id = [m['id'] for m in mappings_list]
         del_map = source_mapping_engine.delete_mappings(del_map_id)
         print('Mappings deleted', del_map)
@@ -129,6 +142,3 @@ def test_engine_mapping_for_source():
         print('Collection deleted:', deleted)
 
         print('search-for-mapping-with-source process example finished')
-    
-def test_engine_matching_create_or_find_term():
-    pass
