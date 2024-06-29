@@ -1,4 +1,5 @@
 import hashlib
+from typing import List
 from term_matching_engine.graphql_helper import graphql_request_helper
 import json
 import os
@@ -7,7 +8,7 @@ import os
 def md5(content : str) -> str:
     return hashlib.md5(content.encode('utf-8')).hexdigest()
 
-class TermMatching:
+class TermMatchingEngine:
 
     def __init__(self) -> None:
         # Load the model
@@ -200,3 +201,18 @@ class TermMatching:
                 new_collection = self.create_collection(collection_id, collection_label)
             concept = self.create_concept(concept_id, concept_pref_label, collection_id)
         return concept
+    
+    
+    def generate(self, documents: List[dict], by_tree: bool = True) -> dict:
+        for instance in documents['graph']:
+            if '__term__' in instance:
+                concept_pref_label = instance["__term__"]['value'] # 0.8
+                collection_pref_label = instance["__term__"]['scale'] #skill 
+                collection_category = instance["__term__"]['collection_category'] #
+                provider_name =  instance["__term__"]['provider'] # provider 
+                concept = self.term_matching_engine.get_gql_create_or_find_term(provider_name, collection_pref_label,collection_category, concept_pref_label)
+                # TODO : insert concept 
+        # for instance in documents['graph']:
+        #     del instance["__term__"]
+                
+        return documents
