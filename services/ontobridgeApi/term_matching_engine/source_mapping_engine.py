@@ -4,6 +4,9 @@ import json
 import os
 
 
+def md5(content : str) -> str:
+    return hashlib.md5(content.encode('utf-8')).hexdigest()
+
 class SourceMappingEngine:
     def __init__(self) -> None:
         # Load the model
@@ -190,17 +193,23 @@ class SourceMappingEngine:
         result = self.graphql_engine.get_graphql_result(query, variables)
         return result["deleteCollection"]
 
+    def get_gql_create_or_find_mapping(self, provider_name: str, source_value: str, source_type: str, source_language : str, target_framework : str) -> dict:
+        # TODO
+        return None
 
     def generate(self, documents: List[dict], by_tree: bool = True) -> dict:
         for instance in documents['graph']:
             if '__matching__' in instance:
-                pass
-                # TODO : insert concept 
-                # concept_pref_label = instance["__term__"]['value'] # 0.8
-                # collection_pref_label = instance["__term__"]['scale'] #skill 
-                # collection_category = instance["__term__"]['collection_category'] #
-                # provider_name =  instance["__term__"]['provider'] # provider 
-                # concept = self.term_matching_engine.get_gql_create_or_find_term(provider_name, collection_pref_label,collection_category, concept_pref_label)
-        # for instance in documents['graph']:
-        #     del instance["__term__"]
+                provider_name = instance["__matching__"]['provider']
+                source_value = instance["__matching__"]['sourceValue']
+                source_type = instance["__matching__"]['subtype']
+                source_language = instance["__matching__"]['language']
+                target_framework = instance["__matching__"]['framework']
+                matching = self.get_gql_create_or_find_mapping(provider_name, source_value,source_type, source_language, target_framework)
+                
+               
+        for instance in documents['graph']:
+            if "__matching__" in instance:
+                del instance["__matching__"]
+
         return documents
