@@ -1,12 +1,12 @@
 import hashlib
-from term_matching_engine.term_matching_engine import TermMatching
+from term_matching_engine.term_matching_engine import TermMatchingEngine
 
 def md5(content : str) -> str:
     return hashlib.md5(content.encode('utf-8')).hexdigest()
 
 
 def test_engine_matching_for_term():
-    term_matching_engine = TermMatching()
+    term_matching_engine = TermMatchingEngine()
     provider_name = 'interim'
     collection_pref_label = 'polarity'
     collection_category = 'scale'
@@ -51,7 +51,7 @@ def test_engine_matching_for_term():
     print('find-or-create process example finished')
     
 def test_engine_matching_create_or_find_term():
-    term_matching_engine = TermMatching()
+    term_matching_engine = TermMatchingEngine()
     provider_name = 'interim'
     collection_pref_label = 'polarity'
     collection_category = 'scale'
@@ -62,7 +62,7 @@ def test_engine_matching_create_or_find_term():
     
     
 def test_engine_matching_create_or_find_term_PITANGOO():
-    term_matching_engine = TermMatching()
+    term_matching_engine = TermMatchingEngine()
     provider_name = 'PITANGOO'
     collection_pref_label = 'skill'
     collection_category = 'scale'
@@ -71,7 +71,7 @@ def test_engine_matching_create_or_find_term_PITANGOO():
     assert len(concept) >= 1
     print(concept)
     
-    term_matching_engine = TermMatching()
+    term_matching_engine = TermMatchingEngine()
     provider_name = 'PITANGOO'
     collection_pref_label = 'skill'
     collection_category = 'scale'
