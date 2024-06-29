@@ -32,6 +32,44 @@
    },
    "id": "tr:__skill-id-2__",
    "type": "soo:Skill"
+  },
+  {
+   "dateFrom": "2023-06-28",
+   "id": "tr:__generated-id-1__",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "Problem-Solving Puzzle"
+   },
+   "profile": [
+    "tr:__profile-id-1__",
+    "tr:__profile-id-1__",
+    "tr:__profile-id-1__"
+   ],
+   "skill": [
+    "tr:__skill-id-3__",
+    "tr:__skill-id-3__",
+    "tr:__skill-id-3__"
+   ],
+   "type": "soo:Experience"
+  },
+  {
+   "email": "zayne.harding@gmail.com",
+   "experience": "tr:__generated-id-1__",
+   "id": "tr:__profile-id-1__",
+   "type": "soo:Profile"
+  },
+  {
+   "__matching__": {
+    "framework": "esco",
+    "language": "en",
+    "provider": "jobready_2",
+    "sourceValue": "Problem-Solving",
+    "subtype": "skill"
+   },
+   "experience": "tr:__generated-id-1__",
+   "id": "tr:__skill-id-3__",
+   "skillLevelValue": "Validated",
+   "type": "soo:Skill"
   }
  ]
 }

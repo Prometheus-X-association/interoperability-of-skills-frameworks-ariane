@@ -1,14 +1,13 @@
+from typing import List
 from term_matching_engine.graphql_helper import graphql_request_helper
 import json
 import os
 
 
-class SourceMapping:
+class SourceMappingEngine:
     def __init__(self) -> None:
         # Load the model
         self.graphql_engine = graphql_request_helper()
-        cwd = os.getcwd()
-        self.glq_queries = self.load_queries(f"{cwd}/term_matching_engine/gql_functions.json")
 
     def update_concept_mapping(self, concept_id, mappings):
         query = """
@@ -190,3 +189,18 @@ class SourceMapping:
         variables = {"input": {"where": {"id": collection_id}}}
         result = self.graphql_engine.get_graphql_result(query, variables)
         return result["deleteCollection"]
+
+
+    def generate(self, documents: List[dict], by_tree: bool = True) -> dict:
+        for instance in documents['graph']:
+            if '__matching__' in instance:
+                pass
+                # TODO : insert concept 
+                # concept_pref_label = instance["__term__"]['value'] # 0.8
+                # collection_pref_label = instance["__term__"]['scale'] #skill 
+                # collection_category = instance["__term__"]['collection_category'] #
+                # provider_name =  instance["__term__"]['provider'] # provider 
+                # concept = self.term_matching_engine.get_gql_create_or_find_term(provider_name, collection_pref_label,collection_category, concept_pref_label)
+        # for instance in documents['graph']:
+        #     del instance["__term__"]
+        return documents
