@@ -33,7 +33,7 @@ def test_engine_mapping_for_source():
     
     provider_name = 'orientoi_1'
     source_value = {
-        'label': 'Agent / Agente de centre de tri de dechet',
+        'label': 'Agent2 / Agente de centre de tri de dechet',
         'description': "<h3>Définition</h3><p>Réalise des opérations de tri de déchets et produits industriels en fin de vie (textiles, plastiques, verres, composants, ...) selon les règles de sécurité, d'environnement et les impératifs de récupération (qualité, cadence, ...).<br>Peut reconditionner des produits industriels pour valorisation par réutilisation ou recyclage.<br>Peut coordonner une équipe.</p><h3>Accès au métier</h3><p>Cet emploi/métier est accessible sans diplôme ni expérience professionnelle.<br>Un ou plusieurs Certificat(s) d'Aptitude à la Conduite En Sécurité -CACES- conditionné(s) par une aptitude médicale à renouveler périodiquement peu(ven)t être requis.<br>Des vaccinations spécifiques (leptospirose, hépatite, ...) peuvent être requises selon le secteur d'activité.</p><h3>Condition du métier</h3><p>L'activité de cet emploi/métier s'exerce au sein de sociétés de services, d'associations, de collectivités territoriales, d'entreprises industrielles en contact avec différents intervenants (particuliers, conducteurs d'engins, ...).<br>Elle varie selon le lieu d'intervention et le type de produits collectés.<br>Elle peut impliquer le port de charges.<br>Le port d'équipements de protection (gants, combinaison, ...) peut être requis.</p><h3>Environnement de travail</h3><p>Structures</p><ul><li>Association</li><li>Centre Véhicules hors d'usage - VHU</li><li>Collectivité territoriale</li><li>Déchetterie</li><li>Entreprise industrielle</li><li>Ressourcerie</li><li>Société de collecte et de traitement des déchets</li><li>Société de services</li></ul><p>Secteurs</p><ul><li>Recyclage</li></ul><h3>Compétences de Base attendues</h3><table><tbody><tr><td>Réaliste</td><td>100.0 %</td></tr></tbody></table>"
     }
     source_type = 'job'
@@ -84,7 +84,7 @@ def test_engine_mapping_for_source():
     else:
         # stub calculation
         search_vector = embeddings_service.get_vector(concept_pref_label)
-        term_matching_responses = term_matching_service.get_gql_term_matching(provider_name, source_type, search_vector)
+        term_matching_responses = term_matching_service.get_gql_term_matching(target_framework, source_type, search_vector['embeddings'])
         
         query = ""
         access_values = lambda: (_ for _ in ()).throw(Exception('Please override'))
@@ -103,8 +103,9 @@ def test_engine_mapping_for_source():
         values = access_values(term_matching_responses)
 
         # build the mapping values and create them
+        
         mappings = [{
-            'id': f"term:{provider_name}/mapping/{md5(f'{concept_id}-{v['id']}')}",
+            'id': f"term:{provider_name}/mapping/" + md5(f'{concept_id}-{v["id"]}'),
             'lang': target_language,
             'score': v['_met']['score'] if '_met' in v and 'score' in v['_met'] else 0,
             'target': v['id'],
@@ -126,8 +127,7 @@ def test_engine_mapping_for_source():
         collection_category = 'scale'
 
         infos = [{'validated': m['validated'][0], 'score': m['score'][0], 'prefLabel': m['target'][0].get('prefLabel', [{}])[0].get('value')} for m in mappings_list]
-        
-                
+
         del_map_id = [m['id'] for m in mappings_list]
         del_map = source_mapping_engine.delete_mappings(del_map_id)
         print('Mappings deleted', del_map)
