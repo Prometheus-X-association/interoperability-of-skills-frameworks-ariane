@@ -6,6 +6,7 @@ from ontology_engine.document_tree import (
     DocumentTreeFactory,
     RulesTree,
     browse_rules_tree,
+    get_path_array,
 )
 from ontology_engine.rule import Rule
 from ontology_engine.tools import toJsonLD
@@ -148,11 +149,21 @@ class RuleEngine:
             jsonpath = "[*].'" + rules_tree.name + "'"
             jsonPath_expression = parse(jsonpath)
             rules_tree.matches = []
+            rules_tree.parameters = []
 
             for match in rules_tree.parent.matches:
                 current_matches = jsonPath_expression.find(match)
                 for current_match in current_matches:
                     rules_tree.matches.append(current_match.value)
+                for rule in rules_tree.rules:
+                    if rule.targetFunctionParam != '' and 'fno:' not in rule.targetFunctionParam:
+                        path_array = get_path_array(rule.targetFunctionParam)
+                        jsonpath_par = "[*].'" + path_array[len(path_array) - 1] + "'"
+                        jsonPath_expression_par = parse(jsonpath_par)
+                        current_matches_par = jsonPath_expression_par.find(match)
+                        for current_match_par in current_matches_par:
+                            rules_tree.parameters.append(current_match_par.value)
+                        break
 
     def generate_instances_by_tree(self, filed_rules_tree: RulesTree, docIndex: int) -> None:
         rules_trees = browse_rules_tree(filed_rules_tree)
@@ -252,6 +263,7 @@ class RuleEngine:
                         # "__matching__" :{ "path": "prefLabel.@value", "type" : "rome", "subtype" : "job", "value" : "Problem-Solving", "provider" : "interim"}
                         currentInstance["__matching__"] = {}
                         currentInstance["__matching__"]['sourceValue'] = match
+                        currentInstance["__matching__"]['parameter'] = rule_tree.parameters[index]
                         currentInstance["__matching__"]['provider'] = self.provider
                         currentInstance["__matching__"]['framework'] = 'esco'
                         
