@@ -31,6 +31,7 @@ def get_app():
     app.include_router(routers.machine_learning.router, prefix="/machine_learning")
     app.include_router(routers.term_matching.router, prefix="/term_matchings")
 <<<<<<< HEAD
+<<<<<<< HEAD
     app.include_router(routers.onto_bridge.router, prefix="/onto_bridge")
 =======
 >>>>>>> 2abe167 (fast api)
@@ -39,6 +40,9 @@ def get_app():
 >>>>>>> 8044f9d (embedding endpoint)
 =======
 >>>>>>> 81c1026 (term matching service)
+=======
+    app.include_router(routers.router, prefix="/onto_bridge")
+>>>>>>> 269d0fd (add transformation)
     return app
 
 
