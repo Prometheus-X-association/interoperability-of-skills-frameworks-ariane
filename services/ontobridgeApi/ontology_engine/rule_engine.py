@@ -6,6 +6,7 @@ from ontology_engine.document_tree import (
     DocumentTreeFactory,
     RulesTree,
     browse_rules_tree,
+    get_path_array,
 )
 from ontology_engine.rule import Rule
 from ontology_engine.tools import toJsonLD
