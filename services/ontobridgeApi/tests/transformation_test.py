@@ -24,8 +24,11 @@ def test_apply_tree_rules_orientoi():
     term_matching_engine = TermMatchingEngine()
     serialisationWithTerm = term_matching_engine.generate(serialisation, providerName)
     
+    
+    target_framework = 'rome'
+    
     matching_source_engine = SourceMappingEngine()
-    serialisationWithTermAndMatching = matching_source_engine.generate(serialisationWithTerm, providerName)
+    serialisationWithTermAndMatching = matching_source_engine.generate(serialisationWithTerm, target_framework,  providerName)
 
     json_result = json.dumps(serialisationWithTermAndMatching, sort_keys=True)
 
