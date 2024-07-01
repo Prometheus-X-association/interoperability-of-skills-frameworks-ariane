@@ -17,7 +17,7 @@ ontology_engine = OntologyService()
 source_mapping_service = SourceMappingService()
 
 @cbv(router)
-class onto_bridge:
+class onto_bridges:
     def __init__(self) -> None:
         pass
 
