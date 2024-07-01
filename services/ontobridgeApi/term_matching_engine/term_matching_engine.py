@@ -214,6 +214,7 @@ class TermMatchingEngine:
                # TODO : add the link to the instance of term created and add an instance of term
         
         for instance in documents['graph']:
-            del instance["__term__"]
+            if '__term__' in instance:
+                del instance["__term__"]
                 
         return documents

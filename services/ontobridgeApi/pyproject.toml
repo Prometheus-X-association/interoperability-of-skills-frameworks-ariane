@@ -30,6 +30,7 @@ sentencepiece = "^0.2.0"
 gql = "^3.5.0"
 inquirer = "^3.2.4"
 requests-toolbelt = "^1.0.0"
+beautifulsoup4 = "^4.12.3"
 [tool.poetry.dev-dependencies]
 
 [build-system]
