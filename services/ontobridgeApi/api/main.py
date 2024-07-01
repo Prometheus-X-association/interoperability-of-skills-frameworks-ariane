@@ -20,6 +20,7 @@ def get_app():
     app.include_router(routers.ontology.router, prefix="/ontologies")
     app.include_router(routers.machine_learning.router, prefix="/machine_learning")
     app.include_router(routers.term_matching.router, prefix="/term_matchings")
+    app.include_router(routers.router, prefix="/onto_bridge")
     return app
 
 
