@@ -21,6 +21,7 @@ class RulesTree:
     children = {}
     rules: List[Rule] = []
     matches = []
+    parameters = []
 
     def add_rule(self, rule: Rule, subPath="") -> None:
         if subPath == "":
