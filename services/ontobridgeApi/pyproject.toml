@@ -45,6 +45,7 @@ gql = "^3.5.0"
 inquirer = "^3.2.4"
 requests-toolbelt = "^1.0.0"
 <<<<<<< HEAD
+<<<<<<< HEAD
 beautifulsoup4 = "^4.12.3"
 =======
 description = "api to transform documents into universal ontology"
@@ -77,6 +78,9 @@ inquirer = "^3.2.4"
 >>>>>>> 7d545e1 (add first implementation)
 =======
 >>>>>>> 6777765 (add create_or_find term functon)
+=======
+beautifulsoup4 = "^4.12.3"
+>>>>>>> 2dfc513 (add beautifulsoup4 to parse html inner text)
 [tool.poetry.dev-dependencies]
 
 [build-system]

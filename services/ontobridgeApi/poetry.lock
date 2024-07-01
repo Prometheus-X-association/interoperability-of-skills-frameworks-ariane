@@ -343,6 +343,9 @@ files = [
 
 [[package]]
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2dfc513 (add beautifulsoup4 to parse html inner text)
 name = "beautifulsoup4"
 version = "4.12.3"
 description = "Screen-scraping library"
@@ -364,8 +367,11 @@ html5lib = ["html5lib"]
 lxml = ["lxml"]
 
 [[package]]
+<<<<<<< HEAD
 =======
 >>>>>>> 81c1026 (term matching service)
+=======
+>>>>>>> 2dfc513 (add beautifulsoup4 to parse html inner text)
 name = "black"
 version = "24.4.2"
 description = "The uncompromising code formatter."
@@ -5359,6 +5365,17 @@ files = [
 >>>>>>> acc916a (add utf8 encoding for orientoi)
 
 [[package]]
+name = "soupsieve"
+version = "2.5"
+description = "A modern CSS selector implementation for Beautiful Soup."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "soupsieve-2.5-py3-none-any.whl", hash = "sha256:eaa337ff55a1579b6549dc679565eac1e3d000563bcb1c8ab0d0fefbc0c2cdc7"},
+    {file = "soupsieve-2.5.tar.gz", hash = "sha256:5663d5a7b3bfaeee0bc4372e7fc48f9cff4940b3eec54a6451cc5299f1097690"},
+]
+
+[[package]]
 name = "sqlalchemy"
 version = "2.0.30"
 description = "Database Abstraction Library"
@@ -7232,6 +7249,7 @@ multidict = ">=4.0"
 lock-version = "2.0"
 python-versions = "^3.11"
 <<<<<<< HEAD
+<<<<<<< HEAD
 content-hash = "93ea240b7bbbec223fc0870718d0db98716c87c4d5763788b48e363fe35906ba"
 =======
 =======
@@ -7598,3 +7616,6 @@ content-hash = "18a8a36f0f92d766aad3e1865ccdb596fdd79882b9f833087f8018df932fee62
 =======
 content-hash = "e039d7d547a6d19bfabb0a71062c57a5bc660b8fb9447758521e2067fdbf0163"
 >>>>>>> 6777765 (add create_or_find term functon)
+=======
+content-hash = "93ea240b7bbbec223fc0870718d0db98716c87c4d5763788b48e363fe35906ba"
+>>>>>>> 2dfc513 (add beautifulsoup4 to parse html inner text)
