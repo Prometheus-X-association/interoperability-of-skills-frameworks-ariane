@@ -210,9 +210,10 @@ class TermMatchingEngine:
                 collection_pref_label = instance["__term__"]['scale'] #skill 
                 collection_category = instance["__term__"]['collection_category'] #
                 provider_name =  instance["__term__"]['provider'] # provider 
-                concept = self.get_gql_create_or_find_term(provider_name, collection_pref_label,collection_category, concept_pref_label)
-                # TODO : insert concept 
-        # for instance in documents['graph']:
-        #     del instance["__term__"]
+                term = self.get_gql_create_or_find_term(provider_name, collection_pref_label,collection_category, concept_pref_label)
+               # TODO : add the link to the instance of term created and add an instance of term
+        
+        for instance in documents['graph']:
+            del instance["__term__"]
                 
         return documents
