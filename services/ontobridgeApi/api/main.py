@@ -32,6 +32,7 @@ def get_app():
     app.include_router(routers.term_matching.router, prefix="/term_matchings")
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     app.include_router(routers.onto_bridge.router, prefix="/onto_bridge")
 =======
 >>>>>>> 2abe167 (fast api)
@@ -43,6 +44,9 @@ def get_app():
 =======
     app.include_router(routers.router, prefix="/onto_bridge")
 >>>>>>> 269d0fd (add transformation)
+=======
+    app.include_router(routers.onto_bridge.router, prefix="/onto_bridge")
+>>>>>>> b75a1d0 (add endpoint)
     return app
 
 
