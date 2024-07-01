@@ -28,8 +28,12 @@ source_mapping_service = SourceMappingService()
 class onto_bridges:
 =======
 @cbv(router)
+<<<<<<< HEAD
 class onto_bridge:
 >>>>>>> 269d0fd (add transformation)
+=======
+class onto_bridges:
+>>>>>>> 4275276 (update dependencies)
     def __init__(self) -> None:
         pass
 
