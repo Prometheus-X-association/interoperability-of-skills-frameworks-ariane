@@ -209,8 +209,8 @@ class SourceMappingEngine:
         
         # find or create the concept
         # Search for concept
-        concept_id = f"term:{provider_name}/{collection_pref_label}/value/{md5(concept_pref_label)}"
-        collection_id = f"term:{provider_name}/collection/{collection_pref_label}"
+        concept_id = f"term:{provider_name}/{collection_pref_label}/{target_framework}/value/{md5(concept_pref_label)}"
+        collection_id = f"term:{provider_name}/collection/{collection_pref_label}/{target_framework}"
         
         concept = self.search_for_concept_with_mappings(concept_id)
         concept = concept[0] if concept else None
@@ -222,7 +222,7 @@ class SourceMappingEngine:
 
             # if collectionid not exist
             if not collection_exist:
-                collection_label = f"{provider_name} collection for {collection_pref_label}"
+                collection_label = f"{provider_name} collection for {collection_pref_label} and framework {target_framework}"
                 # we create the collection
                 new_collection = self.create_collection(collection_id, collection_label)
 
@@ -238,8 +238,17 @@ class SourceMappingEngine:
             return mappings_list
     
         # if not, we create it 
-        search_vector = self.embeddings_service.get_vector(concept_pref_label)
-        term_matching_responses = self.term_matching_service.get_gql_term_matching(target_framework, source_type, search_vector['embeddings'])
+        if concept_pref_description == '':
+            text = concept_pref_label
+        else: 
+            # text = f'{concept_pref_label} {concept_pref_description}'
+            text = concept_pref_description
+            
+        text = text[:1678]
+        
+        search_vector = self.embeddings_service.get_vector(text)
+         
+        term_matching_responses = self.term_matching_engine.get_gql_term_matching(target_framework, source_type, search_vector['embeddings'])
         
         
         # TODO : how to extend it ? 
@@ -284,7 +293,9 @@ class SourceMappingEngine:
         for instance in documents['graph']:
             if '__matching__' in instance:
                 provider_name = instance["__matching__"]['provider']
-                source_value = instance["__matching__"]['sourceValue']
+                source_value = {}
+                source_value['label'] = instance["__matching__"]['sourceValue']
+                source_value['description'] = instance["__matching__"]['parameter']
                 source_type = instance["__matching__"]['subtype']
                 source_language = instance["__matching__"]['language']
                 # target_framework = instance["__matching__"]['framework']
