@@ -16,6 +16,18 @@
     "@value": "Agent / Agente de centre de tri de dechet"
    },
    "sourceId": "0ede4405-fb88-4cac-a501-603916c1484a",
+   "suggestions": [
+    "term:orientoi_1/mapping/5464fa89af95def6816d50b53ebf858d",
+    "term:orientoi_1/mapping/46571b554645925a4ea6a30d776d3ea3",
+    "term:orientoi_1/mapping/6feecc593052dfaae41e12f173ced867",
+    "term:orientoi_1/mapping/572cd22521b9b9c37884f764628baa56",
+    "term:orientoi_1/mapping/53236526cacbc4b2aef577450f0dc46a",
+    "term:orientoi_1/mapping/aae44c57241fb1a7e3e972a4cd370732",
+    "term:orientoi_1/mapping/29b1adf89a0cba4db5e4a1f556d35fec",
+    "term:orientoi_1/mapping/f26df82274a128251c19c0a42f8c4213",
+    "term:orientoi_1/mapping/a8d2e82206b49e6d228fe8f630050112",
+    "term:orientoi_1/mapping/49379e50c710fe6ce8d00ba03aa2a978"
+   ],
    "type": "soo:Experience"
   },
   {
@@ -35,6 +47,18 @@
     "@value": "Social"
    },
    "sourceId": "1535e1c6-37e8-11e8-8177-782bcb695311",
+   "suggestions": [
+    "term:orientoi_1/mapping/edb6e5a8ec9058d60c78e05e5e816f3a",
+    "term:orientoi_1/mapping/fa76175cb957b9705190f5286481620c",
+    "term:orientoi_1/mapping/ba8528d8a09df25144ad67c596440c8c",
+    "term:orientoi_1/mapping/198f330052eb93888f51af2748fa6c72",
+    "term:orientoi_1/mapping/722b46c49cabbff812a5313e115132d8",
+    "term:orientoi_1/mapping/4546503e6db38ed5e01e28ee0dd7aba9",
+    "term:orientoi_1/mapping/8d783082a12d6572d647149aba499d75",
+    "term:orientoi_1/mapping/0d5dd212ade1e0d8d2384dd16b6c5c27",
+    "term:orientoi_1/mapping/a29464b6d05cd5bb64b39e00ac143441",
+    "term:orientoi_1/mapping/a0ac6562998be0a8de9055d7ef399c1a"
+   ],
    "type": "soo:Experience"
   },
   {
@@ -46,6 +70,186 @@
    "experience": "tr:__generated-id-2__",
    "id": "tr:__polarity-id-2__",
    "type": "soo:Polarity"
+  },
+  {
+   "id": "term:orientoi_1/mapping/5464fa89af95def6816d50b53ebf858d",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "responsable service gestion des d\u00e9chets"
+   },
+   "score": 0,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:orientoi_1/mapping/46571b554645925a4ea6a30d776d3ea3",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "n\u00e9gociant grossiste en d\u00e9chets et d\u00e9bris/n\u00e9gociante grossiste en d\u00e9chets et d\u00e9bris"
+   },
+   "score": 0,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:orientoi_1/mapping/6feecc593052dfaae41e12f173ced867",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "ing\u00e9nieur en traitement des d\u00e9chets/ing\u00e9nieure en traitement des d\u00e9chets"
+   },
+   "score": 0,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:orientoi_1/mapping/572cd22521b9b9c37884f764628baa56",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "conducteur de benne \u00e0 ordures/conductrice de benne \u00e0 ordures"
+   },
+   "score": 0,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:orientoi_1/mapping/53236526cacbc4b2aef577450f0dc46a",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "op\u00e9rateur de tri/op\u00e9ratrice de tri"
+   },
+   "score": 0,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:orientoi_1/mapping/aae44c57241fb1a7e3e972a4cd370732",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "technicien en d\u00e9chets dangereux/technicienne en d\u00e9chets dangereux"
+   },
+   "score": 0,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:orientoi_1/mapping/29b1adf89a0cba4db5e4a1f556d35fec",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "sp\u00e9cialiste en import-export de d\u00e9chets et d\u00e9bris"
+   },
+   "score": 0,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:orientoi_1/mapping/f26df82274a128251c19c0a42f8c4213",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "recycleur/recycleuse"
+   },
+   "score": 0,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:orientoi_1/mapping/a8d2e82206b49e6d228fe8f630050112",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "responsable de la logistique distribution de d\u00e9chets et d\u00e9bris"
+   },
+   "score": 0,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:orientoi_1/mapping/49379e50c710fe6ce8d00ba03aa2a978",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "op\u00e9rateur de traitement des d\u00e9chets m\u00e9talliques/op\u00e9ratrice de traitement des d\u00e9chets m\u00e9talliques"
+   },
+   "score": 0,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:orientoi_1/mapping/edb6e5a8ec9058d60c78e05e5e816f3a",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "sociologue des m\u00e9dias"
+   },
+   "score": 0,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:orientoi_1/mapping/fa76175cb957b9705190f5286481620c",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "assistant social en milieu hospitalier/assistante sociale en milieu hospitalier"
+   },
+   "score": 0,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:orientoi_1/mapping/ba8528d8a09df25144ad67c596440c8c",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "consultant en action sociale/consultante en action sociale"
+   },
+   "score": 0,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:orientoi_1/mapping/198f330052eb93888f51af2748fa6c72",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "chercheur en communication/chercheuse en communication"
+   },
+   "score": 0,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:orientoi_1/mapping/722b46c49cabbff812a5313e115132d8",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "travailleur social/travailleuse sociale"
+   },
+   "score": 0,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:orientoi_1/mapping/4546503e6db38ed5e01e28ee0dd7aba9",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "responsable de service social"
+   },
+   "score": 0,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:orientoi_1/mapping/8d783082a12d6572d647149aba499d75",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "assistant social en milieu scolaire/assistante sociale en milieu scolaire"
+   },
+   "score": 0,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:orientoi_1/mapping/0d5dd212ade1e0d8d2384dd16b6c5c27",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "responsable de circonscription d\u2019action sociale"
+   },
+   "score": 0,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:orientoi_1/mapping/a29464b6d05cd5bb64b39e00ac143441",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "sociologue"
+   },
+   "score": 0,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:orientoi_1/mapping/a0ac6562998be0a8de9055d7ef399c1a",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "agent de d\u00e9veloppement social/agente de d\u00e9veloppement social"
+   },
+   "score": 0,
+   "type": "skos:exactMatch"
   }
  ]
 }
