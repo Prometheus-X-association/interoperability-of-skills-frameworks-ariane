@@ -300,7 +300,10 @@ class SourceMappingEngine:
                 provider_name = instance["__matching__"]['provider']
                 source_value = {}
                 source_value['label'] = instance["__matching__"]['sourceValue']
-                source_value['description'] = instance["__matching__"]['parameter']
+                if 'parameter' in instance["__matching__"]:
+                    source_value['description'] = instance["__matching__"]['parameter']
+                else: 
+                    source_value['description'] = ''
                 source_type = instance["__matching__"]['subtype']
                 source_language = instance["__matching__"]['language']
                 
@@ -330,9 +333,6 @@ class SourceMappingEngine:
                 print('Collection deleted:', deleted)
 
                 print('search-for-mapping-with-source process example finished')
-                
-                #
-                
                 
                 if not concept_id in instances:
                     mappings_list = self.get_gql_create_or_find_mapping(provider_name, source_value,source_type, source_language, target_framework)
