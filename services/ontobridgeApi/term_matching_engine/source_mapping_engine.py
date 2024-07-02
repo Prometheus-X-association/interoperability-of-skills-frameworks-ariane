@@ -1,5 +1,7 @@
 import hashlib
 from typing import List
+
+from bs4 import BeautifulSoup
 from api.services.machine_learning_service.embeddings_service import EmbeddingService
 from term_matching_engine.graphql_helper import graphql_request_helper
 import json
@@ -17,7 +19,7 @@ class SourceMappingEngine:
         self.graphql_engine = graphql_request_helper()
         self.embeddings_service = EmbeddingService()
         self.term_matching_engine = TermMatchingEngine()
-
+    
     def update_concept_mapping(self, concept_id, mappings):
         query = """
                 mutation UpdateConcept($input: updateConceptInput) {
@@ -241,10 +243,12 @@ class SourceMappingEngine:
         if concept_pref_description == '':
             text = concept_pref_label
         else: 
-            # text = f'{concept_pref_label} {concept_pref_description}'
-            text = concept_pref_description
+            text = f'{concept_pref_label} {concept_pref_description}'
+        soup = BeautifulSoup(concept_pref_label, 'html.parser')
+        concept_pref_label = soup.get_text()
             
-        text = text[:1678]
+        # string len limit is 1678 
+        text = concept_pref_label[:1678]
         
         search_vector = self.embeddings_service.get_vector(text)
          
