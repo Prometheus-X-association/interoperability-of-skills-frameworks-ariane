@@ -54,7 +54,7 @@ def test_mapping_for_source():
     collection_pref_label = source_type
     concept_pref_label = source_value['label']
     concept_pref_description = source_value['description']
-    soup = BeautifulSoup(concept_pref_description, 'html.parser')
+    soup = BeautifulSoup(concept_pref_label, 'html.parser')
     concept_pref_description = soup.get_text()
     
     # find or create the concept
