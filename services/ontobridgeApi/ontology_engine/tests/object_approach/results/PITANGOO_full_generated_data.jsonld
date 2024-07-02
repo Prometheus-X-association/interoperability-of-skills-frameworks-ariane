@@ -26,8 +26,8 @@
     "@language": "fr",
     "@value": "ARTISTIQUE"
    },
-   "skillLevelScale": "term:PITANGOO/skill/scale/1",
-   "skillLevelValue": "term:PITANGOO/skill/level/0.6",
+   "skillLevelScale": "term:PITANGOO/skill/1e722f5abafbfa1375af50041eef3246",
+   "skillLevelValue": "term:PITANGOO/skill/1e722f5abafbfa1375af50041eef3246/level/0.6",
    "type": "soo:Skill"
   },
   {
@@ -38,8 +38,8 @@
     "@language": "fr",
     "@value": "R\u00c9ALISTE"
    },
-   "skillLevelScale": "term:PITANGOO/skill/scale/1",
-   "skillLevelValue": "term:PITANGOO/skill/level/0.8",
+   "skillLevelScale": "term:PITANGOO/skill/1e722f5abafbfa1375af50041eef3246",
+   "skillLevelValue": "term:PITANGOO/skill/1e722f5abafbfa1375af50041eef3246/level/0.8",
    "type": "soo:Skill"
   },
   {
@@ -50,8 +50,8 @@
     "@language": "fr",
     "@value": "ENTREPRENEUR"
    },
-   "skillLevelScale": "term:PITANGOO/skill/scale/1",
-   "skillLevelValue": "term:PITANGOO/skill/level/0.6",
+   "skillLevelScale": "term:PITANGOO/skill/1e722f5abafbfa1375af50041eef3246",
+   "skillLevelValue": "term:PITANGOO/skill/1e722f5abafbfa1375af50041eef3246/level/0.6",
    "type": "soo:Skill"
   },
   {
