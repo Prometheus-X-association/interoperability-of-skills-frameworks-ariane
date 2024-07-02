@@ -265,7 +265,6 @@ class RuleEngine:
                         currentInstance["__matching__"]['sourceValue'] = match
                         currentInstance["__matching__"]['parameter'] = rule_tree.parameters[index]
                         currentInstance["__matching__"]['provider'] = self.provider
-                        currentInstance["__matching__"]['framework'] = 'esco'
                         
                         if 'skill' in str.lower(currentInstance["type"]):
                             currentInstance["__matching__"]['subtype'] = 'skill'
@@ -280,32 +279,17 @@ class RuleEngine:
                     if rule.targetFunction == "fno:get-family-value":
                         continue
                     
-                    if rule.targetFunction == "fno:skill-value-to-scale":
+                    if rule.targetFunction == "fno:skill-value-to-scale" or rule.targetFunction == "fno:find-or-create-term":
                         currentInstance["__term__"] = {}
                         fieldName = self.get_field_name(rule.targetClass)
-                        currentInstance["__term__"]['value'] = str(match)
+                        currentInstance["__term__"]['str_value'] = str(match)
+                        currentInstance["__term__"]['collection_category'] = 'polarity'
+                        currentInstance["__term__"]['value'] = match
                         currentInstance["__term__"]['scale'] = fieldName
                         currentInstance["__term__"]['provider'] = self.provider
                         currentInstance["__term__"]['language'] = rule.targetLang if rule.targetLang != '' else 'en'
                         continue
                     
-                    if rule.targetFunction == "fno:find-or-create-term":
-                        # "__term__" :{ "outputType": "polarity", "type" : "openToInterim", "provider" : "interim", "value" : "0", "@language":"en"}
-                        # currentInstance["id"] = self.generate_id(currentInstance)
-                        # fieldName = self.get_field_name(rule.targetClass)
-                        # currentInstance[fieldName] = {}
-                        # currentInstance[fieldName]["@value"] = str(match)
-                        # currentInstance[fieldName]["@language"] = "en"
-                        
-                        currentInstance["__term__"] = {}
-                        fieldName = self.get_field_name(rule.targetClass)
-                        currentInstance["__term__"]['value'] = str(match)
-                        currentInstance["__term__"]['scale'] = fieldName
-                        currentInstance["__term__"]['provider'] = self.provider
-                        currentInstance["__term__"]['language'] = rule.targetLang if rule.targetLang != '' else 'en'
-                        continue
-                    
-
                     if rule.targetValue != "":
                         currentInstance[target] = rule.targetValue
                         continue
