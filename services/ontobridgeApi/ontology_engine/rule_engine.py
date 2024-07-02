@@ -263,7 +263,8 @@ class RuleEngine:
                         # "__matching__" :{ "path": "prefLabel.@value", "type" : "rome", "subtype" : "job", "value" : "Problem-Solving", "provider" : "interim"}
                         currentInstance["__matching__"] = {}
                         currentInstance["__matching__"]['sourceValue'] = match
-                        currentInstance["__matching__"]['parameter'] = rule_tree.parameters[index]
+                        if len(rule_tree.parameters) > 0:
+                            currentInstance["__matching__"]['parameter'] = rule_tree.parameters[index]
                         currentInstance["__matching__"]['provider'] = self.provider
                         
                         if 'skill' in str.lower(currentInstance["type"]):
@@ -283,6 +284,7 @@ class RuleEngine:
                         currentInstance["__term__"] = {}
                         fieldName = self.get_field_name(rule.targetClass)
                         currentInstance["__term__"]['str_value'] = str(match)
+                        currentInstance["__term__"]['scale_path'] = rule.sourcePath
                         currentInstance["__term__"]['collection_category'] = 'polarity'
                         currentInstance["__term__"]['value'] = match
                         currentInstance["__term__"]['scale'] = fieldName
