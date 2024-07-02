@@ -294,6 +294,7 @@ class SourceMappingEngine:
         return mappings_list
 
     def generate(self, documents: List[dict], target_framework: str , by_tree: bool = True) -> dict:
+        instances = {}
         for instance in documents['graph']:
             if '__matching__' in instance:
                 provider_name = instance["__matching__"]['provider']
@@ -302,9 +303,51 @@ class SourceMappingEngine:
                 source_value['description'] = instance["__matching__"]['parameter']
                 source_type = instance["__matching__"]['subtype']
                 source_language = instance["__matching__"]['language']
-                # target_framework = instance["__matching__"]['framework']
-                matching = self.get_gql_create_or_find_mapping(provider_name, source_value,source_type, source_language, target_framework)
-                # TODO : add the link to the instance of matchting created and add an instance of matching
+                
+                target_language = source_language
+
+                # compatibility with findOrCreateTerm naming
+                collection_pref_label = source_type
+                concept_pref_label = source_value['label']
+                
+                concept_id = f"term:{provider_name}/{collection_pref_label}/{target_framework}/value/{md5(concept_pref_label)}"
+                collection_id = f"term:{provider_name}/collection/{collection_pref_label}/{target_framework}"
+                
+                ## to be removed 
+                mappings_list = self.get_gql_create_or_find_mapping(provider_name, source_value,source_type, source_language, target_framework)
+
+                del_map_id = [m['id'] for m in mappings_list]
+                del_map = self.delete_mappings(del_map_id)
+                print('Mappings deleted', del_map)
+                del_concept = self.update_concept_mapping(concept_id, [])
+                print('Concept.mapping property updated', del_concept)
+
+                
+                deleted = self.delete_concept(concept_id)
+                print('Concept deleted:', deleted)
+
+                deleted = self.delete_collection(collection_id)
+                print('Collection deleted:', deleted)
+
+                print('search-for-mapping-with-source process example finished')
+                
+                #
+                
+                
+                if not concept_id in instances:
+                    mappings_list = self.get_gql_create_or_find_mapping(provider_name, source_value,source_type, source_language, target_framework)
+                    # { "id": "esco:adc6dc11-3376-xxxx", "prefLabel": { "@language": "fr", "@value": "Tri de d\u00e9chet" }, "type": "esco:Occupation" , "score" : 35},
+                    instances[concept_id] = mappings_list
+                    for mapping in mappings_list:
+                        term_in_document = {}
+                        term_in_document['id'] = mapping['id']
+                        term_in_document['score'] = mapping['score'][0]
+                        term_in_document['type'] = mapping['mappingType'][0]
+                        term_in_document['prefLabel'] = {}
+                        term_in_document['prefLabel']['@language'] =  mapping['lang'][0]
+                        term_in_document['prefLabel']['@value'] = mapping['target'][0]['prefLabel'][0]['value']
+                        documents['graph'].append(term_in_document)
+                    instance['suggestions'] = [m['id'] for m in mappings_list]
                
         for instance in documents['graph']:
             if "__matching__" in instance:

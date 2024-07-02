@@ -33,12 +33,12 @@ def test_mapping_for_source():
     
     provider_name = 'orientoi_1'
     source_value = {
-        'label': 'Agent2 / Agente de centre de tri de dechet',
+        'label': 'Agent / Agente de centre de tri de dechet',
         'description': "<h3>Définition</h3><p>Réalise des opérations de tri de déchets et produits industriels en fin de vie (textiles, plastiques, verres, composants, ...) selon les règles de sécurité, d'environnement et les impératifs de récupération (qualité, cadence, ...).<br>Peut reconditionner des produits industriels pour valorisation par réutilisation ou recyclage.<br>Peut coordonner une équipe.</p><h3>Accès au métier</h3><p>Cet emploi/métier est accessible sans diplôme ni expérience professionnelle.<br>Un ou plusieurs Certificat(s) d'Aptitude à la Conduite En Sécurité -CACES- conditionné(s) par une aptitude médicale à renouveler périodiquement peu(ven)t être requis.<br>Des vaccinations spécifiques (leptospirose, hépatite, ...) peuvent être requises selon le secteur d'activité.</p><h3>Condition du métier</h3><p>L'activité de cet emploi/métier s'exerce au sein de sociétés de services, d'associations, de collectivités territoriales, d'entreprises industrielles en contact avec différents intervenants (particuliers, conducteurs d'engins, ...).<br>Elle varie selon le lieu d'intervention et le type de produits collectés.<br>Elle peut impliquer le port de charges.<br>Le port d'équipements de protection (gants, combinaison, ...) peut être requis.</p><h3>Environnement de travail</h3><p>Structures</p><ul><li>Association</li><li>Centre Véhicules hors d'usage - VHU</li><li>Collectivité territoriale</li><li>Déchetterie</li><li>Entreprise industrielle</li><li>Ressourcerie</li><li>Société de collecte et de traitement des déchets</li><li>Société de services</li></ul><p>Secteurs</p><ul><li>Recyclage</li></ul><h3>Compétences de Base attendues</h3><table><tbody><tr><td>Réaliste</td><td>100.0 %</td></tr></tbody></table>"
     }
     
     source_value = {
-        'label': 'Agent2 / Agente de centre de tri de dechet',
+        'label': 'Agent / Agente de centre de tri de dechet',
         'description': '<h3>Travailler dans LE SOCIAL</h3><p>Ce secteur est fondé sur l’humain et au service de la communauté.</p><p><img src="{{url}}/{{path}}/intro46.png"></p><p>Les professionnels de ce domaine écoutent, accompagnent, aident et conseillent par leurs actions matérielles, pédagogiques et psychologiques des personnes dépendantes, des enfants, des personnes fragiles ou en difficulté : personnes âgées, handicapés, jeunes enfants, adolescents... Ils interviennent à travers l\'action éducative, l\'animation socioculturelle, le conseil... Ce secteur intègre également les métiers administratifs du secteur.</p><p>Les missions et publics sont variés. Les travailleurs sociaux permettent à une personne âgée dépendante de continuer à vivre chez elle en lui rendant des services chaque jour. Ils aident un enfant en situation de handicap moteur à suivre une scolarité normale en le secondant dans ses gestes d\'écolier. Ils informent une famille en situation de précarité sur les aides auxquelles elle peut prétendre.</p><p><u><b>Quelques métiers du secteur :</b></u></p><p><u>L’aide sociale</u></p><p><ul><li>Assistant / Assistante sociale</li><li>Conseiller / Conseillère en insertion sociale et professionnelle</li></ul></p><p><u>L’éducation spécialisée</u></p><p><ul><li>Educateur / Educatrice de jeunes enfants</li><li>Moniteur éducateur / Monitrice éducatrice</li></ul></p><p><u>L’animation</u></p><p><ul><li>Animateur / Animatrice socio-culturel</li><li>Animateur / Animatrice multimédia</li></ul></p><p><u>Le travail à domicile</u></p><p><ul><li>Auxiliaire de vie</li><li>Technicien / Technicienne de l\'intervention sociale et familiale</li></ul></p><p><b><u>Quelques chiffres du sec'
     }
     
@@ -54,7 +54,7 @@ def test_mapping_for_source():
     collection_pref_label = source_type
     concept_pref_label = source_value['label']
     concept_pref_description = source_value['description']
-    soup = BeautifulSoup(concept_pref_label, 'html.parser')
+    soup = BeautifulSoup(concept_pref_description, 'html.parser')
     concept_pref_description = soup.get_text()
     
     # find or create the concept
