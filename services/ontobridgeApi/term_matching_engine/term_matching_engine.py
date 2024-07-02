@@ -228,8 +228,8 @@ class TermMatchingEngine:
                     term_in_document['prefLabel']['@language'] =  instance["__term__"]['language']
                     term_in_document['prefLabel']['@value'] = instance["__term__"]['str_value']
                     documents['graph'].append(term_in_document)
-                instance['skillLevelValue'] = f'term:{provider_name}/{str.lower(collection_pref_label)}/level/{concept_pref_label}'
-                instance['skillLevelScale'] = f'term:{provider_name}/{str.lower(collection_pref_label)}/scale/1'
+                instance['skillLevelValue'] = f'term:{provider_name}/{str.lower(collection_pref_label)}/{md5(instance["__term__"]["scale_path"])}/level/{concept_pref_label}'
+                instance['skillLevelScale'] = f'term:{provider_name}/{str.lower(collection_pref_label)}/{md5(instance["__term__"]["scale_path"])}'
         
         for instance in documents['graph']:
             if '__term__' in instance:
