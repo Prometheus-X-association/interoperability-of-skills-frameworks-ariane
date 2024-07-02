@@ -1,10 +1,10 @@
 {
     "rome": {
-        "job": "\nquery VECRomeJob($queryVector: [Float]) {\n  rome(queryVector: $queryVector) {\n    employment {\n      Position {\n        id\n        type\n        prefLabel {\n          value\n        }_met {   score } \n      }\n    }\n  }\n} \n",
-        "skill": "\nquery VECRomeSkill($queryVector: [Float]) {\n  rome {\n    skills(queryVector: $queryVector) {\n      Skill_rome {\n        id\n        type\n        prefLabel {\n          value\n        }\n        _met {\n          score\n        }\n      }\n    }\n  }\n}\n"
+        "job": "query VECRomeJob($queryVector: [Float]) {  rome(queryVector: $queryVector) {    employment {      Position {        id        type        prefLabel {          value        }_met {   score }       }    }  }} ",
+        "skill": "query VECRomeSkill($queryVector: [Float]) {  rome {    skills(queryVector: $queryVector) {      Skill_rome {        id        type        prefLabel {          value        }        _met {          score        }      }    }  }}"
     },
     "esco": {
-        "job": "\nquery VECEscoJob($queryVector: [Float]) {\n  esco(queryVector: $queryVector) {\n    Occupation {\n      id\n      type\n      prefLabel {\n        value\n      }\n _met {   score }   }\n  }\n}\n",
-        "skill": "\nquery VECEscoSkill($queryVector: [Float]) {\n  esco(queryVector: $queryVector) {\n    Skill {\n      id\n      type\n      prefLabel {\n        value\n      }\n _met {   score }   }\n  }\n}\n"
+        "job": "query VECEscoJob($queryVector: [Float]) {  esco(queryVector: $queryVector) {    Occupation {      id      type      prefLabel {        value      } _met {   score }   }  }}",
+        "skill": "query VECEscoSkill($queryVector: [Float]) {  esco(queryVector: $queryVector) {    Skill {      id      type      prefLabel {        value      } _met {   score }   }  }}"
     }
 }

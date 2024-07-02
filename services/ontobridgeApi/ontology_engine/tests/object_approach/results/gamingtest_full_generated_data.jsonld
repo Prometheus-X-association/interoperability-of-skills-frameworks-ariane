@@ -1,0 +1,132 @@
+{
+ "@context": {
+  "@todo": "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
+ },
+ "graph": [
+  {
+   "dateFrom": "2023-06-28",
+   "id": "tr:__generated-id-1__",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "Problem-Solving Puzzle"
+   },
+   "profile": "tr:__profile-id-1__",
+   "skill": "tr:__skill-id-1__",
+   "type": "soo:Experience"
+  },
+  {
+   "email": "zayne.harding@gmail.com",
+   "experience": "tr:__generated-id-1__",
+   "id": "tr:__profile-id-1__",
+   "type": "soo:Profile"
+  },
+  {
+   "experience": "tr:__generated-id-1__",
+   "id": "tr:__skill-id-1__",
+   "skillLevelValue": "Validated",
+   "suggestions": [
+    "term:gamingtest/mapping/dbe92626296ab0acd8ad95daf2d153dc",
+    "term:gamingtest/mapping/6c650961c8d472739000e6185d8a77df",
+    "term:gamingtest/mapping/8ffdcb7da44414e8880af32b2fd6a097",
+    "term:gamingtest/mapping/fa4bb3d0d2896051c4d3a5d6f1a395af",
+    "term:gamingtest/mapping/78b0876bad9b015e24770bf9798371f6",
+    "term:gamingtest/mapping/fdedfedd17cc2488bbc00d838a012606",
+    "term:gamingtest/mapping/ac6b499536899e9b997610114fe62061",
+    "term:gamingtest/mapping/e7a1dbe1f244f3782541d10f39e5e47b",
+    "term:gamingtest/mapping/25082514cc7277d11b6fcd0f3e50eab0",
+    "term:gamingtest/mapping/be0b69115b19334b7534d4623ca7a10f"
+   ],
+   "type": "soo:Skill"
+  },
+  {
+   "id": "term:gamingtest/mapping/dbe92626296ab0acd8ad95daf2d153dc",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "Classifier les probl\u00e8mes des utilisateurs"
+   },
+   "score": 1.7127484,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:gamingtest/mapping/6c650961c8d472739000e6185d8a77df",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "G\u00e9rer des incidents techniques"
+   },
+   "score": 1.6930254,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:gamingtest/mapping/8ffdcb7da44414e8880af32b2fd6a097",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "R\u00e9soudre les relations de r\u00e9currence entre algorithmes"
+   },
+   "score": 1.6828835,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:gamingtest/mapping/fa4bb3d0d2896051c4d3a5d6f1a395af",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "R\u00e9soudre des contentieux"
+   },
+   "score": 1.6800853,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:gamingtest/mapping/78b0876bad9b015e24770bf9798371f6",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "Analyser des proc\u00e9d\u00e9s"
+   },
+   "score": 1.6756537,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:gamingtest/mapping/fdedfedd17cc2488bbc00d838a012606",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "Analyser les dysfonctionnements, les al\u00e9as, les \u00e9carts par rapport aux objectifs"
+   },
+   "score": 1.671892,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:gamingtest/mapping/ac6b499536899e9b997610114fe62061",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "Analyser des dysfonctionnements et des difficult\u00e9s techniques de connexion au site ou d'utilisation des services par les internautes"
+   },
+   "score": 1.6693895,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:gamingtest/mapping/e7a1dbe1f244f3782541d10f39e5e47b",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "\u00c9tablir les modalit\u00e9s de r\u00e8glement d'un litige ou transmettre aux services juridiques, contentieux"
+   },
+   "score": 1.6662636,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:gamingtest/mapping/25082514cc7277d11b6fcd0f3e50eab0",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "Proposer une solution de gestion pr\u00e9ventive ou corrective"
+   },
+   "score": 1.6651416,
+   "type": "skos:exactMatch"
+  },
+  {
+   "id": "term:gamingtest/mapping/be0b69115b19334b7534d4623ca7a10f",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "Traiter les demandes et r\u00e9clamations des clients selon la proc\u00e9dure \u00e9tablie et en proposant des solutions adapt\u00e9es"
+   },
+   "score": 1.6622238,
+   "type": "skos:exactMatch"
+  }
+ ]
+}
