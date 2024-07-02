@@ -206,14 +206,30 @@ class TermMatchingEngine:
     
     
     def generate(self, documents: List[dict], by_tree: bool = True) -> dict:
+        instances = {}
+        
         for instance in documents['graph']:
             if '__term__' in instance:
-                concept_pref_label = instance["__term__"]['value'] # 0.8
+                concept_pref_label = instance["__term__"]['str_value'] # 0.8
                 collection_pref_label = instance["__term__"]['scale'] #skill 
-                collection_category = instance["__term__"]['collection_category'] #
+                collection_category = instance["__term__"]['collection_category']
                 provider_name =  instance["__term__"]['provider'] # provider 
-                term = self.get_gql_create_or_find_term(provider_name, collection_pref_label,collection_category, concept_pref_label)
-               # TODO : add the link to the instance of term created and add an instance of term
+                concept_id = f"term:{provider_name}/{collection_pref_label}/value/{md5(concept_pref_label)}"
+                collection_id = f"term:{provider_name}/{collection_pref_label}/{collection_category}"
+                
+                if not concept_id in instances:
+                    term = self.get_gql_create_or_find_term(provider_name, collection_pref_label,collection_category, concept_pref_label)
+                    instances[concept_id] = term
+                    term_in_document = {}
+                    term_in_document['id'] = f'term:{provider_name}/{collection_pref_label}/level/{concept_pref_label}'
+                    term_in_document['notation'] = instance["__term__"]['value']
+                    term_in_document['type'] = 'skos:Concept'
+                    term_in_document['prefLabel'] = {}
+                    term_in_document['prefLabel']['@language'] =  instance["__term__"]['language']
+                    term_in_document['prefLabel']['@value'] = instance["__term__"]['str_value']
+                    documents['graph'].append(term_in_document)
+                instance['skillLevelValue'] = f'term:{provider_name}/{str.lower(collection_pref_label)}/level/{concept_pref_label}'
+                instance['skillLevelScale'] = f'term:{provider_name}/{str.lower(collection_pref_label)}/scale/1'
         
         for instance in documents['graph']:
             if '__term__' in instance:
