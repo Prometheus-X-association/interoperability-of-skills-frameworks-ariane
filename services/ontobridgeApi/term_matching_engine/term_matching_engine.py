@@ -189,17 +189,16 @@ class TermMatchingEngine:
 
     
     # provider_name = 'interim' / collection_pref_label = 'polarity' / collection_category = 'scale' / concept_pref_label = 'example-polarity-1' 
-    def get_gql_create_or_find_term(self, provider_name: str, collection_pref_label: str, collection_category: str, concept_pref_label : str) -> dict:
+    def get_gql_create_or_find_term(self, provider_name: str, concept_id: str, collection_id: str , concept_pref_label: str, collection_pref_label: str, path: str) -> dict:
         # Find or create the concept
-        concept_id = f"term:{provider_name}/{collection_pref_label}/value/{md5(concept_pref_label)}"
-        collection_id = f"term:{provider_name}/{collection_pref_label}/{collection_category}"
+
         concept = self.search_for_concept(concept_id)
         concept_exist = len(concept) >= 1
         if not concept_exist:
             collection = self.search_for_collection(collection_id)
             collection_exist = len(collection) >= 1
             if not collection_exist:
-                collection_label = f"{provider_name} collection for {collection_pref_label}"
+                collection_label = f"{provider_name} collection for {collection_pref_label} in {path}"
                 new_collection = self.create_collection(collection_id, collection_label)
             concept = self.create_concept(concept_id, concept_pref_label, collection_id)
         return concept
@@ -214,22 +213,26 @@ class TermMatchingEngine:
                 collection_pref_label = instance["__term__"]['scale'] #skill 
                 collection_category = instance["__term__"]['collection_category']
                 provider_name =  instance["__term__"]['provider'] # provider 
-                concept_id = f"term:{provider_name}/{collection_pref_label}/value/{md5(concept_pref_label)}"
-                collection_id = f"term:{provider_name}/{collection_pref_label}/{collection_category}"
+                
+                skill_level_value = f'term:{provider_name}/{str.lower(collection_pref_label)}/{md5(instance["__term__"]["scale_path"])}/level/{concept_pref_label}'
+                skill_level_scale = f'term:{provider_name}/{str.lower(collection_pref_label)}/{md5(instance["__term__"]["scale_path"])}'
+                concept_id = skill_level_value
+                collection_id = skill_level_scale
                 
                 if not concept_id in instances:
-                    term = self.get_gql_create_or_find_term(provider_name, collection_pref_label,collection_category, concept_pref_label)
+                    term = self.get_gql_create_or_find_term(provider_name, concept_id, collection_id, concept_pref_label , collection_category, instance["__term__"]["scale_path"])
                     instances[concept_id] = term
                     term_in_document = {}
-                    term_in_document['id'] = f'term:{provider_name}/{collection_pref_label}/level/{concept_pref_label}'
+                    term_in_document['id'] = skill_level_value
+                    term_in_document['memberOf'] = skill_level_scale
                     term_in_document['notation'] = instance["__term__"]['value']
                     term_in_document['type'] = 'skos:Concept'
                     term_in_document['prefLabel'] = {}
                     term_in_document['prefLabel']['@language'] =  instance["__term__"]['language']
                     term_in_document['prefLabel']['@value'] = instance["__term__"]['str_value']
                     documents['graph'].append(term_in_document)
-                instance['skillLevelValue'] = f'term:{provider_name}/{str.lower(collection_pref_label)}/{md5(instance["__term__"]["scale_path"])}/level/{concept_pref_label}'
-                instance['skillLevelScale'] = f'term:{provider_name}/{str.lower(collection_pref_label)}/{md5(instance["__term__"]["scale_path"])}'
+                instance['skillLevelValue'] = skill_level_value
+                instance['skillLevelScale'] = skill_level_scale
         
         for instance in documents['graph']:
             if '__term__' in instance:
