@@ -50,5 +50,5 @@ class EmbeddingService:
         Returns:
             dict: The response from the API as a dictionary.
         """
-        response = self.embeddings.embed_texts(texts)
+        response = self.embeddings.embed_text(texts[0])
         return {"embeddings": response}
