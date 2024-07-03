@@ -56,3 +56,14 @@ class Embeddings:
 >>>>>>> 81c1026 (term matching service)
         embeddings_vector = embeddings.cpu().numpy().tolist()
         return embeddings_vector
+    
+    def embed_text(text,model,chunk_size = 1000):
+        chunks = [text[i:i + chunk_size] for i in range(0, len(text), chunk_size)]
+        # Compute embeddings for each chunk
+        chunk_embeddings = [model.encode(chunk, convert_to_tensor=True) for chunk in chunks]
+        try:
+            # Average the embeddings
+            avg_embedding = sum(chunk_embeddings) / len(chunk_embeddings)
+            return avg_embedding.tolist()
+        except:
+            return [0] * 1024
