@@ -98,6 +98,7 @@ class SourceMappingEngine:
                                         language
                                         value
                                     }
+                                    type
                                 }
                                 mappingType
                             }
@@ -244,7 +245,7 @@ class SourceMappingEngine:
             text = concept_pref_label
         else: 
             text = f'{concept_pref_label} {concept_pref_description}'
-        soup = BeautifulSoup(concept_pref_label, 'html.parser')
+        soup = BeautifulSoup(text, 'html.parser')
         concept_pref_label = soup.get_text()
             
         # string len limit is 1678 
@@ -280,7 +281,7 @@ class SourceMappingEngine:
             'validated': 0,
             'framework': target_framework,
             'source': "elastic-search",
-            'mappingType': "skos:exactMatch",
+            'mappingType': "skos:exactMatch"
         } for v in values]
 
         mappings_create = self.create_mappings(mappings)
@@ -316,23 +317,23 @@ class SourceMappingEngine:
                 concept_id = f"term:{provider_name}/{collection_pref_label}/{target_framework}/value/{md5(concept_pref_label)}"
                 collection_id = f"term:{provider_name}/collection/{collection_pref_label}/{target_framework}"
                 
-                ## to be removed 
-                mappings_list = self.get_gql_create_or_find_mapping(provider_name, source_value,source_type, source_language, target_framework)
+                # ## to be removed 
+                # mappings_list = self.get_gql_create_or_find_mapping(provider_name, source_value,source_type, source_language, target_framework)
 
-                del_map_id = [m['id'] for m in mappings_list]
-                del_map = self.delete_mappings(del_map_id)
-                print('Mappings deleted', del_map)
-                del_concept = self.update_concept_mapping(concept_id, [])
-                print('Concept.mapping property updated', del_concept)
+                # del_map_id = [m['id'] for m in mappings_list]
+                # del_map = self.delete_mappings(del_map_id)
+                # print('Mappings deleted', del_map)
+                # del_concept = self.update_concept_mapping(concept_id, [])
+                # print('Concept.mapping property updated', del_concept)
 
                 
-                deleted = self.delete_concept(concept_id)
-                print('Concept deleted:', deleted)
+                # deleted = self.delete_concept(concept_id)
+                # print('Concept deleted:', deleted)
 
-                deleted = self.delete_collection(collection_id)
-                print('Collection deleted:', deleted)
+                # deleted = self.delete_collection(collection_id)
+                # print('Collection deleted:', deleted)
 
-                print('search-for-mapping-with-source process example finished')
+                # print('search-for-mapping-with-source process example finished')
                 
                 if not concept_id in instances:
                     mappings_list = self.get_gql_create_or_find_mapping(provider_name, source_value,source_type, source_language, target_framework)
@@ -342,12 +343,16 @@ class SourceMappingEngine:
                         term_in_document = {}
                         term_in_document['id'] = mapping['id']
                         term_in_document['score'] = mapping['score'][0]
-                        term_in_document['type'] = mapping['mappingType'][0]
+                        term_in_document['mappingType'] = mapping['mappingType'][0]
+                        term_in_document['type'] = mapping['target'][0]['type']
+                        term_in_document['parent'] = instance['id']
                         term_in_document['prefLabel'] = {}
                         term_in_document['prefLabel']['@language'] =  mapping['lang'][0]
                         term_in_document['prefLabel']['@value'] = mapping['target'][0]['prefLabel'][0]['value']
                         documents['graph'].append(term_in_document)
                     instance['suggestions'] = [m['id'] for m in mappings_list]
+                    if len(mappings_list) > 0:
+                        instance['mapping'] = mappings_list[0]['id']
                
         for instance in documents['graph']:
             if "__matching__" in instance:
