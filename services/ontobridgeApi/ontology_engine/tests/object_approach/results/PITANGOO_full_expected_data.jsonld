@@ -31,6 +31,15 @@
    "type": "soo:Skill"
   },
   {
+   "id": "term:PITANGOO/skill/level/0.6",
+   "notation": 0.6,
+   "prefLabel": {
+    "@language": "en",
+    "@value": "0.6"
+   },
+   "type": "skos:Concept"
+  },
+  {
    "category": "term:skills/category/riasec",
    "experience": "tr:__experience-1__",
    "id": "tr:__skill-2__",
@@ -42,15 +51,6 @@
    "skillLevelValue": "term:PITANGOO/skill/level/0.8",
    "type": "soo:Skill"
   },
-  {
-    "id": "term:PITANGOO/skill/level/0.6",
-    "notation": 0.6,
-    "prefLabel": {
-     "@language": "en",
-     "@value": "0.6"
-    },
-    "type": "skos:Concept"
-   },
   {
    "id": "term:PITANGOO/skill/level/0.8",
    "notation": 0.8,
