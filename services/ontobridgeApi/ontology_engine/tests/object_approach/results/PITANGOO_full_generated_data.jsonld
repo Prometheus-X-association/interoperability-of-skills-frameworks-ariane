@@ -55,7 +55,8 @@
    "type": "soo:Skill"
   },
   {
-   "id": "term:PITANGOO/Skill/level/0.6",
+   "id": "term:PITANGOO/skill/1e722f5abafbfa1375af50041eef3246/level/0.6",
+   "memberOf": "term:PITANGOO/skill/1e722f5abafbfa1375af50041eef3246",
    "notation": 0.6,
    "prefLabel": {
     "@language": "en",
@@ -64,7 +65,8 @@
    "type": "skos:Concept"
   },
   {
-   "id": "term:PITANGOO/Skill/level/0.8",
+   "id": "term:PITANGOO/skill/1e722f5abafbfa1375af50041eef3246/level/0.8",
+   "memberOf": "term:PITANGOO/skill/1e722f5abafbfa1375af50041eef3246",
    "notation": 0.8,
    "prefLabel": {
     "@language": "en",
