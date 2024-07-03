@@ -115,7 +115,7 @@ def test_apply_tree_rules_gamingtest():
     term_matching_engine = TermMatchingEngine()
     serialisationWithTerm = term_matching_engine.generate(serialisation, providerName)
         
-    target_framework = 'rome'
+    target_framework = 'esco'
     
     matching_source_engine = SourceMappingEngine()
     serialisationWithTermAndMatching = matching_source_engine.generate(serialisationWithTerm, target_framework,  providerName)

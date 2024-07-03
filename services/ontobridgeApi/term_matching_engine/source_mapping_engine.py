@@ -249,7 +249,8 @@ class SourceMappingEngine:
         concept_pref_label = soup.get_text()
             
         # string len limit is 1678 
-        text = concept_pref_label[:1678]
+        # text = concept_pref_label[:1678]
+        text = concept_pref_label
         
         search_vector = self.embeddings_service.get_vector(text)
          
@@ -344,11 +345,12 @@ class SourceMappingEngine:
                         term_in_document['id'] = mapping['id']
                         term_in_document['score'] = mapping['score'][0]
                         term_in_document['mappingType'] = mapping['mappingType'][0]
-                        term_in_document['type'] = mapping['target'][0]['type']
+                        if len(mapping['target']) > 0:
+                            term_in_document['type'] = mapping['target'][0]['type']
+                            term_in_document['prefLabel'] = {}
+                            term_in_document['prefLabel']['@value'] = mapping['target'][0]['prefLabel'][0]['value']
+                            term_in_document['prefLabel']['@language'] =  mapping['target'][0]['prefLabel'][0]['language']
                         term_in_document['parent'] = instance['id']
-                        term_in_document['prefLabel'] = {}
-                        term_in_document['prefLabel']['@language'] =  mapping['lang'][0]
-                        term_in_document['prefLabel']['@value'] = mapping['target'][0]['prefLabel'][0]['value']
                         documents['graph'].append(term_in_document)
                     instance['suggestions'] = [m['id'] for m in mappings_list]
                     if len(mappings_list) > 0:

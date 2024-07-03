@@ -23,110 +23,162 @@
   {
    "experience": "tr:__generated-id-1__",
    "id": "tr:__skill-id-1__",
+   "mapping": "term:gamingtest/mapping/2677b9bf970bb871dd7f5761cd27b71c",
    "skillLevelValue": "Validated",
    "suggestions": [
-    "term:gamingtest/mapping/dbe92626296ab0acd8ad95daf2d153dc",
-    "term:gamingtest/mapping/6c650961c8d472739000e6185d8a77df",
-    "term:gamingtest/mapping/8ffdcb7da44414e8880af32b2fd6a097",
-    "term:gamingtest/mapping/fa4bb3d0d2896051c4d3a5d6f1a395af",
-    "term:gamingtest/mapping/78b0876bad9b015e24770bf9798371f6",
-    "term:gamingtest/mapping/fdedfedd17cc2488bbc00d838a012606",
-    "term:gamingtest/mapping/ac6b499536899e9b997610114fe62061",
-    "term:gamingtest/mapping/e7a1dbe1f244f3782541d10f39e5e47b",
-    "term:gamingtest/mapping/25082514cc7277d11b6fcd0f3e50eab0",
-    "term:gamingtest/mapping/be0b69115b19334b7534d4623ca7a10f"
+    "term:gamingtest/mapping/2677b9bf970bb871dd7f5761cd27b71c",
+    "term:gamingtest/mapping/7ddd0d28f65581496a57748c6d6a2f09",
+    "term:gamingtest/mapping/28a05f2fb5526e79c796b1a49f34c9c2",
+    "term:gamingtest/mapping/e50f52181b5d7ec1da05c016127a1ad5",
+    "term:gamingtest/mapping/58da9631ba4f75a62d63b8164961fa5e",
+    "term:gamingtest/mapping/aead9e8aef5c3ee7790abfa0362b5592",
+    "term:gamingtest/mapping/b1705081e072f07acd306c2159b69cd4",
+    "term:gamingtest/mapping/53cf888f7a7e85ab0de932cac26780c5",
+    "term:gamingtest/mapping/5afeaca0d616478bf47d35f466e0b59f",
+    "term:gamingtest/mapping/b78cd5d31b28326c9647daafd497688f"
    ],
    "type": "soo:Skill"
   },
   {
-   "id": "term:gamingtest/mapping/dbe92626296ab0acd8ad95daf2d153dc",
+   "id": "term:gamingtest/mapping/2677b9bf970bb871dd7f5761cd27b71c",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__skill-id-1__",
    "prefLabel": {
-    "@language": "en",
-    "@value": "Classifier les probl\u00e8mes des utilisateurs"
+    "@language": "fr",
+    "@value": "adopter des strat\u00e9gies de promotion de la biodiversit\u00e9 et du bien-\u00eatre animal"
    },
-   "score": 1.7127484,
-   "type": "skos:exactMatch"
+   "score": 1,
+   "type": [
+    "esco:Skill",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
   },
   {
-   "id": "term:gamingtest/mapping/6c650961c8d472739000e6185d8a77df",
+   "id": "term:gamingtest/mapping/7ddd0d28f65581496a57748c6d6a2f09",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__skill-id-1__",
    "prefLabel": {
-    "@language": "en",
-    "@value": "G\u00e9rer des incidents techniques"
+    "@language": "fr",
+    "@value": "communiquer avec des dactylos"
    },
-   "score": 1.6930254,
-   "type": "skos:exactMatch"
+   "score": 1,
+   "type": [
+    "esco:Skill",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
   },
   {
-   "id": "term:gamingtest/mapping/8ffdcb7da44414e8880af32b2fd6a097",
+   "id": "term:gamingtest/mapping/28a05f2fb5526e79c796b1a49f34c9c2",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__skill-id-1__",
    "prefLabel": {
-    "@language": "en",
-    "@value": "R\u00e9soudre les relations de r\u00e9currence entre algorithmes"
+    "@language": "fr",
+    "@value": "appliquer des normes d\u2019hygi\u00e8ne personnelle lors d\u2019op\u00e9rations de nettoyage"
    },
-   "score": 1.6828835,
-   "type": "skos:exactMatch"
+   "score": 1,
+   "type": [
+    "esco:Skill",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
   },
   {
-   "id": "term:gamingtest/mapping/fa4bb3d0d2896051c4d3a5d6f1a395af",
+   "id": "term:gamingtest/mapping/e50f52181b5d7ec1da05c016127a1ad5",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__skill-id-1__",
    "prefLabel": {
-    "@language": "en",
-    "@value": "R\u00e9soudre des contentieux"
+    "@language": "fr",
+    "@value": "acheter des pi\u00e8ces de v\u00e9hicules"
    },
-   "score": 1.6800853,
-   "type": "skos:exactMatch"
+   "score": 1,
+   "type": [
+    "esco:Skill",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
   },
   {
-   "id": "term:gamingtest/mapping/78b0876bad9b015e24770bf9798371f6",
+   "id": "term:gamingtest/mapping/58da9631ba4f75a62d63b8164961fa5e",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__skill-id-1__",
    "prefLabel": {
-    "@language": "en",
-    "@value": "Analyser des proc\u00e9d\u00e9s"
+    "@language": "fr",
+    "@value": "KDevelop"
    },
-   "score": 1.6756537,
-   "type": "skos:exactMatch"
+   "score": 1,
+   "type": [
+    "esco:Skill",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
   },
   {
-   "id": "term:gamingtest/mapping/fdedfedd17cc2488bbc00d838a012606",
-   "prefLabel": {
-    "@language": "en",
-    "@value": "Analyser les dysfonctionnements, les al\u00e9as, les \u00e9carts par rapport aux objectifs"
-   },
-   "score": 1.671892,
-   "type": "skos:exactMatch"
+   "id": "term:gamingtest/mapping/aead9e8aef5c3ee7790abfa0362b5592",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__skill-id-1__",
+   "score": 1
   },
   {
-   "id": "term:gamingtest/mapping/ac6b499536899e9b997610114fe62061",
+   "id": "term:gamingtest/mapping/b1705081e072f07acd306c2159b69cd4",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__skill-id-1__",
    "prefLabel": {
-    "@language": "en",
-    "@value": "Analyser des dysfonctionnements et des difficult\u00e9s techniques de connexion au site ou d'utilisation des services par les internautes"
+    "@language": "fr",
+    "@value": "fournir un accompagnateur pour des enfants sur un plateau"
    },
-   "score": 1.6693895,
-   "type": "skos:exactMatch"
+   "score": 1,
+   "type": [
+    "esco:Skill",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
   },
   {
-   "id": "term:gamingtest/mapping/e7a1dbe1f244f3782541d10f39e5e47b",
+   "id": "term:gamingtest/mapping/53cf888f7a7e85ab0de932cac26780c5",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__skill-id-1__",
    "prefLabel": {
-    "@language": "en",
-    "@value": "\u00c9tablir les modalit\u00e9s de r\u00e8glement d'un litige ou transmettre aux services juridiques, contentieux"
+    "@language": "fr",
+    "@value": "pratiquer des sports extr\u00eames"
    },
-   "score": 1.6662636,
-   "type": "skos:exactMatch"
+   "score": 1,
+   "type": [
+    "esco:Skill",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
   },
   {
-   "id": "term:gamingtest/mapping/25082514cc7277d11b6fcd0f3e50eab0",
+   "id": "term:gamingtest/mapping/5afeaca0d616478bf47d35f466e0b59f",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__skill-id-1__",
    "prefLabel": {
-    "@language": "en",
-    "@value": "Proposer une solution de gestion pr\u00e9ventive ou corrective"
+    "@language": "fr",
+    "@value": "acheter des fournitures"
    },
-   "score": 1.6651416,
-   "type": "skos:exactMatch"
+   "score": 1,
+   "type": [
+    "esco:Skill",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
   },
   {
-   "id": "term:gamingtest/mapping/be0b69115b19334b7534d4623ca7a10f",
+   "id": "term:gamingtest/mapping/b78cd5d31b28326c9647daafd497688f",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__skill-id-1__",
    "prefLabel": {
-    "@language": "en",
-    "@value": "Traiter les demandes et r\u00e9clamations des clients selon la proc\u00e9dure \u00e9tablie et en proposant des solutions adapt\u00e9es"
+    "@language": "fr",
+    "@value": "inspecter des installations offshore"
    },
-   "score": 1.6622238,
-   "type": "skos:exactMatch"
+   "score": 1,
+   "type": [
+    "esco:Skill",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
   }
  ]
 }
