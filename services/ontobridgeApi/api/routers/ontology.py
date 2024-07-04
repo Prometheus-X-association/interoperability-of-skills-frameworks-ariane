@@ -1,13 +1,12 @@
 from fastapi import Body
 from fastapi_utils.cbv import cbv
 from fastapi_utils.inferring_router import InferringRouter
+from api.engines.ontology_engine.rule import Rule
 from api.models.data_provider import *
 from api.models.data_provider import DataProviderDTO
 from fastapi.param_functions import Query
 
 from api.services.ontology_service.ontology_service import OntologyService
-from ontology_engine.rule import Rule
-from ontology_engine.tools import clear_dict
 from api.services.ontology_service.ontology_service_helloworld import HelloWorld_service
 
 router = InferringRouter()

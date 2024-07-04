@@ -298,7 +298,7 @@ class RuleEngine:
         self.fill_with_document(document)
         self.generate_instances_by_tree(self.rules_tree, docIndex)
 
-    def generate(self, documents: List[dict], by_tree: bool = True) -> dict:
+    def generate(self, documents: List[dict]) -> dict:
         if isinstance(documents, dict):
             documents = [documents]
         rules = deepcopy(self.rules)
@@ -313,10 +313,7 @@ class RuleEngine:
         result = []
         docIndex = 0
         for document in documents:
-            if not by_tree:
-                self.apply_rules_to_document(document, docIndex)
-            else:
-                self.apply_tree_rules_to_document(document, docIndex)
+            self.apply_tree_rules_to_document(document, docIndex)
             docIndex = docIndex + 1
 
         for instance in self.instances.values():

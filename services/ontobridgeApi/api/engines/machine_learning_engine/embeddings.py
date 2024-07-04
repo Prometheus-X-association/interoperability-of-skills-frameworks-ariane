@@ -25,10 +25,10 @@ class Embeddings:
         embeddings_vector = embeddings.cpu().numpy().tolist()
         return embeddings_vector
 
-    def embed_text(text, model, chunk_size=1000):
+    def embed_text(self, text, chunk_size=1000):
         chunks = [text[i : i + chunk_size] for i in range(0, len(text), chunk_size)]
         # Compute embeddings for each chunk
-        chunk_embeddings = [model.encode(chunk, convert_to_tensor=True) for chunk in chunks]
+        chunk_embeddings = [self.model.encode(chunk, convert_to_tensor=True) for chunk in chunks]
         try:
             # Average the embeddings
             avg_embedding = sum(chunk_embeddings) / len(chunk_embeddings)

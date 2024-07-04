@@ -60,7 +60,7 @@ def test_engine_matching_create_or_find_term():
     collection_category = "scale"
     concept_pref_label = "example-polarity-1"
     concept = term_matching_engine.get_gql_create_or_find_term(
-        provider_name, collection_pref_label, collection_category, concept_pref_label
+        provider_name, 'concept_id_1', 'collection_id_1', collection_pref_label, collection_category, concept_pref_label, 
     )
     assert len(concept) >= 1
     print(concept)
@@ -73,8 +73,7 @@ def test_engine_matching_create_or_find_term_PITANGOO():
     collection_category = "scale"
     concept_pref_label = "0.8"
     concept = term_matching_engine.get_gql_create_or_find_term(
-        provider_name, collection_pref_label, collection_category, concept_pref_label
-    )
+        provider_name, 'concept_id_1', 'collection_id_1' , collection_pref_label, collection_category, concept_pref_label )
     assert len(concept) >= 1
     print(concept)
 
@@ -84,7 +83,7 @@ def test_engine_matching_create_or_find_term_PITANGOO():
     collection_category = "scale"
     concept_pref_label = "0.6"
     concept = term_matching_engine.get_gql_create_or_find_term(
-        provider_name, collection_pref_label, collection_category, concept_pref_label
+        provider_name, 'concept_id_2', 'collection_id_1', collection_pref_label, collection_category, concept_pref_label
     )
     assert len(concept) >= 1
     print(concept)
