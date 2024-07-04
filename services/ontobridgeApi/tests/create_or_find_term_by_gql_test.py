@@ -1,10 +1,14 @@
 import hashlib
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 from api.engines.matching_engine.term_matching_engine import TermMatchingEngine
 =======
 from api.engines.term_matching_engine.term_matching_engine import TermMatchingEngine
 >>>>>>> 3b02988 (refactor and update folders)
+=======
+from api.engines.matching_engine.term_matching_engine import TermMatchingEngine
+>>>>>>> 5a091b3 (fix matching_engine folder name)
 
 
 def md5(content: str) -> str:
