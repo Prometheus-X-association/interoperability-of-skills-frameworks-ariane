@@ -10,6 +10,7 @@ from fastapi.param_functions import Query
 
 from api.services.ontology_service.ontology_service import OntologyService
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 from datetime import date
 from typing import List
@@ -44,6 +45,8 @@ from ontology_engine.tools import clear_dict
 >>>>>>> 94f4f40 (fix test)
 from api.services.ontology_service.ontology_service_helloworld import HelloWorld_service
 >>>>>>> 7afd4f8 (launcher debug + postman)
+=======
+>>>>>>> dabfdae (fix launch of api)
 
 router = InferringRouter()
 
