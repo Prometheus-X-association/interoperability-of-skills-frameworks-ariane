@@ -168,7 +168,7 @@ class TermMatchingEngine:
         collection_id: str,
         concept_pref_label: str,
         collection_pref_label: str,
-        path: str,
+        path: str = '',
     ) -> dict:
         # Find or create the concept
 
