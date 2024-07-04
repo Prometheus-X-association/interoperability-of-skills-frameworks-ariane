@@ -90,44 +90,6 @@ class RuleEngine:
     def get_field_name(self, field: str) -> str:
         return field.replace("soo:has", "").replace("soo:", "").replace("skos:", "")
 
-    def apply_rules_to_document(self, file: dict, docIndex: int):
-        documents: List[dict] = self.get_documents_from_files(file)
-        for index, document in enumerate(documents):
-            for rule in self.rules:
-                if rule.sourcePath in document.keys():
-                    currentInstance = self.get_instance(rule.targetClass, index, docIndex)
-                    target = self.get_field_name(rule.targetProperty)
-
-                    if (rule.targetProperty == "id" and rule.targetFunction == "fno:generateId") or rule.generateId == True:
-                        currentInstance["id"] = self.generate_id(currentInstance)
-                        if rule.targetProperty == "id":
-                            continue
-
-                    if rule.targetFunction == "fno:date-to-xsd":
-                        dates = document[rule.sourcePath]
-                        date = datetime.strptime(dates, "%Y-%m-%d")
-                        currentInstance[target] = date.strftime("%Y-%m-%d")
-                        continue
-
-                    if rule.relationTo != "" and rule.relationName != "" and rule.relationNameInverse != "":
-                        currentInstanceTo = self.get_instance(rule.relationTo, index, docIndex)
-                        currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()] = currentInstance["id"]
-                        currentInstance[self.get_field_name(rule.relationTo).lower()] = currentInstanceTo["id"]
-
-                    if rule.targetFunction == "fno:asIs_WithLang":
-                        currentInstance[target] = {}
-                        currentInstance[target]["@value"] = document[rule.sourcePath]
-                        currentInstance[target]["@language"] = rule.targetLang
-                        continue
-
-                    if rule.targetFunction == "fno:search-for-mapping-with-source":
-                        currentInstance["prefLabel"] = {}
-                        currentInstance["prefLabel"]["@value"] = document[rule.sourcePath]
-                        currentInstance["prefLabel"]["@language"] = rule.targetLang
-                        continue
-
-                    currentInstance[target] = document[rule.sourcePath]
-
     def fill_with_document(self, file: dict) -> None:
         self.rules_tree.matches = []
         self.rules_tree.matches.append(file)
