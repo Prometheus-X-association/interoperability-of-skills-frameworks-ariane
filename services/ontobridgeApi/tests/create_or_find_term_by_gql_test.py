@@ -1,6 +1,6 @@
 import hashlib
 
-from api.engines.term_matching_engine.term_matching_engine import TermMatchingEngine
+from api.engines.matching_engine.term_matching_engine import TermMatchingEngine
 
 
 def md5(content: str) -> str:

@@ -6,8 +6,8 @@ from typing import List
 from api.engines.ontology_engine.providers import get_rules
 from api.engines.ontology_engine.rule_engine import RuleEngine
 from api.engines.ontology_engine.tools import ordered
-from api.engines.term_matching_engine.source_mapping_engine import SourceMappingEngine
-from api.engines.term_matching_engine.term_matching_engine import TermMatchingEngine
+from api.engines.matching_engine.source_mapping_engine import SourceMappingEngine
+from api.engines.matching_engine.term_matching_engine import TermMatchingEngine
 from tests.test_tools import get_tests, write_result
 
 

@@ -1,5 +1,5 @@
 
-from api.engines.term_matching_engine.source_mapping_engine import SourceMappingEngine
+from api.engines.matching_engine.source_mapping_engine import SourceMappingEngine
 
 
 class SourceMappingService:

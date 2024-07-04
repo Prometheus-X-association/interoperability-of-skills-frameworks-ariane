@@ -4,7 +4,7 @@ from typing import List
 import json
 import os
 
-from api.engines.term_matching_engine.graphql_helper import graphql_request_helper
+from api.engines.matching_engine.graphql_helper import graphql_request_helper
 
 
 # Helper functions
