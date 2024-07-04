@@ -1,3 +1,4 @@
+from pathlib import Path
 from sentence_transformers import SentenceTransformer
 import torch
 import os
@@ -8,8 +9,8 @@ class Embeddings:
     def __init__(self, model_identifier: str) -> None:
         # Load the model
         self.model_identifier = model_identifier
-        cwd = os.getcwd()
-        self.modelPath = f"{cwd}/machine_learning_engine/models_dump/{model_identifier}"
+        cwd = Path(__file__).parent
+        self.modelPath = f"{cwd}/models_dump/{model_identifier}"
 
         if not os.path.exists(self.modelPath):
             self.model = SentenceTransformer(model_identifier)
