@@ -90,6 +90,47 @@ class RuleEngine:
     def get_field_name(self, field: str) -> str:
         return field.replace("soo:has", "").replace("soo:", "").replace("skos:", "")
 
+<<<<<<< HEAD
+=======
+    def apply_rules_to_document(self, file: dict, docIndex: int):
+        documents: List[dict] = self.get_documents_from_files(file)
+        for index, document in enumerate(documents):
+            for rule in self.rules:
+                if rule.sourcePath in document.keys():
+                    currentInstance = self.get_instance(rule.targetClass, index, docIndex)
+                    target = self.get_field_name(rule.targetProperty)
+
+                    if (rule.targetProperty == "id" and rule.targetFunction == "fno:generateId") or rule.generateId == True:
+                        currentInstance["id"] = self.generate_id(currentInstance)
+                        if rule.targetProperty == "id":
+                            continue
+
+                    if rule.targetFunction == "fno:date-to-xsd":
+                        dates = document[rule.sourcePath]
+                        date = datetime.strptime(dates, "%Y-%m-%d")
+                        currentInstance[target] = date.strftime("%Y-%m-%d")
+                        continue
+
+                    if rule.relationTo != "" and rule.relationName != "" and rule.relationNameInverse != "":
+                        currentInstanceTo = self.get_instance(rule.relationTo, index, docIndex)
+                        currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()] = currentInstance["id"]
+                        currentInstance[self.get_field_name(rule.relationTo).lower()] = currentInstanceTo["id"]
+
+                    if rule.targetFunction == "fno:asIs_WithLang":
+                        currentInstance[target] = {}
+                        currentInstance[target]["@value"] = document[rule.sourcePath]
+                        currentInstance[target]["@language"] = rule.targetLang
+                        continue
+
+                    if rule.targetFunction == "fno:search-for-mapping-with-source":
+                        currentInstance["prefLabel"] = {}
+                        currentInstance["prefLabel"]["@value"] = document[rule.sourcePath]
+                        currentInstance["prefLabel"]["@language"] = rule.targetLang
+                        continue
+
+                    currentInstance[target] = document[rule.sourcePath]
+
+>>>>>>> 3b02988 (refactor and update folders)
     def fill_with_document(self, file: dict) -> None:
         self.rules_tree.matches = []
         self.rules_tree.matches.append(file)
@@ -169,22 +210,45 @@ class RuleEngine:
                                         "id"
                                     ]
 
+<<<<<<< HEAD
+=======
+                    # if rule.targetFunction == "fno:find-or-create-term":
+                    #     currentInstance["id"] = self.generate_id(currentInstance)
+                    #     currentInstance["polarityScale"] = "term:interim/polarity/scale/1"
+                    #     currentInstance["polarityValue"] = "term:interim/polarity/value/1"
+                    #     current_term_Instance = self.get_instance("soo:Term", 0, 0, prefix)
+                    #     current_term_Instance["id"] = "term:interim/polarity/value/1"
+                    #     current_term_Instance["notation"] = match
+                    #     current_term_Instance["prefLabel"] = {}
+                    #     current_term_Instance["prefLabel"]["@value"] = str(match)
+                    #     current_term_Instance["prefLabel"]["@language"] = "en"
+                    #     continue
+
+>>>>>>> 3b02988 (refactor and update folders)
                     if rule.targetFunction == "fno:date-to-xsd":
                         dates = match
                         if rule.targetFunctionParam == "fno:year-only":
                             date = datetime.strptime(f"{match}-01-01", "%Y-%m-%d")
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3b02988 (refactor and update folders)
                         else:
                             date = datetime.strptime(dates, "%Y-%m-%d")
                         currentInstance[target] = date.strftime("%Y-%m-%d")
                         continue
 
                     if rule.relationTo != "" and rule.relationName != "" and rule.relationNameInverse != "":
+<<<<<<< HEAD
                         # same cardinality : ex polarity with orientoi : 1 polarity by experience
                         currentInstanceTo = self.get_last_instance(rule.relationTo, docIndex, index)
                         if currentInstanceTo == None: 
                             # different cardinality : ex skill with pitango : 1 experience with many skills
                             currentInstanceTo = self.get_last_instance(rule.relationTo, docIndex, -1)
                         
+=======
+                        currentInstanceTo = self.get_last_instance(rule.relationTo, docIndex, -1)
+>>>>>>> 3b02988 (refactor and update folders)
                         if not currentInstanceTo == None:
                             if self.get_field_name(rule.relationNameInverse).lower() in currentInstanceTo:
                                 if isinstance(currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()], str):
@@ -198,7 +262,10 @@ class RuleEngine:
                                 currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()] = currentInstance["id"]
                             currentInstance[self.get_field_name(rule.relationTo).lower()] = currentInstanceTo["id"]
                         else:
+<<<<<<< HEAD
                             # Relation does not exist : needs to apply lag rule ( reference to an instance created later)
+=======
+>>>>>>> 3b02988 (refactor and update folders)
                             lag_rules.append(rule)
                             pass
 
@@ -223,6 +290,7 @@ class RuleEngine:
                         currentInstance["__matching__"]["language"] = rule.targetLang if rule.targetLang != "" else "en"
                         continue
 
+<<<<<<< HEAD
                     if rule.targetFunction == "fno:get-family-value":
                         # __family__
                         currentInstance["__family__"] = {}
@@ -237,11 +305,24 @@ class RuleEngine:
                         continue
 
                     if rule.targetFunction == "fno:skill-value-to-scale" or rule.targetFunction == "fno:find-or-create-term" or rule.targetFunction == "fno:get-polarity-value":
+=======
+                    if rule.targetFunction == "fno:get-polarity-value":
+                        continue
+
+                    if rule.targetFunction == "fno:get-family-value":
+                        continue
+
+                    if rule.targetFunction == "fno:skill-value-to-scale" or rule.targetFunction == "fno:find-or-create-term":
+>>>>>>> 3b02988 (refactor and update folders)
                         currentInstance["__term__"] = {}
                         fieldName = self.get_field_name(rule.targetClass)
                         currentInstance["__term__"]["str_value"] = str(match)
                         currentInstance["__term__"]["scale_path"] = rule.sourcePath
+<<<<<<< HEAD
                         currentInstance["__term__"]["targetFunction"] = rule.targetFunction
+=======
+                        currentInstance["__term__"]["collection_category"] = "polarity"
+>>>>>>> 3b02988 (refactor and update folders)
                         currentInstance["__term__"]["value"] = match
                         currentInstance["__term__"]["scale"] = fieldName
                         currentInstance["__term__"]["provider"] = self.provider
@@ -256,10 +337,18 @@ class RuleEngine:
         pass
 
     def apply_tree_rules_to_document(self, document: dict, docIndex: int):
+<<<<<<< HEAD
         self.fill_with_document(document)
         self.generate_instances_by_tree(self.rules_tree, docIndex)
 
     def generate(self, documents: List[dict]) -> dict:
+=======
+
+        self.fill_with_document(document)
+        self.generate_instances_by_tree(self.rules_tree, docIndex)
+
+    def generate(self, documents: List[dict], by_tree: bool = True) -> dict:
+>>>>>>> 3b02988 (refactor and update folders)
         if isinstance(documents, dict):
             documents = [documents]
         rules = deepcopy(self.rules)
@@ -274,7 +363,14 @@ class RuleEngine:
         result = []
         docIndex = 0
         for document in documents:
+<<<<<<< HEAD
             self.apply_tree_rules_to_document(document, docIndex)
+=======
+            if not by_tree:
+                self.apply_rules_to_document(document, docIndex)
+            else:
+                self.apply_tree_rules_to_document(document, docIndex)
+>>>>>>> 3b02988 (refactor and update folders)
             docIndex = docIndex + 1
 
         for instance in self.instances.values():

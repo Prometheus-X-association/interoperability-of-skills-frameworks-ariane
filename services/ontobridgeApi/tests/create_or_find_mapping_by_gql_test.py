@@ -2,8 +2,13 @@ import hashlib
 
 from bs4 import BeautifulSoup
 
+<<<<<<< HEAD
 from api.engines.matching_engine.source_mapping_engine import SourceMappingEngine
 from api.engines.matching_engine.term_matching_engine import TermMatchingEngine
+=======
+from api.engines.term_matching_engine.source_mapping_engine import SourceMappingEngine
+from api.engines.term_matching_engine.term_matching_engine import TermMatchingEngine
+>>>>>>> 3b02988 (refactor and update folders)
 from api.services.machine_learning_service.embedding_service import EmbeddingService
 
 

@@ -14,6 +14,9 @@ from api.models.embedding_payload import EmbeddingPayload
 from fastapi.param_functions import Query
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3b02988 (refactor and update folders)
 from api.services.machine_learning_service.embedding_service import EmbeddingService
 
 router = InferringRouter()

@@ -3,7 +3,11 @@ from dotenv import load_dotenv
 from api.config import get_api_settings
 import redis
 from redis import client
+<<<<<<< HEAD
 from api.engines.matching_engine.term_matching_engine import TermMatchingEngine
+=======
+from api.engines.term_matching_engine.term_matching_engine import TermMatchingEngine
+>>>>>>> 3b02988 (refactor and update folders)
 
 
 class TermMatchingService:
