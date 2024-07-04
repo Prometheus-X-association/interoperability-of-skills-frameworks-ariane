@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3b7ba32 (fix models dump path.)
 from pathlib import Path
 from sentence_transformers import SentenceTransformer
 import torch
@@ -38,9 +41,14 @@ class Embeddings:
         self.modelPath =  f"{cwd}/machine_learning_engine/models_dump/{model_identifier}"
 ========
         self.model_identifier = model_identifier
+<<<<<<< HEAD
         cwd = os.getcwd()
         self.modelPath = f"{cwd}/machine_learning_engine/models_dump/{model_identifier}"
 >>>>>>>> 3b02988 (refactor and update folders):services/ontobridgeApi/api/engines/machine_learning_engine/embeddings.py
+=======
+        cwd = Path(__file__).parent
+        self.modelPath = f"{cwd}/models_dump/{model_identifier}"
+>>>>>>> 3b7ba32 (fix models dump path.)
 
         if not os.path.exists(self.modelPath):
 <<<<<<< HEAD
