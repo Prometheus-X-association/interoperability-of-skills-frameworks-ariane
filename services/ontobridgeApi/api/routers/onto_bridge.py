@@ -26,7 +26,7 @@ class onto_bridges:
     redis_client:client.Redis= Depends(get_redis)
     """
 
-    @router.get("/transform")
+    @router.post("/transform")
     async def transform(
         self,
         provider_name: str = Query(..., description="Name of the data provider"),
@@ -35,7 +35,7 @@ class onto_bridges:
         version: Optional[str] = Query(
             None, description="Version of the rules"
         ),  # NOT USED : will allow the versionning of rules
-    ) -> list[dict]:  # instantiate redis_client by dependency injection
+    ) -> dict:  # instantiate redis_client by dependency injection
         if isinstance(document, dict):
             document = [document]
         data_provider = ontology_engine.generate_mapping_from_provider_rules(provider_name, document)
