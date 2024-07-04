@@ -1,3 +1,4 @@
+# allow to load the .env file as a singleton for environment variables
 from enum import auto
 from functools import lru_cache
 from fastapi_utils.enums import StrEnum
