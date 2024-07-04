@@ -1,3 +1,4 @@
+# NOT USED : allow the setup of postgres database combined with sqlalchemy ORM to store model entities
 from multiprocessing.connection import Client
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
