@@ -4,9 +4,79 @@
  },
  "graph": [
   {
+   "description": {
+    "@language": "fr",
+    "@value": "<h3>D\u00e9finition</h3><p>R\u00e9alise des op\u00e9rations de tri de d\u00e9chets et produits industriels en fin de vie (textiles, plastiques, verres, composants, ...) selon les r\u00e8gles de s\u00e9curit\u00e9, d'environnement et les imp\u00e9ratifs de r\u00e9cup\u00e9ration (qualit\u00e9, cadence, ...).<br>Peut reconditionner des produits industriels pour valorisation par r\u00e9utilisation ou recyclage.<br>Peut coordonner une \u00e9quipe.</p><h3>Acc\u00e8s au m\u00e9tier</h3><p>Cet emploi/m\u00e9tier est accessible sans dipl\u00f4me ni exp\u00e9rience professionnelle.<br>Un ou plusieurs Certificat(s) d'Aptitude \u00e0 la Conduite En S\u00e9curit\u00e9 -CACES- conditionn\u00e9(s) par une aptitude m\u00e9dicale \u00e0 renouveler p\u00e9riodiquement peu(ven)t \u00eatre requis.<br>Des vaccinations sp\u00e9cifiques (leptospirose, h\u00e9patite, ...) peuvent \u00eatre requises selon le secteur d'activit\u00e9.</p><h3>Condition du m\u00e9tier</h3><p>L'activit\u00e9 de cet emploi/m\u00e9tier s'exerce au sein de soci\u00e9t\u00e9s de services, d'associations, de collectivit\u00e9s territoriales, d'entreprises industrielles en contact avec diff\u00e9rents intervenants (particuliers, conducteurs d'engins, ...).<br>Elle varie selon le lieu d'intervention et le type de produits collect\u00e9s.<br>Elle peut impliquer le port de charges.<br>Le port d'\u00e9quipements de protection (gants, combinaison, ...) peut \u00eatre requis.</p><h3>Environnement de travail</h3><p>Structures</p><ul><li>Association</li><li>Centre V\u00e9hicules hors d'usage - VHU</li><li>Collectivit\u00e9 territoriale</li><li>D\u00e9chetterie</li><li>Entreprise industrielle</li><li>Ressourcerie</li><li>Soci\u00e9t\u00e9 de collecte et de traitement des d\u00e9chets</li><li>Soci\u00e9t\u00e9 de services</li></ul><p>Secteurs</p><ul><li>Recyclage</li></ul><h3>Comp\u00e9tences de Base attendues</h3><table><tbody><tr><td>R\u00e9aliste</td><td>100.0 %</td></tr></tbody></table>"
+   },
+   "experienceStatus": "term:experience/type/suggested",
+   "experienceType": "term:experience/type/professional",
+   "id": "tr:__experience-id-1__",
+   "mapping": "term:PITANGOO/mapping/653c22d7a6e75f0634cdfc723aed65a3",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Agent / Agente de centre de tri de dechet"
+   },
+   "sourceId": "0ede4405-fb88-4cac-a501-603916c1484a",
+   "suggestions": [
+    "term:PITANGOO/mapping/653c22d7a6e75f0634cdfc723aed65a3",
+    "term:PITANGOO/mapping/3dc6792895ead5ac7cbcc1fc1fccae22",
+    "term:PITANGOO/mapping/06a8fcf889bc6ab151a16dafe980e393",
+    "term:PITANGOO/mapping/63c3370ca73b0d7929e564346088c1ba",
+    "term:PITANGOO/mapping/2663899d3536e24a0fc2abc05d595ca0",
+    "term:PITANGOO/mapping/e597df8dea2373f8b2f31fedaa880a7d",
+    "term:PITANGOO/mapping/058b5cb9efabad42976576c8c6b85e16",
+    "term:PITANGOO/mapping/8e273fd5d47d1bf324758fd30608db46",
+    "term:PITANGOO/mapping/04bef53caebb7c6270afa6d89bb6dd43",
+    "term:PITANGOO/mapping/66ff5e79fe076d7de7c4e7455e2b94c6"
+   ],
+   "type": "soo:Experience"
+  },
+  {
+   "description": {
+    "@language": "fr",
+    "@value": "<h3>Travailler dans LE SOCIAL</h3><p>Ce secteur est fond\u00e9 sur l\u2019humain et au service de la communaut\u00e9.</p><p><img src=\"{{url}}/{{path}}/intro46.png\"></p><p>Les professionnels de ce domaine \u00e9coutent, accompagnent, aident et conseillent par leurs actions mat\u00e9rielles, p\u00e9dagogiques et psychologiques des personnes d\u00e9pendantes, des enfants, des personnes fragiles ou en difficult\u00e9 : personnes \u00e2g\u00e9es, handicap\u00e9s, jeunes enfants, adolescents... Ils interviennent \u00e0 travers l'action \u00e9ducative, l'animation socioculturelle, le conseil... Ce secteur int\u00e8gre \u00e9galement les m\u00e9tiers administratifs du secteur.</p><p>Les missions et publics sont vari\u00e9s. Les travailleurs sociaux permettent \u00e0 une personne \u00e2g\u00e9e d\u00e9pendante de continuer \u00e0 vivre chez elle en lui rendant des services chaque jour. Ils aident un enfant en situation de handicap moteur \u00e0 suivre une scolarit\u00e9 normale en le secondant dans ses gestes d'\u00e9colier. Ils informent une famille en situation de pr\u00e9carit\u00e9 sur les aides auxquelles elle peut pr\u00e9tendre.</p><p><u><b>Quelques m\u00e9tiers du secteur :</b></u></p><p><u>L\u2019aide sociale</u></p><p><ul><li>Assistant / Assistante sociale</li><li>Conseiller / Conseill\u00e8re en insertion sociale et professionnelle</li></ul></p><p><u>L\u2019\u00e9ducation sp\u00e9cialis\u00e9e</u></p><p><ul><li>Educateur / Educatrice de jeunes enfants</li><li>Moniteur \u00e9ducateur / Monitrice \u00e9ducatrice</li></ul></p><p><u>L\u2019animation</u></p><p><ul><li>Animateur / Animatrice socio-culturel</li><li>Animateur / Animatrice multim\u00e9dia</li></ul></p><p><u>Le travail \u00e0 domicile</u></p><p><ul><li>Auxiliaire de vie</li><li>Technicien / Technicienne de l'intervention sociale et familiale</li></ul></p><p><b><u>Quelques chiffres du secteur</u></b></p><p><ul><li>800 000 travailleurs sociaux</li><li>55 000 \u00e9ducateurs sp\u00e9cialis\u00e9s, 31 000 moniteurs \u00e9ducateurs, 42 000 aides m\u00e9dico-psychologiques, 262 000 auxiliaires de vie sociale et 39 000 assistants de service social</li><li>Les travailleurs sociaux exercent au sein des h\u00f4pitaux, des caisses d'allocation familiales, des centres de protection maternelle et infantile, des prisons, des centres d'accueil d'urgence, des maisons de quartier, des cr\u00e8ches, des centres d'h\u00e9bergement pour personnes handicap\u00e9es, etc. D'autres interviennent \u00e0 domicile.</li></ul></p><p><b><i>\u201cL\u2019humain est au c\u0153ur de mes pr\u00e9occupations, je me mets au service des m\u00e9tiers du social.\u201d</i></b></p><p><img src=\"{{url}}/{{path}}/fin46.png\"></p>"
+   },
+   "experienceStatus": "term:experience/type/suggested",
+   "experienceType": "term:experience/type/professional",
+   "id": "tr:__experience-id-2__",
+   "mapping": "term:PITANGOO/mapping/467f4d20476a35c6c8dd75ab1bbb5fd9",
+   "polarity": [
+    "tr:__polarity-id-1__",
+    "tr:__polarity-id-2__"
+   ],
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Social"
+   },
+   "sourceId": "1535e1c6-37e8-11e8-8177-782bcb695311",
+   "suggestions": [
+    "term:PITANGOO/mapping/467f4d20476a35c6c8dd75ab1bbb5fd9",
+    "term:PITANGOO/mapping/3624509e83fd5dd1f4cf7c25484013d0",
+    "term:PITANGOO/mapping/a3732d46d6cbd6d1b486bddcdbfded10",
+    "term:PITANGOO/mapping/fbd9d4333c042dca145645ab86e27e0d",
+    "term:PITANGOO/mapping/07a1ac3a0d9caf5a5ee4bb9cf96fb28c",
+    "term:PITANGOO/mapping/8dc170cdb60257fcb9a433b9dbdcc080",
+    "term:PITANGOO/mapping/e408a3b15e8510a6caf90ae91d1d65c3",
+    "term:PITANGOO/mapping/4d41ba1eca7201e675bd58f880541401",
+    "term:PITANGOO/mapping/b21df9180ad3673cf7af3938505832b7",
+    "term:PITANGOO/mapping/472eb0d7b7ac07757a876c258d8bc8b2"
+   ],
+   "type": "soo:Experience"
+  },
+  {
+   "experience": "tr:__experience-id-2__",
+   "id": "tr:__polarity-id-1__",
+   "type": "soo:Polarity"
+  },
+  {
+   "experience": "tr:__experience-id-2__",
+   "id": "tr:__polarity-id-2__",
+   "type": "soo:Polarity"
+  },
+  {
    "experienceStatus": "term:experience/type/past",
    "experienceType": "term:experience/type/personalityTest",
-   "id": "tr:__experience-id-1__",
+   "id": "tr:__experience-id-3__",
    "prefLabel": {
     "@language": "fr",
     "@value": "Mes centres d int\u00e9r\u00eat"
@@ -20,7 +90,7 @@
   },
   {
    "category": "term:skills/category/riasec",
-   "experience": "tr:__experience-id-1__",
+   "experience": "tr:__experience-id-3__",
    "id": "tr:__skill-id-1__",
    "prefLabel": {
     "@language": "fr",
@@ -32,7 +102,7 @@
   },
   {
    "category": "term:skills/category/riasec",
-   "experience": "tr:__experience-id-1__",
+   "experience": "tr:__experience-id-3__",
    "id": "tr:__skill-id-2__",
    "prefLabel": {
     "@language": "fr",
@@ -44,7 +114,7 @@
   },
   {
    "category": "term:skills/category/riasec",
-   "experience": "tr:__experience-id-1__",
+   "experience": "tr:__experience-id-3__",
    "id": "tr:__skill-id-3__",
    "prefLabel": {
     "@language": "fr",
@@ -73,6 +143,286 @@
     "@value": "0.8"
    },
    "type": "skos:Concept"
+  },
+  {
+   "id": "term:PITANGOO/mapping/653c22d7a6e75f0634cdfc723aed65a3",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Agent / Agente de d\u00e9chetterie"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Employment/Position",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:PITANGOO/mapping/3dc6792895ead5ac7cbcc1fc1fccae22",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Recycleur / Recycleuse"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Employment/Position",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:PITANGOO/mapping/06a8fcf889bc6ab151a16dafe980e393",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Agent / Agente de tri des d\u00e9chets"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Employment/Position",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:PITANGOO/mapping/63c3370ca73b0d7929e564346088c1ba",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "\u00c9quipier / \u00c9quipi\u00e8re de collecte de d\u00e9chets"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Employment/Position",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:PITANGOO/mapping/2663899d3536e24a0fc2abc05d595ca0",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Agent / Agente de tri d\u00e9chets d'\u00e9quipements \u00e9lectriques et \u00e9lectroniques - DEEE"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Employment/Position",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:PITANGOO/mapping/e597df8dea2373f8b2f31fedaa880a7d",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Agent / Agente de r\u00e9cup\u00e9ration et de recyclage"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Employment/Position",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:PITANGOO/mapping/058b5cb9efabad42976576c8c6b85e16",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Op\u00e9rateur / Op\u00e9ratrice de tri en r\u00e9cup\u00e9ration et revalorisation"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Employment/Position",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:PITANGOO/mapping/8e273fd5d47d1bf324758fd30608db46",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Technicien / Technicienne en traitement des d\u00e9chets"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Employment/Position",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:PITANGOO/mapping/04bef53caebb7c6270afa6d89bb6dd43",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Op\u00e9rateur / Op\u00e9ratrice de tri, r\u00e9cup\u00e9ration et recyclage de v\u00e9hicules hors d'usage - VHU"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Employment/Position",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:PITANGOO/mapping/66ff5e79fe076d7de7c4e7455e2b94c6",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Conducteur / Conductrice de benne \u00e0 ordures"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Employment/Position",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:PITANGOO/mapping/467f4d20476a35c6c8dd75ab1bbb5fd9",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Assistant / Assistante de service social"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Employment/Position",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:PITANGOO/mapping/3624509e83fd5dd1f4cf7c25484013d0",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Agent / Agente de facilitation de la vie sociale"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Employment/Position",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:PITANGOO/mapping/a3732d46d6cbd6d1b486bddcdbfded10",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "\u00c9ducateur sp\u00e9cialis\u00e9 / \u00c9ducatrice sp\u00e9cialis\u00e9e"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Employment/Position",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:PITANGOO/mapping/fbd9d4333c042dca145645ab86e27e0d",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Intervenant familial / Intervenante familiale de maison"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Employment/Position",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:PITANGOO/mapping/07a1ac3a0d9caf5a5ee4bb9cf96fb28c",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Accompagnant \u00e9ducatif et social / Accompagnante \u00e9ducative et sociale \u00e0 domicile"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Employment/Position",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:PITANGOO/mapping/8dc170cdb60257fcb9a433b9dbdcc080",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Technicien / Technicienne Intervention Sociale et Familiale -TISF-"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Employment/Position",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:PITANGOO/mapping/e408a3b15e8510a6caf90ae91d1d65c3",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "\u00c9ducateur socio\u00e9ducatif / \u00c9ducatrice socio\u00e9ducative"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Employment/Position",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:PITANGOO/mapping/4d41ba1eca7201e675bd58f880541401",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "\u00c9ducateur sp\u00e9cialis\u00e9 / \u00c9ducatrice sp\u00e9cialis\u00e9e en milieu ouvert"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Employment/Position",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:PITANGOO/mapping/b21df9180ad3673cf7af3938505832b7",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Auxiliaire de vie sociale aupr\u00e8s d'enfants"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Employment/Position",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:PITANGOO/mapping/472eb0d7b7ac07757a876c258d8bc8b2",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Accompagnant \u00e9ducatif et social / Accompagnante \u00e9ducative et sociale en structure collective"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Employment/Position",
+    "skos:Concept"
+   ]
   }
  ]
 }

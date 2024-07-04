@@ -4,25 +4,146 @@
  },
  "graph": [
   {
-   "dateFrom": "2023-06-28",
+   "description": {
+    "@language": "fr",
+    "@value": "<h3>D\u00e9finition</h3><p>R\u00e9alise des op\u00e9rations de tri de d\u00e9chets et produits industriels en fin de vie (textiles, plastiques, verres, composants, ...) selon les r\u00e8gles de s\u00e9curit\u00e9, d'environnement et les imp\u00e9ratifs de r\u00e9cup\u00e9ration (qualit\u00e9, cadence, ...).<br>Peut reconditionner des produits industriels pour valorisation par r\u00e9utilisation ou recyclage.<br>Peut coordonner une \u00e9quipe.</p><h3>Acc\u00e8s au m\u00e9tier</h3><p>Cet emploi/m\u00e9tier est accessible sans dipl\u00f4me ni exp\u00e9rience professionnelle.<br>Un ou plusieurs Certificat(s) d'Aptitude \u00e0 la Conduite En S\u00e9curit\u00e9 -CACES- conditionn\u00e9(s) par une aptitude m\u00e9dicale \u00e0 renouveler p\u00e9riodiquement peu(ven)t \u00eatre requis.<br>Des vaccinations sp\u00e9cifiques (leptospirose, h\u00e9patite, ...) peuvent \u00eatre requises selon le secteur d'activit\u00e9.</p><h3>Condition du m\u00e9tier</h3><p>L'activit\u00e9 de cet emploi/m\u00e9tier s'exerce au sein de soci\u00e9t\u00e9s de services, d'associations, de collectivit\u00e9s territoriales, d'entreprises industrielles en contact avec diff\u00e9rents intervenants (particuliers, conducteurs d'engins, ...).<br>Elle varie selon le lieu d'intervention et le type de produits collect\u00e9s.<br>Elle peut impliquer le port de charges.<br>Le port d'\u00e9quipements de protection (gants, combinaison, ...) peut \u00eatre requis.</p><h3>Environnement de travail</h3><p>Structures</p><ul><li>Association</li><li>Centre V\u00e9hicules hors d'usage - VHU</li><li>Collectivit\u00e9 territoriale</li><li>D\u00e9chetterie</li><li>Entreprise industrielle</li><li>Ressourcerie</li><li>Soci\u00e9t\u00e9 de collecte et de traitement des d\u00e9chets</li><li>Soci\u00e9t\u00e9 de services</li></ul><p>Secteurs</p><ul><li>Recyclage</li></ul><h3>Comp\u00e9tences de Base attendues</h3><table><tbody><tr><td>R\u00e9aliste</td><td>100.0 %</td></tr></tbody></table>"
+   },
+   "experienceStatus": "term:experience/type/suggested",
+   "experienceType": "term:experience/type/professional",
    "id": "tr:__experience-id-1__",
+   "mapping": "term:gamingtest/mapping/9830dcbf44b4c9c76b101cbbbf5f938a",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Agent / Agente de centre de tri de dechet"
+   },
+   "sourceId": "0ede4405-fb88-4cac-a501-603916c1484a",
+   "suggestions": [
+    "term:gamingtest/mapping/9830dcbf44b4c9c76b101cbbbf5f938a",
+    "term:gamingtest/mapping/af6545a3ea05e0fabc2323393ee0921e",
+    "term:gamingtest/mapping/e17b3d585dd5958cf1c52c84b816dd8c",
+    "term:gamingtest/mapping/d387c5e9a42839247f52e34364af2e41",
+    "term:gamingtest/mapping/708b5c87e9d9c3a3114bdb7dab93ac75",
+    "term:gamingtest/mapping/5c309fcb3517773455008f405019fb65",
+    "term:gamingtest/mapping/a0ba1fac3bbfe0eddde090a9145bce01",
+    "term:gamingtest/mapping/bdad60cd207cd7ba3e63f5c835bfdb93",
+    "term:gamingtest/mapping/f472fac148ef0e10edefef7fe56b8b75",
+    "term:gamingtest/mapping/472761b2fd8aa870fb580b3330d428fb"
+   ],
+   "type": "soo:Experience"
+  },
+  {
+   "description": {
+    "@language": "fr",
+    "@value": "<h3>Travailler dans LE SOCIAL</h3><p>Ce secteur est fond\u00e9 sur l\u2019humain et au service de la communaut\u00e9.</p><p><img src=\"{{url}}/{{path}}/intro46.png\"></p><p>Les professionnels de ce domaine \u00e9coutent, accompagnent, aident et conseillent par leurs actions mat\u00e9rielles, p\u00e9dagogiques et psychologiques des personnes d\u00e9pendantes, des enfants, des personnes fragiles ou en difficult\u00e9 : personnes \u00e2g\u00e9es, handicap\u00e9s, jeunes enfants, adolescents... Ils interviennent \u00e0 travers l'action \u00e9ducative, l'animation socioculturelle, le conseil... Ce secteur int\u00e8gre \u00e9galement les m\u00e9tiers administratifs du secteur.</p><p>Les missions et publics sont vari\u00e9s. Les travailleurs sociaux permettent \u00e0 une personne \u00e2g\u00e9e d\u00e9pendante de continuer \u00e0 vivre chez elle en lui rendant des services chaque jour. Ils aident un enfant en situation de handicap moteur \u00e0 suivre une scolarit\u00e9 normale en le secondant dans ses gestes d'\u00e9colier. Ils informent une famille en situation de pr\u00e9carit\u00e9 sur les aides auxquelles elle peut pr\u00e9tendre.</p><p><u><b>Quelques m\u00e9tiers du secteur :</b></u></p><p><u>L\u2019aide sociale</u></p><p><ul><li>Assistant / Assistante sociale</li><li>Conseiller / Conseill\u00e8re en insertion sociale et professionnelle</li></ul></p><p><u>L\u2019\u00e9ducation sp\u00e9cialis\u00e9e</u></p><p><ul><li>Educateur / Educatrice de jeunes enfants</li><li>Moniteur \u00e9ducateur / Monitrice \u00e9ducatrice</li></ul></p><p><u>L\u2019animation</u></p><p><ul><li>Animateur / Animatrice socio-culturel</li><li>Animateur / Animatrice multim\u00e9dia</li></ul></p><p><u>Le travail \u00e0 domicile</u></p><p><ul><li>Auxiliaire de vie</li><li>Technicien / Technicienne de l'intervention sociale et familiale</li></ul></p><p><b><u>Quelques chiffres du secteur</u></b></p><p><ul><li>800 000 travailleurs sociaux</li><li>55 000 \u00e9ducateurs sp\u00e9cialis\u00e9s, 31 000 moniteurs \u00e9ducateurs, 42 000 aides m\u00e9dico-psychologiques, 262 000 auxiliaires de vie sociale et 39 000 assistants de service social</li><li>Les travailleurs sociaux exercent au sein des h\u00f4pitaux, des caisses d'allocation familiales, des centres de protection maternelle et infantile, des prisons, des centres d'accueil d'urgence, des maisons de quartier, des cr\u00e8ches, des centres d'h\u00e9bergement pour personnes handicap\u00e9es, etc. D'autres interviennent \u00e0 domicile.</li></ul></p><p><b><i>\u201cL\u2019humain est au c\u0153ur de mes pr\u00e9occupations, je me mets au service des m\u00e9tiers du social.\u201d</i></b></p><p><img src=\"{{url}}/{{path}}/fin46.png\"></p>"
+   },
+   "experienceStatus": "term:experience/type/suggested",
+   "experienceType": "term:experience/type/professional",
+   "id": "tr:__experience-id-2__",
+   "mapping": "term:gamingtest/mapping/9f418484400924a89b05d03d79adc04b",
+   "polarity": [
+    "tr:__polarity-id-1__",
+    "tr:__polarity-id-2__"
+   ],
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Social"
+   },
+   "sourceId": "1535e1c6-37e8-11e8-8177-782bcb695311",
+   "suggestions": [
+    "term:gamingtest/mapping/9f418484400924a89b05d03d79adc04b",
+    "term:gamingtest/mapping/ab31a24bbbc1571394ff9289f293d3a2",
+    "term:gamingtest/mapping/228d9c373066486c602c949082ddb6ab",
+    "term:gamingtest/mapping/0f8a45d456515275f6b0f223c7b38bbc",
+    "term:gamingtest/mapping/0c2c3a4df42e449b5d473700db44b077",
+    "term:gamingtest/mapping/5e47df9a464539a6d533770dfe7bfd07",
+    "term:gamingtest/mapping/539344a5514f5f38ad6747f324a12cb4",
+    "term:gamingtest/mapping/cb3ecb0ce2cafa32bb495cb7ad96b15f",
+    "term:gamingtest/mapping/f16f29afff7f9d52a8e5767944454586",
+    "term:gamingtest/mapping/d159f8219142b1a922a4533d9ba2e595"
+   ],
+   "type": "soo:Experience"
+  },
+  {
+   "experience": "tr:__experience-id-2__",
+   "id": "tr:__polarity-id-1__",
+   "type": "soo:Polarity"
+  },
+  {
+   "experience": "tr:__experience-id-2__",
+   "id": "tr:__polarity-id-2__",
+   "type": "soo:Polarity"
+  },
+  {
+   "experienceStatus": "term:experience/type/past",
+   "experienceType": "term:experience/type/personalityTest",
+   "id": "tr:__experience-id-3__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Mes centres d int\u00e9r\u00eat"
+   },
+   "skill": [
+    "tr:__skill-id-1__",
+    "tr:__skill-id-2__",
+    "tr:__skill-id-3__"
+   ],
+   "type": "soo:Experience"
+  },
+  {
+   "category": "term:skills/category/riasec",
+   "experience": "tr:__experience-id-3__",
+   "id": "tr:__skill-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "ARTISTIQUE"
+   },
+   "skillLevelScale": "term:gamingtest/skill/1e722f5abafbfa1375af50041eef3246",
+   "skillLevelValue": "term:gamingtest/skill/1e722f5abafbfa1375af50041eef3246/level/0.6",
+   "type": "soo:Skill"
+  },
+  {
+   "category": "term:skills/category/riasec",
+   "experience": "tr:__experience-id-3__",
+   "id": "tr:__skill-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "R\u00c9ALISTE"
+   },
+   "skillLevelScale": "term:gamingtest/skill/1e722f5abafbfa1375af50041eef3246",
+   "skillLevelValue": "term:gamingtest/skill/1e722f5abafbfa1375af50041eef3246/level/0.8",
+   "type": "soo:Skill"
+  },
+  {
+   "category": "term:skills/category/riasec",
+   "experience": "tr:__experience-id-3__",
+   "id": "tr:__skill-id-3__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "ENTREPRENEUR"
+   },
+   "skillLevelScale": "term:gamingtest/skill/1e722f5abafbfa1375af50041eef3246",
+   "skillLevelValue": "term:gamingtest/skill/1e722f5abafbfa1375af50041eef3246/level/0.6",
+   "type": "soo:Skill"
+  },
+  {
+   "dateFrom": "2023-06-28",
+   "id": "tr:__experience-id-4__",
    "prefLabel": {
     "@language": "en",
     "@value": "Problem-Solving Puzzle"
    },
    "profile": "tr:__profile-id-1__",
-   "skill": "tr:__skill-id-1__",
+   "skill": "tr:__skill-id-4__",
    "type": "soo:Experience"
   },
   {
    "email": "zayne.harding@gmail.com",
-   "experience": "tr:__experience-id-1__",
+   "experience": "tr:__experience-id-4__",
    "id": "tr:__profile-id-1__",
    "type": "soo:Profile"
   },
   {
-   "experience": "tr:__experience-id-1__",
-   "id": "tr:__skill-id-1__",
+   "experience": "tr:__experience-id-4__",
+   "id": "tr:__skill-id-4__",
    "mapping": "term:gamingtest/mapping/2677b9bf970bb871dd7f5761cd27b71c",
    "skillLevelValue": "Validated",
    "suggestions": [
@@ -40,9 +161,329 @@
    "type": "soo:Skill"
   },
   {
+   "id": "term:gamingtest/skill/1e722f5abafbfa1375af50041eef3246/level/0.6",
+   "memberOf": "term:gamingtest/skill/1e722f5abafbfa1375af50041eef3246",
+   "notation": 0.6,
+   "prefLabel": {
+    "@language": "en",
+    "@value": "0.6"
+   },
+   "type": "skos:Concept"
+  },
+  {
+   "id": "term:gamingtest/skill/1e722f5abafbfa1375af50041eef3246/level/0.8",
+   "memberOf": "term:gamingtest/skill/1e722f5abafbfa1375af50041eef3246",
+   "notation": 0.8,
+   "prefLabel": {
+    "@language": "en",
+    "@value": "0.8"
+   },
+   "type": "skos:Concept"
+  },
+  {
+   "id": "term:gamingtest/mapping/9830dcbf44b4c9c76b101cbbbf5f938a",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "conducteur d\u2019installations de traitement de d\u00e9chets solides/conductrice d\u2019installations de traitement de d\u00e9chets solides"
+   },
+   "score": 0,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
+  },
+  {
+   "id": "term:gamingtest/mapping/af6545a3ea05e0fabc2323393ee0921e",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "sp\u00e9cialiste en import-export de d\u00e9chets et d\u00e9bris"
+   },
+   "score": 0,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
+  },
+  {
+   "id": "term:gamingtest/mapping/e17b3d585dd5958cf1c52c84b816dd8c",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "n\u00e9gociant grossiste en d\u00e9chets et d\u00e9bris/n\u00e9gociante grossiste en d\u00e9chets et d\u00e9bris"
+   },
+   "score": 0,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
+  },
+  {
+   "id": "term:gamingtest/mapping/d387c5e9a42839247f52e34364af2e41",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "op\u00e9rateur de tri/op\u00e9ratrice de tri"
+   },
+   "score": 0,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
+  },
+  {
+   "id": "term:gamingtest/mapping/708b5c87e9d9c3a3114bdb7dab93ac75",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "responsable de la logistique distribution de d\u00e9chets et d\u00e9bris"
+   },
+   "score": 0,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
+  },
+  {
+   "id": "term:gamingtest/mapping/5c309fcb3517773455008f405019fb65",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "\u00e9boueur/\u00e9boueuse"
+   },
+   "score": 0,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
+  },
+  {
+   "id": "term:gamingtest/mapping/a0ba1fac3bbfe0eddde090a9145bce01",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "recycleur/recycleuse"
+   },
+   "score": 0,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
+  },
+  {
+   "id": "term:gamingtest/mapping/bdad60cd207cd7ba3e63f5c835bfdb93",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "d\u00e9manteleur/d\u00e9manteleuse"
+   },
+   "score": 0,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
+  },
+  {
+   "id": "term:gamingtest/mapping/f472fac148ef0e10edefef7fe56b8b75",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "conducteur de benne \u00e0 ordures/conductrice de benne \u00e0 ordures"
+   },
+   "score": 0,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
+  },
+  {
+   "id": "term:gamingtest/mapping/472761b2fd8aa870fb580b3330d428fb",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "op\u00e9rateur de traitement des d\u00e9chets m\u00e9talliques/op\u00e9ratrice de traitement des d\u00e9chets m\u00e9talliques"
+   },
+   "score": 0,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
+  },
+  {
+   "id": "term:gamingtest/mapping/9f418484400924a89b05d03d79adc04b",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "animateur socio-\u00e9ducatif/animatrice socio-\u00e9ducative"
+   },
+   "score": 0,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
+  },
+  {
+   "id": "term:gamingtest/mapping/ab31a24bbbc1571394ff9289f293d3a2",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "assistant de vie aupr\u00e8s d\u2019enfants handicap\u00e9s/assistante de vie aupr\u00e8s d\u2019enfants handicap\u00e9s"
+   },
+   "score": 0,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
+  },
+  {
+   "id": "term:gamingtest/mapping/228d9c373066486c602c949082ddb6ab",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "assistant de service social - familles d\u2019accueil/assistante de service social - familles d\u2019accueil"
+   },
+   "score": 0,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
+  },
+  {
+   "id": "term:gamingtest/mapping/0f8a45d456515275f6b0f223c7b38bbc",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "travailleur social/travailleuse sociale"
+   },
+   "score": 0,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
+  },
+  {
+   "id": "term:gamingtest/mapping/0c2c3a4df42e449b5d473700db44b077",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "agent d\u2019intervention sociale et familiale/agente d\u2019intervention sociale et familiale"
+   },
+   "score": 0,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
+  },
+  {
+   "id": "term:gamingtest/mapping/5e47df9a464539a6d533770dfe7bfd07",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "\u00e9ducateur social/\u00e9ducatrice sociale"
+   },
+   "score": 0,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
+  },
+  {
+   "id": "term:gamingtest/mapping/539344a5514f5f38ad6747f324a12cb4",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "assistant social en milieu scolaire/assistante sociale en milieu scolaire"
+   },
+   "score": 0,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
+  },
+  {
+   "id": "term:gamingtest/mapping/cb3ecb0ce2cafa32bb495cb7ad96b15f",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "assistant de vie aupr\u00e8s de personnes handicap\u00e9es/assistante de vie aupr\u00e8s de personnes handicap\u00e9es"
+   },
+   "score": 0,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
+  },
+  {
+   "id": "term:gamingtest/mapping/f16f29afff7f9d52a8e5767944454586",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "auxiliaire de vie sociale aupr\u00e8s d\u2019enfants"
+   },
+   "score": 0,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
+  },
+  {
+   "id": "term:gamingtest/mapping/d159f8219142b1a922a4533d9ba2e595",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__experience-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "assistant de service social/assistante de service social"
+   },
+   "score": 0,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
+  },
+  {
    "id": "term:gamingtest/mapping/2677b9bf970bb871dd7f5761cd27b71c",
    "mappingType": "skos:exactMatch",
-   "parent": "tr:__skill-id-1__",
+   "parent": "tr:__skill-id-4__",
    "prefLabel": {
     "@language": "fr",
     "@value": "adopter des strat\u00e9gies de promotion de la biodiversit\u00e9 et du bien-\u00eatre animal"
@@ -57,7 +498,7 @@
   {
    "id": "term:gamingtest/mapping/7ddd0d28f65581496a57748c6d6a2f09",
    "mappingType": "skos:exactMatch",
-   "parent": "tr:__skill-id-1__",
+   "parent": "tr:__skill-id-4__",
    "prefLabel": {
     "@language": "fr",
     "@value": "communiquer avec des dactylos"
@@ -72,7 +513,7 @@
   {
    "id": "term:gamingtest/mapping/28a05f2fb5526e79c796b1a49f34c9c2",
    "mappingType": "skos:exactMatch",
-   "parent": "tr:__skill-id-1__",
+   "parent": "tr:__skill-id-4__",
    "prefLabel": {
     "@language": "fr",
     "@value": "appliquer des normes d\u2019hygi\u00e8ne personnelle lors d\u2019op\u00e9rations de nettoyage"
@@ -87,7 +528,7 @@
   {
    "id": "term:gamingtest/mapping/e50f52181b5d7ec1da05c016127a1ad5",
    "mappingType": "skos:exactMatch",
-   "parent": "tr:__skill-id-1__",
+   "parent": "tr:__skill-id-4__",
    "prefLabel": {
     "@language": "fr",
     "@value": "acheter des pi\u00e8ces de v\u00e9hicules"
@@ -102,7 +543,7 @@
   {
    "id": "term:gamingtest/mapping/58da9631ba4f75a62d63b8164961fa5e",
    "mappingType": "skos:exactMatch",
-   "parent": "tr:__skill-id-1__",
+   "parent": "tr:__skill-id-4__",
    "prefLabel": {
     "@language": "fr",
     "@value": "KDevelop"
@@ -117,13 +558,13 @@
   {
    "id": "term:gamingtest/mapping/aead9e8aef5c3ee7790abfa0362b5592",
    "mappingType": "skos:exactMatch",
-   "parent": "tr:__skill-id-1__",
+   "parent": "tr:__skill-id-4__",
    "score": 1
   },
   {
    "id": "term:gamingtest/mapping/b1705081e072f07acd306c2159b69cd4",
    "mappingType": "skos:exactMatch",
-   "parent": "tr:__skill-id-1__",
+   "parent": "tr:__skill-id-4__",
    "prefLabel": {
     "@language": "fr",
     "@value": "fournir un accompagnateur pour des enfants sur un plateau"
@@ -138,7 +579,7 @@
   {
    "id": "term:gamingtest/mapping/53cf888f7a7e85ab0de932cac26780c5",
    "mappingType": "skos:exactMatch",
-   "parent": "tr:__skill-id-1__",
+   "parent": "tr:__skill-id-4__",
    "prefLabel": {
     "@language": "fr",
     "@value": "pratiquer des sports extr\u00eames"
@@ -153,7 +594,7 @@
   {
    "id": "term:gamingtest/mapping/5afeaca0d616478bf47d35f466e0b59f",
    "mappingType": "skos:exactMatch",
-   "parent": "tr:__skill-id-1__",
+   "parent": "tr:__skill-id-4__",
    "prefLabel": {
     "@language": "fr",
     "@value": "acheter des fournitures"
@@ -168,7 +609,7 @@
   {
    "id": "term:gamingtest/mapping/b78cd5d31b28326c9647daafd497688f",
    "mappingType": "skos:exactMatch",
-   "parent": "tr:__skill-id-1__",
+   "parent": "tr:__skill-id-4__",
    "prefLabel": {
     "@language": "fr",
     "@value": "inspecter des installations offshore"
