@@ -91,6 +91,7 @@ class RuleEngine:
         return field.replace("soo:has", "").replace("soo:", "").replace("skos:", "")
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     def apply_rules_to_document(self, file: dict, docIndex: int):
         documents: List[dict] = self.get_documents_from_files(file)
@@ -131,6 +132,8 @@ class RuleEngine:
                     currentInstance[target] = document[rule.sourcePath]
 
 >>>>>>> 3b02988 (refactor and update folders)
+=======
+>>>>>>> f246298 (remove previous algorithm.)
     def fill_with_document(self, file: dict) -> None:
         self.rules_tree.matches = []
         self.rules_tree.matches.append(file)

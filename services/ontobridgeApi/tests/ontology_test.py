@@ -151,7 +151,7 @@ def test_apply_tree_rules_gamingtest():
 
     ruleEngine = RuleEngine(rules, providerName)
 
-    serialisation = ruleEngine.generate(minimal_output, by_tree=True)
+    serialisation = ruleEngine.generate(minimal_output)
 
     json_result = json.dumps(serialisation, sort_keys=True)
 
@@ -181,7 +181,7 @@ def test_apply_tree_rules_gamingtest_all():
 
     ruleEngine = RuleEngine(rules, providerName)
 
-    serialisation = ruleEngine.generate(minimal_output, by_tree=True)
+    serialisation = ruleEngine.generate(minimal_output)
 
     json_result = json.dumps(serialisation, sort_keys=True)
 
@@ -211,7 +211,7 @@ def test_apply_tree_rules_jobready():
 
     ruleEngine = RuleEngine(rules, providerName)
 
-    serialisation = ruleEngine.generate(minimal_output, by_tree=True)
+    serialisation = ruleEngine.generate(minimal_output)
 
     json_result = json.dumps(serialisation, sort_keys=True)
 
@@ -243,10 +243,14 @@ def test_apply_tree_rules_interim():
     ruleEngine = RuleEngine(rules, providerName)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     serialisation = ruleEngine.generate(minimal_output)
 =======
     serialisation = ruleEngine.generate(minimal_output, by_tree=True)
 >>>>>>> 3b02988 (refactor and update folders)
+=======
+    serialisation = ruleEngine.generate(minimal_output)
+>>>>>>> f246298 (remove previous algorithm.)
 
     json_result = json.dumps(serialisation, sort_keys=True)
 
@@ -285,10 +289,14 @@ def test_apply_tree_rules_orientoi():
     ruleEngine = RuleEngine(rules, providerName)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     serialisation = ruleEngine.generate(minimal_output)
 =======
     serialisation = ruleEngine.generate(minimal_output, by_tree=True)
 >>>>>>> 3b02988 (refactor and update folders)
+=======
+    serialisation = ruleEngine.generate(minimal_output)
+>>>>>>> f246298 (remove previous algorithm.)
 
     json_result = json.dumps(serialisation, sort_keys=True)
 
@@ -327,10 +335,14 @@ def test_apply_tree_rules_pitangoo():
     ruleEngine = RuleEngine(rules, providerName)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     serialisation = ruleEngine.generate(minimal_output)
 =======
     serialisation = ruleEngine.generate(minimal_output, by_tree=True)
 >>>>>>> 3b02988 (refactor and update folders)
+=======
+    serialisation = ruleEngine.generate(minimal_output)
+>>>>>>> f246298 (remove previous algorithm.)
 
     json_result = json.dumps(serialisation, sort_keys=True)
 
