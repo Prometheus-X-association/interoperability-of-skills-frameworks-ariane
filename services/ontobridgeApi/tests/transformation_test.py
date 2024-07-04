@@ -206,6 +206,7 @@ def test_apply_tree_rules_pitangoo():
         f"{providerName}_full_expected_data",
     )
 
+
 def test_apply_tree_rules_gamingtest():
     providerName = "gamingtest"
 
@@ -215,14 +216,14 @@ def test_apply_tree_rules_gamingtest():
     ruleEngine = RuleEngine(rules, providerName)
 
     serialisation = ruleEngine.generate(minimal_output, by_tree=True)
-    
+
     term_matching_engine = TermMatchingEngine()
     serialisationWithTerm = term_matching_engine.generate(serialisation, providerName)
-        
-    target_framework = 'esco'
-    
+
+    target_framework = "esco"
+
     matching_source_engine = SourceMappingEngine()
-    serialisationWithTermAndMatching = matching_source_engine.generate(serialisationWithTerm, target_framework,  providerName)
+    serialisationWithTermAndMatching = matching_source_engine.generate(serialisationWithTerm, target_framework, providerName)
 
     json_result = json.dumps(serialisationWithTermAndMatching, sort_keys=True)
 
