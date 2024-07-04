@@ -1,6 +1,7 @@
 import json
 from typing import List
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 from api.engines.ontology_engine.providers import get_rules
 from api.engines.ontology_engine.rule import Rule
@@ -29,7 +30,12 @@ class OntologyService:
 from ontology_engine.providers import get_rules
 from ontology_engine.rule import Rule
 from ontology_engine.rule_engine import RuleEngine
+=======
+>>>>>>> dabfdae (fix launch of api)
 
+from api.engines.ontology_engine.providers import get_rules
+from api.engines.ontology_engine.rule import Rule
+from api.engines.ontology_engine.rule_engine import RuleEngine
 
 class OntologyService:
     def __init__(self) -> None:
