@@ -2,8 +2,8 @@ import hashlib
 from typing import List
 
 from bs4 import BeautifulSoup
-from api.engines.term_matching_engine.graphql_helper import graphql_request_helper
-from api.engines.term_matching_engine.term_matching_engine import TermMatchingEngine
+from api.engines.matching_engine.graphql_helper import graphql_request_helper
+from api.engines.matching_engine.term_matching_engine import TermMatchingEngine
 from api.services.machine_learning_service.embedding_service import EmbeddingService
 import json
 import os
