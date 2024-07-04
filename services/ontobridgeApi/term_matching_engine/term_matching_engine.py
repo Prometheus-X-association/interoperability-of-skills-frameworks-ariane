@@ -14,9 +14,11 @@ class TermMatchingEngine:
         # Load the model
         self.graphql_engine = graphql_request_helper()
         cwd=os.getcwd()
-        self.glq_queries = self.load_queries(f"{cwd}/term_matching_engine/gql_functions.json")
+        self.glq_queries = self.load_queries()
+        a=2
+        #self.glq_queries = self.load_queries_from_json(f"{cwd}/term_matching_engine/gql_functions.json")
 
-    def load_queries(self,filename):
+    def load_queries_from_json(self,filename):
         with open(filename, "r") as file:
             return json.load(file)
 
@@ -217,3 +219,75 @@ class TermMatchingEngine:
             del instance["__term__"]
                 
         return documents
+    
+
+         
+    def load_queries(self):
+        
+        query_strings = {
+        "rome": {
+            "job": """
+            query VECRomeJob($queryVector: [Float]) {
+            rome(queryVector: $queryVector) {
+                employment {
+                Position {
+                    id
+                    type
+                    prefLabel {
+                    value
+                    }
+                }
+                }
+            }
+            }
+            """,
+            "skill": """
+            query VECRomeSkill($queryVector: [Float]) {
+            rome {
+                skills(queryVector: $queryVector) {
+                Skill_rome {
+                    id
+                    type
+                    prefLabel {
+                    value
+                    }
+                    _met {
+                    score
+                    }
+                }
+                }
+            }
+            }
+            """
+        },
+        "esco": {
+            "job": """
+            query VECEscoJob($queryVector: [Float]) {
+            esco(queryVector: $queryVector) {
+                Occupation {
+                id
+                type
+                prefLabel {
+                    value
+                }
+                }
+            }
+            }
+            """,
+            "skill": """
+            query VECEscoSkill($queryVector: [Float]) {
+            esco(queryVector: $queryVector) {
+                Skill {
+                id
+                type
+                prefLabel {
+                    value
+                }
+                }
+            }
+            }
+            """
+        }
+        }
+        return query_strings
+
