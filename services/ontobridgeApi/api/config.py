@@ -1,7 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # allow to load the .env file as a singleton for environment variables
 =======
 >>>>>>> 2abe167 (fast api)
+=======
+# allow to load the .env file as a singleton for environment variables
+>>>>>>> 3b02988 (refactor and update folders)
 from enum import auto
 from functools import lru_cache
 from fastapi_utils.enums import StrEnum

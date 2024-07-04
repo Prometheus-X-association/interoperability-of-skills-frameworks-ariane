@@ -1,6 +1,10 @@
 import hashlib
 
+<<<<<<< HEAD
 from api.engines.matching_engine.term_matching_engine import TermMatchingEngine
+=======
+from api.engines.term_matching_engine.term_matching_engine import TermMatchingEngine
+>>>>>>> 3b02988 (refactor and update folders)
 
 
 def md5(content: str) -> str:
@@ -60,7 +64,11 @@ def test_engine_matching_create_or_find_term():
     collection_category = "scale"
     concept_pref_label = "example-polarity-1"
     concept = term_matching_engine.get_gql_create_or_find_term(
+<<<<<<< HEAD
         provider_name, 'concept_id_1', 'collection_id_1', collection_pref_label, collection_category, concept_pref_label, 
+=======
+        provider_name, collection_pref_label, collection_category, concept_pref_label
+>>>>>>> 3b02988 (refactor and update folders)
     )
     assert len(concept) >= 1
     print(concept)
@@ -73,7 +81,12 @@ def test_engine_matching_create_or_find_term_PITANGOO():
     collection_category = "scale"
     concept_pref_label = "0.8"
     concept = term_matching_engine.get_gql_create_or_find_term(
+<<<<<<< HEAD
         provider_name, 'concept_id_1', 'collection_id_1' , collection_pref_label, collection_category, concept_pref_label )
+=======
+        provider_name, collection_pref_label, collection_category, concept_pref_label
+    )
+>>>>>>> 3b02988 (refactor and update folders)
     assert len(concept) >= 1
     print(concept)
 
@@ -83,7 +96,11 @@ def test_engine_matching_create_or_find_term_PITANGOO():
     collection_category = "scale"
     concept_pref_label = "0.6"
     concept = term_matching_engine.get_gql_create_or_find_term(
+<<<<<<< HEAD
         provider_name, 'concept_id_2', 'collection_id_1', collection_pref_label, collection_category, concept_pref_label
+=======
+        provider_name, collection_pref_label, collection_category, concept_pref_label
+>>>>>>> 3b02988 (refactor and update folders)
     )
     assert len(concept) >= 1
     print(concept)

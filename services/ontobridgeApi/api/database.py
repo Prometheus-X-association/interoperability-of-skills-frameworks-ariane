@@ -1,7 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # NOT USED : allow the setup of postgres database combined with sqlalchemy ORM to store model entities
 =======
 >>>>>>> 2abe167 (fast api)
+=======
+# NOT USED : allow the setup of postgres database combined with sqlalchemy ORM to store model entities
+>>>>>>> 3b02988 (refactor and update folders)
 from multiprocessing.connection import Client
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
