@@ -18,7 +18,7 @@ class TermMatchingEngine:
         # Load the model
         self.graphql_engine = graphql_request_helper()
         cwd = os.getcwd()
-        self.glq_queries = self.load_queries(f"{cwd}/term_matching_engine/gql_functions.json")
+        self.glq_queries = self.load_queries()
 
     def load_queries(self):
         query_strings = {
@@ -234,7 +234,7 @@ class TermMatchingEngine:
         collection_id: str,
         concept_pref_label: str,
         collection_pref_label: str,
-        path: str,
+        path: str = '',
     ) -> dict:
         # Find or create the concept
 

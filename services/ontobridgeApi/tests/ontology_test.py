@@ -10,6 +10,7 @@ from tests.test_tools import get_tests, write_result
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 def test_apply_tree_rules_gamingtest():
     providerName = "gamingtest"
 
@@ -140,6 +141,8 @@ def test_apply_rules_gamingtest():
     # assert ordered(json_result) == ordered(expected_output)
 
 
+=======
+>>>>>>> 94f4f40 (fix test)
 def test_apply_tree_rules_gamingtest():
     providerName = "gamingtest"
 
@@ -191,11 +194,11 @@ def test_apply_tree_rules_gamingtest_all():
     print("--------------------------------------")
     write_result(
         json.dumps(serialisation, sort_keys=True, indent=1),
-        f"{providerName}_generated_data",
+        f"{providerName}_all_generated_data",
     )
     write_result(
         json.dumps(expected_data, sort_keys=True, indent=1),
-        f"{providerName}_expected_data",
+        f"{providerName}_all_expected_data",
     )
     assert ordered(json_result) == ordered(expected_output)
 
