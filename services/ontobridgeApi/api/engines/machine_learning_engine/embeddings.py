@@ -73,6 +73,7 @@ class Embeddings:
         return embeddings_vector
 
     def embed_text(self, text, chunk_size=1000):
+<<<<<<< HEAD
         chunks = [text[i : i + chunk_size] for i in range(0, len(text), chunk_size)]
         # Compute embeddings for each chunk
         chunk_embeddings = [self.model.encode(chunk, convert_to_tensor=True) for chunk in chunks]
@@ -96,6 +97,11 @@ class Embeddings:
         # Compute embeddings for each chunk
         chunk_embeddings = [model.encode(chunk, convert_to_tensor=True) for chunk in chunks]
 >>>>>>> 3b02988 (refactor and update folders)
+=======
+        chunks = [text[i : i + chunk_size] for i in range(0, len(text), chunk_size)]
+        # Compute embeddings for each chunk
+        chunk_embeddings = [self.model.encode(chunk, convert_to_tensor=True) for chunk in chunks]
+>>>>>>> 94f4f40 (fix test)
         try:
             # Average the embeddings
             avg_embedding = sum(chunk_embeddings) / len(chunk_embeddings)

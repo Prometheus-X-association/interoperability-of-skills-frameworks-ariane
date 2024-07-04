@@ -9,6 +9,7 @@ from api.models.data_provider import DataProviderDTO
 from fastapi.param_functions import Query
 
 from api.services.ontology_service.ontology_service import OntologyService
+<<<<<<< HEAD
 =======
 from datetime import date
 from typing import List
@@ -39,6 +40,8 @@ from ontology_engine.tools import clear_dict
 <<<<<<< HEAD
 >>>>>>> ca602c0 (adding ontology service)
 =======
+=======
+>>>>>>> 94f4f40 (fix test)
 from api.services.ontology_service.ontology_service_helloworld import HelloWorld_service
 >>>>>>> 7afd4f8 (launcher debug + postman)
 
