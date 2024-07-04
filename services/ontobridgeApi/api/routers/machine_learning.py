@@ -4,7 +4,7 @@ from fastapi_utils.inferring_router import InferringRouter
 from api.models.data_provider import *
 from api.models.embedding_payload import EmbeddingPayload
 from fastapi.param_functions import Query
-from api.services.machine_learning_service.embeddings_service import EmbeddingService
+from api.services.machine_learning_service.embedding_service import EmbeddingService
 
 router = InferringRouter()
 embeddings_service = EmbeddingService()

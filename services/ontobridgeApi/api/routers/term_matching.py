@@ -4,7 +4,7 @@ from fastapi_utils.inferring_router import InferringRouter
 from api.models.data_provider import *
 from api.models.term_matching_payload import TermMatchingPayload
 from fastapi.param_functions import Query
-from api.services.term_matching_service.term_matching_service import TermMatchingService
+from api.services.matching_service.term_matching_service import TermMatchingService
 
 router = InferringRouter()
 term_matching_service = TermMatchingService()
@@ -25,7 +25,7 @@ class term_matchings:
     async def get_term_matching_from_gql(
         self,
         term_matching: TermMatchingPayload = Body(..., description="gql payload to match", embed=True),
-) -> dict :  # instantiate redis_client by dependency injection
+    ) -> dict:  # instantiate redis_client by dependency injection
         term_matched = term_matching_service.get_gql_term_matching(
             term_matching.provider_input, term_matching.feature_input, term_matching.embedding_input
         )
