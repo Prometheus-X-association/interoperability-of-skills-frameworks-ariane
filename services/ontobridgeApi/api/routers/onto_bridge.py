@@ -53,10 +53,14 @@ class onto_bridges:
     """
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     @router.post("/transform")
 =======
     @router.get("/transform")
 >>>>>>> 269d0fd (add transformation)
+=======
+    @router.post("/transform")
+>>>>>>> 6580a24 (fix transform.)
     async def transform(
         self,
         provider_name: str = Query(..., description="Name of the data provider"),
@@ -68,6 +72,7 @@ class onto_bridges:
             None, description="Version of the rules"
         ),  # NOT USED : will allow the versionning of rules
     ) -> dict:  # instantiate redis_client by dependency injection
+<<<<<<< HEAD
 =======
         version: Optional[str] = Query(None, description="Version of the rules"),
 =======
@@ -77,6 +82,8 @@ class onto_bridges:
 >>>>>>> 3b02988 (refactor and update folders)
     ) -> list[dict]:  # instantiate redis_client by dependency injection
 >>>>>>> 269d0fd (add transformation)
+=======
+>>>>>>> 6580a24 (fix transform.)
         if isinstance(document, dict):
             document = [document]
         data_provider = ontology_engine.generate_mapping_from_provider_rules(provider_name, document)
