@@ -19,7 +19,7 @@ def test_apply_tree_rules_orientoi():
 
     ruleEngine = RuleEngine(rules, providerName)
 
-    serialisation = ruleEngine.generate(minimal_output, by_tree=True)
+    serialisation = ruleEngine.generate(minimal_output)
 
     term_matching_engine = TermMatchingEngine()
     serialisationWithTerm = term_matching_engine.generate(serialisation, providerName)
@@ -56,7 +56,7 @@ def test_apply_tree_rules_pitangoo():
 
     ruleEngine = RuleEngine(rules, providerName)
 
-    serialisation = ruleEngine.generate(minimal_output, by_tree=True)
+    serialisation = ruleEngine.generate(minimal_output)
 
     term_matching_engine = TermMatchingEngine()
     serialisationWithTerm = term_matching_engine.generate(serialisation, providerName)
@@ -93,7 +93,7 @@ def test_apply_tree_rules_gamingtest():
 
     ruleEngine = RuleEngine(rules, providerName)
 
-    serialisation = ruleEngine.generate(minimal_output, by_tree=True)
+    serialisation = ruleEngine.generate(minimal_output)
 
     term_matching_engine = TermMatchingEngine()
     serialisationWithTerm = term_matching_engine.generate(serialisation, providerName)

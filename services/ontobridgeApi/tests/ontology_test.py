@@ -17,7 +17,7 @@ def test_apply_tree_rules_gamingtest():
 
     ruleEngine = RuleEngine(rules, providerName)
 
-    serialisation = ruleEngine.generate(minimal_output, by_tree=True)
+    serialisation = ruleEngine.generate(minimal_output)
 
     json_result = json.dumps(serialisation, sort_keys=True)
 
@@ -47,7 +47,7 @@ def test_apply_tree_rules_gamingtest_all():
 
     ruleEngine = RuleEngine(rules, providerName)
 
-    serialisation = ruleEngine.generate(minimal_output, by_tree=True)
+    serialisation = ruleEngine.generate(minimal_output)
 
     json_result = json.dumps(serialisation, sort_keys=True)
 
@@ -77,7 +77,7 @@ def test_apply_tree_rules_jobready():
 
     ruleEngine = RuleEngine(rules, providerName)
 
-    serialisation = ruleEngine.generate(minimal_output, by_tree=True)
+    serialisation = ruleEngine.generate(minimal_output)
 
     json_result = json.dumps(serialisation, sort_keys=True)
 
@@ -107,7 +107,7 @@ def test_apply_tree_rules_interim():
 
     ruleEngine = RuleEngine(rules, providerName)
 
-    serialisation = ruleEngine.generate(minimal_output, by_tree=True)
+    serialisation = ruleEngine.generate(minimal_output)
 
     json_result = json.dumps(serialisation, sort_keys=True)
 
@@ -137,7 +137,7 @@ def test_apply_tree_rules_orientoi():
 
     ruleEngine = RuleEngine(rules, providerName)
 
-    serialisation = ruleEngine.generate(minimal_output, by_tree=True)
+    serialisation = ruleEngine.generate(minimal_output)
 
     json_result = json.dumps(serialisation, sort_keys=True)
 
@@ -167,7 +167,7 @@ def test_apply_tree_rules_pitangoo():
 
     ruleEngine = RuleEngine(rules, providerName)
 
-    serialisation = ruleEngine.generate(minimal_output, by_tree=True)
+    serialisation = ruleEngine.generate(minimal_output)
 
     json_result = json.dumps(serialisation, sort_keys=True)
 
