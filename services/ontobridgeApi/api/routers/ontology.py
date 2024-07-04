@@ -7,7 +7,6 @@ from api.models.data_provider import DataProviderDTO
 from fastapi.param_functions import Query
 
 from api.services.ontology_service.ontology_service import OntologyService
-from api.services.ontology_service.ontology_service_helloworld import HelloWorld_service
 
 router = InferringRouter()
 

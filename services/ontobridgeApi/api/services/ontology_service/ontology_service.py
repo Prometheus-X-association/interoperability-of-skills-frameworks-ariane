@@ -1,9 +1,9 @@
 import json
 from typing import List
-from ontology_engine.providers import get_rules
-from ontology_engine.rule import Rule
-from ontology_engine.rule_engine import RuleEngine
 
+from api.engines.ontology_engine.providers import get_rules
+from api.engines.ontology_engine.rule import Rule
+from api.engines.ontology_engine.rule_engine import RuleEngine
 
 class OntologyService:
     def __init__(self) -> None:
