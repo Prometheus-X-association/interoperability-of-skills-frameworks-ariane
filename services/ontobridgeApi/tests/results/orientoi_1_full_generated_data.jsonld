@@ -40,6 +40,7 @@
    "id": "tr:__experience-id-1__",
    "mapping": "term:orientoi_1/mapping/49379e50c710fe6ce8d00ba03aa2a978",
    "polarity": "tr:__polarity-id-1__",
+<<<<<<< HEAD
 =======
    "id": "tr:__experience-id-1__",
    "mapping": "term:orientoi_1/mapping/49379e50c710fe6ce8d00ba03aa2a978",
@@ -48,6 +49,8 @@
    "id": "tr:__experience-id-1__",
    "mapping": "term:orientoi_1/mapping/49379e50c710fe6ce8d00ba03aa2a978",
 >>>>>>> bc7b889 (fix get-polarity-value)
+=======
+>>>>>>> 4494379 (fix rule relationTo with 3 cases (see comments))
    "prefLabel": {
     "@language": "fr",
     "@value": "Agent / Agente de centre de tri de dechet"
@@ -102,6 +105,7 @@
    "id": "tr:__experience-id-2__",
    "mapping": "term:orientoi_1/mapping/a0ac6562998be0a8de9055d7ef399c1a",
    "polarity": "tr:__polarity-id-2__",
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> bc7b889 (fix get-polarity-value)
@@ -118,6 +122,8 @@
 >>>>>>> 94f4f40 (fix test)
 =======
 >>>>>>> bc7b889 (fix get-polarity-value)
+=======
+>>>>>>> 4494379 (fix rule relationTo with 3 cases (see comments))
    "prefLabel": {
     "@language": "fr",
     "@value": "Social"
@@ -140,6 +146,9 @@
   {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4494379 (fix rule relationTo with 3 cases (see comments))
    "experience": "tr:__experience-id-1__",
    "id": "tr:__polarity-id-1__",
    "polarityScale": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9",

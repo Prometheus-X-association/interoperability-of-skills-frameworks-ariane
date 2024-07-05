@@ -77,7 +77,6 @@
   },
   {
    "__term__": {
-    "collection_category": "polarity",
     "language": "en",
     "provider": "PITANGOO",
     "scale": "Polarity",
@@ -208,6 +207,9 @@
     "scale_path": "missions.tendencies.score",
     "str_value": "0.6",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4494379 (fix rule relationTo with 3 cases (see comments))
     "targetFunction": "fno:skill-value-to-scale",
     "value": 0.6
    },
@@ -235,15 +237,21 @@
   {
    "__term__": {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "collection_category": "polarity",
 >>>>>>> 032ff6f (fix test output)
+=======
+>>>>>>> 4494379 (fix rule relationTo with 3 cases (see comments))
     "language": "en",
     "provider": "PITANGOO",
     "scale": "Skill",
     "scale_path": "missions.tendencies.score",
     "str_value": "0.8",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4494379 (fix rule relationTo with 3 cases (see comments))
     "targetFunction": "fno:skill-value-to-scale",
     "value": 0.8
    },
@@ -271,15 +279,21 @@
   {
    "__term__": {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "collection_category": "polarity",
 >>>>>>> 032ff6f (fix test output)
+=======
+>>>>>>> 4494379 (fix rule relationTo with 3 cases (see comments))
     "language": "en",
     "provider": "PITANGOO",
     "scale": "Skill",
     "scale_path": "missions.tendencies.score",
     "str_value": "0.6",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4494379 (fix rule relationTo with 3 cases (see comments))
     "targetFunction": "fno:skill-value-to-scale",
     "value": 0.6
    },
