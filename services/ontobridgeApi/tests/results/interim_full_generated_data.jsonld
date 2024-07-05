@@ -19,15 +19,8 @@
    "type": "soo:Profile"
   },
   {
-   "__term__": {
-    "language": "en",
-    "provider": "interim",
-    "scale": "Polarity",
-    "scale_path": "openToInterim",
-    "str_value": "0",
-    "targetFunction": "fno:find-or-create-term",
-    "value": 0
-   },
+   "skillLevelScale": "term:interim/polarity/66532bfe3a49d907a44ce3cbc6690d5a",
+   "skillLevelValue": "term:interim/polarity/66532bfe3a49d907a44ce3cbc6690d5a/level/0",
    "type": "soo:Polarity"
   },
   {
@@ -105,6 +98,16 @@
     "@value": "Product Owner"
    },
    "type": "soo:Experience"
+  },
+  {
+   "id": "term:interim/polarity/66532bfe3a49d907a44ce3cbc6690d5a/level/0",
+   "memberOf": "term:interim/polarity/66532bfe3a49d907a44ce3cbc6690d5a",
+   "notation": 0,
+   "prefLabel": {
+    "@language": "en",
+    "@value": "0"
+   },
+   "type": "skos:Concept"
   }
  ]
 }

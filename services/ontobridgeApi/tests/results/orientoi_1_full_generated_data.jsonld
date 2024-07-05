@@ -22,6 +22,7 @@
    "family": "term:orientoi_1/family/d9e8e5e07211aea6a79908188885427b/M\u00e9tier",
    "id": "tr:__experience-id-1__",
    "mapping": "term:orientoi_1/mapping/49379e50c710fe6ce8d00ba03aa2a978",
+   "polarity": "tr:__polarity-id-1__",
    "prefLabel": {
     "@language": "fr",
     "@value": "Agent / Agente de centre de tri de dechet"
@@ -60,10 +61,7 @@
    "family": "term:orientoi_1/family/d9e8e5e07211aea6a79908188885427b/Secteur d''activit\u00e9",
    "id": "tr:__experience-id-2__",
    "mapping": "term:orientoi_1/mapping/a0ac6562998be0a8de9055d7ef399c1a",
-   "polarity": [
-    "tr:__polarity-id-1__",
-    "tr:__polarity-id-2__"
-   ],
+   "polarity": "tr:__polarity-id-2__",
    "prefLabel": {
     "@language": "fr",
     "@value": "Social"
@@ -84,7 +82,7 @@
    "type": "soo:Experience"
   },
   {
-   "experience": "tr:__experience-id-2__",
+   "experience": "tr:__experience-id-1__",
    "id": "tr:__polarity-id-1__",
    "polarityScale": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9",
    "polarityValue": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9/level/Je ne sais pas",

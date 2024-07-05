@@ -20,12 +20,12 @@
   },
   {
    "__term__": {
-    "collection_category": "polarity",
     "language": "en",
     "provider": "PITANGOO",
     "scale": "Skill",
     "scale_path": "missions.tendencies.score",
     "str_value": "0.6",
+    "targetFunction": "fno:skill-value-to-scale",
     "value": 0.6
    },
    "category": "term:skills/category/riasec",
@@ -39,12 +39,12 @@
   },
   {
    "__term__": {
-    "collection_category": "polarity",
     "language": "en",
     "provider": "PITANGOO",
     "scale": "Skill",
     "scale_path": "missions.tendencies.score",
     "str_value": "0.8",
+    "targetFunction": "fno:skill-value-to-scale",
     "value": 0.8
    },
    "category": "term:skills/category/riasec",
@@ -58,12 +58,12 @@
   },
   {
    "__term__": {
-    "collection_category": "polarity",
     "language": "en",
     "provider": "PITANGOO",
     "scale": "Skill",
     "scale_path": "missions.tendencies.score",
     "str_value": "0.6",
+    "targetFunction": "fno:skill-value-to-scale",
     "value": 0.6
    },
    "category": "term:skills/category/riasec",
