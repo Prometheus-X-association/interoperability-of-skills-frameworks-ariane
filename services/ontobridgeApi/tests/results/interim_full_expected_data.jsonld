@@ -4,39 +4,28 @@
  },
  "graph": [
   {
-   "adress": "456 Oak St, Anytown, USA",
+   "address": "address",
    "email": "alice.smith@example.com",
    "experience": [
-    "tr:__experience-id-1__",
-    "tr:__experience-id-2__",
-    "tr:__experience-id-3__",
-    "tr:__experience-id-4__",
-    "tr:__experience-id-5__",
-    "tr:__experience-id-6__"
+    "tr:__xp-1__",
+    "tr:__xp-2__",
+    "tr:__xp-3__",
+    "tr:__xp-4__",
+    "tr:__xp-5__",
+    "tr:__xp-6__"
    ],
-   "id": "tr:__profile-id-1__",
+   "id": "tr:__generated-id-1__",
    "name": "Alice Smith",
+   "polarity": "tr:__polarity-1__",
    "type": "soo:Profile"
-  },
-  {
-   "__term__": {
-    "language": "en",
-    "provider": "interim",
-    "scale": "Polarity",
-    "scale_path": "openToInterim",
-    "str_value": "0",
-    "targetFunction": "fno:find-or-create-term",
-    "value": 0
-   },
-   "type": "soo:Polarity"
   },
   {
    "company": "Tech Corp",
    "dateFrom": "2017-06-01",
    "dateTo": "2019-08-01",
-   "experienceStatus": "term:experience/status/suggested",
+   "experienceStatus": "term:experience/type/past",
    "experienceType": "term:experience/type/professional",
-   "id": "tr:__experience-id-1__",
+   "id": "tr:__xp-1__",
    "prefLabel": {
     "@language": "en",
     "@value": "Software Engineer"
@@ -47,9 +36,9 @@
    "company": "Innovate Ltd",
    "dateFrom": "2019-09-01",
    "dateTo": "2023-01-01",
-   "experienceStatus": "term:experience/status/suggested",
+   "experienceStatus": "term:experience/type/past",
    "experienceType": "term:experience/type/professional",
-   "id": "tr:__experience-id-2__",
+   "id": "tr:__xp-2__",
    "prefLabel": {
     "@language": "en",
     "@value": "Lead Engineer"
@@ -59,7 +48,7 @@
   {
    "company": "Scrum Alliance",
    "dateFrom": "2018-01-01",
-   "id": "tr:__experience-id-3__",
+   "id": "tr:__xp-3__",
    "prefLabel": {
     "@language": "en",
     "@value": "Certified Scrum Master"
@@ -69,7 +58,7 @@
   {
    "company": "Amazon",
    "dateFrom": "2021-01-01",
-   "id": "tr:__experience-id-4__",
+   "id": "tr:__xp-4__",
    "prefLabel": {
     "@language": "en",
     "@value": "AWS Certified Solutions Architect"
@@ -78,12 +67,15 @@
   },
   {
    "company": "Tech Innovators",
+   "contractType": "Full-Time",
    "dateFrom": "2023-03-01",
    "description": {
     "@language": "en",
     "@value": "Managing a team of software engineers"
    },
-   "id": "tr:__experience-id-5__",
+   "experienceStatus": "term:experience/type/suggested",
+   "experienceType": "term:experience/type/professional",
+   "id": "tr:__xp-5__",
    "location": "Boston, USA",
    "prefLabel": {
     "@language": "en",
@@ -93,18 +85,47 @@
   },
   {
    "company": "Creative Solutions",
+   "contractType": "Contract",
    "dateFrom": "2024-02-01",
    "description": {
     "@language": "en",
     "@value": "Overseeing product development"
    },
-   "id": "tr:__experience-id-6__",
+   "experienceStatus": "term:experience/type/suggested",
+   "experienceType": "term:experience/type/professional",
+   "id": "tr:__xp-6__",
    "location": "Seattle, USA",
    "prefLabel": {
     "@language": "en",
     "@value": "Product Owner"
    },
    "type": "soo:Experience"
+  },
+  {
+   "id": "tr:__polarity-1__",
+   "polarityScale": "term:interim/polarity/scale/1",
+   "polarityValue": "term:interim/polarity/value/1",
+   "type": "soo:Polarity"
+  },
+  {
+   "id": "term:interim/polarity/scale/1",
+   "prefLabel": [
+    {
+     "@language": "en",
+     "@value": "Interim collection for openToInterim"
+    }
+   ],
+   "type": "skos:Collection"
+  },
+  {
+   "id": "term:interim/polarity/value/1",
+   "notation": 0,
+   "prefLabel": [
+    {
+     "@language": "en",
+     "@value": "0"
+    }
+   ]
   }
  ]
 }

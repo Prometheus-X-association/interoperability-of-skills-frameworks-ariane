@@ -179,7 +179,12 @@ class RuleEngine:
                         continue
 
                     if rule.relationTo != "" and rule.relationName != "" and rule.relationNameInverse != "":
-                        currentInstanceTo = self.get_last_instance(rule.relationTo, docIndex, -1)
+                        # same cardinality : ex polarity with orientoi : 1 polarity by experience
+                        currentInstanceTo = self.get_last_instance(rule.relationTo, docIndex, index)
+                        if currentInstanceTo == None: 
+                            # different cardinality : ex skill with pitango : 1 experience with many skills
+                            currentInstanceTo = self.get_last_instance(rule.relationTo, docIndex, -1)
+                        
                         if not currentInstanceTo == None:
                             if self.get_field_name(rule.relationNameInverse).lower() in currentInstanceTo:
                                 if isinstance(currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()], str):
@@ -193,6 +198,7 @@ class RuleEngine:
                                 currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()] = currentInstance["id"]
                             currentInstance[self.get_field_name(rule.relationTo).lower()] = currentInstanceTo["id"]
                         else:
+                            # Relation does not exist : needs to apply lag rule ( reference to an instance created later)
                             lag_rules.append(rule)
                             pass
 
