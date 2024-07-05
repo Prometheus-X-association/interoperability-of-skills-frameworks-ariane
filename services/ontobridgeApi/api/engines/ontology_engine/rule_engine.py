@@ -218,13 +218,10 @@ class RuleEngine:
                         currentInstance["__matching__"]["language"] = rule.targetLang if rule.targetLang != "" else "en"
                         continue
 
-                    if rule.targetFunction == "fno:get-polarity-value":
-                        continue
-
                     if rule.targetFunction == "fno:get-family-value":
                         continue
 
-                    if rule.targetFunction == "fno:skill-value-to-scale" or rule.targetFunction == "fno:find-or-create-term":
+                    if rule.targetFunction == "fno:skill-value-to-scale" or rule.targetFunction == "fno:find-or-create-term" or rule.targetFunction == "fno:get-polarity-value":
                         currentInstance["__term__"] = {}
                         fieldName = self.get_field_name(rule.targetClass)
                         currentInstance["__term__"]["str_value"] = str(match)
