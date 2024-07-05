@@ -169,18 +169,6 @@ class RuleEngine:
                                         "id"
                                     ]
 
-                    # if rule.targetFunction == "fno:find-or-create-term":
-                    #     currentInstance["id"] = self.generate_id(currentInstance)
-                    #     currentInstance["polarityScale"] = "term:interim/polarity/scale/1"
-                    #     currentInstance["polarityValue"] = "term:interim/polarity/value/1"
-                    #     current_term_Instance = self.get_instance("soo:Term", 0, 0, prefix)
-                    #     current_term_Instance["id"] = "term:interim/polarity/value/1"
-                    #     current_term_Instance["notation"] = match
-                    #     current_term_Instance["prefLabel"] = {}
-                    #     current_term_Instance["prefLabel"]["@value"] = str(match)
-                    #     current_term_Instance["prefLabel"]["@language"] = "en"
-                    #     continue
-
                     if rule.targetFunction == "fno:date-to-xsd":
                         dates = match
                         if rule.targetFunctionParam == "fno:year-only":
