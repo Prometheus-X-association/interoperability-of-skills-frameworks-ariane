@@ -214,6 +214,7 @@ class RuleEngine:
                                     ]
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                     # if rule.targetFunction == "fno:find-or-create-term":
                     #     currentInstance["id"] = self.generate_id(currentInstance)
@@ -228,6 +229,8 @@ class RuleEngine:
                     #     continue
 
 >>>>>>> 3b02988 (refactor and update folders)
+=======
+>>>>>>> 032ff6f (fix test output)
                     if rule.targetFunction == "fno:date-to-xsd":
                         dates = match
                         if rule.targetFunctionParam == "fno:year-only":

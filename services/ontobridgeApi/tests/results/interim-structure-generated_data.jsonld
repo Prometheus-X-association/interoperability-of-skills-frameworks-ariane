@@ -4,6 +4,7 @@
  },
  "graph": [
   {
+<<<<<<< HEAD
    "adress": "456 Oak St, Anytown, USA",
    "email": "alice.smith@example.com",
    "experience": [
@@ -14,18 +15,89 @@
     "tr:__experience-id-5__",
     "tr:__experience-id-6__"
    ],
+=======
+   "dateFrom": "2023-06-28",
+   "id": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "Problem-Solving Puzzle"
+   },
+   "profile": [
+    "tr:__profile-id-1__",
+    "tr:__profile-id-1__",
+    "tr:__profile-id-1__"
+   ],
+   "skill": [
+    "tr:__skill-id-1__",
+    "tr:__skill-id-1__"
+   ],
+   "type": "soo:Experience"
+  },
+  {
+   "adress": "456 Oak St, Anytown, USA",
+   "email": "alice.smith@example.com",
+   "experience": "tr:__experience-id-1__",
+>>>>>>> 032ff6f (fix test output)
    "id": "tr:__profile-id-1__",
    "name": "Alice Smith",
    "type": "soo:Profile"
   },
   {
+<<<<<<< HEAD
    "__term__": {
+=======
+   "__matching__": {
+    "language": "en",
+    "provider": "interim",
+    "sourceValue": "Problem-Solving",
+    "subtype": "skill"
+   },
+   "experience": "tr:__experience-id-1__",
+   "id": "tr:__skill-id-1__",
+   "skillLevelValue": "Validated",
+   "type": "soo:Skill"
+  },
+  {
+   "__matching__": {
+    "language": "fr",
+    "provider": "interim",
+    "sourceValue": "Int\u00e9gration au groupe",
+    "subtype": "skill"
+   },
+   "description": {
+    "@language": "fr",
+    "@value": "Facult\u00e9 de se diriger vers un collectif d\u00e9j\u00e0 constitu\u00e9, d'y trouver une place et d'en devenir un membre l\u00e9gitime"
+   },
+   "id": "tr:__skill-id-2__",
+   "type": "soo:Skill"
+  },
+  {
+   "__matching__": {
+    "language": "fr",
+    "provider": "interim",
+    "sourceValue": "Motivation et implication",
+    "subtype": "skill"
+   },
+   "description": {
+    "@language": "fr",
+    "@value": "S'investir, orienter son action et nourrir une satisfaction et un enthousiasme vis-\u00e0-vis d'une organisation, d'un projet collectif ou d'un objectif personnel"
+   },
+   "id": "tr:__skill-id-3__",
+   "type": "soo:Skill"
+  },
+  {
+   "__term__": {
+    "collection_category": "polarity",
+>>>>>>> 032ff6f (fix test output)
     "language": "en",
     "provider": "interim",
     "scale": "Polarity",
     "scale_path": "openToInterim",
     "str_value": "0",
+<<<<<<< HEAD
     "targetFunction": "fno:find-or-create-term",
+=======
+>>>>>>> 032ff6f (fix test output)
     "value": 0
    },
    "type": "soo:Polarity"
@@ -36,7 +108,11 @@
    "dateTo": "2019-08-01",
    "experienceStatus": "term:experience/status/suggested",
    "experienceType": "term:experience/type/professional",
+<<<<<<< HEAD
    "id": "tr:__experience-id-1__",
+=======
+   "id": "tr:__experience-id-2__",
+>>>>>>> 032ff6f (fix test output)
    "prefLabel": {
     "@language": "en",
     "@value": "Software Engineer"
@@ -49,7 +125,11 @@
    "dateTo": "2023-01-01",
    "experienceStatus": "term:experience/status/suggested",
    "experienceType": "term:experience/type/professional",
+<<<<<<< HEAD
    "id": "tr:__experience-id-2__",
+=======
+   "id": "tr:__experience-id-3__",
+>>>>>>> 032ff6f (fix test output)
    "prefLabel": {
     "@language": "en",
     "@value": "Lead Engineer"
@@ -59,7 +139,11 @@
   {
    "company": "Scrum Alliance",
    "dateFrom": "2018-01-01",
+<<<<<<< HEAD
    "id": "tr:__experience-id-3__",
+=======
+   "id": "tr:__experience-id-4__",
+>>>>>>> 032ff6f (fix test output)
    "prefLabel": {
     "@language": "en",
     "@value": "Certified Scrum Master"
@@ -69,7 +153,11 @@
   {
    "company": "Amazon",
    "dateFrom": "2021-01-01",
+<<<<<<< HEAD
    "id": "tr:__experience-id-4__",
+=======
+   "id": "tr:__experience-id-5__",
+>>>>>>> 032ff6f (fix test output)
    "prefLabel": {
     "@language": "en",
     "@value": "AWS Certified Solutions Architect"
@@ -83,7 +171,11 @@
     "@language": "en",
     "@value": "Managing a team of software engineers"
    },
+<<<<<<< HEAD
    "id": "tr:__experience-id-5__",
+=======
+   "id": "tr:__experience-id-6__",
+>>>>>>> 032ff6f (fix test output)
    "location": "Boston, USA",
    "prefLabel": {
     "@language": "en",
@@ -98,7 +190,11 @@
     "@language": "en",
     "@value": "Overseeing product development"
    },
+<<<<<<< HEAD
    "id": "tr:__experience-id-6__",
+=======
+   "id": "tr:__experience-id-7__",
+>>>>>>> 032ff6f (fix test output)
    "location": "Seattle, USA",
    "prefLabel": {
     "@language": "en",

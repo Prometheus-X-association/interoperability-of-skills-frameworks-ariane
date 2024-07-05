@@ -164,11 +164,11 @@ def test_apply_tree_rules_gamingtest():
     print("--------------------------------------")
     write_result(
         json.dumps(serialisation, sort_keys=True, indent=1),
-        f"{providerName}_generated_data",
+        f"{providerName}-structure-generated_data",
     )
     write_result(
         json.dumps(expected_data, sort_keys=True, indent=1),
-        f"{providerName}_expected_data",
+        f"{providerName}-structure-expected_data",
     )
     # assert ordered(json_result) == ordered(expected_output)
 
@@ -194,11 +194,11 @@ def test_apply_tree_rules_gamingtest_all():
     print("--------------------------------------")
     write_result(
         json.dumps(serialisation, sort_keys=True, indent=1),
-        f"{providerName}_all_generated_data",
+        f"{providerName}-structure-all-generated_data",
     )
     write_result(
         json.dumps(expected_data, sort_keys=True, indent=1),
-        f"{providerName}_all_expected_data",
+        f"{providerName}-structure-all-expected_data",
     )
     assert ordered(json_result) == ordered(expected_output)
 
@@ -224,12 +224,16 @@ def test_apply_tree_rules_jobready():
     print("--------------------------------------")
     write_result(
         json.dumps(serialisation, sort_keys=True, indent=1),
-        f"{providerName}_generated_data",
+        f"{providerName}-structure-generated_data",
     )
     write_result(
         json.dumps(expected_data, sort_keys=True, indent=1),
+<<<<<<< HEAD
         f"{providerName}_expected_data",
 >>>>>>> 3b02988 (refactor and update folders)
+=======
+        f"{providerName}-structure-expected_data",
+>>>>>>> 032ff6f (fix test output)
     )
     # assert ordered(json_result) == ordered(expected_output)
 
@@ -264,6 +268,7 @@ def test_apply_tree_rules_interim():
     write_result(
         json.dumps(serialisation, sort_keys=True, indent=1),
 <<<<<<< HEAD
+<<<<<<< HEAD
         f"{providerName}-structure-generated_data",
     )
     write_result(
@@ -276,6 +281,13 @@ def test_apply_tree_rules_interim():
         json.dumps(expected_data, sort_keys=True, indent=1),
         f"{providerName}_expected_data",
 >>>>>>> 3b02988 (refactor and update folders)
+=======
+        f"{providerName}-structure-generated_data",
+    )
+    write_result(
+        json.dumps(expected_data, sort_keys=True, indent=1),
+        f"{providerName}-structure-expected_data",
+>>>>>>> 032ff6f (fix test output)
     )
     # assert ordered(json_result) == ordered(expected_output)
 
@@ -310,6 +322,7 @@ def test_apply_tree_rules_orientoi():
     write_result(
         json.dumps(serialisation, sort_keys=True, indent=1),
 <<<<<<< HEAD
+<<<<<<< HEAD
         f"{providerName}-structure-generated_data",
     )
     write_result(
@@ -322,6 +335,13 @@ def test_apply_tree_rules_orientoi():
         json.dumps(expected_data, sort_keys=True, indent=1),
         f"{providerName}_expected_data",
 >>>>>>> 3b02988 (refactor and update folders)
+=======
+        f"{providerName}-structure-generated_data",
+    )
+    write_result(
+        json.dumps(expected_data, sort_keys=True, indent=1),
+        f"{providerName}-structure-expected_data",
+>>>>>>> 032ff6f (fix test output)
     )
     # assert ordered(json_result) == ordered(expected_output)
 
@@ -356,6 +376,7 @@ def test_apply_tree_rules_pitangoo():
     write_result(
         json.dumps(serialisation, sort_keys=True, indent=1),
 <<<<<<< HEAD
+<<<<<<< HEAD
         f"{providerName}-structure-generated_data",
     )
     write_result(
@@ -368,5 +389,12 @@ def test_apply_tree_rules_pitangoo():
         json.dumps(expected_data, sort_keys=True, indent=1),
         f"{providerName}_expected_data",
 >>>>>>> 3b02988 (refactor and update folders)
+=======
+        f"{providerName}-structure-generated_data",
+    )
+    write_result(
+        json.dumps(expected_data, sort_keys=True, indent=1),
+        f"{providerName}-structure-expected_data",
+>>>>>>> 032ff6f (fix test output)
     )
     # assert ordered(json_result) == ordered(expected_output)
