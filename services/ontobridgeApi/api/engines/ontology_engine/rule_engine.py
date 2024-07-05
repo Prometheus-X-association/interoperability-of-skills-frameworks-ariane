@@ -249,15 +249,21 @@ class RuleEngine:
 
                     if rule.relationTo != "" and rule.relationName != "" and rule.relationNameInverse != "":
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4494379 (fix rule relationTo with 3 cases (see comments))
                         # same cardinality : ex polarity with orientoi : 1 polarity by experience
                         currentInstanceTo = self.get_last_instance(rule.relationTo, docIndex, index)
                         if currentInstanceTo == None: 
                             # different cardinality : ex skill with pitango : 1 experience with many skills
                             currentInstanceTo = self.get_last_instance(rule.relationTo, docIndex, -1)
                         
+<<<<<<< HEAD
 =======
                         currentInstanceTo = self.get_last_instance(rule.relationTo, docIndex, -1)
 >>>>>>> 3b02988 (refactor and update folders)
+=======
+>>>>>>> 4494379 (fix rule relationTo with 3 cases (see comments))
                         if not currentInstanceTo == None:
                             if self.get_field_name(rule.relationNameInverse).lower() in currentInstanceTo:
                                 if isinstance(currentInstanceTo[self.get_field_name(rule.relationNameInverse).lower()], str):
@@ -272,9 +278,13 @@ class RuleEngine:
                             currentInstance[self.get_field_name(rule.relationTo).lower()] = currentInstanceTo["id"]
                         else:
 <<<<<<< HEAD
+<<<<<<< HEAD
                             # Relation does not exist : needs to apply lag rule ( reference to an instance created later)
 =======
 >>>>>>> 3b02988 (refactor and update folders)
+=======
+                            # Relation does not exist : needs to apply lag rule ( reference to an instance created later)
+>>>>>>> 4494379 (fix rule relationTo with 3 cases (see comments))
                             lag_rules.append(rule)
                             pass
 

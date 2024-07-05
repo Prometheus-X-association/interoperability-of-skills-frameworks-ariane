@@ -103,17 +103,24 @@
 =======
 >>>>>>> e1d119f (add family)
    "__term__": {
+<<<<<<< HEAD
     "collection_category": "polarity",
 >>>>>>> 032ff6f (fix test output)
+=======
+>>>>>>> 4494379 (fix rule relationTo with 3 cases (see comments))
     "language": "en",
     "provider": "interim",
     "scale": "Polarity",
     "scale_path": "openToInterim",
     "str_value": "0",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "targetFunction": "fno:find-or-create-term",
 =======
 >>>>>>> 032ff6f (fix test output)
+=======
+    "targetFunction": "fno:find-or-create-term",
+>>>>>>> 4494379 (fix rule relationTo with 3 cases (see comments))
     "value": 0
    },
    "type": "soo:Polarity"
