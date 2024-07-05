@@ -5,6 +5,7 @@
  "graph": [
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
    "dateFrom": "2023-06-28",
    "id": "tr:__experience-id-1__",
@@ -42,6 +43,8 @@
   },
   {
 >>>>>>> 032ff6f (fix test output)
+=======
+>>>>>>> e1d119f (add family)
    "__matching__": {
     "language": "fr",
     "provider": "jobready_2",
@@ -53,10 +56,14 @@
     "@value": "Facult\u00e9 de se diriger vers un collectif d\u00e9j\u00e0 constitu\u00e9, d'y trouver une place et d'en devenir un membre l\u00e9gitime"
    },
 <<<<<<< HEAD
+<<<<<<< HEAD
    "id": "tr:__skill-id-1__",
 =======
    "id": "tr:__skill-id-2__",
 >>>>>>> 032ff6f (fix test output)
+=======
+   "id": "tr:__skill-id-1__",
+>>>>>>> e1d119f (add family)
    "type": "soo:Skill"
   },
   {
@@ -71,10 +78,14 @@
     "@value": "S'investir, orienter son action et nourrir une satisfaction et un enthousiasme vis-\u00e0-vis d'une organisation, d'un projet collectif ou d'un objectif personnel"
    },
 <<<<<<< HEAD
+<<<<<<< HEAD
    "id": "tr:__skill-id-2__",
 =======
    "id": "tr:__skill-id-3__",
 >>>>>>> 032ff6f (fix test output)
+=======
+   "id": "tr:__skill-id-2__",
+>>>>>>> e1d119f (add family)
    "type": "soo:Skill"
   }
  ]

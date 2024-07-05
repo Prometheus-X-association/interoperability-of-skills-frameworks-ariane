@@ -5,6 +5,7 @@
  "graph": [
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
    "adress": "456 Oak St, Anytown, USA",
    "email": "alice.smith@example.com",
    "experience": [
@@ -38,11 +39,24 @@
    "email": "alice.smith@example.com",
    "experience": "tr:__experience-id-1__",
 >>>>>>> 032ff6f (fix test output)
+=======
+   "adress": "456 Oak St, Anytown, USA",
+   "email": "alice.smith@example.com",
+   "experience": [
+    "tr:__experience-id-1__",
+    "tr:__experience-id-2__",
+    "tr:__experience-id-3__",
+    "tr:__experience-id-4__",
+    "tr:__experience-id-5__",
+    "tr:__experience-id-6__"
+   ],
+>>>>>>> e1d119f (add family)
    "id": "tr:__profile-id-1__",
    "name": "Alice Smith",
    "type": "soo:Profile"
   },
   {
+<<<<<<< HEAD
 <<<<<<< HEAD
    "__term__": {
 =======
@@ -86,6 +100,8 @@
    "type": "soo:Skill"
   },
   {
+=======
+>>>>>>> e1d119f (add family)
    "__term__": {
     "collection_category": "polarity",
 >>>>>>> 032ff6f (fix test output)
@@ -109,10 +125,14 @@
    "experienceStatus": "term:experience/status/suggested",
    "experienceType": "term:experience/type/professional",
 <<<<<<< HEAD
+<<<<<<< HEAD
    "id": "tr:__experience-id-1__",
 =======
    "id": "tr:__experience-id-2__",
 >>>>>>> 032ff6f (fix test output)
+=======
+   "id": "tr:__experience-id-1__",
+>>>>>>> e1d119f (add family)
    "prefLabel": {
     "@language": "en",
     "@value": "Software Engineer"
@@ -126,10 +146,14 @@
    "experienceStatus": "term:experience/status/suggested",
    "experienceType": "term:experience/type/professional",
 <<<<<<< HEAD
+<<<<<<< HEAD
    "id": "tr:__experience-id-2__",
 =======
    "id": "tr:__experience-id-3__",
 >>>>>>> 032ff6f (fix test output)
+=======
+   "id": "tr:__experience-id-2__",
+>>>>>>> e1d119f (add family)
    "prefLabel": {
     "@language": "en",
     "@value": "Lead Engineer"
@@ -140,10 +164,14 @@
    "company": "Scrum Alliance",
    "dateFrom": "2018-01-01",
 <<<<<<< HEAD
+<<<<<<< HEAD
    "id": "tr:__experience-id-3__",
 =======
    "id": "tr:__experience-id-4__",
 >>>>>>> 032ff6f (fix test output)
+=======
+   "id": "tr:__experience-id-3__",
+>>>>>>> e1d119f (add family)
    "prefLabel": {
     "@language": "en",
     "@value": "Certified Scrum Master"
@@ -154,10 +182,14 @@
    "company": "Amazon",
    "dateFrom": "2021-01-01",
 <<<<<<< HEAD
+<<<<<<< HEAD
    "id": "tr:__experience-id-4__",
 =======
    "id": "tr:__experience-id-5__",
 >>>>>>> 032ff6f (fix test output)
+=======
+   "id": "tr:__experience-id-4__",
+>>>>>>> e1d119f (add family)
    "prefLabel": {
     "@language": "en",
     "@value": "AWS Certified Solutions Architect"
@@ -172,10 +204,14 @@
     "@value": "Managing a team of software engineers"
    },
 <<<<<<< HEAD
+<<<<<<< HEAD
    "id": "tr:__experience-id-5__",
 =======
    "id": "tr:__experience-id-6__",
 >>>>>>> 032ff6f (fix test output)
+=======
+   "id": "tr:__experience-id-5__",
+>>>>>>> e1d119f (add family)
    "location": "Boston, USA",
    "prefLabel": {
     "@language": "en",
@@ -191,10 +227,14 @@
     "@value": "Overseeing product development"
    },
 <<<<<<< HEAD
+<<<<<<< HEAD
    "id": "tr:__experience-id-6__",
 =======
    "id": "tr:__experience-id-7__",
 >>>>>>> 032ff6f (fix test output)
+=======
+   "id": "tr:__experience-id-6__",
+>>>>>>> e1d119f (add family)
    "location": "Seattle, USA",
    "prefLabel": {
     "@language": "en",
