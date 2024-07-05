@@ -5,6 +5,7 @@
  "graph": [
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
    "experienceStatus": "term:experience/type/past",
    "experienceType": "term:experience/type/personalityTest",
    "id": "tr:__experience-id-1__",
@@ -167,11 +168,17 @@
    "experienceType": "term:experience/type/personalityTest",
    "id": "tr:__experience-id-8__",
 >>>>>>> 032ff6f (fix test output)
+=======
+   "experienceStatus": "term:experience/type/past",
+   "experienceType": "term:experience/type/personalityTest",
+   "id": "tr:__experience-id-1__",
+>>>>>>> e1d119f (add family)
    "prefLabel": {
     "@language": "fr",
     "@value": "Mes centres d int\u00e9r\u00eat"
    },
    "skill": [
+<<<<<<< HEAD
 <<<<<<< HEAD
     "tr:__skill-id-1__",
     "tr:__skill-id-2__",
@@ -181,6 +188,11 @@
     "tr:__skill-id-5__",
     "tr:__skill-id-6__"
 >>>>>>> 032ff6f (fix test output)
+=======
+    "tr:__skill-id-1__",
+    "tr:__skill-id-2__",
+    "tr:__skill-id-3__"
+>>>>>>> e1d119f (add family)
    ],
    "type": "soo:Experience"
   },
@@ -206,9 +218,14 @@
     "value": 0.6
    },
    "category": "term:skills/category/riasec",
+<<<<<<< HEAD
    "experience": "tr:__experience-id-8__",
    "id": "tr:__skill-id-4__",
 >>>>>>> 032ff6f (fix test output)
+=======
+   "experience": "tr:__experience-id-1__",
+   "id": "tr:__skill-id-1__",
+>>>>>>> e1d119f (add family)
    "prefLabel": {
     "@language": "fr",
     "@value": "ARTISTIQUE"
@@ -237,9 +254,14 @@
     "value": 0.8
    },
    "category": "term:skills/category/riasec",
+<<<<<<< HEAD
    "experience": "tr:__experience-id-8__",
    "id": "tr:__skill-id-5__",
 >>>>>>> 032ff6f (fix test output)
+=======
+   "experience": "tr:__experience-id-1__",
+   "id": "tr:__skill-id-2__",
+>>>>>>> e1d119f (add family)
    "prefLabel": {
     "@language": "fr",
     "@value": "R\u00c9ALISTE"
@@ -268,9 +290,14 @@
     "value": 0.6
    },
    "category": "term:skills/category/riasec",
+<<<<<<< HEAD
    "experience": "tr:__experience-id-8__",
    "id": "tr:__skill-id-6__",
 >>>>>>> 032ff6f (fix test output)
+=======
+   "experience": "tr:__experience-id-1__",
+   "id": "tr:__skill-id-3__",
+>>>>>>> e1d119f (add family)
    "prefLabel": {
     "@language": "fr",
     "@value": "ENTREPRENEUR"
