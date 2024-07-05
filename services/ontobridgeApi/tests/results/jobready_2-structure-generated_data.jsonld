@@ -4,6 +4,44 @@
  },
  "graph": [
   {
+<<<<<<< HEAD
+=======
+   "dateFrom": "2023-06-28",
+   "id": "tr:__experience-id-1__",
+   "prefLabel": {
+    "@language": "en",
+    "@value": "Problem-Solving Puzzle"
+   },
+   "profile": [
+    "tr:__profile-id-1__",
+    "tr:__profile-id-1__"
+   ],
+   "skill": [
+    "tr:__skill-id-1__",
+    "tr:__skill-id-1__"
+   ],
+   "type": "soo:Experience"
+  },
+  {
+   "email": "zayne.harding@gmail.com",
+   "experience": "tr:__experience-id-1__",
+   "id": "tr:__profile-id-1__",
+   "type": "soo:Profile"
+  },
+  {
+   "__matching__": {
+    "language": "en",
+    "provider": "jobready_2",
+    "sourceValue": "Problem-Solving",
+    "subtype": "skill"
+   },
+   "experience": "tr:__experience-id-1__",
+   "id": "tr:__skill-id-1__",
+   "skillLevelValue": "Validated",
+   "type": "soo:Skill"
+  },
+  {
+>>>>>>> 032ff6f (fix test output)
    "__matching__": {
     "language": "fr",
     "provider": "jobready_2",
@@ -14,7 +52,11 @@
     "@language": "fr",
     "@value": "Facult\u00e9 de se diriger vers un collectif d\u00e9j\u00e0 constitu\u00e9, d'y trouver une place et d'en devenir un membre l\u00e9gitime"
    },
+<<<<<<< HEAD
    "id": "tr:__skill-id-1__",
+=======
+   "id": "tr:__skill-id-2__",
+>>>>>>> 032ff6f (fix test output)
    "type": "soo:Skill"
   },
   {
@@ -28,7 +70,11 @@
     "@language": "fr",
     "@value": "S'investir, orienter son action et nourrir une satisfaction et un enthousiasme vis-\u00e0-vis d'une organisation, d'un projet collectif ou d'un objectif personnel"
    },
+<<<<<<< HEAD
    "id": "tr:__skill-id-2__",
+=======
+   "id": "tr:__skill-id-3__",
+>>>>>>> 032ff6f (fix test output)
    "type": "soo:Skill"
   }
  ]

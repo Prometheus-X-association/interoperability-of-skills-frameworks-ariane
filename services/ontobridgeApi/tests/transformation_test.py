@@ -372,6 +372,7 @@ def test_apply_tree_rules_interim():
 
     matching_source_engine = SourceMappingEngine()
     serialisationWithTermAndMatching = matching_source_engine.generate(serialisationWithTerm, target_framework, providerName)
+<<<<<<< HEAD
 =======
     serialisation = ruleEngine.generate(minimal_output, by_tree=True)
     
@@ -381,6 +382,8 @@ def test_apply_tree_rules_interim():
     matching_source_engine = SourceMappingEngine()
     serialisationWithTermAndMatching = matching_source_engine.generate(serialisationWithTerm, providerName)
 >>>>>>> b559c13 (first full test)
+=======
+>>>>>>> 032ff6f (fix test output)
 
     json_result = json.dumps(serialisationWithTermAndMatching, sort_keys=True)
 
@@ -400,6 +403,7 @@ def test_apply_tree_rules_interim():
         f"{providerName}_full_expected_data",
     )
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     # assert ordered(json_result) == ordered(expected_output)
 >>>>>>> b559c13 (first full test)
@@ -408,3 +412,5 @@ def test_apply_tree_rules_interim():
 >>>>>>> 72c16df (generate first full implementation)
 =======
 >>>>>>> 3b02988 (refactor and update folders)
+=======
+>>>>>>> 032ff6f (fix test output)
