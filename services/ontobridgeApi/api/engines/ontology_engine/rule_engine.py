@@ -297,6 +297,7 @@ class RuleEngine:
                         continue
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if rule.targetFunction == "fno:get-family-value":
                         # __family__
                         currentInstance["__family__"] = {}
@@ -320,6 +321,12 @@ class RuleEngine:
 
                     if rule.targetFunction == "fno:skill-value-to-scale" or rule.targetFunction == "fno:find-or-create-term":
 >>>>>>> 3b02988 (refactor and update folders)
+=======
+                    if rule.targetFunction == "fno:get-family-value":
+                        continue
+
+                    if rule.targetFunction == "fno:skill-value-to-scale" or rule.targetFunction == "fno:find-or-create-term" or rule.targetFunction == "fno:get-polarity-value":
+>>>>>>> bc7b889 (fix get-polarity-value)
                         currentInstance["__term__"] = {}
                         fieldName = self.get_field_name(rule.targetClass)
                         currentInstance["__term__"]["str_value"] = str(match)
