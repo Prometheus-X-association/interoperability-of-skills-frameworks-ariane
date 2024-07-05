@@ -173,7 +173,6 @@ class RuleEngine:
                         dates = match
                         if rule.targetFunctionParam == "fno:year-only":
                             date = datetime.strptime(f"{match}-01-01", "%Y-%m-%d")
-
                         else:
                             date = datetime.strptime(dates, "%Y-%m-%d")
                         currentInstance[target] = date.strftime("%Y-%m-%d")
@@ -219,6 +218,16 @@ class RuleEngine:
                         continue
 
                     if rule.targetFunction == "fno:get-family-value":
+                        # __family__
+                        currentInstance["__family__"] = {}
+                        fieldName = self.get_field_name(rule.targetProperty)
+                        currentInstance["__family__"]["str_value"] = str(match)
+                        currentInstance["__family__"]["scale_path"] = rule.sourcePath
+                        currentInstance["__family__"]["targetFunction"] = rule.targetFunction
+                        currentInstance["__family__"]["value"] = match
+                        currentInstance["__family__"]["scale"] = fieldName
+                        currentInstance["__family__"]["provider"] = self.provider
+                        currentInstance["__family__"]["language"] = rule.targetLang if rule.targetLang != "" else "en"
                         continue
 
                     if rule.targetFunction == "fno:skill-value-to-scale" or rule.targetFunction == "fno:find-or-create-term" or rule.targetFunction == "fno:get-polarity-value":
@@ -226,7 +235,7 @@ class RuleEngine:
                         fieldName = self.get_field_name(rule.targetClass)
                         currentInstance["__term__"]["str_value"] = str(match)
                         currentInstance["__term__"]["scale_path"] = rule.sourcePath
-                        currentInstance["__term__"]["collection_category"] = "polarity"
+                        currentInstance["__term__"]["targetFunction"] = rule.targetFunction
                         currentInstance["__term__"]["value"] = match
                         currentInstance["__term__"]["scale"] = fieldName
                         currentInstance["__term__"]["provider"] = self.provider
@@ -241,7 +250,6 @@ class RuleEngine:
         pass
 
     def apply_tree_rules_to_document(self, document: dict, docIndex: int):
-
         self.fill_with_document(document)
         self.generate_instances_by_tree(self.rules_tree, docIndex)
 

@@ -254,11 +254,54 @@ class TermMatchingEngine:
         instances = {}
 
         for instance in documents["graph"]:
+            if "__family__" in instance: 
+                # { "id": "term:orientoi/family/111", "type": "skos:Concept","prefLabel": {"@value": "Métier" , "@language": "fr"}, "memberOf": "term:orientoi/collection"    }            
+                provider_name = instance["__family__"]["provider"]  # provider
+                concept_pref_label = instance["__family__"]["str_value"]  # 0.8
+                collection_pref_label = instance["__family__"]["scale"]  # skill
+                familyId = f'term:{provider_name}/{str.lower(collection_pref_label)}/{md5(instance["__family__"]["scale_path"])}/{concept_pref_label}'
+                familyCollection = f'term:{provider_name}/{str.lower(collection_pref_label)}/{md5(instance["__family__"]["scale_path"])}'
+                if not familyId in instances:
+                    term = self.get_gql_create_or_find_term(
+                        provider_name,
+                        familyId,
+                        familyCollection,
+                        concept_pref_label,
+                        'family',
+                        instance["__family__"]["scale_path"],
+                    )
+                    instances[familyId] = term
+                    term_in_document = {}
+                    term_in_document["id"] = familyId
+                    term_in_document["memberOf"] = familyCollection
+                    term_in_document["notation"] = instance["__family__"]["value"]
+                    term_in_document["type"] = "skos:Concept"
+                    term_in_document["prefLabel"] = {}
+                    term_in_document["prefLabel"]["@language"] = instance["__family__"]["language"]
+                    term_in_document["prefLabel"]["@value"] = instance["__family__"]["str_value"]
+                    documents["graph"].append(term_in_document)
+                    
+                    if not familyCollection in instances:
+                        collection_in_document = {}
+                        collection_in_document["id"] = familyCollection
+                        collection_in_document["type"] = "skos:Collection"
+                        instances[familyCollection] = collection_in_document
+                        documents["graph"].append(collection_in_document)
+                    
+                instance["family"] = familyId
+            
             if "__term__" in instance:
                 concept_pref_label = instance["__term__"]["str_value"]  # 0.8
                 collection_pref_label = instance["__term__"]["scale"]  # skill
-                collection_category = instance["__term__"]["collection_category"]
                 provider_name = instance["__term__"]["provider"]  # provider
+                
+                collection_category = 'skill'
+                
+                if instance["__term__"]["targetFunction"] == 'fno:get-polarity-value':
+                    collection_category = 'polarity'
+                    
+                if instance["__term__"]["targetFunction"] == 'no:find-or-create-term':
+                    collection_category = 'term'
 
                 skill_level_value = f'term:{provider_name}/{str.lower(collection_pref_label)}/{md5(instance["__term__"]["scale_path"])}/level/{concept_pref_label}'
                 skill_level_scale = (
@@ -286,8 +329,12 @@ class TermMatchingEngine:
                     term_in_document["prefLabel"]["@language"] = instance["__term__"]["language"]
                     term_in_document["prefLabel"]["@value"] = instance["__term__"]["str_value"]
                     documents["graph"].append(term_in_document)
-                instance["skillLevelValue"] = skill_level_value
-                instance["skillLevelScale"] = skill_level_scale
+                if instance["__term__"]["targetFunction"] == 'fno:get-polarity-value': 
+                    instance["polarityValue"] = skill_level_value
+                    instance["polarityScale"] = skill_level_scale
+                else:
+                    instance["skillLevelValue"] = skill_level_value
+                    instance["skillLevelScale"] = skill_level_scale
 
         for instance in documents["graph"]:
             if "__term__" in instance:
