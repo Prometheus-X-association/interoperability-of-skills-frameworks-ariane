@@ -1,10 +1,14 @@
 {
     "comment": "role=dataConsumer, orgName=preprod-test-mm",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "endpoint": "https://dsp-dcons-dev-crg6fqyj3q-ew.a.run.app/",
 =======
     "endpoint": "https://dsp-dcons-dev-crg6fqyj3q-ew.a.run.app",
 >>>>>>> bce9c98 (feat: add configuration for dataspace connectors in a specific folder)
+=======
+    "endpoint": "https://dsp-dcons-dev-crg6fqyj3q-ew.a.run.app/",
+>>>>>>> 9613255 (chore: deploy connectors configuration)
     "serviceKey": "FtTQMIEaI0Qj3_sSmx21b6NdXMYxTuGNDmyzRJKdtgevWyvuqz0dbQ6HYI0CfWNbIMrh7AmZBxeSqLH4t3rxk0SVoxCbIljM8idk",
     "secretKey": "EoDzchhr4snubWrMBIzChUJ6XGLf9iU888sWce4b80y8Nqr6h_nxeikE0q9W2jhE4Amc_cVUXlhyXPs9G6oYGCYBhCQ6TcB4VNDa",
     "catalogUri": "https://api.visionstrust.com/v1/",
