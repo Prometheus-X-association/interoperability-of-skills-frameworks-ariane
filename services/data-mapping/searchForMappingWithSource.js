@@ -403,9 +403,13 @@ async function searchForConceptWithMappings(conceptId) {
           target {
             id
 <<<<<<< HEAD
+<<<<<<< HEAD
             type
 =======
 >>>>>>> 799bf08 (feat: first version of this script)
+=======
+            type
+>>>>>>> 02f9850 (typo)
             prefLabel {
               language
               value
