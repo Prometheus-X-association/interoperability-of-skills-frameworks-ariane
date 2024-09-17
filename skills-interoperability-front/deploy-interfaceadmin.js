@@ -4,6 +4,8 @@ import { root } from './src/git-utils.js'
 import iValidate from './src/iValidate.js'
 import inquirer from 'inquirer'
 
+throw new Error('@TODO: move this script to _ops/')
+
 // const avec les chemins
 const workspaceRoot = await root()
 const dockerfilePath = `${workspaceRoot}/services/matchpy/app`
