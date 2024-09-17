@@ -2,11 +2,15 @@ node_modules/
 .cache/
 .env
 __pycache__/
- # Here comes the Devil(s) ;)
+
+# Here comes the Devil(s) ;)
 .DS_Store
 .venv/
 **/models_dump/
 models_dump/
 
+# project related Devils
+_docs/secrets.yaml
+services/dataspace-connector
 
 

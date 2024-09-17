@@ -1,6 +1,9 @@
 # ARIANE DataSpace Connector
 
-## Testing the first things (graphql api)
+* Install (first time): 
+`pnpm install` 
+
+## Testing the first things (graphql api) - TO REVIEW
 
 Requirement: you need to have the ismene project folder at the same level of this project folder. You can create a symlink. 
 
@@ -10,11 +13,38 @@ pnpm install
 pnpm dev:profile
 ```
 
+2 instances de Graphql : 
+
+A/ pour le stockage des référentiels : 
+* https://jobs-and-skills-v2-dev-wyew76oo4a-ew.a.run.app/graphql
 * The target test index will be here: https://dashemploi.kb.europe-west1.gcp.cloud.es.io:9243/app/enterprise_search/app_search/engines/ariane-first-test
 
+B/ ?? Pour le stockage de ??? 
+
+## dataspace-connector
+
+* This is a special service-case where the service's code is under a PTX managed repository (//////////////////// PUT LINK ///////////////////:)
+* Run & Documentation: (TO REVIEW)
+    * special set-up / install : `ariane/services/dataspace-connector.install.md`
+    * Run it locally: `ariane/_docs/Dataspace-connector-Config.md`
+    * general Connectors documentation: `ariane/_docs/Dataspace-connector.md`
+
+* Secrets are avaible here: https://www.notion.so/Ariane-104c2578298b803081d5ff82ee24e971
 
 
+## Ontobridge-API 
 
+///////////////////////// TODO ////////////
+
+
+## onto-viewer (experiemental)
+
+* objective: graphically review an ontology
+* command: (TO CONFIRM)
+`cd services/onto-viewer ; pnpm run dev ;`
+
+
+# Other documentation to review / UPDATE
 
 ## Admin-UI
 
