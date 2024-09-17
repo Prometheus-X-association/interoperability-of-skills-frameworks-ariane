@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.9.0",
+    "@elastic/enterprise-search": "^8.1.1-beta.1",
+    "@mmorg/fsutils": "^1.0.8",
+    "yaml": "^2.3.1"
+  }
+}

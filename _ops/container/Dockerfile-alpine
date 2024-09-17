@@ -1,0 +1,32 @@
+# This image works well for js only, but not for python with torch's glibc dependency
+# Set-up prod docker image with pnpm: https://pnpm.io/cli/fetch#usage-scenario
+FROM node:18-alpine as base
+
+ARG DEPLOY_NAME
+ARG CONF_FOLDER
+
+# install pnpm and global deps
+RUN npm install -g pnpm nodemon
+
+# root folder conf
+WORKDIR /app
+
+# service copy 
+## @TODO: optimize the layers building with a separate copy for service's node_modules
+# COPY ${DEPLOY_NAME}/package.json ./
+# COPY ${DEPLOY_NAME}/node_modules ./
+COPY ${DEPLOY_NAME} ./
+
+# CMD ["sleep", "infinity"]
+CMD ["pnpm", "run", "prod:serve"]
+
+# This is the config into the aggregated app that give the config for now
+# @TODO: restaure override for publishing to specific target ? 
+FROM base as dev 
+# COPY ${CONF_FOLDER}/dev.config.yaml ./_confs/config.yaml
+
+FROM base as preprod
+# COPY ${CONF_FOLDER}/preprod.config.yaml ./_confs/config.yaml
+
+FROM base as prod
+# COPY ${CONF_FOLDER}/prod.config.yaml ./_confs/config.yaml

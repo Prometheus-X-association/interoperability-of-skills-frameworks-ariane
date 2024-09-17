@@ -1,0 +1,60 @@
+{
+  "@context": {
+    "id": "@id",
+    "graph": {
+      "@id": "@graph",
+      "@container": "@set"
+    },
+    "type": {
+      "@id": "@type",
+      "@container": "@set"
+    },
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "sh": "https://www.w3.org/ns/shacl#",
+    "dct": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "gendj": "https://gen.competencies.be/terms/digitalJobs/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "qb": "http://purl.org/linked-data/cube#",
+    "dv": "http://www.w3.org/2003/g/data-view#",
+    "mmo": "https://ontologies.mindmatcher.org/carto/",
+    "mnx": "http://ns.mnemotix.com/ontologies/2019/8/generic-model/",
+    "oep": "http://ontology.datasud.fr/openemploi/"
+  },
+  "graph": [
+    {
+      "@id": "na:root",
+      "@type": ["mms:Navigation", "skos:Collection"],
+      "member": ["na:company", "na:skill","na:job"]
+    },
+    {
+      "@id" : "na:company",
+      "@type": ["mms:Navigation", "skos:Collection"],
+      "prefLabel": [{
+        "value": "Companies",
+        "lang": "en"
+      }],
+      "description": "mms:Company"
+    },
+    {
+      "@id" : "na:job",
+      "@type": ["mms:Navigation", "skos:Collection"],
+      "prefLabel": [{
+        "value": "Jobs",
+        "lang": "en"
+      }],
+      "description": "rome:onto/Employment/Job"
+    },
+    {
+      "@id" : "na:skill",
+      "@type": ["mms:Navigation", "skos:Collection"],
+      "prefLabel": [{
+        "value": "Skills",
+        "lang": "en"
+      }],
+      "description": "rome:onto/Skill"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+      
+  jobsong-dev:
+    image: jobsong-dev
+    build:
+      # @TODO: make it as variables. The dockerfile path should be calculated 
+      context: ../../_ops/_temp/deploy_asset/app/
+      dockerfile: ../../../../_ops/container/Dockerfile
+      target: ${T}
+      args:
+        - DEPLOY_PATH_LOCAL=${DEPLOY_PATH_LOCAL}
+        - DEPLOY_PATH_DOCKER=${DEPLOY_PATH_DOCKER}
+        - CONF_FOLDER=${CONF_FOLDER}
+    ports:
+      - 8080:8080
+    #   - 3034:3034
+    #   # @TODO: forward to 9000
+    #   - 9000:9000

@@ -1,0 +1,33 @@
+creation_rules:
+
+  # Specific `_confs`` folders
+  - path_regex: .*/_confs/.*
+    # florent
+    # gregg
+    # dilhan
+    # pierre
+    # adam
+    # harish
+    pgp: >-
+      5CDF0403CA6DDAFE07CA98B40E415E23F3C38F97,
+      B16E82E94FFBBD6D18017EE1B0C11DF1F1ED3416,
+      A984A6AD455E238D,
+      640C809444BBF39F0282C3018682D6D041668AB1,
+      6E0D7FC49A366940,
+      008A61C7B90D779C
+
+  # Specific `_ops/_env`` folders
+  - path_regex: _ops\/_env\/.*
+    # florent
+    # gregg
+    # dilhan
+    # pierre
+    # adam
+    # harish
+    pgp: >-
+      5CDF0403CA6DDAFE07CA98B40E415E23F3C38F97,
+      B16E82E94FFBBD6D18017EE1B0C11DF1F1ED3416,
+      A984A6AD455E238D,
+      640C809444BBF39F0282C3018682D6D041668AB1,
+      6E0D7FC49A366940,
+      008A61C7B90D779C

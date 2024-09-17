@@ -1,0 +1,140 @@
+{
+  "@context": {
+    "id": "@id",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "dcat": "http://www.w3.org/ns/dcat",
+    "esco": "http://data.europa.eu/esco/model#",
+    "sch": "http://schema.org/",
+    "ef": "http://example.com/editForm#"
+  },
+  "name": "Model Configuration",
+  "description": "Configuration for displaying a create/dit page per model",
+  "graph": [
+    {
+      "@id": "ef:Models",
+      "models": [
+        {
+          "@id": "mms:User",
+          "editableProperties": [
+            {
+              "name": "availableFrom",
+              "label": "Available From",
+              "description": "mms:availableFrom"
+            },
+            {
+              "name": "personalData",
+              "label": "Personal Data",
+              "description": "mms:personalData"
+            },
+            {
+              "name": "memberOf",
+              "label": "Member of",
+              "description": "skos:memberOf"
+            }
+          ]
+        },
+        {
+          "@id": "mms:PersonalDataWallet",
+          "editableProperties": [
+            {
+              "name": "given",
+              "label": "Given Name",
+              "description": "mms:given"
+            },
+            {
+              "name": "family",
+              "label": "Family Name",
+              "description": "mms:family"
+            },
+            {
+              "name": "email",
+              "label": "Email Name",
+              "description": "mms:email"
+            }
+          ]
+        },
+        {
+          "@id": "rome:onto/WorkContext/Hours",
+          "editableProperties": [
+            {
+              "name": "prefLabel",
+              "label": "Label",
+              "description": "skos:prefLabel"
+            },
+            {
+              "name": "broader",
+              "label": "Broader",
+              "description": "skos:broader"
+            },
+            {
+              "name": "narrower",
+              "label": "Narrower",
+              "description": "skos:narrower"
+            }
+          ]
+        },
+        {
+          "@id": "rome:onto/Knowledge",
+          "editableProperties": [
+            {
+              "name": "prefLabel",
+              "label": "Label",
+              "description": "skos:prefLabel"
+            },
+            {
+              "name": "broader",
+              "label": "Broader",
+              "description": "skos:broader"
+            },
+            {
+              "name": "narrower",
+              "label": "Narrower",
+              "description": "skos:narrower"
+            }
+          ]
+        },
+        {
+          "@id": "skos:Collection",
+          "editableProperties": [
+            {
+              "name": "prefLabel",
+              "label": "Label",
+              "description": "skos:prefLabel"
+            },
+            {
+              "name": "member",
+              "label": "Members",
+              "description": "skos:member"
+            }
+          ]
+        },
+        {
+          "@id": "skos:Concept",
+          "editableProperties": [
+            {
+              "name": "prefLabel",
+              "label": "Label",
+              "description": "skos:prefLabel"
+            },
+            {
+              "name": "memberOf",
+              "label": "Member Of",
+              "description": "skos:memberOf"
+            }
+          ]
+        },
+        {
+          "@id": "rome:onto/Employment/Job",
+          "editableProperties": [
+            {
+              "name": "prefLabel",
+              "label": "Label",
+              "description": "skos:prefLabel"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

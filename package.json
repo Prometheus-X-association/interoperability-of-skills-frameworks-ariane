@@ -1,0 +1,30 @@
+{
+  "name": "@mmorg/jobsong",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A mono-repos for the 5 minutes profile Project.",
+  "author": "Florent André <fa@mindmatcher.org>",
+  "license": "Apache-2.0",
+  "keywords": [],
+  "scripts": {
+    "dev:profile": "pnpm --parallel -r run dev:profile",
+    "api:profile": "pnpm --parallel -r run api:profile",
+    "preinstall": "node _ops/pscipt/versionCheck.js",
+    "postinstall": "node _ops/devSetup.js",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.1",
+    "@mmorg/fsutils": "^1.0.8",
+    "@mmorg/onto-rome": "link:../ismene/data/rome",
+    "@mmorg/rdfx-graphql": "link:../ismene/packages/rdfx-graphql",
+    "@mmorg/rdfx-layer": "link:../ismene/packages/rdfx-layer",
+    "concurrently": "^7.6.0",
+    "husky": "^8.0.0"
+  },
+  "dependencies": {
+    "@changesets/changelog-git": "^0.2.0",
+    "graphql": "link:..\\ismene\\packages\\rdfx-graphql\\node_modules\\graphql",
+    "husky": "^8.0.3"
+  }
+}
