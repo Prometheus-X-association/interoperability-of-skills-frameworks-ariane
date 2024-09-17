@@ -1,0 +1,1283 @@
+{
+  "@context": {
+    "id": "@id",
+    "graph": {
+      "@id": "@graph",
+      "@container": "@set"
+    },
+    "type": {
+      "@id": "@type",
+      "@container": "@set"
+    },
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "dct": "http://purl.org/dc/terms/",
+    "domain": {
+      "@id": "rdfs:domain",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "range": {
+      "@id": "rdfs:range",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "label": {
+      "@id": "rdfs:label",
+      "@container": "@set"
+    },
+    "seeAlso": {
+      "@id": "rdfs:seeAlso",
+      "@container": "@set"
+    },
+    "title": {
+      "@id": "dct:title",
+      "@container": "@set"
+    },
+    "description": {
+      "@id": "dct:description",
+      "@container": "@set"
+    },
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "inverseOf": {
+      "@id": "owl:inverseOf",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "imports": {
+      "@id": "owl:imports",
+      "@container": "@set"
+    },
+    "contributor": {
+      "@id": "dct:contributor",
+      "@container": "@set"
+    },
+    "creator": {
+      "@id": "dct:creator",
+      "@container": "@set"
+    }
+  },
+  "graph": [
+    {
+      "id": "mms:User",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "mms:personalData",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:User"
+      ],
+      "range": [
+        "mms:PersonalDataWallet"
+      ],
+      "cardinality": 1,
+      "inverseOf": [
+        "mms:personalDataOf"
+      ]
+    },
+    {
+      "id": "mms:role",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:User"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:directManager",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:User"
+      ],
+      "range": [
+        "mms:User"
+      ]
+    },
+    {
+      "id": "mms:joinTime",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:User"
+      ],
+      "range": [
+        "xsd:date"
+      ]
+    },
+    {
+      "id": "mms:creationTime",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:User"
+      ],
+      "range": [
+        "xsd:date"
+      ]
+    },
+    {
+      "id": "mms:status",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:User",
+        "mms:Company"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:activationToken",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:User"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:company",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:User",
+        "rome:onto/Skill",
+        "rome:onto/Employment/Job"
+      ],
+      "range": [
+        "mms:Company"
+      ]
+    },
+    {
+      "id": "mmm:keycloakId",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:User"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:PersonalDataWallet",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "mms:given",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:PersonalDataWallet"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:family",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:PersonalDataWallet"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:email",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:PersonalDataWallet"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:gender",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:PersonalDataWallet"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:birthday",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:PersonalDataWallet"
+      ],
+      "range": [
+        "xsd:date"
+      ]
+    },
+    {
+      "id": "mms:location",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:PersonalDataWallet",
+        "mms:Company"
+      ],
+      "range": [
+        "mms:Address"
+      ],
+      "inverseOf": [
+        "mms:addressOf"
+      ]
+    },
+    {
+      "id": "mms:personalDataOf",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:PersonalDataWallet"
+      ],
+      "range": [
+        "mms:User"
+      ],
+      "cardinality": 1,
+      "inverseOf": [
+        "mms:personalData"
+      ]
+    },
+    {
+      "id": "mms:Address",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ],
+      "sameAs": [
+        "mnx:Address",
+        "hrrdf:AddressType"
+      ]
+    },
+    {
+      "id": "mms:geolocation",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Address"
+      ],
+      "range": [
+        "mm:geoDataType"
+      ]
+    },
+    {
+      "id": "mms:city",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Address"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:state",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Address"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:country",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Address"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:postalcode",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Address"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:addressOf",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Address"
+      ],
+      "range": [
+        "mms:PersonalDataWallet"
+      ],
+      "inverseOf": [
+        "mms:location"
+      ]
+    },
+    {
+      "id": "mms:Company",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "mms:companyName",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Company"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:companyUrl",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Company"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:companyCode",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Company"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:companyHubspotId",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Company"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:logo",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Company",
+        "mms:Training",
+        "rome:onto/Employment/Job"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:description",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Company",
+        "mms:Training",
+        "mms:Mentorship",
+        "rome:onto/Skill",
+        "rome:onto/Employment/Job"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:companyAdmins",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Company"
+      ],
+      "range": [
+        "mms:User"
+      ]
+    },
+    {
+      "id": "mms:companyLanguages",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Company"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:defaultLanguage",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Company"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:primaryColor",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Company"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:secondaryColor",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Company"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:services",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Company"
+      ],
+      "range": [
+        "mms:Service"
+      ]
+    },
+    {
+      "id": "mms:allowSelfAssessment",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Company"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:allowManagerValidation",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Company"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:enabledEndUserInterface",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Company"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:enabledCareerPathTrainingProposal",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Company"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:enabledInternalTraining",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Company"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:enabledExternalTraining",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Company"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:enabledMentoring",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Company"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:SalaryRange",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "mms:rangeMin",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:SalaryRange"
+      ],
+      "range": [
+        "xsd:integer"
+      ]
+    },
+    {
+      "id": "mms:rangeMax",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:SalaryRange"
+      ],
+      "range": [
+        "xsd:integer"
+      ]
+    },
+    {
+      "id": "mms:Training",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "mms:trainingTitle",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Training"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:trainingSkills",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Training"
+      ],
+      "range": [
+        "rome:onto/Skill"
+      ]
+    },
+    {
+      "id": "mms:trainingCompany",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Training"
+      ],
+      "range": [
+        "mms:Company"
+      ]
+    },
+    {
+      "id": "mms:trainingStatus",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Training"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:trainingStartDate",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Training"
+      ],
+      "range": [
+        "xsd:date"
+      ]
+    },
+    {
+      "id": "mms:trainingEndDate",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Training"
+      ],
+      "range": [
+        "xsd:date"
+      ]
+    },
+    {
+      "id": "mms:trainingLocation",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Training"
+      ],
+      "range": [
+        "mms:Address"
+      ]
+    },
+    {
+      "id": "mms:trainingDuration",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Training"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:trainingType",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Training"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:trainingTarget",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Training"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:trainingFormat",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Training"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:trainingLanguage",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Training"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:trainingLevel",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Training"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:requiredSkill",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Training",
+        "mms:Mentorship",
+        "rome:onto/Employment/Job"
+      ],
+      "range": [
+        "rome:onto/Skill"
+      ]
+    },
+    {
+      "id": "mms:Enrolment",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "mms:training",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Enrolment"
+      ],
+      "range": [
+        "mms:Training"
+      ]
+    },
+    {
+      "id": "mms:enrolmentOf",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Enrolment"
+      ],
+      "range": [
+        "mms:User"
+      ]
+    },
+    {
+      "id": "mms:enrolmentDate",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Enrolment"
+      ],
+      "range": [
+        "xsd:date"
+      ]
+    },
+    {
+      "id": "mms:enrolmentStatus",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Enrolment"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:enrolmentComment",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Enrolment"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:selfComment",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Enrolment"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:mentorComment",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Enrolment"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:enrolmentScore",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Enrolment"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:Mentorship",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "mms:mentor",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Mentorship"
+      ],
+      "range": [
+        "mms:User"
+      ]
+    },
+    {
+      "id": "mms:mentee",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Mentorship"
+      ],
+      "range": [
+        "mms:User"
+      ]
+    },
+    {
+      "id": "mms:mentorshipStartDate",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Mentorship"
+      ],
+      "range": [
+        "xsd:date"
+      ]
+    },
+    {
+      "id": "mms:mentorshipEndDate",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Mentorship"
+      ],
+      "range": [
+        "xsd:date"
+      ]
+    },
+    {
+      "id": "mms:mentorshipStatus",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Mentorship"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:mentorshipType",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Mentorship"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:Evaluation",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "mms:evaluationOf",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Evaluation"
+      ],
+      "range": [
+        "mms:User"
+      ]
+    },
+    {
+      "id": "mms:evaluatedBy",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Evaluation"
+      ],
+      "range": [
+        "mms:User"
+      ]
+    },
+    {
+      "id": "mms:evaluationDate",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Evaluation"
+      ],
+      "range": [
+        "xsd:date"
+      ]
+    },
+    {
+      "id": "mms:evaluationScore",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Evaluation"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:evaluationComment",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Evaluation"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:evaluationOn",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Evaluation"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:evaluationStatus",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Evaluation"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:evaluationTarget",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Evaluation"
+      ],
+      "range": [
+        "rome:onto/Skill",
+        "rome:onto/Employment/Job",
+        "mms:Training"
+      ]
+    },
+    {
+      "id": "mms:Service",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "mms:name",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "mms:Service"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "rome:onto/Skill",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "mms:skillType",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "rome:onto/Skill"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:skillTypeLabel",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "rome:onto/Skill"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "rome:onto/Employment/Job",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "mms:jobTitle",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "rome:onto/Employment/Job"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "mms:jobSalaryRange",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "rome:onto/Employment/Job"
+      ],
+      "range": [
+        "mms:SalaryRange"
+      ]
+    },
+    {
+      "id": "mms:Ontology",
+      "type": [
+        "owl:Ontology"
+      ],
+      "title": [
+        {
+          "@language": "en",
+          "@value": "Ontologie for Competencies & Skills Profiles"
+        }
+      ],
+      "contributor": [],
+      "creator": [
+        {
+          "@language": "fr",
+          "@value": "Florent André (mindmatcher.org)"
+        }
+      ],
+      "description": [
+        {
+          "@language": "fr",
+          "@value": "Ontologie pour la description d'un profil de compétences"
+        }
+      ],
+      "imports": []
+    },
+    {
+      "id": "mms:SearchedUser",
+      "type": [
+        "rdfs:Class"
+      ]
+    },
+    {
+      "id": "mmm:searchedUser",
+      "type": [
+        "rdf:Property",
+        "mms:mirroredBy"
+      ],
+      "domain": [
+        "mms:User",
+        "mms:PersonalDataWallet"
+      ],
+      "range": [
+        "mms:SearchedUser"
+      ],
+      "inverseOf": [
+        "mmm:searchedUserOf"
+      ]
+    },
+    {
+      "id": "mmm:searchedUserOf",
+      "type": [
+        "rdf:Property"
+      ],
+      "range": [
+        "mms:User"
+      ],
+      "domain": [
+        "mms:SearchedUser"
+      ],
+      "inverseOf": [
+        "mmm:searchedUser"
+      ]
+    },
+    {
+      "id": "skos:memberOf",
+      "inverseOf": [
+        "skos:member"
+      ]
+    },
+    {
+      "id": "skos:member",
+      "inverseOf": [
+        "skos:memberOf"
+      ]
+    },
+    {
+      "id": "mms:experience",
+      "inverseOf": [
+        "mms:experienceOf"
+      ]
+    },
+    {
+      "id": "mms:experienceOf",
+      "inverseOf": [
+        "mms:experience"
+      ]
+    },
+    {
+      "id": "mm:geoDataType",
+      "type": [
+        "rdfs:Datatype"
+      ],
+      "label": [
+        "A DataType for serializing point for App-Search."
+      ],
+      "seeAlso": "https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_rdfs_datatype_geowktliteral"
+    }
+  ]
+}
