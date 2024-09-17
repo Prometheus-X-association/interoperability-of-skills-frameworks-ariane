@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 url: https://catalog.visionstrust.com/dashboard/home
 
@@ -40,6 +41,8 @@ Pour initier un échange :
   - via gcp : // rattaché à un ancien projet, voir si besoin de le rattacher au projet ariane-dev //
   
 >>>>>>> f9f4968 (chore: docs)
+=======
+>>>>>>> 700b0eb (doc)
 
 # RUN : 
 
