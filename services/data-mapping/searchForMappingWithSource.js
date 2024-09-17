@@ -337,6 +337,7 @@ async function searchForConceptWithMappings(conceptId) {
           validated
           target {
             id
+            type
             prefLabel {
               language
               value
