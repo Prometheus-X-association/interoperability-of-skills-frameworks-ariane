@@ -10,6 +10,7 @@ import os
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 IS_TESTING = os.environ.get("API_ENVIRONMENT", "development") == "testing"
+PORT = int(os.environ.get("PORT", "8000"))
 logger = logging.getLogger(__name__)
 
 
@@ -29,4 +30,5 @@ app = get_app()
 
 def start_dev():
     """Launch the app with `poetry run dev` call at root level"""
-    uvicorn.run("api.main:app", host="0.0.0.0", port=8000, reload=True)
+    print("Starting server on port:", PORT)
+    uvicorn.run("api.main:app", host="0.0.0.0", port=PORT, reload=True)
