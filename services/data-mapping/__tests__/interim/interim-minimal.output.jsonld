@@ -1,19 +1,8 @@
 {
   "@context": {
-<<<<<<< HEAD
-<<<<<<< HEAD
     "@todo": "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
   },
   
-=======
-    
-  },
->>>>>>> 153238d (fix: update interim mapping and outpout)
-=======
-    "@todo": "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
-  },
-  
->>>>>>> 8252ab9 (fix: update contexts to all)
   "graph": [
     {
       "id": "tr:__generated-id-1__",
@@ -21,17 +10,8 @@
       "name": "Alice Smith",
       "email": "alice.smith@example.com",
       "address": "address",
-<<<<<<< HEAD
-<<<<<<< HEAD
       "experience": ["tr:__xp-1__", "tr:__xp-2__", "tr:__xp-3__","tr:__xp-4__","tr:__xp-5__","tr:__xp-6__"],
       "polarity": "tr:__polarity-1__"
-=======
-      "experience": ["tr:__xp-1__", "tr:__xp-2__", "tr:__xp-3__","tr:__xp-4__","tr:__xp-5__","tr:__xp-6__"]
->>>>>>> 153238d (fix: update interim mapping and outpout)
-=======
-      "experience": ["tr:__xp-1__", "tr:__xp-2__", "tr:__xp-3__","tr:__xp-4__","tr:__xp-5__","tr:__xp-6__"],
-      "polarity": "tr:__polarity-1__"
->>>>>>> b88cefe (fix: update interim output & rules. Create a .structure. file)
     },
     {
       "id": "tr:__xp-1__",
@@ -39,19 +19,9 @@
       "prefLabel": {"@value": "Software Engineer", "@language":"en"},
       "company": "Tech Corp",
       "dateFrom": "2017-06-01",
-<<<<<<< HEAD
-<<<<<<< HEAD
       "dateTo": "2019-08-01",
       "experienceType": "term:experience/type/professional",
       "experienceStatus": "term:experience/type/past"
-=======
-      "dateTo": "2019-08-01"
->>>>>>> 153238d (fix: update interim mapping and outpout)
-=======
-      "dateTo": "2019-08-01",
-      "experienceType": "term:experience/type/professional",
-      "experienceStatus": "term:experience/type/past"
->>>>>>> b88cefe (fix: update interim output & rules. Create a .structure. file)
     },
     {
       "id": "tr:__xp-2__",
@@ -59,19 +29,9 @@
       "prefLabel": {"@value": "Lead Engineer", "@language":"en"},
       "company": "Innovate Ltd",
       "dateFrom": "2019-09-01",
-<<<<<<< HEAD
-<<<<<<< HEAD
       "dateTo": "2023-01-01",
       "experienceType": "term:experience/type/professional",
       "experienceStatus": "term:experience/type/past"
-=======
-      "dateTo": "2023-01-01"
->>>>>>> 153238d (fix: update interim mapping and outpout)
-=======
-      "dateTo": "2023-01-01",
-      "experienceType": "term:experience/type/professional",
-      "experienceStatus": "term:experience/type/past"
->>>>>>> b88cefe (fix: update interim output & rules. Create a .structure. file)
     },
 
     {
@@ -98,19 +58,9 @@
       "company": "Tech Innovators",
       "dateFrom": "2023-03-01",
       "location": "Boston, USA",
-<<<<<<< HEAD
-<<<<<<< HEAD
       "contractType": "Full-Time",
       "experienceType": "term:experience/type/professional",
       "experienceStatus": "term:experience/type/suggested"
-=======
-      "contractType": "Full-Time"
->>>>>>> 153238d (fix: update interim mapping and outpout)
-=======
-      "contractType": "Full-Time",
-      "experienceType": "term:experience/type/professional",
-      "experienceStatus": "term:experience/type/suggested"
->>>>>>> b88cefe (fix: update interim output & rules. Create a .structure. file)
     },
     {
       "id": "tr:__xp-6__",
@@ -120,19 +70,9 @@
       "company": "Creative Solutions",
       "dateFrom": "2024-02-01",
       "location": "Seattle, USA",
-<<<<<<< HEAD
-<<<<<<< HEAD
       "contractType": "Contract",
       "experienceType": "term:experience/type/professional",
       "experienceStatus": "term:experience/type/suggested"
-=======
-      "contractType": "Contract"
->>>>>>> 153238d (fix: update interim mapping and outpout)
-=======
-      "contractType": "Contract",
-      "experienceType": "term:experience/type/professional",
-      "experienceStatus": "term:experience/type/suggested"
->>>>>>> b88cefe (fix: update interim output & rules. Create a .structure. file)
     },
 
 
@@ -140,8 +80,6 @@
       "id": "tr:__polarity-1__",
       "type": "soo:Polarity",
       "polarityScale": "term:interim/polarity/scale/1",
-<<<<<<< HEAD
-<<<<<<< HEAD
       "polarityValue": "term:interim/polarity/value/1"
     },
     {
@@ -150,23 +88,8 @@
       "prefLabel": [{"@value": "Interim collection for openToInterim", "@language": "en"}]
     },
     {
-<<<<<<< HEAD
       "id": "term:interim/polarity/value/1", 
       "prefLabel": [{"@value": "0", "@language": "en"}],
-=======
-      "polarityValue": "term/interim/polarity/value/1"
-=======
-      "polarityValue": "term:interim/polarity/value/1"
->>>>>>> db8584a (fix: interim polarity fix)
-    },
-    {
-      "id": "term:interim/polarity/value/1", 
-      "prefLabel": {"@value": "0", "@language": "en"},
->>>>>>> 153238d (fix: update interim mapping and outpout)
-=======
-      "id": "term:interim/polarity/value/1", 
-      "prefLabel": [{"@value": "0", "@language": "en"}],
->>>>>>> 6dc15f4 (fix: update interim)
       "notation": 0
     }
 

@@ -6,21 +6,11 @@ from api.config import get_api_settings
 from api import routers
 import os
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 7afd4f8 (launcher debug + postman)
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 IS_TESTING = os.environ.get("API_ENVIRONMENT", "development") == "testing"
 PORT = int(os.environ.get("PORT", "8000"))
-<<<<<<< HEAD
-=======
-IS_TESTING = os.environ.get("API_ENVIRONMENT", "development") == "testing"
->>>>>>> 2abe167 (fast api)
-=======
->>>>>>> ae7a69d (fix: port from env and log)
 logger = logging.getLogger(__name__)
 
 
@@ -29,27 +19,9 @@ def get_app():
     settings = get_api_settings()
     app = FastAPI(**settings.fastapi_kwargs)
     app.include_router(routers.ontology.router, prefix="/ontologies")
-<<<<<<< HEAD
-<<<<<<< HEAD
     app.include_router(routers.machine_learning.router, prefix="/machine_learning")
     app.include_router(routers.term_matching.router, prefix="/term_matchings")
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     app.include_router(routers.onto_bridge.router, prefix="/onto_bridge")
-=======
->>>>>>> 2abe167 (fast api)
-=======
-    app.include_router(routers.machine_learning.router, prefix="/machine_learning")
->>>>>>> 8044f9d (embedding endpoint)
-=======
->>>>>>> 81c1026 (term matching service)
-=======
-    app.include_router(routers.router, prefix="/onto_bridge")
->>>>>>> 269d0fd (add transformation)
-=======
-    app.include_router(routers.onto_bridge.router, prefix="/onto_bridge")
->>>>>>> b75a1d0 (add endpoint)
     return app
 
 
@@ -58,14 +30,5 @@ app = get_app()
 
 def start_dev():
     """Launch the app with `poetry run dev` call at root level"""
-<<<<<<< HEAD
-<<<<<<< HEAD
     print("Starting server on port:", PORT)
     uvicorn.run("api.main:app", host="0.0.0.0", port=PORT, reload=True)
-=======
-    uvicorn.run("api.main:app", host="0.0.0.0", port=8000, reload=True)
->>>>>>> 2abe167 (fast api)
-=======
-    print("Starting server on port:", PORT)
-    uvicorn.run("api.main:app", host="0.0.0.0", port=PORT, reload=True)
->>>>>>> ae7a69d (fix: port from env and log)

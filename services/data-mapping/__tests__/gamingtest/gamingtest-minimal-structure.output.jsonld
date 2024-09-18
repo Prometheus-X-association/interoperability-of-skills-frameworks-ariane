@@ -9,20 +9,7 @@
       "prefLabel": {"@value": "Problem-Solving Puzzle", "@language": "en"},
       "profile": "tr:__profile-id-1__",
       "dateFrom": "2023-06-28",
-<<<<<<< HEAD
-<<<<<<< HEAD
       "skill": "tr:__skill-id-1__"
-=======
-      "skill": "tr:__skill-id-1__",
-<<<<<<< HEAD
-      "result": "validated"
->>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
-=======
-      "result": "Validated"
->>>>>>> 4ad4771 (fix: update gaming test rules)
-=======
-      "skill": "tr:__skill-id-1__"
->>>>>>> 2e09813 (fix: #29)
     },
     {
       "id":"tr:__profile-id-1__",
@@ -31,17 +18,8 @@
       "experience": "tr:__generated-id-1__"
     },
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
       "id": "tr:__skill-id-1__",
       "skillLevelValue": "Validated",
-=======
-      "id": "tr:__skill-id-1",
->>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
-=======
-      "id": "tr:__skill-id-1__",
-      "skillLevelValue": "Validated",
->>>>>>> 2e09813 (fix: #29)
       "type": "soo:Skill",
       "experience": "tr:__generated-id-1__",
       "prefLabel": {"@value": "Problem-Solving", "@language": "en"}

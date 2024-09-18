@@ -1,9 +1,5 @@
 version: "3.7"
 services:
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 7fc82b2 (feat: add container for gcp deployment)
   api: 
     build: 
       context: ./
@@ -19,17 +15,6 @@ services:
     ports:
       - "6379:6379"
 
-=======
-  redis:
-    image: redis
-    ports:
-<<<<<<< HEAD
-      - "6380:6380"
->>>>>>> 2abe167 (fast api)
-=======
-      - "6379:6379"
-
->>>>>>> 8044f9d (embedding endpoint)
   postgres:
     image: postgres
     ports:
@@ -38,13 +23,6 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: mypassword
       POSTGRES_DB: ontobridge
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-      PGDATA: /data/postgres
->>>>>>> 2abe167 (fast api)
-=======
->>>>>>> 8044f9d (embedding endpoint)
     volumes:
       - postgres:/data/postgres
 
@@ -54,8 +32,6 @@ services:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: admin
     ports:
-<<<<<<< HEAD
-<<<<<<< HEAD
       - "5050:80"
     depends_on:
       - postgres
@@ -71,28 +47,5 @@ services:
       - postgres
       - redis
 
-=======
-      - "5051:80"
-    depends_on:
-      - postgres
-
->>>>>>> 2abe167 (fast api)
-=======
-      - "5050:80"
-    depends_on:
-      - postgres
-
-  flask-app:
-    build:
-      context: ../embeddings
-      dockerfile: Dockerfile
-    image: embedding:latest
-    ports:
-      - "5000:5000"
-    depends_on:
-      - postgres
-      - redis
-
->>>>>>> 8044f9d (embedding endpoint)
 volumes:
   postgres:

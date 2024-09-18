@@ -8,14 +8,7 @@
       "sourcePath": "fields.skill.name",
       "targetClass": "soo:Skill",
       "targetFunction": "fno:search-for-mapping-with-source", 
-<<<<<<< HEAD
-<<<<<<< HEAD
       "targetLang": "fr",
-=======
->>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
-=======
-      "targetLang": "fr",
->>>>>>> 24c7c8b (fix: #30)
       "generateId": "true"
     },
     
