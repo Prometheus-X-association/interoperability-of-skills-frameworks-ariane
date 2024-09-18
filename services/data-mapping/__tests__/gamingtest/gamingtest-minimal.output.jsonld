@@ -1,106 +1,28 @@
 {
   "@context": {
-<<<<<<< HEAD
-<<<<<<< HEAD
     "@todo": "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
   },
   
-=======
-    "id": "@id",
-    "graph": {
-      "@id": "@graph",
-      "@container": "@set"
-    },
-    "type": {
-      "@id": "@type",
-      "@container": "@set"
-    },
-    "tr": "https://competencies.be/mindmatcher/translator",
-    "mms": "https://competencies.be/mindmatcher/schema",
-    "date": {
-      "@id": "mms:date",
-      "@type": "xsd:dateTime"
-    },
-    "keywords": {
-      "@id": "mms:keywords",
-      "@type": "xsd:string"
-    },
-    "picture": {
-      "@id": "mms:picture",
-      "@type": "xsd:string"
-    },
-    "title": {
-      "@id": "mms:title",
-      "@type": "xsd:string"
-    },
-    "url": {
-      "@id": "mms:url",
-      "@type": "xsd:string"
-    }
-
-  },
->>>>>>> 75371fa (spec: add tests for gamingtest transformation)
-=======
-    "@todo": "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
-  },
-  
->>>>>>> 8252ab9 (fix: update contexts to all)
   "graph": [
     {
       "id": "tr:__generated-id-1__",
       "type": "soo:Experience",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
       "prefLabel": {"@value": "Problem-Solving Puzzle", "@language": "en"},
       "profile": "tr:__profile-id-1__",
       "dateFrom": "2023-06-28",
       "skill": "tr:__skill-id-1__",
-<<<<<<< HEAD
-<<<<<<< HEAD
       "result": "Validated"
-=======
-      "label": {"@value": "Problem-Solving Puzzle", "@language": "en"},
-      "hasProfile": "tr:__profile-id-1__",
-      "date": "2023-06-28",
-      "hasSkill": "tr:__skill-id-1__",
-=======
->>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
-      "result": "validated"
->>>>>>> 75371fa (spec: add tests for gamingtest transformation)
-=======
-      "result": "Validated"
->>>>>>> 4ad4771 (fix: update gaming test rules)
     },
     {
       "id":"tr:__profile-id-1__",
       "type": "soo:Profile",
       "email":"zayne.harding@gmail.com",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
       "experience": "tr:__generated-id-1__"
-=======
-      "containsExperience": "tr:__generated-id-1__",
->>>>>>> 75371fa (spec: add tests for gamingtest transformation)
-=======
-      "containsExperience": "tr:__generated-id-1__"
->>>>>>> 9ad366b (chore: clean old files)
-=======
-      "experience": "tr:__generated-id-1__"
->>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
     },
     {
       "id": "tr:__skill-id-1",
       "type": "soo:Skill",
-<<<<<<< HEAD
-<<<<<<< HEAD
       "experience": "tr:__generated-id-1__",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c339954 (feat: add sourceSkillId for jobready)
       "sourceSkillId": "term:gamingtest/term/55eefc9e28432347635c61fba45b70b5",
       "mapping": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869",
       "suggestions": [ "tr:sugg/1", "tr:sugg/2"],
@@ -111,30 +33,6 @@
       "type": "skos:Concept",
       "prefLabel": {"@value":"Problem-Solving", "@language": "en"},
       "memberOf": "term:gamingtest/term"
-=======
-      "resultFromExperience": "tr:__generated-id-1__",
-=======
-      "experience": "tr:__generated-id-1__",
->>>>>>> 834d5f9 (Resolve "propose a clean rule file with respect to clean original SOO version")
-      "sourceValue": "tr:__source-value-1",
-=======
-      "sourceSkillId": "tr:__source-value-1",
->>>>>>> 38c177d (feat: add the sourceSkillId mecanism for gamingtest)
-      "mapping": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869",
-      "suggestions": [ "tr:sugg/1", "tr:sugg/2"],
-      "skillLevelValue": "Validated"
-    },
-    {
-<<<<<<< HEAD
-      "id": "tr:__source-value-1",
-      "label": "Problem-Solving"
->>>>>>> 75371fa (spec: add tests for gamingtest transformation)
-=======
-      "id": "term:gamingtest/term/55eefc9e28432347635c61fba45b70b5",
-      "type": "skos:Concept",
-      "prefLabel": {"@value":"Problem-Solving", "@language": "en"},
-      "memberOf": "term:gamingtest/term"
->>>>>>> 38c177d (feat: add the sourceSkillId mecanism for gamingtest)
     },
     {
       "id": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869",
@@ -142,44 +40,19 @@
       "prefLabel": {"@value": "solve problems", "@language": "en"}
     },
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
       "id":"tr:sugg/1",
-=======
-      "id":"tr:suggg/1",
->>>>>>> 75371fa (spec: add tests for gamingtest transformation)
-=======
-      "id":"tr:sugg/1",
->>>>>>> 9ad366b (chore: clean old files)
       "type": "mms:Suggestion",
       "source": "mm-search",
       "score": 35,
       "mapping": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869" 
     },
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
       "id":"tr:sugg/2",
       "type": "mms:Suggestion",
       "source": "mm-search",
       "score": 10,
       "mapping": "esco:1234" 
     }
-=======
-      "id":"tr:suggg/2",
-=======
-      "id":"tr:sugg/2",
->>>>>>> 9ad366b (chore: clean old files)
-      "type": "mms:Suggestion",
-      "source": "mm-search",
-      "score": 10,
-      "mapping": "rome:1234" 
-<<<<<<< HEAD
-    },
->>>>>>> 75371fa (spec: add tests for gamingtest transformation)
-=======
-    }
->>>>>>> 9ad366b (chore: clean old files)
     
     
 

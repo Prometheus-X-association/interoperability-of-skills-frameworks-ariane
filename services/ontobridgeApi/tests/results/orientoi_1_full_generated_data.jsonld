@@ -4,15 +4,6 @@
  },
  "graph": [
   {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> e1d119f (add family)
-=======
->>>>>>> 9428b2e (add family)
    "__family__": {
     "language": "en",
     "provider": "orientoi_1",
@@ -22,55 +13,16 @@
     "targetFunction": "fno:get-family-value",
     "value": "M\u00e9tier"
    },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 94f4f40 (fix test)
-=======
->>>>>>> bc7b889 (fix get-polarity-value)
-=======
->>>>>>> e1d119f (add family)
-=======
->>>>>>> a953951 (fix get-polarity-value)
-=======
->>>>>>> 9428b2e (add family)
    "description": {
     "@language": "fr",
     "@value": "<h3>D\u00e9finition</h3><p>R\u00e9alise des op\u00e9rations de tri de d\u00e9chets et produits industriels en fin de vie (textiles, plastiques, verres, composants, ...) selon les r\u00e8gles de s\u00e9curit\u00e9, d'environnement et les imp\u00e9ratifs de r\u00e9cup\u00e9ration (qualit\u00e9, cadence, ...).<br>Peut reconditionner des produits industriels pour valorisation par r\u00e9utilisation ou recyclage.<br>Peut coordonner une \u00e9quipe.</p><h3>Acc\u00e8s au m\u00e9tier</h3><p>Cet emploi/m\u00e9tier est accessible sans dipl\u00f4me ni exp\u00e9rience professionnelle.<br>Un ou plusieurs Certificat(s) d'Aptitude \u00e0 la Conduite En S\u00e9curit\u00e9 -CACES- conditionn\u00e9(s) par une aptitude m\u00e9dicale \u00e0 renouveler p\u00e9riodiquement peu(ven)t \u00eatre requis.<br>Des vaccinations sp\u00e9cifiques (leptospirose, h\u00e9patite, ...) peuvent \u00eatre requises selon le secteur d'activit\u00e9.</p><h3>Condition du m\u00e9tier</h3><p>L'activit\u00e9 de cet emploi/m\u00e9tier s'exerce au sein de soci\u00e9t\u00e9s de services, d'associations, de collectivit\u00e9s territoriales, d'entreprises industrielles en contact avec diff\u00e9rents intervenants (particuliers, conducteurs d'engins, ...).<br>Elle varie selon le lieu d'intervention et le type de produits collect\u00e9s.<br>Elle peut impliquer le port de charges.<br>Le port d'\u00e9quipements de protection (gants, combinaison, ...) peut \u00eatre requis.</p><h3>Environnement de travail</h3><p>Structures</p><ul><li>Association</li><li>Centre V\u00e9hicules hors d'usage - VHU</li><li>Collectivit\u00e9 territoriale</li><li>D\u00e9chetterie</li><li>Entreprise industrielle</li><li>Ressourcerie</li><li>Soci\u00e9t\u00e9 de collecte et de traitement des d\u00e9chets</li><li>Soci\u00e9t\u00e9 de services</li></ul><p>Secteurs</p><ul><li>Recyclage</li></ul><h3>Comp\u00e9tences de Base attendues</h3><table><tbody><tr><td>R\u00e9aliste</td><td>100.0 %</td></tr></tbody></table>"
    },
    "experienceStatus": "term:experience/type/suggested",
    "experienceType": "term:experience/type/professional",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> e1d119f (add family)
-=======
->>>>>>> 9428b2e (add family)
    "family": "term:orientoi_1/family/d9e8e5e07211aea6a79908188885427b/M\u00e9tier",
    "id": "tr:__experience-id-1__",
    "mapping": "term:orientoi_1/mapping/49379e50c710fe6ce8d00ba03aa2a978",
    "polarity": "tr:__polarity-id-1__",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-   "id": "tr:__experience-id-1__",
-   "mapping": "term:orientoi_1/mapping/49379e50c710fe6ce8d00ba03aa2a978",
->>>>>>> 94f4f40 (fix test)
-=======
-   "id": "tr:__experience-id-1__",
-   "mapping": "term:orientoi_1/mapping/49379e50c710fe6ce8d00ba03aa2a978",
->>>>>>> bc7b889 (fix get-polarity-value)
-=======
->>>>>>> 4494379 (fix rule relationTo with 3 cases (see comments))
-=======
-   "id": "tr:__experience-id-1__",
-   "mapping": "term:orientoi_1/mapping/49379e50c710fe6ce8d00ba03aa2a978",
->>>>>>> a953951 (fix get-polarity-value)
-=======
->>>>>>> 8a56b63 (fix rule relationTo with 3 cases (see comments))
    "prefLabel": {
     "@language": "fr",
     "@value": "Agent / Agente de centre de tri de dechet"
@@ -91,15 +43,6 @@
    "type": "soo:Experience"
   },
   {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> e1d119f (add family)
-=======
->>>>>>> 9428b2e (add family)
    "__family__": {
     "language": "en",
     "provider": "orientoi_1",
@@ -109,63 +52,16 @@
     "targetFunction": "fno:get-family-value",
     "value": "Secteur d''activit\u00e9"
    },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 94f4f40 (fix test)
-=======
->>>>>>> bc7b889 (fix get-polarity-value)
-=======
->>>>>>> e1d119f (add family)
-=======
->>>>>>> a953951 (fix get-polarity-value)
-=======
->>>>>>> 9428b2e (add family)
    "description": {
     "@language": "fr",
     "@value": "<h3>Travailler dans LE SOCIAL</h3><p>Ce secteur est fond\u00e9 sur l\u2019humain et au service de la communaut\u00e9.</p><p><img src=\"{{url}}/{{path}}/intro46.png\"></p><p>Les professionnels de ce domaine \u00e9coutent, accompagnent, aident et conseillent par leurs actions mat\u00e9rielles, p\u00e9dagogiques et psychologiques des personnes d\u00e9pendantes, des enfants, des personnes fragiles ou en difficult\u00e9 : personnes \u00e2g\u00e9es, handicap\u00e9s, jeunes enfants, adolescents... Ils interviennent \u00e0 travers l'action \u00e9ducative, l'animation socioculturelle, le conseil... Ce secteur int\u00e8gre \u00e9galement les m\u00e9tiers administratifs du secteur.</p><p>Les missions et publics sont vari\u00e9s. Les travailleurs sociaux permettent \u00e0 une personne \u00e2g\u00e9e d\u00e9pendante de continuer \u00e0 vivre chez elle en lui rendant des services chaque jour. Ils aident un enfant en situation de handicap moteur \u00e0 suivre une scolarit\u00e9 normale en le secondant dans ses gestes d'\u00e9colier. Ils informent une famille en situation de pr\u00e9carit\u00e9 sur les aides auxquelles elle peut pr\u00e9tendre.</p><p><u><b>Quelques m\u00e9tiers du secteur :</b></u></p><p><u>L\u2019aide sociale</u></p><p><ul><li>Assistant / Assistante sociale</li><li>Conseiller / Conseill\u00e8re en insertion sociale et professionnelle</li></ul></p><p><u>L\u2019\u00e9ducation sp\u00e9cialis\u00e9e</u></p><p><ul><li>Educateur / Educatrice de jeunes enfants</li><li>Moniteur \u00e9ducateur / Monitrice \u00e9ducatrice</li></ul></p><p><u>L\u2019animation</u></p><p><ul><li>Animateur / Animatrice socio-culturel</li><li>Animateur / Animatrice multim\u00e9dia</li></ul></p><p><u>Le travail \u00e0 domicile</u></p><p><ul><li>Auxiliaire de vie</li><li>Technicien / Technicienne de l'intervention sociale et familiale</li></ul></p><p><b><u>Quelques chiffres du secteur</u></b></p><p><ul><li>800 000 travailleurs sociaux</li><li>55 000 \u00e9ducateurs sp\u00e9cialis\u00e9s, 31 000 moniteurs \u00e9ducateurs, 42 000 aides m\u00e9dico-psychologiques, 262 000 auxiliaires de vie sociale et 39 000 assistants de service social</li><li>Les travailleurs sociaux exercent au sein des h\u00f4pitaux, des caisses d'allocation familiales, des centres de protection maternelle et infantile, des prisons, des centres d'accueil d'urgence, des maisons de quartier, des cr\u00e8ches, des centres d'h\u00e9bergement pour personnes handicap\u00e9es, etc. D'autres interviennent \u00e0 domicile.</li></ul></p><p><b><i>\u201cL\u2019humain est au c\u0153ur de mes pr\u00e9occupations, je me mets au service des m\u00e9tiers du social.\u201d</i></b></p><p><img src=\"{{url}}/{{path}}/fin46.png\"></p>"
    },
    "experienceStatus": "term:experience/type/suggested",
    "experienceType": "term:experience/type/professional",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
    "family": "term:orientoi_1/family/d9e8e5e07211aea6a79908188885427b/Secteur d''activit\u00e9",
    "id": "tr:__experience-id-2__",
    "mapping": "term:orientoi_1/mapping/a0ac6562998be0a8de9055d7ef399c1a",
    "polarity": "tr:__polarity-id-2__",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> bc7b889 (fix get-polarity-value)
-=======
-   "family": "term:orientoi_1/family/d9e8e5e07211aea6a79908188885427b/Secteur d''activit\u00e9",
->>>>>>> e1d119f (add family)
-=======
->>>>>>> a953951 (fix get-polarity-value)
-=======
-   "family": "term:orientoi_1/family/d9e8e5e07211aea6a79908188885427b/Secteur d''activit\u00e9",
->>>>>>> 9428b2e (add family)
-   "id": "tr:__experience-id-2__",
-   "mapping": "term:orientoi_1/mapping/a0ac6562998be0a8de9055d7ef399c1a",
-   "polarity": [
-    "tr:__polarity-id-1__",
-    "tr:__polarity-id-2__"
-   ],
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 94f4f40 (fix test)
-=======
->>>>>>> bc7b889 (fix get-polarity-value)
-=======
->>>>>>> 4494379 (fix rule relationTo with 3 cases (see comments))
-=======
->>>>>>> a953951 (fix get-polarity-value)
-=======
->>>>>>> 8a56b63 (fix rule relationTo with 3 cases (see comments))
    "prefLabel": {
     "@language": "fr",
     "@value": "Social"
@@ -186,55 +82,15 @@
    "type": "soo:Experience"
   },
   {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 4494379 (fix rule relationTo with 3 cases (see comments))
-=======
->>>>>>> 8a56b63 (fix rule relationTo with 3 cases (see comments))
    "experience": "tr:__experience-id-1__",
    "id": "tr:__polarity-id-1__",
    "polarityScale": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9",
    "polarityValue": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9/level/Je ne sais pas",
-=======
-   "experience": "tr:__experience-id-2__",
-   "id": "tr:__polarity-id-1__",
->>>>>>> 94f4f40 (fix test)
-=======
-   "experience": "tr:__experience-id-2__",
-   "id": "tr:__polarity-id-1__",
-<<<<<<< HEAD
-   "skillLevelScale": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9",
-   "skillLevelValue": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9/level/Je ne sais pas",
->>>>>>> bc7b889 (fix get-polarity-value)
-=======
-   "polarityScale": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9",
-   "polarityValue": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9/level/Je ne sais pas",
->>>>>>> e1d119f (add family)
-=======
-   "experience": "tr:__experience-id-2__",
-   "id": "tr:__polarity-id-1__",
-<<<<<<< HEAD
-   "skillLevelScale": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9",
-   "skillLevelValue": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9/level/Je ne sais pas",
->>>>>>> a953951 (fix get-polarity-value)
-=======
-   "polarityScale": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9",
-   "polarityValue": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9/level/Je ne sais pas",
->>>>>>> 9428b2e (add family)
    "type": "soo:Polarity"
   },
   {
    "experience": "tr:__experience-id-2__",
    "id": "tr:__polarity-id-2__",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
    "polarityScale": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9",
    "polarityValue": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9/level/\u00e7a me correspond",
    "type": "soo:Polarity"
@@ -264,59 +120,6 @@
    "type": "skos:Concept"
   },
   {
-=======
-=======
->>>>>>> a953951 (fix get-polarity-value)
-   "skillLevelScale": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9",
-   "skillLevelValue": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9/level/\u00e7a me correspond",
-   "type": "soo:Polarity"
-  },
-  {
-<<<<<<< HEAD
->>>>>>> bc7b889 (fix get-polarity-value)
-=======
-   "polarityScale": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9",
-   "polarityValue": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9/level/\u00e7a me correspond",
-   "type": "soo:Polarity"
-  },
-  {
-=======
-   "polarityScale": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9",
-   "polarityValue": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9/level/\u00e7a me correspond",
-   "type": "soo:Polarity"
-  },
-  {
->>>>>>> 9428b2e (add family)
-   "id": "term:orientoi_1/family/d9e8e5e07211aea6a79908188885427b/M\u00e9tier",
-   "memberOf": "term:orientoi_1/family/d9e8e5e07211aea6a79908188885427b",
-   "notation": "M\u00e9tier",
-   "prefLabel": {
-    "@language": "en",
-    "@value": "M\u00e9tier"
-   },
-   "type": "skos:Concept"
-  },
-  {
-   "id": "term:orientoi_1/family/d9e8e5e07211aea6a79908188885427b",
-   "type": "skos:Collection"
-  },
-  {
-   "id": "term:orientoi_1/family/d9e8e5e07211aea6a79908188885427b/Secteur d''activit\u00e9",
-   "memberOf": "term:orientoi_1/family/d9e8e5e07211aea6a79908188885427b",
-   "notation": "Secteur d''activit\u00e9",
-   "prefLabel": {
-    "@language": "en",
-    "@value": "Secteur d''activit\u00e9"
-   },
-   "type": "skos:Concept"
-  },
-  {
-<<<<<<< HEAD
->>>>>>> e1d119f (add family)
-=======
->>>>>>> a953951 (fix get-polarity-value)
-=======
->>>>>>> 9428b2e (add family)
    "id": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9/level/Je ne sais pas",
    "memberOf": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9",
    "notation": "Je ne sais pas",
@@ -337,17 +140,6 @@
    "type": "skos:Concept"
   },
   {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-   "type": "soo:Polarity"
-  },
-  {
->>>>>>> 94f4f40 (fix test)
-=======
->>>>>>> bc7b889 (fix get-polarity-value)
-=======
->>>>>>> a953951 (fix get-polarity-value)
    "id": "term:orientoi_1/mapping/49379e50c710fe6ce8d00ba03aa2a978",
    "mappingType": "skos:exactMatch",
    "parent": "tr:__experience-id-1__",

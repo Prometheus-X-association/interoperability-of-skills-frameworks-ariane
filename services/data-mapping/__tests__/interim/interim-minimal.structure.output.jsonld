@@ -8,15 +8,7 @@
       "type": "soo:Profile",
       "name": "Alice Smith",
       "email": "alice.smith@example.com",
-<<<<<<< HEAD
-<<<<<<< HEAD
       "address": "456 Oak St, Anytown, USA",
-=======
-      "address": "address",
->>>>>>> b88cefe (fix: update interim output & rules. Create a .structure. file)
-=======
-      "address": "456 Oak St, Anytown, USA",
->>>>>>> 6dc15f4 (fix: update interim)
       "experience": ["tr:__xp-1__", "tr:__xp-2__", "tr:__xp-3__","tr:__xp-4__","tr:__xp-5__","tr:__xp-6__"],
       "polarity": {"@value": "0", "@language":"en"}
     },

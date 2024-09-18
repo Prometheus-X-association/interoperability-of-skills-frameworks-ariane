@@ -1,8 +1,6 @@
 [tool.poetry]
 name = "ontobridgeapi"
 version = "0.1.0"
-<<<<<<< HEAD
-<<<<<<< HEAD
 description = "API to transform documents into universal ontology"
 authors = ["Hugo Victor"]
 
@@ -23,84 +21,24 @@ pydantic = "<2.0.0"
 black = "^24.4.2"
 jsonpath-ng = "^1.6.1"
 pytest = "^8.2.0"
-<<<<<<< HEAD
-<<<<<<< HEAD
 requests = "^2.32.2"
 sentence-transformers = "^3.0.0"
 torch = "^2.3.0"
 protobuf = "^5.27.0"
 sentencepiece = "^0.2.0"
-<<<<<<< HEAD
-=======
->>>>>>> 86ca0e6 (implement jobready_2)
-=======
-requests = "^2.32.2"
->>>>>>> 8044f9d (embedding endpoint)
-=======
->>>>>>> e23b4cb (machine learning local service)
 
 gql = "^3.5.0"
-<<<<<<< HEAD
-<<<<<<< HEAD
 inquirer = "^3.2.4"
 requests-toolbelt = "^1.0.0"
-<<<<<<< HEAD
-<<<<<<< HEAD
 beautifulsoup4 = "^4.12.3"
-=======
-description = "api to transform documents into universal ontology"
-=======
-description = "API to transform documents into universal ontology"
->>>>>>> 2abe167 (fast api)
-authors = ["Hugo Victor"]
-
-packages = [
-    { include="api", from="." },
-]
-
-[tool.poetry.dependencies]
-python = "^3.11"
-fastapi = "^0.111.0"
-uvicorn = "^0.29.0"
-fastapi-utils = "^0.6.0"
-alembic = "^1.13.1"
-redis = "^5.0.4"
-psycopg2-binary = "^2.9.9"
-asyncpg = "^0.29.0"
-pydantic = "<2.0.0"
-black = "^24.4.2"
-
->>>>>>> dcefa9a (poetry)
-=======
->>>>>>> 81c1026 (term matching service)
-=======
-inquirer = "^3.2.4"
->>>>>>> 7d545e1 (add first implementation)
-=======
->>>>>>> 6777765 (add create_or_find term functon)
-=======
-beautifulsoup4 = "^4.12.3"
->>>>>>> 2dfc513 (add beautifulsoup4 to parse html inner text)
 [tool.poetry.dev-dependencies]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 [tool.poetry.scripts]
 dev = "api.main:start_dev"
 
 [tool.black]
 line-length = 128
-<<<<<<< HEAD
-=======
->>>>>>> dcefa9a (poetry)
-=======
-
-[tool.poetry.scripts]
-dev = "api.main:start_dev"
->>>>>>> 2abe167 (fast api)
-=======
->>>>>>> 354c9de (change line length in black 88 -> 128)

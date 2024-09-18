@@ -50,18 +50,8 @@ class EmbeddingService:
         Returns:
             dict: The response from the API as a dictionary.
         """
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 94f4f40 (fix test)
         if isinstance(texts, str):
             response = self.embeddings.embed_text(texts)
         else: 
             response = self.embeddings.embed_text(texts[0])
-<<<<<<< HEAD
-=======
-        response = self.embeddings.embed_text(texts[0])
->>>>>>> 3b02988 (refactor and update folders)
-=======
->>>>>>> 94f4f40 (fix test)
         return {"embeddings": response}

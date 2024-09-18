@@ -7,30 +7,9 @@ import iValidate from './utils/iValidate.js';
 import vectStub from './data-stubs/vector-for-rome-position.json' assert {type: 'json'}
 
 let endpoint = `http://localhost:5020/` // for local testing 
-<<<<<<< HEAD
-<<<<<<< HEAD
 endpoint = 'https://jobs-and-skills-v2-dev-wyew76oo4a-ew.a.run.app/graphql' // for online testing 
 
 
-=======
-// endpoint = 'https://jobs-and-skills-v2-dev-wyew76oo4a-ew.a.run.app/graphql' // for online testing 
-
-
-/* Example manuel de creation d'une polarity dans le fichier de sortie. La génération effectuée est différente au niveau des ids mais plus prédictible
-{
-  "id": "tr:__polarity-1__",
-  "type": "soo:Polarity",
-  "polarityScale": "term:interim/polarity/scale/1",
-  "polarityValue": "term:interim/polarity/value/1"
-},
-*/
-
->>>>>>> 799bf08 (feat: first version of this script)
-=======
-endpoint = 'https://jobs-and-skills-v2-dev-wyew76oo4a-ew.a.run.app/graphql' // for online testing 
-
-
->>>>>>> f0a0a37 (feat: add implementation example for searchForMappingWithSource function)
 // Changer ces variables pour créer d'autres examples.
 const providerName = 'orientoi_1'
 const sourceValue = {
@@ -132,33 +111,15 @@ if (concept.mapping?.length) {
       mappingType: "skos:exactMatch",
     }
   })
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  mappings_list = mappings
->>>>>>> 799bf08 (feat: first version of this script)
-=======
->>>>>>> f0a0a37 (feat: add implementation example for searchForMappingWithSource function)
 
   const mappingsCreate = await createMappings(mappings)
   const mappings_ids = mappingsCreate.map(m => m.id)
   const conceptUpdate = await updateConceptMapping(conceptId, mappings_ids)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f0a0a37 (feat: add implementation example for searchForMappingWithSource function)
   console.log('Search for the resulting concept with mappings:')
   let finalMap = await searchForConceptWithMappings(conceptId)
   finalMap = finalMap[0]
   mappings_list = finalMap.mapping
-<<<<<<< HEAD
-=======
-  let finalMap = await searchForConceptWithMappings(conceptId)
-  finalMap = finalMap[0]
->>>>>>> 799bf08 (feat: first version of this script)
-=======
->>>>>>> f0a0a37 (feat: add implementation example for searchForMappingWithSource function)
 }
 
 
@@ -171,15 +132,7 @@ const collectionCategory = 'scale'
 
 if (mappings_list.length) {
   // console.log('Identified mappings: \n', mappings_list)
-<<<<<<< HEAD
-<<<<<<< HEAD
   const infos = mappings_list.map( m => ({validated: m.validated[0], score: m.score[0], prefLabel: m.target[0]?.prefLabel?.[0]?.value}))
-=======
-  const infos = mappings_list.map( m => ({validated: m.validated[0], score: m.score[0], prefLabel: m.target[0].prefLabel[0].value}))
->>>>>>> 799bf08 (feat: first version of this script)
-=======
-  const infos = mappings_list.map( m => ({validated: m.validated[0], score: m.score[0], prefLabel: m.target[0]?.prefLabel?.[0]?.value}))
->>>>>>> f0a0a37 (feat: add implementation example for searchForMappingWithSource function)
   console.table(infos,['validated','score', 'prefLabel'])
   if (await iValidate('Do you want to detete the mappings ?')) {
     // 1/ delete the mappings 
@@ -203,16 +156,6 @@ if (mappings_list.length) {
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-console.log('The concept value is:')
-console.dir(concept)
-
->>>>>>> 799bf08 (feat: first version of this script)
-=======
->>>>>>> f0a0a37 (feat: add implementation example for searchForMappingWithSource function)
 if (await iValidate('Do you want to remove the Concept ?')) {
   const deleted = await deleteConcept(conceptId)
   console.log('Concept deleted:', deleted)
@@ -223,15 +166,7 @@ if (await iValidate('Do you want to remove the Concept ?')) {
   }
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 console.log('search-for-mapping-with-source process example finished')
-=======
-console.log('find-or-create process example finished')
->>>>>>> 799bf08 (feat: first version of this script)
-=======
-console.log('search-for-mapping-with-source process example finished')
->>>>>>> f0a0a37 (feat: add implementation example for searchForMappingWithSource function)
 
 //******* Matchings related concepts *************/
 async function createMappings(mappings) {
@@ -402,14 +337,7 @@ async function searchForConceptWithMappings(conceptId) {
           validated
           target {
             id
-<<<<<<< HEAD
-<<<<<<< HEAD
             type
-=======
->>>>>>> 799bf08 (feat: first version of this script)
-=======
-            type
->>>>>>> 02f9850 (typo)
             prefLabel {
               language
               value

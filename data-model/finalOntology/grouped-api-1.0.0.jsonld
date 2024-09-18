@@ -30,24 +30,6 @@
       "member": ["as:companies", "as:rome"]
     },
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-      "id": "as:companies",
-      "type": ["mms:ApiCollection", "skos:Collection"],
-      "label": "companyData",
-      "member": ["as:companyHumanResources", "mms:Company", "mms:SalaryRange", "mms:Training", "mms:Enrolment", "mms:Mentorship", "mms:Evaluation"]
-    },
-    {
-      "id": "as:companyHumanResources",
-      "type": ["mms:ApiCollection", "skos:Collection"],
-      "label": "companyHumanResources",
-      "member": ["mms:User", "mms:PersonalDataWallet"]
-    },
-    {
->>>>>>> b56e5c4 (fix: rename data folder)
-=======
->>>>>>> aad829f (fix: update path for new folder)
       "id": "as:rome",
       "type": ["mms:ApiCollection", "skos:Collection"],
       "label": "rome",

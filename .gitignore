@@ -6,24 +6,11 @@ __pycache__/
 # Here comes the Devil(s) ;)
 .DS_Store
 .venv/
-<<<<<<< HEAD
-<<<<<<< HEAD
 **/models_dump/
 models_dump/
 
 # project related Devils
 _docs/secrets.yaml
 services/dataspace-connector
-<<<<<<< HEAD
-=======
-
->>>>>>> 2abe167 (fast api)
-=======
-**/models_dump/
-models_dump/
-
->>>>>>> 6963a58 (dynamic ml model)
-=======
->>>>>>> 7cb9e1a (doc)
 
 

@@ -254,10 +254,6 @@ class TermMatchingEngine:
         instances = {}
 
         for instance in documents["graph"]:
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> e1d119f (add family)
             if "__family__" in instance: 
                 # { "id": "term:orientoi/family/111", "type": "skos:Concept","prefLabel": {"@value": "Métier" , "@language": "fr"}, "memberOf": "term:orientoi/collection"    }            
                 provider_name = instance["__family__"]["provider"]  # provider
@@ -294,7 +290,6 @@ class TermMatchingEngine:
                     
                 instance["family"] = familyId
             
-<<<<<<< HEAD
             if "__term__" in instance:
                 concept_pref_label = instance["__term__"]["str_value"]  # 0.8
                 collection_pref_label = instance["__term__"]["scale"]  # skill
@@ -307,25 +302,6 @@ class TermMatchingEngine:
                     
                 if instance["__term__"]["targetFunction"] == 'no:find-or-create-term':
                     collection_category = 'term'
-=======
-=======
->>>>>>> e1d119f (add family)
-            if "__term__" in instance:
-                concept_pref_label = instance["__term__"]["str_value"]  # 0.8
-                collection_pref_label = instance["__term__"]["scale"]  # skill
-                provider_name = instance["__term__"]["provider"]  # provider
-<<<<<<< HEAD
->>>>>>> 5a091b3 (fix matching_engine folder name)
-=======
-                
-                collection_category = 'skill'
-                
-                if instance["__term__"]["targetFunction"] == 'fno:get-polarity-value':
-                    collection_category = 'polarity'
-                    
-                if instance["__term__"]["targetFunction"] == 'no:find-or-create-term':
-                    collection_category = 'term'
->>>>>>> e1d119f (add family)
 
                 skill_level_value = f'term:{provider_name}/{str.lower(collection_pref_label)}/{md5(instance["__term__"]["scale_path"])}/level/{concept_pref_label}'
                 skill_level_scale = (
@@ -353,23 +329,12 @@ class TermMatchingEngine:
                     term_in_document["prefLabel"]["@language"] = instance["__term__"]["language"]
                     term_in_document["prefLabel"]["@value"] = instance["__term__"]["str_value"]
                     documents["graph"].append(term_in_document)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> e1d119f (add family)
                 if instance["__term__"]["targetFunction"] == 'fno:get-polarity-value': 
                     instance["polarityValue"] = skill_level_value
                     instance["polarityScale"] = skill_level_scale
                 else:
                     instance["skillLevelValue"] = skill_level_value
                     instance["skillLevelScale"] = skill_level_scale
-<<<<<<< HEAD
-=======
-                instance["skillLevelValue"] = skill_level_value
-                instance["skillLevelScale"] = skill_level_scale
->>>>>>> 5a091b3 (fix matching_engine folder name)
-=======
->>>>>>> e1d119f (add family)
 
         for instance in documents["graph"]:
             if "__term__" in instance:
