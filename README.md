@@ -8,6 +8,8 @@
 * Install (first time): 
 `pnpm install` 
 
+* test
+
 ## Testing the first things (graphql api) - TO REVIEW
 
 Requirement: you need to have the ismene project folder at the same level of this project folder. You can create a symlink. 
