@@ -1,98 +1,284 @@
 import streamlit as st
-from streamlit_extras.colored_header import colored_header
 import json
 
+#################### INITIALIZATION ###########################
 
-################################### INITIALISATION, ONTHOLOGY AND USE CASES #############################################################
-
-def getReferentiel():
-    st.session_state.ontology = json.load(open("app/ressources/smart.json"))["SmartOntology"]
-
-def getGaming():
-    initialize_session()
-    st.session_state["edTechID"] = "gamingTest"
-    st.session_state.fieldList = ["Experience Name",  "Date", "Associated Soft Skill Block", "User ID", "Results"]
+def initialization():
+    st.session_state.edTechID = "edTechID"
     
-
-def getJobsong():
-    initialize_session()
-    st.session_state["edTechID"] = "Jobsong"
-    st.session_state.fieldList = ["Experience Id","Experience Label","Associated Hard Skills","Suggested Missions","Liked Missons"]
+    st.session_state.Experience = [("type",["educational","professional","vocational","personnality Test"]),("status",["past","ongoing","suggested"])]
+    st.session_state.Skill = [("type",["Hard Skill","Soft Skill","Knowledge","Custom"])]
+    st.session_state.Polarity = []
+    st.session_state.Profile = []
     
+    st.session_state.ontology = {"Experience":[
+                                        "soo:id",
+                                        "skos:prefLabel",
+                                        "soo:description",
+                                        "soo:family",
+                                        "soo:date",
+                                        "soo:result"
+                                 ],
+                                 "Skill":[
+                                        "soo:id",
+                                        "skos:prefLabel",
+                                        "soo:description",
+                                        "soo:skillLevelValue"
+                                 ],
+                                 "Profile":[
+                                        "soo:id",
+                                        "soo:email",
+                                        "soo:name",
+                                        "soo:adress"
+                                 ],
+                                 "Polarity":[
+                                     "soo:id",
+                                     "soo:polarity"
+                                 ]}
+    st.session_state.itemList = []
+    st.session_state.mappingList = []
+    st.session_state.mapped = []
+    st.session_state.submitted =  True
 
-def getInokufu():
-    initialize_session()
-    st.session_state["edTechID"] = "Inokufu"
-    st.session_state.fieldList = ["Nom","Url","Image","Keywords","Date"]
-    
+################### PARSING FILE #############################
 
+def parseField(item,field, stringPath = ""):
+
+    if type(item[field]) == list and len(item[field])>0:
+        fieldList = [key for key in item[field][0].keys()]
+        for nestedField in fieldList:
+            if stringPath == "":
+                parseField(item[field][0],nestedField,field)
+            else:
+                parseField(item[field][0],nestedField,f"{stringPath}.{field}")
+    else:
+        if stringPath:
+            st.session_state.fieldList.append(f"{stringPath}.{field}")
+        else:  
+            st.session_state.fieldList.append(field)
+                
 def parseFile():
-    initialize_session()
-    st.session_state['edTechID'] = st.session_state.file.name[:-5]
-    data = json.load(st.session_state.file)
-    
-    first_item = data[0] if isinstance(data, list) else data
-    st.session_state.fieldList = [key for key in first_item.keys()]
+    st.session_state.data = json.load(st.session_state.file)
+    st.session_state.fieldList = []
+    first_item = st.session_state.data[0] if isinstance(st.session_state.data, list) else st.session_state.data
+    fieldList = [key for key in first_item.keys()]
+    for field in fieldList:
+        with st.container(border=True):
+            parseField(first_item,field)
+            
+    return fieldList
 
-    st.session_state.download = True
-
-
-def initialize_session():
-    st.cache_data.clear()
-    st.cache_resource.clear()
-    keys = [ "submitted", "submitted2", "propertyForm", "mappingForm","download",
-        "experiences", "competencys", "choices", "profiles","rules","mapped"]
-    for key in keys:
-        st.session_state[key] = False if key in ["submitted", "download","submitted2", "propertyForm", "mappingForm"] else []
-    getReferentiel()
-    
-################################### ONTHOLOGY SCHEMA + SIDEBAR #############################################################
+######################### SIDEBAR #########################################
 
 def displaySidebar():
     with st.sidebar:
-        if st.sidebar.button("Reset", use_container_width=True): 
-            initialize_session()
-        st.header("Use Cases", divider="red")
-        create_sidebar_buttons()
 
-        colored_header("Data Provider", description="", color_name="red-70")
+        st.header("Data Provider", divider="red")
         st.info(st.session_state.edTechID)
 
-        colored_header("EdTech File", description="", color_name="red-70")
-        with st.expander(st.session_state.edTechID+".json"):
+        st.header("File", divider="red")
+        with st.expander("Fields",expanded=True):
             for field in st.session_state.fieldList[:-1]:
                 st.write(f"   ├─ {field} \n")
             st.write(f"   └─ {st.session_state.fieldList[-1]} \n")
+        
+        if st.sidebar.button("Fill Item List",use_container_width=True):
+            fillItemList()
+        if len(st.session_state.itemList)>0:
+            if st.sidebar.button("Fill Mappings",use_container_width=True):
+                fillMappings()
+        if st.sidebar.button("Reset", use_container_width=True): 
+            st.session_state.clear()
+            st.rerun()
+
+
+def fillItemList():
+    st.session_state.itemList = [
+                                {
+                                    "class": "Profile",
+                                    "name": "Profil",
+                                    "language": "en"
+                                },
+                                {
+                                    "class": "Experience",
+                                    "name": "past Experiences",
+                                    "language": "en",
+                                    "type": "professional",
+                                    "status": "past"
+                                },
+                                {
+                                    "class": "Experience",
+                                    "name": "Certifications",
+                                    "language": "en",
+                                    "type": "educational",
+                                    "status": "past"
+                                },
+                                {
+                                    "class": "Experience",
+                                    "name": "Suggestions",
+                                    "language": "en",
+                                    "type": "professional",
+                                    "status": "suggested"
+                                },
+                                {
+                                    "class": "Polarity",
+                                    "name": "openToInterim",
+                                    "language": "en"
+                                }
+                                ]
+
+def fillMappings():
+    mappings = [
+                {
+                    "class": "Profile",
+                    "name": "Profil",
+                    "language": "en"
+                },
+                {
+                    "class": "Profile",
+                    "name": "Profil",
+                    "language": "en"
+                },
+                {
+                    "class": "Profile",
+                    "name": "Profil",
+                    "language": "en"
+                },
+                {
+                    "class": "Experience",
+                    "name": "past Experiences",
+                    "language": "en",
+                    "type": "professional",
+                    "status": "past"
+                },
+                {
+                    "class": "Experience",
+                    "name": "past Experiences",
+                    "language": "en",
+                    "type": "professional",
+                    "status": "past"
+                },
+                {
+                    "class": "Experience",
+                    "name": "past Experiences",
+                    "language": "en",
+                    "type": "professional",
+                    "status": "past"
+                },
+                {
+                    "class": "Experience",
+                    "name": "past Experiences",
+                    "language": "en",
+                    "type": "professional",
+                    "status": "past"
+                },
+                {
+                    "class": "Experience",
+                    "name": "Certifications",
+                    "language": "en",
+                    "type": "educational",
+                    "status": "past"
+                },
+                {
+                    "class": "Experience",
+                    "name": "Certifications",
+                    "language": "en",
+                    "type": "educational",
+                    "status": "past"
+                },
+                {
+                    "class": "Experience",
+                    "name": "Certifications",
+                    "language": "en",
+                    "type": "educational",
+                    "status": "past"
+                },
+                {
+                    "class": "Experience",
+                    "name": "Suggestions",
+                    "language": "en",
+                    "type": "professional",
+                    "status": "suggested"
+                },
+                {
+                    "class": "Experience",
+                    "name": "Suggestions",
+                    "language": "en",
+                    "type": "professional",
+                    "status": "suggested"
+                },
+                {
+                    "class": "Experience",
+                    "name": "Suggestions",
+                    "language": "en",
+                    "type": "professional",
+                    "status": "suggested"
+                },
+                {
+                    "class": "Experience",
+                    "name": "Suggestions",
+                    "language": "en",
+                    "type": "professional",
+                    "status": "suggested"
+                },
+                {
+                    "class": "Experience",
+                    "name": "Suggestions",
+                    "language": "en",
+                    "type": "professional",
+                    "status": "suggested"
+                },
+                {
+                    "class": "Experience",
+                    "name": "Suggestions",
+                    "language": "en",
+                    "type": "professional",
+                    "status": "suggested"
+                },
+                {
+                    "class": "Polarity",
+                    "name": "openToInterim",
+                    "language": "en"
+                }
+                ]
+    
+    properties = [
+                    "soo:name",
+                    "soo:email",
+                    "soo:adress",
+                    "skos:prefLabel",
+                    "soo:description",
+                    "soo:date",
+                    "soo:date",
+                    "skos:prefLabel",
+                    "soo:description",
+                    "soo:date",
+                    "skos:prefLabel",
+                    "soo:description",
+                    "soo:description",
+                    "soo:date",
+                    "soo:description",
+                    "soo:description",
+                    "soo:polarity"
+                    ]
+    
+    st.session_state.mapped = []
+    st.session_state.mappingList = []
+    
+    st.session_state[f"generateID_name"] = True
+    st.session_state[f"generateID_pastExperience.role"] = True
+    st.session_state[f"generateID_certifications.name"] = True
+    st.session_state[f"generateID_suggestedExperience.title"] = True
+    
+    
+    for field,mapping,property in zip(st.session_state.fieldList,mappings,properties):
+        st.session_state[f"object_{field}"] = mapping
+        st.session_state[f"property4{field}"] = property
+
             
-        if st.session_state.download:
-            st.sidebar.download_button("Download Sample File",data="",use_container_width=True,disabled=True)
-        else:
-            st.sidebar.download_button("Download Sample File",data=open(f"app/data/jsons/{st.session_state.edTechID.lower()}.json"),file_name=f"{st.session_state.edTechID.lower()}.json",use_container_width=True)
+####################### OBJECT CREATION & DISPLAY #################################
 
-
-def create_sidebar_buttons():
-    a, b = st.columns(2)
-    st.sidebar.file_uploader("Choose a JSON file", type='json', label_visibility="collapsed", key="file",accept_multiple_files=False,)
-
-    if a.button("Gaming Tests", use_container_width=True):
-        getGaming()
-    if b.button("Jobsong", use_container_width=True):
-        getJobsong()
-    if a.button("Inokufu", use_container_width=True):
-        getInokufu()
-    if b.button("Your Own", use_container_width=True,disabled=not(st.session_state.file)):
-        parseFile()
-
-
-def display_schema():
-    with st.expander("Schéma", expanded=False):
-        colored_header("ARIANE pivot ontology", "", color_name="red-70")
-        st.image("app/ressources/ontologyVisualization2.png", use_column_width=True)
-
-################################### OBJECT CREATION #############################################################
-
-# "Create Object" form
-def createObjects():
+def createTab():
     st.header("Create your objects",divider="red")
     c,h = st.columns([1,2])
     with c:
@@ -100,199 +286,197 @@ def createObjects():
     with h:
         if st.session_state.submitted:
             handle_item_submission()
+    st.header("Your Objects",divider="red")
     display_existing_items()
 
 def create_item_form():
     with st.form("Item type"):
-        colored_header("Add a new item:", description="", color_name="red-50")
+        st.header("Add a new item:", divider="red")
         l,r = st.columns([3,1])
-        l.selectbox("Select your Object type and language", ["Experience", "Competency", "Choice","Profile"], key="selectedType")
-        r.selectbox("Select",["EN","DE","FR","ES","IT","RU","TR","UK","PL","RO"],key="language",label_visibility="hidden")
-        object_count = len(st.session_state.competencys) + len(st.session_state.experiences) + len(st.session_state.choices) + len(st.session_state.profiles)
-        st.text_input("Name your Object", f"{st.session_state.edTechID} - Object {object_count}", help="Name your Object", key="objectName")
-        if st.form_submit_button("Confirm", use_container_width=True) : st.session_state.submitted = True
+        l.selectbox("Select your Object type and language", ["Experience", "Skill", "Polarity","Profile"], key="selectedType")
+        r.selectbox("Select",["en","de","fr","es","it","re","tr","pl","ro"],key="language",label_visibility="hidden")
+        st.text_input("Name your Object", placeholder=f"Object Name", help="Name your Object", key="objectName")
+        if st.form_submit_button("Confirm", use_container_width=True) : 
+            if st.session_state.objectName:
+                st.session_state.submitted = True
+            else:
+                st.error("An object need a name to be created")
 
-# Handle each specific object type
 
 def handle_item_submission():
     with st.form("property match"):
-        colored_header("Define mandatory properties", description="Add each field which is an experience, a competency or an individual choice", color_name="red-50")
-        item_type_handlers = {
-            "Experience": handle_experience_submission,
-            "Competency": handle_competency_submission,
-            "Choice": handle_choice_submission,
-            "Profile": handle_profile_submission
+        st.header("Define mandatory properties", divider="red")
+        item = {
+            "class" : st.session_state.selectedType,
+            "name" : st.session_state.objectName,
+            "language" : st.session_state.language
         }
-        selected_type_handler = item_type_handlers.get(st.session_state.selectedType, lambda: None)
-        selected_type_handler()
-
-def handle_experience_submission():
-    l,r = st.columns(2)
-    l.info("Experience Type")
-    r.selectbox("objectFields",["Professional","Vocationnal","Educational","Test","Custom"],label_visibility="collapsed",key="selected")
-    l,r = st.columns(2)
-    l.info("Experience Status")
-    r.selectbox("objectFields",["Past","Ongoing","Suggested"],label_visibility="collapsed",key="selected2")
-    if st.form_submit_button("Confirm",use_container_width=True) : 
-        st.session_state.experiences.append((st.session_state.selectedType,st.session_state.objectName,st.session_state.language,st.session_state.selected,st.session_state.selected2))
-        st.session_state.submitted = False
-        st.rerun()
-
-def handle_competency_submission():
-    l,r = st.columns(2)
-    l.info("Skill Type")
-    r.selectbox("objectFields",["Hard Skill","Soft Skill","Personality Trait","Mixed"],label_visibility="collapsed",key="selected")
-    l,r = st.columns(2)
-    l.info("Experience")
-    if len(st.session_state.experiences)>0:
-        r.selectbox("objectFields",st.session_state.experiences,format_func=lambda x : x[1],label_visibility="collapsed",key="selected2")
-        if st.form_submit_button("Confirm",use_container_width=True) : 
-            st.session_state.competencys.append((st.session_state.selectedType,st.session_state.objectName,st.session_state.language,st.session_state.selected,st.session_state.selected2[1]))
+        for property,values in st.session_state[st.session_state.selectedType]:
+            name,value = st.columns(2)
+            name.info(property)
+            item[property] = value.selectbox("type",values,label_visibility="collapsed",format_func=str.capitalize,key=f"{property}_value")
+            
+        if st.form_submit_button("Create",use_container_width=True):
+            st.session_state.itemList.append(item)
             st.session_state.submitted = False
             st.rerun()
-    else:
-        r.error("First create an experience")
-        st.form_submit_button("Confirm",disabled=True)
+            
 
 
-def handle_choice_submission():
-    l,r = st.columns(2)
-    l.info("Polarity")
-    r.selectbox("objectFields",["Like","Level"],label_visibility="collapsed",key="selected")
-    l,r = st.columns(2)
-    l.info("Experience")
-    if len(st.session_state.experiences)>0:
-        r.selectbox("objectFields",st.session_state.experiences,format_func=lambda x : x[1],label_visibility="collapsed",key="selected2")
-        if st.form_submit_button("Confirm",use_container_width=True) : 
-            st.session_state.choices.append((st.session_state.selectedType,st.session_state.objectName,st.session_state.language,st.session_state.selected,st.session_state.selected2[1]))
-            st.session_state.submitted = False
-            st.rerun()
-    else:
-        r.error("First create an experience")
-        st.form_submit_button("Confirm",disabled=True)
-
-def handle_profile_submission():
-    st.info("There are no mandatory properties for a profile, just press 'Confirm'")
-    if st.form_submit_button("Confirm",use_container_width=True) : 
-        st.session_state.profiles.append((st.session_state.selectedType,st.session_state.objectName,st.session_state.language,"No property","No property"))
-        st.session_state.submitted = False
-        st.rerun()
-
-# Display created items
-         
 def display_existing_items():
-    item_types = {
-        "Experience": st.session_state.experiences,
-        "Competency": st.session_state.competencys,
-        "Choice": st.session_state.choices,
-        "Profile": st.session_state.profiles
-    }
-    if len(item_types["Experience"])>0:
-        cols = st.columns([1.5,2,4.5,1])
-        names = ["Type","Name","Properties","X"]
-        for i in range(4):
-            cols[i].subheader(names[i],divider="red")
-    for item_type, items in item_types.items():
-        for i, item in enumerate(items):
-            display_item(item_type, item, i)
+    cols = st.columns(5)
+    cols[0].header("Classe",divider="red")
+    cols[1].header("Name",divider="red")
+    cols[2].header("Language",divider="red")
+    for i in range(3,5):
+        cols[i].header(f"Property {i-2}",divider="blue")
+    
+    for item in st.session_state.itemList:
+        cols[0].success(item["class"])
+        cols[1].info(item["name"])
+        cols[2].info(item["language"])
+        for i,(property,_ )in enumerate(st.session_state[item["class"]]):
+            cols[i+3].info(item[property])
+        for i in range(2-len(st.session_state[item["class"]])):
+            cols[4-i].info("None")
+            
+            
+########################## RULES CREATION & DISPLAY #####################################
 
-def display_item(item_type, item, index):
-    cols = st.columns([1.5, 2,0.5,2,2, 1])
-    cols[0].success(f"{item_type} n°{index}")
-    for i,property in enumerate(item[1:]):
-        cols[i+1].info(property)
-    if cols[-1].button("🗑️", use_container_width=True, key=f"{item_type.lower()}{index}"):
-        items = getattr(st.session_state, f"{item_type.lower()}s")
-        items.pop(index)
-        st.rerun()
+def matchingTab():
+    st.header("Map your fields",divider="red")
+    create_mapping_form()
+    
+    st.header("Your Rules",divider="red")
+    
+    display_existing_rules()
+    
 
-################################### FIELD MAPPING #############################################################
-
-
-# Create matching form
-def matchingTool():
-    colored_header("Mapping",description="Map all your fields to their relevant object and property",color_name="red-70")
-    if len(st.session_state.experiences)+len(st.session_state.profiles)>0:
-        createPropertyForm()           
-        if st.button("Confirm mappings",use_container_width=True):
-            createRules()
-        if len(st.session_state.rules)>0:
-            displayRules()
-    else:
-        st.warning("First create an object in the 'Object Creation' tab")                         
-
-def createPropertyForm():
+def create_mapping_form():
     cols = st.columns(3)
     names = ["Field","Object","Property"]
     for i in range(3):
         cols[i].subheader(names[i],divider="red")
         
-    for field in st.session_state.fieldList:
+    for field in st.session_state.fieldList: 
         if field not in st.session_state.mapped:
             createMatchingForm(field)
+        
+    if st.button("Create Rules",use_container_width=True):
+        for field in st.session_state.fieldList :
+            if  field not in st.session_state.mapped and st.session_state[f"object_{field}"]["name"] != "No Mapping":
+                create_rule(field)
+   
+    
+def create_rule(field):
+    if st.session_state[f"generateID_{field}"] and st.session_state[f'object_{field}']['class'] == 'Experience':
+            id_rule = {"id": f"mmr:rule-{len(st.session_state.mappingList)}",
+                    "sourcePath": field,
+                    "targetClass": f"soo:{st.session_state[f'object_{field}']['class']}",
+                    "generateId": "true"}
+                    
+            st.session_state.mappingList.append(id_rule)
+            
+            type_rule = {
+                            "id": f"mmr:rule-{len(st.session_state.mappingList)}",
+                            "sourcePath": field,
+                            "targetClass": "soo:Experience",
+                            "targetProperty": "soo:experienceType",
+                            "targetValue": f"term:experience/type/{st.session_state[f'object_{field}']['type'].replace(' ','')}"
+                        }
+                    
+            st.session_state.mappingList.append(type_rule)
+            
+            status_rule =  {
+                        "id": f"mmr:rule-{len(st.session_state.mappingList)}",
+                        "sourcePath": field,
+                        "targetClass": "soo:Experience",
+                        "targetProperty": "soo:experienceStatus",
+                        "targetValue": f"term:experience/type/{st.session_state[f'object_{field}']['status']}"
+                    }
+                    
+            st.session_state.mappingList.append(status_rule)
+    if st.session_state[f"generateID_{field}"] and st.session_state[f'object_{field}']['class'] == 'Skill':
+
+        id_rule ={"id": f"mmr:rule-{len(st.session_state.mappingList)}", 
+                        "sourcePath": field,
+                        "targetClass": f"soo:{st.session_state[f'object_{field}']['class']}",
+                        "generateId" : "true",
+                        "targetProperty": "soo:category",
+                        "targetValue" : "term:skills/category/riasec",
+                        "relationTo" : "soo:Experience",
+                        "relationName" : "soo:experience",
+                        "relationNameInverse" : "soo:skill"}
+        st.session_state.mappingList.append(id_rule)
+        
+        
+    rule = {"id": f"mmr:rule-{len(st.session_state.mappingList)}",
+            "sourcePath": field,
+            "targetClass": f"soo:{st.session_state[f'object_{field}']['class']}",
+            "targetProperty": st.session_state[f'property4{field}']}
+    
+    if st.session_state[f"generateID_{field}"] and st.session_state[f'object_{field}']['class'] == 'Profile':
+        rule["generateId"] = "true"
+
+        rule["relationTo"] = "soo:Experience"
+        rule["relationName"] = "soo:containsExperience"
+        rule["relationNameInverse"] =  "soo:hasProfile"
+    
+  
+        
+    if st.session_state[f'property4{field}'] == "soo:result":
+        rule['targetFunction'] = "fno:skill-value-to-scale"
+        
+    if st.session_state[f'property4{field}'] == "skos:prefLabel":
+        rule['targetFunction'] = rule['targetFunction'] = "fno:asIs_WithLang"
+        rule[ "targetLang"] = st.session_state[f"object_{field}"]["language"]
+    
+    if st.session_state[f'property4{field}'] == "soo:date":
+        rule['targetFunction'] = "fno:date-to-xsd"
+        
+    st.session_state.mappingList.append(rule)
+    st.session_state.mapped.append(field)
 
 def createMatchingForm(field):
-    f,o,p = st.columns(3)
+    f,o,p,t = st.columns([5,5,5,1])
     f.info(field)
-    o.selectbox("object",[[0,"No Mapping"]] + st.session_state.experiences + st.session_state.competencys + st.session_state.choices + st.session_state.profiles,label_visibility='collapsed', format_func=lambda x:x[1],key=f"object{field}")
-    if st.session_state[f"object{field}"][1] != "No Mapping":
-        properties = st.session_state.ontology[st.session_state[f"object{field}"][0]]["Properties"]
+    o.selectbox("object",[{"name" : "No Mapping"}] + st.session_state.itemList, format_func=lambda x:x["name"],key=f"object_{field}",label_visibility="collapsed")
+    if st.session_state[f"object_{field}"]["name"] != "No Mapping":
+        properties = st.session_state.ontology[st.session_state[f"object_{field}"]["class"]]
         p.selectbox("Propriété",properties,key=f"property4{field}",label_visibility="collapsed")
     else:
         p.selectbox("Propriété",[],key=f"property4{field}",label_visibility="collapsed")
-
-# Create rules from mappings
-
-def createRules():
-    st.session_state.object_list = dict()
-    for objectList in st.session_state.experiences,st.session_state.competencys,st.session_state.choices,st.session_state.profiles:
-        for index,object in enumerate(objectList):
-            st.session_state.object_list[object[1]] = {"type" : object[0],
-                                                                    "language" : object[2]}
-            for number,property in enumerate(object[3:]):
-                if property != "No property":
-                    st.session_state.object_list[object[1]][f"Property {number}"] = property
+    t.checkbox("ID",key = f"generateID_{field}")
 
 
-    for field in st.session_state.fieldList:
-        if field not in st.session_state.mapped:
-            if st.session_state[f"object{field}"][1] != "No Mapping":
-                
-                rule = {"id": f"mmr:rule-{len(st.session_state.rules)}",
-                        "sourcePath": field,
-                        "targetClass": f"soo:{st.session_state[f'object{field}'][0]}",
-                        "targetProperty": st.session_state[f'property4{field}'],
-                        "targetFunction" : "to Implement"}
+def display_existing_rules():
+    l,r = st.columns(2)
+    ruleFile = {"@context": {
+                        "todo": "define_the_rules_context"
+                    },
+                "graph": st.session_state.mappingList}
+    l.code(json.dumps(ruleFile,indent=4)) 
+    r.code(json.dumps(json.load(open("app/data/interim/interim-rules.json","r")),indent=4))
 
-                st.session_state.rules.append(rule)
-                st.session_state.mapped.append(field)
-                
-    st.rerun()
-
-# Display rules
-
-def displayRules():
-    st.header("Schema",divider="red")
-    st.code(json.dumps(st.session_state.object_list,indent=3),language="json")
-    st.header("Rules",divider="red")
-    st.code(json.dumps(st.session_state.rules,indent=3),language="json")
-
-################################### APP LOGIC #############################################################
-
-def ontologyMapping():
-    st.set_page_config(layout='wide')
-    st.title("Onthology Mapping Tool")
-    if "submitted" not in st.session_state:
-        getGaming()
-    getReferentiel()
+########################## APP LOGIC #####################################
+def main():
+    st.title("Matching")
     displaySidebar()
-    display_schema()
     tabs = st.tabs(["Object Creation","Field Mapping"])
     with tabs[0]:
-        createObjects()
+        createTab()
     with tabs[1]:
-        matchingTool()
-
+        matchingTab()
 
 if __name__ == "__main__":
-    ontologyMapping()
+    if "fieldList" not in st.session_state:
+        st.set_page_config("Onthology Mapping",layout="centered")
+        initialization()
+        # file = st.file_uploader("Upload your Json","json",key="file")
+        st.session_state.file = open("app/data/interim/interim-minimal.json","r")
+        if st.session_state.file:
+            parseFile()
+            st.rerun()
+    else:
+        st.set_page_config("Onthology Mapping",layout="wide")
+        main()
