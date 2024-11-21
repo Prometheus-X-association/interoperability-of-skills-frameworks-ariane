@@ -41,6 +41,51 @@
       "@type": "xsd:date",
       "@container": "@set"
     },
+    "profile": {
+      "@id": "soo:profile",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "company": {
+      "@id": "soo:company",
+      "@type": "xsd:string",
+      "@container": "@set"
+    },
+    "location": {
+      "@id": "soo:location",
+      "@type": "xsd:string",
+      "@container": "@set"
+    },
+    "contractType": {
+      "@id": "soo:contractType",
+      "@type": "xsd:string",
+      "@container": "@set"
+    },
+    "family": {
+      "@id": "soo:family",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "sourceId": {
+      "@id": "soo:sourceId",
+      "@type": "xsd:string",
+      "@container": "@set"
+    },
+    "polarity": {
+      "@id": "soo:polarity",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "skill": {
+      "@id": "soo:skill",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "sourceDataValue": {
+      "@id": "soo:sourceDataValue",
+      "@type": "@id",
+      "@container": "@set"
+    },
     "experience": {
       "@id": "soo:experience",
       "@type": "@id",
@@ -61,6 +106,11 @@
       "@type": "@id",
       "@container": "@set"
     },
+    "sourceSkillId": {
+      "@id": "soo:sourceSkillId",
+      "@type": "@id",
+      "@container": "@set"
+    },
     "polarityScale": {
       "@id": "soo:polarityScale",
       "@type": "@id",
@@ -68,6 +118,56 @@
     },
     "polarityValue": {
       "@id": "soo:polarityValue",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "name": {
+      "@id": "soo:name",
+      "@type": "xsd:string",
+      "@container": "@set"
+    },
+    "email": {
+      "@id": "soo:email",
+      "@type": "xsd:string",
+      "@container": "@set"
+    },
+    "address": {
+      "@id": "soo:address",
+      "@type": "xsd:string",
+      "@container": "@set"
+    },
+    "memberOf": {
+      "@id": "skos:memberOf",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "provider": {
+      "@id": "soo:provider",
+      "@type": "xsd:string",
+      "@container": "@set"
+    },
+    "text": {
+      "@id": "soo:text",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "url": {
+      "@id": "soo:url",
+      "@type": "xsd:string",
+      "@container": "@set"
+    },
+    "keywords": {
+      "@id": "soo:keywords",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "imagePath": {
+      "@id": "soo:imagePath",
+      "@type": "xsd:string",
+      "@container": "@set"
+    },
+    "value": {
+      "@id": "soo:value",
       "@type": "@id",
       "@container": "@set"
     }

@@ -9,7 +9,7 @@ triple:
 
   soo:Experience:                               # Describe an experience whatever type : professional, educational, etc.
     skos:prefLabel: rdf:langstring              # The preferred label of the experience
-    soo:description: soo:Description            # A short paragraph describing the experience
+    soo:description: soo:Description            # A description of an Experience, as an object to associate text, links, etc...
     soo:experienceType: skos:Concept            # The type of experience : vocational, professional, personal, test, ..
     soo:experienceStatus: skos:Concept          # The experience status : past, ongoing, suggested
     soo:dateFrom: xsd:date                      # The start date if a time period or the date of occurence
@@ -26,7 +26,7 @@ triple:
 
   soo:Skill:                                    # Describe the skills attached to an experience
     soo:experience: soo:Experience              # The experience that provided or is likely to provide the skill
-    soo:description: xsd:string                 # The description of the experience.
+    soo:description: soo:Description            # A description of a Skill, as an object to associate text, links, etc...
     soo:category: skos:Concept                  # The skill group as defined in skos collections, e.g. hard skills/soft skills
     soo:skillLevelScale: skos:OrderedCollection # The scale over which the skill level is defined
     soo:skillLevelValue: skos:Concept           # The skill level as defined as a value on a scale
@@ -51,7 +51,7 @@ triple:
     soo:provider: xsd:string                    # The id of the provider of the collection
     
   soo:Description:
-    soo:texte: rdf:langstring                   # A text to complement the description
+    soo:text: rdf:langstring                   # A text to complement the description
     soo:url:  xsd:string                        # A url to complement the description
     soo:keywords: rdf:langstring                # Possible keywords to complement the description
     soo:imagePath:  xsd:string                  # An image to complement the description
