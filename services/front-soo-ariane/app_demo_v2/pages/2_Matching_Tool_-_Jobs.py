@@ -271,6 +271,7 @@ def display_matches():
 
     else:
         st.write("No matches yet.")
+        
 ################################### GET VECTORS #####################################################################
 
 def get_vectors():

@@ -1,40 +1,28 @@
 import streamlit as st
-import json
-import torch
-from sentence_transformers import SentenceTransformer
-from elasticsearch import Elasticsearch
 import pandas as pd
 import numpy as np
-################################### INITIALIZATION #############################################################
+from stqdm import stqdm
+import json 
 
-def initialize():
-    st.session_state["formations"] = json.load(open("app/data/formationGEN/sample.json", "r"))
-    st.session_state["embeddings"] = torch.load("app/data/formationGEN/sample.pt")
-    if "target" not in st.session_state:
-        st.session_state.target = "ROME"
-
-    # ElasticSearch connection
-    st.session_state.es = Elasticsearch(
-        cloud_id="My_deployment:ZXVyb3BlLXdlc3QxLmdjcC5jbG91ZC5lcy5pbyQ0N2JhMTAxNjhmMzg0M2MwODE1YTU4MzMxZTEwYTc5OSQ1ZDY0YTg0YzI3MjU0NjA1YTg1OWYwNTcwZDRiZTI3MA==",
-        api_key=("4M42-IgBTdLMf-o42MtL", "u2FMsPOUSv2RBwnQXxsC6g"),
-    )
-
-    st.session_state.model = SentenceTransformer("Sahajtomar/french_semantic")
-    st.session_state["validated_skills"] = pd.DataFrame(columns=["Formation Title", "Skill ID", "Skill Label"])
-    st.session_state["added_formations"] = []
-    st.session_state["bias"] = json.load(open("app/data/formationGEN/bias.json"))
 ################################### SKILL MATCHING #############################################################
 
 @st.cache_data
 def skill_match(formation_title, target_framework):
     # Get the formation vector
-    adjusted_vector = (np.array(st.session_state.embeddings[formation_title]) - 0.5 * np.array(st.session_state.bias)).tolist()
+    embeddings = st.session_state.formation_embeddings
+    if formation_title not in embeddings:
+        st.warning(f"No embeddings found for {formation_title}.")
+        return []
+
+    vector = np.array(embeddings[formation_title])
+    
+    adjusted_vector = (vector - 0.5 * np.array(st.session_state.get("bias", []))).tolist()
 
     # Determine the type to match based on the target framework
-    if target_framework == "ESCO":
-        type_match = {"match": {"type": "esco:Skill"}}
-    else:  # Default to ROME
-        type_match = {"match": {"type": "rome:alias/Skill_rome"}}
+    type_match = {
+        "ESCO": {"match": {"type": "esco:Skill"}},
+        "ROME": {"match": {"type": "rome:alias/Skill_rome"}},
+    }.get(target_framework, {"match": {"type": "rome:alias/Skill_rome"}})
 
     # Elasticsearch query
     query = {
@@ -54,7 +42,7 @@ def skill_match(formation_title, target_framework):
         }
     }
 
-    response = st.session_state.es.search(
+    response = st.session_state.ES.search(
         index=".ent-search-engine-documents-ariane-first-test",
         query=query,
         source=["pref_label__value"],
@@ -77,9 +65,6 @@ def display_sidebar():
     st.sidebar.header("Use Cases", divider="red")
     st.sidebar.button("GEN", use_container_width=True)
 
-    st.sidebar.header("Data Provider", divider="red")
-    st.sidebar.info("GEN")
-
     st.sidebar.header("Target Framework", divider="red")
     st.sidebar.selectbox(
         "Select Target Framework",
@@ -89,153 +74,94 @@ def display_sidebar():
 
     st.sidebar.header("Catalogue", divider="red")
 
-    # Create a placeholder for the selectbox
-    selectbox_placeholder = st.sidebar.empty()
+    all_formations = list(st.session_state.data_to_match["formations"].values())
 
-    # Add New Formation in the sidebar using an expander
-    with st.sidebar.popover("Add New Formation",use_container_width=True),st.form("Add New Formation",border=False,clear_on_submit=True):
-        # Initialize session state keys if not already present
-        if "new_formation_title" not in st.session_state:
-            st.session_state.new_formation_title = ""
-        if "new_formation_description" not in st.session_state:
-            st.session_state.new_formation_description = ""
+    formation_titles = [formation["pref_label_value"] for formation in all_formations]
+    selectedFormationTitle = st.sidebar.selectbox(
+        "Select your Item",
+        formation_titles,
+        key="selectedFormationTitle",
+    )
 
-        title = st.text_input("Title", key="new_formation_title")
-        description = st.text_area("Description", key="new_formation_description")
-
-        if st.form_submit_button("Add Formation"):
-            if title and description:
-                new_formation = {
-                    "title": title,
-                    "description": description,
-                    "job_trained_for": "",
-                    "education_level_targeted": "",
-                    "training_organization": "",
-                    "duration": "",
-                    "location": "",
-                }
-                if "added_formations" not in st.session_state:
-                    st.session_state["added_formations"] = []
-                st.session_state["added_formations"].append(new_formation)
-                # Update embeddings for the new formation
-                new_vector = st.session_state.model.encode(description)
-                st.session_state.embeddings[title] = new_vector
-
-                # Automatically select the new formation
-                st.session_state.selectedFormationTitle = title
-
-                st.rerun()
-            else:
-                st.warning("Please provide both a title and description.")
-
-    # Now, instantiate the selectbox after the formation creation code
-    all_formations = st.session_state["formations"] + st.session_state.get("added_formations", [])
-    formation_titles = [formation["title"] for formation in all_formations]
-    if "selectedFormationTitle" in st.session_state:
-        selected_title = selectbox_placeholder.selectbox(
-            "Select your Item",
-            formation_titles,
-            index=formation_titles.index(st.session_state.get("selectedFormationTitle", formation_titles[0])),
-            key="selectedFormationTitle",
-        )
-    else:
-        selected_title = selectbox_placeholder.selectbox(
-            "Select your Item",
-            formation_titles,
-            index=0,
-            key="selectedFormationTitle",
-        )
-        
-    # Update the selected formation based on the selected title
-    st.session_state.selectedFormation = next((f for f in all_formations if f["title"] == selected_title), None)
+    st.session_state.selectedFormation = next(
+        (f for f in all_formations if f["pref_label_value"] == st.session_state.selectedFormationTitle), None
+    )
 
 ################################### TRAINING DISPLAY #############################################################
 
 def display_formation():
     st.header("Formation Details", divider="red")
-    st.write(" ")
 
-    # Display existing formation details
     if st.session_state.selectedFormation:
-        st.subheader(st.session_state.selectedFormation["title"], divider="blue")
-        st.write(st.session_state.selectedFormation.get("description", "No description available."))
+        formation = st.session_state.selectedFormation
+        st.subheader(formation["pref_label_value"], divider="blue")
+        st.write(formation.get("description", "No description available."))
 
-################################### ROME SKILLS #############################################################
+################################### SKILL SUGGESTIONS #############################################################
 
 def display_rome_skills():
-    st.header("Skills", divider="red")
-
-    formation_title = st.session_state.selectedFormation["title"]
-
-    # Get skill suggestions and store them in session state
-    if (
-        "suggestions_df" not in st.session_state
-        or formation_title != st.session_state.get("last_formation_title", None)
-        or st.session_state.target != st.session_state.get("last_target_framework", None)
-    ):
+    tabs = st.tabs(["Validation","All Matches"])
+    with tabs[0]:
+        st.header("Suggested Skills", divider="red")
+        formation_title = st.session_state.selectedFormation["pref_label_value"]
         suggestions = skill_match(formation_title, st.session_state.target)
         suggestions_df = pd.DataFrame(suggestions)
-        st.session_state.suggestions_df = suggestions_df
-        st.session_state.last_formation_title = formation_title
-        st.session_state.last_target_framework = st.session_state.target
-    else:
-        suggestions_df = st.session_state.suggestions_df
 
-    # Display suggestions using st.dataframe with on_select
-    st.subheader("Suggested Skills")
-    if not suggestions_df.empty:
-        # Render the dataframe and capture the selection data
-        selection = st.dataframe(
-            suggestions_df,
-            use_container_width=True,
-            on_select="rerun",
-            selection_mode="multi-row",
-            key="suggestions_dataframe",
-        )
+        if not suggestions_df.empty:
+            # Display the dataframe with row selection enabled
+            event = st.dataframe(
+                suggestions_df[['Skill Label', 'Score']],
+                use_container_width=True,
+                hide_index=True,
+                key="skill_selection",
+                on_select="rerun",
+                selection_mode="multi-row",
+            )
 
-        # Access the selected rows from the return value
-        if "selection" in selection:
-            selected_rows = selection["selection"]
-        else:
-            selected_rows = []
+            if event.selection:
+                # Retrieve the selected rows
+                selected_rows = suggestions_df.iloc[event.selection["rows"]]
 
-        # Process validated skills when the button is clicked
-        if st.button("Validate Selected Skills"):
-            if selected_rows:
-                validated_skills = suggestions_df.iloc[selected_rows["rows"]].copy()
-                # Keep only the necessary columns and add 'Formation Title'
-                validated_skills = validated_skills[['Skill ID', 'Skill Label']]
-                validated_skills['Formation Title'] = formation_title
-                # Reorder columns if desired
-                validated_skills = validated_skills[['Formation Title', 'Skill ID', 'Skill Label']]
-                # Update the session state
-                st.session_state["validated_skills"] = pd.concat(
-                    [st.session_state["validated_skills"], validated_skills], ignore_index=True
-                ).drop_duplicates(subset=["Formation Title", "Skill ID"])
-                # Remove validated skills from suggestions
-                st.session_state.suggestions_df = st.session_state.suggestions_df.drop(index=selected_rows["rows"])
-                # Clear the selection (if necessary)
-                st.success("Selected skills validated.")
-                st.rerun()
+                if st.button("Validate Selected Skills"):
+                    # Add validated skills to session state
+                    validated_skills = selected_rows[['Skill Label']].copy()
+                    validated_skills["Framework"] = st.session_state.target
+                    validated_skills["Formation Title"] = formation_title
+                    st.session_state["validated_skills"] = pd.concat(
+                        [st.session_state.get("validated_skills", pd.DataFrame()), validated_skills],
+                        ignore_index=True
+                    ).drop_duplicates()
+                    st.toast("Selected skills validated.")
+                    st.rerun()
             else:
-                st.warning("No skills selected for validation.")
-    else:
-        st.write("No skill suggestions available.")
+                st.info("Select rows to validate skills.")
+        else:
+            st.write("No skill suggestions available.")
 
-    # Display validated skills
-    st.subheader("Validated Skills")
-    validated_skills = st.session_state["validated_skills"]
+    with tabs[1]:
+        # Display the validated skills
+        st.subheader("Validated Skills")
+        if "validated_skills" in st.session_state and not st.session_state["validated_skills"].empty:
+            st.dataframe(
+                st.session_state["validated_skills"],
+                use_container_width=True,
+                hide_index=True,
+            )
+        else:
+            st.write("No validated skills yet.")
 
-    if not validated_skills.empty:
-        st.dataframe(
-            validated_skills,
-            use_container_width=True,
-        )
-    else:
-        st.write("No validated skills yet.")
 
+        
+################################### GET VECTORS #####################################################################
 
-            
+def get_vectors():
+    model = st.session_state.model
+    data_to_match = st.session_state.data_to_match["formations"].values()
+    descriptions = [formation["description"] for formation in data_to_match]
+    labels = [formation["pref_label_value"] for formation in data_to_match]
+    encoded_vectors = list(stqdm(model.encode(descriptions), unit="experiences"))
+    formation_emeddings = dict(zip(labels, encoded_vectors))
+    st.session_state.formation_embeddings = formation_emeddings
 
 ################################### APP LOGIC #############################################################
 
@@ -243,12 +169,23 @@ def skill_extraction():
     st.set_page_config(layout="wide")
     st.title("Training Enhancing Tool")
 
-    if "formations" not in st.session_state:
-        initialize()
+    if 'data_to_match' not in st.session_state or not st.session_state.data_to_match:
+        st.error("No data to match. Please go back to the mapping page and generate the data.")
+    elif 'data_to_match' in st.session_state and 'formations' not in st.session_state.data_to_match:
+        st.warning("No educational experiences in the mappings.")
+    else:
+        st.session_state.total_formations = len(st.session_state.data_to_match["formations"])
+        if "formation_embeddings" not in st.session_state:
+            # with st.spinner(f"Processing the formations"):
+            get_vectors()
+            st.session_state["bias"] = json.load(open("app/data/formationGEN/bias.json"))
+   
+        if "validated_skills" not in st.session_state:
+            st.session_state["validated_skills"] = pd.DataFrame(columns=["Formation Title", "Framework", "Skill Label"])
 
-    display_sidebar()
-    display_formation()
-    display_rome_skills()
+        display_sidebar()
+        display_formation()
+        display_rome_skills()
 
 if __name__ == "__main__":
     skill_extraction()

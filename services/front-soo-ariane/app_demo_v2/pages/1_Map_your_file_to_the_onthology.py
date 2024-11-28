@@ -1,6 +1,6 @@
 import streamlit as st
 import json
-
+import requests
 ################### PARSING FILE #############################
 
 def parseField(item, field, stringPath=""):
@@ -59,38 +59,15 @@ def check_and_create_buttons():
             experience_with_description = True
 
         if target_value == "term:experience/type/professional":
-            exp = "Pro"
-        elif target_value == "term:experience/type/educationnal":
-            exp = "Course"
+            type = "experiences"
+        elif target_value == "term:experience/type/educational":
+            type = "formations"
 
     l,r = st.columns(2)
 
     # Affichez les boutons correspondants si les conditions sont remplies
-    if skills_with_description:
-        
-        if l.button("Matcher les skills",use_container_width=True):
-            # Enregistrer les données nécessaires dans le session_state
-            st.session_state.data_to_match = extract_descriptions()
-            # Naviguer vers la page de matching
-            st.switch_page("pages/3_Matching_Tool_-_Skills.py")
-
-
-    if experience_with_description:
-        if exp == "Pro":
-            if r.button("Matcher les expériences",use_container_width=True):
-                # Enregistrer les données nécessaires dans le session_state
-                st.session_state.data_to_match = extract_descriptions()
-                # Naviguer vers la page de matching
-                st.switch_page("pages/2_Matching_Tool_-_Jobs.py")
-            
-        elif exp == "Course":
-            if r.button("Tagger les formations",use_container_width=True):
-                # Enregistrer les données nécessaires dans le session_state
-                st.session_state.matching_type = 'formations'
-                st.session_state.data_to_match = extract_descriptions()
-                # Naviguer vers la page de matching
-                st.switch_page("pages/4_Enhancement_Tool_-_Courses.py")
-                st.rerun()
+    if skills_with_description or experience_with_description:
+            st.session_state.data_to_match = extract_descriptions(type)
 
 def get_nested_value(data, field_path, default=""):
     """
@@ -114,13 +91,11 @@ def get_nested_value(data, field_path, default=""):
     for key in keys:
         if isinstance(data, dict) and key in data:
             data = data[key]
-        else:
-            return default
     return data
 
-def extract_descriptions():
+def extract_descriptions(type):
     extracted_data = {
-        "experiences": {},
+        type : {},
         "skills": {}
     }
 
@@ -133,6 +108,7 @@ def extract_descriptions():
     experience_description_fields = []
     
     skill_pref_label_field = None
+    skill_category_field = None
     skill_id_field = None
     skill_description_fields = []
 
@@ -151,6 +127,8 @@ def extract_descriptions():
         elif target_class == "soo:Skill":
             if target_property == "prefLabel":
                 skill_pref_label_field = source_path
+            if target_property == "category":
+                skill_category_field = source_path
             elif target_property == "description":
                 skill_description_fields.append(source_path)
             elif target_property == "sourceSkillId":
@@ -158,10 +136,13 @@ def extract_descriptions():
 
     # Process experiences
     for idx, experience in enumerate(data):
-        experience_id = f"experience-{idx}"
+        experience_id = f"{type}-{idx}"
         pref_label_value = get_nested_value(experience, experience_pref_label_field, "")
-        family_value = get_nested_value(experience, experience_family_field, "")
-        
+        if experience_family_field:
+            family_value = get_nested_value(experience, experience_family_field, "")
+        else:
+            family_value = None
+
         # Gather and flatten descriptions
         descriptions = []
         for field in experience_description_fields:
@@ -172,7 +153,7 @@ def extract_descriptions():
                 descriptions.append(field_value)
         combined_description = " ".join([desc for desc in descriptions if desc])
         
-        extracted_data["experiences"][experience_id] = {
+        extracted_data[type][experience_id] = {
             "pref_label_value": pref_label_value,
             "description": combined_description,
             "family": family_value
@@ -182,9 +163,15 @@ def extract_descriptions():
         skills = get_nested_value(experience, "skills", [])
         for skill in skills:
             skill_id = get_nested_value(skill, skill_id_field, f"skill-{idx}-{len(extracted_data['skills'])}")
+
             if skill_id in extracted_data["skills"]:
                 continue
+            
             pref_label_value = get_nested_value(skill, skill_pref_label_field, "")
+            if experience_family_field:
+                category = get_nested_value(skill, skill_category_field, "")
+            else:
+                category = None
             
             # Gather and flatten descriptions
             descriptions = []
@@ -198,9 +185,10 @@ def extract_descriptions():
 
             extracted_data["skills"][skill_id] = {
                 "pref_label_value": pref_label_value,
-                "description": combined_description
+                "description": combined_description,
+                "category": category
             }
-
+        
     return extracted_data
 
 
@@ -294,114 +282,210 @@ def display_existing_items():
 
 ########################## RULES CREATION & DISPLAY #####################################
 
+def clear_all_matches():
+    for key in ["inputs_position_esco","inputs_position_rome","inputs_skill_esco","inputs_skill_rome","skill","data_to_match","validated_skills"]:
+        try:
+            st.session_state.__delitem__(key)
+        except:
+            pass
+    
 def matchingTab():
-    st.header("Map your fields",divider="red")
+    st.header("Map your fields", divider="red")
     create_mapping_form()
-    st.header("Your Rules",divider="red")
+    st.header("Your Rules", divider="red")
     display_existing_rules()
+    if len(st.session_state.mappingList)>1:
+        if st.button("Send Mapping Rules and Data to API", use_container_width=True):
+            send_to_api()
 
 def create_mapping_form():
     cols = st.columns(3)
-    names = ["Field","Object","Property"]
+    names = ["Field", "Object", "Property"]
     for i in range(3):
-        cols[i].subheader(names[i],divider="red")
-        
-    for field in st.session_state.fieldList: 
-        if field not in st.session_state.mapped:
-            createMatchingForm(field)
-        
-    if st.button("Create Rules",use_container_width=True):
-        for field in st.session_state.fieldList :
-            if  field not in st.session_state.mapped and st.session_state.get(f"object_{field}", {}).get("name") != "No Mapping":
-                create_rule(field)
+        cols[i].subheader(names[i], divider="red")
+
+    for field in st.session_state.fieldList:
+        createMatchingForm(field)
+
+    if 'confirm_overwrite' not in st.session_state:
+        st.session_state['confirm_overwrite'] = False
+
+    if st.button("Create Rules", use_container_width=True, key="create_rules_button"):
+        st.session_state['confirm_overwrite'] = True
         st.rerun()
 
+    if st.session_state['confirm_overwrite']:
+        st.warning("This will overwrite existing rules. Do you want to proceed?")
+        _, col1, _, col2, _ = st.columns(5)
+        proceed = col1.button("Yes, overwrite rules", key="confirm_overwrite_yes",use_container_width=True)
+        cancel = col2.button("Cancel", key="confirm_overwrite_no",use_container_width=True)
+        if proceed:
+            missing_generateID = check_generateID_requirements()
+            if missing_generateID:
+                st.error(f"You must have at least one ID ticked for each selected object. Missing for objects: {', '.join(missing_generateID)}")
+                st.session_state['confirm_overwrite'] = False
+            else:
+                # Overwrite rules logic
+                st.session_state.mappingList = []
+                for field in st.session_state.fieldList:
+                    if st.session_state.get(f"object_{field}", {}).get("name") != "No Mapping":
+                        create_rule(field)
+                st.session_state['confirm_overwrite'] = False  # Reset flag
+                clear_all_matches()
+                st.rerun()
+        elif cancel:
+            st.session_state['confirm_overwrite'] = False
+            st.rerun()
+
+def check_generateID_requirements():
+    object_classes = {}
+    for field in st.session_state.fieldList:
+        object_info = st.session_state.get(f"object_{field}", {})
+        if object_info.get("name") != "No Mapping":
+            obj_class = object_info['class']
+            generateID = st.session_state.get(f"generateID_{field}", False)
+            if obj_class not in object_classes:
+                object_classes[obj_class] = {'generateID_checked': False}
+            if generateID:
+                object_classes[obj_class]['generateID_checked'] = True
+    missing_generateID = [obj_class for obj_class, info in object_classes.items() if not info['generateID_checked']]
+    return missing_generateID
+
 def create_rule(field):
-    if st.session_state.get(f"generateID_{field}", False) and st.session_state[f'object_{field}']['class'] == 'Experience':
-            id_rule = {"id": f"mmr:rule-{len(st.session_state.mappingList)}",
-                    "sourcePath": field,
-                    "targetClass": f"soo:{st.session_state[f'object_{field}']['class']}",
-                    "generateId": "true"}
-                    
-            st.session_state.mappingList.append(id_rule)
-            
-            type_rule = {
-                            "id": f"mmr:rule-{len(st.session_state.mappingList)}",
-                            "sourcePath": field,
-                            "targetClass": "soo:Experience",
-                            "targetProperty": "soo:experienceType",
-                            "targetValue": f"term:experience/type/{st.session_state[f'object_{field}']['type'].replace(' ','')}"
-                        }
-                    
-            st.session_state.mappingList.append(type_rule)
-            
-            status_rule =  {
-                        "id": f"mmr:rule-{len(st.session_state.mappingList)}",
-                        "sourcePath": field,
-                        "targetClass": "soo:Experience",
-                        "targetProperty": "soo:experienceStatus",
-                        "targetValue": f"term:experience/type/{st.session_state[f'object_{field}']['status']}"
-                    }
-                    
-            st.session_state.mappingList.append(status_rule)
-    if st.session_state.get(f"generateID_{field}", False) and st.session_state[f'object_{field}']['class'] == 'Skill':
+    object_info = st.session_state[f'object_{field}']
+    obj_class = object_info['class']
+    generateID = st.session_state.get(f"generateID_{field}", False)
 
-        id_rule ={"id": f"mmr:rule-{len(st.session_state.mappingList)}", 
-                        "sourcePath": field,
-                        "targetClass": f"soo:{st.session_state[f'object_{field}']['class']}",
-                        "generateId" : "true",
-                        "targetProperty": "soo:category",
-                        "targetValue" : "term:skills/category/riasec",
-                        "relationTo" : "soo:Experience",
-                        "relationName" : "soo:experience",
-                        "relationNameInverse" : "soo:skill"}
-        st.session_state.mappingList.append(id_rule)
-        
-        
-    rule = {"id": f"mmr:rule-{len(st.session_state.mappingList)}",
+    # ID Rule
+    if generateID:
+        id_rule = {
+            "id": f"mmr:rule-{len(st.session_state.mappingList)}",
             "sourcePath": field,
-            "targetClass": f"soo:{st.session_state[f'object_{field}']['class']}",
-            "targetProperty": st.session_state[f'property4{field}']}
-    
-    if st.session_state.get(f"generateID_{field}", False) and st.session_state[f'object_{field}']['class'] == 'Profile':
-        rule["generateId"] = "true"
+            "targetClass": f"soo:{obj_class}",
+            "generateId": "true"
+        }
 
-        rule["relationTo"] = "soo:Experience"
-        rule["relationName"] = "soo:containsExperience"
-        rule["relationNameInverse"] =  "soo:hasProfile"
-   
+        if obj_class == 'Experience':
+            st.session_state.mappingList.append(id_rule)
+            type_rule = {
+                "id": f"mmr:rule-{len(st.session_state.mappingList)}",
+                "sourcePath": field,
+                "targetClass": "soo:Experience",
+                "targetProperty": "soo:experienceType",
+                "targetValue": f"term:experience/type/{object_info['type'].replace(' ','')}"
+            }
+            st.session_state.mappingList.append(type_rule)
+
+            status_rule = {
+                "id": f"mmr:rule-{len(st.session_state.mappingList)}",
+                "sourcePath": field,
+                "targetClass": "soo:Experience",
+                "targetProperty": "soo:experienceStatus",
+                "targetValue": f"term:experience/type/{object_info['status']}"
+            }
+            st.session_state.mappingList.append(status_rule)
+
+        elif obj_class == 'Skill':
+            id_rule.update({
+                "targetProperty": "soo:category",
+                "targetValue": "term:skills/category/riasec",
+                "relationTo": "soo:Experience",
+                "relationName": "soo:experience",
+                "relationNameInverse": "soo:skill"
+            })
+            st.session_state.mappingList.append(id_rule)
+
+        elif obj_class == 'Profile':
+            id_rule.update({
+                "relationTo": "soo:Experience",
+                "relationName": "soo:containsExperience",
+                "relationNameInverse": "soo:hasProfile"
+            })
+            st.session_state.mappingList.append(id_rule)
+        else:
+            st.session_state.mappingList.append(id_rule)
+
+    # Main Rule
+    rule = {
+        "id": f"mmr:rule-{len(st.session_state.mappingList)}",
+        "sourcePath": field,
+        "targetClass": f"soo:{obj_class}",
+        "targetProperty": st.session_state[f'property4{field}']
+    }
+
+    if obj_class == 'Profile' and generateID:
+        rule.update({
+            "generateId": "true",
+            "relationTo": "soo:Experience",
+            "relationName": "soo:containsExperience",
+            "relationNameInverse": "soo:hasProfile"
+        })
+
     if st.session_state[f'property4{field}'] == "soo:result":
         rule['targetFunction'] = "fno:skill-value-to-scale"
-        
+
     if st.session_state[f'property4{field}'] == "skos:prefLabel":
         rule['targetFunction'] = "fno:asIs_WithLang"
-        rule[ "targetLang"] = st.session_state[f"object_{field}"]["language"]
-    
+        rule["targetLang"] = object_info.get("language", "en")
+
     if st.session_state[f'property4{field}'] == "soo:date":
         rule['targetFunction'] = "fno:date-to-xsd"
-        
+
     st.session_state.mappingList.append(rule)
-    st.session_state.mapped.append(field)
 
 def createMatchingForm(field):
-    f,o,p,t = st.columns([5,5,5,1])
+    f, o, p, t = st.columns([5, 5, 5, 1])
     f.info(field)
-    o.selectbox("object",[{"name" : "No Mapping"}] + st.session_state.itemList, format_func=lambda x:x["name"],key=f"object_{field}",label_visibility="collapsed")
+    default_object = st.session_state.get(f"object_{field}", {"name": "No Mapping"})
+    o.selectbox(
+        "object",
+        [{"name": "No Mapping"}] + st.session_state.itemList,
+        format_func=lambda x: x["name"],
+        key=f"object_{field}",
+        index=[i for i, obj in enumerate([{"name": "No Mapping"}] + st.session_state.itemList) if obj["name"] == default_object["name"]][0],
+        label_visibility="collapsed"
+    )
     if st.session_state[f"object_{field}"]["name"] != "No Mapping":
         properties = st.session_state.soo_data_model[st.session_state[f"object_{field}"]["class"]]
-        p.selectbox("Propriété",properties,key=f"property4{field}",label_visibility="collapsed")
+        p.selectbox("Property", properties, key=f"property4{field}", label_visibility="collapsed")
     else:
-        p.selectbox("Propriété",[],key=f"property4{field}",label_visibility="collapsed")
-    t.checkbox("ID",key = f"generateID_{field}")
+        p.selectbox("Property", [], key=f"property4{field}", label_visibility="collapsed")
+    t.checkbox("ID", key=f"generateID_{field}")
 
 def display_existing_rules():
-    ruleFile = {"@context": {
-                        "todo": "define_the_rules_context"
-                    },
-                "graph": st.session_state.mappingList}
-    st.code(json.dumps(ruleFile,indent=4)) 
+    st.session_state.ruleFile = {
+        "@context": {
+            "todo": "define_the_rules_context"
+        },
+        "graph": st.session_state.mappingList
+    }
+    st.code(json.dumps(st.session_state.ruleFile, indent=4))
+
+ 
+########################## API INTEGRATION #####################################
+
+def send_to_api():
+    # Construct the payload
+    payload = {
+        "mapping_rules": st.session_state.ruleFile,
+        "document": st.session_state.data
+    }
+    url = "https://ontobridge-api-dev-934098617065.europe-west1.run.app/ontologies/get_jsonld_from_mapping_rules"
+
+    try:
+        response = requests.post(url, json=payload)
+        if response.status_code == 200:
+            result = response.json()
+            st.success("API call successful.")
+            st.json(result)
+        else:
+            st.error(f"API call failed with status code {response.status_code}")
+            st.error(response.text)
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
 
 ########################## APP LOGIC #####################################
+
 def main():
     st.title("Mapping Page")
     if not('raw_data' in st.session_state and not(st.session_state.raw_data is None)):

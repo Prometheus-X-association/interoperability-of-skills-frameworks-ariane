@@ -100,6 +100,7 @@ def main():
 
     if st.sidebar.button("Reset",use_container_width=True):
         initialization()
+        st.rerun()
 
 if __name__ == "__main__":
     main()

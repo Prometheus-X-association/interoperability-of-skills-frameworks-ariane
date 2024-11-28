@@ -45,9 +45,9 @@ def display_framework():
         l,r = st.columns(2)
         
         families = sorted(list(set([skill["category"] for skill in skills])))
-        family = l.selectbox(f"Select skills to match.",options=families,key='selected_family')
+        category = l.selectbox(f"Select skills to match.",options=families,key='selected_category')
     
-        skills_filtered =  [skill for skill in skills if skill["family"] == family]
+        skills_filtered =  [skill for skill in skills if skill["category"] == category]
         skill = r.selectbox(f"Select skills to match.",options=skills_filtered,format_func=lambda x : x["pref_label_value"],key='selected_skill')
     else:
         skill = st.selectbox(f"Select skills to match.",options=skills,format_func=lambda x : x["pref_label_value"],key='selected_skill')
@@ -69,11 +69,11 @@ def get_suggestions(skill_name, framework):
     if not hits:
         st.warning(f"No vector found for skill '{skill_name}'.")
         return []
-    vector = st.session_state.skill_emeddings[skill_name].tolist()
+    vector = st.session_state.skill_embeddings[skill_name].tolist()
 
     type_enum = {
-        "ROME": ["rome:onto/Employment/skill"],
-        "ESCO": ["esco:Occupation"],
+        "ROME": ["rome:onto/Competency", "rome:onto/KnowHowDomain"],
+        "ESCO": ["esco:Skill"],
     }
 
     query = {
@@ -160,16 +160,6 @@ def display_suggestion(skill_name, job, score):
         match_status = get_match_status(skill_name, job["pref_label__value"])
         color = match_status_to_color(match_status)
         st.subheader(f'{job["pref_label__value"]}', divider=color)
-        if st.session_state.target == "ROME" and "broader" in job:
-            # Display ROME-specific information
-            domaine = job["broader"][0][-5:-4]
-            famille = job["broader"][0][-5:-2]
-            metier = job["broader"][0][-5:]
-            st.caption(
-                f'**Domaine:** {st.session_state.rome_names.get(domaine, domaine)} '
-                f'**Famille:** {st.session_state.rome_names.get(famille, famille)} '
-                f'**Métier:** {st.session_state.rome_names.get(metier, metier)}'
-            )
     with r_col:
         st.metric("Score", round(score, 2))
 
@@ -279,8 +269,8 @@ def get_vectors():
     descriptions = [skill["description"] for skill in data_to_match]
     labels = [skill["pref_label_value"] for skill in data_to_match]
     encoded_vectors = list(stqdm(model.encode(descriptions), unit="skills"))
-    skill_emeddings = dict(zip(labels, encoded_vectors))
-    st.session_state.skill_emeddings = skill_emeddings
+    skill_embeddings = dict(zip(labels, encoded_vectors))
+    st.session_state.skill_embeddings = skill_embeddings
 
 
 ################################### APP LOGIC #####################################################################
@@ -297,7 +287,7 @@ def matching_page():
         st.error("No data to match. Please go back to the mapping page and generate the data.")
     else:
         st.session_state.total_skills = len(st.session_state.data_to_match["skills"])
-        if "skill_emeddings" not in st.session_state:
+        if "skill_embeddings" not in st.session_state:
             with st.spinner(f"Processing the skills"):
                 get_vectors()
             
