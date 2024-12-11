@@ -6,10 +6,11 @@ import json
 
 ################################### SKILL MATCHING #############################################################
 
-@st.cache_data
+@st.cache_data(ttl=3600)
 def skill_match(formation_title, target_framework):
     # Get the formation vector
     embeddings = st.session_state.formation_embeddings
+    
     if formation_title not in embeddings:
         st.warning(f"No embeddings found for {formation_title}.")
         return []
@@ -76,7 +77,7 @@ def display_sidebar():
 
     all_formations = list(st.session_state.data_to_match["formations"].values())
 
-    formation_titles = [formation["pref_label_value"] for formation in all_formations]
+    formation_titles = [formation["prefLabel"] for formation in all_formations]
     selectedFormationTitle = st.sidebar.selectbox(
         "Select your Item",
         formation_titles,
@@ -84,7 +85,7 @@ def display_sidebar():
     )
 
     st.session_state.selectedFormation = next(
-        (f for f in all_formations if f["pref_label_value"] == st.session_state.selectedFormationTitle), None
+        (f for f in all_formations if f["prefLabel"] == st.session_state.selectedFormationTitle), None
     )
 
 ################################### TRAINING DISPLAY #############################################################
@@ -94,7 +95,7 @@ def display_formation():
 
     if st.session_state.selectedFormation:
         formation = st.session_state.selectedFormation
-        st.subheader(formation["pref_label_value"], divider="blue")
+        st.subheader(formation["prefLabel"], divider="blue")
         st.write(formation.get("description", "No description available."))
 
 ################################### SKILL SUGGESTIONS #############################################################
@@ -103,7 +104,7 @@ def display_rome_skills():
     tabs = st.tabs(["Validation","All Matches"])
     with tabs[0]:
         st.header("Suggested Skills", divider="red")
-        formation_title = st.session_state.selectedFormation["pref_label_value"]
+        formation_title = st.session_state.selectedFormation["prefLabel"]
         suggestions = skill_match(formation_title, st.session_state.target)
         suggestions_df = pd.DataFrame(suggestions)
 
@@ -158,10 +159,10 @@ def get_vectors():
     model = st.session_state.model
     data_to_match = st.session_state.data_to_match["formations"].values()
     descriptions = [formation["description"] for formation in data_to_match]
-    labels = [formation["pref_label_value"] for formation in data_to_match]
+    labels = [formation["prefLabel"] for formation in data_to_match]
     encoded_vectors = list(stqdm(model.encode(descriptions), unit="experiences"))
-    formation_emeddings = dict(zip(labels, encoded_vectors))
-    st.session_state.formation_embeddings = formation_emeddings
+    formation_embeddings = dict(zip(labels, encoded_vectors))
+    st.session_state.formation_embeddings = formation_embeddings
 
 ################################### APP LOGIC #############################################################
 
@@ -169,7 +170,7 @@ def skill_extraction():
     st.set_page_config(layout="wide")
     st.title("Training Enhancing Tool")
 
-    if 'data_to_match' not in st.session_state or not st.session_state.data_to_match:
+    if 'data_to_match' not in st.session_state or len(st.session_state.data_to_match["formations"])==0:
         st.error("No data to match. Please go back to the mapping page and generate the data.")
     elif 'data_to_match' in st.session_state and 'formations' not in st.session_state.data_to_match:
         st.warning("No educational experiences in the mappings.")
@@ -179,10 +180,8 @@ def skill_extraction():
             # with st.spinner(f"Processing the formations"):
             get_vectors()
             st.session_state["bias"] = json.load(open("app/data/formationGEN/bias.json"))
-   
         if "validated_skills" not in st.session_state:
             st.session_state["validated_skills"] = pd.DataFrame(columns=["Formation Title", "Framework", "Skill Label"])
-
         display_sidebar()
         display_formation()
         display_rome_skills()

@@ -1,3 +1,7 @@
 streamlit
 streamlit_extras
 rdflib
+protobuf==3.20.3
+sentence-transformers
+elasticsearch
+stqdm

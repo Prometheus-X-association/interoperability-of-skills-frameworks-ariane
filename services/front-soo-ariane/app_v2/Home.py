@@ -6,7 +6,7 @@ import json
 def initialization():
     st.session_state.edTechID = "edTechID"
     st.session_state.Experience = [("type", ["educational", "professional", "vocational", "personnality Test"]), ("status", ["past", "ongoing", "suggested"])]
-    st.session_state.Skill = [("type", ["Hard Skill", "Soft Skill", "Mixed"])]
+    st.session_state.Skill = []
     st.session_state.Polarity = []
     st.session_state.Profile = []
 
@@ -78,9 +78,11 @@ def initialization():
         cloud_id=cloud_id, api_key=(api_key_1, api_key_2)
     )
     st.session_state['initialized'] = True
-    
-    st.session_state.model = SentenceTransformer("Sahajtomar/french_semantic")
     st.session_state.rome_names = json.load(open("app/data/ROME/ROME_names.json", "rb"))
+    
+    with st.spinner("Charging model ..."):
+        st.session_state.model = SentenceTransformer("app/data/model")
+        st.rerun()
 
 def main():
     st.set_page_config(page_title="Onthology Mapping", layout="wide")
@@ -97,6 +99,7 @@ def main():
     
     if file is not None:
         st.session_state.raw_data = file
+        st.success("You can proceed to the next interface")
 
     if st.sidebar.button("Reset",use_container_width=True):
         initialization()
