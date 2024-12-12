@@ -4,28 +4,28 @@
  },
  "graph": [
   {
-   "address": "address",
+   "adress": "456 Oak St, Anytown, USA",
    "email": "alice.smith@example.com",
    "experience": [
-    "tr:__xp-1__",
-    "tr:__xp-2__",
-    "tr:__xp-3__",
-    "tr:__xp-4__",
-    "tr:__xp-5__",
-    "tr:__xp-6__"
+    "tr:__experience-id-1__",
+    "tr:__experience-id-2__",
+    "tr:__experience-id-3__",
+    "tr:__experience-id-4__",
+    "tr:__experience-id-5__",
+    "tr:__experience-id-6__"
    ],
-   "id": "tr:__generated-id-1__",
+   "id": "tr:__profile-id-1__",
    "name": "Alice Smith",
-   "polarity": "tr:__polarity-1__",
+   "polarity": "tr:__polarity-id-1__",
    "type": "soo:Profile"
   },
   {
    "company": "Tech Corp",
    "dateFrom": "2017-06-01",
    "dateTo": "2019-08-01",
-   "experienceStatus": "term:experience/type/past",
+   "experienceStatus": "term:experience/status/past",
    "experienceType": "term:experience/type/professional",
-   "id": "tr:__xp-1__",
+   "id": "tr:__experience-id-1__",
    "prefLabel": {
     "@language": "en",
     "@value": "Software Engineer"
@@ -36,9 +36,9 @@
    "company": "Innovate Ltd",
    "dateFrom": "2019-09-01",
    "dateTo": "2023-01-01",
-   "experienceStatus": "term:experience/type/past",
+   "experienceStatus": "term:experience/status/past",
    "experienceType": "term:experience/type/professional",
-   "id": "tr:__xp-2__",
+   "id": "tr:__experience-id-2__",
    "prefLabel": {
     "@language": "en",
     "@value": "Lead Engineer"
@@ -48,7 +48,7 @@
   {
    "company": "Scrum Alliance",
    "dateFrom": "2018-01-01",
-   "id": "tr:__xp-3__",
+   "id": "tr:__experience-id-3__",
    "prefLabel": {
     "@language": "en",
     "@value": "Certified Scrum Master"
@@ -58,7 +58,7 @@
   {
    "company": "Amazon",
    "dateFrom": "2021-01-01",
-   "id": "tr:__xp-4__",
+   "id": "tr:__experience-id-4__",
    "prefLabel": {
     "@language": "en",
     "@value": "AWS Certified Solutions Architect"
@@ -73,9 +73,9 @@
     "@language": "en",
     "@value": "Managing a team of software engineers"
    },
-   "experienceStatus": "term:experience/type/suggested",
+   "experienceStatus": "term:experience/status/suggested",
    "experienceType": "term:experience/type/professional",
-   "id": "tr:__xp-5__",
+   "id": "tr:__experience-id-5__",
    "location": "Boston, USA",
    "prefLabel": {
     "@language": "en",
@@ -91,9 +91,9 @@
     "@language": "en",
     "@value": "Overseeing product development"
    },
-   "experienceStatus": "term:experience/type/suggested",
+   "experienceStatus": "term:experience/status/suggested",
    "experienceType": "term:experience/type/professional",
-   "id": "tr:__xp-6__",
+   "id": "tr:__experience-id-6__",
    "location": "Seattle, USA",
    "prefLabel": {
     "@language": "en",
@@ -102,30 +102,35 @@
    "type": "soo:Experience"
   },
   {
-   "id": "tr:__polarity-1__",
-   "polarityScale": "term:interim/polarity/scale/1",
-   "polarityValue": "term:interim/polarity/value/1",
+   "id": "tr:__polarity-id-1__",
+   "polarityScale": "term:interim/polarity/66532bfe3a49d907a44ce3cbc6690d5a/scale",
+   "polarityValue": "term:interim/polarity/66532bfe3a49d907a44ce3cbc6690d5a/value/0",
+   "profile": "tr:__profile-id-1__",
    "type": "soo:Polarity"
   },
   {
-   "id": "term:interim/polarity/scale/1",
+   "id": "term:interim/polarity/66532bfe3a49d907a44ce3cbc6690d5a/scale",
    "prefLabel": [
     {
-     "@language": "en",
-     "@value": "Interim collection for openToInterim"
+     "language": "en",
+     "value": "interim collection for polarity in openToInterim"
     }
    ],
-   "type": "skos:Collection"
+   "type": [
+    "skos:Collection"
+   ]
   },
   {
-   "id": "term:interim/polarity/value/1",
+   "id": "term:interim/polarity/66532bfe3a49d907a44ce3cbc6690d5a/value/0",
+   "memberOf": "term:interim/polarity/66532bfe3a49d907a44ce3cbc6690d5a/scale",
    "notation": 0,
    "prefLabel": [
     {
-     "@language": "en",
-     "@value": "0"
+     "language": "en",
+     "value": "0"
     }
-   ]
+   ],
+   "type": "skos:Concept"
   }
  ]
 }
