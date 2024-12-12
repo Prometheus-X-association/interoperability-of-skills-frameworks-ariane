@@ -15,13 +15,14 @@ def get_path_depth(path: str) -> int:
 
 
 class RulesTree:
-    name: str = ""
-    parent = None
-    depth = 0
-    children = {}
-    rules: List[Rule] = []
-    matches = []
-    parameters = []
+    def __init__(self) -> None:
+        self.name: str = ""
+        self.parent = None
+        self.depth = 0
+        self.children = {}
+        self.rules: List[Rule] = []
+        self.matches = []
+        self.parameters = []
 
     def add_rule(self, rule: Rule, subPath="") -> None:
         if subPath == "":
