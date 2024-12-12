@@ -30,18 +30,18 @@
     "@value": "S'investir, orienter son action et nourrir une satisfaction et un enthousiasme vis-\u00e0-vis d'une organisation, d'un projet collectif ou d'un objectif personnel"
    },
    "id": "tr:__skill-id-2__",
-   "mapping": "term:jobready_2/mapping/7aca34124c5b536550f010c03af58720",
+   "mapping": "term:jobready_2/mapping/bb501d65493910fa279a82f9742c125f",
    "suggestions": [
-    "term:jobready_2/mapping/7aca34124c5b536550f010c03af58720",
-    "term:jobready_2/mapping/3fa67c78d952c6cdc5baccaad99e6491",
-    "term:jobready_2/mapping/6478a71e3835c9e00fddb6b353681830",
-    "term:jobready_2/mapping/518b9b5cab8f92dc1327cf593a6f8ed7",
     "term:jobready_2/mapping/bb501d65493910fa279a82f9742c125f",
     "term:jobready_2/mapping/01aa2902ecd520c3404027e4bfffec7d",
     "term:jobready_2/mapping/f46bcf37b48f427a73ed8c2de26e6873",
     "term:jobready_2/mapping/e3fe1ce93e7c6363259012a6ff7f5fc5",
     "term:jobready_2/mapping/1cd77fe4d92a19347a6e200f2f1fec6c",
-    "term:jobready_2/mapping/0f2d54cd7fb9db7d8e3cd7e8a5024ace"
+    "term:jobready_2/mapping/0f2d54cd7fb9db7d8e3cd7e8a5024ace",
+    "term:jobready_2/mapping/7aca34124c5b536550f010c03af58720",
+    "term:jobready_2/mapping/3fa67c78d952c6cdc5baccaad99e6491",
+    "term:jobready_2/mapping/6478a71e3835c9e00fddb6b353681830",
+    "term:jobready_2/mapping/518b9b5cab8f92dc1327cf593a6f8ed7"
    ],
    "type": "soo:Skill"
   },
@@ -187,66 +187,6 @@
    "score": 0
   },
   {
-   "id": "term:jobready_2/mapping/7aca34124c5b536550f010c03af58720",
-   "mappingType": "skos:exactMatch",
-   "parent": "tr:__skill-id-2__",
-   "prefLabel": {
-    "@language": "fr",
-    "@value": "Optronique"
-   },
-   "score": 0,
-   "type": [
-    "rome:onto/Knowledge",
-    "rome:onto/Competency",
-    "skos:Concept"
-   ]
-  },
-  {
-   "id": "term:jobready_2/mapping/3fa67c78d952c6cdc5baccaad99e6491",
-   "mappingType": "skos:exactMatch",
-   "parent": "tr:__skill-id-2__",
-   "prefLabel": {
-    "@language": "fr",
-    "@value": "Gestes et postures de manutention"
-   },
-   "score": 0,
-   "type": [
-    "rome:onto/Knowledge",
-    "rome:onto/Competency",
-    "skos:Concept"
-   ]
-  },
-  {
-   "id": "term:jobready_2/mapping/6478a71e3835c9e00fddb6b353681830",
-   "mappingType": "skos:exactMatch",
-   "parent": "tr:__skill-id-2__",
-   "prefLabel": {
-    "@language": "fr",
-    "@value": "Techniques de soudage"
-   },
-   "score": 0,
-   "type": [
-    "rome:onto/Knowledge",
-    "rome:onto/Competency",
-    "skos:Concept"
-   ]
-  },
-  {
-   "id": "term:jobready_2/mapping/518b9b5cab8f92dc1327cf593a6f8ed7",
-   "mappingType": "skos:exactMatch",
-   "parent": "tr:__skill-id-2__",
-   "prefLabel": {
-    "@language": "fr",
-    "@value": "Caract\u00e9ristiques des visages et des peaux"
-   },
-   "score": 0,
-   "type": [
-    "rome:onto/Knowledge",
-    "rome:onto/Competency",
-    "skos:Concept"
-   ]
-  },
-  {
    "id": "term:jobready_2/mapping/bb501d65493910fa279a82f9742c125f",
    "mappingType": "skos:exactMatch",
    "parent": "tr:__skill-id-2__",
@@ -328,6 +268,66 @@
    "prefLabel": {
     "@language": "fr",
     "@value": "Types d'armes blanches"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Knowledge",
+    "rome:onto/Competency",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:jobready_2/mapping/7aca34124c5b536550f010c03af58720",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__skill-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Optronique"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Knowledge",
+    "rome:onto/Competency",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:jobready_2/mapping/3fa67c78d952c6cdc5baccaad99e6491",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__skill-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Gestes et postures de manutention"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Knowledge",
+    "rome:onto/Competency",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:jobready_2/mapping/6478a71e3835c9e00fddb6b353681830",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__skill-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Techniques de soudage"
+   },
+   "score": 0,
+   "type": [
+    "rome:onto/Knowledge",
+    "rome:onto/Competency",
+    "skos:Concept"
+   ]
+  },
+  {
+   "id": "term:jobready_2/mapping/518b9b5cab8f92dc1327cf593a6f8ed7",
+   "mappingType": "skos:exactMatch",
+   "parent": "tr:__skill-id-2__",
+   "prefLabel": {
+    "@language": "fr",
+    "@value": "Caract\u00e9ristiques des visages et des peaux"
    },
    "score": 0,
    "type": [
