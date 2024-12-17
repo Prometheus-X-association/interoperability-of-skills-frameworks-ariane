@@ -5,39 +5,39 @@
   
   "graph": [
     {
-      "id": "tr:__experience-1__",
+      "id": "tr:__experience-id-1__",
       "type": "soo:Experience",
       "experienceType": "term:experience/type/personalityTest",
       "experienceStatus": "term:experience/type/past",
       "prefLabel": {"@value": "Mes centres d intérêt", "@language": "fr"},
-      "skill": ["tr:__skill-1__", "tr:__skill-2__", "tr:__skill-3__"]
+      "skill": ["tr:__skill-id-1__", "tr:__skill-id-2__", "tr:__skill-id-3__"]
     }, 
     {
-      "id": "tr:__skill-1__",
+      "id": "tr:__skill-id-1__",
       "type": "soo:Skill",
       "category": "term:skills/category/riasec",
-      "experience": "tr:__experience-1__",
+      "experience": "tr:__experience-id-1__",
       "prefLabel": {"@value": "ARTISTIQUE" , "@language": "fr"},
-      "skillLevelScale": "term:PITANGOO/skill/scale/1",
-      "skillLevelValue": "term:PITANGOO/skill/level/0.6"
+      "skillLevelScale": "term:pitangoo/skill/1e722f5abafbfa1375af50041eef3246/scale",
+      "skillLevelValue": "term:pitangoo/skill/1e722f5abafbfa1375af50041eef3246/value/0.6"
     },
     {
-      "id": "term:PITANGOO/skill/level/0.6", 
+      "id": "term:pitangoo/skill/1e722f5abafbfa1375af50041eef3246/value/0.6", 
       "type": "skos:Concept",
       "prefLabel": {"@value": "0.6", "@language": "en"},
       "notation": 0.6
     },
     {
-      "id": "tr:__skill-2__",
+      "id": "tr:__skill-id-2__",
       "type": "soo:Skill",
       "category": "term:skills/category/riasec",
-      "experience": "tr:__experience-1__",
+      "experience": "tr:__experience-id-1__",
       "prefLabel": {"@value": "RÉALISTE" , "@language": "fr"},
-      "skillLevelScale": "term:PITANGOO/skill/scale/1",
-      "skillLevelValue": "term:PITANGOO/skill/level/0.8"
+      "skillLevelScale": "term:pitangoo/skill/1e722f5abafbfa1375af50041eef3246/scale",
+      "skillLevelValue": "term:pitangoo/skill/1e722f5abafbfa1375af50041eef3246/value/0.8"
     },
     {
-      "id": "term:PITANGOO/skill/level/0.8", 
+      "id": "term:pitangoo/skill/1e722f5abafbfa1375af50041eef3246/value/0.8", 
       "type": "skos:Concept",
       "prefLabel": {"@value": "0.8", "@language": "en"},
       "notation": 0.8
@@ -45,13 +45,13 @@
 
 
     {
-      "id": "tr:__skill-3__",
+      "id": "tr:__skill-id-3__",
       "type": "soo:Skill",
       "category": "term:skills/category/riasec",
-      "experience": "tr:__experience-1__",
+      "experience": "tr:__experience-id-1__",
       "prefLabel": {"@value": "ENTREPRENEUR" , "@language": "fr"},
-      "skillLevelScale": "term:PITANGOO/skill/scale/1",
-      "skillLevelValue": "term:PITANGOO/skill/level/0.6"
+      "skillLevelScale": "term:pitangoo/skill/1e722f5abafbfa1375af50041eef3246/scale",
+      "skillLevelValue": "term:pitangoo/skill/1e722f5abafbfa1375af50041eef3246/value/0.6"
     }
 
   ]
