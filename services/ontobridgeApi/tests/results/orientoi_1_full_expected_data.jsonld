@@ -10,10 +10,10 @@
    },
    "experienceStatus": "term:experience/type/suggested",
    "experienceType": "term:experience/type/professional",
-   "family": "term:orientoi/family/111",
-   "id": "tr:__experience-1__",
+   "family": "term:orientoi_1/family/d9e8e5e07211aea6a79908188885427b/M\u00e9tier",
+   "id": "tr:__experience-id-1__",
    "mapping": "esco:adc6dc11-3376-xxxx",
-   "polarity": "tr:__polarity-1__",
+   "polarity": "tr:__polarity-id-1__",
    "prefLabel": {
     "@language": "fr",
     "@value": "Agent / Agente de centre de tri de dechet"
@@ -31,7 +31,12 @@
     "@language": "fr",
     "@value": "Tri de d\u00e9chet"
    },
-   "type": "esco:Occupation"
+   "score": 1.8860883,
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
   },
   {
    "id": "tr:sugg/1",
@@ -48,9 +53,10 @@
    "type": "mms:Suggestion"
   },
   {
-   "id": "tr:__polarity-1__",
-   "polarityScale": "term:orientoi/polarity/scale/1",
-   "polarityValue": "term:orientoi/polarity/value/1",
+   "experience": "tr:__experience-id-1__",
+   "id": "tr:__polarity-id-1__",
+   "polarityScale": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9/scale",
+   "polarityValue": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9/value/Je ne sais pas",
    "type": "soo:Polarity"
   },
   {
@@ -63,7 +69,7 @@
    "type": "skos:Concept"
   },
   {
-   "id": "term:orientoi/family/111",
+   "id": "term:orientoi_1/family/d9e8e5e07211aea6a79908188885427b/M\u00e9tier",
    "memberOf": "term:orientoi/collection",
    "prefLabel": {
     "@language": "fr",
@@ -78,10 +84,10 @@
    },
    "experienceStatus": "term:experience/type/suggested",
    "experienceType": "term:experience/type/professional",
-   "family": "term:orientoi/family/222",
-   "id": "tr:__experience-2__",
+   "family": "term:orientoi_1/family/d9e8e5e07211aea6a79908188885427b/Secteur d''activit\u00e9",
+   "id": "tr:__experience-id-2__",
    "mapping": "esco:adc6dc11-3376-yyyyyy",
-   "polarity": "tr:__polarity-2__",
+   "polarity": "tr:__polarity-id-2__",
    "prefLabel": {
     "@language": "fr",
     "@value": "Social"
@@ -99,7 +105,11 @@
     "@language": "fr",
     "@value": "Social"
    },
-   "type": "esco:Occupation"
+   "type": [
+    "esco:Occupation",
+    "skos:Concept",
+    "esco:MemberConcept"
+   ]
   },
   {
    "id": "tr:sugg/3",
@@ -116,13 +126,14 @@
    "type": "mms:Suggestion"
   },
   {
-   "id": "tr:__polarity-2__",
-   "polarityScale": "term:orientoi/polarity/scale/1",
-   "polarityValue": "term:orientoi/polarity/value/2",
+   "experience": "tr:__experience-id-2__",
+   "id": "tr:__polarity-id-2__",
+   "polarityScale": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9/scale",
+   "polarityValue": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9/value/\u00e7a me correspond",
    "type": "soo:Polarity"
   },
   {
-   "id": "term:orientoi/polarity/value/2",
+   "id": "term:orientoi_1/polarity/c3b52713f081d481375e28106c72acb9/value/\u00e7a me correspond",
    "notation": "\u00e7a me correspond",
    "prefLabel": {
     "@language": "fr",
@@ -131,7 +142,7 @@
    "type": "skos:Concept"
   },
   {
-   "id": "term:orientoi/family/222",
+   "id": "term:orientoi_1/family/d9e8e5e07211aea6a79908188885427b/Secteur d''activit\u00e9",
    "memberOf": "term:orientoi/collection",
    "prefLabel": {
     "@language": "fr",

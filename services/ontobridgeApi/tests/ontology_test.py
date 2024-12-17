@@ -160,7 +160,7 @@ def test_apply_tree_rules_orientoi():
 
 
 def test_apply_tree_rules_pitangoo():
-    providerName = "PITANGOO"
+    providerName = "pitangoo"
 
     rules = get_rules(providerName)
     minimal_output = get_tests(f"{providerName}-minimal.json", providerName)
