@@ -72,7 +72,7 @@ class TermMatchingEngine:
             }
             }
             """,
-                "skill": """
+            "skill": """
             query VECEscoSkill($queryVector: [Float]) {
             esco(queryVector: $queryVector) {
                 Skill {
@@ -173,17 +173,19 @@ class TermMatchingEngine:
             skos(id: $skosId) {
                 Collection {
                     id
+                    type
                     prefLabel {
                         value
+                        language
                     }
-                    member {
-                        ... on Concept {
-                            id
-                            prefLabel {
-                                value
-                            }
-                        }
-                    }
+                    # member {
+                    #    ... on Concept {
+                    #        id
+                    #        prefLabel {
+                    #            value
+                    #        }
+                    #    }
+                    # }
                 }
             }
         }
@@ -210,19 +212,21 @@ class TermMatchingEngine:
         result = self.graphql_engine.get_graphql_result(query, variables)
         return result["deleteCollection"]
 
-    def create_collection(self, collection_id, collection_label):
+    def create_collection(self, collection_id, collection_label, collection_language = 'en'):
         query = """
         mutation CreateCollection($input: createCollectionInput) {
             createCollection(input: $input) {
                 id
+                type
                 prefLabel {
                     value
+                    language
                 }
             }
         }
         """
 
-        variables = {"input": {"data": {"id": collection_id, "prefLabel": [{"value": collection_label}]}}}
+        variables = {"input": {"data": {"id": collection_id, "prefLabel": [{"value": collection_label, "language": collection_language}]}}}
 
         result = self.graphql_engine.get_graphql_result(query, variables)
         return result["createCollection"]
@@ -236,7 +240,7 @@ class TermMatchingEngine:
         concept_pref_label: str,
         collection_pref_label: str,
         path: str = '',
-    ) -> dict:
+    ) -> List[dict]:
         # Find or create the concept
 
         concept = self.search_for_concept(concept_id)
@@ -246,9 +250,11 @@ class TermMatchingEngine:
             collection_exist = len(collection) >= 1
             if not collection_exist:
                 collection_label = f"{provider_name} collection for {collection_pref_label} in {path}"
-                new_collection = self.create_collection(collection_id, collection_label)
+                collection = self.create_collection(collection_id, collection_label)
             concept = self.create_concept(concept_id, concept_pref_label, collection_id)
-        return concept
+        else: 
+            collection = self.search_for_collection(collection_id)[0]
+        return [concept, collection]
 
     def generate(self, documents: List[dict], by_tree: bool = True) -> dict:
         instances = {}
@@ -277,8 +283,8 @@ class TermMatchingEngine:
                     term_in_document["notation"] = instance["__family__"]["value"]
                     term_in_document["type"] = "skos:Concept"
                     term_in_document["prefLabel"] = {}
-                    term_in_document["prefLabel"]["@language"] = instance["__family__"]["language"]
-                    term_in_document["prefLabel"]["@value"] = instance["__family__"]["str_value"]
+                    term_in_document["prefLabel"]["language"] = instance["__family__"]["language"]
+                    term_in_document["prefLabel"]["value"] = instance["__family__"]["str_value"]
                     documents["graph"].append(term_in_document)
                     
                     if not familyCollection in instances:
@@ -289,6 +295,7 @@ class TermMatchingEngine:
                         documents["graph"].append(collection_in_document)
                     
                 instance["family"] = familyId
+                del instance["__family__"] # delete the marker from the instance
             
             if "__term__" in instance:
                 concept_pref_label = instance["__term__"]["str_value"]  # 0.8
@@ -303,15 +310,15 @@ class TermMatchingEngine:
                 if instance["__term__"]["targetFunction"] == 'no:find-or-create-term':
                     collection_category = 'term'
 
-                skill_level_value = f'term:{provider_name}/{str.lower(collection_pref_label)}/{md5(instance["__term__"]["scale_path"])}/level/{concept_pref_label}'
-                skill_level_scale = (
-                    f'term:{provider_name}/{str.lower(collection_pref_label)}/{md5(instance["__term__"]["scale_path"])}'
-                )
+                skill_level_identifier = f'term:{provider_name}/{str.lower(collection_pref_label)}/{md5(instance["__term__"]["scale_path"])}'
+                skill_level_value = f'{skill_level_identifier}/value/{concept_pref_label}'
+                skill_level_scale = f'{skill_level_identifier}/scale'
+                
                 concept_id = skill_level_value
                 collection_id = skill_level_scale
 
                 if not concept_id in instances:
-                    term = self.get_gql_create_or_find_term(
+                    term, collection = self.get_gql_create_or_find_term(
                         provider_name,
                         concept_id,
                         collection_id,
@@ -320,24 +327,29 @@ class TermMatchingEngine:
                         instance["__term__"]["scale_path"],
                     )
                     instances[concept_id] = term
+                    instances[collection_id] = collection
                     term_in_document = {}
                     term_in_document["id"] = skill_level_value
                     term_in_document["memberOf"] = skill_level_scale
                     term_in_document["notation"] = instance["__term__"]["value"]
                     term_in_document["type"] = "skos:Concept"
-                    term_in_document["prefLabel"] = {}
-                    term_in_document["prefLabel"]["@language"] = instance["__term__"]["language"]
-                    term_in_document["prefLabel"]["@value"] = instance["__term__"]["str_value"]
+                    prefLabel = {}
+                    prefLabel["language"] = instance["__term__"]["language"]
+                    prefLabel["value"] = instance["__term__"]["str_value"]
+                    term_in_document["prefLabel"] = [prefLabel]
                     documents["graph"].append(term_in_document)
+                    documents["graph"].append(collection)
                 if instance["__term__"]["targetFunction"] == 'fno:get-polarity-value': 
                     instance["polarityValue"] = skill_level_value
                     instance["polarityScale"] = skill_level_scale
                 else:
                     instance["skillLevelValue"] = skill_level_value
                     instance["skillLevelScale"] = skill_level_scale
+                    
+                del instance["__term__"] # delete the marker in the instance
 
-        for instance in documents["graph"]:
-            if "__term__" in instance:
-                del instance["__term__"]
+        # for instance in documents["graph"]:
+        #     if "__term__" in instance:
+        #         del instance["__term__"]
 
         return documents

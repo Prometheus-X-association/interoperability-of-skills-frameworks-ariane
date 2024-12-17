@@ -1,7 +1,7 @@
 from api.engines.ontology_engine.document_tree import DocumentTreeFactory
 from api.engines.ontology_engine.providers import get_rules
 from tests.test_tools import get_tests
-
+import pprint
 
 def test_document_tree_interim():
     providerName = "interim"
@@ -23,6 +23,11 @@ def test_document_tree_gamingtest():
     rules_tree = DocumentTreeFactory.generate_rules_tree(provider_rules=rules)
     print("*--------------------------------------------------*")
     print(DocumentTreeFactory.display_rules_tree(rules_tree))
+    print(dir(rules_tree.rules))
+    print('///////////////')
+    print(rules)
+    print(vars(rules_tree))
+    pprint.pprint(rules_tree.rules)
 
 
 def test_document_tree_jobready_2():
@@ -32,5 +37,5 @@ def test_document_tree_jobready_2():
     minimal_output = get_tests(f"{providerName}.json", providerName)
 
     rules_tree = DocumentTreeFactory.generate_rules_tree(provider_rules=rules)
-    print("*--------------------------------------------------*")
+    print("\n *--------------------------------------------------*")
     print(DocumentTreeFactory.display_rules_tree(rules_tree))

@@ -26,8 +26,8 @@
     "@language": "fr",
     "@value": "ARTISTIQUE"
    },
-   "skillLevelScale": "term:PITANGOO/skill/1e722f5abafbfa1375af50041eef3246",
-   "skillLevelValue": "term:PITANGOO/skill/1e722f5abafbfa1375af50041eef3246/level/0.6",
+   "skillLevelScale": "term:pitangoo/skill/1e722f5abafbfa1375af50041eef3246/scale",
+   "skillLevelValue": "term:pitangoo/skill/1e722f5abafbfa1375af50041eef3246/value/0.6",
    "type": "soo:Skill"
   },
   {
@@ -38,8 +38,8 @@
     "@language": "fr",
     "@value": "R\u00c9ALISTE"
    },
-   "skillLevelScale": "term:PITANGOO/skill/1e722f5abafbfa1375af50041eef3246",
-   "skillLevelValue": "term:PITANGOO/skill/1e722f5abafbfa1375af50041eef3246/level/0.8",
+   "skillLevelScale": "term:pitangoo/skill/1e722f5abafbfa1375af50041eef3246/scale",
+   "skillLevelValue": "term:pitangoo/skill/1e722f5abafbfa1375af50041eef3246/value/0.8",
    "type": "soo:Skill"
   },
   {
@@ -50,29 +50,57 @@
     "@language": "fr",
     "@value": "ENTREPRENEUR"
    },
-   "skillLevelScale": "term:PITANGOO/skill/1e722f5abafbfa1375af50041eef3246",
-   "skillLevelValue": "term:PITANGOO/skill/1e722f5abafbfa1375af50041eef3246/level/0.6",
+   "skillLevelScale": "term:pitangoo/skill/1e722f5abafbfa1375af50041eef3246/scale",
+   "skillLevelValue": "term:pitangoo/skill/1e722f5abafbfa1375af50041eef3246/value/0.6",
    "type": "soo:Skill"
   },
   {
-   "id": "term:PITANGOO/skill/1e722f5abafbfa1375af50041eef3246/level/0.6",
-   "memberOf": "term:PITANGOO/skill/1e722f5abafbfa1375af50041eef3246",
+   "id": "term:pitangoo/skill/1e722f5abafbfa1375af50041eef3246/value/0.6",
+   "memberOf": "term:pitangoo/skill/1e722f5abafbfa1375af50041eef3246/scale",
    "notation": 0.6,
-   "prefLabel": {
-    "@language": "en",
-    "@value": "0.6"
-   },
+   "prefLabel": [
+    {
+     "language": "en",
+     "value": "0.6"
+    }
+   ],
    "type": "skos:Concept"
   },
   {
-   "id": "term:PITANGOO/skill/1e722f5abafbfa1375af50041eef3246/level/0.8",
-   "memberOf": "term:PITANGOO/skill/1e722f5abafbfa1375af50041eef3246",
+   "id": "term:pitangoo/skill/1e722f5abafbfa1375af50041eef3246/scale",
+   "prefLabel": [
+    {
+     "language": "en",
+     "value": "pitangoo collection for skill in missions.tendencies.score"
+    }
+   ],
+   "type": [
+    "skos:Collection"
+   ]
+  },
+  {
+   "id": "term:pitangoo/skill/1e722f5abafbfa1375af50041eef3246/value/0.8",
+   "memberOf": "term:pitangoo/skill/1e722f5abafbfa1375af50041eef3246/scale",
    "notation": 0.8,
-   "prefLabel": {
-    "@language": "en",
-    "@value": "0.8"
-   },
+   "prefLabel": [
+    {
+     "language": "en",
+     "value": "0.8"
+    }
+   ],
    "type": "skos:Concept"
+  },
+  {
+   "id": "term:pitangoo/skill/1e722f5abafbfa1375af50041eef3246/scale",
+   "prefLabel": [
+    {
+     "language": "en",
+     "value": "pitangoo collection for skill in missions.tendencies.score"
+    }
+   ],
+   "type": [
+    "skos:Collection"
+   ]
   }
  ]
 }

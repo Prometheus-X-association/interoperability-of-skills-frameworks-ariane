@@ -132,6 +132,8 @@ class RuleEngine:
             else:
                 prefix = rule_tree.parent.name
             for rule in rule_tree.rules:
+                if len(rule_tree.matches) == 0 : 
+                    print('## Log:', 'This rule do not match any Node in source file:', rule)
                 for index, match in enumerate(rule_tree.matches):
                     currentInstance = self.get_instance(rule.targetClass, index, docIndex, prefix)
 
@@ -260,6 +262,7 @@ class RuleEngine:
         self.generate_instances_by_tree(self.rules_tree, docIndex)
 
     def generate(self, documents: List[dict]) -> dict:
+        
         if isinstance(documents, dict):
             documents = [documents]
         rules = deepcopy(self.rules)
