@@ -32,7 +32,8 @@
         "rdf:Property"
       ],
       "domain": [
-        "soo:Experience"
+        "soo:Experience",
+        "soo:Family"
       ],
       "range": [
         "rdf:langstring"
@@ -44,10 +45,11 @@
         "rdf:Property"
       ],
       "domain": [
-        "soo:Experience"
+        "soo:Experience",
+        "soo:Skill"
       ],
       "range": [
-        "rdf:langstring"
+        "soo:Description"
       ]
     },
     {
@@ -99,6 +101,114 @@
       ]
     },
     {
+      "id": "soo:profile",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "soo:Profile"
+      ]
+    },
+    {
+      "id": "soo:company",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:location",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:contractType",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:family",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "soo:Family"
+      ]
+    },
+    {
+      "id": "soo:sourceId",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:polarity",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "soo:Polarity"
+      ]
+    },
+    {
+      "id": "soo:skill",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "soo:Skill"
+      ]
+    },
+    {
+      "id": "soo:sourceDataValue",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Experience"
+      ],
+      "range": [
+        "soo:SourceDataJson"
+      ]
+    },
+    {
       "id": "soo:Skill",
       "type": [
         "rdfs:Class",
@@ -112,7 +222,8 @@
       ],
       "domain": [
         "soo:Skill",
-        "soo:Polarity"
+        "soo:Polarity",
+        "soo:Profile"
       ],
       "range": [
         "soo:Experience"
@@ -155,6 +266,18 @@
       ]
     },
     {
+      "id": "soo:sourceSkillId",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Skill"
+      ],
+      "range": [
+        "skos:Concept"
+      ]
+    },
+    {
       "id": "soo:Polarity",
       "type": [
         "rdfs:Class",
@@ -183,6 +306,154 @@
       ],
       "range": [
         "skos:Concept"
+      ]
+    },
+    {
+      "id": "soo:Profile",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "soo:name",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Profile"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:email",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Profile"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:address",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Profile"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:Family",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "skos:memberOf",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Family"
+      ],
+      "range": [
+        "skos:Collection"
+      ]
+    },
+    {
+      "id": "soo:provider",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Family"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:Description",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "soo:text",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Description"
+      ],
+      "range": [
+        "rdf:langstring"
+      ]
+    },
+    {
+      "id": "soo:url",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Description"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:keywords",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Description"
+      ],
+      "range": [
+        "rdf:langstring"
+      ]
+    },
+    {
+      "id": "soo:imagePath",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:Description"
+      ],
+      "range": [
+        "xsd:string"
+      ]
+    },
+    {
+      "id": "soo:SourceDataJson",
+      "type": [
+        "rdfs:Class",
+        "owl:Class"
+      ]
+    },
+    {
+      "id": "soo:value",
+      "type": [
+        "rdf:Property"
+      ],
+      "domain": [
+        "soo:SourceDataJson"
+      ],
+      "range": [
+        "rdf:JSON"
       ]
     },
     {
