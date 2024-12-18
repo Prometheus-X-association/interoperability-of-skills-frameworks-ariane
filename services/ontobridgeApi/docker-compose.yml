@@ -4,6 +4,7 @@ services:
     build: 
       context: ./
       dockerfile: containers/api-Dockerfile
+      target: runtime
     # environment:
     #   - PORT=8080
     ports:

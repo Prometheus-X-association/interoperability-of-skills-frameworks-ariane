@@ -16,6 +16,7 @@
    ],
    "id": "tr:__profile-id-1__",
    "name": "Alice Smith",
+   "polarity": "tr:__polarity-id-1__",
    "type": "soo:Profile"
   },
   {
@@ -25,16 +26,18 @@
     "scale": "Polarity",
     "scale_path": "openToInterim",
     "str_value": "0",
-    "targetFunction": "fno:find-or-create-term",
+    "targetFunction": "fno:get-polarity-value",
     "value": 0
    },
+   "id": "tr:__polarity-id-1__",
+   "profile": "tr:__profile-id-1__",
    "type": "soo:Polarity"
   },
   {
    "company": "Tech Corp",
    "dateFrom": "2017-06-01",
    "dateTo": "2019-08-01",
-   "experienceStatus": "term:experience/status/suggested",
+   "experienceStatus": "term:experience/status/past",
    "experienceType": "term:experience/type/professional",
    "id": "tr:__experience-id-1__",
    "prefLabel": {
@@ -47,7 +50,7 @@
    "company": "Innovate Ltd",
    "dateFrom": "2019-09-01",
    "dateTo": "2023-01-01",
-   "experienceStatus": "term:experience/status/suggested",
+   "experienceStatus": "term:experience/status/past",
    "experienceType": "term:experience/type/professional",
    "id": "tr:__experience-id-2__",
    "prefLabel": {
@@ -78,11 +81,14 @@
   },
   {
    "company": "Tech Innovators",
+   "contractType": "Full-Time",
    "dateFrom": "2023-03-01",
    "description": {
     "@language": "en",
     "@value": "Managing a team of software engineers"
    },
+   "experienceStatus": "term:experience/status/suggested",
+   "experienceType": "term:experience/type/professional",
    "id": "tr:__experience-id-5__",
    "location": "Boston, USA",
    "prefLabel": {
@@ -93,11 +99,14 @@
   },
   {
    "company": "Creative Solutions",
+   "contractType": "Contract",
    "dateFrom": "2024-02-01",
    "description": {
     "@language": "en",
     "@value": "Overseeing product development"
    },
+   "experienceStatus": "term:experience/status/suggested",
+   "experienceType": "term:experience/type/professional",
    "id": "tr:__experience-id-6__",
    "location": "Seattle, USA",
    "prefLabel": {

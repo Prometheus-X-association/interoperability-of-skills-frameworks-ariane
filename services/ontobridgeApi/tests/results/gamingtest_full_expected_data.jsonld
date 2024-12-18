@@ -5,42 +5,31 @@
  "graph": [
   {
    "dateFrom": "2023-06-28",
-   "id": "tr:__generated-id-1__",
+   "id": "tr:__experience-id-1__",
    "prefLabel": {
     "@language": "en",
     "@value": "Problem-Solving Puzzle"
    },
    "profile": "tr:__profile-id-1__",
-   "result": "Validated",
    "skill": "tr:__skill-id-1__",
    "type": "soo:Experience"
   },
   {
    "email": "zayne.harding@gmail.com",
-   "experience": "tr:__generated-id-1__",
+   "experience": "tr:__experience-id-1__",
    "id": "tr:__profile-id-1__",
    "type": "soo:Profile"
   },
   {
-   "experience": "tr:__generated-id-1__",
-   "id": "tr:__skill-id-1",
+   "experience": "tr:__experience-id-1__",
+   "id": "tr:__skill-id-1__",
    "mapping": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869",
    "skillLevelValue": "Validated",
-   "sourceSkillId": "term:gamingtest/term/55eefc9e28432347635c61fba45b70b5",
    "suggestions": [
     "tr:sugg/1",
     "tr:sugg/2"
    ],
    "type": "soo:Skill"
-  },
-  {
-   "id": "term:gamingtest/term/55eefc9e28432347635c61fba45b70b5",
-   "memberOf": "term:gamingtest/term",
-   "prefLabel": {
-    "@language": "en",
-    "@value": "Problem-Solving"
-   },
-   "type": "skos:Concept"
   },
   {
    "id": "esco:adc6dc11-3376-467b-96c5-9b0a21edc869",
