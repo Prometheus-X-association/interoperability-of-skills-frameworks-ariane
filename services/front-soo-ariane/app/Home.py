@@ -1,31 +1,109 @@
 import streamlit as st
-st.set_page_config(layout="wide")
+from sentence_transformers import SentenceTransformer
+from elasticsearch import Elasticsearch
+import json
+
+def initialization():
+    st.session_state.edTechID = "edTechID"
+    st.session_state.Experience = [("type", ["educational", "professional", "vocational", "personnality Test"]), ("status", ["past", "ongoing", "suggested"])]
+    st.session_state.Skill = []
+    st.session_state.Polarity = []
+    st.session_state.Profile = []
+
+    st.session_state.soo_data_model = {
+        "Experience": {
+            "prefLabel": "rdf:langstring",
+            "description": "soo:Description",
+            "experienceType": "skos:Concept",
+            "experienceStatus": "skos:Concept",
+            "dateFrom": "xsd:date",
+            "dateTo": "xsd:date",
+            "profile": "soo:Profile",
+            "company": "xsd:string",
+            "location": "xsd:string",
+            "contractType": "xsd:string",
+            "family": "soo:Family",
+            "sourceId": "xsd:string",
+            "polarity": "soo:Polarity",
+            "skill": "soo:Skill",
+            "sourceDataValue": "soo:SourceDataJson",
+        },
+        "Skill": {
+            "experience": "soo:Experience",
+            "prefLabel": "rdf:langstring",
+            "description": "xsd:string",
+            "category": "skos:Concept",
+            "skillLevelScale": "skos:OrderedCollection",
+            "skillLevelValue": "skos:Concept",
+            "sourceSkillId": "skos:Concept",
+        },
+        "Polarity": {
+            "experience": "soo:Experience",
+            "polarityScale": "skos:OrderedCollection",
+            "polarityValue": "skos:Concept",
+        },
+        "Profile": {
+            "name": "xsd:string",
+            "email": "xsd:string",
+            "experience": "soo:Experience",
+            "address": "xsd:string",
+        },
+        "Family": {
+            "prefLabel": "rdf:langstring",
+            "memberOf": "skos:Collection",
+            "provider": "xsd:string",
+        },
+        "Description": {
+            "texte": "rdf:langstring",
+            "url": "xsd:string",
+            "keywords": "rdf:langstring",
+            "imagePath": "xsd:string",
+        },
+        "SourceDataJson": {
+            "value": "rdf:JSON",
+        }
+    }
+    st.session_state.itemList = []
+    st.session_state.mappingList = []
+    st.session_state.mapped = []
+    st.session_state.submitted = False
+    
+    cloud_id = (
+        "My_deployment:ZXVyb3BlLXdlc3QxLmdjcC5jbG91ZC5lcy5pbyQ0N2JhMTAxNjhmMzg0M2Mw"
+        "ODE1YTU4MzMxZTEwYTc5OSQ1ZDY0YTg0YzI3MjU0NjA1YTg1OWYwNTcwZDRiZTI3MA=="
+    )
+    api_key_1 = "4M42-IgBTdLMf-o42MtL"
+    api_key_2 = "u2FMsPOUSv2RBwnQXxsC6g"
+    st.session_state.ES = Elasticsearch(
+        cloud_id=cloud_id, api_key=(api_key_1, api_key_2)
+    )
+    st.session_state['initialized'] = True
+    st.session_state.rome_names = json.load(open("app/data/ROME/ROME_names.json", "rb"))
+    
+    with st.spinner("Charging model ..."):
+        st.session_state.model = SentenceTransformer("app/data/model")
+        st.rerun()
 
 def main():
-    st.title("Welcome to your data interoperability platfrom !")
-    cols = st.columns(3)
+    st.set_page_config(page_title="Onthology Mapping", layout="wide")
     
-    with cols[0],st.container(border=True):
-        st.header("1 - Onthology Matching",divider="red")   
-        st.image("app/ressources/picture_OM.png") 
-        st.caption("We designed a Pivot Onthology to facilitate the exchange of data between actors. This tool allow you to map your own onthology to the pivot so that you can send and receive data without having to manually process it each time. The mapping only has to be done once, then each time you send or receive a file, a translation is operated 'on the fly' to accomodate both sides.")
-        st.divider()
-        if st.button("Let's map my data !",use_container_width=True): st.switch_page("pages/1_Onthology_Mapping.py")
-        
-    with cols[1],st.container(border=True):
-        st.header("2 - Framework Mapping",divider="red")   
-        st.image("app/ressources/picture_FM.png")  
-        st.caption("This tool allows you to map your own frameworks to standards of the field such as ESCO or PCS. Using our experience in the field of framework alignement, we focused on user experience with a semi-automatic approach to mapping, using state of the art techniques in NLP, AI and information retrieval.")
-        st.divider()
-        if st.button("Let's map my framework !",use_container_width=True): st.switch_page("pages/2_Framework_Mapping.py")
-        
-    with cols[2],st.container(border=True):
-        st.header("3 - Training Enhancing",divider="red")     
-        st.image("app/ressources/picture_SK.png")    
-        st.caption("Finally, this last tool helps you enhance your training with skill from standard frameworks (ESCO, ROME ...). Using NLP and AI, you will be provided relevant suggestions for each of you training. From then on, you can select which one are the best match.")
-        st.divider()
-        if st.button("Let's enhance my trainings !",use_container_width=True): st.switch_page("pages/3_Traning_Enhancement.py")
+    if 'initialized' not in st.session_state:
+        initialization()
     
-       
+    st.title("Accueil")
+    st.write("Bienvenue sur l'application de mapping et matching.")
+    if "raw_data" not in st.session_state:
+        st.session_state.raw_data = None
+
+    file = st.file_uploader("Rentrez votre fichier de données au format JSON standard.",type="json",key="file")
+    
+    if file is not None:
+        st.session_state.raw_data = file
+        st.success("You can proceed to the next interface")
+
+    if st.sidebar.button("Reset",use_container_width=True):
+        initialization()
+        st.rerun()
+
 if __name__ == "__main__":
     main()

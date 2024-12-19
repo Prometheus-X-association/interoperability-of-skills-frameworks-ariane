@@ -10,7 +10,7 @@ COPY requirements.txt /requirements.txt
 RUN pip install --no-cache-dir -r /requirements.txt
 
 # Copy the contents of the repository into the container
-COPY /app_v2 /app
+COPY /app /app
 
 RUN mkdir -p .streamlit && printf "[server]\nenableCORS = false\n" > .streamlit/config.toml
 
