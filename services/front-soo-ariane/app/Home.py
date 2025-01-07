@@ -76,7 +76,6 @@ def initialization():
     cloud_id = os.getenv('ES_CLOUD_ID')
     api_key_1 = os.getenv('ES_API_KEY_1')
     api_key_2 = os.getenv('ES_API_KEY_2')
-    print('env vars', cloud_id, '///////////:', api_key_1)
     
     st.session_state.ES = Elasticsearch(
         cloud_id=cloud_id, api_key=(api_key_1, api_key_2)
