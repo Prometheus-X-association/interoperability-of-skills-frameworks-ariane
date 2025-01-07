@@ -2,6 +2,11 @@ import streamlit as st
 from sentence_transformers import SentenceTransformer
 from elasticsearch import Elasticsearch
 import json
+from pathlib import Path
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
 
 def initialization():
     st.session_state.edTechID = "edTechID"
@@ -68,12 +73,11 @@ def initialization():
     st.session_state.mapped = []
     st.session_state.submitted = False
     
-    cloud_id = (
-        "My_deployment:ZXVyb3BlLXdlc3QxLmdjcC5jbG91ZC5lcy5pbyQ0N2JhMTAxNjhmMzg0M2Mw"
-        "ODE1YTU4MzMxZTEwYTc5OSQ1ZDY0YTg0YzI3MjU0NjA1YTg1OWYwNTcwZDRiZTI3MA=="
-    )
-    api_key_1 = "4M42-IgBTdLMf-o42MtL"
-    api_key_2 = "u2FMsPOUSv2RBwnQXxsC6g"
+    cloud_id = os.getenv('ES_CLOUD_ID')
+    api_key_1 = os.getenv('ES_API_KEY_1')
+    api_key_2 = os.getenv('ES_API_KEY_2')
+    print('env vars', cloud_id, '///////////:', api_key_1)
+    
     st.session_state.ES = Elasticsearch(
         cloud_id=cloud_id, api_key=(api_key_1, api_key_2)
     )
@@ -81,6 +85,18 @@ def initialization():
     st.session_state.rome_names = json.load(open("app/data/ROME/ROME_names.json", "rb"))
     
     with st.spinner("Charging model ..."):
+        model_identifier = "Sahajtomar/french_semantic"
+        cwd = Path(__file__).parent
+        modelPath = f"{cwd}/data/model"
+
+        if not os.path.exists(f"{modelPath}/config.json"):
+            print('--> Start downloading model to:', modelPath)
+            model = SentenceTransformer(model_identifier)
+            print('--> download ok')
+            model.save(modelPath)
+        else:
+            print('--> Model is locally available, proceed.')
+            model = SentenceTransformer(modelPath)
         st.session_state.model = SentenceTransformer("app/data/model")
         st.rerun()
 
