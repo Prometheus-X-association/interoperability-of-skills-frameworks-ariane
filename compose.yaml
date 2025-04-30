@@ -16,7 +16,7 @@ services:
         restart: true
     restart: unless-stopped
     volumes:
-      - api:/app:rwx
+      - ./api:/app:rwx
       - api_venv:/app/.venv:rwx
     ports:
       - target: 8000
