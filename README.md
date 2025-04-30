@@ -29,7 +29,7 @@ docker compose exec api python -m fixtures.load_all
 - Ariane EscoHelper API Swagger : http://localhost:8080/api/v1/swagger
 - Ariane PostgreSQL : http://localhost:5432
 - Ariane Elasticsearch : http://localhost:9200
-- Ariane Skill Tagging API : http://localhost:8081
+- Ariane Skill Tagging API : http://localhost:8081 (no html UI, POST requests only)
 
 ## Tests
 ```bash
