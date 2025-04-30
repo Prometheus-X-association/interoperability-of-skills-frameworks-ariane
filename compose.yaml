@@ -1,22 +1,22 @@
 services:
-  ai-translator-api: 
+  api: 
     build: 
-      context: ai-translator/api
+      context: api
       dockerfile: Dockerfile
       target: runtime_dev
     depends_on:
-      ai-translator-esco-helper:
+      esco-helper:
         condition: service_healthy
         restart: true
       elasticsearch:
         condition: service_healthy
         restart: true
-      ai-translator-database:
+      database:
         condition: service_healthy
         restart: true
     restart: unless-stopped
     volumes:
-      - ./ai-translator/api:/app:rwx
+      - api:/app:rwx
       - api_venv:/app/.venv:rwx
     ports:
       - target: 8000
@@ -25,40 +25,40 @@ services:
     networks:
       - ariane-network
 
-  ai-translator-ui:
+  ui:
     build: 
-      context: ai-translator/ui
+      context: ui
       dockerfile: Dockerfile
       target: runtime_dev
     depends_on:
-      ai-translator-api:
+      api:
         condition: service_healthy
         restart: true
     restart: unless-stopped
     volumes:
-      - ./ai-translator/ui:/app:rwx
+      - ./ui:/app:rwx
       - ui_venv:/app/.venv:rwx
     ports:
       - target: 8501
         published: 8501
         protocol: tcp
     env_file:
-      - ai-translator/ui/.env
+      - ui/.env
     networks:
       - ariane-network
 
-  ai-translator-admin:
+  admin:
     build: 
-      context: ai-translator/admin
+      context: admin
       dockerfile: Dockerfile
       target: runtime_dev
     depends_on:
-      ai-translator-api:
+      api:
         condition: service_healthy
         restart: true
     restart: unless-stopped
     volumes:
-      - ./ai-translator/admin:/app:rwx
+      - ./admin:/app:rwx
     environment:
       - VITE_API_URL=${VITE_API_URL:-http://localhost:8000}
     ports:
@@ -68,13 +68,13 @@ services:
     networks:
       - ariane-network
   
-  ai-translator-esco-helper: 
+  esco-helper: 
     build: 
-      context: ai-translator/esco-helper
+      context: esco-helper
       dockerfile: Dockerfile
     restart: unless-stopped
     env_file:
-      - ./ai-translator/esco-helper/.env
+      - ./esco-helper/.env
     ports:
       - target: 8080
         published: 8080
@@ -82,7 +82,7 @@ services:
     networks:
       - ariane-network
 
-  ai-translator-database:
+  database:
     image: postgres:${POSTGRES_VERSION:-16}-alpine
     environment:
       - POSTGRES_DB=${POSTGRES_DB:-app_db}
@@ -95,7 +95,7 @@ services:
       start_period: 60s
     volumes:
       - database_data:/var/lib/postgresql/data:rw
-      - ./ai-translator/.data/postgresql:/var/lib/postgresql/data:rw
+      - .data/postgresql:/var/lib/postgresql/data:rw
     ports:
       - target: 5432
         published: 5432
@@ -103,7 +103,7 @@ services:
     networks:
       - ariane-network
 
-  skill-tagging-api: 
+  skill-tagging: 
     build: 
       context: skill-tagging/
       dockerfile: Dockerfile

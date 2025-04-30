@@ -21,7 +21,7 @@ COPY --chown=node:node index.js .
 
 EXPOSE 8080
 
-HEALTHCHECK --start-period=60s CMD curl -f http://ai-translator-esco-helper:8080/api/v1/swagger || exit 1
+HEALTHCHECK --start-period=60s CMD curl -f http://esco-helper:8080/api/v1/swagger || exit 1
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 

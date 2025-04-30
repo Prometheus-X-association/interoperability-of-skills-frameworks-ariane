@@ -1,19 +1,19 @@
 SHELL := /bin/bash
 
-tests-ai-translator-unit:
-	docker compose exec ai-translator-api uv run pytest --no-header --disable-warnings --tb=short -s -vv tests/unit/
+tests-ariane-unit:
+	docker compose exec api uv run pytest --no-header --disable-warnings --tb=short -s -vv tests/unit/
 
-tests-ai-translator-api:
-	docker compose exec ai-translator-api uv run pytest --no-header --disable-warnings --tb=short -s -v tests/api/
+tests-ariane-api:
+	docker compose exec api uv run pytest --no-header --disable-warnings --tb=short -s -v tests/api/
 
-tests-skill-tagging-api:
-	docker compose exec skill-tagging-api pytest --no-header --disable-warnings --tb=short -s -v tests/api/
+tests-ariane-skill-tagging:
+	docker compose exec skill-tagging pytest --no-header --disable-warnings --tb=short -s -v tests/api/
 
 tests:
 	docker compose up --build -d
-	make tests-ai-translator-unit
-	make tests-ai-translator-api
-	make tests-skill-tagging-api
+	make tests-ariane-unit
+	make tests-ariane-api
+	make tests-ariane-skill-tagging
 	docker compose down -v
 
 load-elasticsearch:
@@ -23,7 +23,7 @@ clean-elasticsearch-index:
 	./scripts/clean_index.sh
 
 load-fixtures:
-	docker compose exec ai-translator-api python -m fixtures.load_all
+	docker compose exec api python -m fixtures.load_all
 
 load-all:
 	make load-elasticsearch

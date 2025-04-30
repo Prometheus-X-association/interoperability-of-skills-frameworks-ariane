@@ -1,21 +1,17 @@
-# Interoperability of Skills Frameworks Building Block - ISF BB
+# Ariane project : Interoperability of Skills Frameworks Building Block - ISF BB
 
 - PTX project name : Ariane 
 - Contractor : MindMatcher
 
-
-This repository has two components : 
-- **AI Translator** : The Edge Translator component is used for translating input data format and value to a standard output. The main benefit of the Translator lies in its ability to ensure the interoperability of jobs, skills and qualifications data. The AI Translator is able to receive skills data from a single or multiple sources through an API and translate it into the requested output format/language in real time. The skills framework translations may include any national one to the international ESCO, between almost all the European languages, as well as any Json data structure to Json-ld.
-
-- **Skill Tagging** : Cette API permet d'extraire des compétences depuis une description de formation et de les enrichir via un système de feedback humain. Les suggestions sont générées à l'aide d'OpenAI et Elasticsearch.
+The Interoperable Skills Frameworks (ISF) component is used for translating input data format and value to a standard output. The main benefit of the Translator lies in its ability to ensure the interoperability of jobs, skills and qualifications data. The AI Translator is able to receive skills data from a single or multiple sources through an API and translate it into the requested output format/language in real time. The skills framework translations may include any national one to the international ESCO, between almost all the European languages, as well as any Json data structure to Json-ld.
 
 ## Run the project
 
 ```bash
 # Copy env files
-cp ai-translator/ui/.env.dist ai-translator/ui/.env && \
-cp ai-translator/api/.env.dist ai-translator/api/.env && \
-cp ai-translator/esco-helper/.env.dist ai-translator/esco-helper/.env && \
+cp ui/.env.dist ui/.env && \
+cp api/.env.dist api/.env && \
+cp esco-helper/.env.dist esco-helper/.env && \
 cp skill-tagging/.env.dist skill-tagging/.env
 # Start project
 docker compose up --build -d
@@ -23,36 +19,37 @@ docker compose up --build -d
 make load-all
 # or
 ./scripts/import_es.sh
-docker compose exec ai-translator-api python -m fixtures.load_all
+docker compose exec api python -m fixtures.load_all
 ```
 
 ## Check running services
-- AI Translator UI : http://localhost:8501
-- AI Translator Admin : http://localhost:8501
-- AI Translator API Swagger: http://localhost:8000
-- AI Translator EscoHelper API Swagger : http://localhost:8080/api/v1/swagger
-- AI Translator PostgreSQL : http://localhost:5432
-- Elasticsearch : http://localhost:9200
-- Skill Tagging API : http://localhost:8081
+- Ariane UI : http://localhost:8501
+- Ariane Admin : http://localhost:8501
+- Ariane API Swagger: http://localhost:8000
+- Ariane EscoHelper API Swagger : http://localhost:8080/api/v1/swagger
+- Ariane PostgreSQL : http://localhost:5432
+- Ariane Elasticsearch : http://localhost:9200
+- Ariane Skill Tagging API : http://localhost:8081
 
 ## Tests
 ```bash
 make tests
 # or
 docker compose up --build -d
-make tests-ai-translator-unit
-make tests-ai-translator-api
-make tests-skill-tagging-api
+make tests-ariane-unit
+make tests-ariane-api
+make tests-ariane-skill-tagging
 docker compose down -v
 ```
 
-## The AI Translator
+## Components
 
 This component has : 
-- an **API** : all features of the translator can be used here (crud on users, crud on rules, apply translator on data source, crud on matchings,..)
-- a **Data Provider UI** : the main focus of this UI is for rules creation and suggestions validation. 
-- an **Administration UI** : to manage users (data providers), you can also do a crud on users directly from the database
-- a **database PostgreSQL** : store users details
+- **API** : all features of the Ariane prject can be used here (crud on users, crud on rules, apply translator on data source, crud on matchings,..)
+- **Data Provider UI** : the main focus of this UI is for rules creation and suggestions validation. 
+- **Administration UI** : to manage users (data providers), you can also do a crud on users directly from the database
+- **database PostgreSQL** : store users details
+- **skill-tagging API** : This API extracts skills from a training description and enhances them through a human feedback system.
 
 Workflow :
 1. Create your user => connect on the Admin UI (or directly in the database) and add a dataprovider
