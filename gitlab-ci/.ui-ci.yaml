@@ -76,7 +76,7 @@ deploy:ui:
       --set-env-vars=ES_CONNECTION_STRING=${ES_CLOUD_ID}
       --set-env-vars=ES_API_KEY_1=${ES_API_KEY_1}
       --set-env-vars=ES_API_KEY_2=${ES_API_KEY_2}
-      --set-env-vars=TRANSLATOR_API_URL="https://ai-translator-api-934098617065.europe-west1.run.app"
+      --set-env-vars=TRANSLATOR_API_URL="https://ariane-api-934098617065.europe-west1.run.app"
   needs:
     - job: build:ui
       optional: false
