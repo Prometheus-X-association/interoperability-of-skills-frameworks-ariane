@@ -31,14 +31,14 @@ settings = get_api_settings()
 
 
 openapi_settings = {}
-openapi_settings["title"] = "Onto-Terminology AI Translator API"
+openapi_settings["title"] = "Interoperable Skills Frameworks (ISF) API"
 openapi_settings["version"] = "1.0.0"
 openapi_settings["docs_url"] = "/docs"
 openapi_settings["debug"] = True
 openapi_settings["openapi_prefix"] = ""
 openapi_settings["openapi_url"] = "/openapi.json"
 openapi_settings["redoc_url"] = "/redoc"
-openapi_settings["summary"] = "Ontology & Terminology AI Translator API"
+openapi_settings["summary"] = "Interoperable Skills Frameworks (ISF) API"
 openapi_settings["description"] = ""
 openapi_settings["disable_docs"] = False
 openapi_settings["openapi_tags"] = [
