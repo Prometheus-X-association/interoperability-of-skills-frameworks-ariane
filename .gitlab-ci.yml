@@ -1,0 +1,19 @@
+variables:
+  DOCKER_HOST: tcp://docker:2375
+  DOCKER_TLS_CERTDIR: ""
+  DOCKER_BUILDKIT: 1
+  GCP_PROJECT_ID: ariane-develop
+  GCP_REGION: europe-west1
+  ARTIFACT_REGISTRY_URL: europe-west1-docker.pkg.dev
+  ARIANE_DOCKER_REPOSITORY: ariane
+  MM_PROJECT_NAME: ariane
+
+include:
+  # - '/gitlab-ci/.esco-helper-ci.yaml'
+  - '/gitlab-ci/.api-ci.yaml'
+  - '/gitlab-ci/.ui-ci.yaml'
+  # - '/gitlab-ci/.admin-ci.yaml'
+
+stages:
+  - build
+  - deploy

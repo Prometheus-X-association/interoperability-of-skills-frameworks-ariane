@@ -1,0 +1,10 @@
+Dockerfile
+.venv
+README.md
+__pycache__
+.env.dist
+models
+compose.yml
+deploy.sh
+.data
+.pytest_cache

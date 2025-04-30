@@ -1,0 +1,90 @@
+{
+  "@context": {
+    "@todo": "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
+  },
+  "graph": [
+    {
+      "experienceStatus": "term:experience/type/past",
+      "experienceType": "term:experience/type/professional",
+      "id": "tr:__experience-id-1__",
+      "match": {
+        "framework": "esco",
+        "id": "match:suggestion/id_source/f69710b99c5fa8f995272d8723956fba/id_target/esco:occupation/04ba4d6c-957d-417f-bf63-5b9e015a9f86",
+        "mappingType": "skos:exactMatch",
+        "score": 2.630707,
+        "target": {
+          "id": "esco:occupation/04ba4d6c-957d-417f-bf63-5b9e015a9f86",
+          "prefLabel": {
+            "language": "es",
+            "value": "analista de software"
+          }
+        },
+        "type": "match:suggestion",
+        "validated": 0
+      },
+      "suggestions": [
+        {
+          "framework": "esco",
+          "id": "match:suggestion/id_source/f69710b99c5fa8f995272d8723956fba/id_target/esco:occupation/57af9090-55b4-4911-b2d0-86db01c00b02",
+          "mappingType": "skos:exactMatch",
+          "score": 2.6190143,
+          "target": {
+            "id": "esco:occupation/57af9090-55b4-4911-b2d0-86db01c00b02",
+            "prefLabel": {
+              "language": "es",
+              "value": "desarrollador de software para sistemas empotrados/desarrolladora de software para sistemas empotrados"
+            }
+          },
+          "type": "match:suggestion",
+          "validated": 0
+        },
+        {
+          "framework": "esco",
+          "id": "match:suggestion/id_source/f69710b99c5fa8f995272d8723956fba/id_target/esco:occupation/f2b15a0e-e65a-438a-affb-29b9d50b77d1",
+          "mappingType": "skos:exactMatch",
+          "score": 2.6147752,
+          "target": {
+            "id": "esco:occupation/f2b15a0e-e65a-438a-affb-29b9d50b77d1",
+            "prefLabel": {
+              "language": "es",
+              "value": "desarrollador de software/desarrolladora de software"
+            }
+          },
+          "type": "match:suggestion",
+          "validated": 0
+        },
+        {
+          "framework": "esco",
+          "id": "match:suggestion/id_source/f69710b99c5fa8f995272d8723956fba/id_target/esco:occupation/866c7813-2c03-47d7-9bdc-192cfbace57c",
+          "mappingType": "skos:exactMatch",
+          "score": 2.5936198,
+          "target": {
+            "id": "esco:occupation/866c7813-2c03-47d7-9bdc-192cfbace57c",
+            "prefLabel": {
+              "language": "es",
+              "value": "desarrollador de interfaces de usuario/desarrolladora de interfaces de usuario"
+            }
+          },
+          "type": "match:suggestion",
+          "validated": 0
+        },
+        {
+          "framework": "esco",
+          "id": "match:suggestion/id_source/f69710b99c5fa8f995272d8723956fba/id_target/esco:occupation/fde4372d-8293-42de-afbb-8b5a9b274fe7",
+          "mappingType": "skos:exactMatch",
+          "score": 2.58607,
+          "target": {
+            "id": "esco:occupation/fde4372d-8293-42de-afbb-8b5a9b274fe7",
+            "prefLabel": {
+              "language": "es",
+              "value": "ingeniero de aplicaciones/ingeniera de aplicaciones"
+            }
+          },
+          "type": "match:suggestion",
+          "validated": 0
+        }
+      ],
+      "type": "soo:Experience"
+    }
+  ]
+}

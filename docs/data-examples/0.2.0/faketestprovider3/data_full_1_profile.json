@@ -1,0 +1,26 @@
+{
+    "collaborateurs": [
+        {
+            "pseudo": "ChefProjet92",
+            "adresse_mail": "chef.projet@example.com",
+            "adresse_postale": "200 Rue Nationale, Lille, France",
+            "postes": [
+              {
+                "intitule": "Chef de Projet Digital",
+                "boite": "InnovWeb Agency",
+                "descriptif": "Pilote des projets digitaux en coordonnant les équipes et en assurant le respect des délais, du budget et de la qualité.",
+                "date_debut": "2020-09-01",
+                "date_fin": "2024-03-15",
+                "competences": [
+                  {"intitule": "Gestion d'équipe", "descriptif": "Capacité à motiver et encadrer une équipe projet.", "niveau": 5, "type": "soft_skill"},
+                  {"intitule": "Organisation", "descriptif": "Structuration claire des tâches et des ressources.", "niveau": 4, "type": "soft_skill"},
+                  {"intitule": "Communication", "descriptif": "Échange clair avec les parties prenantes internes et externes.", "niveau": 5, "type": "soft_skill"},
+                  {"intitule": "Agile Scrum", "descriptif": "Méthodologie agile pour mener des projets en sprints.", "niveau": 4, "type": "hard_skill"},
+                  {"intitule": "Trello", "descriptif": "Outil de gestion de tâches visuelle pour la gestion de projet.", "niveau": 4, "type": "hard_skill"},
+                  {"intitule": "Google Workspace", "descriptif": "Utilisation professionnelle des outils collaboratifs Google (Docs, Sheets, Drive, etc.).", "niveau": 5, "type": "hard_skill"}
+                ]
+              }
+            ]
+          }
+    ]
+}

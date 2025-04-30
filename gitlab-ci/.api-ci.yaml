@@ -1,0 +1,92 @@
+.rules_cicd:
+  rules: &rules_cicd
+    - if: '$CI_COMMIT_BRANCH =~ /^feat\/.*|^chore\/.*|^fix\/.*|^patch\/.*|^feature\/.*$/ || $CI_COMMIT_BRANCH == "develop"'
+      changes:
+        - "${SERVICE}/**/*"
+        - "gitlab-ci/.${SERVICE}-ci.yaml"
+        - ".gitlab-ci.yml"
+      when: always
+    - when: never
+
+.install_git: &install_git
+  - apk add git
+
+.install_python: &install_python
+  - apk add python3
+
+.install_gcloud: &install_gcloud
+  - wget -q https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-508.0.0-linux-x86.tar.gz -O google-cloud-sdk.tar.gz
+  - tar zxf google-cloud-sdk.tar.gz
+  - PATH="google-cloud-sdk/bin:${PATH}"
+  - gcloud --version
+
+.configure_auth_gcloud: &configure_auth_gcloud
+  - gcloud auth activate-service-account --key-file=${SA_EDGE_AI_TRANSLATOR_CICD} --project=${GCP_PROJECT_ID}
+
+.configure_auth_artifact_registry: &configure_auth_artifact_registry
+  - cat ${SA_EDGE_AI_TRANSLATOR_CICD} | docker login -u _json_key --password-stdin https://${ARTIFACT_REGISTRY_URL}
+
+build:api:
+  extends: .rules_cicd
+  stage: build
+  image: docker:27.5.1
+  tags:
+    - saas-linux-medium-amd64
+  services:
+    - docker:27.5.1-dind-alpine3.21
+  variables:
+    SERVICE: api
+  before_script:
+    - *install_git
+    - *configure_auth_artifact_registry
+  script:
+    - >
+      docker build ${SERVICE}
+      -f ./${SERVICE}/Dockerfile
+      --cache-from ${ARTIFACT_REGISTRY_URL}/${GCP_PROJECT_ID}/${ARIANE_DOCKER_REPOSITORY}/${SERVICE}:latest
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      -t ${ARTIFACT_REGISTRY_URL}/${GCP_PROJECT_ID}/${ARIANE_DOCKER_REPOSITORY}/${SERVICE}:${CI_COMMIT_REF_SLUG}-${CI_COMMIT_SHORT_SHA}
+      -t ${ARTIFACT_REGISTRY_URL}/${GCP_PROJECT_ID}/${ARIANE_DOCKER_REPOSITORY}/${SERVICE}:latest
+      --target runtime_prod
+    - docker push --all-tags ${ARTIFACT_REGISTRY_URL}/${GCP_PROJECT_ID}/${ARIANE_DOCKER_REPOSITORY}/${SERVICE}
+
+deploy:api:
+  extends: .rules_cicd
+  stage: deploy
+  image: alpine:3.21.2
+  variables:
+    SERVICE: api
+  before_script:
+    - *install_python
+    - *install_gcloud
+    - *configure_auth_gcloud
+  script:
+    - >
+      gcloud run deploy ${MM_PROJECT_NAME}-${SERVICE}
+      --image=${ARTIFACT_REGISTRY_URL}/${GCP_PROJECT_ID}/${ARIANE_DOCKER_REPOSITORY}/${SERVICE}:${CI_COMMIT_REF_SLUG}-${CI_COMMIT_SHORT_SHA}
+      --project=${GCP_PROJECT_ID}
+      --region=${GCP_REGION}
+      --service-account=edge-ai-translator-runtime@ariane-develop.iam.gserviceaccount.com
+      --ingress=all
+      --allow-unauthenticated
+      --cpu=8
+      --memory=8Gi
+      --port=8000
+      --set-env-vars=API_ENVIRONMENT="prod"
+      --set-env-vars=ES_CONNECTION_STRING=${ES_CLOUD_ID}
+      --set-env-vars=ES_API_KEY_1=${ES_API_KEY_1}
+      --set-env-vars=ES_API_KEY_2=${ES_API_KEY_2}
+      --set-env-vars=API_SECRET_KEY=${JWT_SECRET_KEY}
+      --set-env-vars=API_ALGORITHM="HS256"
+      --set-env-vars=API_ACCESS_TOKEN_EXPIRE_MINUTES=30
+      --set-env-vars=API_DATABASE_URL=${DATABASE_URL}
+      --set-env-vars=API_ESCO_HELPER_URL="https://ai-translator-esco-helper-934098617065.europe-west1.run.app"
+      --set-env-vars=API_INDICE_MAPPING="edge_mappings"
+      --add-volume name=model,type=cloud-storage,bucket=paraphrase-multilingual-mpnet-base-v2
+      --add-volume-mount volume=model,mount-path=/app/src/.model/paraphrase-multilingual-mpnet-base-v2
+  needs:
+    - job: build:api
+      optional: false
+  environment:
+    name: development/${SERVICE}
+    url: https://ontobridge-api-934098617065.europe-west1.run.app/docs

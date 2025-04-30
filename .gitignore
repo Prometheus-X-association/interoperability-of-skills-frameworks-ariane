@@ -1,29 +1,24 @@
-node_modules/
-.cache/
+# Global
+*.code-workspace
+.vscode
 .env
+dist
+.model
 __pycache__/
+.pytest_cache
+.data
+.venv
+.cache
+.local
+.downloaded
+node_modules
 
-# Here comes the Devil(s) ;)
-.DS_Store
-.venv/
-<<<<<<< HEAD
-<<<<<<< HEAD
-**/models_dump/
-models_dump/
+# ui
+.streamlit/secrets.toml
 
-# project related Devils
-_docs/secrets.yaml
-services/dataspace-connector
-<<<<<<< HEAD
-=======
-
->>>>>>> 2abe167 (fast api)
-=======
-**/models_dump/
-models_dump/
-
->>>>>>> 6963a58 (dynamic ml model)
-=======
->>>>>>> 7cb9e1a (doc)
-
-
+.venv
+__pycache__
+.env
+.data
+.pytest_cache
+.models

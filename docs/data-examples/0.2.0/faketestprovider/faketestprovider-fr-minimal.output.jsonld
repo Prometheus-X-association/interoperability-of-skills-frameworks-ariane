@@ -1,0 +1,90 @@
+{
+  "@context": {
+    "@todo": "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
+  },
+  "graph": [
+    {
+      "experienceStatus": "term:experience/type/past",
+      "experienceType": "term:experience/type/professional",
+      "id": "tr:__experience-id-1__",
+      "match": {
+        "framework": "esco",
+        "id": "match:suggestion/id_source/e72924a61f557556a187f8ef547edb29/id_target/esco:occupation/92bb3d8c-8a9f-4cd7-80ec-247bbf173004",
+        "mappingType": "skos:exactMatch",
+        "score": 2.6010673,
+        "target": {
+          "id": "esco:occupation/92bb3d8c-8a9f-4cd7-80ec-247bbf173004",
+          "prefLabel": {
+            "language": "fr",
+            "value": "ing\u00e9nieur en mat\u00e9riel informatique/ing\u00e9nieure en mat\u00e9riel informatique"
+          }
+        },
+        "type": "match:suggestion",
+        "validated": 0
+      },
+      "suggestions": [
+        {
+          "framework": "esco",
+          "id": "match:suggestion/id_source/e72924a61f557556a187f8ef547edb29/id_target/esco:occupation/6fc8f605-98b9-4218-b5e2-91c4c9c55c4d",
+          "mappingType": "skos:exactMatch",
+          "score": 2.6009612,
+          "target": {
+            "id": "esco:occupation/6fc8f605-98b9-4218-b5e2-91c4c9c55c4d",
+            "prefLabel": {
+              "language": "fr",
+              "value": "ing\u00e9nieur d\u2019\u00e9tudes/ing\u00e9nieure d\u2019\u00e9tudes"
+            }
+          },
+          "type": "match:suggestion",
+          "validated": 0
+        },
+        {
+          "framework": "esco",
+          "id": "match:suggestion/id_source/e72924a61f557556a187f8ef547edb29/id_target/esco:occupation/d849fd2a-5210-434b-a50b-2d92de3a4bac",
+          "mappingType": "skos:exactMatch",
+          "score": 2.5818682,
+          "target": {
+            "id": "esco:occupation/d849fd2a-5210-434b-a50b-2d92de3a4bac",
+            "prefLabel": {
+              "language": "fr",
+              "value": "dessinateur en \u00e9lectronique/dessinatrice en \u00e9lectronique"
+            }
+          },
+          "type": "match:suggestion",
+          "validated": 0
+        },
+        {
+          "framework": "esco",
+          "id": "match:suggestion/id_source/e72924a61f557556a187f8ef547edb29/id_target/esco:occupation/fd1c83b3-60d5-4a5f-86c5-94dc2842c246",
+          "mappingType": "skos:exactMatch",
+          "score": 2.574946,
+          "target": {
+            "id": "esco:occupation/fd1c83b3-60d5-4a5f-86c5-94dc2842c246",
+            "prefLabel": {
+              "language": "fr",
+              "value": "ing\u00e9nieur en conception de composants \u00e9lectroniques/ing\u00e9nieure en conception de composants \u00e9lectroniques"
+            }
+          },
+          "type": "match:suggestion",
+          "validated": 0
+        },
+        {
+          "framework": "esco",
+          "id": "match:suggestion/id_source/e72924a61f557556a187f8ef547edb29/id_target/esco:occupation/e6800524-eec2-4c33-af0e-6f36d1d679bc",
+          "mappingType": "skos:exactMatch",
+          "score": 2.5748177,
+          "target": {
+            "id": "esco:occupation/e6800524-eec2-4c33-af0e-6f36d1d679bc",
+            "prefLabel": {
+              "language": "fr",
+              "value": "ing\u00e9nieur instrumentation/ing\u00e9nieure instrumentation"
+            }
+          },
+          "type": "match:suggestion",
+          "validated": 0
+        }
+      ],
+      "type": "soo:Experience"
+    }
+  ]
+}
