@@ -59,7 +59,7 @@ for index in "${!index_types[@]}"; do
         echo -ne "     └─${type} ⏳"
         docker run \
             --rm \
-            --network ariane-ariane-network \
+            --network ariane_ariane-network \
             -v "$(pwd)/.downloaded/elasticsearch:/mnt/host_folder" \
             -ti elasticdump/elasticsearch-dump \
             --output="http://elasticsearch:9200/${index}" \
