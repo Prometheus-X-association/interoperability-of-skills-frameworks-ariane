@@ -24,8 +24,8 @@ docker compose exec api python -m fixtures.load_all
 
 ## Check running services
 - Ariane UI : http://localhost:8501
-- Ariane Admin : http://localhost:8501
-- Ariane API Swagger: http://localhost:8000
+- Ariane Admin : http://localhost:8502
+- Ariane API Swagger: http://localhost:8000/docs
 - Ariane EscoHelper API Swagger : http://localhost:8080/api/v1/swagger
 - Ariane PostgreSQL : http://localhost:5432
 - Ariane Elasticsearch : http://localhost:9200
