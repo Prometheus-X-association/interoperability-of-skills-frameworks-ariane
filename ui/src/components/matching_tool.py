@@ -33,7 +33,7 @@ def consolidate_suggestions(current_match, suggestions):
     return unique_suggestions
 
 def render_match(doc, is_validated):  
-    doc_id = doc["id"]
+    doc_id = doc["_id"]
     label = doc.get("prefLabel", {}).get("value", "Sans label")
     language_source = doc.get("prefLabel", {}).get("language", "")
     language_target = doc.get("match", {}).get("target", {}).get("prefLabel", {}).get("language", "")
@@ -72,7 +72,8 @@ def render_match(doc, is_validated):
                 handle_selection(doc, selected_label, unique_dict)
 
 def handle_selection(doc, selected_label, unique_dict):
-    doc_id = doc["id"]
+    doc_id = doc["_id"]
+    
     if selected_label == "--":
         update_validation(doc_id, {"validated": 0}, list(unique_dict.values()))
         return

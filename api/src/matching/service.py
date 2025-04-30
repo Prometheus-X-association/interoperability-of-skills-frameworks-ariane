@@ -79,7 +79,14 @@ class MatchingService:
             return []
 
         values = res['hits']['hits']
-        return [v['_source'] for v in values]
+
+        response = []
+        for v in values:
+            matchings = v['_source']
+            matchings["_id"] = v["_id"]
+            response.append(matchings)
+
+        return response
 
     def create(self, id, payload, refresh=None):
         self.es_client.index(index=self.ELASTICSEARCH_INDEX_MATCHING, document=payload, id=id, refresh=refresh)
