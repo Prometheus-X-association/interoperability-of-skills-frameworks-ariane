@@ -1,0 +1,76 @@
+.rules_cicd:
+  rules: &rules_cicd
+    - if: '$CI_COMMIT_BRANCH =~ /^feat\/.*|^chore\/.*|^fix\/.*|^patch\/.*|^feature\/.*$/ || $CI_COMMIT_BRANCH == "develop"'
+      changes:
+        - "${SERVICE}/**/*"
+        - "gitlab-ci/.${SERVICE}-ci.yaml"
+        - ".gitlab-ci.yml"
+      when: always
+    - when: never
+
+.install_git: &install_git
+  - apk add git
+
+.install_python: &install_python
+  - apk add python3
+
+.install_gcloud: &install_gcloud
+  - wget -q https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-508.0.0-linux-x86.tar.gz -O google-cloud-sdk.tar.gz
+  - tar zxf google-cloud-sdk.tar.gz
+  - PATH="google-cloud-sdk/bin:${PATH}"
+  - gcloud --version
+
+.configure_auth_gcloud: &configure_auth_gcloud
+  - gcloud auth activate-service-account --key-file=${SA_EDGE_AI_TRANSLATOR_CICD} --project=${GCP_PROJECT_ID}
+
+.configure_auth_artifact_registry: &configure_auth_artifact_registry
+  - cat ${SA_EDGE_AI_TRANSLATOR_CICD} | docker login -u _json_key --password-stdin https://${ARTIFACT_REGISTRY_URL}
+
+build:admin:
+  extends: .rules_cicd
+  stage: build
+  image: docker:27.5.1
+  services:
+    - docker:27.5.1-dind-alpine3.21
+  variables:
+    SERVICE: admin
+  before_script:
+    - *install_git
+    - *configure_auth_artifact_registry
+  script:
+    - >
+      docker build ${SERVICE}
+      -f ./${SERVICE}/Dockerfile
+      --cache-from ${ARTIFACT_REGISTRY_URL}/${GCP_PROJECT_ID}/${ARIANE_DOCKER_REPOSITORY}/${SERVICE}:latest
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      -t ${ARTIFACT_REGISTRY_URL}/${GCP_PROJECT_ID}/${ARIANE_DOCKER_REPOSITORY}/${SERVICE}:${CI_COMMIT_REF_SLUG}-${CI_COMMIT_SHORT_SHA}
+      -t ${ARTIFACT_REGISTRY_URL}/${GCP_PROJECT_ID}/${ARIANE_DOCKER_REPOSITORY}/${SERVICE}:latest
+      --target runtime_prod
+    - docker push --all-tags ${ARTIFACT_REGISTRY_URL}/${GCP_PROJECT_ID}/${ARIANE_DOCKER_REPOSITORY}/${SERVICE}
+
+deploy:admin:
+  extends: .rules_cicd
+  stage: deploy
+  image: alpine:3.21.2
+  variables:
+    SERVICE: admin
+  before_script:
+    - *install_python
+    - *install_gcloud
+    - *configure_auth_gcloud
+  script:
+    - >
+      gcloud run deploy ${MM_PROJECT_NAME}-${SERVICE}
+      --image=${ARTIFACT_REGISTRY_URL}/${GCP_PROJECT_ID}/${ARIANE_DOCKER_REPOSITORY}/${SERVICE}:${CI_COMMIT_REF_SLUG}-${CI_COMMIT_SHORT_SHA}
+      --project=${GCP_PROJECT_ID}
+      --region=${GCP_REGION}
+      --service-account=edge-ai-translator-runtime@ariane-develop.iam.gserviceaccount.com
+      --ingress=all
+      --allow-unauthenticated
+      --port=8502
+      --cpu=1
+      --memory=2Gi
+      --set-env-vars=VITE_API_URL="https://ai-translator-api-934098617065.europe-west1.run.app"
+  needs:
+    - job: build:admin
+      optional: false
