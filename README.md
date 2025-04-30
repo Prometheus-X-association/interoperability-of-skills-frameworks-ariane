@@ -3,7 +3,7 @@
 - PTX project name : Ariane 
 - Contractor : MindMatcher
 
-The Interoperable Skills Frameworks (ISF) component is used for translating input data format and value to a standard output. The main benefit of the Translator lies in its ability to ensure the interoperability of jobs, skills and qualifications data. The AI Translator is able to receive skills data from a single or multiple sources through an API and translate it into the requested output format/language in real time. The skills framework translations may include any national one to the international ESCO, between almost all the European languages, as well as any Json data structure to Json-ld.
+The Interoperable Skills Frameworks (ISF) component is used for translating input data format and value to a standard output. The main benefit of the Ariane project lies in its ability to ensure the interoperability of jobs, skills and qualifications data. The Ariane project is able to receive skills data from a single or multiple sources through an API and translate it into the requested output format/language in real time. The skills framework translations may include any national (ROME) one to the international ESCO, between almost all the European languages, as well as any Json data structure to Json-ld.
 
 ## Run the project
 
@@ -45,7 +45,7 @@ docker compose down -v
 ## Components
 
 This component has : 
-- **API** : all features of the Ariane prject can be used here (crud on users, crud on rules, apply translator on data source, crud on matchings,..)
+- **API** : all features of the Ariane project can be used here (crud on users, crud on rules, apply translator on data source, crud on matchings,..)
 - **Data Provider UI** : the main focus of this UI is for rules creation and suggestions validation. 
 - **Administration UI** : to manage users (data providers), you can also do a crud on users directly from the database
 - **database PostgreSQL** : store users details
@@ -57,8 +57,8 @@ Workflow :
   - password: `changeme`
   - role: `ROLE_PROVIDER`
   - status: `active`
-2. Create your translator rules => connect on the UI
-    - upload a file you want to apply the translator on `browse file`
+2. Create your rules => connect on the UI
+    - upload a file you want to apply the rules on `browse file`
     - List objects your file has according to the Pivotal Ontology
         - Profiles
         - Experiences

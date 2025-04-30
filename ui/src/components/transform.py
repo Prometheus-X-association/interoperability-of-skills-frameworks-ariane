@@ -7,8 +7,8 @@ from streamlit.runtime.uploaded_file_manager import UploadedFile
 from i18n import FRAMEWORK_OUTPUT_LANGUAGE
 
 def main():
-    st.markdown("### AI Translator :material/network_intelligence_update:")
-    st.caption("_Use the AI Translator to transform your data into meaningful quality data_")
+    st.markdown("### Transform :material/network_intelligence_update:")
+    st.caption("_Use the Interoperability of Skills Frameworks to transform your data into meaningful quality data_")
 
     ontobridge_client = OntobridgeClient()
 
@@ -16,7 +16,7 @@ def main():
 
     if response.status_code != 200:
         error_type = "MISSING_RULES"
-        error_message = "You dont have any rule defined yet. Please create some transformation rules to be able to process data with the AI Translator."
+        error_message = "You dont have any rule defined yet. Please create some transformation rules to be able to process data with the Interoperability of Skills Frameworks."
         st.warning(f"**{error_type}**: _{error_message}_", icon=":material/unknown_document:")
         return
 
@@ -25,7 +25,7 @@ def main():
     
     if not isinstance(st.session_state.raw_data, UploadedFile):
         error_type = "MISSING_INPUT_DATA"
-        error_message = "Please upload some data to be able to use the AI Translator."
+        error_message = "Please upload some data to be able to use the Interoperability of Skills Frameworks."
         st.warning(f"**{error_type}**: _{error_message}_", icon=":material/unknown_document:")
         return
 
@@ -40,7 +40,7 @@ def main():
                 st.selectbox("Select the source language", FRAMEWORK_OUTPUT_LANGUAGE[selected_framework], key="source_language_selectbox")
                 st.selectbox("Select the target language", FRAMEWORK_OUTPUT_LANGUAGE[selected_framework], key="target_language_selectbox")
             st.button(
-                label = f"Use the AI Translator",
+                label = f"Use the Interoperability of Skills Frameworks",
                 key = "transform_button",
                 help = None,
                 on_click = None,

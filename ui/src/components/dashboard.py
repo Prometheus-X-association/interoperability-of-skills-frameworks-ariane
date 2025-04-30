@@ -67,7 +67,7 @@ def main():
     colcenter.markdown("# 👋 Welcome!")
     colleft, colcenter, colright = st.columns([1.9,2,2])
 
-    colcenter.markdown("Upload your data to enable Edge AI Translator")
+    colcenter.markdown("Upload your data to enable Interoperability of Skills Frameworks")
 
     # st.markdown("### Welcome page :material/dashboard:")
     # under_construction()

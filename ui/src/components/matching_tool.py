@@ -99,11 +99,11 @@ def handle_selection(doc, selected_label, unique_dict):
 
 def main():
     st.markdown("### Suggestions Validation :material/rule:")
-    st.caption("_Validate AI Translator suggestions to match your preferences._")
+    st.caption("_Validate Interoperability of Skills Frameworks suggestions to match your preferences._")
 
     if not st.session_state.get("has_existing_mapping_rules", True):
         st.warning(
-            "**MISSING_RULES**: _No rules defined yet. Create transformation rules to process data with the AI Translator._", 
+            "**MISSING_RULES**: _No rules defined yet. Create transformation rules to process data with the Interoperability of Skills Frameworks._", 
             icon=":material/unknown_document:"
         )
         return

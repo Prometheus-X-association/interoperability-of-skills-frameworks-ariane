@@ -28,7 +28,7 @@ mapping_rules_page = st.Page(
 #### TRANSLATOR PAGES ####
 transform_page = st.Page(
     page="components/transform.py",
-    title="AI Translator",
+    title="Transform",
     icon=":material/network_intelligence_update:",
     default=False
 )
