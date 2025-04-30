@@ -1,9 +1,0 @@
-packages:
-  - _ops/
-  - app/
-  - data-model/*
-  - data/*
-  - services/*
-  - tools/*
-  # - packages/*
-  

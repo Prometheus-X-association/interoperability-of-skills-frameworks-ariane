@@ -1,6 +1,0 @@
-flask
-transformers
-sentence-transformers
-sentencepiece
-torch
-protobuf 

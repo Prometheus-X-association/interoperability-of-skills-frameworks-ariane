@@ -1,0 +1,51 @@
+{
+    "@context": {
+        "@todo": "xxx"
+    },
+    "graph": [
+        {
+            "type": "soo:Experience",
+            "id": "tr:__experience-id-1__",
+            "sourceId": "0ede4405-fb88-4cac-a501-603916c1484a",
+            "experienceType": "term:experience/type/professional",
+            "experienceStatus": "term:experience/type/suggested",
+            "prefLabel": {
+                "@value": "Ingénieur logiciel",
+                "@language": "fr"
+            },
+            
+            "__matching__": {
+                "sourceValue": "Ingénieur logiciel",
+                "provider": "faketestprovider2",
+                "subtype": "job",
+                "language": "en"
+            },
+            
+            "__family__": {
+                "str_value": "Métier",
+                "scale_path": "jobCards.type",
+                "targetFunction": "fno:handle-family",
+                "value": "Métier",
+                "scale": "family",
+                "provider": "faketestprovider2",
+                "language": "en"
+            },
+            
+            "polarity": "tr:__polarity-id-1__"
+        },
+        {
+            "type": "soo:Polarity",
+            "id": "tr:__polarity-id-1__",
+            "experience": "tr:__experience-id-1__",
+            "__term__": {
+                "str_value": "niveau1",
+                "scale_path": "jobCards.positionnement",
+                "targetFunction": "fno:handle-polarity",
+                "value": "niveau1",
+                "scale": "Polarity",
+                "provider": "faketestprovider2",
+                "language": "en"
+            }
+        }
+    ]
+}

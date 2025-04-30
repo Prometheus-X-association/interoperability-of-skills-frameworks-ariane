@@ -1,0 +1,87 @@
+{
+    "@context": {
+        "@todo": "xxx"
+    },
+    "graph": [
+        {
+            "type": "soo:Experience",
+            "id": "tr:__experience-id-1__",
+            "sourceId": "0ede4405-fb88-4cac-a501-603916c1484a",
+            "experienceType": "term:experience/type/professional",
+            "experienceStatus": "term:experience/type/suggested",
+            "prefLabel": {
+                "@value": "Ingénieur logiciel",
+                "@language": "fr"
+            },
+            "__matching__": {
+                "sourceValue": "Ingénieur logiciel",
+                "provider": "faketestprovider2",
+                "subtype": "job",
+                "language": "en"
+            },
+            "family": "term:faketestprovider2/family/d9e8e5e07211aea6a79908188885427b/Métier",
+            "polarity": "tr:__polarity-id-1__"
+        },
+        
+        // FAMILY
+        {
+            "id": "term:faketestprovider2/family/d9e8e5e07211aea6a79908188885427b/Métier",
+            "type": "skos:Concept",
+            "prefLabel": [
+                {
+                    "value": "Métier",
+                    "language": "en"
+                }
+            ],
+            "memberOf": "term:faketestprovider2/family/d9e8e5e07211aea6a79908188885427b",
+            "notation": "Métier"
+        },
+        {
+            "id": "term:faketestprovider2/family/d9e8e5e07211aea6a79908188885427b",
+            "type": "skos:Collection",
+            "prefLabel": [
+                {
+                    "value": "faketestprovider2 collection for family in jobCards.type",
+                    "language": "en"
+                }
+            ],
+            "member": [
+                "term:faketestprovider2/family/d9e8e5e07211aea6a79908188885427b/Métier"
+            ]
+        },
+
+        // POLARITY
+        {
+            "type": "soo:Polarity",
+            "id": "tr:__polarity-id-1__",
+            "experience": "tr:__experience-id-1__",
+            "polarityValue": "term:faketestprovider2/polarity/c3b52713f081d481375e28106c72acb9/value/niveau1",
+            "polarityScale": "term:faketestprovider2/polarity/c3b52713f081d481375e28106c72acb9/scale"
+        },
+        {
+            "id": "term:faketestprovider2/polarity/c3b52713f081d481375e28106c72acb9/value/niveau1",
+            "type": "skos:Concept",
+            "prefLabel": [
+                {
+                    "value": "niveau1",
+                    "language": "en"
+                }
+            ],
+            "memberOf": "term:faketestprovider2/polarity/c3b52713f081d481375e28106c72acb9/scale",
+            "notation": "niveau1"
+        },
+        {
+            "id": "term:faketestprovider2/polarity/c3b52713f081d481375e28106c72acb9/scale",
+            "type": "skos:Collection",
+            "prefLabel": [
+                {
+                    "value": "faketestprovider2 collection for polarity in jobCards.positionnement",
+                    "language": "en"
+                }
+            ],
+            "member": [
+                "term:faketestprovider2/polarity/c3b52713f081d481375e28106c72acb9/value/niveau1"
+            ]
+        }
+    ]
+}

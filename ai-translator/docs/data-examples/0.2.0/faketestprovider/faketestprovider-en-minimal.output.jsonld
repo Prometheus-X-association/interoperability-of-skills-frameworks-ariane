@@ -1,0 +1,90 @@
+{
+  "@context": {
+    "@todo": "Define later with https://gitlab.com/mmorg/bupm/ariane/-/blob/main/data/soo/onto-soo-context-1.0.0.jsonld"
+  },
+  "graph": [
+    {
+      "experienceStatus": "term:experience/type/past",
+      "experienceType": "term:experience/type/professional",
+      "id": "tr:__experience-id-1__",
+      "type": "soo:Experience",
+      "match": {
+        "framework": "esco",
+        "id": "match:suggestion/id_source/4b7281a983a4574eb887d29f7fbebd88/id_target/esco:occupation/04ba4d6c-957d-417f-bf63-5b9e015a9f86",
+        "mappingType": "skos:exactMatch",
+        "score": 2.6509378,
+        "target": {
+          "id": "esco:occupation/04ba4d6c-957d-417f-bf63-5b9e015a9f86",
+          "prefLabel": {
+            "language": "en",
+            "value": "software analyst"
+          }
+        },
+        "type": "match:suggestion",
+        "validated": 0
+      },
+      "suggestions": [
+        {
+          "framework": "esco",
+          "id": "match:suggestion/id_source/4b7281a983a4574eb887d29f7fbebd88/id_target/esco:occupation/f2b15a0e-e65a-438a-affb-29b9d50b77d1",
+          "mappingType": "skos:exactMatch",
+          "score": 2.6463997,
+          "target": {
+            "id": "esco:occupation/f2b15a0e-e65a-438a-affb-29b9d50b77d1",
+            "prefLabel": {
+              "language": "en",
+              "value": "software developer"
+            }
+          },
+          "type": "match:suggestion",
+          "validated": 0
+        },
+        {
+          "framework": "esco",
+          "id": "match:suggestion/id_source/4b7281a983a4574eb887d29f7fbebd88/id_target/esco:occupation/57af9090-55b4-4911-b2d0-86db01c00b02",
+          "mappingType": "skos:exactMatch",
+          "score": 2.6400137,
+          "target": {
+            "id": "esco:occupation/57af9090-55b4-4911-b2d0-86db01c00b02",
+            "prefLabel": {
+              "language": "en",
+              "value": "embedded systems software developer"
+            }
+          },
+          "type": "match:suggestion",
+          "validated": 0
+        },
+        {
+          "framework": "esco",
+          "id": "match:suggestion/id_source/4b7281a983a4574eb887d29f7fbebd88/id_target/esco:occupation/866c7813-2c03-47d7-9bdc-192cfbace57c",
+          "mappingType": "skos:exactMatch",
+          "score": 2.6129725,
+          "target": {
+            "id": "esco:occupation/866c7813-2c03-47d7-9bdc-192cfbace57c",
+            "prefLabel": {
+              "language": "en",
+              "value": "user interface developer"
+            }
+          },
+          "type": "match:suggestion",
+          "validated": 0
+        },
+        {
+          "framework": "esco",
+          "id": "match:suggestion/id_source/4b7281a983a4574eb887d29f7fbebd88/id_target/esco:occupation/fde4372d-8293-42de-afbb-8b5a9b274fe7",
+          "mappingType": "skos:exactMatch",
+          "score": 2.5936432,
+          "target": {
+            "id": "esco:occupation/fde4372d-8293-42de-afbb-8b5a9b274fe7",
+            "prefLabel": {
+              "language": "en",
+              "value": "application engineer"
+            }
+          },
+          "type": "match:suggestion",
+          "validated": 0
+        }
+      ]
+    }
+  ]
+}
