@@ -129,7 +129,7 @@ Suggestions are generated using OpenSource sementical model `paraphrase-multilin
 
 ### Endpoints
 
-#### **Extract Skills: `http://locahost:8081/skillTagging`
+#### Extract Skills: `http://locahost:8081/skillTagging`
 
 - **method**: `POST`  
 - **description**: Analyzes a given course description and returns skill suggestions.  
