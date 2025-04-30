@@ -72,10 +72,6 @@ def render_match(doc, is_validated):
                 handle_selection(doc, selected_label, unique_dict)
 
 def handle_selection(doc, selected_label, unique_dict):
-    st.success("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW")
-    st.success(doc)
-    st.success("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW")
-    st.stop()
     doc_id = doc["id"]
     if selected_label == "--":
         update_validation(doc_id, {"validated": 0}, list(unique_dict.values()))
