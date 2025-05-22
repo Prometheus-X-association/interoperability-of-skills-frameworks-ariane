@@ -201,3 +201,33 @@ Suggestions are generated using OpenSource sementical model `paraphrase-multilin
     "error":"Document matching not found for key: wrong-key"
 }
 ```
+
+
+## Deploy in production
+
+We use docker so you can deploy in any cloud provider / personal servers.
+
+Some supported examples:
+- Google Cloud : Cloud Run, Kubernetes Engine, Compute Engine,..
+- AWS : EC2, ECS, EKS,...
+- on your own computer
+
+For development, docker compose start an elasticsearch and postgresql local instances.
+**For production, please use your own Elasticsearch and PostgreSQL instances.**
+
+Prerequisit:
+- Elasticsearch instance available
+- PostgreSQL instance available
+
+
+Environment variables:
+- check in api/.env.dist and replace with approriate values
+- check in esco-helper/.env.dist and replace with approriate values
+- check in ui/.env.dist and replace with approriate values
+
+You'll need to deploy:
+- the **api** using `runtime_prod` docker build target
+- the **ui** using `runtime_prod` docker build target
+- the **esco-helper** using `runtime` docker build target
+
+Deploy the **api**, **ui**, **esco-helper**
