@@ -1,0 +1,19 @@
+services:
+  api: 
+    build: 
+      target: runtime_prod
+
+  ui:
+    build: 
+      target: runtime_prod
+      tags : 
+        - ui-prod:latest
+    
+  admin:
+    build: 
+      target: runtime_prod
+  
+  skill-tagging: 
+    build: 
+      target: runtime_prod
+    
